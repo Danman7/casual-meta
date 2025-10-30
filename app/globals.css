@@ -1,10 +1,10 @@
 @import 'tailwindcss';
 
 :root {
-  --background: var(--color-slate-50);
-  --foreground: var(--color-slate-950);
-  --surface: var(--color-slate-100);
-  --primary: var(--color-blue-500);
+  --background: var(--color-emerald-50);
+  --foreground: var(--color-emerald-950);
+  --surface: var(--color-emerald-100);
+  --primary: var(--color-emerald-500);
 }
 
 @theme inline {
@@ -18,31 +18,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--color-slate-900);
-    --foreground: var(--color-slate-50);
-    --surface: var(--color-slate-800);
+    --background: var(--color-emerald-950);
+    --foreground: var(--color-emerald-50);
+    --surface: var(--color-emerald-900);
   }
-}
-
-[data-theme='warhammer'] {
-  --background: var(--color-zinc-500);
-  --foreground: var(--color-amber-200);
-  --surface: var(--color-zinc-300);
-}
-
-@media (prefers-color-scheme: dark) {
-  [data-theme='warhammer'] {
-    --background: var(--color-zinc-500);
-    --foreground: var(--color-amber-300);
-    --surface: var(--color-zinc-800);
-  }
-}
-
-@theme [data-theme="warhammer"] {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-primary: var(--primary);
 }
 
 html {
@@ -60,5 +39,9 @@ body {
 p {
   margin: 0.75em 0;
   line-height: 1.75;
-  text-align: justify;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: underline;
 }

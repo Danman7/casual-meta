@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
-import { GiBookCover } from 'react-icons/gi'
+import Link from 'next/link'
+import { GiDeathSkull } from 'react-icons/gi'
 
 export const metadata: Metadata = {
   title: 'Warhammer 40k | Casual Meta',
@@ -7,10 +8,58 @@ export const metadata: Metadata = {
 
 export default async function Books() {
   return (
-    <article className="max-w-4xl mx-auto">
-      <h1 className="flex gap-4 justify-center items-center text-5xl font-bold font-serif my-16">
-        Warhammer 40k
-      </h1>
+    <article className="max-w-3xl mx-auto">
+      <div className="flex flex-col justify-center items-center my-16 space-y-16 text-center">
+        <h1 className="text-4xl font-bold">Warhammer 40k</h1>
+        <h2 className="text-xl">
+          "In the grim darkness of the far future, there is only war."
+        </h2>
+      </div>
+
+      <p>
+        The{' '}
+        <Link href="https://assets.warhammer-community.com/warhammer40000_core&key_corerules_eng_24.09-5xfayxjekm.pdf">
+          Core Rulebook
+        </Link>{' '}
+        describes Warhammer 40,000 as a tabletop war game in which players
+        command armies of Citadel miniatures and attempt to defeat their
+        opponent through a mixture of skill, tactics and luck.
+      </p>
+
+      <p>
+        That very rulebook should be the primary source of information regarding
+        Warhammer 40k’s rules as they tend to periodically change. Furthermore,
+        the table-top nature of the game tends to bring about disputes about how
+        a situation is to be resolved. The latter argument is a central cause
+        for the detailed instructions that accompany each and every Warhammer
+        40k rule, data sheet or ability.
+      </p>
+
+      <div className="text-lg text-center my-8 space-y-4">
+        <p>We will try to:</p>
+        <ul className="list-none text-left space-y-3">
+          <li className="flex items-center gap-4">
+            <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
+            <span>Shed the lore.</span>
+          </li>
+          <li className="flex items-center gap-4">
+            <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
+            <span>Simplify the rules.</span>
+          </li>
+          <li className="flex items-center gap-4">
+            <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
+            <span>Introduce concepts that may not be in the rulebook.</span>
+          </li>
+        </ul>
+      </div>
+
+      <p>
+        As long-time players have accumulated games across multiple codex
+        revisions, they have developed ideas that help reduce the complexity of
+        the rules and choices. These concepts are spread out over multiple
+        forums and wikis. We attempt to gather the most prominent ones in a
+        single repository.
+      </p>
     </article>
   )
 }
