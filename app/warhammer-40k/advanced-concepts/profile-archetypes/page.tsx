@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { GiDeathSkull } from 'react-icons/gi'
 
 export const metadata: Metadata = {
-  title: 'Warhammer 40k | Casual Meta',
+  title: 'Warhammer 40k: Profile Archetypes | Casual Meta',
 }
 
 export default async function Page() {
