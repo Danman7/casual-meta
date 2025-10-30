@@ -1,17 +1,15 @@
+import { PageTitle } from '@/app/ui/PageTitle'
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { GiDeathSkull } from 'react-icons/gi'
 
 export const metadata: Metadata = {
-  title: 'Warhammer 40k | Casual Meta',
+  title: 'Warhammer 40k: Getting Started | Casual Meta',
 }
 
 export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
-      <div className="flex flex-col justify-center items-center my-16 space-y-16 text-center">
-        <h1 className="text-4xl font-bold">Getting Started</h1>
-      </div>
+      <PageTitle title="Getting Started" />
 
       <p>
         The Getting Started section will help you understand how to play

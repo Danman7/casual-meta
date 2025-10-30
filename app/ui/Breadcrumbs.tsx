@@ -25,7 +25,7 @@ export function Breadcrumbs() {
 
   return (
     <nav aria-label="Breadcrumb" className="mb-4 text-sm">
-      <ol className="flex items-center gap-2 text-foreground/80">
+      <ol className="flex flex-wrap items-center gap-2 text-foreground/80">
         <li>
           <Link className="hover:underline" href="/">
             Home

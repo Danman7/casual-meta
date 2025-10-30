@@ -1,3 +1,4 @@
+import { PageTitle } from '@/app/ui/PageTitle'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { GiDeathSkull } from 'react-icons/gi'
@@ -9,12 +10,10 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
-      <div className="flex flex-col justify-center items-center my-16 space-y-16 text-center">
-        <h1 className="text-4xl font-bold">Warhammer 40k</h1>
-        <h2 className="text-xl">
-          "In the grim darkness of the far future, there is only war."
-        </h2>
-      </div>
+      <PageTitle
+        title="Warhammer 40k"
+        subtitle="In the grim darkness of the far future, there is only war."
+      />
 
       <p>
         The{' '}
@@ -66,6 +65,8 @@ export default async function Page() {
         <Link href="/warhammer-40k/getting-started">Getting Started</Link>{' '}
         section.
       </p>
+
+      <Link href="/warhammer-40k/advanced-concepts">Advanced Concepts</Link>
     </article>
   )
 }
