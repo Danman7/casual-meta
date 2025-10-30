@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Noto_Sans, Noto_Serif } from 'next/font/google'
 import './globals.css'
 import { Nav } from '@/app/ui/Nav'
+import { Breadcrumbs } from '@/app/ui/Breadcrumbs'
 import Link from 'next/link'
 
 const notoSans = Noto_Sans({
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Nav />
 
         <main className="mx-auto w-full py-4 px-4 md:px-8 grow">
+          <Breadcrumbs />
           {children}
         </main>
 
