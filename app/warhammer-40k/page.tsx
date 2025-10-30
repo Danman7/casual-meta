@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Warhammer 40k | Casual Meta',
 }
 
-export default async function Books() {
+export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
       <div className="flex flex-col justify-center items-center my-16 space-y-16 text-center">
@@ -59,6 +59,12 @@ export default async function Books() {
         the rules and choices. These concepts are spread out over multiple
         forums and wikis. We attempt to gather the most prominent ones in a
         single repository.
+      </p>
+
+      <p className="text-lg">
+        If you are unfamiliar with the game, consider reading the{' '}
+        <Link href="/warhammer-40k/getting-started">Getting Started</Link>{' '}
+        section.
       </p>
     </article>
   )

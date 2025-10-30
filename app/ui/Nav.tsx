@@ -28,7 +28,10 @@ export const Nav = () => {
     <header className="shadow-md bg-surface">
       <nav className="flex items-center justify-between mx-auto p-4 md:px-8 gap-10">
         <div className="text-2xl">
-          <Link className="flex items-center gap-2" href="/">
+          <Link
+            className="flex items-center gap-2 text-foreground! no-underline!"
+            href="/"
+          >
             <BsPcDisplay />
             Casual Meta
           </Link>
