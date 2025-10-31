@@ -7,7 +7,8 @@ export const Anchor: React.FC<{
   children: React.ReactNode
   href: string
   className?: string
-}> = ({ href, children, className = '' }) => {
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>
+}> = ({ href, children, className = '', onClick }) => {
   const pathname = usePathname()
 
   const isActive = pathname.startsWith(href)
@@ -21,7 +22,7 @@ export const Anchor: React.FC<{
     .join(' ')
 
   return (
-    <Link className={combinedClasses} href={href}>
+    <Link className={combinedClasses} href={href} onClick={onClick}>
       {children}
     </Link>
   )
