@@ -1,6 +1,7 @@
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Metadata } from 'next'
 import Link from 'next/link'
+
+import { PageTitle } from '@/app/ui/PageTitle'
 
 export const metadata: Metadata = {
   title: 'Warhammer 40k: Getting Started | Casual Meta',

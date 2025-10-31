@@ -1,19 +1,18 @@
 'use client'
 
-import { Anchor } from '@/app/ui/Anchor'
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { BsPcDisplay } from 'react-icons/bs'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
+
+import { Anchor } from '@/app/ui/Anchor'
 
 const navigation = [{ name: 'Warhammer 40k', href: '/warhammer-40k' }]
 
 export const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [searchQuery, setSearchQuery] = useState('')
   const pathname = usePathname()
-  const router = useRouter()
 
   // Close mobile menu when route changes
   useEffect(() => {

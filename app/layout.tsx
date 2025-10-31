@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import { Noto_Sans, Noto_Serif } from 'next/font/google'
-import './globals.css'
-import { Nav } from '@/app/ui/Nav'
-import { Breadcrumbs } from '@/app/ui/Breadcrumbs'
 import Link from 'next/link'
+
+import { Breadcrumbs } from '@/app/ui/Breadcrumbs'
+import { Nav } from '@/app/ui/Nav'
+import './globals.css'
 
 const notoSans = Noto_Sans({
   variable: '--font-noto-sans',

@@ -1,7 +1,6 @@
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Metadata } from 'next'
-import Link from 'next/link'
-import { GiDeathSkull } from 'react-icons/gi'
+
+import { PageTitle } from '@/app/ui/PageTitle'
 
 export const metadata: Metadata = {
   title: 'Warhammer 40k: Profile Archetypes | Casual Meta',

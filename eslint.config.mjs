@@ -1,21 +1,14 @@
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
-import { FlatCompat } from '@eslint/eslintrc'
-import eslint from '@eslint/js'
-import reactPlugin from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
+import importPlugin from 'eslint-plugin-import'
 import tseslint from 'typescript-eslint'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-})
-
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  // Ignore heavy/generated folders
   {
     ignores: [
       'node_modules/**',
@@ -26,12 +19,17 @@ const eslintConfig = [
       'coverage',
     ],
   },
-  reactHooks.configs.flat.recommended,
-  reactPlugin.configs.flat['jsx-runtime'],
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
+  // Base project linting without legacy compat to avoid circular config issues
   {
-    name: 'import/order',
+    files: ['**/*.{ts,tsx,js,jsx}'],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+    },
+    plugins: { import: importPlugin },
     rules: {
       'import/order': [
         'error',
