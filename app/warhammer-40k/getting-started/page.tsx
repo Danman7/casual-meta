@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'Warhammer 40k: Getting Started | Casual Meta',
 }
 
+// Order this page before other siblings in the Warhammer section
+export const navOrder = 1
+
 export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
