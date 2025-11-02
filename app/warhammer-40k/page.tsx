@@ -37,7 +37,7 @@ export default async function Page() {
 
       <div className="text-lg text-center my-8 space-y-4">
         <p>We will try to:</p>
-        <ul className="list-none text-left space-y-3">
+        <ul role="list" className="text-left space-y-2">
           <li className="flex items-center gap-4">
             <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
             <span>Shed the lore.</span>
