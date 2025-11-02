@@ -56,7 +56,7 @@ export function SubNavClient({ items }: Props) {
         onClick={() => setOpen((v) => !v)}
       >
         {open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
-        <span>Menu</span>
+        <span>Articles</span>
       </button>
 
       {open && (

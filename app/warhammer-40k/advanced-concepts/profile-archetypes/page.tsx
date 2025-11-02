@@ -1,5 +1,8 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 
+import intercessors from '@/app/assets/wh40k/interfcessors.webp'
+import { Callout } from '@/app/ui/Callout'
 import { PageTitle } from '@/app/ui/PageTitle'
 
 export const metadata: Metadata = {
@@ -19,23 +22,23 @@ export default async function Page() {
         weapons.
       </p>
 
-      <h2>The MEQ - T4|Sv3+|W2</h2>
+      <h2>The MEQ</h2>
+      <Callout>
+        <div className="text-lg text-center font-bold">T4|Sv3+|W2</div>
+      </Callout>
 
       <p>
-        <em>Marine Equivalent</em> or <strong>MEQ</strong> refers to the common
-        Space Marine infantry profile of <strong>T4|Sv3+|W2</strong>. Adeptus
-        Astartes infantry in Power Armor, including{' '}
-        <em>Intercessors, Tactical Marines, Sternguards, Eliminators</em> and
-        many others, share this exact profile, hence the name. Such models are
-        considered <strong>Pure MEQ</strong>.
+        <em>Marine Equivalent</em> or <strong>MEQ</strong> refers to any unit
+        with a profile of{' '}
+        <strong>4 Toughness, 3+ Armor Save and 2 Wounds</strong>. It is very
+        common among Space Marines infantry, hence the name.
       </p>
-
-      <p>
-        Alongside them there are many <strong>Soft MEQ</strong> units that come
-        close to these characteristics. <em>Company Heroes</em> are MEQ with 4
-        Wounds instead of 2. <em>Bladeguard Veterans</em> are MEQ with 3 Wounds
-        and a 4+ Invulnerable Save.
-      </p>
+      <Image
+        src={intercessors}
+        alt="Space Marines Intercessors"
+        className="h-48 shadow-md object-cover object-[0%_65%]"
+        preload
+      />
     </article>
   )
 }
