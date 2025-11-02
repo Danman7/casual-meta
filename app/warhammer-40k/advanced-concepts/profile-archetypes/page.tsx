@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
+import { GiDeathSkull } from 'react-icons/gi'
 
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { Callout } from '@/app/ui/Callout'
@@ -13,6 +14,12 @@ export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
       <PageTitle title="Profile Archetypes" />
+
+      <p>
+        Models and weapons each have six numerical characteristics in their data
+        sheets describing their potential performance. To be able to navigate
+        the vast array of choices, we can recognize common profiles.
+      </p>
 
       <h2>Damage and Durability</h2>
       <p>
@@ -67,6 +74,38 @@ export default async function Page() {
         </li>
         <li>Tau Stealth Battlesuits;</li>
         <li>Eldar Shining Spears.</li>
+      </ul>
+
+      <h2>Movement</h2>
+
+      <p>With movement things are much simpler.</p>
+
+      <ul role="list" className="text-left space-y-2">
+        <li className="flex items-center gap-4">
+          <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
+          <span>
+            Most <strong>models on foot</strong> will have <strong>M6"</strong>.
+            Heavy infantry units may have M5", while Eldar battleline units tend
+            to have M7".
+          </span>
+        </li>
+
+        <li className="flex items-center gap-4">
+          <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
+          <span>
+            Most <strong>vehicles and infantry equipped with jump packs</strong>{' '}
+            normally have <strong>M12"</strong>.
+          </span>
+        </li>
+
+        <li className="flex items-center gap-4">
+          <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
+          <span>
+            Models <strong>hovering</strong> over the ground tend to have{' '}
+            <strong>M14"</strong>, while <strong>flying units</strong> –{' '}
+            <strong>M20"</strong>.
+          </span>
+        </li>
       </ul>
     </article>
   )
