@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
-import { GiDeathSkull } from 'react-icons/gi'
+import { GiBolterGun, GiDeathSkull } from 'react-icons/gi'
 
+import guardsmen from '@/app/assets/wh40k/CadianShockTroops.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { Callout } from '@/app/ui/Callout'
 import { PageTitle } from '@/app/ui/PageTitle'
@@ -36,13 +37,63 @@ export default async function Page() {
       </p>
 
       <p>
-        If we consider the weapon will hit its target then that leaves only{' '}
+        If we accept the weapon will hit its target then that leaves only{' '}
         <strong>Toughness, Save and Wounds</strong> for models, and{' '}
         <strong>Attacks, Strength, Armor Penetration and Damage</strong> for
         weapons.
       </p>
 
-      <h3>The MEQ</h3>
+      <h3>The GEQ - Light Infantry</h3>
+
+      <Callout>
+        <div className="text-lg text-center font-bold">T3|Sv5+|W1</div>
+      </Callout>
+
+      <p>
+        <em>Guardsman Equivalent</em> or <strong>GEQ</strong> refers to any unit
+        with a profile of <strong>3 Toughness and 1 Wound</strong>, often
+        accompanied by weak armor saves like 5+. GEQ describes what can be
+        considered <em>light infantry</em>.
+      </p>
+
+      <Image
+        src={guardsmen}
+        alt="Cadian Shock Troops"
+        className="h-48 shadow-md object-cover object-[0%_50%]"
+        preload
+      />
+
+      <p>
+        The title comes from the trooper of the standard Imperial Guard Infantry
+        Squad being named a Guardsman. This is the traditional designation for
+        the weakest human soldier up to 9th codex edition, but it extends to
+        many single wound models:
+      </p>
+
+      <ul role="list" className="list-disc list-inside">
+        <li>
+          Imperial Guard infantry like Cadian Shock Troops, Catachan Jungle
+          Fighters and Death Korps of Krieg;
+        </li>
+
+        <li>
+          Tyranid battleline - Termagants, Hormagaunts and Gargoyles (even
+          weaker Save at 6+);
+        </li>
+
+        <li>Chaos Cultists;</li>
+
+        <li>Eldar Guardian Defenders (better Save at 4+) and many more.</li>
+      </ul>
+
+      <p>
+        GEQ troops are cheap and expendable. What they lack in resilience, they
+        make up in volume. These troops frequently come in large squads, up to
+        20 models.
+      </p>
+
+      <h3>The MEQ - Marines</h3>
+
       <Callout>
         <div className="text-lg text-center font-bold">T4|Sv3+|W2</div>
       </Callout>
@@ -51,19 +102,24 @@ export default async function Page() {
         <em>Marine Equivalent</em> or <strong>MEQ</strong> refers to any unit
         with a profile of{' '}
         <strong>4 Toughness, 3+ Armor Save and 2 Wounds</strong>. It is very
-        common among Space Marines infantry, hence the name.
+        common among Space Marines infantry, hence the name. You can think about
+        this as the standard infantry profile. Sometimes people refer to this
+        simply as “Marines”, as in “does well/worse against Marines”.
       </p>
+
       <Image
         src={intercessors}
         alt="Space Marines Intercessors"
         className="h-48 shadow-md object-cover object-[0%_65%]"
         preload
       />
+
       <p>
         Any model with T4|Sv3+|W2 on their data sheet is considered{' '}
         <em>Pure MEQ</em>. Examples are:{' '}
       </p>
-      <ul role="list" className="list-disc list-inside space-y-2">
+
+      <ul role="list" className="list-disc list-inside">
         <li>
           Space Marines in Power Armor like Intercessors, Tactical Marines,
           Bladeguard Veterans, Eliminators, Infernius Squad and many others;
@@ -76,11 +132,50 @@ export default async function Page() {
         <li>Eldar Shining Spears.</li>
       </ul>
 
+      <p>
+        To stand even odds against Marines with 4 Toughness 2 Wounds you are
+        looking for at least a 4 Strength weapon, preferably dealing 2 Damage.
+        More is misspent.
+      </p>
+
+      <Callout>
+        <div className="text-xl font-bold flex gap-2 items-center">
+          <GiBolterGun /> Weapons vs MEQ
+        </div>
+
+        <p>
+          A <em>Lasgun</em> A1|S3|AP0|D1 would struggle to do a dent with 1
+          Damage and Strength 3 to Toughness 4 (wounds on 5+).
+        </p>
+
+        <p>
+          A <em>Boltgun</em> A2|S4|AP0|D1 is still inefficient with 1 Damage but
+          will do better with 2 Attacks and 4 Strength (50% chance to wound).
+        </p>
+
+        <p>
+          The <em>Heavy Bolter</em>’s profile A3|S5|AP-1|D2 is optimal against
+          Marine equivalents with Strength 5 (wounds on 3+), some AP to reduce
+          the Save to 4+ and 2 wounds.
+        </p>
+
+        <p>
+          A supercharged <em>Plasma Cannon</em> AD3|S8|AP-3|D2 will decimate a
+          MEQ (wounds on 2+, reduces Save to 6+), but is dangerous to the
+          operator.
+        </p>
+
+        <p>
+          At close range, the <em>Power Fist</em> A3|S8|AP-1|D2 is apt to
+          perform well against MEQ.
+        </p>
+      </Callout>
+
       <h2>Movement</h2>
 
       <p>With movement things are much simpler.</p>
 
-      <ul role="list" className="text-left space-y-2">
+      <ul role="list" className="text-left">
         <li className="flex items-center gap-4">
           <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
           <span>

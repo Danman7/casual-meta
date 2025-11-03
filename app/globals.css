@@ -14,7 +14,7 @@
   --color-primary: var(--primary);
   --font-serif:
     var(--font-noto-serif), Georgia, 'Times New Roman', Times, serif;
-  --font-bitter:                 
+  --font-bitter:                      
 ;
 }
 
@@ -52,10 +52,10 @@ h3 {
   text-align: center;
 }
 
-p {
+p,
+li {
   margin: 1em 0;
   line-height: 1.75;
-  text-align: justify;
 }
 
 a {
