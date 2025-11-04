@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { GiDeathSkull } from 'react-icons/gi'
 
 import { PageTitle } from '@/app/ui/PageTitle'
+import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
 
 export const metadata: Metadata = {
   title: 'Warhammer 40k | Casual Meta',
@@ -63,11 +64,13 @@ export default async function Page() {
 
       <p className="text-lg">
         If you are unfamiliar with the game, consider reading the{' '}
-        <Link href="/warhammer-40k/getting-started">Getting Started</Link>{' '}
+        <Link href={`${WH40K_BASE_URL}/getting-started`}>Getting Started</Link>{' '}
         section.
       </p>
 
-      <Link href="/warhammer-40k/advanced-concepts">Advanced Concepts</Link>
+      <Link href={`${WH40K_BASE_URL}/advanced-concepts`}>
+        Advanced Concepts
+      </Link>
     </article>
   )
 }

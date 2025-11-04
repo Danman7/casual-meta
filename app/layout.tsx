@@ -4,7 +4,8 @@ import Link from 'next/link'
 
 import { Breadcrumbs } from '@/app/ui/Breadcrumbs'
 import { Nav } from '@/app/ui/Nav'
-import './globals.css'
+import { SectionNav } from '@/app/ui/SectionNav'
+import '@/app/globals.css'
 
 const notoSans = Noto_Sans({
   variable: '--font-noto-sans',
@@ -34,12 +35,15 @@ export default function RootLayout({
       >
         <Nav />
 
+        <SectionNav />
+
         <main className="mx-auto w-full py-4 px-4 md:px-8 grow">
           <Breadcrumbs />
+
           {children}
         </main>
 
-        <footer className="inset-shadow-sm text-center md:flex md:justify-between p-4 gap-4 mt-8 shadow-md bg-surface">
+        <footer className="inset-shadow-sm text-center md:flex md:justify-between p-4 gap-4 mt-8 shadow-md bg-surface z-10">
           <div className="mb-2 md:mb-0">
             <Link href="/">Casual Meta</Link>
           </div>

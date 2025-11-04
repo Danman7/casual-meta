@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
+
 export default function Page() {
   return (
     <article className="max-w-3xl mx-auto">
@@ -9,7 +11,7 @@ export default function Page() {
       </div>
 
       <div className="flex justify-center items-center gap-4 text-lg mb-12">
-        <Link href="/warhammer-40k" className="underline underline-offset-2">
+        <Link href={WH40K_BASE_URL} className="underline underline-offset-2">
           Warhammer 40k
         </Link>
       </div>

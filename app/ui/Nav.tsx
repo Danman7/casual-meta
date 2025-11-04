@@ -24,7 +24,7 @@ export const Nav = () => {
   }
 
   return (
-    <header className="shadow-md bg-surface">
+    <header className="shadow-md z-10 bg-surface">
       <nav className="flex items-center justify-between mx-auto p-4 md:px-8 gap-10">
         <div className="text-2xl">
           <Link

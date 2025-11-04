@@ -9,6 +9,7 @@ import type { RouteItem } from '@/lib/routes'
 
 type Props = {
   items: RouteItem[]
+  title: string
 }
 
 function TreeNode({
@@ -35,11 +36,10 @@ function TreeNode({
   )
 }
 
-export function SubNavClient({ items }: Props) {
+export function SubNavClient({ items, title }: Props) {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
-  // Close menu on route change as well
   useEffect(() => {
     setOpen(false)
   }, [pathname])
@@ -47,16 +47,16 @@ export function SubNavClient({ items }: Props) {
   const handleSelect = () => setOpen(false)
 
   return (
-    <nav>
+    <nav className="bg-surface py-2 px-4">
       <button
         type="button"
-        className="inline-flex items-center gap-1 text-sm text-foreground hover:opacity-80"
+        className="w-full inline-flex items-center gap-1 text-foreground hover:opacity-80"
         aria-expanded={open}
         aria-controls="subnav-root"
         onClick={() => setOpen((v) => !v)}
       >
         {open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
-        <span>Articles</span>
+        <span>{title || 'Menu'}</span>
       </button>
 
       {open && (

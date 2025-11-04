@@ -1,3 +1,4 @@
+import 'server-only'
 import fs from 'node:fs'
 import path from 'node:path'
 
@@ -5,7 +6,6 @@ export type RouteItem = {
   title: string
   href: string
   children?: RouteItem[]
-  /** Optional explicit order for sorting (lower first). */
   order?: number
 }
 
@@ -15,7 +15,6 @@ export type GetRoutesOptions = {
   includeDir?: (absDir: string) => boolean
   excludeDir?: (absDir: string) => boolean
   preferPageTitle?: boolean
-  /** If true (default), prefer a short nav title exported from the page (e.g. `export const navTitle = '...'`). */
   preferNavTitle?: boolean
 }
 
@@ -76,7 +75,6 @@ const readMetadataTitle = (absDir: string): string | null => {
   return null
 }
 
-/** Try to read a short navigation title from the page source: `export const navTitle = '...'` or `shortTitle`. */
 const readNavTitle = (absDir: string): string | null => {
   const candidates = ['page.tsx', 'page.jsx', 'page.mdx']
   for (const file of candidates) {
@@ -93,18 +91,16 @@ const readNavTitle = (absDir: string): string | null => {
   return null
 }
 
-/** Heuristic: strip site suffix and section prefix, e.g. "Warhammer 40k: Foo | Casual Meta" -> "Foo" */
 const shortenTitle = (title: string): string => {
   let s = title
-  // Drop anything after a pipe (site suffix)
+
   if (s.includes('|')) s = s.split('|')[0].trim()
-  // If there's a colon, take the portion after the last colon (deepest section)
+
   const idx = s.lastIndexOf(':')
   if (idx !== -1) s = s.slice(idx + 1).trim()
   return s
 }
 
-/** Read an optional numeric nav order from the page source: `export const navOrder = 10` */
 const readNavOrder = (absDir: string): number | null => {
   const candidates = ['page.tsx', 'page.jsx', 'page.mdx']
   for (const file of candidates) {
