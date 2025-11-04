@@ -1,7 +1,9 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { GiDeathSkull } from 'react-icons/gi'
 
+import wh40kTitle from '@/app/assets/wh40k/wh40k-title.webp'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
 
@@ -26,6 +28,12 @@ export default async function Page() {
         command armies of Citadel miniatures and attempt to defeat their
         opponent through a mixture of skill, tactics and luck.
       </p>
+
+      <Image
+        src={wh40kTitle}
+        alt="A small detachment of Space Marines"
+        preload
+      />
 
       <p>
         That very rulebook should be the primary source of information regarding

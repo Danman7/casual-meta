@@ -8,7 +8,10 @@ import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
 import { Anchor } from '@/app/ui/Anchor'
 
-const navigation = [{ name: 'Warhammer 40k', href: '/warhammer-40k' }]
+const navigation = [
+  { name: 'Warhammer 40k', href: '/warhammer-40k' },
+  { name: 'Mortal Kombat 1', href: '/mortal-kombat-1' },
+]
 
 export const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)

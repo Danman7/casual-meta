@@ -28,6 +28,11 @@ export const SectionNav: React.FC = () => {
         setTitle('Warhammer 40k')
       }
 
+      if (pathname.startsWith('/mortal-kombat-1')) {
+        base = '/mortal-kombat-1'
+        setTitle('Mortal Kombat 1')
+      }
+
       if (!base) {
         if (active) setItems(null)
         return
