@@ -1,5 +1,8 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 
+import duelStart from '@/app/assets/mk1/duel_start.webp'
+import kockback from '@/app/assets/mk1/knockback.gif'
 import { PageTitle } from '@/app/ui/PageTitle'
 
 export const metadata: Metadata = {
@@ -19,7 +22,7 @@ export default async function Page() {
         free to move, attack or block as they please.
       </p>
 
-      <p className="text-green-500">Screenshot of typical round start.</p>
+      <Image src={duelStart} alt="A neutral position at the start of a duel." />
 
       <p>
         To give you an idea of how this looks,{' '}
@@ -85,6 +88,11 @@ export default async function Page() {
         from whatever pressure or damaging sequence the fight is in back to
         Neutral.
       </p>
+
+      <Image
+        src={kockback}
+        alt="An animation of Scorpion doing a knockback combo on Sub-Zero."
+      />
 
       <p>
         A Reset can be a combo ending in a knockback, creating some distance
