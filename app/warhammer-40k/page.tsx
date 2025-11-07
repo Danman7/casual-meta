@@ -9,6 +9,7 @@ import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
 
 export const metadata: Metadata = {
   title: 'Warhammer 40k | Casual Meta',
+  description: 'In the grim darkness of the far future, there is only war.',
 }
 
 export default async function Page() {

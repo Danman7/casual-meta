@@ -10,10 +10,12 @@ import '@/app/globals.css'
 
 const notoSans = Noto_Sans({
   variable: '--font-noto-sans',
+  subsets: ['latin'],
 })
 
 const notoSerif = Noto_Serif({
   variable: '--font-noto-serif',
+  subsets: ['latin'],
 })
 
 export const metadata: Metadata = {

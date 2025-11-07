@@ -9,6 +9,8 @@ import { PageTitle } from '@/app/ui/PageTitle'
 
 export const metadata: Metadata = {
   title: 'Mortal Kombat 1 | Casual Meta',
+  description:
+    'Mortal Kombat 1 or MK1 is the latest chapter in the long-running, celebrated fighting game series.',
 }
 
 export default async function Page() {

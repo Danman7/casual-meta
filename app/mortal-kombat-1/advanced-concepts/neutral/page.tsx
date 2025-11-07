@@ -4,6 +4,8 @@ import { PageTitle } from '@/app/ui/PageTitle'
 
 export const metadata: Metadata = {
   title: 'Mortal Kombat 1: Neutral | Casual Meta',
+  description:
+    'Understanding the Neutral state in Mortal Kombat 1 and its significance in gameplay.',
 }
 
 export default async function Page() {

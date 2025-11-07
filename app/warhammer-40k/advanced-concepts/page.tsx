@@ -7,6 +7,8 @@ import { getRoutesFrom } from '@/lib/routes'
 
 export const metadata: Metadata = {
   title: 'Warhammer 40k: Advanced Concepts | Casual Meta',
+  description:
+    'Explore advanced concepts in Warhammer 40k to deepen your understanding of the game.',
 }
 
 // Order after Getting Started

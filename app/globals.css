@@ -4,15 +4,15 @@
   --background: var(--color-slate-50);
   --foreground: var(--color-slate-950);
   --surface: var(--color-slate-100);
-  --primary: var(--color-blue-500);
+  --primary: var(--color-blue-600);
 }
 
 /* MK1 Theme - Yellow/Gold */
 [data-theme='mk1'] {
-  --background: var(--color-red-50);
-  --foreground: var(--color-red-950);
-  --surface: var(--color-red-100);
-  --primary: var(--color-red-600);
+  --background: var(--color-amber-50);
+  --foreground: var(--color-amber-950);
+  --surface: var(--color-amber-100);
+  --primary: var(--color-amber-700);
 }
 
 /* Warhammer 40k Theme - Red */
@@ -20,7 +20,7 @@
   --background: var(--color-blue-50);
   --foreground: var(--color-blue-950);
   --surface: var(--color-blue-100);
-  --primary: var(--color-blue-600);
+  --primary: var(--color-blue-700);
 }
 
 @theme inline {
@@ -37,20 +37,21 @@
     --background: var(--color-slate-900);
     --foreground: var(--color-slate-50);
     --surface: var(--color-slate-800);
+    --primary: var(--color-blue-400);
   }
 
   [data-theme='mk1'] {
-    --background: var(--color-red-950);
-    --foreground: var(--color-red-50);
-    --surface: var(--color-red-900);
-    --primary: var(--color-red-400);
+    --background: var(--color-amber-950);
+    --foreground: var(--color-amber-50);
+    --surface: var(--color-amber-900);
+    --primary: var(--color-amber-300);
   }
 
   [data-theme='warhammer'] {
     --background: var(--color-blue-950);
     --foreground: var(--color-blue-50);
     --surface: var(--color-blue-900);
-    --primary: var(--color-blue-400);
+    --primary: var(--color-blue-300);
   }
 }
 

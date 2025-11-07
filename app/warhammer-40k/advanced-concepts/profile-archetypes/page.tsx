@@ -9,6 +9,8 @@ import { PageTitle } from '@/app/ui/PageTitle'
 
 export const metadata: Metadata = {
   title: 'Warhammer 40k: Profile Archetypes | Casual Meta',
+  description:
+    'Common profile archetypes in Warhammer 40k to help understand unit roles.',
 }
 
 export default async function Page() {
