@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     'Introduction to Warhammer 40k for new players, covering basics and first army setup.',
 }
 
-// Order this page before other siblings in the Warhammer section
 export const navOrder = 1
 
 export default async function Page() {

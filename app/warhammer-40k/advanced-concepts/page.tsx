@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     'Explore advanced concepts in Warhammer 40k to deepen your understanding of the game.',
 }
 
-// Order after Getting Started
 export const navOrder = 2
 
 export default async function Page() {

@@ -24,7 +24,7 @@ export default async function Page() {
         distinguished by gory visuals and fast-paced dueling action.
       </p>
 
-      <Image src={mk1Title} alt="Mortal Kombat 1 Title Screen" preload />
+      <Image src={mk1Title} alt="Mortal Kombat 1 Title Screen" />
 
       <p>
         As a fighting game it has both similarities and differences from other

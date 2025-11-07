@@ -7,7 +7,6 @@
   --primary: var(--color-blue-600);
 }
 
-/* MK1 Theme - Yellow/Gold */
 [data-theme='mk1'] {
   --background: var(--color-amber-50);
   --foreground: var(--color-amber-950);
@@ -15,7 +14,6 @@
   --primary: var(--color-amber-700);
 }
 
-/* Warhammer 40k Theme - Red */
 [data-theme='warhammer'] {
   --background: var(--color-blue-50);
   --foreground: var(--color-blue-950);

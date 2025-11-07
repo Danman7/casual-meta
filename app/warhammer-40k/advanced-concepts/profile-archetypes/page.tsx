@@ -62,7 +62,6 @@ export default async function Page() {
         src={guardsmen}
         alt="Cadian Shock Troops"
         className="h-48 shadow-md object-cover object-[0%_50%]"
-        preload
       />
 
       <p>
@@ -113,7 +112,6 @@ export default async function Page() {
         src={intercessors}
         alt="Space Marines Intercessors"
         className="h-48 shadow-md object-cover object-[0%_65%]"
-        preload
       />
 
       <p>

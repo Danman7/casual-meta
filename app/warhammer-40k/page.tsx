@@ -30,11 +30,7 @@ export default async function Page() {
         opponent through a mixture of skill, tactics and luck.
       </p>
 
-      <Image
-        src={wh40kTitle}
-        alt="A small detachment of Space Marines"
-        preload
-      />
+      <Image src={wh40kTitle} alt="A small detachment of Space Marines" />
 
       <p>
         That very rulebook should be the primary source of information regarding
