@@ -88,10 +88,49 @@ export default async function Page() {
       </ul>
 
       <p>
-        GEQ troops are cheap and expendable. What they lack in resilience, they
-        make up in volume. These troops frequently come in large squads, up to
-        20 models.
+        GEQ units are <strong>cheap and expendable</strong>. What they lack in
+        resilience, they make up in volume. These are not meant to survive, but
+        rather slow down the enemy or take the focus away from your best units.
       </p>
+
+      <p>
+        Such troops frequently come in large squads, up to 20 models. This makes
+        them vulnerable to weapons that do more attacks, especially{' '}
+        <em>Blast</em> weapons that do additional attacks the more models are in
+        the targeted unit. At the same time a weapon meant to counter elite
+        infantry will perform poorly as even though it will often kill a model
+        every time it strikes, a GEQ unit will have the numbers to survive
+        trough. And a high profile is wasted on light infantry.
+      </p>
+
+      <Callout>
+        <div className="text-xl font-bold flex gap-2 items-center">
+          <GiBolterGun /> Weapons vs GEQ
+        </div>
+
+        <p>
+          Most weapons will perform well against light infantry. Even the lowly
+          <em>Lasgun</em> A1|S3|AP0|D1 with its Rapid Fire doubling its attacks
+          at close range and caried in sizeable units will suffice. Same for the
+          standard <em>Boltgun</em> A2|S4|AP0|D1 which hits Toughness 3 models
+          on 3+.
+        </p>
+
+        <p>
+          Weapons that do multiple attacks especially dice rolls to determine
+          the amount of attacks will do better. The <em>Flamer</em>{' '}
+          AD6|S4|AP0|D1 and <em>Pyreblaster</em> AD6|S5|AP-1|D1 as Torrent
+          weapons (guaranteed hits) are terrifying against light infantry. So
+          are grenades and a Blast weapon like the{' '}
+          <em>Missile launcher in frag mode</em> AD6|S4|AP0|D1. At melee range
+          the <em>Chainsaw</em> with 4 attacks also tends to mow GEQ down.
+        </p>
+
+        <p>
+          Any weapon with more than 1 Damage like the{' '}
+          <em>Heavy Bolter, Lascannon, Meltagun</em> etc., is overkill.
+        </p>
+      </Callout>
 
       <h3>The MEQ - Marines</h3>
 
@@ -130,6 +169,24 @@ export default async function Page() {
         </li>
         <li>Tau Stealth Battlesuits;</li>
         <li>Eldar Shining Spears.</li>
+      </ul>
+
+      <p>
+        With many pure MEQ units, there is an even larger number of units that
+        are near analogs:
+      </p>
+
+      <ul role="list" className="list-disc list-inside">
+        <li>Company Heroes are MEQ with 4 wounds instead of 2;</li>
+        <li>Tyranid Barbgaunts are MEQ with a Save of 4+ instead of 3+;</li>
+        <li>
+          Eldar Windriders and Dark Eldar Reavers are MEQ with Save of 4+ and
+          Invulnerable Save of 6+;
+        </li>
+        <li>
+          Necron Immortals are MEQ with 1 Wound, but their faction ability
+          <em>Reanimation Protocols</em> brings them pretty close to pure MEQ.
+        </li>
       </ul>
 
       <p>
