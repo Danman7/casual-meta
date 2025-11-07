@@ -35,27 +35,60 @@ export default async function Page() {
         is gained by either character, the state remains Neutral. Players can
         back away or come closer, dash, jump around or over each other, probe
         with safe attacks and this can go on for some time. Eventually one of
-        them will take a risk trying and gain the upper hand.
+        them will take a risk trying to gain the upper hand.
       </p>
 
-      <p className="text-lg font-bold">
-        The goal of Neutral is to gain a lead in the fight.
+      <p className="font-bold">
+        The goal of Neutral for both fighters is to gain a lead in the fight.
       </p>
 
       <p>
-        It can be done through baiting a mistake from your foe, pressuring them
-        into one or patiently waiting for an opportunity. Timing and reaction
-        play as much a role as understanding the characters. Here are some terms
-        and tools that can clarify Neutral.
+        If you can, you want to land a hit before your foe does. Maybe even
+        start a combo. Perhaps you would like to observe how they react to your
+        actions before committing. Even if you can’t strike them, you may be
+        able to push them closer to a corner of the arena, limiting their
+        movement.
       </p>
 
       <h2>Footsies</h2>
       <p>
-        One or both players can choose to rush down and press the attack
-        immediately. Alternatively, they can start to move forwards and
-        backwards, in and out of range of their opponent’s anticipated attacks
-        without committing an attack. This is often referred to as{' '}
-        <strong>Footsies</strong>.
+        <strong>Footsies</strong> describes the game for controlling the space
+        in front of your fighter using movement and the range of your attacks.
+      </p>
+
+      <h2>Transitioning away from Neutral</h2>
+
+      <p>
+        If the timer hits zero and both characters are at equal health, the
+        round concludes in a <em>draw</em>. No matter how long or elaborate the
+        Neutral phase is, eventually and always at least one of the players is
+        going to take a risk to try and gain the upper hand. If they succeed or
+        make a mistake and get punished by their foe, we conclude the Neutral
+        game and enter either Pressure or Punishment.
+      </p>
+
+      <p className="italic">What does that look like?</p>
+
+      <p>
+        If you land a hit, even if it’s blocked, both your and your opponent’s
+        movement become limited for a time. If you knock them down, even if you
+        can’t initiate a combo, they are stuck recovering while you can continue
+        moving. You can faint an attack to bait them into committing an unsafe
+        move. All of these are examples of one fighter having an advantage over
+        the other.
+      </p>
+
+      <h2>Resetting</h2>
+
+      <p>
+        <strong>Resetting</strong> or a <strong>Reset</strong> is the transition
+        from whatever pressure or damaging sequence the fight is in back to
+        Neutral.
+      </p>
+
+      <p>
+        A Reset can be a combo ending in a knockback, creating some distance
+        between the fighters.
       </p>
     </article>
   )
