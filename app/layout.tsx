@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Breadcrumbs } from '@/app/ui/Breadcrumbs'
 import { Nav } from '@/app/ui/Nav'
 import { SectionNav } from '@/app/ui/SectionNav'
+import { ThemeProvider } from '@/app/ui/ThemeProvider'
 import '@/app/globals.css'
 
 const notoSans = Noto_Sans({
@@ -33,6 +34,8 @@ export default function RootLayout({
       <body
         className={`${notoSans.variable} ${notoSerif.variable} font-serif antialiased h-full flex flex-col`}
       >
+        <ThemeProvider />
+
         <Nav />
 
         <SectionNav />
