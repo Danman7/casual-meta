@@ -2,11 +2,10 @@ import type { Metadata } from 'next'
 import { Noto_Sans, Noto_Serif } from 'next/font/google'
 import Link from 'next/link'
 
+import '@/app/globals.css'
 import { Breadcrumbs } from '@/app/ui/Breadcrumbs'
 import { Nav } from '@/app/ui/Nav'
 import { SectionNav } from '@/app/ui/SectionNav'
-import { ThemeProvider } from '@/app/ui/ThemeProvider'
-import '@/app/globals.css'
 
 const notoSans = Noto_Sans({
   variable: '--font-noto-sans',
@@ -36,8 +35,6 @@ export default function RootLayout({
       <body
         className={`${notoSans.variable} ${notoSerif.variable} font-serif antialiased h-full flex flex-col`}
       >
-        <ThemeProvider />
-
         <Nav />
 
         <SectionNav />

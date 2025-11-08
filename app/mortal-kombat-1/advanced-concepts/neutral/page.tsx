@@ -1,8 +1,10 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 
+import knockbackDistance from '@/app/assets/mk1/distance_after_knockback.webp'
 import duelStart from '@/app/assets/mk1/duel_start.webp'
-import kockback from '@/app/assets/mk1/knockback.gif'
+import knockback from '@/app/assets/mk1/knockback.webp'
+import { Callout } from '@/app/ui/Callout'
 import { PageTitle } from '@/app/ui/PageTitle'
 
 export const metadata: Metadata = {
@@ -37,13 +39,14 @@ export default async function Page() {
         From here play can continue in any direction, but so far as no advantage
         is gained by either character, the state remains Neutral. Players can
         back away or come closer, dash, jump around or over each other, probe
-        with safe attacks and this can go on for some time. Eventually one of
-        them will take a risk trying to gain the upper hand.
+        with safe attacks and this can go on for some time.
       </p>
 
-      <p className="font-bold">
-        The goal of Neutral for both fighters is to gain a lead in the fight.
-      </p>
+      <Callout>
+        <div className="font-bold">
+          The goal of Neutral for both fighters is to gain a lead in the fight.
+        </div>
+      </Callout>
 
       <p>
         If you can, you want to land a hit before your foe does. Maybe even
@@ -55,8 +58,12 @@ export default async function Page() {
 
       <h2>Footsies</h2>
       <p>
-        <strong>Footsies</strong> describes the game for controlling the space
-        in front of your fighter using movement and the range of your attacks.
+        <strong>Footsie</strong> or <strong>Footsies</strong> describe the
+        contest for controlling space and tempo in Neutral. Both players move in
+        and out of each other’s reach, using safe attacks to test reactions and
+        provoke mistakes. The term is often used broadly, but the emphasis is
+        usually on mobility, hence the name. It’s as much a timing as it is a
+        mind game.
       </p>
 
       <h2>Transitioning away from Neutral</h2>
@@ -89,15 +96,26 @@ export default async function Page() {
         Neutral.
       </p>
 
-      <Image
-        src={kockback}
-        alt="An animation of Scorpion doing a knockback combo on Sub-Zero."
-      />
+      <div className="flex">
+        <Image
+          src={knockback}
+          alt="Scorpion knocking back Sub-Zero with a kick."
+          className="w-1/2 object-cover"
+        />
+
+        <Image
+          src={knockbackDistance}
+          alt="Scorpion and Sub-Zero after the knockback, at a distance."
+          className="w-1/2 object-cover"
+        />
+      </div>
 
       <p>
         A Reset can be a combo ending in a knockback, creating some distance
         between the fighters.
       </p>
+
+      <p>All throws, if not interrupted by a Kameo move, are also a Reset.</p>
     </article>
   )
 }
