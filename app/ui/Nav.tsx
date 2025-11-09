@@ -31,7 +31,7 @@ export const Nav = () => {
       <nav className="flex items-center justify-between mx-auto p-4 md:px-8 gap-10">
         <div className="text-2xl">
           <Link
-            className="flex items-center gap-2 text-foreground! no-underline!"
+            className="flex items-center gap-2 text-primary no-underline!"
             href="/"
           >
             <BsPcDisplay />

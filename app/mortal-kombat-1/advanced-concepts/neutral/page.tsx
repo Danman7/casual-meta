@@ -16,7 +16,10 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
-      <PageTitle title="Neutral" />
+      <PageTitle
+        title="Neutral"
+        subtitle="If no one is taking or blocking a hit, knocked down or pushed in the corner, you’re in Neutral. "
+      />
 
       <p>
         Neutral is a state of the round where{' '}
