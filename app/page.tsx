@@ -6,8 +6,8 @@ import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
 export default function Page() {
   return (
     <article className="max-w-3xl mx-auto">
-      <div className="text-5xl space-y-4 text-center py-20">
-        <div className="text-primary">Docs</div>
+      <div className="text-5xl space-y-2 text-center py-20">
+        <div className="text-primary font-bold">Docs</div>
         <div className="text-4xl">for casual players</div>
       </div>
 

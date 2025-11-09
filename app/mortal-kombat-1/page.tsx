@@ -16,7 +16,10 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
-      <PageTitle title="Mortal Kombat 1" />
+      <PageTitle
+        title="Mortal Kombat 1"
+        subtitle="There are fates worse than death."
+      />
 
       <p>
         Mortal Kombat 1 or MK1 is the latest chapter in the long-running,

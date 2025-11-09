@@ -4,7 +4,6 @@ import Image from 'next/image'
 import knockbackDistance from '@/app/assets/mk1/distance_after_knockback.webp'
 import duelStart from '@/app/assets/mk1/duel_start.webp'
 import knockback from '@/app/assets/mk1/knockback.webp'
-import { Callout } from '@/app/ui/Callout'
 import { PageTitle } from '@/app/ui/PageTitle'
 
 export const metadata: Metadata = {
@@ -18,48 +17,42 @@ export default async function Page() {
     <article className="max-w-3xl mx-auto">
       <PageTitle
         title="Neutral"
-        subtitle="If no one is taking or blocking a hit, knocked down or pushed in the corner, you’re in Neutral. "
+        subtitle="If no one is taking or blocking a hit, being knocked down or pushed in the corner, you’re probably in Neutral."
       />
 
       <p>
-        Neutral is a state of the round where{' '}
-        <strong>neither fighter has advantage over the other</strong>. Both are
-        free to move, attack or block as they please.
+        <em>Neutral</em> refers to any state of the round where{' '}
+        <strong>neither fighter has a clear advantage over the other</strong> -
+        both are free to move, attack or block as they please.
       </p>
 
       <Image src={duelStart} alt="A neutral position at the start of a duel." />
 
-      <p>
-        To give you an idea of how this looks,{' '}
-        <strong>all game rounds start in Neutral</strong> state. If it is the
-        first round, fighters are positioned at the center of the arena with the
-        default space between them. Subsequent rounds depend on where the
-        previous one ended. In any case, both combatants start some distance
-        apart.
+      <p className="font-bold">
+        All rounds start in Neutral with a gap between the characters.
       </p>
 
       <p>
-        From here play can continue in any direction, but so far as no advantage
-        is gained by either character, the state remains Neutral. Players can
-        back away or come closer, dash, jump around or over each other, probe
-        with safe attacks and this can go on for some time.
+        The first round of a match is the ideal example – the fighters are the
+        default distance apart, at the center of the arena, giving them ample
+        space to make decisions. Subsequent rounds depend on where the previous
+        one was concluded.
       </p>
 
-      <Callout>
-        <div className="font-bold">
-          The goal of Neutral for both fighters is to gain a lead in the fight.
-        </div>
-      </Callout>
-
       <p>
-        If you can, you want to land a hit before your foe does. Maybe even
-        start a combo. Perhaps you would like to observe how they react to your
-        actions before committing. Even if you can’t strike them, you may be
-        able to push them closer to a corner of the arena, limiting their
-        movement.
+        Neutral is a time where play can unfold in any direction. Players can
+        back away, rush closer, jump around or over each other or probe with
+        safe attacks. This can continue for as short or as long as necessary,
+        until someone gains a lead.
+      </p>
+
+      <p className="font-bold">
+        The goal of Neutral is to create advantage where both players have equal
+        opportunity.
       </p>
 
       <h2>Footsies</h2>
+
       <p>
         <strong>Footsie</strong> or <strong>Footsies</strong> describe the
         contest for controlling space and tempo in Neutral. Both players move in
@@ -67,28 +60,6 @@ export default async function Page() {
         provoke mistakes. The term is often used broadly, but the emphasis is
         usually on mobility, hence the name. It’s as much a timing as it is a
         mind game.
-      </p>
-
-      <h2>Transitioning away from Neutral</h2>
-
-      <p>
-        If the timer hits zero and both characters are at equal health, the
-        round concludes in a <em>draw</em>. No matter how long or elaborate the
-        Neutral phase is, eventually and always at least one of the players is
-        going to take a risk to try and gain the upper hand. If they succeed or
-        make a mistake and get punished by their foe, we conclude the Neutral
-        game and enter either Pressure or Punishment.
-      </p>
-
-      <p className="italic">What does that look like?</p>
-
-      <p>
-        If you land a hit, even if it’s blocked, both your and your opponent’s
-        movement become limited for a time. If you knock them down, even if you
-        can’t initiate a combo, they are stuck recovering while you can continue
-        moving. You can faint an attack to bait them into committing an unsafe
-        move. All of these are examples of one fighter having an advantage over
-        the other.
       </p>
 
       <h2>Resetting</h2>

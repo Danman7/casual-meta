@@ -43,19 +43,21 @@ body {
 h2 {
   font-size: var(--text-3xl);
   margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
+  font-weight: bold;
   text-align: center;
 }
 
 h3 {
   font-size: var(--text-xl);
   margin-top: 1.25em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
+  font-weight: bold;
   text-align: center;
 }
 
 p {
-  margin: 1em 0;
+  margin: 1.5em 0;
   line-height: 1.75;
 }
 
