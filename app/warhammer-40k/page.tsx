@@ -46,7 +46,7 @@ export default async function Page() {
         <ul role="list" className="text-left space-y-2">
           <li className="flex items-center gap-4">
             <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
-            <span>Shed the lore.</span>
+            <span>Shed the lore and painting.</span>
           </li>
           <li className="flex items-center gap-4">
             <GiDeathSkull aria-hidden className="shrink-0 text-primary" />

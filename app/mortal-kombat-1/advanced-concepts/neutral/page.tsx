@@ -65,31 +65,30 @@ export default async function Page() {
       <h2>Resetting</h2>
 
       <p>
-        <strong>Resetting</strong> or a <strong>Reset</strong> is the transition
-        from whatever pressure or damaging sequence the fight is in back to
-        Neutral.
+        A <em>Reset</em> is a return to Neutral state of play, where each player
+        again has equal freedom.
       </p>
 
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <Image
           src={knockback}
           alt="Scorpion knocking back Sub-Zero with a kick."
-          className="w-1/2 object-cover"
+          className="md:w-1/2 object-cover"
         />
 
         <Image
           src={knockbackDistance}
           alt="Scorpion and Sub-Zero after the knockback, at a distance."
-          className="w-1/2 object-cover"
+          className="md:w-1/2 object-cover"
         />
       </div>
 
       <p>
-        A Reset can be a combo ending in a knockback, creating some distance
-        between the fighters.
+        A combo ending in knockback can create enough distance between the
+        fighters to constitute a reset.
       </p>
 
-      <p>All throws, if not interrupted by a Kameo move, are also a Reset.</p>
+      <p>Same goes for a throw that is not interrupted by a Kameo move.</p>
     </article>
   )
 }

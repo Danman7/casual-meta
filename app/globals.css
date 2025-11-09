@@ -1,11 +1,13 @@
 @import 'tailwindcss';
 
 :root {
-  --background: var(--color-zinc-50);
-  --foreground: var(--color-zinc-950);
-  --surface: var(--color-zinc-100);
-  --primary: var(--color-emerald-700);
-  --light: var(--color-zinc-600);
+  --background: var(--color-neutral-50);
+  --foreground: var(--color-neutral-950);
+  --surface: var(--color-neutral-100);
+  --primary: var(--color-blue-700);
+  --light: var(--color-neutral-600);
+  --success: var(--color-green-700);
+  --error: var(--color-red-700);
 }
 
 @theme inline {
@@ -14,17 +16,21 @@
   --color-surface: var(--surface);
   --color-primary: var(--primary);
   --color-light: var(--light);
+  --color-success: var(--success);
+  --color-error: var(--error);
   --font-serif:
     var(--font-noto-serif), Georgia, 'Times New Roman', Times, serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--color-zinc-950);
-    --foreground: var(--color-zinc-50);
-    --surface: var(--color-zinc-900);
-    --primary: var(--color-emerald-400);
-    --light: var(--color-zinc-400);
+    --background: var(--color-neutral-950);
+    --foreground: var(--color-neutral-50);
+    --surface: var(--color-neutral-900);
+    --primary: var(--color-blue-400);
+    --light: var(--color-neutral-400);
+    --success: var(--color-green-400);
+    --error: var(--color-red-400);
   }
 }
 
@@ -58,12 +64,12 @@ h3 {
 
 p {
   margin: 1.5em 0;
-  line-height: 1.75;
+  line-height: 1.5;
 }
 
 article li {
   margin: 0.5em;
-  line-height: 1.75;
+  line-height: 1.5;
 }
 
 article img {
