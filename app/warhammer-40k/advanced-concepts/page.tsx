@@ -1,15 +1,14 @@
-import { Metadata } from 'next'
 import Link from 'next/link'
 
+import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { PageTitle } from '@/app/ui/PageTitle'
-import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
+import { generatePageMetadata } from '@/lib/metadata'
 import { getRoutesFrom } from '@/lib/routes'
 
-export const metadata: Metadata = {
-  title: 'Warhammer 40k: Advanced Concepts | Casual Meta',
-  description:
-    'Explore advanced concepts in Warhammer 40k to deepen your understanding of the game.',
-}
+export const metadata = generatePageMetadata(
+  `${WH40K_TITLE}: Advanced Concepts`,
+  'Explore advanced concepts in Warhammer 40k to deepen your understanding of the game.',
+)
 
 export const navOrder = 2
 

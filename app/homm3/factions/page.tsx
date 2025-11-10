@@ -1,14 +1,14 @@
-import { Metadata } from 'next'
 import Link from 'next/link'
 
 import { getRouteTreeForPath } from '@/app/actions/getRouteTree'
+import { HOMM3_TITLE, WH40K_BASE_URL } from '@/app/constants'
 import { PageTitle } from '@/app/ui/PageTitle'
-import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
+import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Heroes of Might and Magic 3: Factions | Casual Meta',
-  description: 'An index of all factions in Heroes of Might and Magic 3.',
-}
+export const metadata = generatePageMetadata(
+  `${HOMM3_TITLE}: Factions | Casual Meta`,
+  'An index of all factions in Heroes of Might and Magic 3.',
+)
 
 export default async function Page() {
   const items = await getRouteTreeForPath(`${WH40K_BASE_URL}/factions`)

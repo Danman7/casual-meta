@@ -1,12 +1,11 @@
-import { Metadata } from 'next'
-
+import { HOMM3_TITLE } from '@/app/constants'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Heroes of Might and Magic 3 | Casual Meta',
-  description:
-    'A repository of guides for Heroes of Might and Magic 3 and its expansions.',
-}
+export const metadata = generatePageMetadata(
+  HOMM3_TITLE,
+  'A repository of guides for Heroes of Might and Magic 3 and its expansions.',
+)
 
 export default async function Page() {
   return (

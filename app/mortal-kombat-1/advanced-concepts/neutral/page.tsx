@@ -1,16 +1,16 @@
-import { Metadata } from 'next'
 import Image from 'next/image'
 
 import knockbackDistance from '@/app/assets/mk1/distance_after_knockback.webp'
 import duelStart from '@/app/assets/mk1/duel_start.webp'
 import knockback from '@/app/assets/mk1/knockback.webp'
+import { MK1_TITLE } from '@/app/constants'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Mortal Kombat 1: Neutral | Casual Meta',
-  description:
-    'Understanding the Neutral state in Mortal Kombat 1 and its significance in gameplay.',
-}
+export const metadata = generatePageMetadata(
+  `${MK1_TITLE}: Neutral`,
+  'Understanding the Neutral state in Mortal Kombat 1 and its significance in gameplay.',
+)
 
 export default async function Page() {
   return (

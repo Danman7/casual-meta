@@ -1,14 +1,14 @@
-import { Metadata } from 'next'
 import Link from 'next/link'
 
 import { getRouteTreeForPath } from '@/app/actions/getRouteTree'
+import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { PageTitle } from '@/app/ui/PageTitle'
-import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
+import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Warhammer 40k: Factions | Casual Meta',
-  description: 'An index of all factions of consequence in Warhammer 40k.',
-}
+export const metadata = generatePageMetadata(
+  `${WH40K_TITLE}: Factions`,
+  'An index of all factions of consequence in Warhammer 40k.',
+)
 
 export default async function Page() {
   const items = await getRouteTreeForPath(`${WH40K_BASE_URL}/factions`)

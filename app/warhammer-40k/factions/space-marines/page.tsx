@@ -1,16 +1,16 @@
-import { Metadata } from 'next'
 import Image from 'next/image'
 import { GiDeathSkull } from 'react-icons/gi'
 
 import { getRouteTreeForPath } from '@/app/actions/getRouteTree'
 import wh40kTitle from '@/app/assets/wh40k/wh40k-title.webp'
+import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { PageTitle } from '@/app/ui/PageTitle'
-import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
+import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Warhammer 40k: Space Marines | Casual Meta',
-  description: 'An overview of the Space Marines faction in Warhammer 40k.',
-}
+export const metadata = generatePageMetadata(
+  `${WH40K_TITLE}: Space Marines`,
+  'An overview of the Space Marines faction in Warhammer 40k.',
+)
 
 export default async function Page() {
   const items = await getRouteTreeForPath(

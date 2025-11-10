@@ -1,12 +1,11 @@
-import { Metadata } from 'next'
-
+import { MK1_TITLE } from '@/app/constants'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Mortal Kombat 1: Getting Started | Casual Meta',
-  description:
-    'Introduction to Mortal Kombat 1 for new players, covering basics.',
-}
+export const metadata = generatePageMetadata(
+  `${MK1_TITLE}: Getting Started`,
+  'Introduction to Mortal Kombat 1 for new players, covering basics.',
+)
 
 export const navOrder = 1
 

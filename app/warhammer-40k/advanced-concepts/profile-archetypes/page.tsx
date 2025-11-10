@@ -1,17 +1,17 @@
-import { Metadata } from 'next'
 import Image from 'next/image'
 import { GiBolterGun, GiDeathSkull } from 'react-icons/gi'
 
 import guardsmen from '@/app/assets/wh40k/CadianShockTroops.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
+import { WH40K_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Warhammer 40k: Profile Archetypes | Casual Meta',
-  description:
-    'Common profile archetypes in Warhammer 40k to help understand unit roles.',
-}
+export const metadata = generatePageMetadata(
+  `${WH40K_TITLE}: Profile Archetypes`,
+  'Common profile archetypes in Warhammer 40k to help understand unit roles.',
+)
 
 export default async function Page() {
   return (

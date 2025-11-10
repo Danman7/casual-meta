@@ -1,15 +1,14 @@
-import { Metadata } from 'next'
 import { GiCastle } from 'react-icons/gi'
 
 import { getRouteTreeForPath } from '@/app/actions/getRouteTree'
+import { HOMM3_TITLE, WH40K_BASE_URL } from '@/app/constants'
 import { PageTitle } from '@/app/ui/PageTitle'
-import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
+import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Heroes of Might and Magic 3: Castle | Casual Meta',
-  description:
-    'An overview of the Castle faction in Heroes of Might and Magic 3.',
-}
+export const metadata = generatePageMetadata(
+  `${HOMM3_TITLE}: Castle`,
+  'An overview of the Castle faction in Heroes of Might and Magic 3.',
+)
 
 export default async function Page() {
   const items = await getRouteTreeForPath(

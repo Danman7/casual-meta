@@ -1,22 +1,22 @@
-import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { GiDeathSkull } from 'react-icons/gi'
 
 import wh40kTitle from '@/app/assets/wh40k/wh40k-title.webp'
+import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { PageTitle } from '@/app/ui/PageTitle'
-import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
+import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Warhammer 40k | Casual Meta',
-  description: 'In the grim darkness of the far future, there is only war.',
-}
+export const metadata = generatePageMetadata(
+  WH40K_TITLE,
+  'In the grim darkness of the far future, there is only war.',
+)
 
 export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
       <PageTitle
-        title="Warhammer 40k"
+        title={WH40K_TITLE}
         subtitle="In the grim darkness of the far future, there is only war."
       />
 
@@ -72,10 +72,6 @@ export default async function Page() {
         <Link href={`${WH40K_BASE_URL}/getting-started`}>Getting Started</Link>{' '}
         section.
       </p>
-
-      <Link href={`${WH40K_BASE_URL}/advanced-concepts`}>
-        Advanced Concepts
-      </Link>
     </article>
   )
 }

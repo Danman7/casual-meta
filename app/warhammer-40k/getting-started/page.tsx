@@ -1,13 +1,13 @@
-import { Metadata } from 'next'
 import Link from 'next/link'
 
+import { WH40K_TITLE } from '@/app/constants'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Warhammer 40k: Getting Started | Casual Meta',
-  description:
-    'Introduction to Warhammer 40k for new players, covering basics and first army setup.',
-}
+export const metadata = generatePageMetadata(
+  `${WH40K_TITLE}: Getting Started`,
+  'Introduction to Warhammer 40k for new players, covering basics and first army setup.',
+)
 
 export const navOrder = 1
 

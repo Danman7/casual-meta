@@ -1,17 +1,16 @@
-import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { GiDeathSkull } from 'react-icons/gi'
 
 import mk1Title from '@/app/assets/mk1/mk1-title.webp'
-import { MK1_BASE_URL } from '@/app/mortal-kombat-1/constants'
+import { MK1_BASE_URL, MK1_TITLE } from '@/app/constants'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Mortal Kombat 1 | Casual Meta',
-  description:
-    'Mortal Kombat 1 or MK1 is the latest chapter in the long-running, celebrated fighting game series.',
-}
+export const metadata = generatePageMetadata(
+  MK1_TITLE,
+  'Mortal Kombat 1 or MK1 is the latest chapter in the long-running, celebrated fighting game series.',
+)
 
 export default async function Page() {
   return (
