@@ -5,15 +5,16 @@ import { GiDeathSkull } from 'react-icons/gi'
 import { getRouteTreeForPath } from '@/app/actions/getRouteTree'
 import wh40kTitle from '@/app/assets/wh40k/wh40k-title.webp'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
 
 export const metadata: Metadata = {
   title: 'Warhammer 40k: Space Marines | Casual Meta',
-  description: 'An index of all factions of consequence in Warhammer 40k.',
+  description: 'An overview of the Space Marines faction in Warhammer 40k.',
 }
 
 export default async function Page() {
   const items = await getRouteTreeForPath(
-    '/warhammer-40k/factions/space-marines',
+    `${WH40K_BASE_URL}/factions/space-marines`,
   )
 
   return (

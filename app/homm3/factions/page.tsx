@@ -6,8 +6,8 @@ import { PageTitle } from '@/app/ui/PageTitle'
 import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
 
 export const metadata: Metadata = {
-  title: 'Warhammer 40k: Factions | Casual Meta',
-  description: 'An index of all factions of consequence in Warhammer 40k.',
+  title: 'Heroes of Might and Magic 3: Factions | Casual Meta',
+  description: 'An index of all factions in Heroes of Might and Magic 3.',
 }
 
 export default async function Page() {

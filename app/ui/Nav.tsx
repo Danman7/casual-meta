@@ -6,11 +6,15 @@ import { useEffect, useState } from 'react'
 import { BsPcDisplay } from 'react-icons/bs'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
+import { HOMM3_BASE_URL } from '@/app/homm3/constants'
+import { MK1_BASE_URL } from '@/app/mortal-kombat-1/constants'
 import { Anchor } from '@/app/ui/Anchor'
+import { WH40K_BASE_URL } from '@/app/warhammer-40k/constants'
 
 const navigation = [
-  { name: 'Warhammer 40k', href: '/warhammer-40k' },
-  { name: 'Mortal Kombat 1', href: '/mortal-kombat-1' },
+  { name: 'Heroes of Might and Magic 3', href: HOMM3_BASE_URL },
+  { name: 'Warhammer 40k', href: WH40K_BASE_URL },
+  { name: 'Mortal Kombat 1', href: MK1_BASE_URL },
 ]
 
 export const Nav = () => {
