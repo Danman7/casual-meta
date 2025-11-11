@@ -1,4 +1,7 @@
+import Image from 'next/image'
+
 import { getRouteTreeForPath } from '@/app/actions/getRouteTree'
+import castle from '@/app/assets/homm3/castle.webp'
 import { HOMM3_TITLE, WH40K_BASE_URL } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { PageTitle } from '@/app/ui/PageTitle'
@@ -20,6 +23,8 @@ export default async function Page() {
         title="Castle"
         subtitle="Castles are home to the Cleric and Knight hero classes. Their armies are  composed of human men-at-arms, with the aid of griffins and the protection of angels."
       />
+
+      <Image src={castle} alt="A fully built Castle town." />
 
       <p>
         With a solid mix of soldiers from low to high tiers and the most
