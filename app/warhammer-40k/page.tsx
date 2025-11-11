@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { GiDeathSkull } from 'react-icons/gi'
 
 import wh40kTitle from '@/app/assets/wh40k/wh40k-title.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
+import { BulletList } from '@/app/ui/BulletList'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -41,22 +41,16 @@ export default async function Page() {
         40k rule, data sheet or ability.
       </p>
 
-      <div className="text-lg text-center my-8 space-y-4">
+      <div className="text-lg my-8 space-y-4">
         <p>We will try to:</p>
-        <ul role="list" className="text-left space-y-2">
-          <li className="flex items-center gap-4">
-            <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
-            <span>Shed the lore and painting.</span>
-          </li>
-          <li className="flex items-center gap-4">
-            <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
-            <span>Simplify the rules.</span>
-          </li>
-          <li className="flex items-center gap-4">
-            <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
-            <span>Introduce concepts that may not be in the rulebook.</span>
-          </li>
-        </ul>
+        <BulletList
+          icon="GiDeathSkull"
+          items={[
+            'Shed the lore and painting.',
+            'Simplify the rules.',
+            'Introduce concepts that may not be in the rulebook.',
+          ]}
+        />
       </div>
 
       <p>

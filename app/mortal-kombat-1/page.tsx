@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { GiDeathSkull } from 'react-icons/gi'
 
 import mk1Title from '@/app/assets/mk1/mk1-title.webp'
 import { MK1_BASE_URL, MK1_TITLE } from '@/app/constants'
+import { BulletList } from '@/app/ui/BulletList'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -37,22 +37,16 @@ export default async function Page() {
         terms, overall strategy and per-character breakdowns.
       </p>
 
-      <div className="text-lg text-center my-8 space-y-4">
+      <div className="text-lg my-8 space-y-4">
         <p>In these pages we will:</p>
-        <ul role="list" className="text-left space-y-2">
-          <li className="flex items-center gap-4">
-            <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
-            <span>Focus on Player vs Player (PvP). Ignore the lore.</span>
-          </li>
-          <li className="flex items-center gap-4">
-            <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
-            <span>Give you the toolset to learn any character.</span>
-          </li>
-          <li className="flex items-center gap-4">
-            <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
-            <span>Prepare you for multiplayer.</span>
-          </li>
-        </ul>
+        <BulletList
+          icon="GiDeathSkull"
+          items={[
+            'Focus on Player vs Player (PvP). Ignore the lore.',
+            'Give you the toolset to learn any character.',
+            'Prepare you for multiplayer.',
+          ]}
+        />
       </div>
 
       <p></p>

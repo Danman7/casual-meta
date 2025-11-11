@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import { GiDeathSkull } from 'react-icons/gi'
 
 import { getRouteTreeForPath } from '@/app/actions/getRouteTree'
 import wh40kTitle from '@/app/assets/wh40k/wh40k-title.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
+import { BulletList } from '@/app/ui/BulletList'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -40,43 +40,24 @@ export default async function Page() {
 
       <h2>Why play or skip Space Marines?</h2>
 
-      <ul role="list">
-        <li className="flex gap-2 text-success">
-          <GiDeathSkull aria-hidden className="shrink-0 mt-1" />
-          <span>Widely considered one of the best armies for beginners.</span>
-        </li>
+      <BulletList
+        className="text-success"
+        icon="GiDeathSkull"
+        items={[
+          'Widely considered one of the best armies for beginners.',
+          'Jacks-of-all-trades – balanced units and weapons for every scenario.',
+          'Wide array of infantry, vehicles and characters to choose from.',
+        ]}
+      />
 
-        <li className="flex gap-2 text-success">
-          <GiDeathSkull aria-hidden className="shrink-0 mt-1" />
-          <span>
-            Jacks-of-all-trades – balanced units and weapons for every scenario.
-          </span>
-        </li>
-
-        <li className="flex gap-2 text-success">
-          <GiDeathSkull aria-hidden className="shrink-0 mt-1" />
-          <span>
-            Wide array of infantry, vehicles and characters to choose from.
-          </span>
-        </li>
-      </ul>
-
-      <ul role="list">
-        <li className="flex gap-2 text-error">
-          <GiDeathSkull aria-hidden className="shrink-0 mt-1" />
-          <span>
-            Tend to change frequently. Units are introduced then removed in
-            subsequent codex editions.
-          </span>
-        </li>
-
-        <li className="flex gap-2 text-error">
-          <GiDeathSkull aria-hidden className="shrink-0 mt-1" />
-          <span>
-            Units tend to overlap and outclass each other for a given role.
-          </span>
-        </li>
-      </ul>
+      <BulletList
+        className="text-error"
+        icon="GiDeathSkull"
+        items={[
+          'Tend to change frequently. Units are introduced then removed in subsequent codex editions.',
+          'Units tend to overlap and outclass each other for a given role.',
+        ]}
+      />
 
       {items.map((item) => (
         <div key={item.href}>

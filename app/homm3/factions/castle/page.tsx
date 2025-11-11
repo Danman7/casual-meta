@@ -1,7 +1,6 @@
-import { GiCastle } from 'react-icons/gi'
-
 import { getRouteTreeForPath } from '@/app/actions/getRouteTree'
 import { HOMM3_TITLE, WH40K_BASE_URL } from '@/app/constants'
+import { BulletList } from '@/app/ui/BulletList'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -32,43 +31,37 @@ export default async function Page() {
 
       <h2>Why play or skip Castle?</h2>
 
-      <ul role="list">
-        <li className="flex gap-2 text-success">
-          <GiCastle aria-hidden className="shrink-0 mt-1" />
-          <span>
+      <BulletList
+        className="text-success"
+        icon="GiCastle"
+        items={[
+          <>
             <strong>Balanced army</strong> - two ranged shooters, two flyers,
             three capable brawlers.
-          </span>
-        </li>
-
-        <li className="flex gap-2 text-success">
-          <GiCastle aria-hidden className="shrink-0 mt-1" />
-          <span>
+          </>,
+          <>
             <strong>Beginner friendly</strong> - the early game army is strong
             enough; has decent magic; heroes are balanced; can build stables and
             a shipyard.
-          </span>
-        </li>
-
-        <li className="flex gap-2 text-success">
-          <GiCastle aria-hidden className="shrink-0 mt-1" />
-          <span>
+          </>,
+          <>
             <strong>First to take a turn in battle</strong> – Archangels have 18
             speed, second only after Phoenixes.
-          </span>
-        </li>
-      </ul>
+          </>,
+        ]}
+      />
 
-      <ul role="list">
-        <li className="flex gap-2 text-error">
-          <GiCastle aria-hidden className="shrink-0 mt-1" />
-          <span>
+      <BulletList
+        className="text-error"
+        icon="GiCastle"
+        items={[
+          <>
             <strong>Mediocre Heroes</strong> – because they are balanced, they
-            also don’t excel in anything, often leading players to hire heroes
+            also don't excel in anything, often leading players to hire heroes
             from other factions.
-          </span>
-        </li>
-      </ul>
+          </>,
+        ]}
+      />
 
       {items.map((item) => (
         <div key={item.href}>

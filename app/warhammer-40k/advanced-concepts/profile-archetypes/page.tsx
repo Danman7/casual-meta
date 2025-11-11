@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import { GiBolterGun, GiDeathSkull } from 'react-icons/gi'
 
 import guardsmen from '@/app/assets/wh40k/CadianShockTroops.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_TITLE } from '@/app/constants'
+import { BulletList } from '@/app/ui/BulletList'
 import { Callout } from '@/app/ui/Callout'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -105,7 +105,7 @@ export default async function Page() {
 
       <Callout>
         <div className="text-xl font-bold flex gap-2 items-center">
-          <GiBolterGun /> Weapons vs GEQ
+          <span>🔫 Weapons vs GEQ</span>
         </div>
 
         <p>
@@ -197,7 +197,7 @@ export default async function Page() {
 
       <Callout>
         <div className="text-xl font-bold flex gap-2 items-center">
-          <GiBolterGun /> Weapons vs MEQ
+          <span>🔫 Weapons vs MEQ</span>
         </div>
 
         <p>
@@ -232,33 +232,25 @@ export default async function Page() {
 
       <p>With movement things are much simpler.</p>
 
-      <ul role="list" className="text-left">
-        <li className="flex items-center gap-4">
-          <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
-          <span>
+      <BulletList
+        icon="GiDeathSkull"
+        items={[
+          <>
             Most <strong>models on foot</strong> will have <strong>M6"</strong>.
             Heavy infantry units may have M5", while Eldar battleline units tend
             to have M7".
-          </span>
-        </li>
-
-        <li className="flex items-center gap-4">
-          <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
-          <span>
+          </>,
+          <>
             Most <strong>vehicles and infantry equipped with jump packs</strong>{' '}
             normally have <strong>M12"</strong>.
-          </span>
-        </li>
-
-        <li className="flex items-center gap-4">
-          <GiDeathSkull aria-hidden className="shrink-0 text-primary" />
-          <span>
+          </>,
+          <>
             Models <strong>hovering</strong> over the ground tend to have{' '}
             <strong>M14"</strong>, while <strong>flying units</strong> –{' '}
             <strong>M20"</strong>.
-          </span>
-        </li>
-      </ul>
+          </>,
+        ]}
+      />
     </article>
   )
 }
