@@ -41,13 +41,22 @@ export default async function Page() {
           </>,
           <>
             <strong>Beginner friendly</strong> - the early game army is strong
-            enough; has decent magic; heroes are balanced; can build stables and
-            a shipyard.
+            enough; heroes are versatile.
           </>,
           <>
             <strong>First to take a turn in battle</strong> – Archangels have 18
             speed, second only after Phoenixes.
           </>,
+          <>
+            <strong>Good creature upgrades</strong> - especially Archers,
+            Griffins, and Angels.
+          </>,
+          <>
+            <strong>Morale Advantage</strong> - all Castle heroes either come
+            with or have a good chance to develop Leadership..
+          </>,
+          'Stables provide a mobility bonus to armies.',
+          'Most units are good for their tiers.',
         ]}
       />
 
@@ -56,9 +65,27 @@ export default async function Page() {
         icon="GiCastle"
         items={[
           <>
-            <strong>Mediocre Heroes</strong> – because they are balanced, they
-            also don't excel in anything, often leading players to hire heroes
-            from other factions.
+            <strong>Very expensive</strong> – The total cost to fully develop a
+            Castle town is second only to Tower. This is mostly felt during the
+            later stages of development and comes primarily from secondary
+            resource requirements (Gems, Mercury etc.)
+          </>,
+          <>
+            <strong>Mediocre Heroes and Magic</strong> – Because they are
+            balanced, the heroes also don't excel in anything, often leading
+            players to hire heroes from other factions. The Magic Guild reaches
+            up to level 4 which means they must find and build up another magic
+            guild to get a chance at level 5 spells.
+          </>,
+          <>
+            <strong>Weak special buildings</strong> – The Brotherhood of the
+            Sword and the Colossus (grail building) give morale which may be
+            redundant. The Lighthouse and Shipyard are situational for water
+            maps. The Resource Silo may serve a better purpose if it gave Gems.
+          </>,
+          <>
+            <strong>High dwelling dependencies</strong> – You will have to build
+            up pretty much everything to reach the high-tier dwellings.
           </>,
         ]}
       />
