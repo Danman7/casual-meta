@@ -53,7 +53,7 @@ export const Nav = () => {
       </nav>
 
       {isMobileMenuOpen && (
-        <nav className="md:hidden text-center flex flex-col gap-4 overflow-hidden px-4 pb-4">
+        <nav className="md:hidden flex flex-col gap-4 overflow-hidden px-4 pb-4">
           {ROOT_NAVIGATION_ITEMS.map((item) => (
             <Anchor key={item.href} href={item.href}>
               {item.name}

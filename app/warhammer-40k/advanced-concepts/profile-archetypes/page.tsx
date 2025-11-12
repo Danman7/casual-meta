@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { GiBolterGun } from 'react-icons/gi'
 
 import guardsmen from '@/app/assets/wh40k/CadianShockTroops.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
@@ -47,9 +48,7 @@ export default async function Page() {
 
       <h3>The GEQ - Light Infantry</h3>
 
-      <Callout>
-        <div className="text-lg text-center font-bold">T3|Sv5+|W1</div>
-      </Callout>
+      <p className="text-lg font-bold">T3|Sv5+|W1</p>
 
       <p>
         <em>Guardsman Equivalent</em> or <strong>GEQ</strong> refers to any unit
@@ -105,7 +104,7 @@ export default async function Page() {
 
       <Callout>
         <div className="text-xl font-bold flex gap-2 items-center">
-          <span>🔫 Weapons vs GEQ</span>
+          <GiBolterGun /> <span>Weapons vs GEQ</span>
         </div>
 
         <p>
@@ -134,9 +133,7 @@ export default async function Page() {
 
       <h3>The MEQ - Marines</h3>
 
-      <Callout>
-        <div className="text-lg text-center font-bold">T4|Sv3+|W2</div>
-      </Callout>
+      <p className="text-lg font-bold">T4|Sv3+|W2</p>
 
       <p>
         <em>Marine Equivalent</em> or <strong>MEQ</strong> refers to any unit
@@ -197,7 +194,7 @@ export default async function Page() {
 
       <Callout>
         <div className="text-xl font-bold flex gap-2 items-center">
-          <span>🔫 Weapons vs MEQ</span>
+          <GiBolterGun /> <span>Weapons vs MEQ</span>
         </div>
 
         <p>
