@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-import { getRouteTreeForPath } from '@/app/actions/getRouteTree'
 import castle from '@/app/assets/homm3/castle.webp'
-import { HOMM3_TITLE, WH40K_BASE_URL } from '@/app/constants'
+import castleMap from '@/app/assets/homm3/castle_map.webp'
+import { HOMM3_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -17,10 +17,6 @@ export const metadata = generatePageMetadata(
 )
 
 export default async function Page() {
-  const items = await getRouteTreeForPath(
-    `${WH40K_BASE_URL}/factions/space-marines`,
-  )
-
   return (
     <article className="max-w-3xl mx-auto">
       <PageTitle
@@ -99,11 +95,37 @@ export default async function Page() {
         ]}
       />
 
-      {items.map((item) => (
-        <div key={item.href}>
-          <h2>{item.title}</h2>
-        </div>
-      ))}
+      <h2>Town Economics</h2>
+
+      <Image
+        className="float-left max-w-36 pr-4 pt-2"
+        src={castleMap}
+        alt="A fully built Castle town."
+      />
+
+      <p>
+        As mentioned above, building up a Castle is costly. It requires more
+        gold, mercury, sulfur, crystal and gems than most other towns. Two of
+        its dwellings, the Monastery (level 5 unit) and the Portal of Glory
+        (level 7 unit) require multiple of each secondary resource. The latter
+        requires 20k gold for both the base and upgraded buildings. Gems are
+        also required for recruiting Angels and three for the upgraded
+        Archangels, making them the most resource costly tier 7 creatures.{' '}
+      </p>
+
+      <p>
+        Castles have no unique economic buildings. Their Resource Silos give +1
+        wood and +1 ore daily which is a shame as the town has moderate wood and
+        one of the lowest ore consumptions in the game.
+      </p>
+
+      <p>
+        The dwelling dependency tree is complex. The Portal of Glory requires a
+        Monastery, which requires the level 1 Mage Guild and Barracks.
+        Basically, you can skip the Archers, Griffins and Cavaliers, but you
+        wouldn’t want to. A quirk of the flow is that the level 3 dwelling - the
+        Griffin Tower, requires the level 4 dwelling - the Barracks.
+      </p>
     </article>
   )
 }
