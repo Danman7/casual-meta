@@ -1,11 +1,11 @@
 @import 'tailwindcss';
 
 :root {
-  --background: var(--color-neutral-50);
-  --foreground: var(--color-neutral-950);
-  --surface: var(--color-neutral-100);
+  --background: var(--color-slate-50);
+  --foreground: var(--color-slate-950);
+  --surface: var(--color-slate-100);
   --primary: var(--color-blue-700);
-  --light: var(--color-neutral-600);
+  --light: var(--color-slate-600);
   --success: var(--color-green-700);
   --error: var(--color-red-700);
 }
@@ -24,11 +24,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--color-neutral-900);
-    --foreground: var(--color-neutral-100);
-    --surface: var(--color-neutral-800);
+    --background: var(--color-slate-950);
+    --foreground: var(--color-slate-100);
+    --surface: var(--color-slate-900);
     --primary: var(--color-blue-400);
-    --light: var(--color-neutral-400);
+    --light: var(--color-slate-400);
     --success: var(--color-green-400);
     --error: var(--color-red-400);
   }
