@@ -1,10 +1,10 @@
 import Image from 'next/image'
 
-import { getRouteTreeForPath } from '@/app/actions/getRouteTree'
 import wh40kTitle from '@/app/assets/wh40k/Ultramarines.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(
@@ -13,10 +13,6 @@ export const metadata = generatePageMetadata(
 )
 
 export default async function Page() {
-  const items = await getRouteTreeForPath(
-    `${WH40K_BASE_URL}/factions/space-marines`,
-  )
-
   return (
     <article className="max-w-3xl mx-auto">
       <PageTitle
@@ -59,11 +55,7 @@ export default async function Page() {
         ]}
       />
 
-      {items.map((item) => (
-        <div key={item.href}>
-          <h2>{item.title}</h2>
-        </div>
-      ))}
+      <SubPageNav route={`${WH40K_BASE_URL}/factions/space-marines`} />
     </article>
   )
 }
