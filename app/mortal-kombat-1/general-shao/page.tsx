@@ -19,17 +19,17 @@ export default async function Page() {
     <article className="max-w-3xl mx-auto">
       <PageTitle
         title={navTitle}
-        subtitle="In this new timelineIn this new timeline Shao is not a khan, a ruler of Outworld, but a general in its army, under the rule of queen Sindel."
+        subtitle="Born weak but forged through brutal training, General Shao became Outworld’s strongest warrior and a tactical genius. Though sworn to serve Sindel, his true loyalty lies with Outworld itself."
       />
 
       <p>
         General Shao is a mid-range brawler with a heavy emphasis on disjointed
         normals with good reach. He is a stance-based fighter, alternating
         between Axe and No Axe stances, each providing a different move set. He
-        excels at the <Link href={`${MK1_BASE_URL}/neutral`} /> game with good
-        speed and a mix of both standing overheads and lows. If players spend
-        some time practicing even his low difficulty combos, they will also find
-        him a damaging character.
+        excels at the <Link href={`${MK1_BASE_URL}/neutral`}>Neutral</Link> game
+        with good speed and a mix of both standing overheads and lows. If
+        players spend some time practicing even his low difficulty combos, they
+        will also find him a damaging character.
       </p>
 
       <h2>Why play or skip General Shao?</h2>
@@ -46,7 +46,7 @@ export default async function Page() {
           </>,
           <>
             <strong>Strong mixup</strong> - multiple overheads, lows, and
-            command grabs
+            command grabs.
           </>,
         ]}
       />
