@@ -3,6 +3,12 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+const SEGMENT_LABELS: Record<string, string> = {
+  homm3: 'Heroes of Might and Magic 3',
+  mk1: 'Mortal Kombat 1',
+  wh40k: 'Warhammer 40k',
+}
+
 function toTitleCase(input: string) {
   return input
     .split('-')
@@ -19,7 +25,7 @@ export function Breadcrumbs() {
 
   const items = segments.map((seg, idx) => {
     const href = '/' + segments.slice(0, idx + 1).join('/')
-    const label = toTitleCase(decodeURIComponent(seg))
+    const label = SEGMENT_LABELS[seg] || toTitleCase(decodeURIComponent(seg))
     return { href, label }
   })
 
