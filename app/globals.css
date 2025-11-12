@@ -48,21 +48,17 @@ body {
 
 h2 {
   font-size: var(--text-3xl);
-  margin-top: 1.5em;
-  margin-bottom: 1em;
   font-weight: bold;
+  line-height: 1.2;
 }
 
 h3 {
   font-size: var(--text-xl);
-  margin-top: 1.25em;
-  margin-bottom: 1em;
   font-weight: bold;
 }
 
 p {
   margin: 1.5em 0;
-  line-height: 1.5;
 }
 
 article li {

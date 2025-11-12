@@ -26,6 +26,7 @@ export default async function Page() {
       </p>
 
       <h2>Damage and Durability</h2>
+
       <p>
         With hundreds of units available in the current edition of WH40k, there
         are thousands of possible interactions between a weapon and a model. To
@@ -48,7 +49,7 @@ export default async function Page() {
 
       <h3>The GEQ - Light Infantry</h3>
 
-      <p className="text-lg font-bold">T3|Sv5+|W1</p>
+      <p className="font-bold">T3|Sv5+|W1</p>
 
       <p>
         <em>Guardsman Equivalent</em> or <strong>GEQ</strong> refers to any unit
@@ -133,7 +134,7 @@ export default async function Page() {
 
       <h3>The MEQ - Marines</h3>
 
-      <p className="text-lg font-bold">T4|Sv3+|W2</p>
+      <p className="font-bold">T4|Sv3+|W2</p>
 
       <p>
         <em>Marine Equivalent</em> or <strong>MEQ</strong> refers to any unit
