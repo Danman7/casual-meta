@@ -58,7 +58,7 @@ export default async function Page() {
           </>,
           <>
             <strong>Morale Advantage</strong> - all Castle heroes either come
-            with or have a good chance to develop Leadership..
+            with or have a good chance to develop Leadership.
           </>,
           'Stables provide a mobility bonus to armies.',
           'Most units are good for their tiers.',
