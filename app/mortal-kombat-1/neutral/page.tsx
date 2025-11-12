@@ -7,8 +7,12 @@ import { MK1_TITLE } from '@/app/constants'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
+export const navOrder = 5
+
+export const navTitle = 'Neutral'
+
 export const metadata = generatePageMetadata(
-  `${MK1_TITLE}: Neutral`,
+  `${MK1_TITLE}: ${navTitle}`,
   'Understanding the Neutral state in Mortal Kombat 1 and its significance in gameplay.',
 )
 
@@ -16,7 +20,7 @@ export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
       <PageTitle
-        title="Neutral"
+        title={navTitle}
         subtitle="If no one is taking or blocking a hit, being knocked down or pushed in the corner, you’re probably in Neutral."
       />
 

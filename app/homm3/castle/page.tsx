@@ -7,8 +7,12 @@ import { BulletList } from '@/app/ui/BulletList'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
+export const navOrder = 10
+
+export const navTitle = 'Castle'
+
 export const metadata = generatePageMetadata(
-  `${HOMM3_TITLE}: Castle`,
+  `${HOMM3_TITLE}: ${navTitle}`,
   'An overview of the Castle faction in Heroes of Might and Magic 3.',
 )
 
@@ -20,7 +24,7 @@ export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
       <PageTitle
-        title="Castle"
+        title={navTitle}
         subtitle="Castles are home to the Cleric and Knight hero classes. Their armies are  composed of human men-at-arms, with the aid of griffins and the protection of angels."
       />
 

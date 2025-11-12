@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 import mk1Title from '@/app/assets/mk1/mk1-title.webp'
 import { MK1_BASE_URL, MK1_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(
@@ -42,20 +42,14 @@ export default async function Page() {
         <BulletList
           icon="GiDeathSkull"
           items={[
-            'Focus on Player vs Player (PvP). Ignore the lore.',
+            'Focus on Player vs Player (PvP)',
             'Give you the toolset to learn any character.',
-            'Prepare you for multiplayer.',
+            "Consolidate the community's knowledge.",
           ]}
         />
       </div>
 
-      <p></p>
-
-      <p>
-        If you are unfamiliar with the game, consider reading the{' '}
-        <Link href={`${MK1_BASE_URL}/getting-started`}>Getting Started</Link>{' '}
-        section.
-      </p>
+      <SubPageNav route={MK1_BASE_URL} />
     </article>
   )
 }

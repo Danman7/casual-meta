@@ -8,8 +8,12 @@ import { PageTitle } from '@/app/ui/PageTitle'
 import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
+export const navOrder = 10
+
+export const navTitle = 'Space Marines'
+
 export const metadata = generatePageMetadata(
-  `${WH40K_TITLE}: Space Marines`,
+  `${WH40K_TITLE}: ${navTitle}`,
   'An overview of the Space Marines faction in Warhammer 40k.',
 )
 
@@ -17,7 +21,7 @@ export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
       <PageTitle
-        title="Space Marines"
+        title={navTitle}
         subtitle="What is your fate? My duty is my fate. What is your fear? My fear is to fail. What is your craft? My craft is death."
       />
 
@@ -100,9 +104,9 @@ export default async function Page() {
         The Oath is more powerful against fewer, tougher targets than swarms.
       </p>
 
-      <h2>Base Units</h2>
+      <h2>Further Reading</h2>
 
-      <SubPageNav route={`${WH40K_BASE_URL}/factions/space-marines`} />
+      <SubPageNav route={`${WH40K_BASE_URL}/space-marines`} />
     </article>
   )
 }

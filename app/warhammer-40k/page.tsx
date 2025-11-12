@@ -5,6 +5,7 @@ import wh40kTitle from '@/app/assets/wh40k/Ultramarines.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(
@@ -53,19 +54,7 @@ export default async function Page() {
         />
       </div>
 
-      <p>
-        As long-time players have accumulated games across multiple codex
-        revisions, they have developed ideas that help reduce the complexity of
-        the rules and choices. These concepts are spread out over multiple
-        forums and wikis. We attempt to gather the most prominent ones in a
-        single repository.
-      </p>
-
-      <p className="text-lg">
-        If you are unfamiliar with the game, consider reading the{' '}
-        <Link href={`${WH40K_BASE_URL}/getting-started`}>Getting Started</Link>{' '}
-        section.
-      </p>
+      <SubPageNav route={WH40K_BASE_URL} />
     </article>
   )
 }

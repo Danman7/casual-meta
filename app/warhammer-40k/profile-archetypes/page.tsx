@@ -9,15 +9,22 @@ import { Callout } from '@/app/ui/Callout'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
+export const navOrder = 5
+
+export const navTitle = 'Profile Archetypes'
+
 export const metadata = generatePageMetadata(
-  `${WH40K_TITLE}: Profile Archetypes`,
+  `${WH40K_TITLE}: ${navTitle}`,
   'Common profile archetypes in Warhammer 40k to help understand unit roles.',
 )
 
 export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
-      <PageTitle title="Profile Archetypes" />
+      <PageTitle
+        title={navTitle}
+        subtitle="The community uses common profiles to identify more easily what they are dealing with."
+      />
 
       <p>
         Models and weapons each have six numerical characteristics in their data

@@ -5,24 +5,39 @@ import { GrGroup } from 'react-icons/gr'
 import { TiStarburst } from 'react-icons/ti'
 
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
-import { WH40K_TITLE } from '@/app/constants'
+import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
-const pageTitle = 'Space Marines Battleline Units'
+export const navOrder = 11
 
-export const navTitle = 'Battleline Units'
+export const navTitle = 'Space Marines Units'
 
 export const metadata = generatePageMetadata(
-  `${WH40K_TITLE}: ${pageTitle}`,
+  `${WH40K_TITLE}: ${navTitle}`,
   'An overview of the Space Marines battleline infantry units.',
 )
 
 export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
-      <PageTitle title={pageTitle} subtitle="" />
+      <PageTitle title={navTitle} subtitle="" />
+
+      <p>
+        There are a lot of Space Marine units. To keep the Space Marine faction
+        page decluttered, we have separated them here.
+      </p>
+
+      <p className="text-sm text-light">
+        If you are unfamiliar with the profile abbreviations check out our{' '}
+        <Link href={`${WH40K_BASE_URL}/profile-archetypes`}>
+          Profile Archetypes
+        </Link>{' '}
+        page.
+      </p>
+
+      <h2>Battleline</h2>
 
       <p>
         Battleline is a keyword appearing on some datasheets. A key trait of
@@ -38,12 +53,7 @@ export default async function Page() {
         datasheets.
       </p>
 
-      <p className="text-sm text-light">
-        If you are unfamiliar with the profile abbreviations check out our{' '}
-        <Link href="/profile-archetypes">Profile Archetypes</Link> page.
-      </p>
-
-      <h2>Intercessor Squad</h2>
+      <h3>Intercessor Squad</h3>
       <Image
         src={intercessors}
         alt="A squad of Space Marine Intercessors advancing."
