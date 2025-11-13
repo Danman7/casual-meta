@@ -48,6 +48,27 @@ export default async function Page() {
             <strong>Strong mixup</strong> - multiple overheads, lows, and
             command grabs.
           </>,
+          'Shao is a good step away from pure beginner characters into more technical ones - managing the stances without demanding complexity.',
+        ]}
+      />
+      <BulletList
+        className="text-warning"
+        icon="GiDeathSkull"
+        items={[
+          <>
+            <strong>Armor</strong> - Multiple armored options, including wakeups
+            and launches, but some are very punishable.
+          </>,
+          <>
+            <strong>Kameo versatility and dependency</strong> - Shao works well
+            a lot of Kameos but is also very dependent on them to patch gaps and
+            confirm mids.
+          </>,
+          <>
+            <strong>Stances</strong> - The Axe gives you superb space, while
+            unarmed is devastating up close. At the same time playing outside a
+            stance’s forte can be difficult.
+          </>,
         ]}
       />
       <BulletList
@@ -55,12 +76,8 @@ export default async function Page() {
         icon="GiDeathSkull"
         items={[
           <>
-            <strong>Kameo dependent</strong> - needs assists to patch gaps and
-            confirm mids.
-          </>,
-          <>
             <strong>Unsafe pressure</strong> - safe moves have gaps; gapless
-            ones are unsafe. neutral.
+            ones are unsafe.
           </>,
         ]}
       />
