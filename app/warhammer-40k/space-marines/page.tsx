@@ -47,7 +47,14 @@ export default async function Page() {
         items={[
           'Widely considered one of the best armies for beginners.',
           'Jacks-of-all-trades – balanced units and weapons for every scenario.',
-          'Wide array of infantry, vehicles and characters to choose from.',
+        ]}
+      />
+
+      <BulletList
+        className="text-warning"
+        icon="GiDeathSkull"
+        items={[
+          'A wide array of infantry, vehicles and characters available gives players choices, but also can become overwhelming and confusing.',
         ]}
       />
 

@@ -44,9 +44,14 @@ export default async function Page() {
             <strong>Long reach</strong> - disjointed mids and aerials dominate
             neutral.
           </>,
+
           <>
             <strong>Strong mixup</strong> - multiple overheads, lows, and
             command grabs.
+          </>,
+          <>
+            <strong>Excellent air control</strong> - good anti-air options, even
+            normals due to his height advantage.
           </>,
           'Shao is a good step away from pure beginner characters into more technical ones - managing the stances without demanding complexity.',
         ]}
@@ -78,6 +83,11 @@ export default async function Page() {
           <>
             <strong>Unsafe pressure</strong> - safe moves have gaps; gapless
             ones are unsafe.
+          </>,
+          <>
+            <strong>No projectiles or teleports</strong> - his only full screen
+            reaching move is slow and as mentioned he requires a Kameo to cover
+            the distance.
           </>,
         ]}
       />

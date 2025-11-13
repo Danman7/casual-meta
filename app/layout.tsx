@@ -40,8 +40,6 @@ export default function RootLayout({
         <SectionNav />
 
         <main className="mx-auto w-full py-4 px-4 md:px-8 grow">
-          <Breadcrumbs />
-
           {children}
         </main>
 
