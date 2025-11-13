@@ -3,7 +3,6 @@ import { Noto_Sans, Noto_Serif } from 'next/font/google'
 import Link from 'next/link'
 
 import '@/app/globals.css'
-import { Breadcrumbs } from '@/app/ui/Breadcrumbs'
 import { Nav } from '@/app/ui/Nav'
 import { SectionNav } from '@/app/ui/SectionNav'
 
