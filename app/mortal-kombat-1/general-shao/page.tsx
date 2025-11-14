@@ -20,18 +20,18 @@ export default async function Page() {
     <article className="max-w-3xl mx-auto">
       <h1>{navTitle}</h1>
 
-      <div className="md:flex items-center text-lg text-light">
-        <div className="md:w-1/2">
-          Born weak but forged through brutal training, General Shao became
-          Outworld’s strongest warrior and a tactical genius. Though sworn to
-          serve Sindel, his true loyalty lies with Outworld itself.
-        </div>
-
+      <div className="md:flex items-center text-lg text-light gap-4">
         <Image
-          className="md:w-1/2"
+          className="max-h-72 object-cover object-[0%_0%]  md:w-1/2 md:max-h-full"
           src={Shao}
           alt="General Shao in Mortal Kombat 1"
         />
+
+        <p className="md:w-1/2">
+          Born weak but forged through brutal training, General Shao became
+          Outworld’s strongest warrior and a tactical genius. Though sworn to
+          serve Sindel, his true loyalty lies with Outworld itself.
+        </p>
       </div>
 
       <p>
