@@ -3,7 +3,6 @@ import Image from 'next/image'
 import mk1Title from '@/app/assets/mk1/mk1-title.webp'
 import { MK1_BASE_URL, MK1_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -14,17 +13,8 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
-      <PageTitle
-        title="Mortal Kombat 1"
-        subtitle="There are fates worse than death."
-      />
-
-      <p>
-        Mortal Kombat 1 or MK1 is the latest chapter in the long-running,
-        celebrated fighting game series. Following its predecessors, it is
-        distinguished by gory visuals and fast-paced dueling action.
-      </p>
+    <article>
+      <h1>{MK1_TITLE}</h1>
 
       <Image src={mk1Title} alt="Mortal Kombat 1 Title Screen" />
 

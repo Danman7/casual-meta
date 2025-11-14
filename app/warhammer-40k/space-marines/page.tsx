@@ -4,7 +4,6 @@ import chapters from '@/app/assets/wh40k/space-marine-chapter-banners.webp'
 import wh40kTitle from '@/app/assets/wh40k/Ultramarines.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -19,11 +18,8 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
-      <PageTitle
-        title={navTitle}
-        subtitle="What is your fate? My duty is my fate. What is your fear? My fear is to fail. What is your craft? My craft is death."
-      />
+    <article>
+      <h1>{navTitle}</h1>
 
       <p>
         Space Marines take a central position in the fictional universe of

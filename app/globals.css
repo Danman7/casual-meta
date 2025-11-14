@@ -20,8 +20,6 @@
   --color-success: var(--success);
   --color-error: var(--error);
   --color-warning: var(--warning);
-  --font-serif:
-    var(--font-noto-serif), Georgia, 'Times New Roman', Times, serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,35 +42,52 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-noto-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-noto-serif), Georgia, 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+li {
+  line-height: 1.7;
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: bold;
+  margin-top: 1.75rem;
 }
 
 h2 {
   font-size: var(--text-2xl);
   font-weight: bold;
-  margin: 1.5em 0 1em;
-  border-bottom: 1px solid var(--foreground);
+  padding-top: 40px;
+  margin-top: 48px;
+  scroll-margin-top: 44px;
+  border-top: 1px solid var(--light);
 }
 
 h3 {
   font-size: var(--text-xl);
   font-weight: bold;
-  margin: 1em 0 0.5em;
+  margin-top: 32px;
 }
 
-p {
-  margin: 1.5em 0;
+p,
+article ul {
+  margin-top: 1em;
 }
 
 article li {
-  margin: 0.5em;
-  line-height: 1.5;
+  margin-top: 0.5em;
 }
 
 article img {
   box-shadow: var(--shadow-md);
+  margin-top: 1em;
 }
 
 a {

@@ -7,7 +7,6 @@ import { TiStarburst } from 'react-icons/ti'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 11
@@ -21,8 +20,8 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
-      <PageTitle title={navTitle} subtitle="" />
+    <article>
+      <h1>{navTitle}</h1>
 
       <p>
         There are a lot of Space Marine units. To keep the Space Marine faction

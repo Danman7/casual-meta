@@ -1,8 +1,9 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
+import Shao from '@/app/assets/mk1/shao.webp'
 import { MK1_BASE_URL, MK1_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -16,11 +17,22 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
-      <PageTitle
-        title={navTitle}
-        subtitle="Born weak but forged through brutal training, General Shao became Outworld’s strongest warrior and a tactical genius. Though sworn to serve Sindel, his true loyalty lies with Outworld itself."
-      />
+    <article>
+      <h1>{navTitle}</h1>
+
+      <div className="md:flex items-center text-lg text-light">
+        <div className="md:w-1/2">
+          Born weak but forged through brutal training, General Shao became
+          Outworld’s strongest warrior and a tactical genius. Though sworn to
+          serve Sindel, his true loyalty lies with Outworld itself.
+        </div>
+
+        <Image
+          className="md:w-1/2"
+          src={Shao}
+          alt="General Shao in Mortal Kombat 1"
+        />
+      </div>
 
       <p>
         General Shao is a mid-range brawler with a heavy emphasis on disjointed

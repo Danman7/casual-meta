@@ -4,7 +4,6 @@ import Link from 'next/link'
 import wh40kTitle from '@/app/assets/wh40k/Ultramarines.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -15,11 +14,8 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
-      <PageTitle
-        title={WH40K_TITLE}
-        subtitle="In the grim darkness of the far future, there is only war."
-      />
+    <article>
+      <h1>{WH40K_TITLE}</h1>
 
       <p>
         The{' '}

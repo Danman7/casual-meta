@@ -13,7 +13,8 @@ export const Anchor: React.FC<{
 
   const isActive = pathname.startsWith(href)
 
-  const baseClasses = 'hover:text-foreground inline-flex items-center gap-2'
+  const baseClasses =
+    'hover:text-foreground inline-flex items-center gap-2 no-underline!'
 
   const activeClasses = isActive ? '' : ' text-foreground!'
 

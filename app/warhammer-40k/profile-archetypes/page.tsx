@@ -6,7 +6,6 @@ import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { Callout } from '@/app/ui/Callout'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 5
@@ -20,11 +19,8 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
-      <PageTitle
-        title={navTitle}
-        subtitle="The community uses common profiles to identify more easily what they are dealing with."
-      />
+    <article>
+      <h1>{navTitle}</h1>
 
       <p>
         Models and weapons each have six numerical characteristics in their data

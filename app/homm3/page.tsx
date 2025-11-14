@@ -1,6 +1,5 @@
 import { HOMM3_BASE_URL, HOMM3_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -11,12 +10,8 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
-      <PageTitle
-        title={HOMM3_TITLE}
-        subtitle="Heroes of Might and Magic 3 is easily among the most beloved
-        turn-based strategy games of all time."
-      />
+    <article>
+      <h1>{HOMM3_TITLE}</h1>
 
       <p>
         It is a 1999 fantasy classic, revered among players and modders, still

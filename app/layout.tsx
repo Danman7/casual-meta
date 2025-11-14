@@ -1,15 +1,9 @@
 import type { Metadata } from 'next'
-import { Noto_Sans, Noto_Serif } from 'next/font/google'
+import { Noto_Serif } from 'next/font/google'
 import Link from 'next/link'
 
 import '@/app/globals.css'
 import { Nav } from '@/app/ui/Nav'
-import { SectionNav } from '@/app/ui/SectionNav'
-
-const notoSans = Noto_Sans({
-  variable: '--font-noto-sans',
-  subsets: ['latin'],
-})
 
 const notoSerif = Noto_Serif({
   variable: '--font-noto-serif',
@@ -32,17 +26,15 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${notoSans.variable} ${notoSerif.variable} font-serif antialiased h-full flex flex-col`}
+        className={`${notoSerif.variable} font-serif antialiased h-full flex flex-col`}
       >
         <Nav />
 
-        <SectionNav />
-
-        <main className="mx-auto w-full py-4 px-4 md:px-8 grow">
+        <main className="mx-auto w-full px-6 pb-6 grow max-w-3xl">
           {children}
         </main>
 
-        <footer className="inset-shadow-sm text-center md:flex md:justify-between p-4 gap-4 mt-8 shadow-md bg-surface z-10">
+        <footer className="inset-shadow-sm text-center md:flex md:justify-between p-8 gap-4 shadow-md bg-surface z-10">
           <div className="mb-2 md:mb-0">
             <Link href="/">Casual Meta</Link>
           </div>

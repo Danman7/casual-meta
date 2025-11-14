@@ -4,7 +4,6 @@ import knockbackDistance from '@/app/assets/mk1/distance_after_knockback.webp'
 import duelStart from '@/app/assets/mk1/duel_start.webp'
 import knockback from '@/app/assets/mk1/knockback.webp'
 import { MK1_TITLE } from '@/app/constants'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 5
@@ -18,11 +17,8 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
-      <PageTitle
-        title={navTitle}
-        subtitle="If no one is taking or blocking a hit, being knocked down or pushed in the corner, you’re probably in Neutral."
-      />
+    <article>
+      <h1>{navTitle}</h1>
 
       <p>
         <em>Neutral</em> refers to any state of the round where{' '}
