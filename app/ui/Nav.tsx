@@ -24,8 +24,8 @@ export const Nav = () => {
   }
 
   return (
-    <header className="shadow-md z-10 bg-surface">
-      <div className="max-w-3xl mx-auto px-6 py-4">
+    <header className="shadow-md z-10 bg-surface px-6">
+      <div className="max-w-3xl mx-auto py-4">
         <nav className="flex items-center justify-between">
           <div className="text-2xl">
             <Link
