@@ -77,17 +77,13 @@ h3 {
 }
 
 p,
-article ul {
+article ul,
+article img {
   margin-top: 1em;
 }
 
 article li {
   margin-top: 0.5em;
-}
-
-article img {
-  box-shadow: var(--shadow-md);
-  margin-top: 1em;
 }
 
 a {
