@@ -14,7 +14,7 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article>
+    <article className="max-w-3xl mx-auto">
       <h1>{WH40K_TITLE}</h1>
 
       <p>

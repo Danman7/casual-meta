@@ -189,7 +189,7 @@ export function CreatureTable() {
 
   return (
     <>
-      <div className="mb-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="mt-8 mb-6 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
         <div className="flex flex-col">
           <label htmlFor="town-filter" className="mb-2 font-semibold text-sm">
             Filter by Town:

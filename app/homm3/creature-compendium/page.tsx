@@ -13,14 +13,16 @@ export const metadata = generatePageMetadata(
 
 export default function Page() {
   return (
-    <article className="max-w-7xl mx-auto">
-      <h1>{navTitle}</h1>
+    <article>
+      <div className="max-w-3xl mx-auto">
+        <h1>{navTitle}</h1>
 
-      <p>
-        Here is a table with all HoMM3 creatures, factions and neutral, and all
-        their stats. Feel free to filter and sort them as you like to gain
-        insight into how they fare.
-      </p>
+        <p>
+          Here is a table with all HoMM3 creatures, factions and neutral, and
+          all their stats. Feel free to filter and sort them as you like to gain
+          insight into how they fare.
+        </p>
+      </div>
 
       <CreatureTable />
     </article>

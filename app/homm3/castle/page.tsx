@@ -17,7 +17,7 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article>
+    <article className="max-w-3xl mx-auto">
       <h1>{navTitle}</h1>
 
       <Image src={castle} alt="A fully built Castle town." />

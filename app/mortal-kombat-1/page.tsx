@@ -13,7 +13,7 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article>
+    <article className="max-w-3xl mx-auto">
       <h1>{MK1_TITLE}</h1>
 
       <Image src={mk1Title} alt="Mortal Kombat 1 Title Screen" />

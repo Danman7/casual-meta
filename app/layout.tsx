@@ -30,9 +30,7 @@ export default function RootLayout({
       >
         <Nav />
 
-        <main className="mx-auto w-full px-6 pb-6 grow max-w-3xl">
-          {children}
-        </main>
+        <main className="mx-auto w-full px-6 pb-6 grow">{children}</main>
 
         <footer className="inset-shadow-sm text-center md:flex md:justify-between p-8 gap-4 shadow-md bg-surface z-10">
           <div className="mb-2 md:mb-0">
