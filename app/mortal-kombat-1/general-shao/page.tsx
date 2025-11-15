@@ -103,6 +103,31 @@ export default async function Page() {
           </>,
         ]}
       />
+
+      <h2>Normals with Axe</h2>
+
+      <p>
+        The Axe gives Shao the disjointed normals with superb range that makes
+        him a master of mid-range engagements. It lacks the good mids and mixup
+        of the unarmed stance, but how you transition from axe to no axe makes
+        or breaks Shao’s game.
+      </p>
+
+      <h3>Standing 2 with Axe</h3>
+
+      <p>
+        Pressing 2 with the axe while holding no direction will execute a very
+        fast, safe, disjointed attack with superb reach. It checks out all the
+        essentials of a good attack and is among the best standing punches in
+        the game.
+      </p>
+
+      <p>
+        <strong>This is your bread and butter.</strong> Learn to measure its
+        range and practice dashing into it. You will use it to whiff punish,
+        interrupt advances, as a buffer attack and even as a frontal anti-air
+        due to Shao’s height.
+      </p>
     </article>
   )
 }
