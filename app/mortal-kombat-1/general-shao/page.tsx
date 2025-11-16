@@ -1,8 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { GiHighPunch, GiLifeBar, GiSharpAxe } from 'react-icons/gi'
+import { IoPeopleSharp } from 'react-icons/io5'
+import { MdOutlineSocialDistance } from 'react-icons/md'
+import { TbCircleLetterN } from 'react-icons/tb'
+import { TiArrowShuffle } from 'react-icons/ti'
 
 import Shao from '@/app/assets/mk1/shao.webp'
 import { MK1_BASE_URL, MK1_TITLE } from '@/app/constants'
+import { Badge } from '@/app/ui/Badge'
 import { BulletList } from '@/app/ui/BulletList'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -20,29 +26,57 @@ export default async function Page() {
     <article className="max-w-3xl mx-auto">
       <h1>{navTitle}</h1>
 
-      <div className="md:flex items-center text-lg text-light gap-4">
+      <div className="md:flex items-center gap-4">
         <Image
           className="max-h-72 object-cover object-[0%_0%]  md:w-1/2 md:max-h-full"
           src={Shao}
           alt="General Shao in Mortal Kombat 1"
         />
 
-        <p className="md:w-1/2">
-          Born weak but forged through brutal training, General Shao became
-          Outworld’s strongest warrior and a tactical genius. Though sworn to
-          serve Sindel, his true loyalty lies with Outworld itself.
-        </p>
-      </div>
+        <div className="md:w-1/2">
+          <div className="flex gap-2 mt-4 flex-wrap">
+            <Badge className="text-success border-success">
+              <GiLifeBar /> High Health
+            </Badge>
 
-      <p>
-        General Shao is a mid-range brawler with a heavy emphasis on disjointed
-        normals with good reach. He is a stance-based fighter, alternating
-        between Axe and No Axe stances, each providing a different move set. He
-        excels at the <Link href={`${MK1_BASE_URL}/neutral`}>Neutral</Link> game
-        with good speed and a mix of both standing overheads and lows. If
-        players spend some time practicing even his low difficulty combos, they
-        will also find him a damaging character.
-      </p>
+            <Badge className="text-success border-success">
+              <GiHighPunch /> Good Reach
+            </Badge>
+
+            <Badge className="text-success border-success">
+              <TbCircleLetterN />
+              Neutral Master
+            </Badge>
+
+            <Badge className="text-success border-success">
+              <TiArrowShuffle /> Good Mix
+            </Badge>
+
+            <Badge className="">
+              <GiSharpAxe /> Multiple Stances
+            </Badge>
+
+            <Badge className="text-error border-error!">
+              <IoPeopleSharp /> Kameo Dependent
+            </Badge>
+
+            <Badge className="text-error border-error!">
+              <MdOutlineSocialDistance /> Weak Fullscreen
+            </Badge>
+          </div>
+
+          <p>
+            General Shao is a mid-range brawler with a heavy emphasis on
+            disjointed normals with good reach. He is a stance-based fighter,
+            alternating between Axe and No Axe stances, each providing a
+            different move set. He excels at the{' '}
+            <Link href={`${MK1_BASE_URL}/neutral`}>Neutral</Link> game with good
+            speed and a mix of both standing overheads and lows. If players
+            spend some time practicing even his low difficulty combos, they will
+            also find him a damaging character.
+          </p>
+        </div>
+      </div>
 
       <h2>Why play or skip General Shao?</h2>
       <BulletList
@@ -82,7 +116,7 @@ export default async function Page() {
             confirm mids.
           </>,
           <>
-            <strong>Stances</strong> - The Axe gives you superb space, while
+            <strong>Stances</strong> - The Axe gives you excellent space, while
             unarmed is devastating up close. At the same time playing outside a
             stance’s forte can be difficult.
           </>,
@@ -104,16 +138,19 @@ export default async function Page() {
         ]}
       />
 
-      <h2>Normals with Axe</h2>
+      <h2 className="flex items-center gap-2">
+        <GiSharpAxe />
+        Normals with Axe
+      </h2>
 
       <p>
-        The Axe gives Shao the disjointed normals with superb range that makes
-        him a master of mid-range engagements. It lacks the good mids and mixup
-        of the unarmed stance, but how you transition from axe to no axe makes
-        or breaks Shao’s game.
+        The Axe gives Shao the disjointed normals with first-rate range that
+        makes him a master of mid-range engagements. It lacks the good mids and
+        mixup of the unarmed stance, but how you transition from axe to no axe
+        makes or breaks Shao’s game.
       </p>
 
-      <h3>Standing 2 with Axe</h3>
+      <h3>Standing 2</h3>
 
       <p>
         Pressing 2 with the axe while holding no direction will execute a very
