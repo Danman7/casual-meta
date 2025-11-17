@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { AiFillSafetyCertificate } from 'react-icons/ai'
 import { FaGraduationCap } from 'react-icons/fa6'
 import { GiArmorPunch, GiJoint, GiWingfoot } from 'react-icons/gi'
 import { LuShieldAlert, LuShieldCheck } from 'react-icons/lu'
@@ -8,7 +7,7 @@ import {
   PiArrowsCounterClockwiseBold,
   PiBatteryWarningVerticalBold,
 } from 'react-icons/pi'
-import { TfiRulerAlt } from 'react-icons/tfi'
+import { TbRuler3, TbRulerMeasure } from 'react-icons/tb'
 
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import { MK1_TITLE } from '@/app/constants'
@@ -150,6 +149,10 @@ export default async function Page() {
         <Badge className="text-success border-success">
           <GiWingfoot /> Fast
         </Badge>
+
+        <Badge className="text-success border-success">
+          <TbRuler3 /> Decent Reach
+        </Badge>
       </div>
 
       <h3>Back 3</h3>
@@ -159,7 +162,7 @@ export default async function Page() {
         </Badge>
 
         <Badge className="text-success border-success">
-          <TfiRulerAlt /> Very far reaching
+          <TbRulerMeasure /> Very far reaching
         </Badge>
 
         <Badge className="text-error border-error!">
