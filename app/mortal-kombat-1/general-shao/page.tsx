@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { GiHighPunch, GiLifeBar, GiSharpAxe } from 'react-icons/gi'
+import { GiGrab, GiHighPunch, GiLifeBar, GiSharpAxe } from 'react-icons/gi'
 import { IoPeopleSharp } from 'react-icons/io5'
 import { MdOutlineSocialDistance } from 'react-icons/md'
 import { TbCircleLetterN } from 'react-icons/tb'
@@ -50,6 +50,10 @@ export default async function Page() {
 
             <Badge className="text-success border-success">
               <TiArrowShuffle /> Good Mix
+            </Badge>
+
+            <Badge className="text-success border-success">
+              <GiGrab /> Technical Grabs
             </Badge>
 
             <Badge className="">
