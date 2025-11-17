@@ -1,11 +1,14 @@
 import Image from 'next/image'
+import { AiFillSafetyCertificate } from 'react-icons/ai'
 import { FaGraduationCap } from 'react-icons/fa6'
-import { GiArmorPunch, GiHighKick } from 'react-icons/gi'
+import { GiArmorPunch, GiJoint, GiWingfoot } from 'react-icons/gi'
+import { LuShieldAlert, LuShieldCheck } from 'react-icons/lu'
 import { MdBatteryChargingFull, MdOutlineSocialDistance } from 'react-icons/md'
 import {
   PiArrowsCounterClockwiseBold,
   PiBatteryWarningVerticalBold,
 } from 'react-icons/pi'
+import { TfiRulerAlt } from 'react-icons/tfi'
 
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import { MK1_TITLE } from '@/app/constants'
@@ -130,6 +133,39 @@ export default async function Page() {
           'Optimal combos are often difficult and resource hungry yet provide little on top of sampler, more consistent ones.',
         ]}
       />
+
+      <h2>Normals</h2>
+
+      <p>
+        Let’s make this consolidated and describe only the most meaningful
+        normal moves.
+      </p>
+
+      <h3>Standing 2</h3>
+      <div className="flex gap-2 items-center">
+        <Badge className="text-success border-success">
+          <LuShieldCheck /> Safe
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <GiWingfoot /> Fast
+        </Badge>
+      </div>
+
+      <h3>Back 3</h3>
+      <div className="flex gap-2 items-center">
+        <Badge className="text-success border-success">
+          <GiJoint /> Disjointed
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <TfiRulerAlt /> Very far reaching
+        </Badge>
+
+        <Badge className="text-error border-error!">
+          <LuShieldAlert /> Unsafe
+        </Badge>
+      </div>
     </article>
   )
 }
