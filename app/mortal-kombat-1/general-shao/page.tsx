@@ -15,6 +15,7 @@ import { TbCircleLetterN, TbRuler3 } from 'react-icons/tb'
 import { TiArrowShuffle } from 'react-icons/ti'
 
 import Shao from '@/app/assets/mk1/shao.webp'
+import shao2 from '@/app/assets/mk1/shao_2.webp'
 import { MK1_BASE_URL, MK1_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { BulletList } from '@/app/ui/BulletList'
@@ -181,6 +182,12 @@ export default async function Page() {
           <GiJoint /> Disjointed
         </Badge>
       </FlexWrapper>
+
+      <Image
+        className="shadow-md max-h-96 object-cover object-[0%_0%]"
+        src={shao2}
+        alt="Scorpion doing back 3 attack."
+      />
 
       <p>
         Pressing 2 with the axe while holding no direction will execute a very

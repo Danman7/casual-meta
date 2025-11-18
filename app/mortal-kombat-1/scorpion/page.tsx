@@ -17,6 +17,8 @@ import {
 import { TbRuler3, TbRulerMeasure } from 'react-icons/tb'
 
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
+import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
+import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK1_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { BulletList } from '@/app/ui/BulletList'
@@ -149,6 +151,7 @@ export default async function Page() {
       </p>
 
       <h3>Standing 2</h3>
+
       <FlexWrapper>
         <Badge className="text-success border-success">
           <LuShieldCheck /> Safe
@@ -162,6 +165,12 @@ export default async function Page() {
           <TbRuler3 /> Decent Reach
         </Badge>
       </FlexWrapper>
+
+      <Image
+        className="shadow-md max-h-80 object-cover object-[0%_20%]"
+        src={scorp2}
+        alt="Scorpion doing standing 2 attack."
+      />
 
       <h3>Back 3</h3>
       <FlexWrapper>
@@ -189,6 +198,12 @@ export default async function Page() {
           <LuShieldAlert /> Unsafe
         </Badge>
       </FlexWrapper>
+
+      <Image
+        className="shadow-md"
+        src={scorpb3}
+        alt="Scorpion doing back 3 attack."
+      />
     </article>
   )
 }
