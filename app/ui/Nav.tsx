@@ -25,7 +25,7 @@ export const Nav = () => {
 
   return (
     <header className="shadow-md z-10 bg-surface px-6">
-      <div className="max-w-3xl mx-auto py-4">
+      <div className="py-4">
         <nav className="flex items-center justify-between">
           <div className="text-2xl">
             <Link
@@ -63,7 +63,9 @@ export const Nav = () => {
             ))}
           </nav>
         )}
+      </div>
 
+      <div className="md:hidden pb-2">
         <SectionNav />
       </div>
     </header>

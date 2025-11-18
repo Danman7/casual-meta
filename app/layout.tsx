@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 import '@/app/globals.css'
 import { Nav } from '@/app/ui/Nav'
+import { SectionNav } from '@/app/ui/SectionNav'
 
 const notoSerif = Noto_Serif({
   variable: '--font-noto-serif',
@@ -30,7 +31,13 @@ export default function RootLayout({
       >
         <Nav />
 
-        <main className="mx-auto w-full px-6 pb-6 grow">{children}</main>
+        <div className="flex grow">
+          <aside className="hidden md:block w-64 px-6 py-6 sticky top-0 h-screen overflow-y-auto">
+            <SectionNav />
+          </aside>
+
+          <main className="flex-1 px-6 pb-6 overflow-x-hidden">{children}</main>
+        </div>
 
         <footer className="inset-shadow-sm text-center md:flex md:justify-between p-8 gap-4 shadow-md bg-surface z-10">
           <div className="mb-2 md:mb-0">
