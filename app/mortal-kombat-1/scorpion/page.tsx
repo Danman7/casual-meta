@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { FaLongArrowAltDown } from 'react-icons/fa'
 import { FaGraduationCap } from 'react-icons/fa6'
 import {
   Gi3dStairs,
@@ -14,10 +13,12 @@ import {
 import { LuShieldAlert, LuShieldCheck } from 'react-icons/lu'
 import { MdBatteryChargingFull, MdOutlineSocialDistance } from 'react-icons/md'
 import {
+  PiArrowFatDownLight,
   PiArrowsCounterClockwiseBold,
   PiBatteryWarningVerticalBold,
 } from 'react-icons/pi'
-import { TbRuler3, TbRulerMeasure } from 'react-icons/tb'
+import { TbBoxMultiple2, TbRuler3, TbRulerMeasure } from 'react-icons/tb'
+import { TiFlowChildren } from 'react-icons/ti'
 
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
@@ -150,7 +151,7 @@ export default async function Page() {
 
       <h3>Standing 2</h3>
 
-      <FlexWrapper>
+      <FlexWrapper className="mt-2">
         <Badge className="text-success border-success">
           <LuShieldCheck /> Safe
         </Badge>
@@ -171,13 +172,21 @@ export default async function Page() {
       />
 
       <h3>Back 3</h3>
-      <FlexWrapper>
+      <FlexWrapper className="mt-2">
+        <Badge>
+          <TbBoxMultiple2 /> Multi-hit: Mid-Low
+        </Badge>
+
         <Badge className="text-success border-success">
           <GiJoint /> Disjointed
         </Badge>
 
         <Badge className="text-success border-success">
-          <TbRulerMeasure /> Very Long reach
+          <TiFlowChildren /> First hit cancels
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <TbRulerMeasure /> Very long reach
         </Badge>
 
         <Badge className="text-success border-success">
@@ -185,7 +194,7 @@ export default async function Page() {
         </Badge>
 
         <Badge className="text-success border-success">
-          <FaLongArrowAltDown /> Low
+          <PiArrowFatDownLight /> Second hit low
         </Badge>
 
         <Badge className="text-error border-error!">
@@ -206,7 +215,7 @@ export default async function Page() {
       <h2>Baiting Whiffs</h2>
 
       <h3>Mid-to-long range punch whiff into spear</h3>
-      <FlexWrapper>
+      <FlexWrapper className="mt-2">
         <Badge className="text-success border-success">
           <GiThumbUp /> Simple
         </Badge>
@@ -228,7 +237,7 @@ export default async function Page() {
       </p>
 
       <h3>Strings cut short into throw</h3>
-      <FlexWrapper>
+      <FlexWrapper className="mt-2">
         <Badge className="text-success border-success">
           <GiThumbUp /> Simple
         </Badge>
@@ -255,7 +264,7 @@ export default async function Page() {
       </p>
 
       <h3>Mind games with EX Teleport</h3>
-      <FlexWrapper>
+      <FlexWrapper className="mt-2">
         <Badge className="text-warning border-warning">
           <GiHighKick /> Advanced
         </Badge>
@@ -268,9 +277,11 @@ export default async function Page() {
         to interrupt their anti-teleport game.
       </p>
 
+      <h2>Other Tech</h2>
+
       <h3>Ending corner combo with EX teleport jail</h3>
-      <FlexWrapper>
-        <Badge className="text-warning border-warning">
+      <FlexWrapper className="mt-2">
+        <Badge className="text-error border-error!">
           <Gi3dStairs /> Difficult
         </Badge>
       </FlexWrapper>
