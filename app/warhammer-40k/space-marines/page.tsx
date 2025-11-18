@@ -28,7 +28,11 @@ export default async function Page() {
         to the hobby.
       </p>
 
-      <Image src={wh40kTitle} alt="A small detachment of Space Marines" />
+      <Image
+        src={wh40kTitle}
+        alt="A small detachment of Space Marines"
+        className="shadow-md"
+      />
 
       <p>
         You will often hear the Latin term <strong>Adeptus Astartes</strong>{' '}
@@ -70,6 +74,7 @@ export default async function Page() {
       <Image
         src={chapters}
         alt="A collection of space marine chapter banners."
+        className="shadow-md"
       />
 
       <p>

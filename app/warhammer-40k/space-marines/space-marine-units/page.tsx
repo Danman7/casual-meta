@@ -57,6 +57,7 @@ export default async function Page() {
       <Image
         src={intercessors}
         alt="A squad of Space Marine Intercessors advancing."
+        className="shadow-md"
       />
 
       <Callout>
@@ -82,7 +83,10 @@ export default async function Page() {
 
       <p>
         This is the principle Adeptus Astartes battleline squad. A sergeant
-        leads either four or nine Primaris marines armed with bolt rifles.
+        leads either four or nine <em>Primaris</em> marines armed with{' '}
+        <em>Bolt Rifles</em>. Consider 4/9 + 1 as the standard setup for Space
+        Marine squads. By Primaris marines we understand the “new generation” of
+        marine warriors, where <em>Firstborn</em> is the “old” one.
       </p>
     </article>
   )

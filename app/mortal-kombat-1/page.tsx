@@ -16,7 +16,11 @@ export default async function Page() {
     <article className="max-w-3xl mx-auto">
       <h1>{MK1_TITLE}</h1>
 
-      <Image src={mk1Title} alt="Mortal Kombat 1 Title Screen" />
+      <Image
+        src={mk1Title}
+        alt="Mortal Kombat 1 Title Screen"
+        className="shadow-md"
+      />
 
       <p>
         As a fighting game it has both similarities and differences from other

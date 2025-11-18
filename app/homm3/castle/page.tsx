@@ -20,7 +20,11 @@ export default async function Page() {
     <article className="max-w-3xl mx-auto">
       <h1>{navTitle}</h1>
 
-      <Image src={castle} alt="A fully built Castle town." />
+      <Image
+        src={castle}
+        alt="A fully built Castle town."
+        className="shadow-md"
+      />
 
       <p>
         With a solid mix of soldiers from low to high tiers and the most

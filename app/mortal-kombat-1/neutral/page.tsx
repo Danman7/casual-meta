@@ -26,7 +26,11 @@ export default async function Page() {
         both are free to move, attack or block as they please.
       </p>
 
-      <Image src={duelStart} alt="A neutral position at the start of a duel." />
+      <Image
+        src={duelStart}
+        alt="A neutral position at the start of a duel."
+        className="shadow-md"
+      />
 
       <p className="font-bold">
         All rounds start in Neutral with a gap between the characters.
@@ -73,13 +77,13 @@ export default async function Page() {
         <Image
           src={knockback}
           alt="Scorpion knocking back Sub-Zero with a kick."
-          className="md:w-1/2 object-cover"
+          className="md:w-1/2 object-cover shadow-md"
         />
 
         <Image
           src={knockbackDistance}
           alt="Scorpion and Sub-Zero after the knockback, at a distance."
-          className="md:w-1/2 object-cover"
+          className="md:w-1/2 object-cover shadow-md"
         />
       </div>
 
