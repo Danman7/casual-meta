@@ -2,10 +2,13 @@ import Image from 'next/image'
 import { FaLongArrowAltDown } from 'react-icons/fa'
 import { FaGraduationCap } from 'react-icons/fa6'
 import {
+  Gi3dStairs,
   GiArmorPunch,
   GiFalling,
+  GiHighKick,
   GiJoint,
   GiSnail,
+  GiThumbUp,
   GiWingfoot,
 } from 'react-icons/gi'
 import { LuShieldAlert, LuShieldCheck } from 'react-icons/lu'
@@ -143,12 +146,7 @@ export default async function Page() {
         ]}
       />
 
-      <h2>Normals</h2>
-
-      <p>
-        Let’s make this consolidated and describe only the most meaningful
-        normal moves.
-      </p>
+      <h2>Key Normals</h2>
 
       <h3>Standing 2</h3>
 
@@ -204,6 +202,78 @@ export default async function Page() {
         src={scorpb3}
         alt="Scorpion doing back 3 attack."
       />
+
+      <h2>Baiting Whiffs</h2>
+
+      <h3>Mid-to-long range punch whiff into spear</h3>
+      <FlexWrapper>
+        <Badge className="text-success border-success">
+          <GiThumbUp /> Simple
+        </Badge>
+      </FlexWrapper>
+
+      <p>
+        As with any character, at mid-to-long range, deliberately throwing a
+        punch into empty air can motivate the opponent into action - dashing
+        forward, jumping, doing a special etc. As cheap as it may sound
+        following such an intentional punch whiff with a spear catches foes
+        dashing forward online quite often.
+      </p>
+
+      <p>
+        This appears to be a beginner’s trap, but even in higher ranks it can be
+        useful tech if not abused. The shorter the range to the opponent when
+        attempted, the difficult it will be for them to properly react, but they
+        may have an attack that can reach you.
+      </p>
+
+      <h3>Strings cut short into throw</h3>
+      <FlexWrapper>
+        <Badge className="text-success border-success">
+          <GiThumbUp /> Simple
+        </Badge>
+      </FlexWrapper>
+
+      <p>
+        This is valid tech for every character, but here are some options
+        specifically for MK1 Scorpion.
+      </p>
+
+      <p>
+        As we know, 122 ends with an overhead that can be punished with an up
+        block. You can cut it short to 12 into a throw.
+      </p>
+
+      <p>
+        The F34 chains nicely with the dash and many Kameo moves. You can do
+        only the F3 into a throw.
+      </p>
+
+      <p>
+        Both pay attention to how the opponent is reacting. Abusing them will
+        result in a counterattack before the throw connects.
+      </p>
+
+      <h3>Mind games with EX Teleport</h3>
+      <FlexWrapper>
+        <Badge className="text-warning border-warning">
+          <GiHighKick /> Advanced
+        </Badge>
+      </FlexWrapper>
+
+      <p>
+        The Enhanced Flame-Port is punishable, but the opponent’s timing must be
+        spot-on, so most opponents either block or throw a quick 1 punch because
+        it is the fastest. Micro-ducking into an attack or a throw are good ways
+        to interrupt their anti-teleport game.
+      </p>
+
+      <h3>Ending corner combo with EX teleport jail</h3>
+      <FlexWrapper>
+        <Badge className="text-warning border-warning">
+          <Gi3dStairs /> Difficult
+        </Badge>
+      </FlexWrapper>
     </article>
   )
 }
