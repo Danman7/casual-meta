@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { GiBolterGun } from 'react-icons/gi'
-import { GrGroup } from 'react-icons/gr'
-import { TiStarburst } from 'react-icons/ti'
 
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
@@ -43,51 +41,73 @@ export default async function Page() {
         Battleline is a keyword appearing on some datasheets. A key trait of
         battleline infantry is that you can take twice as many units of the same
         name, compared to other units, depending on the mission you are playing.
-        So for example if you are playing Only War or Crusade you will be
-        allowed to take up to six battleline units of the same name instead of
-        three.
-      </p>
-
-      <p className="font-bold">
-        All units here have Infantry, Battleline and Imperium keywords on their
-        datasheets.
       </p>
 
       <h3>Intercessor Squad</h3>
       <Image
         src={intercessors}
         alt="A squad of Space Marine Intercessors advancing."
-        className="shadow-md"
+        className="shadow-md max-h-96 object-cover object-[0%_65%]"
       />
 
       <Callout>
-        <FlexWrapper>
-          <GiBolterGun />
-          <div>
-            <strong>Profile</strong>: MEQ with OC2
-          </div>
-        </FlexWrapper>
+        <div className="text-base">
+          MEQ with OC2 |{' '}
+          <span className="text-light">
+            Infantry, Battleline, Imperium, Grenades, Tacticus
+          </span>
+        </div>
 
-        <FlexWrapper>
-          <GrGroup />
-          <div>
-            <strong>Cost</strong>: 80 pts. for 5 or 160 pts. for 10 models
-          </div>
-        </FlexWrapper>
+        <p>
+          80 pts. for 5 models or 160 pts. for 10 models{' '}
+          <span className="text-light">
+            armed with a bolt pistol, a bolt rifle, and a close combat weapon
+          </span>
+        </p>
 
-        <FlexWrapper>
-          <TiStarburst />
-          Grenades, Tacticus
-        </FlexWrapper>
+        <p className="mt-2">
+          <strong>Objective Secured</strong> a.k.a. Sticky Objectives: Cap an
+          objective once it stays yours until the enemy takes it.
+        </p>
+
+        <p>
+          <strong>Target Elimination</strong> a.k.a. Focus Fire: +2 attacks per
+          bolt rifle if all shoot the same target.
+        </p>
       </Callout>
 
       <p>
         This is the principle Adeptus Astartes battleline squad. A sergeant
         leads either four or nine <em>Primaris</em> marines armed with{' '}
-        <em>Bolt Rifles</em>. Consider 4/9 + 1 as the standard setup for Space
-        Marine squads. By Primaris marines we understand the “new generation” of
-        marine warriors, where <em>Firstborn</em> is the “old” one.
+        <em>Bolt Rifles</em>. By Primaris marines we understand the "new
+        generation" of marine warriors, where <em>Firstborn</em> is the "old"
+        one.
       </p>
+
+      <Callout>
+        <FlexWrapper className="text-base">
+          <GiBolterGun /> <span>Bolt Rifle</span>
+        </FlexWrapper>
+        <p className="font-bold">
+          24"|A2|BS3+|S4|AP-1|D1{' '}
+          <span className="text-light">/ Assault, Heavy</span>
+        </p>
+
+        <p className="font-bold">
+          One in five squad members can attach a Grenade Launcher to their Bolt
+          Rifle.
+        </p>
+
+        <p>
+          The Assault and Heavy keywords give flexibility both for staying put
+          or moving forward, playing well with their Sticky Objectives rule. The
+          rifle erases GEQ units but also performs respectably against MEQs.
+          Even without the Focus Fire and Heavy kicking in, a five-man squad can
+          be expected to kill 7-8 GEQ, or 2 MEQ or 1 TEQ per volley. The
+          weapon’s effectiveness falls off against Toughness 5+ foes, but the
+          grenade launcher in krak mode can help with that.
+        </p>
+      </Callout>
     </article>
   )
 }

@@ -108,7 +108,7 @@ export default async function Page() {
       </p>
 
       <Callout>
-        <FlexWrapper className="text-xl font-bold">
+        <FlexWrapper className="text-base font-bold">
           <GiBolterGun /> <span>Weapons vs GEQ</span>
         </FlexWrapper>
 
@@ -152,7 +152,7 @@ export default async function Page() {
       <Image
         src={intercessors}
         alt="Space Marines Intercessors"
-        className="h-48 object-cover object-[0%_65%] shadow-md"
+        className="max-h-72 object-cover object-[0%_65%] shadow-md"
       />
 
       <p>
@@ -198,7 +198,7 @@ export default async function Page() {
       </p>
 
       <Callout>
-        <FlexWrapper className="text-xl font-bold">
+        <FlexWrapper className="text-base font-bold">
           <GiBolterGun /> <span>Weapons vs MEQ</span>
         </FlexWrapper>
 

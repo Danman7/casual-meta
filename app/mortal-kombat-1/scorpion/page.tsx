@@ -13,7 +13,7 @@ import {
 import { LuShieldAlert, LuShieldCheck } from 'react-icons/lu'
 import { MdBatteryChargingFull, MdOutlineSocialDistance } from 'react-icons/md'
 import {
-  PiArrowFatDownLight,
+  PiArrowFatDownFill,
   PiArrowsCounterClockwiseBold,
   PiBatteryWarningVerticalBold,
 } from 'react-icons/pi'
@@ -194,7 +194,7 @@ export default async function Page() {
         </Badge>
 
         <Badge className="text-success border-success">
-          <PiArrowFatDownLight /> Second hit low
+          <PiArrowFatDownFill /> Second hit low
         </Badge>
 
         <Badge className="text-error border-error!">
