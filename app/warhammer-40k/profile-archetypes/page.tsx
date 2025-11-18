@@ -6,6 +6,7 @@ import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { Callout } from '@/app/ui/Callout'
+import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 5
@@ -107,9 +108,9 @@ export default async function Page() {
       </p>
 
       <Callout>
-        <div className="text-xl font-bold flex gap-2 items-center">
+        <FlexWrapper className="text-xl font-bold">
           <GiBolterGun /> <span>Weapons vs GEQ</span>
-        </div>
+        </FlexWrapper>
 
         <p>
           Most weapons will perform well against light infantry. Even the lowly
@@ -197,9 +198,9 @@ export default async function Page() {
       </p>
 
       <Callout>
-        <div className="text-xl font-bold flex gap-2 items-center">
+        <FlexWrapper className="text-xl font-bold">
           <GiBolterGun /> <span>Weapons vs MEQ</span>
-        </div>
+        </FlexWrapper>
 
         <p>
           A <em>Lasgun</em> A1|S3|AP0|D1 would struggle to do a dent with 1

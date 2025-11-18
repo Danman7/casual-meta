@@ -7,6 +7,7 @@ import { TiStarburst } from 'react-icons/ti'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
+import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 11
@@ -59,24 +60,24 @@ export default async function Page() {
       />
 
       <Callout>
-        <div className="flex gap-2 items-center">
+        <FlexWrapper>
           <GiBolterGun />
           <div>
             <strong>Profile</strong>: MEQ with OC2
           </div>
-        </div>
+        </FlexWrapper>
 
-        <div className="flex gap-2 items-center">
+        <FlexWrapper>
           <GrGroup />
           <div>
             <strong>Cost</strong>: 80 pts. for 5 or 160 pts. for 10 models
           </div>
-        </div>
+        </FlexWrapper>
 
-        <div className="flex gap-2 items-center">
+        <FlexWrapper>
           <TiStarburst />
           Grenades, Tacticus
-        </div>
+        </FlexWrapper>
       </Callout>
 
       <p>

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
+import { FlexWrapper } from '@/app/ui/FlexWrapper'
 
 export default function Page() {
   return (
@@ -10,13 +11,13 @@ export default function Page() {
         <div className="text-4xl">for casual players</div>
       </div>
 
-      <div className="flex justify-center items-center gap-4 text-lg mb-12 flex-wrap">
+      <FlexWrapper className="justify-center gap-4 text-lg mb-12">
         {ROOT_NAVIGATION_ITEMS.map((item) => (
           <Link key={item.href} href={item.href}>
             {item.name}
           </Link>
         ))}
-      </div>
+      </FlexWrapper>
     </article>
   )
 }

@@ -1,15 +1,24 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { GiGrab, GiHighPunch, GiLifeBar, GiSharpAxe } from 'react-icons/gi'
+import {
+  GiGrab,
+  GiHighPunch,
+  GiJoint,
+  GiLifeBar,
+  GiSharpAxe,
+  GiWingfoot,
+} from 'react-icons/gi'
 import { IoPeopleSharp } from 'react-icons/io5'
+import { LuShieldCheck } from 'react-icons/lu'
 import { MdOutlineSocialDistance } from 'react-icons/md'
-import { TbCircleLetterN } from 'react-icons/tb'
+import { TbCircleLetterN, TbRuler3 } from 'react-icons/tb'
 import { TiArrowShuffle } from 'react-icons/ti'
 
 import Shao from '@/app/assets/mk1/shao.webp'
 import { MK1_BASE_URL, MK1_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { BulletList } from '@/app/ui/BulletList'
+import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -34,7 +43,7 @@ export default async function Page() {
         />
 
         <div className="md:w-1/2">
-          <div className="flex gap-2 mt-4 flex-wrap">
+          <FlexWrapper className="mt-4">
             <Badge className="text-success border-success">
               <GiLifeBar /> High Health
             </Badge>
@@ -67,7 +76,7 @@ export default async function Page() {
             <Badge className="text-error border-error!">
               <MdOutlineSocialDistance /> Weak Fullscreen
             </Badge>
-          </div>
+          </FlexWrapper>
 
           <p>
             General Shao is a mid-range brawler with a heavy emphasis on
@@ -155,6 +164,23 @@ export default async function Page() {
       </p>
 
       <h3>Standing 2</h3>
+      <FlexWrapper>
+        <Badge className="text-success border-success">
+          <LuShieldCheck /> Safe
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <GiWingfoot /> Fast
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <TbRuler3 /> Decent Reach
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <GiJoint /> Disjointed
+        </Badge>
+      </FlexWrapper>
 
       <p>
         Pressing 2 with the axe while holding no direction will execute a very

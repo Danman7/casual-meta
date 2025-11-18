@@ -12,6 +12,7 @@ import {
 import { useMemo, useState } from 'react'
 
 import creaturesData from '@/app/data/homm3/creatures.json'
+import { FlexWrapper } from '@/app/ui/FlexWrapper'
 
 interface Creature {
   name: string
@@ -256,7 +257,7 @@ export function CreatureTable() {
                     className="px-4 py-3 text-left text-sm font-semibold bg-surface cursor-pointer hover:bg-light/10"
                     onClick={header.column.getToggleSortingHandler()}
                   >
-                    <div className="flex items-center gap-2">
+                    <FlexWrapper>
                       {flexRender(
                         header.column.columnDef.header,
                         header.getContext(),
@@ -265,7 +266,7 @@ export function CreatureTable() {
                         asc: ' 🔼',
                         desc: ' 🔽',
                       }[header.column.getIsSorted() as string] ?? null}
-                    </div>
+                    </FlexWrapper>
                   </th>
                 ))}
               </tr>

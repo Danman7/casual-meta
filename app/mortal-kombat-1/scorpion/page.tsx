@@ -1,6 +1,13 @@
 import Image from 'next/image'
+import { FaLongArrowAltDown } from 'react-icons/fa'
 import { FaGraduationCap } from 'react-icons/fa6'
-import { GiArmorPunch, GiJoint, GiWingfoot } from 'react-icons/gi'
+import {
+  GiArmorPunch,
+  GiFalling,
+  GiJoint,
+  GiSnail,
+  GiWingfoot,
+} from 'react-icons/gi'
 import { LuShieldAlert, LuShieldCheck } from 'react-icons/lu'
 import { MdBatteryChargingFull, MdOutlineSocialDistance } from 'react-icons/md'
 import {
@@ -13,6 +20,7 @@ import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import { MK1_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { BulletList } from '@/app/ui/BulletList'
+import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 8
@@ -37,7 +45,7 @@ export default async function Page() {
         />
 
         <div className="md:w-1/2">
-          <div className="flex gap-2 mt-4 flex-wrap">
+          <FlexWrapper className="mt-4">
             <Badge className="text-success border-success">
               <FaGraduationCap /> Beginner-friendly
             </Badge>
@@ -59,9 +67,9 @@ export default async function Page() {
             </Badge>
 
             <Badge className="text-error border-error!">
-              <PiBatteryWarningVerticalBold /> Suboptimal damage w/o resources
+              <PiBatteryWarningVerticalBold /> Suboptimal Damage w/o Resources
             </Badge>
-          </div>
+          </FlexWrapper>
 
           <p>
             Mortal Kombat 1’s version of Scorpion has a polarizing effect on the
@@ -141,7 +149,7 @@ export default async function Page() {
       </p>
 
       <h3>Standing 2</h3>
-      <div className="flex gap-2 items-center">
+      <FlexWrapper>
         <Badge className="text-success border-success">
           <LuShieldCheck /> Safe
         </Badge>
@@ -153,22 +161,34 @@ export default async function Page() {
         <Badge className="text-success border-success">
           <TbRuler3 /> Decent Reach
         </Badge>
-      </div>
+      </FlexWrapper>
 
       <h3>Back 3</h3>
-      <div className="flex gap-2 items-center">
+      <FlexWrapper>
         <Badge className="text-success border-success">
           <GiJoint /> Disjointed
         </Badge>
 
         <Badge className="text-success border-success">
-          <TbRulerMeasure /> Very far reaching
+          <TbRulerMeasure /> Very Long reach
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <GiFalling /> Knockdown
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <FaLongArrowAltDown /> Low
+        </Badge>
+
+        <Badge className="text-error border-error!">
+          <GiSnail /> Slow
         </Badge>
 
         <Badge className="text-error border-error!">
           <LuShieldAlert /> Unsafe
         </Badge>
-      </div>
+      </FlexWrapper>
     </article>
   )
 }
