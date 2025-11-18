@@ -5,6 +5,7 @@ import Link from 'next/link'
 import '@/app/globals.css'
 import { Nav } from '@/app/ui/Nav'
 import { SectionNav } from '@/app/ui/SectionNav'
+import { TableOfContents } from '@/app/ui/TableOfContents'
 
 const notoSerif = Noto_Serif({
   variable: '--font-noto-serif',
@@ -37,6 +38,8 @@ export default function RootLayout({
           </aside>
 
           <main className="flex-1 px-6 pb-6 overflow-x-hidden">{children}</main>
+
+          <TableOfContents />
         </div>
 
         <footer className="inset-shadow-sm text-center md:flex md:justify-between p-8 gap-4 shadow-md bg-surface z-10">
