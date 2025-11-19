@@ -1,9 +1,10 @@
 import Image from 'next/image'
-import { FaForward } from 'react-icons/fa'
-import { FaGraduationCap } from 'react-icons/fa6'
+import { FaForward, FaPlay } from 'react-icons/fa'
+import { FaGraduationCap, FaPersonArrowUpFromLine } from 'react-icons/fa6'
 import {
   Gi3dStairs,
   GiArmorPunch,
+  GiArrowDunk,
   GiFalling,
   GiHighKick,
   GiJoint,
@@ -18,8 +19,13 @@ import {
   PiArrowFatDownFill,
   PiArrowsCounterClockwiseBold,
 } from 'react-icons/pi'
-import { TbBoxMultiple2, TbRuler3, TbRulerMeasure } from 'react-icons/tb'
-import { TiFlowChildren, TiFlowSwitch } from 'react-icons/ti'
+import {
+  TbArrowBounce,
+  TbBoxMultiple2,
+  TbRuler3,
+  TbRulerMeasure,
+} from 'react-icons/tb'
+import { TiArrowShuffle, TiFlowChildren } from 'react-icons/ti'
 
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
@@ -63,19 +69,23 @@ export default async function Page() {
             </Badge>
 
             <Badge className="text-success border-success">
-              <MdBatteryChargingFull /> Simple meterless combos
+              <MdBatteryChargingFull /> Easy meterless combos
             </Badge>
 
             <Badge className="text-success border-success">
               <PiArrowsCounterClockwiseBold /> Good counterplay
             </Badge>
 
-            <Badge className="text-warning border-warning">
-              <TiFlowSwitch /> Good difficult tech
+            <Badge className="text-success border-success">
+              <GiArrowDunk /> Throw Combos
             </Badge>
 
             <Badge className="text-error border-error!">
-              <GiArmorPunch /> Suboptimal offense w/o Kameos
+              <TiArrowShuffle /> Poor mix
+            </Badge>
+
+            <Badge className="text-error border-error!">
+              <GiArmorPunch /> Difficult offense w/o Kameo
             </Badge>
           </FlexWrapper>
 
@@ -128,9 +138,8 @@ export default async function Page() {
         icon="GiDeathSkull"
         items={[
           <>
-            <strong>No mix-up or frame traps on his own</strong> - Proactive
-            offense is possible, but you will have to time it with good Kameo
-            moves.
+            <strong>No mix-up his own</strong> - Proactive offense is possible,
+            but you will have to time it with good Kameo moves.
           </>,
           <>
             <strong>Considered predictable</strong> - People expect the spear,
@@ -145,11 +154,40 @@ export default async function Page() {
         className="text-error"
         icon="GiDeathSkull"
         items={[
-          'Optimal combos are often difficult and resource hungry yet provide little on top of sampler, more consistent ones.',
+          '45%+ combos are possible difficult and resource hungry yet provide little on top of sampler, more consistent ones.',
+          'There are frame trap options without a Kameo, but they require tight tech.',
         ]}
       />
 
       <h2>Key Normals</h2>
+
+      <h3>F32</h3>
+      <FlexWrapper className="mt-2">
+        <Badge className="text-success border-success">
+          <LuShieldCheck /> Safe
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <FaPersonArrowUpFromLine /> Launch
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <TbArrowBounce /> Repeated juggle
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <FaPlay /> Combo starter
+        </Badge>
+
+        <Badge className="text-error border-error!">
+          <GiSnail /> Slow
+        </Badge>
+      </FlexWrapper>
+
+      <p>
+        We start with this one because it’s your primary combo starter and
+        neutral tool.
+      </p>
 
       <h3>2 / 21</h3>
 
@@ -160,6 +198,10 @@ export default async function Page() {
 
         <Badge className="text-success border-success">
           <GiWingfoot /> Fast
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <FaPlay /> Combo starter
         </Badge>
 
         <Badge className="text-success border-success">
@@ -180,7 +222,9 @@ export default async function Page() {
       <p>
         Learn to measure the standing 2 first. It is marginally slower than
         standing 1 but reaches much further. The 21 will be your primary
-        mid-to-close range advancing stagger for pressure or hit-confirm.
+        mid-to-close range advancing stagger for pressure or hit-confirm. It is
+        slower than 12, but more damaging and just as safe, so unless they are
+        right next you stick with it.
       </p>
 
       <h3>Back 3</h3>
