@@ -1,10 +1,24 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { GiBolterGun, GiCrocSword, GiFist, GiSpikedHalo } from 'react-icons/gi'
+import {
+  GiBlackHandShield,
+  GiBolterGun,
+  GiCrocSword,
+  GiFist,
+  GiFlyingFlag,
+  GiPencilRuler,
+  GiShadowFollower,
+  GiSkullCrack,
+  GiSnail,
+  GiSpikedHalo,
+  GiTwoCoins,
+} from 'react-icons/gi'
+import { IoPeople } from 'react-icons/io5'
 
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
+import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
 import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -40,6 +54,32 @@ export default async function Page() {
       </p>
 
       <h3>Intercessor Squad</h3>
+      <FlexWrapper className="mt-2">
+        <Badge className="text-success border-success">
+          <GiPencilRuler /> Best Utility
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <GiFlyingFlag /> Sticky Objectives
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <GiBolterGun /> Consistent ranged damage
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <GiSkullCrack /> Good vs GEQ
+        </Badge>
+
+        <Badge>
+          <GiSkullCrack /> OK vs MEQ
+        </Badge>
+
+        <Badge className="text-error border-error!">
+          <GiBlackHandShield /> Weak vs T5+
+        </Badge>
+      </FlexWrapper>
+
       <Image
         src={intercessors}
         alt="A squad of Space Marine Intercessors advancing."
@@ -163,6 +203,32 @@ export default async function Page() {
       </Callout>
 
       <h3>Assault Intercessor Squad</h3>
+
+      <FlexWrapper className="mt-2">
+        <Badge className="text-success border-success">
+          <GiTwoCoins /> Expendable
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <GiSkullCrack /> Good vs GEQ
+        </Badge>
+
+        <Badge className="text-success border-success">
+          <IoPeople /> Strong Character Support
+        </Badge>
+
+        <Badge className="text-error border-error!">
+          <GiBlackHandShield /> Weak vs T5+
+        </Badge>
+
+        <Badge className="text-error border-error!">
+          <GiSnail /> Slow for role
+        </Badge>
+
+        <Badge className="text-error border-error!">
+          <GiShadowFollower /> Better Alternatives
+        </Badge>
+      </FlexWrapper>
       <Image
         src={assaultIntercessors}
         alt="A squad of Assault Intercessors."

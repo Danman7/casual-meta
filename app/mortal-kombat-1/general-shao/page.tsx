@@ -165,7 +165,7 @@ export default async function Page() {
       </p>
 
       <h3>Standing 2</h3>
-      <FlexWrapper>
+      <FlexWrapper className="mt-2">
         <Badge className="text-success border-success">
           <LuShieldCheck /> Safe
         </Badge>

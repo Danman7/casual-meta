@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { FaForward } from 'react-icons/fa'
 import { FaGraduationCap } from 'react-icons/fa6'
 import {
   Gi3dStairs,
@@ -7,6 +8,7 @@ import {
   GiHighKick,
   GiJoint,
   GiSnail,
+  GiSpearHook,
   GiThumbUp,
   GiWingfoot,
 } from 'react-icons/gi'
@@ -15,10 +17,9 @@ import { MdBatteryChargingFull, MdOutlineSocialDistance } from 'react-icons/md'
 import {
   PiArrowFatDownFill,
   PiArrowsCounterClockwiseBold,
-  PiBatteryWarningVerticalBold,
 } from 'react-icons/pi'
 import { TbBoxMultiple2, TbRuler3, TbRulerMeasure } from 'react-icons/tb'
-import { TiFlowChildren } from 'react-icons/ti'
+import { TiFlowChildren, TiFlowSwitch } from 'react-icons/ti'
 
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
@@ -26,6 +27,7 @@ import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK1_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { BulletList } from '@/app/ui/BulletList'
+import { Callout } from '@/app/ui/Callout'
 import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -68,12 +70,12 @@ export default async function Page() {
               <PiArrowsCounterClockwiseBold /> Good counterplay
             </Badge>
 
-            <Badge className="text-error border-error!">
-              <GiArmorPunch /> Suboptimal Offense w/o Kameos
+            <Badge className="text-warning border-warning">
+              <TiFlowSwitch /> Good difficult tech
             </Badge>
 
             <Badge className="text-error border-error!">
-              <PiBatteryWarningVerticalBold /> Suboptimal Damage w/o Resources
+              <GiArmorPunch /> Suboptimal offense w/o Kameos
             </Badge>
           </FlexWrapper>
 
@@ -149,7 +151,7 @@ export default async function Page() {
 
       <h2>Key Normals</h2>
 
-      <h3>Standing 2</h3>
+      <h3>2 / 21</h3>
 
       <FlexWrapper className="mt-2">
         <Badge className="text-success border-success">
@@ -163,6 +165,10 @@ export default async function Page() {
         <Badge className="text-success border-success">
           <TbRuler3 /> Decent Reach
         </Badge>
+
+        <Badge className="text-success border-success">
+          <FaForward /> Advancing
+        </Badge>
       </FlexWrapper>
 
       <Image
@@ -170,6 +176,12 @@ export default async function Page() {
         src={scorp2}
         alt="Scorpion doing standing 2 attack."
       />
+
+      <p>
+        Learn to measure the standing 2 first. It is marginally slower than
+        standing 1 but reaches much further. The 21 will be your primary
+        mid-to-close range advancing stagger for pressure or hit-confirm.
+      </p>
 
       <h3>Back 3</h3>
       <FlexWrapper className="mt-2">
@@ -211,6 +223,33 @@ export default async function Page() {
         src={scorpb3}
         alt="Scorpion doing back 3 attack."
       />
+
+      <p>The first hit can be cancelled into any special or Kameo move.</p>
+
+      <Callout>
+        <div className="text-base font-bold flex items-center gap-2">
+          <GiSpearHook /> B3 Cancels
+        </div>
+        <p>
+          <strong>B3 F1</strong> cancels into Spear.
+        </p>
+        <p>
+          <strong>B3 F2</strong> cancels into Dash.
+        </p>
+        <p>
+          <strong>B3 EX DB3</strong> cancels into Enhanced Teleport which out of
+          the special moves is the most difficult yet safest option. It is a
+          good way to force them into blocking, maybe even low blocking, being
+          less prepared to counter the port.
+        </p>
+
+        <p>
+          As mentioned, Scorpion has a poor mix-up without Kameos. The B3 is a
+          good candidate for Kameo synergy. <em>Ferra</em> is a popular pair for
+          him in this regard. You can do <strong>B3 K 3</strong> for a low mix
+          or <strong>B3 K 2</strong> for an overhead mix.
+        </p>
+      </Callout>
 
       <h2>Baiting Whiffs</h2>
 
