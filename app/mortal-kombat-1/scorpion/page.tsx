@@ -107,13 +107,12 @@ export default async function Page() {
             Mortal Kombat 1’s version of Scorpion has a polarizing effect on the
             community, but he remains frequently played at all levels. Nearly
             all of his normal moves are safe, though they lack pressure
-            potential without the right Kameo partner. He has tools to fight
+            potential without the right Kameo partner. On his own, he tends to
+            perform best when reacting to opponent - punishing and interrupting
+            - rather than pushing the offense himself. He has tools to fight
             effectively both up close and against zoning players who prefer
             distance. As in past titles, Scorpion’s low execution barrier makes
-            him a good choice for newcomers. Keep in mind, however, that until
-            you get into more difficult tech he tends to perform best when
-            reacting to opponents - punishing and interrupting - rather than
-            launching the offense himself.
+            him a good choice for newcomers.
           </p>
         </div>
       </div>
@@ -124,31 +123,29 @@ export default async function Page() {
         icon="GiDeathSkull"
         items={[
           <>
-            <strong>No safe spot for your foe</strong>. The Spear, Teleport, B3
-            and Hellfire set of moves pose a threat everywhere on the screen.
+            <strong>No safe spot for your foe</strong>. The Spear, Teleport and
+            Hellfire pose a threat everywhere on the screen.
           </>,
           <>
-            <strong>Is novice approved</strong>. With no stances, forms, or
-            necessity for complex sequences, Scorpion offers a full toolkit for
-            every basic matchup scenario. His normals are generally safe on
-            block, and the Spear remains a reliable stun that pulls enemies in.
-          </>,
-          <>
-            <strong>Has simple combo options</strong>. Scorpion offers
-            straightforward routes that reach the 25 - 30% damage range, with
-            easy launchers, repeat juggles, and strong synergy with his Spear.
+            <strong>Novice approved</strong>. With no stances or forms, Scorpion
+            offers a full toolkit for every basic matchup scenario. His normals
+            are generally safe on block, and the Spear remains a reliable stun
+            that pulls enemies in. There are straightforward routes that reach
+            the 25-30% damage range, with easy launchers, repeat juggles, and
+            strong synergy with his Spear.
           </>,
           <>
             <strong>Good interruptions and punishes</strong>. His dash (armored
             on EX), standing 2 and Spear are solid tools to stop advancing
-            enemies or even punish whiffs. His B3 is slow but reaches far and
-            can catch opponents off-guard. B2 is a decent anti-air.
+            enemies or even punish whiffs. His B3 is a slow mid-low attack but
+            reaches far and can catch opponents off-guard. B2 is a decent
+            anti-air.
           </>,
           <>
-            <strong>Kameo Synergy</strong>. His moves and long throw animation
-            make him accessible to a lot of Kameo partners. One can pair him for
-            easy combo extension, mix-ups, or more technical jails or chip
-            damage.
+            <strong>Kameo Synergy</strong>. His moves and cancelable throw
+            animation make him accessible to a lot of Kameos. He can be paired
+            with easy combo extensions, mix-ups, technical jails or chip damage
+            in mind.
           </>,
         ]}
       />
@@ -158,17 +155,10 @@ export default async function Page() {
         icon="GiDeathSkull"
         items={[
           <>
-            <strong>Needs a good Kameo for optimal offense</strong>. The other
-            side of the coin is that he has no true ground mix-up or frame
-            advantage on block. To catch up with a skilled opponent, he would
-            require an appropriate partner. The best ones are usually not the
-            easiest to play.
-          </>,
-          <>
-            <strong>Move abuse is predictable</strong>. Isn’t this true for
-            every character? Well, when one sees Scorpion, their mind goes
-            immediately to the signature Spear and Teleport. Variate your
-            distanced attacks with the Hellfire and B3.
+            <strong>Needs a good Kameo for optimal offense</strong>. Scorpion
+            has no true grounded mix-up or frame advantage on block. To catch up
+            with a skilled opponent, he would require an appropriate partner to
+            fill in the gaps and do 50/50s.
           </>,
         ]}
       />
@@ -179,7 +169,7 @@ export default async function Page() {
         items={[
           <>
             <strong>High damage is difficult</strong>. There are routes to the
-            45% - 50% damage range, but they require tight timing and resources.
+            45-50% damage range, but they require tight timing and resources.
             Often simpler, more consistent combos are better when playing
             online.
           </>,
@@ -190,12 +180,6 @@ export default async function Page() {
 
       <h3>Forward 32</h3>
       <FlexWrapper className="mt-2">
-        <Badge>
-          <RiArrowRightLine /> <RiArrowRightUpLine /> Mid - High
-        </Badge>
-
-        <Badge>12f start</Badge>
-
         <Badge className="text-success border-success">
           <LuShieldCheck /> Safe (-6 on block)
         </Badge>
@@ -209,47 +193,55 @@ export default async function Page() {
         </Badge>
 
         <Badge className="text-success border-success">
+          <FaForward /> Advancing
+        </Badge>
+
+        <Badge>
           <FaPlay /> Combo starter
         </Badge>
+
+        <Badge>
+          <RiArrowRightLine /> <RiArrowRightUpLine /> Mid - High
+        </Badge>
+
+        <Badge>12f start</Badge>
       </FlexWrapper>
 
       <div className="flex flex-col md:flex-row">
         <Image
           src={scorpf3}
           alt="Scorpions forward 3 attack."
-          className="md:w-1/2 object-cover shadow-md"
+          className="md:w-1/2 max-h-96 object-cover object-[0%_20%] shadow-md"
         />
 
         <Image
           src={scorpf32}
           alt="Scorpion's forward 32 launch."
-          className="md:w-1/2 object-cover shadow-md"
+          className="md:w-1/2 max-h-96 object-cover object-[0%_20%] shadow-md"
         />
       </div>
 
       <p>
-        This is your main meterless combo starter. It is slower and has a
-        shorter reach than standing 2, but it launches the opponent into the
-        air. Practice this first. It is best employed out of neutral without the
-        help of the spear, as you would find extending combos without the latter
-        difficult later. If you are having trouble connecting, try a D1 into F32
-        or a jump in punch J2 F32 to catch them off balance.
+        This is Scorpion’s launching combo starter. It is reasonably fast, but
+        even while advancing it has a short reach. It is best employed after a
+        miss or an unsafe attack from your opponent. Connecting out of neutral
+        without the help of the spear is best as you will find extending combos
+        later easier.
       </p>
 
       <p>
-        <strong>
-          F32 can be repeated up to three times in a row, depending on progress
-          of the combo.
-        </strong>{' '}
-        Towards the beginning of a combo is best due to gravity scaling.
-        Afterwards you can add a standing 4 into a spear, but if you wish to use
-        some of Scorpion’s excellent areal moves you will have to chain only up
-        to two F32s.
+        <strong>F32 can be repeated up to three times in a row</strong>,
+        depending on gravity scaling. Naturally doing it towards the start of a
+        combo will have better results.
       </p>
 
-      <h3>2 / 21</h3>
+      <h3>Standing 21</h3>
 
       <FlexWrapper className="mt-2">
+        <Badge className="text-success border-success">
+          <GiJoint /> Disjointed
+        </Badge>
+
         <Badge className="text-success border-success">
           <LuShieldCheck /> Safe (-2 on block)
         </Badge>
@@ -259,15 +251,15 @@ export default async function Page() {
         </Badge>
 
         <Badge className="text-success border-success">
-          <FaPlay /> Combo starter
-        </Badge>
-
-        <Badge className="text-success border-success">
           <TbRuler3 /> Decent Reach
         </Badge>
 
         <Badge className="text-success border-success">
           <FaForward /> Advancing
+        </Badge>
+
+        <Badge>
+          <FaPlay /> Combo starter
         </Badge>
       </FlexWrapper>
 
@@ -278,20 +270,15 @@ export default async function Page() {
       />
 
       <p>
-        F32 is best, but standing 2 is often more consistent. Learn to measure
-        its reach. The 21 string will be your{' '}
-        <strong>
-          primary mid-to-close range pressure stagger and hit-confirm
-        </strong>
-        . Prefer this over the 12, unless you are touching the enemy and speed
-        is of the essence.
+        This is your{' '}
+        <strong>primary range pressure stagger and hit-confirm</strong>. It has
+        surprising reach making it a preferable combo starter over the 12,
+        unless you are touching with the enemy and speed is of the essence.
       </p>
 
       <p>
         Initiating a combo with 21 is easier than F32, but you will have to
-        cancel into spear right away unless paired with an appropriate Kameo
-        extender. Then you can still chain three F32s with a different combo
-        ender.
+        cancel into spear right away unless your Kameo can extend.
       </p>
 
       <h3>Back 3</h3>
