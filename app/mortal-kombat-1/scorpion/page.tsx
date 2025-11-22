@@ -174,7 +174,7 @@ export default async function Page() {
 
       <h2>Key Normals</h2>
 
-      <h3>Forward 32</h3>
+      <h3>Raising Hell - F32</h3>
       <FlexWrapper className="mt-2">
         <Badge className="text-success border-success">
           <LuShieldCheck /> Safe (-6 on block)
@@ -221,8 +221,8 @@ export default async function Page() {
         This is Scorpion’s launching combo starter. It is reasonably fast, but
         even while advancing it has a short reach. It is best employed after a
         miss or an unsafe attack from your opponent. Connecting out of neutral
-        without the help of the spear is best as you will find extending combos
-        later easier.
+        without the help of the spear is preferable as you will find extending
+        combos later easier.
       </p>
 
       <p>
@@ -266,8 +266,7 @@ export default async function Page() {
       />
 
       <p>
-        This is your{' '}
-        <strong>primary range pressure stagger and hit-confirm</strong>. It has
+        This is your <strong>primary challenge and hit-confirm</strong>. It has
         surprising reach making it a preferable combo starter over the 12,
         unless you are touching with the enemy and speed is of the essence.
       </p>
@@ -277,7 +276,7 @@ export default async function Page() {
         cancel into spear right away unless your Kameo can extend.
       </p>
 
-      <h3>Back 3</h3>
+      <h3>Sweeping Tail - B3</h3>
       <FlexWrapper className="mt-2">
         <Badge className="text-success border-success">
           <GiJoint /> Disjointed
@@ -313,19 +312,18 @@ export default async function Page() {
       />
 
       <p>
-        The B3 is important to understand. Scorpion uses his Kunai (making it
-        disjointed) to make two attacks at very long range (about jump distance
-        + back dash). The first one hits mid and is cancelable into any special
-        or Kameo move. The second one is not, but hits low, which is the basis
-        of conditioning with this move.
+        Scorpion’s Back 3 is a distinctive move. He uses his Kunai for a
+        disjointed attack that makes two hits - a mid followed by a low one. It
+        extends at jump distance plus one dash, making it one of the furthest
+        reaching normal in the game. Even as slow and predictable as it is, the
+        threat of a low attack at such a distance conditions the other player to
+        block low or jump over it.
       </p>
 
       <p>
-        B3 is slow, so most of the time the opponent has enough time to read it.
-        The popular response is low block which does enough to limit their
-        mobility and projectile spam. But sometimes the opponent will jump over
-        it or teleport quite effectively. Don’t abuse this and be mindful of the
-        distance you are at as this attack is not safe on block.
+        Also, importantly, the first mid hit of Back 3 cancels into any special
+        or Kameo move, providing interesting pressure alternatives. Just don’t
+        try it often at close range.
       </p>
 
       <Callout>
@@ -363,7 +361,7 @@ export default async function Page() {
         </p>
       </Callout>
 
-      <h3>Back 2</h3>
+      <h3>Swiping Kunai - B2</h3>
 
       <FlexWrapper className="mt-2">
         <Badge className="text-success border-success">
@@ -390,17 +388,12 @@ export default async function Page() {
       />
 
       <p>
-        Back 2 is another cancelable back move that is also an OK jump-in
-        defense. It can also be used on the ground, reaching slightly less than
-        standing 2. All the cancels mentioned above with B3 are applicable here,
-        but because of distance this move is effective at, probably the spear
-        and dash are the best options.
-      </p>
-
-      <p>
-        The conditioning to block low or jump over B3 can be used to your
-        advantage. You can bait a jump with B3 then swat the jumper with B2 into
-        a spear for a full combo.
+        Back 2 is a reachy high attack that is also a reasonable anti-air move.
+        You can combine it with Back 3 - B3 baiting a jump into B2 punishing
+        that jump if the opponent doesn’t time his attack properly. It is also
+        cancelable into any of the special moves as B3, but because of its
+        shorter range it is best used as a combo starter from a jumping-in
+        opponent - B2 F1 for a full spear combo punish.
       </p>
 
       <h2>Specials</h2>
@@ -440,45 +433,36 @@ export default async function Page() {
       />
 
       <p>
-        The signature Scorpion spear is a unique special move. It launches a
-        moderately slow high projectile. If it connects, it stuns and restands
-        the target, then brings it next to you.{' '}
-        <strong>
-          Connecting a second spear within the same combo it will drop the
-          opponent
-        </strong>{' '}
-        (as expected to prevent stun move abuse). So be mindful of your combo
-        route.
+        The Spear - Scorpion’s signature move - is a pretty unique special. He
+        launches his Kunai as a slow forward high projectile. If it connects, it
+        stuns its target, brings them and restands them next to Scorpion. A{' '}
+        <strong>second spear</strong> at this point{' '}
+        <strong>will drop the opponent to the ground</strong> (to prevent stun
+        abuse).
       </p>
 
       <p className="font-bold">
-        The enhanced version hits Mid instead of High, useful for catching foes
-        that like to duck under the spear off-guard.
+        The enhanced version hits mid, catching foes that like to duck under the
+        spear off-guard.
       </p>
 
       <p>
-        The spear rules mid-screen neutral. Yes, it is anticipated, but you can
-        fruitfully catch whiffs, jump-ins and projectile spam at some distance.
-        The possibility of a spear itself conditions the opponent into careful
-        approach even without encountering it.
-      </p>
-
-      <p>
-        Next, naturally the spear is a superb combo extender, giving scorpion
-        free choice of how to connect and continue a combo. It is worth noting
-        that many unlikely air moves like jump-in kick, J13 or J111 (close to
-        the ground) can connect with the spear.
+        As expected, the lure of stunning the other fighter to start an easy
+        combo, promotes new players to abuse the spear. It is the most
+        anticipated move, but the threat of it is often more effective than its
+        ill-measured use. Think of it as mid-screen space control. You can bait
+        into it (discussed bellow). Apply it to catch far jump-ins, whiffs or
+        dashes. Using your other tools to initiate a combo will help you extend
+        it at a later stage.
       </p>
 
       <h2>Core Combos</h2>
 
       <p>
-        Scorpion’s moves are very modular. Everything chains nicely, but for the
-        most part you should favor stable, consistent combos over tight optimal
-        ones. Initiating a combo online will be very different from practice
-        mode. In this regard there are two main routes without a Kameo, that a
-        Scorpion player should learn. We'll give you a meterless and a single
-        meter version.
+        As modular as Scorpion’s move set is, when playing online, consistency
+        will defeat high damage and intricate sequences. In this regard we like
+        to suggest two Kameo-agnostic routes for you to begin with - each with a
+        meterless and single meter variation.
       </p>
 
       <h3>Spear Late</h3>
