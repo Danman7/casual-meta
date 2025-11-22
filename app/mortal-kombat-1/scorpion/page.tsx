@@ -16,8 +16,16 @@ import {
   GiWingfoot,
 } from 'react-icons/gi'
 import { IoPeople } from 'react-icons/io5'
-import { LuShieldCheck } from 'react-icons/lu'
-import { MdOutlineSocialDistance, MdSocialDistance } from 'react-icons/md'
+import {
+  LuArrowRightFromLine,
+  LuArrowRightToLine,
+  LuShieldCheck,
+} from 'react-icons/lu'
+import {
+  MdAltRoute,
+  MdOutlineSocialDistance,
+  MdSocialDistance,
+} from 'react-icons/md'
 import { PiArrowsCounterClockwiseBold } from 'react-icons/pi'
 import {
   RiArrowRightDownLine,
@@ -107,11 +115,11 @@ export default async function Page() {
             Mortal Kombat 1’s version of Scorpion has a polarizing effect on the
             community, being either praised or found flat/boring/weak.
             Nevertheless, he remains a straightforward character with mostly
-            save, easy-to-chain moves, frequently played at all levels. He has
+            safe, easy-to-chain moves, frequently played at all levels. He has
             tools for fighting both up close and against zoning players who
             prefer distance. On his own, he tends to perform best when reacting
-            to opponent - punishing and interrupting. To go on the offense
-            productively, he will need help from an appropriate Kameo partner.
+            to the opponent - punishing and interrupting. Optimal offense needs
+            help from an appropriate Kameo partner.
           </p>
         </div>
       </div>
@@ -154,8 +162,8 @@ export default async function Page() {
           <>
             <strong>Needs a good Kameo for optimal offense</strong>. Scorpion
             has no true grounded mix-up or frame advantage on block. To catch up
-            with a skilled opponent, he would require an appropriate partner to
-            fill in the gaps and do 50/50s.
+            with a skilled opponent, he would need a suitable partner to fill in
+            the gaps and do 50/50s.
           </>,
         ]}
       />
@@ -312,12 +320,12 @@ export default async function Page() {
       />
 
       <p>
-        Scorpion’s Back 3 is a distinctive move. He uses his Kunai for a
-        disjointed attack that makes two hits - a mid followed by a low one. It
-        extends at jump distance plus one dash, making it one of the furthest
-        reaching normal in the game. Even as slow and predictable as it is, the
-        threat of a low attack at such a distance conditions the other player to
-        block low or jump over it.
+        Scorpion’s Back 3 is distinctive. He uses his Kunai for a disjointed
+        attack that makes two hits - a mid followed by a low one. It extends at
+        jump distance plus one dash, making it one of the furthest reaching
+        normal in the game. Even as slow and predictable as it is, the threat of
+        a low attack at such a distance conditions the other player to block low
+        or jump over it.
       </p>
 
       <p>
@@ -456,7 +464,9 @@ export default async function Page() {
         it at a later stage.
       </p>
 
-      <h2>Core Combos</h2>
+      <h2 className="flex items-center gap-2">
+        <MdAltRoute /> Core Combos
+      </h2>
 
       <p>
         As modular as Scorpion’s move set is, when playing online, consistency
@@ -464,6 +474,35 @@ export default async function Page() {
         to suggest two Kameo-agnostic routes for you to begin with - each with a
         meterless and single meter variation.
       </p>
+
+      <Callout>
+        <div className="text-base font-bold flex items-center gap-2">
+          <LuArrowRightFromLine /> Starters
+        </div>
+
+        <p>
+          <strong>F32</strong> repeated is top but can be difficult.
+        </p>
+
+        <p>
+          <strong>21</strong> is most consistent. <strong>12</strong> is the
+          fastest. Both can be extended with a Kameo move or spear.
+        </p>
+
+        <p className="text-base font-bold flex items-center gap-2">
+          <LuArrowRightToLine /> Enders
+        </p>
+
+        <p>
+          <strong>33 DB2</strong> is the most scalable mid-screen ender after
+          spear.
+        </p>
+
+        <p>
+          <strong>333 BF2</strong> - the third kick knocks back so only a dahs
+          can connect. This works well with Kameos that can chain off dash.
+        </p>
+      </Callout>
 
       <h3>Spear Late</h3>
 
