@@ -105,14 +105,13 @@ export default async function Page() {
 
           <p>
             Mortal Kombat 1’s version of Scorpion has a polarizing effect on the
-            community, but he remains frequently played at all levels. Nearly
-            all of his normal moves are safe, though they lack pressure
-            potential without the right Kameo partner. On his own, he tends to
-            perform best when reacting to opponent - punishing and interrupting
-            - rather than pushing the offense himself. He has tools to fight
-            effectively both up close and against zoning players who prefer
-            distance. As in past titles, Scorpion’s low execution barrier makes
-            him a good choice for newcomers.
+            community, being either praised or found flat/boring/weak.
+            Nevertheless, he remains a straightforward character with mostly
+            save, easy-to-chain moves, frequently played at all levels. He has
+            tools for fighting both up close and against zoning players who
+            prefer distance. On his own, he tends to perform best when reacting
+            to opponent - punishing and interrupting. To go on the offense
+            productively, he will need help from an appropriate Kameo partner.
           </p>
         </div>
       </div>
@@ -128,18 +127,16 @@ export default async function Page() {
           </>,
           <>
             <strong>Novice approved</strong>. With no stances or forms, Scorpion
-            offers a full toolkit for every basic matchup scenario. His normals
-            are generally safe on block, and the Spear remains a reliable stun
-            that pulls enemies in. There are straightforward routes that reach
-            the 25-30% damage range, with easy launchers, repeat juggles, and
-            strong synergy with his Spear.
+            offers a full toolkit for every basic scenario. His normals are
+            largely safe on block, and the Spear remains a reliable stun that
+            pulls enemies in. There are simple routes to 30-35% damage, with
+            easy launchers, repeat juggles, and strong synergy with his Spear.
           </>,
           <>
             <strong>Good interruptions and punishes</strong>. His dash (armored
-            on EX), standing 2 and Spear are solid tools to stop advancing
-            enemies or even punish whiffs. His B3 is a slow mid-low attack but
-            reaches far and can catch opponents off-guard. B2 is a decent
-            anti-air.
+            on EX), B3 and Spear are solid challenges with superb space control.
+            His teleport and Hellfire can interrupt projectile spam. B2 is a
+            decent anti-air.
           </>,
           <>
             <strong>Kameo Synergy</strong>. His moves and cancelable throw
@@ -168,10 +165,9 @@ export default async function Page() {
         icon="GiDeathSkull"
         items={[
           <>
-            <strong>High damage is difficult</strong>. There are routes to the
-            45-50% damage range, but they require tight timing and resources.
-            Often simpler, more consistent combos are better when playing
-            online.
+            <strong>High damage is difficult</strong>. Reaching the 45-50%
+            damage range requires tight timing and resources. Often simpler,
+            more consistent combos are better when playing online.
           </>,
         ]}
       />
