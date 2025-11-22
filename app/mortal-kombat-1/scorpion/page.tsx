@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { FaForward, FaPlay } from 'react-icons/fa'
 import { FaGraduationCap, FaPersonArrowUpFromLine } from 'react-icons/fa6'
+import { FiCornerUpRight } from 'react-icons/fi'
 import {
   GiAirplaneArrival,
   GiArmorPunch,
@@ -358,9 +359,10 @@ export default async function Page() {
         </p>
 
         <p>
-          <strong>B3 EX DB3</strong> cancels into Enhanced Teleport. It is a
-          good way to force them into blocking, maybe even low blocking, being
-          less prepared to counter the port.
+          <strong>B3 EX DB3</strong> cancels into Enhanced Teleport. This is an
+          excellent way to force them into blocking, giving your teleport more
+          freedom. Be careful - it can still be interrupted but requires
+          pinpoint accuracy.
         </p>
 
         <p>
@@ -481,12 +483,33 @@ export default async function Page() {
         </div>
 
         <p>
-          <strong>F32</strong> repeated is top but can be difficult.
+          <strong>F32</strong> repeated is top but can be difficult to connect.
+          If you are not confident practice only F3 stagger into F32, or simply
+          F32 stop.
         </p>
 
         <p>
-          <strong>21</strong> is most consistent. <strong>12</strong> is the
-          fastest. Both can be extended with a Kameo move or spear.
+          <strong>21/12/33 BF1</strong> - 21 is most consistent, 12 is the
+          fastest.
+        </p>
+
+        <p>Jump kick into a spear is also available.</p>
+
+        <p className="text-base font-bold flex items-center gap-2">
+          <FiCornerUpRight /> Aerial extensions
+        </p>
+
+        <p>
+          <strong>J12 EX DB2 111</strong> is central to Scorpion’s air play. If
+          you wait a bit between DB2 and 111 for both characters to fall closer
+          to the ground, you can bounce them off it into a spear. Timing is
+          tricky but not difficult.
+        </p>
+
+        <p>
+          <strong>J13 BF1</strong> - the 13 bounces the opponent off the ground
+          enough for a spear, provided gravity scaling has not advanced too
+          much.
         </p>
 
         <p className="text-base font-bold flex items-center gap-2">
@@ -507,18 +530,10 @@ export default async function Page() {
       <h3>Spear Late</h3>
 
       <p>
-        Beginners will find initiating a combo after a successful spear the
-        easiest, but only the first one keeps the opponent standing. Conscious
-        of this it is advisable to practice starting with three F32s instead and
-        then connect with a spear afterwards.
-      </p>
-
-      <p>
-        How do we connect the spear after the third F32? You will need to hit
-        the falling foe with a standing 4 then do the BF1. Not a Forward 4 as
-        that will drop the combo. After the spear connects, you only must end
-        the combo and the optimal way to do that is 33 DB2. Put this all
-        together
+        You will only profit if you learn early on to delay the spear. Always
+        strive to start with the F32 and juggle the opponent three times. After
+        the third one you will still have time for a Standing 4 (not Forward 4)
+        into a spear and finish with one of the enders. Let’s put this together.
       </p>
 
       <Callout>
@@ -532,33 +547,20 @@ export default async function Page() {
       </Callout>
 
       <p>
-        This doesn’t require aerials or tight timings. The third F32 launches
-        low and the standing 4 kick without a direction must be timed well.
-        Chances are new players will find this part the most difficult, but
-        after a bit of practice you will see there are few easier options out
-        there. If you are having trouble, you can skip the third F32, having
-        much more height and time to work with after the second one.
+        This is considered easy damage. The toughest part would be the last F32
+        juggle into the 4 kick. It will give you little time and you may
+        accidentally press Forward 4 which will execute a different move that
+        will not connect. If you are having trouble, skipping the third F32 will
+        give your more height thus more time to connect the 4 (for less damage
+        of course).
       </p>
 
       <p>
-        Once you get this one down to memory, you can try a bit trickier version
-        of it, by spending only one bar. Try launching the enemy with only a
-        single F32, then jump forward after them. You should be able to do a 12
-        DB2 in the air. Now that doesn’t go anywhere but enhance the DB2 and you
-        will bring the opponent back to you instead of dropping them. This is
-        the only meter required.
-      </p>
-
-      <p>
-        Now at this stage, both of you flying, you can easily press 1 three
-        times for a nice ending of the combo. This would look like F32 F32 J12
-        EX DB2 111. The interesting thing is that spear is not used yet. Well,
-        if you can wait a little bit for both of you to come closer to the
-        ground and then do the 111 BF1 you will be able to bounce the foe off
-        the ground, and the spear should connect. This is the tricky part -
-        learning to time the 111 into spear. After that you end it the same way
-        as before - 33 DB2. It is more difficult, but if you learn it you are
-        rewarded with 40+% 1 meter combo.
+        You can spend a bar of meter for more damage, by chaining only two F32s
+        into the EX DB2 aerial extension. Hitting the 111 immediately afterwards
+        is good enough. Nonetheless, it will not take too much practice to be
+        able to time the 111 closer to the ground into the spear. Then you can
+        use the same combo ender.
       </p>
 
       <Callout>
@@ -573,25 +575,18 @@ export default async function Page() {
       </Callout>
 
       <p>
-        This one would be as tight as you need to get mid-screen at least in the
-        beginning.
-      </p>
-
-      <p>
-        With both above, you may have an easier time connecting the F32 after a
-        12 or 21 into a Kameo stun move.
+        This is 40% damage for moderate to low-moderate difficulty. You will be
+        able to land this most of the time online.
       </p>
 
       <h3>Spear early</h3>
 
       <p>
-        The late spear is optimal damage wise, but most of the time you will
-        probably initiate a combo off 12 or 21 into spear, or straight spear. In
-        that case much of the above remains the same, but since you no longer
-        have the spear restanding, the ending is slightly different.
+        OK, you landed a spear out of neutral. Or perhaps after one of the
+        normal checks mentioned above. Now what? Three F32 juggles are still
+        there, but your combo ender must modify because you don’t have spear
+        reset anymore. How does this look?
       </p>
-
-      <p>After the third F32 you should aim for a F34 into a dash.</p>
 
       <Callout>
         <div className="flex gap-2 font-bold text-lg">
@@ -602,6 +597,29 @@ export default async function Page() {
           </div>
         </div>
       </Callout>
+
+      <p>
+        This is your less damaging but still consistent meterless combo out of
+        spear. Spending a meter to extend damage can be done in a similar manner
+        to the above with the areal extension, but again a different ender.
+      </p>
+
+      <Callout>
+        <div className="flex gap-2 font-bold text-lg">
+          <GiArmorPunch className="mt-1" />{' '}
+          <div>
+            21 BF1 F32 F32 J12 EX DB2{' '}
+            <span className="text-light">small pause</span> 111 DB2{' '}
+            <span className="text-light">40% one meter damage</span>
+          </div>
+        </div>
+      </Callout>
+
+      <p>
+        The last DB2 is not enhanced. It is necessary as a regular spear won’t
+        connect here. Timing close to the ground is the tightest part, but is
+        not too demanding,
+      </p>
 
       <h2>Baiting Whiffs</h2>
 
