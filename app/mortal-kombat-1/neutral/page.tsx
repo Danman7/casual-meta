@@ -73,17 +73,17 @@ export default async function Page() {
         again has equal freedom.
       </p>
 
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col sm:flex-row">
         <Image
           src={knockback}
           alt="Scorpion knocking back Sub-Zero with a kick."
-          className="md:w-1/2 object-cover shadow-md"
+          className="sm:w-1/2 object-cover shadow-md"
         />
 
         <Image
           src={knockbackDistance}
           alt="Scorpion and Sub-Zero after the knockback, at a distance."
-          className="md:w-1/2 object-cover shadow-md"
+          className="sm:w-1/2 object-cover shadow-md"
         />
       </div>
 
