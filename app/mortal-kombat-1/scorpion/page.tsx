@@ -1,11 +1,9 @@
 import Image from 'next/image'
-import { FaForward, FaPlay } from 'react-icons/fa'
 import { FaGraduationCap, FaPersonArrowUpFromLine } from 'react-icons/fa6'
 import {
   GiAirplaneArrival,
   GiArmorPunch,
   GiBrokenShield,
-  GiFalling,
   GiHighKick,
   GiJoint,
   GiKnockout,
@@ -15,19 +13,15 @@ import {
   GiThunderball,
   GiWingfoot,
 } from 'react-icons/gi'
-import { IoPeople } from 'react-icons/io5'
-import { LuShieldCheck } from 'react-icons/lu'
+import { IoPeople, IoWarning } from 'react-icons/io5'
+import { LuBetweenHorizontalEnd, LuShieldCheck } from 'react-icons/lu'
 import {
   MdAltRoute,
   MdOutlineSocialDistance,
   MdSocialDistance,
 } from 'react-icons/md'
 import { PiArrowsCounterClockwiseBold, PiRulerThin } from 'react-icons/pi'
-import {
-  RiArrowRightDownLine,
-  RiArrowRightLine,
-  RiArrowRightUpLine,
-} from 'react-icons/ri'
+import { RiBreadFill } from 'react-icons/ri'
 import {
   TbArrowBounce,
   TbBounceRight,
@@ -252,10 +246,6 @@ export default async function Page() {
 
       <FlexWrapper className="mt-2">
         <Badge className="text-success border-success">
-          <GiJoint /> Disjointed
-        </Badge>
-
-        <Badge className="text-success border-success">
           <LuShieldCheck /> Safe (-2 on block)
         </Badge>
 
@@ -268,11 +258,7 @@ export default async function Page() {
         </Badge>
 
         <Badge className="text-success border-success">
-          <FaForward /> Advancing
-        </Badge>
-
-        <Badge>
-          <FaPlay /> Combo starter
+          <GiJoint /> Disjointed
         </Badge>
       </FlexWrapper>
 
@@ -314,15 +300,7 @@ export default async function Page() {
           <TbRulerMeasure /> Very long reach
         </Badge>
 
-        <Badge className="text-success border-success">
-          <GiFalling /> Knockdown
-        </Badge>
-
         <Badge className="text-success border-success">First hit cancels</Badge>
-
-        <Badge className="text-success border-success">
-          <RiArrowRightLine /> <RiArrowRightDownLine /> Mid-low
-        </Badge>
 
         <Badge className="text-error border-error!">
           <GiSnail /> Slow (21f start)
@@ -453,8 +431,8 @@ export default async function Page() {
           <MdSocialDistance /> Full-screen
         </Badge>
 
-        <Badge>
-          <RiArrowRightUpLine /> High
+        <Badge className="text-success border-success">
+          <GiJoint /> Disjointed
         </Badge>
 
         <Badge>
@@ -478,7 +456,7 @@ export default async function Page() {
 
       <p>
         The Spear - Scorpion’s signature move - is a pretty unique special. He
-        launches his Kunai as a slow forward high projectile. If it connects, it
+        launches his Kunai as a forward high projectile. If it connects, it
         stuns its target, brings them and restands them next to Scorpion. A{' '}
         <strong>second spear</strong> at this point{' '}
         <strong>will drop the opponent to the ground</strong> (to prevent stun
@@ -527,6 +505,12 @@ export default async function Page() {
 
       <h3>Spear Late</h3>
 
+      <FlexWrapper className="mt-2">
+        <Badge className="text-success border-success">
+          <GiArmorPunch /> Best damage for difficulty
+        </Badge>
+      </FlexWrapper>
+
       <p>You can only profit if you learn to delay the spear.</p>
 
       <p className="font-bold text-lg">
@@ -552,6 +536,11 @@ export default async function Page() {
       </p>
 
       <h3>Spear early</h3>
+      <FlexWrapper className="mt-2">
+        <Badge className="text-success border-success">
+          <RiBreadFill /> Bread-n-butter
+        </Badge>
+      </FlexWrapper>
 
       <p>
         OK, you landed a spear without a launch. Now what? The 3x F32 is still
@@ -565,16 +554,17 @@ export default async function Page() {
 
       <p className="font-bold text-lg">
         <GiArmorPunch className="mr-1 mb-1 inline" /> 21 BF1 F32 F32 J12 EX DB2{' '}
-        <span className="text-light">small pause</span> air 111 air DB2{' '}
+        <span className="text-light">small pause</span> J111 JDB2{' '}
         <span className="text-light">for 37.7% one meter damage</span>
       </p>
 
-      <p>
-        The above are your bread and butter. Don't try to learn anything else
-        until you can land these online.
-      </p>
-
       <h3>Amplified Air Teleport</h3>
+
+      <FlexWrapper className="mt-2">
+        <Badge className="text-error border-error!">
+          <GiStairsGoal /> Difficult
+        </Badge>
+      </FlexWrapper>
 
       <p>
         Expanding punish trough teleport is much harder, yet not necessarily
@@ -585,14 +575,57 @@ export default async function Page() {
       </p>
 
       <p className="font-bold text-lg">
-        <GiArmorPunch className="mr-1 mb-1 inline" /> Air EX DB3 air 3 DB3 F32
-        F32 4 BF1 33 DB2{' '}
+        <GiArmorPunch className="mr-1 mb-1 inline" /> exJDB3 J3 DB3 F32 F32 4
+        BF1 33 DB2{' '}
         <span className="text-light">for 41.1% one meter damage</span>
       </p>
 
-      <p>This is an arduous one, but it is one worth the damage. </p>
+      <p className="font-bold text-lg">
+        <GiArmorPunch className="mr-1 mb-1 inline" /> exJDB3 J3 DB3 4 BF1 F32
+        J12 exJDB2 <span className="text-light">small pause</span> J111 JDB2{' '}
+        <span className="text-light">for 44.9% two meter damage</span>
+      </p>
 
-      <h2>Optimal Combos</h2>
+      <h2 className="flex items-center gap-2">Corner combos</h2>
+
+      <p>
+        This is where you spike the damage best. Elsewhere, the standing 4 kick
+        is not worth it. Here, where you can connect two in a row, it scales
+        wonderfully.
+      </p>
+
+      <p className="font-bold text-lg">
+        <GiArmorPunch className="mr-1 mb-1 inline" />
+        F32 4 4 BF1 F32 J12 exJDB2{' '}
+        <span className="text-light">small pause</span> J111 JDB2
+        <span className="text-light"> for 44.6% one meter damage</span>
+      </p>
+
+      <p>
+        The first standing 4 must be at the highest possible spot for the second
+        one to connect. If this is too hard, a single 4 kick will also do.
+      </p>
+
+      <p>
+        If you are about to win the round, and you feel confident, you can spice
+        the above further with some tight timings.
+      </p>
+
+      <p className="font-bold text-lg">
+        <GiArmorPunch className="mr-1 mb-1 inline" />
+        F32 4 4 BF1 F32 J12 exJDB2{' '}
+        <span className="text-light">small pause</span> J111{' '}
+        <span className="text-light">land</span> B2 exBF4
+        <span className="text-light">
+          {' '}
+          for a whooping 50.2% one meter damage
+        </span>
+      </p>
+
+      <p>
+        Yes, the enhanced Hellfire is guaranteed damage, but if they survive,
+        they also get guaranteed a wakeup punish. You cannot recover in time.
+      </p>
 
       <h2>Baiting Whiffs</h2>
 
@@ -601,52 +634,45 @@ export default async function Page() {
         <Badge className="text-success border-success">
           <GiThumbUp /> Simple
         </Badge>
+
+        <Badge className="text-warning border-warning">
+          <IoWarning /> Use sparingly
+        </Badge>
       </FlexWrapper>
 
       <p>
-        As with any character, at mid-to-long range, deliberately throwing a
-        punch into empty air can motivate the opponent into action - dashing
-        forward, jumping, doing a special etc. As cheap as it may sound
-        following such an intentional punch whiff with a spear catches foes
-        dashing forward online quite often.
+        A whiff from your side often motivates your opponent into action – dash,
+        jump or attack. At medium distance you can deliberately throw a punch
+        into empty air followed immediately by a spear. Even at higher ranks, if
+        not abused, you will find that many opponents will dash forward into the
+        spear.
       </p>
 
-      <p>
-        This appears to be a beginner’s trap, but even in higher ranks it can be
-        useful tech if not abused. The shorter the range to the opponent when
-        attempted, the difficult it will be for them to properly react, but they
-        may have an attack that can reach you.
-      </p>
-
-      <h3>Short string into throw</h3>
+      <h3>String derail</h3>
 
       <FlexWrapper className="mt-2">
         <Badge className="text-success border-success">
           <GiThumbUp /> Simple
         </Badge>
+
+        <Badge className="text-warning border-warning">
+          <IoWarning /> Hit confirm
+        </Badge>
       </FlexWrapper>
 
       <p>
-        This is valid tech for every character, but here are some options
-        specifically for MK1 Scorpion.
+        Standing 122 ends in an overhead that can be punished with an up block.
+        Condition your foe with the full string then next time cut it short 12
+        into a throw.
       </p>
 
       <p>
-        As we know, 122 ends with an overhead that can be punished with an up
-        block. You can cut it short to 12 into a throw.
+        Forward 34 is a nice mid-mid respect check, that chains into dash and
+        many Kameo moves. If they block it consistently, you can try F3 into a
+        throw.
       </p>
 
-      <p>
-        The F34 chains nicely with the dash and many Kameo moves. You can do
-        only the F3 into a throw.
-      </p>
-
-      <p>
-        Both pay attention to how the opponent is reacting. Abusing them will
-        result in a counterattack before the throw connects.
-      </p>
-
-      <h3>Mind games with EX Teleport</h3>
+      <h3>Mind games with enhanced Teleport</h3>
       <FlexWrapper className="mt-2">
         <Badge className="text-warning border-warning">
           <GiHighKick /> Advanced
@@ -654,10 +680,30 @@ export default async function Page() {
       </FlexWrapper>
 
       <p>
-        The Enhanced Flame-Port is punishable, but the opponent’s timing must be
-        spot-on, so most opponents either block or throw a quick 1 punch because
-        it is the fastest. Micro-ducking into an attack or a throw are good ways
-        to interrupt their anti-teleport game.
+        A teleport is useful out of a combo or at some distance to control the
+        other fighter. Rarely will you see a Scorpion trying to teleport out of
+        a blocked string, but this also has its uses. If you enhance teleport
+        after the opponent blocked your attack you can prompt them to counter
+        punch. Use that to micro-duck into 12/21.
+      </p>
+
+      <h3>Air DB2 whiff</h3>
+      <FlexWrapper className="mt-2">
+        <Badge className="text-warning border-warning">
+          <IoWarning /> Use sparingly
+        </Badge>
+
+        <Badge className="text-warning border-warning">
+          <LuBetweenHorizontalEnd /> Niche
+        </Badge>
+      </FlexWrapper>
+
+      <p>
+        The exJDB2 is an excellent aerial combo extender, but people who spend
+        time with the frame data have seen that it also recovers very quickly.
+        If you jump over them and do the move, the opponent will have to
+        anti-air you very quickly. Otherwise, it is safe on block. This is
+        mostly useful with some Kameos.
       </p>
 
       <h2>Other Tech</h2>
