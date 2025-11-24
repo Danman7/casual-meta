@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { FaForward, FaPlay } from 'react-icons/fa'
 import { FaGraduationCap, FaPersonArrowUpFromLine } from 'react-icons/fa6'
-import { FiCornerUpRight } from 'react-icons/fi'
 import {
   GiAirplaneArrival,
   GiArmorPunch,
@@ -17,11 +16,7 @@ import {
   GiWingfoot,
 } from 'react-icons/gi'
 import { IoPeople } from 'react-icons/io5'
-import {
-  LuArrowRightFromLine,
-  LuArrowRightToLine,
-  LuShieldCheck,
-} from 'react-icons/lu'
+import { LuShieldCheck } from 'react-icons/lu'
 import {
   MdAltRoute,
   MdOutlineSocialDistance,
@@ -143,9 +138,9 @@ export default async function Page() {
           </>,
           <>
             <strong>Good interruptions and punishes</strong>. His dash (armored
-            on EX), B3 and Spear are solid challenges with superb space control.
-            His teleport and Hellfire can interrupt projectile spam. B2 is a
-            decent anti-air.
+            when enhanced), B3 and Spear are solid challenges with superb space
+            control. His teleport and Hellfire can interrupt projectile spam. B2
+            is a decent anti-air.
           </>,
           <>
             <strong>Kameo Synergy</strong>. His moves and cancelable throw
@@ -303,8 +298,9 @@ export default async function Page() {
           <GiHighKick /> Practice
         </div>
         <p>
-          21 BF1 can be your bread and butter. Extend it with 33 DB2 or 333 BF2
-          after the spear.
+          Practice 21 BF1. Record a dummy walking forward and then dashing
+          forward. Learn to measure the distance at which standing 2 connects.
+          Extend it with 33 DB2 or 333 BF2 after the spear.
         </p>
       </Callout>
 
@@ -523,182 +519,80 @@ export default async function Page() {
       <p>
         As modular as Scorpion’s move set is, when playing online, consistency
         will defeat high damage and intricate sequences. In this regard we like
-        to suggest two Kameo-agnostic routes for you to begin with - each with a
-        meterless and single meter variation.
+        to first suggest two Kameo-agnostic routes for you to begin with - each
+        with a meterless and single meter variation. Later we explore some
+        additional combo considerations. Remember, landing a hit out of neutral
+        is better than always trying for a full combo.
       </p>
-
-      <Callout>
-        <div className="text-base font-bold flex items-center gap-2">
-          <LuArrowRightFromLine /> Starters
-        </div>
-
-        <p>
-          <strong>F32</strong> repeated is top but can be difficult to connect.
-          If you are not confident practice only F3 stagger into F32, or simply
-          F32 stop.
-        </p>
-
-        <p>
-          <strong>21/12/33 BF1</strong> - 21 is most consistent, 12 is the
-          fastest.
-        </p>
-
-        <p>Jump kick into a spear is also available.</p>
-
-        <p className="text-base font-bold flex items-center gap-2">
-          <FiCornerUpRight /> Aerial extensions
-        </p>
-
-        <p>
-          <strong>J12 air EX DB2 air 111</strong> is central to Scorpion’s air
-          play. If you wait a bit between DB2 and 111 for both characters to
-          fall closer to the ground, you can bounce them off it into a spear.
-          Timing is tricky but not difficult.
-        </p>
-
-        <p>
-          <strong>J13 BF1</strong> - the 13 bounces the opponent off the ground
-          enough for a spear, provided gravity scaling has not advanced too
-          much.
-        </p>
-
-        <p className="text-base font-bold flex items-center gap-2">
-          <LuArrowRightToLine /> Enders
-        </p>
-
-        <p>
-          <strong>33 DB2</strong> is the most scalable mid-screen ender after
-          spear.
-        </p>
-
-        <p>
-          <strong>333 BF2</strong> - the third kick knocks back so only a dahs
-          can connect. This works well with Kameos that can chain off dash.
-        </p>
-      </Callout>
 
       <h3>Spear Late</h3>
 
-      <p>
-        You can only profit if you learn to delay the spear. Strive to start
-        with the three F32 juggles. After the third one you will still have time
-        for a Standing 4 (not Forward 4) into a spear and finish with one of the
-        enders.
+      <p>You can only profit if you learn to delay the spear.</p>
+
+      <p className="font-bold text-lg">
+        <GiArmorPunch className="mr-1 mb-1 inline" /> F32 F32 F32 4 BF1 33 DB2{' '}
+        <span className="text-light">for 36.5% resourceless damage</span>
       </p>
-
-      <Callout>
-        <div className="flex gap-2 font-bold text-base">
-          <GiArmorPunch className="mt-1" />{' '}
-          <div>
-            F32 F32 F32 4 BF1 33 DB2{' '}
-            <span className="text-light">for 36.5% resourceless damage</span>
-          </div>
-        </div>
-
-        <p>
-          The last F32 juggle into 4 would be the hardest part. Gravity scaling
-          will give you little height. Try to time it and not press Forward 4 by
-          accident, which will not connect.{' '}
-        </p>
-      </Callout>
 
       <p>
         This is easy damage. If you are having trouble, try skipping the last
-        F32.
+        F32. Now let's extend it with one meter.
+      </p>
+
+      <p className="font-bold text-lg">
+        <GiArmorPunch className="mr-1 mb-1 inline" /> F32 F32 J12 exJDB2{' '}
+        <span className="text-light">small pause</span> J111 BF1 33 DB2{' '}
+        <span className="text-light">for 40.7% damage 1 meter combo</span>
       </p>
 
       <p>
-        You can spend one meter adding the EX DB2 aerial extender to augment the
-        above. Even better if you can slightly delay the 111 and do it closer to
-        the ground - you will be able to bounce the opponent off it and connect
-        a spear.
+        Slightly more demanding. Ending it at J111 is good enough, but if you
+        practice to time the three punches closer to the ground you will do
+        significantly more damage.
       </p>
-
-      <Callout>
-        <div className="font-bold text-base">
-          F32 F32 J12 air EX JDB2{' '}
-          <span className="text-light">small pause</span> air 111 BF1 33 DB2{' '}
-          <span className="text-light">for 40.7% damage 1 meter combo</span>
-        </div>
-      </Callout>
 
       <h3>Spear early</h3>
 
       <p>
-        If you land any other hit than the F32 you will have to use spear. OK,
-        now what? The three juggles are still there, but you must modify the
-        ender because spear reset is gone.
+        OK, you landed a spear without a launch. Now what? The 3x F32 is still
+        there, but the combo ender must modify.
       </p>
 
-      <Callout>
-        <div className="font-bold text-base">
-          21 BF1 F32 F32 F32 F34 BF2{' '}
-          <span className="text-light">for 34.2% meterless damage</span>
-        </div>
-      </Callout>
+      <p className="font-bold text-lg">
+        <GiArmorPunch className="mr-1 mb-1 inline" /> 21 BF1 F32 F32 F32 F34 BF2{' '}
+        <span className="text-light">for 34.2% meterless damage</span>
+      </p>
+
+      <p className="font-bold text-lg">
+        <GiArmorPunch className="mr-1 mb-1 inline" /> 21 BF1 F32 F32 J12 EX DB2{' '}
+        <span className="text-light">small pause</span> air 111 air DB2{' '}
+        <span className="text-light">for 37.7% one meter damage</span>
+      </p>
 
       <p>
-        This is less damage but still a consistent meterless combo out of spear.
-        Spending a meter to extend damage can be done in a similar manner as
-        above with the aerial extension.
+        The above are your bread and butter. Don't try to learn anything else
+        until you can land these online.
       </p>
-
-      <Callout>
-        <div className="font-bold text-base">
-          21 BF1 F32 F32 J12 EX DB2{' '}
-          <span className="text-light">small pause</span> air 111 air DB2{' '}
-          <span className="text-light">for 37.7% one meter damage</span>
-        </div>
-
-        <p>
-          The last DB2 is not enhanced, but is necessary as any other special
-          won't connect.
-        </p>
-      </Callout>
 
       <h3>Amplified Air Teleport</h3>
 
       <p>
-        Expanding combos through air teleport is more demanding than using your
-        other tools, but you can catch an opponent who is not expecting you to
-        try pressure out of a distant jump.
+        Expanding punish trough teleport is much harder, yet not necessarily
+        more damaging than using your other tools. But as most players expect a
+        Scorpion to do a spear or a grounded teleport or a back 3, very few
+        expect an enhanced air teleport from some distance. So, this is a
+        surprise, albeit difficult resource you have in your pocket.
       </p>
 
-      <Callout>
-        <div className="font-bold text-base">
-          Air EX DB3 air 3 DB3 F32 F32 4 BF1 33 DB2{' '}
-          <span className="text-light">for 41.1% one meter damage</span>
-        </div>
-        <p>The first enhanced teleport must be at the opponent's level.</p>
-      </Callout>
-
-      <p>
-        This is a tough combo but is one worth the surprise and the damage over
-        spear/juggle combos. Here is one that is going off F32 for comparison.
+      <p className="font-bold text-lg">
+        <GiArmorPunch className="mr-1 mb-1 inline" /> Air EX DB3 air 3 DB3 F32
+        F32 4 BF1 33 DB2{' '}
+        <span className="text-light">for 41.1% one meter damage</span>
       </p>
 
-      <Callout>
-        <div className="font-bold text-base">
-          F32 J12 EX DB3 J13 BF1 33 DB{' '}
-          <span className="text-light">for 33.4% one meter damage</span>
-        </div>
-      </Callout>
-
-      <p>
-        You can achieve higher damage without the bar of meter and the demanding
-        timing of the air teleport.
-      </p>
+      <p>This is an arduous one, but it is one worth the damage. </p>
 
       <h2>Optimal Combos</h2>
-
-      <Callout>
-        <div className="font-bold text-base">
-          F32 J12 EX DB3 J13 BF1 33 DB{' '}
-          <span className="text-light">for 33.4% one meter damage</span>
-        </div>
-      </Callout>
-
-      <p>Here are a few grueling alternatives for the best damage. </p>
 
       <h2>Baiting Whiffs</h2>
 
