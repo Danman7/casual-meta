@@ -509,8 +509,10 @@ export default async function Page() {
           <GiHighKick /> Practice
         </div>
         <p>
-          Back 2, 21, 12 adn 33 all can connect with a spear out-of-the box. You
-          can also go out of a J13 and any jump kick into a spear.
+          B2, B3, 21, 12 and 33 all can connect with a spear out-of-the box. Try
+          launching the opponent into the air via F32 - you can also go out of a
+          J13 and any jump kick into a spear. A J111 close to the ground will
+          also bounce the opponent enough for a spear to connect.
         </p>
       </Callout>
 
