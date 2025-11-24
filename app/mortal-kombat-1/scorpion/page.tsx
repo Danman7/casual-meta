@@ -27,7 +27,7 @@ import {
   MdOutlineSocialDistance,
   MdSocialDistance,
 } from 'react-icons/md'
-import { PiArrowsCounterClockwiseBold } from 'react-icons/pi'
+import { PiArrowsCounterClockwiseBold, PiRulerThin } from 'react-icons/pi'
 import {
   RiArrowRightDownLine,
   RiArrowRightLine,
@@ -197,19 +197,11 @@ export default async function Page() {
           <TbArrowBounce /> Repeated juggle
         </Badge>
 
-        <Badge className="text-success border-success">
-          <FaForward /> Advancing
-        </Badge>
-
-        <Badge>
-          <FaPlay /> Combo starter
-        </Badge>
-
-        <Badge>
-          <RiArrowRightLine /> <RiArrowRightUpLine /> Mid - High
-        </Badge>
-
         <Badge>12f start</Badge>
+
+        <Badge className="text-error border-error!">
+          <PiRulerThin /> Short reach
+        </Badge>
       </FlexWrapper>
 
       <div className="flex flex-col sm:flex-row">
@@ -227,11 +219,11 @@ export default async function Page() {
       </div>
 
       <p>
-        This is Scorpion’s launching combo starter. It is reasonably fast, but
-        even while advancing it has a short reach. It is best employed after a
-        miss or an unsafe attack from your opponent. Connecting out of neutral
-        without the help of the spear is preferable as you will find extending
-        combos later easier.
+        This is Scorpion’s launching mid-high combo starter. It is reasonably
+        fast, but even while advancing it has a short reach. It is best employed
+        after a miss or an unsafe attack from your opponent. Connecting out of
+        neutral without the help of the spear is preferable as you will find
+        extending combos later easier.
       </p>
 
       <p>
@@ -239,6 +231,27 @@ export default async function Page() {
         depending on gravity scaling. Naturally doing it towards the start of a
         combo will have better results.
       </p>
+
+      <Callout>
+        <div className="text-base font-bold flex items-center gap-2">
+          <GiHighKick /> Practice
+        </div>
+        <p>
+          You can start practicing three F32s in a row immediately. The last one
+          will give you little height, but still enough to connect a standing 4.
+          Try <strong>F32 F32 F32 4 BF1</strong>. Pressing standing 4 instead of
+          forward 4 (which will not connect) will be the most difficult part but
+          will greatly extend your combo potential.
+        </p>
+
+        <p>
+          Alternatively, you can chain only two F32s into a common Scorpion one
+          bar aerial extension: <strong>F32 F32 J12 exDB2 111</strong>. This is
+          a bit more demanding, but if you take it just a step further and pause
+          between the dxDB2 and 111 so you hit closer to the ground, you can
+          even connect a spear afterwards.
+        </p>
+      </Callout>
 
       <h3>Standing 21</h3>
 
@@ -284,6 +297,16 @@ export default async function Page() {
         Initiating a combo with 21 is easier than F32, but you will have to
         cancel into spear right away unless your Kameo can extend.
       </p>
+
+      <Callout>
+        <div className="text-base font-bold flex items-center gap-2">
+          <GiHighKick /> Practice
+        </div>
+        <p>
+          21 BF1 can be your bread and butter. Extend it with 33 DB2 or 333 BF2
+          after the spear.
+        </p>
+      </Callout>
 
       <h3>Sweeping Tail - B3</h3>
       <FlexWrapper className="mt-2">
@@ -353,16 +376,18 @@ export default async function Page() {
         </p>
 
         <p>
-          <strong>B3 EX F4</strong> cancels into EX Hellfire. The enhanced
-          version is guaranteed damage even if they block and is a safe chip
+          <strong>B3 exF4</strong> cancels into enhanced Hellfire. The enhanced
+          version is guaranteed damage even if they block. It is a safe chip
           resource.
         </p>
 
         <p>
-          <strong>B3 EX DB3</strong> cancels into Enhanced Teleport. This is an
+          <strong>B3 exDB3</strong> cancels into Enhanced Teleport. This is an
           excellent way to force them into blocking, giving your teleport more
           freedom. Be careful - it can still be interrupted but requires
-          pinpoint accuracy.
+          pinpoint accuracy. Try B3 exDB3 12 BF1. Try recording the dummy to
+          block at random intervals. With some practice you can learn when to
+          try and connect the punch and when to throw.
         </p>
 
         <p>
@@ -405,6 +430,19 @@ export default async function Page() {
         shorter range it is best used as a combo starter from a jumping-in
         opponent - B2 F1 for a full spear combo punish.
       </p>
+
+      <Callout>
+        <div className="text-base font-bold flex items-center gap-2">
+          <GiHighKick /> Practice
+        </div>
+        <p>
+          Set a jump-in practice dummy and try to hit them with B2. Then record
+          the opponent jumping in with a kick attack. This will be harder to
+          counter with B2, but should be practiced. Once you feel confident with
+          the above, try connecting a spear - B2 F1 into whatever combo you
+          prefer.
+        </p>
+      </Callout>
 
       <h2>Specials</h2>
 
@@ -465,6 +503,16 @@ export default async function Page() {
         dashes. Using your other tools to initiate a combo will help you extend
         it at a later stage.
       </p>
+
+      <Callout>
+        <div className="text-base font-bold flex items-center gap-2">
+          <GiHighKick /> Practice
+        </div>
+        <p>
+          Back 2, 21, 12 adn 33 all can connect with a spear out-of-the box. You
+          can also go out of a J13 and any jump kick into a spear.
+        </p>
+      </Callout>
 
       <h2 className="flex items-center gap-2">
         <MdAltRoute /> Core Combos
