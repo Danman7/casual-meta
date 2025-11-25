@@ -13,31 +13,19 @@ import {
   GiThunderball,
   GiWingfoot,
 } from 'react-icons/gi'
-import { IoPeople, IoWarning } from 'react-icons/io5'
+import { IoWarning } from 'react-icons/io5'
 import { LuBetweenHorizontalEnd, LuShieldCheck } from 'react-icons/lu'
 import {
   MdAltRoute,
   MdOutlineSocialDistance,
   MdSocialDistance,
 } from 'react-icons/md'
-import { PiArrowsCounterClockwiseBold, PiRulerThin } from 'react-icons/pi'
+import { PiArrowsCounterClockwiseBold } from 'react-icons/pi'
 import { RiBreadFill } from 'react-icons/ri'
-import {
-  TbArrowBounce,
-  TbBounceRight,
-  TbRuler3,
-  TbRulerMeasure,
-} from 'react-icons/tb'
-import { TfiRulerAlt2 } from 'react-icons/tfi'
+import { TbRuler3, TbRulerMeasure } from 'react-icons/tb'
 import { TiArrowShuffle } from 'react-icons/ti'
 
-import scorpb2 from '@/app/assets/mk1/scorp_b2.webp'
-import scorpf3 from '@/app/assets/mk1/scorp_f3.webp'
-import scorpf32 from '@/app/assets/mk1/scorp_f32.webp'
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
-import spear from '@/app/assets/mk1/scorp_spear.webp'
-import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
-import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK1_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { BulletList } from '@/app/ui/BulletList'
@@ -77,19 +65,7 @@ export default async function Page() {
             </Badge>
 
             <Badge className="text-success border-success">
-              <TbBounceRight /> Throw combos
-            </Badge>
-
-            <Badge className="text-success border-success">
               <PiArrowsCounterClockwiseBold /> Good counterplay
-            </Badge>
-
-            <Badge className="text-success border-success">
-              <TfiRulerAlt2 /> Space control
-            </Badge>
-
-            <Badge className="text-warning border-warning">
-              <IoPeople /> Optimal w/ Kameo
             </Badge>
 
             <Badge className="text-error border-error!">
@@ -172,40 +148,20 @@ export default async function Page() {
 
       <h2>Key Normals</h2>
 
-      <h3>Raising Hell - F32</h3>
-      <FlexWrapper className="mt-2">
-        <Badge className="text-success border-success">
-          <LuShieldCheck /> Safe (-6 on block)
-        </Badge>
+      <h3>
+        Forward 32{' '}
+        <FlexWrapper className="inline-flex text-base">
+          <Badge className="text-success border-success">
+            <LuShieldCheck /> Safe (-6 on block)
+          </Badge>
 
-        <Badge className="text-success border-success">
-          <FaPersonArrowUpFromLine /> Launch
-        </Badge>
+          <Badge className="text-success border-success">
+            <FaPersonArrowUpFromLine /> Launching combo starter
+          </Badge>
 
-        <Badge className="text-success border-success">
-          <TbArrowBounce /> Repeated juggle
-        </Badge>
-
-        <Badge>12f start</Badge>
-
-        <Badge className="text-error border-error!">
-          <PiRulerThin /> Short reach
-        </Badge>
-      </FlexWrapper>
-
-      <div className="flex flex-col sm:flex-row">
-        <Image
-          src={scorpf3}
-          alt="Scorpions forward 3 attack."
-          className="sm:w-1/2 max-h-96 object-cover object-[0%_20%] shadow-md"
-        />
-
-        <Image
-          src={scorpf32}
-          alt="Scorpion's forward 32 launch."
-          className="sm:w-1/2 max-h-96 object-cover object-[0%_20%] shadow-md"
-        />
-      </div>
+          <Badge>12f start</Badge>
+        </FlexWrapper>
+      </h3>
 
       <p>
         This is Scorpion’s launching mid-high combo starter. It is reasonably
@@ -262,12 +218,6 @@ export default async function Page() {
         </Badge>
       </FlexWrapper>
 
-      <Image
-        className="shadow-md max-h-80 object-cover object-[0%_20%]"
-        src={scorp2}
-        alt="Scorpion doing standing 2 attack."
-      />
-
       <p>
         This is your <strong>primary challenge and hit-confirm</strong>. It has
         surprising reach making it a preferable combo starter over the 12,
@@ -310,12 +260,6 @@ export default async function Page() {
           <GiBrokenShield /> Unsafe (-19 on block)
         </Badge>
       </FlexWrapper>
-
-      <Image
-        className="shadow-md"
-        src={scorpb3}
-        alt="Scorpion doing back 3 attack."
-      />
 
       <p>
         Scorpion’s Back 3 is distinctive. He uses his Kunai for a disjointed
@@ -390,12 +334,6 @@ export default async function Page() {
         </Badge>
       </FlexWrapper>
 
-      <Image
-        className="shadow-md max-h-120 object-cover object-[0%_50%]"
-        src={scorpb2}
-        alt="Scorpion doing back 2 attack."
-      />
-
       <p>
         Back 2 is a reachy high attack that is also a reasonable anti-air move.
         You can combine it with Back 3 - B3 baiting a jump into B2 punishing
@@ -447,12 +385,6 @@ export default async function Page() {
           <GiBrokenShield /> Unsafe (-28 on block)
         </Badge>
       </FlexWrapper>
-
-      <Image
-        className="shadow-md"
-        src={spear}
-        alt="Scorpion's spear special at fullscreen."
-      />
 
       <p>
         The Spear - Scorpion’s signature move - is a pretty unique special. He
