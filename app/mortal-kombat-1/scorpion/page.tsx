@@ -3,7 +3,10 @@ import { GiHighKick, GiPunchBlast, GiScales } from 'react-icons/gi'
 import { MdAltRoute } from 'react-icons/md'
 import { TfiRulerAlt2 } from 'react-icons/tfi'
 
+import scorpLaunch from '@/app/assets/mk1/scorp_f32.webp'
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
+import spear from '@/app/assets/mk1/scorp_spear.webp'
+import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import { MK1_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -121,6 +124,13 @@ export default async function Page() {
         Learn to measure it as it will often catch advancing opponents
         off-guard.
       </p>
+
+      <Image
+        src={scorp2}
+        alt="Scorpion's standing 2 attack."
+        className="shadow-md max-h-80 object-cover object-[0%_50%]"
+      />
+
       <p>
         Record a dummy in practice randomly advancing and blocking. Find
         standing 2’s sweet spot and keep Scorpion there. Then when they come
@@ -149,6 +159,12 @@ export default async function Page() {
         interrupt their dashes and get them.
       </p>
 
+      <Image
+        src={spear}
+        alt="Scorpion's standing 2 attack."
+        className="shadow-md"
+      />
+
       <p>
         Most players will block or teleport or jump around your spear, but some
         will frequently duck under it as it is a high projectile. You can spend
@@ -162,6 +178,12 @@ export default async function Page() {
         prefer the short and fast 12 (7 frames), but it offers little in return
         compared to the 21. Still, <em>12 BF1</em> is your fastest combo start.
       </p>
+
+      <Image
+        src={scorpLaunch}
+        alt="Scorpion's standing 2 attack."
+        className="shadow-md"
+      />
 
       <p>
         If they whiff or commit an unsafe attack, your best follow-up is the{' '}
