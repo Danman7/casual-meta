@@ -7,8 +7,10 @@ import scorpLaunch from '@/app/assets/mk1/scorp_f32.webp'
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
+import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK1_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
+import { Callout } from '@/app/ui/Callout'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 8
@@ -161,7 +163,7 @@ export default async function Page() {
 
       <Image
         src={spear}
-        alt="Scorpion's standing 2 attack."
+        alt="Scorpion's signature spear."
         className="shadow-md"
       />
 
@@ -181,7 +183,7 @@ export default async function Page() {
 
       <Image
         src={scorpLaunch}
-        alt="Scorpion's standing 2 attack."
+        alt="Scorpion's forward 32 launch attack."
         className="shadow-md"
       />
 
@@ -245,8 +247,68 @@ export default async function Page() {
         cool about JDB2 is that it recovers almost instantly. They will expect
         you to land on their other side and will have to do a very quick
         pinpoint anti-air to catch you. It is a good way to throw off their
-        game.{' '}
+        game.
       </p>
+
+      <h3>The back 3</h3>
+
+      <p>
+        Scorpion’s back 3 is a very singular move. He uses his Kunai for a
+        disjointed two-part mid-low attack. It can hit a foe at about jump
+        distance plus one dash, making it one of the furthest reaching normals
+        in the game. At 21 frames start, -19 on block it is definitely not among
+        the fastest or safest moves. Don't abuse it.
+      </p>
+
+      <Image
+        src={scorpb3}
+        alt="Scorpion's back 3 attack."
+        className="shadow-md max-h-80 object-cover object-[0%_50%]"
+      />
+
+      <p>
+        There are two major traits of this move. First, the second hit is low.
+        Even as predictable as B3 is, the threat of a low attack at such a
+        distance is often more dangerous than its actual use. The opponent will
+        adjust to constantly expect to either block low or jump over. If they
+        begin to jump over it often, instead of doing the B3 you can wait for
+        them to predict-jump and do a B2 instead. Secondly, the first hit is
+        cancellable into any special or Kameo move. This opens doors to new
+        pressure possibilities.
+      </p>
+
+      <Callout>
+        <div className="text-base font-bold flex items-center gap-2">
+          Back 3 Cancels
+        </div>
+
+        <p>
+          Same as B3 the B3 can also be shortcut cancelled into a forward move.
+        </p>
+
+        <p>
+          <strong>B3 F1</strong> cancels into Spear.
+        </p>
+        <p>
+          <strong>B3 F2</strong> cancels into Dash.
+        </p>
+
+        <p>
+          <strong>B3 exF4</strong> cancels into enhanced Devouring Flame -
+          guaranteed damage chip resource, but unsafe.
+        </p>
+
+        <p>
+          <strong>B3 exDB3</strong> cancels into Enhanced Teleport. This is an
+          excellent way to force them into blocking, giving your teleport more
+          freedom.
+        </p>
+
+        <p>
+          As mentioned, Scorpion has a poor mix-up without Kameos. The B3 cancel
+          is a good candidate for Kameo synergy.
+        </p>
+      </Callout>
 
       <h3>At a distance</h3>
 
