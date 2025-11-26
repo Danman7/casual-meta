@@ -143,6 +143,128 @@ export default async function Page() {
         ]}
       />
 
+      <h2>Neutral and Pressure</h2>
+
+      <p>
+        Scorpion lacks a standing overhead, relying on jump-ins. None of his
+        grounded lows are chainable. Only his standing 1 punch is +2 on block.
+        Everything else is neutral or minus, so there are no big frame traps
+        there. Instead, he survives with a combination of key normals and
+        special moves. Let’s look at those, before discussing Kameos.
+      </p>
+
+      <h3>An approach to close combat</h3>
+
+      <p>
+        Start with his standing 2.{' '}
+        <strong>This is your primary, most consistent challenge.</strong> As
+        expected, it’s a safe, reasonably fast high punch (10 frames). Moreover,
+        it's a disjointed attack with surprising reach - about two steps away.
+        Learn to measure it as it will often catch advancing opponents
+        off-guard.
+      </p>
+      <p>
+        Record a dummy in practice randomly advancing and blocking. Find
+        standing 2’s sweet spot and keep Scorpion there. Then when they come
+        press <strong>21 - your main hit-confirm and combo starter</strong>. If
+        they block, stop. You can try a blocked 21 into dash throw, but it's
+        risky. If you connect, continue into spear – <strong>21 BF1</strong>.
+        Also practice this with a random combo blocking dummy that has reversal
+        set to their fastest string. Learn not to commit with the spear if they
+        block or you will get punished.
+      </p>
+      <p>
+        Without going into combos, if the spear lands, end it simply with{' '}
+        <strong>33 DB2</strong>. This is your optimal ender, but if you wish you
+        can try <em>333 BF2</em> with the dash and see how that plays out. The
+        above is enough to get you started with Scorpion vs CPU.
+      </p>
+
+      <p>
+        If you are dueling someone who also has normals that stretch out and/or
+        is steadily staying just outside the reach of standing 2, don’t be
+        afraid to go straight to the spear. At 17 frames start, -28 on block, it
+        is a slow, predictable special, which should not be abused. But if
+        instead of you constantly trying to stun them for an easy combo, use it
+        as space control you will find it an excellent tool. Many players get
+        comfortable doing footsies at mid-range that they forget the spear will
+        interrupt their dashes and get them.
+      </p>
+
+      <p>
+        Most players will block or teleport or jump around your spear, but some
+        will frequently duck under it as it is a high projectile. You can spend
+        a bar of meter to launch BF1ex.{' '}
+        <strong>The enhanced version hits mid</strong>, which will catch a
+        ducking foe.
+      </p>
+
+      <p>
+        Only if they get on your face, and speed is of the essence can you
+        prefer the short and fast 12 (7 frames), but it offers little in return
+        compared to the 21. Still, <em>12 BF1</em> is your fastest combo start.
+      </p>
+
+      <p>
+        If they whiff or commit an unsafe attack, your best follow-up is the{' '}
+        <strong>forward 32</strong>. This is Scorpions{' '}
+        <strong>optimal combo starter</strong>. It is a shorter, slower (12
+        frames), but still safe string that launches your opponent in the air.
+        This opens a world of possibilities. You can chain F32 up to three times
+        in a row, depending on gravity scaling. If you do it towards the
+        beginning of a combo you can do F32 F32 F32 and still have time for a
+        standing 4 into a spear. Or you can chain only two and continue with
+        your best aerial extension - <strong>F32 F32 J12 JDB2ex J111</strong>.
+      </p>
+
+      <p>
+        This is plenty of information, but don’t forget your dash. Back forward
+        2 is a quick forward special that is also a tool for disrupting forward
+        dashes from jump distance. Keep in mind that it is unsafe and has short
+        active frames - meaning if you miss the hit window you will slide on to
+        them without landing a blow.
+      </p>
+
+      <h3>Anti-air</h3>
+
+      <p>
+        If they like to jump-in a lot, check out your back 2. It is another fast
+        (9 frames), disjointed high attack with fair reach that is also an
+        anti-air defense. Practice against a forward jumping dummy, and when you
+        get a hold of it, record a jump-in kick, which will be harder to
+        counter.
+      </p>
+
+      <p>
+        If they jump over you, the standing 1 is probably top to catch them as
+        they land. But the back 2 is a shortcut cancel into any forward move.
+        With the dummy set to jump forward try B2 F1 - it cancels into a spear
+        without you pressing back twice. This is a superb full combo punish out
+        of an anti-air move.
+      </p>
+
+      <h3>At a distance</h3>
+
+      <p>
+        Scorpion has dedicated anti-zoning/anti-turtle tools. His teleport{' '}
+        <strong>
+          DB3 is a magnificent, albeit predictable and unsafe, projectile spam
+          counter
+        </strong>
+        . Record a dummy of a zoning character (e.g. Liu Kang BF1) doing
+        projectile block projectile and try to time your port with them
+        launching a projectile.
+      </p>
+
+      <p>
+        Of course, they will start to successfully block and counter your
+        teleports at some point. This is where the DB3ex comes in handy. It
+        still teleports Scorpion but skips the hit and just re-stands him next
+        to them. Now, while they are blocking in anticipation of your teleport’s
+        hit, you do a surprise throw. Don’t abuse this, but practice doing a
+        routine teleport into a throw check on them from time to time.
+      </p>
+
       <h2>Key Normals</h2>
 
       <p>
