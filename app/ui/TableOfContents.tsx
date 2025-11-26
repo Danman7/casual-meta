@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { IoMdArrowDropdown, IoMdArrowDropright } from 'react-icons/io'
 
 interface Heading {
   id: string
@@ -12,7 +13,12 @@ interface Heading {
 export function TableOfContents() {
   const [headings, setHeadings] = useState<Heading[]>([])
   const [activeId, setActiveId] = useState<string>('')
+  const [open, setOpen] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
 
   useEffect(() => {
     // Extract headings from the page
@@ -68,33 +74,76 @@ export function TableOfContents() {
   if (headings.length === 0) return null
 
   return (
-    <nav className="hidden xl:block w-64 px-6 py-6 sticky top-0 h-screen overflow-y-auto">
-      <h2 className="font-bold text-sm mb-4 text-foreground/80">
-        On This Page
-      </h2>
-      <ul className="space-y-2 text-sm">
-        {headings.map((heading) => (
-          <li key={heading.id} className={heading.level === 3 ? 'ml-4' : ''}>
-            <a
-              href={`#${heading.id}`}
-              className={`block hover:text-primary transition-colors ${
-                activeId === heading.id
-                  ? 'text-primary font-semibold'
-                  : 'text-foreground/70'
-              }`}
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById(heading.id)?.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start',
-                })
-              }}
-            >
-              {heading.text}
-            </a>
-          </li>
-        ))}
-      </ul>
+    <nav className="text-sm">
+      {/* Mobile: collapsible */}
+      <button
+        type="button"
+        className="w-full inline-flex items-center gap-1 text-foreground hover:opacity-80 xl:hidden"
+        aria-expanded={open}
+        aria-controls="toc-root"
+        onClick={() => setOpen((v) => !v)}
+      >
+        {open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
+        <span>On This Page</span>
+      </button>
+
+      {/* Desktop: always visible sidebar */}
+      <div className="hidden xl:block w-64 px-6 py-6 sticky top-0 h-screen overflow-y-auto">
+        <h2 className="font-bold text-sm mb-4 text-foreground/80">
+          On This Page
+        </h2>
+        <ul className="space-y-2 text-sm">
+          {headings.map((heading) => (
+            <li key={heading.id} className={heading.level === 3 ? 'ml-4' : ''}>
+              <a
+                href={`#${heading.id}`}
+                className={`block hover:text-primary transition-colors ${
+                  activeId === heading.id
+                    ? 'text-primary font-semibold'
+                    : 'text-foreground/70'
+                }`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  document.getElementById(heading.id)?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                  })
+                }}
+              >
+                {heading.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Mobile: collapsible content */}
+      {open && (
+        <ul id="toc-root" className="mt-2 space-y-1 xl:hidden">
+          {headings.map((heading) => (
+            <li key={heading.id} className={heading.level === 3 ? 'ml-4' : ''}>
+              <a
+                href={`#${heading.id}`}
+                className={`block hover:text-primary transition-colors ${
+                  activeId === heading.id
+                    ? 'text-primary font-semibold'
+                    : 'text-foreground/70'
+                }`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setOpen(false)
+                  document.getElementById(heading.id)?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                  })
+                }}
+              >
+                {heading.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   )
 }

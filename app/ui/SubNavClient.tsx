@@ -47,7 +47,7 @@ export function SubNavClient({ items, title }: Props) {
   const handleSelect = () => setOpen(false)
 
   return (
-    <nav className="text-sm">
+    <nav>
       <button
         type="button"
         className="w-full inline-flex items-center gap-1 text-foreground hover:opacity-80 md:hidden"
