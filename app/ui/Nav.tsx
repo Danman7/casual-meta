@@ -9,7 +9,6 @@ import { IoMdClose, IoMdMenu } from 'react-icons/io'
 import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
 import { Anchor } from '@/app/ui/Anchor'
 import { SectionNav } from '@/app/ui/SectionNav'
-import { TableOfContents } from '@/app/ui/TableOfContents'
 
 export const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -66,9 +65,8 @@ export const Nav = () => {
         )}
       </div>
 
-      <div className="md:hidden pb-2 space-y-2">
+      <div className="md:hidden pb-2">
         <SectionNav />
-        <TableOfContents />
       </div>
     </header>
   )
