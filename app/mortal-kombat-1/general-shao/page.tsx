@@ -1,25 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-  GiGrab,
-  GiHighPunch,
-  GiJoint,
-  GiLifeBar,
-  GiSharpAxe,
-  GiWingfoot,
-} from 'react-icons/gi'
-import { IoPeopleSharp } from 'react-icons/io5'
-import { LuShieldCheck } from 'react-icons/lu'
-import { MdOutlineSocialDistance } from 'react-icons/md'
-import { TbCircleLetterN, TbRuler3 } from 'react-icons/tb'
-import { TiArrowShuffle } from 'react-icons/ti'
+import { GiScales, GiSharpAxe } from 'react-icons/gi'
 
 import Shao from '@/app/assets/mk1/shao.webp'
 import shao2 from '@/app/assets/mk1/shao_2.webp'
 import { MK1_BASE_URL, MK1_TITLE } from '@/app/constants'
-import { Badge } from '@/app/ui/Badge'
 import { BulletList } from '@/app/ui/BulletList'
-import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -43,56 +29,26 @@ export default async function Page() {
           alt="General Shao in Mortal Kombat 1"
         />
 
-        <div className="md:w-1/2">
-          <FlexWrapper className="mt-4">
-            <Badge className="text-success border-success">
-              <GiLifeBar /> High Health
-            </Badge>
-
-            <Badge className="text-success border-success">
-              <GiHighPunch /> Good Reach
-            </Badge>
-
-            <Badge className="text-success border-success">
-              <TbCircleLetterN />
-              Neutral Master
-            </Badge>
-
-            <Badge className="text-success border-success">
-              <TiArrowShuffle /> Good Mix
-            </Badge>
-
-            <Badge className="text-success border-success">
-              <GiGrab /> Technical Grabs
-            </Badge>
-
-            <Badge className="">
-              <GiSharpAxe /> Multiple Stances
-            </Badge>
-
-            <Badge className="text-error border-error!">
-              <IoPeopleSharp /> Kameo Dependent
-            </Badge>
-
-            <Badge className="text-error border-error!">
-              <MdOutlineSocialDistance /> Weak Fullscreen
-            </Badge>
-          </FlexWrapper>
-
-          <p>
-            General Shao is a mid-range brawler with a heavy emphasis on
-            disjointed normals with good reach. He is a stance-based fighter,
-            alternating between Axe and No Axe stances, each providing a
-            different move set. He excels at the{' '}
-            <Link href={`${MK1_BASE_URL}/neutral`}>Neutral</Link> game with good
-            speed and a mix of both standing overheads and lows. If players
-            spend some time practicing even his low difficulty combos, they will
-            also find him a damaging character.
-          </p>
-        </div>
+        <p className="md:w-1/2">
+          General Shao is a close-to-mid range bruiser that excels at scouting
+          and bullying his opponents in{' '}
+          <Link href={`${MK1_BASE_URL}/neutral`}>neutral</Link>. His
+          stance-based style alternates between the axe with the famed
+          far-reaching disjointed normals and unarmed where he is faster, safer
+          with plus frames on block. He is tough (high HP), moves fast and hits
+          hard. At the same time, his offense has gaps that can be abused at
+          higher ranks. And he lacks sufficient long-range instruments. Both
+          issues are fixed with the proper Kameo partner, of which he can choose
+          between plenty of good options. But if you don’t have the right tools
+          at the right time (wrong Kameo/stance) you will have a hard time
+          reverting pressure.
+        </p>
       </div>
 
-      <h2>Why play or skip General Shao?</h2>
+      <h2 className="flex items-center gap-2">
+        Why play or skip General Shao? <GiScales />
+      </h2>
+
       <BulletList
         className="text-success"
         icon="GiDeathSkull"
@@ -101,19 +57,22 @@ export default async function Page() {
             <strong>Durable</strong> - highest health in the game.
           </>,
           <>
-            <strong>Long reach</strong> - disjointed mids and aerials dominate
-            neutral.
+            <strong>Long reach with axe</strong> - great disjointed mids and
+            aerials.
           </>,
 
           <>
-            <strong>Strong mixup</strong> - multiple overheads, lows, and
-            command grabs.
+            <strong>Strong mixup in both stances</strong> - multiple overheads,
+            lows and command grabs. Real 50/50s when unarmed.
           </>,
           <>
             <strong>Excellent air control</strong> - good anti-air options, even
             normals due to his height advantage.
           </>,
-          'Shao is a good step away from pure beginner characters into more technical ones - managing the stances without demanding complexity.',
+          <>
+            <strong>Superb corner pressure</strong> - additional setups, armored
+            plus frames and turn steals on top of his mix-up.
+          </>,
         ]}
       />
       <BulletList
@@ -121,8 +80,8 @@ export default async function Page() {
         icon="GiDeathSkull"
         items={[
           <>
-            <strong>Armor</strong> - Multiple armored options, including wakeups
-            and launches, but some are very punishable.
+            <strong>Armor</strong> - Multiple wakeup and launch options, but
+            punishable.
           </>,
           <>
             <strong>Kameo versatility and dependency</strong> - Shao works well
@@ -154,7 +113,7 @@ export default async function Page() {
 
       <h2 className="flex items-center gap-2">
         <GiSharpAxe />
-        Normals with Axe
+        The Axe
       </h2>
 
       <p>
@@ -164,30 +123,7 @@ export default async function Page() {
         makes or breaks Shao’s game.
       </p>
 
-      <h3>Standing 2</h3>
-      <FlexWrapper className="mt-2">
-        <Badge className="text-success border-success">
-          <LuShieldCheck /> Safe
-        </Badge>
-
-        <Badge className="text-success border-success">
-          <GiWingfoot /> Fast
-        </Badge>
-
-        <Badge className="text-success border-success">
-          <TbRuler3 /> Decent Reach
-        </Badge>
-
-        <Badge className="text-success border-success">
-          <GiJoint /> Disjointed
-        </Badge>
-      </FlexWrapper>
-
-      <Image
-        className="shadow-md max-h-96 object-cover object-[0%_0%]"
-        src={shao2}
-        alt="Scorpion doing back 3 attack."
-      />
+      <h3>A simple approach to mix-ups</h3>
 
       <p>
         Pressing 2 with the axe while holding no direction will execute a very
@@ -195,6 +131,12 @@ export default async function Page() {
         essentials of a good attack and is among the best standing punches in
         the game.
       </p>
+
+      <Image
+        className="shadow-md max-h-96 object-cover object-[0%_50%]"
+        src={shao2}
+        alt="General Shao doing standing 2 attack."
+      />
 
       <p>
         <strong>This is your bread and butter.</strong> Learn to measure its

@@ -283,7 +283,7 @@ export default async function Page() {
         </div>
 
         <p>
-          Same as B3 the B3 can also be shortcut cancelled into a forward move.
+          Same as B2 the B3 can also be shortcut cancelled into a forward move.
         </p>
 
         <p>
@@ -560,8 +560,6 @@ export default async function Page() {
       </p>
 
       <h2>Advanced Tech</h2>
-
-      <p>We move away from beginner teritory here.</p>
 
       <h3>Enhanced Flame-Port jail</h3>
 
