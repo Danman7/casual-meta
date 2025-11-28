@@ -1,9 +1,6 @@
 import Image from 'next/image'
-import { GiHighKick, GiPunchBlast, GiScales } from 'react-icons/gi'
-import { MdAltRoute } from 'react-icons/md'
-import { TfiRulerAlt2 } from 'react-icons/tfi'
+import { GiPunchBlast } from 'react-icons/gi'
 
-import scorpLaunch from '@/app/assets/mk1/scorp_f32.webp'
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
@@ -11,6 +8,7 @@ import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK1_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { Callout } from '@/app/ui/Callout'
+import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 8
@@ -46,35 +44,30 @@ export default async function Page() {
         </p>
       </div>
 
-      <h2 className="flex items-center gap-2">
-        Why play or skip Scorpion? <GiScales />
-      </h2>
+      <h2>Why play or skip Scorpion?</h2>
       <BulletList
         className="text-success"
         icon="GiDeathSkull"
         items={[
           <>
-            <strong>No safe spot for your foe</strong>. The Spear, Flame-Port
-            and Devouring Flame pose a threat everywhere on the screen.
+            <strong>No safe spot for your foe</strong>. Between the Spear,
+            Flame-Port, Back 3 and Devouring Flame there is no shelter on the
+            screen.
           </>,
           <>
-            <strong>Novice approved</strong>. With no stances or forms, Scorpion
-            offers a full toolkit for every basic scenario. His normals are
-            largely safe on block, and the Spear remains a reliable stun that
-            pulls enemies in. There are simple routes to 30-35% damage, with
-            easy launchers, repeat juggles, and strong synergy with his Spear.
+            <strong>Novice approved</strong>. No stances or forms, a full
+            toolkit for every basic scenario, normals are largely safe on block,
+            the Spear remains a reliable stun that pulls enemies in, easy combo
+            options.
           </>,
           <>
-            <strong>Good interruptions and punishes</strong>. His dash (armored
-            when enhanced), B3 and Spear are solid challenges with superb space
-            control. Flame-Port can interrupt projectile spam. B2 is a decent
-            anti-air.
+            <strong>Good interruptions and punishes</strong>. His dash, B3 and
+            Spear have superb space control. Flame-Port can interrupt projectile
+            spam. B2 is a decent anti-air.
           </>,
           <>
             <strong>Kameo Synergy</strong>. His moves and cancelable throw
-            animation make him accessible to a lot of Kameos. He can be paired
-            with easy combo extensions, mix-ups, technical jails or chip damage
-            in mind.
+            animation make him accessible to a lot of Kameos.
           </>,
         ]}
       />
@@ -85,126 +78,101 @@ export default async function Page() {
         items={[
           <>
             <strong>Needs a good Kameo for optimal offense</strong>. Scorpion
-            has no true grounded mix-up or frame advantage on block. To catch up
-            with a skilled opponent, he would need a suitable partner to fill in
-            the gaps and do 50/50s.
+            has no true grounded mix-up or frame advantage on block. If you are
+            to catch up with a skilled adversary, you will have to chose a Kameo
+            wisely.
           </>,
+          'Low technicality can mean higher predictability.',
         ]}
       />
 
-      <BulletList
-        className="text-error"
-        icon="GiDeathSkull"
-        items={[
-          <>
-            <strong>High damage is difficult</strong>. Reaching the 45-50%
-            damage range requires tight timing and resources. Often simpler,
-            more consistent combos are better when playing online.
-          </>,
-        ]}
-      />
-
-      <h2 className="flex items-center gap-2">
-        Neutral and Pressure <GiHighKick />
-      </h2>
+      <h2>Neutral and Pressure</h2>
 
       <p>
         Scorpion lacks a standing overhead, relying on jump-ins. None of his
-        grounded lows are chainable. Only his standing 1 punch is +2 on block.
-        Everything else is neutral or minus, so there are no big frame traps
-        there. Instead, he survives with a combination of key normals and
-        special moves. Let’s look at those, before discussing Kameos.
+        grounded lows are chainable. Only his standing 1 punch is +2 on block,
+        so there are no big frame traps here. Instead, he survives with a
+        combination of key normals and special moves.
       </p>
 
       <h3>An approach to close combat</h3>
 
       <p>
-        Start with his standing 2.{' '}
-        <strong>This is your primary, most consistent challenge.</strong> As
-        expected, it’s a safe, reasonably fast high punch (10 frames). Moreover,
-        it's a disjointed attack with surprising reach - about two steps away.
-        Learn to measure it as it will often catch advancing opponents
-        off-guard.
+        <strong>Standing 2 is your primary, most consistent challenge.</strong>{' '}
+        It's a safe, reasonably fast (10 frames), disjointed high attack with
+        surprising reach - about two steps away.
       </p>
 
-      <Image
+      <ImageWithCaption
         src={scorp2}
         alt="Scorpion's standing 2 attack."
-        className="shadow-md max-h-80 object-cover object-[0%_50%]"
+        caption="Scorpion's standing 2 reach can catch advancing foes off-guard."
       />
 
       <p>
-        Record a dummy in practice randomly advancing and blocking. Find
-        standing 2’s sweet spot and keep Scorpion there. Then when they come
-        press <strong>21 - your main hit-confirm and combo starter</strong>. If
-        they block, stop. You can try a blocked 21 into dash throw, but it's
-        risky. If you connect, continue into spear – <strong>21 BF1</strong>.
-        Also practice this with a random combo blocking dummy that has reversal
-        set to their fastest string. Learn not to commit with the spear if they
-        block or you will get punished.
-      </p>
-      <p>
-        Without going into combos, if the spear lands, end it simply with{' '}
-        <strong>33 DB2</strong>. This is your optimal ender, but if you wish you
-        can try <em>333 BF2</em> with the dash and see how that plays out. The
-        above is enough to get you started with Scorpion vs CPU.
+        A decent first step for new players is to find standing 2’s sweet spot
+        and keep your rival at that distance. When they are in range press{' '}
+        <strong>21 - your main hit-confirm and combo starter</strong>. If they
+        block, stop there and block yourself. If you connect, continue into
+        spear – 21 BF1. If you commit to a spear after 21 has been blocked they
+        will have time to punish you.
       </p>
 
       <p>
-        If you are dueling someone who also has normals that stretch out and/or
-        is steadily staying just outside the reach of standing 2, don’t be
-        afraid to go straight to the spear. At 17 frames start, -28 on block, it
-        is a slow, predictable special, which should not be abused. But if
-        instead of you constantly trying to stun them for an easy combo, use it
-        as space control you will find it an excellent tool. Many players get
-        comfortable doing footsies at mid-range that they forget the spear will
-        interrupt their dashes and get them.
+        This is the essence of footsie into hit-confirm. If you do it
+        consistently well enough that most of your attacks connect, end it with
+        33 DB2 after the spear.
       </p>
 
-      <Image
+      <p className="font-bold">
+        <GiPunchBlast className="mb-1 inline" /> 21 BF1 33 DB2{' '}
+        <span className="text-light">- a fair 21% beginners combo </span>
+      </p>
+
+      <p>
+        If the other player stays out of reach you can skip standing 2 and check
+        them the spear. Many will get so comfortable doing footsies at mid-range
+        that they won't expect to get checked.
+      </p>
+
+      <ImageWithCaption
         src={spear}
-        alt="Scorpion's signature spear."
+        alt="Scorpion's spear move."
         className="shadow-md"
+        caption="Scorpion's spear should not be abused. At 17 frames start, -28 on block, it is slow and
+        unsafe."
       />
 
       <p>
-        Most players will block or teleport or jump around your spear, but some
-        will frequently duck under it as it is a high projectile. You can spend
-        a bar of meter to launch BF1ex.{' '}
-        <strong>The enhanced version hits mid</strong>, which will catch a
-        ducking foe.
+        Expect adversaries to frequently block and jump (or teleport if they
+        can) around your spears. For those that keep ducking underneath do a
+        routine enhanced BF1. <strong>The enhanced version hits mid</strong>,
+        which will connect with a crouching fighter.
       </p>
 
       <p>
-        Only if they get on your face, and speed is of the essence can you
-        prefer the short and fast 12 (7 frames), but it offers little in return
-        compared to the 21. Still, <em>12 BF1</em> is your fastest combo start.
-      </p>
-
-      <Image
-        src={scorpLaunch}
-        alt="Scorpion's forward 32 launch attack."
-        className="shadow-md"
-      />
-
-      <p>
-        If they whiff or commit an unsafe attack, your best follow-up is the{' '}
-        <strong>forward 32</strong>. This is Scorpions{' '}
-        <strong>optimal combo starter</strong>. It is a shorter, slower (12
-        frames), but still safe string that launches your opponent in the air.
-        This opens a world of possibilities. You can chain F32 up to three times
-        in a row, depending on gravity scaling. If you do it towards the
-        beginning of a combo you can do F32 F32 F32 and still have time for a
-        standing 4 into a spear. Or you can chain only two and continue with
-        your best aerial extension - <strong>F32 F32 J12 airDB2ex 111</strong>.
+        Only if they get on your face, and speed is of the essence, should you
+        go for the fast 12 (7 frames).
       </p>
 
       <p>
-        This is plenty of information, but don’t forget your dash. Back forward
-        2 is a quick forward special that is also a tool for disrupting forward
-        dashes from jump distance. Keep in mind that it is unsafe and has short
-        active frames - meaning if you miss the hit window you will slide on to
-        them without landing a blow.
+        Now, if they err with an unsafe attack your optimal combo starter is
+        tour F32. This is your primary launch (better than F4). If it hits you
+        can chain, it up to three times or do it only twice and continue with an
+        aerial extension.
+      </p>
+
+      <p className="font-bold">
+        <GiPunchBlast className="mb-1 inline" /> F32 F32 J12 airDB2ex 111{' '}
+        <span className="text-light"></span>
+      </p>
+
+      <p>
+        If they keep knocking you down, don’t forget that your enhanced BF2 is
+        armored. You can use it as a wakeup reversal or event as a mid-range
+        interruption alternative to the spear. But do it with caution. It is
+        faster than the spear, but the active frames are few, meaning you might
+        slide into them instead of hitting them and give them a full combo.
       </p>
 
       <h3>Air play</h3>
@@ -384,9 +352,7 @@ export default async function Page() {
         counter punch. Use that to <em>micro-duck</em> into 12/21.
       </p>
 
-      <h2 className="flex items-center gap-2">
-        Punish routes <MdAltRoute />
-      </h2>
+      <h2>Punish routes</h2>
 
       <p>
         As modular as Scorpion’s move set is, when playing online, consistency
@@ -513,9 +479,7 @@ export default async function Page() {
         <span className="text-light">for 44.9% two meter damage</span>
       </p>
 
-      <h2 className="flex items-center gap-2">
-        Corner combos <TfiRulerAlt2 />
-      </h2>
+      <h2>Corner combos</h2>
 
       <p>
         This is where you can spike the damage. The regular standing 4 kick is

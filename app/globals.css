@@ -55,6 +55,12 @@ li {
   line-height: 1.7;
 }
 
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
 h1 {
   font-size: var(--text-4xl);
   font-weight: bold;
@@ -80,6 +86,7 @@ p,
 article ul,
 article img {
   margin-top: 1em;
+  text-align: justify;
 }
 
 article li {
