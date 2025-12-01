@@ -52,13 +52,7 @@ h2,
 h3,
 p,
 li {
-  line-height: 1.7;
-}
-
-h1,
-h2,
-h3 {
-  text-align: center;
+  line-height: 1.75;
 }
 
 h1 {

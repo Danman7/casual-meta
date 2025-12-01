@@ -66,8 +66,11 @@ export const Nav = () => {
         )}
       </div>
 
-      <div className="md:hidden pb-2 space-y-2">
+      <div className="md:hidden pb-2">
         <SectionNav />
+      </div>
+
+      <div className="pb-2">
         <TableOfContents />
       </div>
     </header>

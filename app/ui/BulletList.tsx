@@ -1,5 +1,5 @@
 import React from 'react'
-import * as FaIcons from 'react-icons/fa'
+import * as FaIcons from 'react-icons/fa6'
 import * as GiIcons from 'react-icons/gi'
 import * as IoIcons from 'react-icons/io5'
 import * as MdIcons from 'react-icons/md'
@@ -40,7 +40,7 @@ export const BulletList: React.FC<BulletListProps> = ({
   return (
     <ul role="list" className={className}>
       {items.map((item, index) => (
-        <li key={index} className="flex gap-2">
+        <li key={index} className="ml-2 flex gap-2">
           <IconComponent aria-hidden className="shrink-0 mt-1" />
           <span>{item}</span>
         </li>
