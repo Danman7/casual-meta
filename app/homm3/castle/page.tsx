@@ -4,6 +4,7 @@ import castle from '@/app/assets/homm3/castle.webp'
 import castleMap from '@/app/assets/homm3/castle_map.webp'
 import { HOMM3_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
+import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -20,18 +21,24 @@ export default async function Page() {
     <article className="max-w-3xl mx-auto">
       <h1>{navTitle}</h1>
 
-      <Image
+      <p className="text-lg text-light">
+        Castle creatures carry the rest of the town. You can put any hero in
+        charge of them and more often than not they will come on top.{' '}
+      </p>
+
+      <ImageWithCaption
         src={castle}
         alt="A fully built Castle town."
         className="shadow-md"
+        caption="A fully built Castle town."
       />
 
       <p>
-        With a solid mix of soldiers from low to high tiers and the most
-        consistent level 7 creature in HoMM3, Castle is broadly considered among
-        the strongest factions in the game. It is at the same time recognized as
-        a beginner friendly town type. If you are new to the game, learning its
-        multitude of mechanics, don’t hesitate to start with Castle.
+        Castle is a powerful yet simple town to play. Its high build-up cost is
+        offset by how balanced the creatures’ composition is. Most of them are
+        strong for their own level. And at the head, the strongest Level 7
+        adversary - the Angel. If you play Castle, you will find your early
+        games easy and your end games strong.
       </p>
 
       <h2>Why play or skip Castle?</h2>
