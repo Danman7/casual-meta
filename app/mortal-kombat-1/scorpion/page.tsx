@@ -219,7 +219,7 @@ export default async function Page() {
         checking them with the BF4 Devouring Flame.
       </p>
 
-      <h2>Conditioning and baiting whiffs</h2>
+      <h3>Conditioning and baiting whiffs</h3>
 
       <p>
         Scorpion’s Back launches his Kunai for a mid-low disjointed attack. It
@@ -352,9 +352,8 @@ export default async function Page() {
 
       <p>
         If your rival is standing, the teleport must be very close to the
-        ground. The timing of the kick and the land into a B2 is demanding. If
-        they are not on the ground, you can only start a combo via an enhanced
-        air teleport.
+        ground. The timing is demanding. If they are not on the ground, you can
+        only start a combo via an enhanced air teleport.
       </p>
 
       <p className="font-bold">
@@ -371,7 +370,7 @@ export default async function Page() {
       <p>
         What can be effective is an enhanced air teleport from a distance. Most
         players don’t expect to be hit by a foe jumping away from them. To make
-        the damage notable, however, you will need a challenging sequence.
+        the damage notable, however, you will need to work harder.
       </p>
 
       <p className="font-bold">
@@ -381,14 +380,14 @@ export default async function Page() {
       </p>
 
       <p className="font-bold">
-        <GiPunchBlast className="mr-1 mb-1 inline" /> exJDB3 J3 DB3{' '}
+        <GiPunchBlast className="mr-1 mb-1 inline" /> airDB3ex J3 DB3{' '}
         <span className="text-sm italic">land</span> F32 F32 4 BF1 33 DB2{' '}
         <span className="text-light">for 41.1% one meter damage</span>
       </p>
 
       <p className="font-bold">
-        <GiPunchBlast className="mr-1 mb-1 inline" /> exJDB3 J3 DB3{' '}
-        <span className="text-sm italic">land</span> 4 BF1 F32 J12 exJDB2{' '}
+        <GiPunchBlast className="mr-1 mb-1 inline" /> airDB3ex J3 DB3{' '}
+        <span className="text-sm italic">land</span> 4 BF1 F32 J12 airDB2ex{' '}
         <span className="text-sm italic">small pause</span> J111 JDB2{' '}
         <span className="text-light">for 44.9% two meter damage</span>
       </p>
@@ -396,11 +395,11 @@ export default async function Page() {
       <h2>Corner combos</h2>
 
       <p>
-        This is where you can spike the damage. The regular standing 4 kick is
-        not very impressive, but it scales wonderfully. If you practice
-        launching an opponent in the corner with a single F32 and hitting them
-        as high as possible with 4, you can chain two of these for some very
-        good damage.
+        The corner is where you can spike the damage. The standing 4 kick is not
+        impressive, but its damage scales down very well. This is best converted
+        to a combo in the corner where the knockback is not a factor. If you hit
+        their character at the highest position after a launch, you can chain
+        two Standing 4 kicks in row.
       </p>
 
       <p className="font-bold">
@@ -411,13 +410,9 @@ export default async function Page() {
       </p>
 
       <p>
-        The second 4 is kind of demanding, so don’t worry if you do only one -
-        the same combo will still do over 40% damage.
-      </p>
-
-      <p>
-        If you are about to win the round, and you feel confident, you can spice
-        the above further with some tight timings.
+        Even a single Standing 4 in this sequence will lead to 40% damage. If
+        you are about to win the round, however, and you feel confident, you can
+        spice the above further with some tight timings.
       </p>
 
       <p className="font-bold">
@@ -432,23 +427,26 @@ export default async function Page() {
       </p>
 
       <p>
-        Yes, the enhanced Devouring Flame is guaranteed damage, but if they
-        survive, they also get a guaranteed wakeup punish. You cannot recover in
-        time.
+        The enhanced Devouring Flame is guaranteed damage, <em>but</em> if they
+        survive, they also get a guaranteed wakeup punish.
       </p>
 
       <h2>Advanced Tech</h2>
 
+      <p>
+        Scorpion is a beginner-friendly character. He is fun enough with his
+        simple moves, each for specific use cases. He does have more elaborate
+        mechanics as well.
+      </p>
+
       <h3>Enhanced Flame-Port jail</h3>
 
       <p>
-        This is not beginner level tech. A lot of the corner combos end in J111
-        into something else. If you end it with an enhanced air teleport into a
-        kick you will jail your opponent. If they get up and press any button
-        other than block, they will get hit. If done correctly, they will spin
-        around trying to attack you as you come from the corner and you will get
-        a free hit, even break armor. It’s inconsistent. Don’t expect it to work
-        every time.
+        Ending a corner combo with an enhanced air teleport into a kick will
+        jail your opponent. If they press any button other than block during
+        getup, they will get hit. Do it correctly, and they will spin around to
+        face you as you come from the corner. You will get a free hit, even
+        break armor. It’s inconsistent. Don’t expect it to work every time.
       </p>
     </article>
   )

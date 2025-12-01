@@ -50,7 +50,7 @@ export function SubNavClient({ items, title }: Props) {
     <nav>
       <button
         type="button"
-        className="w-full inline-flex items-center gap-1 text-foreground hover:opacity-80 md:hidden"
+        className="w-full inline-flex items-center gap-1 text-foreground font-bold hover:opacity-80 md:hidden"
         aria-expanded={open}
         aria-controls="subnav-root"
         onClick={() => setOpen((v) => !v)}
