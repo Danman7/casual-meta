@@ -99,6 +99,16 @@ export function CreatureTable() {
         accessorKey: 'movement',
         header: 'Movement',
       },
+      {
+        accessorKey: 'specials',
+        header: 'Specials',
+        enableSorting: false,
+        cell: (info) => {
+          const specials = info.getValue() as string[] | undefined
+          if (!specials || specials.length === 0) return <span>-</span>
+          return <span>{specials.join(', ')}</span>
+        },
+      },
     ],
     [],
   )
@@ -246,8 +256,8 @@ export function CreatureTable() {
         </div>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
+      <div className="overflow-x-auto px-6 lg:w-screen lg:relative lg:left-1/2 lg:-ml-[50vw] lg:right-1/2 lg:-mr-[50vw]">
+        <table className="w-full border-collapse min-w-max">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id} className="border-b border-light">

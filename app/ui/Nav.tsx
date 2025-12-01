@@ -66,7 +66,7 @@ export const Nav = () => {
         )}
       </div>
 
-      <div className="md:hidden pb-2">
+      <div className="pb-2">
         <SectionNav />
       </div>
 

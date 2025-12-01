@@ -47,10 +47,10 @@ export function SubNavClient({ items, title }: Props) {
   const handleSelect = () => setOpen(false)
 
   return (
-    <nav>
+    <nav className="text-sm">
       <button
         type="button"
-        className="w-full inline-flex items-center gap-1 text-foreground font-bold hover:opacity-80 md:hidden"
+        className="w-full inline-flex items-center gap-1 text-foreground font-bold hover:opacity-80"
         aria-expanded={open}
         aria-controls="subnav-root"
         onClick={() => setOpen((v) => !v)}
@@ -59,17 +59,8 @@ export function SubNavClient({ items, title }: Props) {
         <span>{title || 'Menu'}</span>
       </button>
 
-      <div className="hidden md:block">
-        <h2 className="font-bold text-lg mb-4">{title}</h2>
-        <ul className="space-y-1">
-          {items.map((item) => (
-            <TreeNode key={item.href} item={item} onSelect={handleSelect} />
-          ))}
-        </ul>
-      </div>
-
       {open && (
-        <ul id="subnav-root" className="mt-2 space-y-1 md:hidden">
+        <ul id="subnav-root" className="mt-2 space-y-1">
           {items.map((item) => (
             <TreeNode key={item.href} item={item} onSelect={handleSelect} />
           ))}
