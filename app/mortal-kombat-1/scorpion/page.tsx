@@ -447,16 +447,60 @@ export default async function Page() {
       <h2>Kameos</h2>
 
       <p>
-        Start by experimenting with these in practice mode before choosing which
-        one seems the best fit for you.
+        If you have a grip on Scorpion’s flow, we can look at how to optimize
+        his offense. Start by experimenting with these in practice mode before
+        choosing which one seems the best fit for you.
       </p>
+
+      <h3>Movado</h3>
+
+      <p>
+        Movado is the one we recommend for new players. He helps Scorpion out
+        with many things. He is simple yet teaches good practices instead of
+        single button spams.
+      </p>
+
+      <p>
+        Movado’s Nindrop (UK) enables Scorpion to start combos out of his
+        Charge. This gives you armored combo options.
+      </p>
+
+      <p className="font-bold">
+        <GiPunchBlast className="mr-1 mb-1 inline" />
+        BF2ex UK <span className="text-light">swith sides</span> dash F32 F32 4
+        BF1 33 DB2
+        <span className="text-light"> - meterless 25.9% damage </span>
+      </p>
+
+      <p>
+        The same Kameo move allows you to keep your air extension meterless.
+      </p>
+
+      <p className="font-bold">
+        <GiPunchBlast className="mr-1 mb-1 inline" />
+        F32 F32 J12 airDB2ex UK <span className="text-sm italic">land</span> 1
+        BF1 33 DB2
+        <span className="text-light"> - meterless 37.5% damage </span>
+      </p>
+
+      <h3>Ferra</h3>
+
+      <p>
+        Ferra’s plays great with the B3 move and the conditioning we mentioned
+        earlier. You can do B3 K 2 for an overhead mix or B3 K 3 for a low
+        follow up that can be continued with a combo (unlike the regular B3 low
+        which knocks down). The other player will get tired of getting into the
+        mix and they will try to preemptively jump forward at which point you B2
+        them.
+      </p>
+
+      <p>Ferra can extend corner combos as well.</p>
 
       <h3>Chameleon</h3>
 
       <p>
         Chameleon with her forms is usually problematic for beginners. At the
-        same time no one else gives as much freedom and creativity. Since you
-        start with practice mode it won’t hurt to try a trickier Kameo first.
+        same time no one else gives as much freedom in pressure and setups.
       </p>
 
       <p>
@@ -474,8 +518,9 @@ export default async function Page() {
       </p>
 
       <p>
-        Mileena’s Sai (FK) makes your Charge a combo starter. This gives you
-        armor combo options.
+        Mileena’s Sai (FK) like Movado's Nindrop makes your Charge a combo
+        starter. The difference is that unlike Movado, Chameleon can only extend
+        with a spear.
       </p>
 
       <p className="font-bold">
@@ -495,19 +540,6 @@ export default async function Page() {
         These are some simple ways to start off with her. You will grasp her
         true might, however, once you start using her resets.
       </p>
-
-      <h3>Ferra</h3>
-
-      <p>
-        Ferra’s plays great with the B3 move and the conditioning we mentioned
-        earlier. You can do B3 K 2 for an overhead mix or B3 K 3 for a low
-        follow up that can be continued with a combo (unlike the regular B3 low
-        which knocks down). The other player will get tired of getting into the
-        mix and they will try to preemptively jump forward at which point you B2
-        them.
-      </p>
-
-      <p>Ferra can extend corner combos as well.</p>
 
       <h2>Advanced Tech</h2>
 
