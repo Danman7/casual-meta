@@ -22,8 +22,8 @@ export default async function Page() {
       <h1>{navTitle}</h1>
 
       <p className="text-lg text-light">
-        Castle creatures carry the rest of the town. You can put any hero in
-        charge of them and more often than not they will come on top.{' '}
+        You can put any hero in charge of them and more often than not they will
+        come on top.
       </p>
 
       <ImageWithCaption

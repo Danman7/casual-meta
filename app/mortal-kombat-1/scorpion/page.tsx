@@ -158,7 +158,7 @@ export default async function Page() {
 
       <p>
         If they stay out of reach, skip Standing 2 and check them with Spear.
-        Many players get comfortable at mid-range and won’t expect it.
+        Many players get comfortable at mid-range and won’t anticipate it.
       </p>
 
       <ImageWithCaption
@@ -170,63 +170,77 @@ export default async function Page() {
 
       <p>
         Expect opponents to block, jump, or even teleport around your Spear. But
-        because it is a high attack, some players will duck under it.{' '}
-        <strong>The enhanced spear consumes a meter, but hits mid.</strong> It
-        will connect with anybody on the ground, even while crouching.
+        because it is a high attack, some players will also attempt to duck
+        under it.{' '}
+        <strong>The enhanced spear consumes a meter, but hits mid</strong>,
+        which will catch a ducking foe. If you see this habit in your rival,
+        throw an occasional enhanced spear.
       </p>
 
       <p>
-        If they like to throw unsafe attacks block and go for F32. Launching
-        them at the start of a combo opens a world of possibilities. Also, the
-        move can be chained up to three times this way for some easy damage.
+        Supposing they come up close and knock you down. If you keep getting
+        persistently knocked down, don’t you can reset the pressure and gain
+        some distance with an armored enhanced BF2 just as you are getting up.
       </p>
 
       <p>
-        If they keep knocking you down, don’t forget that your enhanced BF2 is
-        armored.
+        Don’t be alarmed if you need to keep blocking for an extended period.
+        Eventually they will throw an unsafe attack - one which takes a long
+        time to recover from. This is your queue. After blocking such an attack
+        initiate counter-pressure with 12 or F32. Prefer the latter as it will
+        give you more options to extend the offense.
       </p>
 
       <p>
-        If your adversary does a jump-in, you can Back 2 them. Practice this
-        against a dummy that does a forward jumping kick. The sweet spot can be
-        a bit tricky. But if you manage to find it, you can connect a Spear into
-        a full combo.{' '}
         <strong>
           The Back 2 shortcut cancels into the Spear without the need to press
           back twice - B2 F1.
-        </strong>
-      </p>
-
-      <p>
-        For those who back away and spam you from afar there is Flame Port. It
-        is unsafe and predictable, but still a dedicated anti-zoning special.
-        The trick is to time it with their projectiles. To practice record a Liu
-        Kang backing away, throwing BF1 and blocking afterwards.
-      </p>
-
-      <p>
-        <strong>
-          If your opponent blocks your teleports regularly, mix it up with the
-          enhanced version into a throw.
         </strong>{' '}
-        This is a simple way to mess up their defense if they expect to get
-        punched. If they counter punch your enhanced port before the throw, do a
-        micro-duck into a punch - briefly tap down then 1.
+        Thus, if you spot a jump-in attempt, you can react with B2 into Spear
+        for a full combo punish. Timing is a bit strict, so practice it in
+        training mode.
+      </p>
+
+      <h3>Anti-zoning</h3>
+
+      <p>
+        On condition that you are facing a character that has good full-screen
+        pressure (e.g. Sindel, Shang Tsung, Liu Kang) you have the Flame Port.
+        It is unsafe and predictable. The trick is to time it with their
+        projectiles. To practice record a Liu Kang backing away, throwing BF1
+        and blocking afterwards. He can’t block while moving or throwing a
+        fireball. If you time the teleport right, he will get hit and you will
+        end up next to him.
+      </p>
+
+      <p>
+        Provided they do block your teleports regularly, mix them up with the{' '}
+        <strong>enhanced version into a throw.</strong> This is a simple way to
+        mess up their defense. They predict they will get punched, but get
+        grabbed instead. Such is the nature of conditioning, however, that they
+        will learn to look for your enhanced teleport and counter punch it. It
+        may be a bit exacting, but you can micro-duck (press down briefly)
+        underneath their fist, just as you come out the other side and hit a
+        quick 1 to counter-punch.
       </p>
 
       <p>
         When you don’t feel confident with your teleport play, switch to
-        checking them with the BF4 Devouring Flame.
+        checking them with the BF4 Devouring Flame. Many forget Scorpion even
+        has that move. It is especially slow and unsafe, but a good way to flush
+        them out of hiding and remind them - yes, I can get you there. The
+        enhanced version is guaranteed damage.
       </p>
 
       <h3>Conditioning and baiting whiffs</h3>
 
       <p>
-        Scorpion’s Back launches his Kunai for a mid-low disjointed attack. It
-        is slow and unsafe but reaches very far. The threat of a low hit at such
-        a distance makes your rival constantly expect either to low block or
-        jump over it. You can condition them to jump forward expecting a Back 3
-        where you didn’t execute one. Then you can punish them with your Back 2.
+        Scorpion’s Back 3 is a very singular move. He launches his Kunai for a
+        mid-low disjointed attack. It is slow and unsafe but reaches very far.
+        The threat of a low hit at such a distance makes your rival constantly
+        expect either to low block or jump over it. You can condition them to
+        jump forward expecting a Back 3 where you didn’t execute one. Then you
+        can punish them with your Back 2.
       </p>
 
       <ImageWithCaption
@@ -273,8 +287,9 @@ export default async function Page() {
       <p>
         You can also promote your opponent to dash forward if you throw a punch
         into empty air at medium distance. Often when they see a whiff they
-        spring into action. You can use that to land a Spear. Just tap 1
-        (quickest recovery) into BF1. This is cheap but legit tech.
+        spring into action. You can use that to land a Spear. Just promptly tap
+        1 (quickest recovery) into BF1 at jump distance away. This is cheap but
+        legit tech.
       </p>
 
       <p>
@@ -289,8 +304,8 @@ export default async function Page() {
 
       <p>
         As modular as Scorpion’s move set is, when playing online, execution
-        will overcome damage. You already have the basics of footsie into
-        punish.
+        will overcome damage. You already have the basics of footsie into punish
+        from the neutral section. Let's put that together:
       </p>
 
       <p className="font-bold">
@@ -299,8 +314,8 @@ export default async function Page() {
       </p>
 
       <p>
-        This is a fair beginners combo. The best damage-for-consistency however
-        involves learning to juggle the opponent three times.
+        This is a fair beginners combo. For the best damage-for-consistency,
+        however, you will have to learn to juggle the opponent three times.
       </p>
 
       <p className="font-bold">
@@ -315,10 +330,10 @@ export default async function Page() {
       </p>
 
       <p>
-        These are your bread-and-butter routes. In general, 36-40% damage is
-        more than enough. The difficulty with the latter one is to delay the 111
-        until both of you are closer to the ground. If executed correctly they
-        will bounce off the ground allowing for the follow up spear to connect.
+        These are your bread-and-butter routes. 36-40% damage is more than
+        enough. The difficulty with the latter one is to delay the 111 until
+        both of you are closer to the ground. If executed correctly they will
+        bounce off the ground allowing for the follow up spear.
       </p>
 
       <p>
@@ -337,7 +352,7 @@ export default async function Page() {
         <span className="text-light"> - one bar 37.7% damage</span>
       </p>
 
-      <h2>Extending via air Flame-Port</h2>
+      <h3>Extending via air Flame-Port</h3>
 
       <p>
         You can expand combos with Scorpion’s teleport. Nevertheless, it is much
@@ -352,8 +367,7 @@ export default async function Page() {
 
       <p>
         If your rival is standing, the teleport must be very close to the
-        ground. The timing is demanding. If they are not on the ground, you can
-        only start a combo via an enhanced air teleport.
+        ground.
       </p>
 
       <p className="font-bold">
@@ -363,8 +377,8 @@ export default async function Page() {
       </p>
 
       <p>
-        After you try this one you will feel the weird timing with the enhanced
-        teleport into the 13. Often the teleport will simply miss.
+        The timing with the enhanced teleport into the 13 is awkward. Often the
+        teleport will miss.
       </p>
 
       <p>
@@ -392,14 +406,13 @@ export default async function Page() {
         <span className="text-light">for 44.9% two meter damage</span>
       </p>
 
-      <h2>Corner combos</h2>
+      <h3>Corner combos</h3>
 
       <p>
-        The corner is where you can spike the damage. The standing 4 kick is not
-        impressive, but its damage scales down very well. This is best converted
-        to a combo in the corner where the knockback is not a factor. If you hit
-        their character at the highest position after a launch, you can chain
-        two Standing 4 kicks in row.
+        You can really spike the damage in the corner. Standing 4 is not
+        impressive, but its damage scales down very well. Moreover, in the
+        corner its knockback is not a factor. You can chain two Standing 4 kicks
+        in row.
       </p>
 
       <p className="font-bold">
@@ -431,13 +444,72 @@ export default async function Page() {
         survive, they also get a guaranteed wakeup punish.
       </p>
 
-      <h2>Advanced Tech</h2>
+      <h2>Kameos</h2>
 
       <p>
-        Scorpion is a beginner-friendly character. He is fun enough with his
-        simple moves, each for specific use cases. He does have more elaborate
-        mechanics as well.
+        Start by experimenting with these in practice mode before choosing which
+        one seems the best fit for you.
       </p>
+
+      <h3>Chameleon</h3>
+
+      <p>
+        Chameleon with her forms is usually problematic for beginners. At the
+        same time no one else gives as much freedom and creativity. Since you
+        start with practice mode it won’t hurt to try a trickier Kameo first.
+      </p>
+
+      <p>
+        For starters she enables throw combos. The regular throw does 11%. If
+        you time her Kitana form Fan Toss with Scorpion’s no direction throw at
+        the spot where he jumps over and launches the spear you can double that
+        damage.
+      </p>
+
+      <p className="font-bold">
+        <GiPunchBlast className="mr-1 mb-1 inline" />
+        Throw <span className="text-light">wait</span> K (fan toss) J2 F32 F32 4
+        BF1 33 DB2
+        <span className="text-light"> - 21.9% damage out of a throw</span>
+      </p>
+
+      <p>
+        Mileena’s Sai (FK) makes your Charge a combo starter. This gives you
+        armor combo options.
+      </p>
+
+      <p className="font-bold">
+        <GiPunchBlast className="mr-1 mb-1 inline" />
+        BF2 FK{' '}
+        <span className="text-light">(the Charge will switch sides)</span> BF1
+        F32 F32 4 BF2
+        <span className="text-light"> - 23.4% damage </span>
+      </p>
+
+      <p>
+        Jade’s Glow gives projectile immunity for a brief time. It is not only
+        additional help with zoners but also alleviates mirror match spears.
+      </p>
+
+      <p>
+        These are some simple ways to start off with her. You will grasp her
+        true might, however, once you start using her resets.
+      </p>
+
+      <h3>Ferra</h3>
+
+      <p>
+        Ferra’s plays great with the B3 move and the conditioning we mentioned
+        earlier. You can do B3 K 2 for an overhead mix or B3 K 3 for a low
+        follow up that can be continued with a combo (unlike the regular B3 low
+        which knocks down). The other player will get tired of getting into the
+        mix and they will try to preemptively jump forward at which point you B2
+        them.
+      </p>
+
+      <p>Ferra can extend corner combos as well.</p>
+
+      <h2>Advanced Tech</h2>
 
       <h3>Enhanced Flame-Port jail</h3>
 
@@ -447,6 +519,17 @@ export default async function Page() {
         getup, they will get hit. Do it correctly, and they will spin around to
         face you as you come from the corner. You will get a free hit, even
         break armor. It’s inconsistent. Don’t expect it to work every time.
+      </p>
+
+      <h3>Air Kyo Snag bait</h3>
+
+      <p>
+        Air DB2 has instant recovery. Even the regular version. Assuming you
+        jump over your adversary you can throw this move into empty air, and it
+        will stop and drop you down. They must be ready for a timely anti-air
+        otherwise you are safe. The idea is to bait a high attack from them
+        while throwing a low Kameo move or Movado’s Trap Drop. It’s a niche
+        tactic.
       </p>
     </article>
   )
