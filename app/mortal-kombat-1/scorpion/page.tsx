@@ -32,21 +32,29 @@ export default async function Page() {
           alt="Scorpion in Mortal Kombat 1"
         />
 
-        <p className="md:w-1/2">
-          Scorpion in Mortal Kombat 1 is polarizing: some praise him, others
-          find him flat or weak. Nevertheless, he remains a straightforward
-          character frequently played at all levels. He has tools for fighting
-          both up close and against zoning players who prefer distance. On his
-          own, he performs best when reacting to the opponent - punishing and
-          interrupting. For optimal offense he needs help from an appropriate
-          Kameo partner.
-        </p>
+        <div className="md:w-1/2">
+          <p className="text-lg text-light">
+            An uncomplicated punisher that can convert a mistake anywhere on the
+            screen into damage.
+          </p>
+
+          <p>
+            Scorpion in Mortal Kombat 1 is polarizing: some praise him, others
+            find him flat or weak. Nevertheless, he remains a straightforward
+            character frequently played at all levels. He has tools for fighting
+            both up close and against zoning players who prefer distance. On his
+            own, he performs best when reacting to the opponent - punishing and
+            interrupting. For optimal offense he needs help from an appropriate
+            Kameo partner.
+          </p>
+        </div>
       </div>
 
       <h2>Should I play or skip Scorpion?</h2>
+
       <BulletList
         className="text-success"
-        icon="GiDeathSkull"
+        icon="FaScaleUnbalanced"
         items={[
           'No stances or forms to manage.',
           'Spear controls space and sets up combos.',
@@ -59,95 +67,125 @@ export default async function Page() {
 
       <BulletList
         className="text-warning"
-        icon="GiDeathSkull"
+        icon="FaScaleBalanced"
         items={[
-          'Low technicality leads to higher predictability.',
-          'Skilled players can push your attack to the limit.',
+          'Low technicality can lead to higher predictability.',
+          'Skilled players may push your attack to the limit.',
         ]}
       />
 
       <BulletList
         className="text-error"
-        icon="GiDeathSkull"
+        icon="FaScaleUnbalancedFlip"
         items={[
-          'Lacks a standing overhead.',
-          'All standing low attacks are not cancellable. ',
+          'No standing overhead attack.',
+          'No standing low attack that cancels. ',
         ]}
       />
 
       <h2>Main buttons</h2>
 
-      <p>Here are the strings you should practice first.</p>
-
-      <BulletList
-        icon="FaRegCircleDot"
-        items={[
-          <>
+      <Callout>
+        <div className="tracking-widest">Poke</div>
+        <ul>
+          <li>
             <strong>Standing 2</strong> is your primary poke - fast, safe,
             disjointed high with surprising reach.
-          </>,
-          <>
-            <strong>Standing 21</strong> - extends the above into your main
-            hit-confirm and combo starter.
-          </>,
-          <>
-            <strong>Forward 32</strong> - your best launch and combo starter,
-            albeit slower with shorter reach than standing 21.
-          </>,
-          <>
-            <strong>Standing 12</strong> - fastest hit-confirm. Prefer only when
-            speed is of the essence.
-          </>,
-          <>
-            <strong>Back 2</strong> - best anti-air into a full combo option.
-          </>,
-          <>
+          </li>
+        </ul>
+      </Callout>
+
+      <Callout className="bg-alt-surface!">
+        <div className="tracking-widest">Space Control</div>
+
+        <ul>
+          <li>
             <strong>Back 3</strong> - very far reaching, mid-low attack. The
             first hit can be cancelled into any special or Kameo move.
-          </>,
-          <>
+          </li>
+
+          <li>
             <strong>Back Forward 1</strong> is the Spear - an excellent full
             screen check and combo extender. It is slow and unsafe. Use with
             caution.
-          </>,
-          <>
+          </li>
+        </ul>
+      </Callout>
+
+      <Callout className="bg-dark-surface!">
+        <div className="tracking-widest">Hit-confirm</div>
+
+        <ul>
+          <li>
+            <strong>Standing 21</strong> - main hit-confirm and combo starter.
+          </li>
+          <li>
+            <strong>Forward 32</strong> - your best launch and combo starter,
+            albeit slower with shorter reach than standing 21.
+          </li>
+
+          <li>
+            <strong>Standing 12</strong> - fastest hit-confirm. Prefer only when
+            speed is of the essence.
+          </li>
+        </ul>
+      </Callout>
+
+      <Callout>
+        <div className="tracking-widest">Defense</div>
+        <ul>
+          <li>
+            <strong>Back 2</strong> - best anti-air into a full combo option.
+          </li>
+
+          <li>
             <strong>Back Forward 2</strong> is the Charge - fast mid attack that
             covers good distance. Can start a combo only with the proper Kameos.
             Enhanced version has armor. It is a good wakeup reversal.
-          </>,
-          <>
+          </li>
+        </ul>
+      </Callout>
+
+      <Callout className="bg-alt-surface!">
+        <div className="tracking-widest">Combo extensions and enders</div>
+
+        <ul>
+          <li>
+            <strong>Air Down Back 2 Enhanced</strong> is a key aerial combo
+            extender.
+          </li>
+
+          <li>
             <strong>Down Back 2</strong> is the Twisted Kyo - your optimal combo
             ender.
-          </>,
-          <>
-            <strong>Air Down Back 2 Enhanced</strong> is a key aerial combo
-            extender. You need to launch them first - F32 jump airDB2ex.
-          </>,
-          <>
+          </li>
+        </ul>
+      </Callout>
+
+      <Callout className="bg-dark-surface!">
+        <div className="tracking-widest">Full-screen</div>
+
+        <ul>
+          <li>
             <strong>Down Back 3</strong> is the Flame Port. It is a dedicated
-            full screen punish. Can also extend combos. The Enhanced version
+            full-screen punish. Can also extend combos. The Enhanced version
             opens doors to some mind games.
-          </>,
-          <>
+          </li>
+
+          <li>
             <strong>Back Forward 4</strong> is the Devouring Flame - a final
-            full screen measure against players who like to block and keep their
+            full-screen measure against players who like to block and keep their
             distance.
-          </>,
-        ]}
-      />
+          </li>
+        </ul>
+      </Callout>
 
       <h2>How do I play Neutral?</h2>
 
-      <p>
+      <p className="text-lg text-light">
         Scorpion lacks a true mix-up or frame advantage. Instead, he has simple
         moves for each distance and scenario.
       </p>
-
-      <ImageWithCaption
-        src={scorp2}
-        alt="Scorpion's Standing 2 attack."
-        caption="Scorpion's Standing 2 catches advancing Sub-Zero off-guard."
-      />
 
       <p>
         First goal for new players: learn Standing 2’s sweet spot and keep them
@@ -155,6 +193,12 @@ export default async function Page() {
         connects, continue into Spear - 21 BF1. Don’t commit into a combo if
         they block the first two hits. They will have time to punish you.
       </p>
+
+      <ImageWithCaption
+        src={scorp2}
+        alt="Scorpion's Standing 2 attack."
+        caption="Scorpion's Standing 2 catches advancing Sub-Zero off-guard."
+      />
 
       <p>
         If they stay out of reach, skip Standing 2 and check them with Spear.
@@ -250,15 +294,8 @@ export default async function Page() {
         caption="Back 3 catches Sub-Zero at the distance of a jump plus a dash."
       />
 
-      <Callout>
-        <div className="text-base font-bold flex items-center gap-2">
-          Back 3 Cancels
-        </div>
-
-        <p>
-          The first Back 3 hit can be shortcut cancelled into a forward move.
-          This opens a lot of possibilities.
-        </p>
+      <Callout className="mt-4">
+        <div className="tracking-widest">Back 3 Cancels</div>
 
         <p>
           <strong>B3 F1</strong> cancels into Spear.
@@ -298,6 +335,14 @@ export default async function Page() {
         up block. Cut it short - 12 into a throw. Same thing with Forward 34. It
         is a decent mid-mid poke that doesn’t chain outside a dash or some Kameo
         moves. But if they keep expecting it you can do F3 into a throw.
+      </p>
+
+      <p>
+        Speaking of Forward 3, it is also your best shimmy. You might want to
+        keep walking forward into your foe after you knock them down. Normally,
+        this indicates an attempt to throw. They may decide to duck under it as
+        they get up and punish. Given that they do, you can launch a Forward 3
+        instead which hits mid.
       </p>
 
       <h2>What combos should I learn first?</h2>
@@ -452,7 +497,9 @@ export default async function Page() {
         choosing which one seems the best fit for you.
       </p>
 
-      <h3>Movado</h3>
+      <h3>
+        Movado - <span className="bg-surface p-1">solves problems</span>
+      </h3>
 
       <p>
         Movado is the one we recommend for new players. He helps Scorpion out
@@ -467,7 +514,7 @@ export default async function Page() {
 
       <p className="font-bold">
         <GiPunchBlast className="mr-1 mb-1 inline" />
-        BF2ex UK <span className="text-light">swith sides</span> dash F32 F32 4
+        BF2ex UK <span className="text-light">switch sides</span> dash F32 F32 4
         BF1 33 DB2
         <span className="text-light"> - meterless 25.9% damage </span>
       </p>
@@ -483,7 +530,45 @@ export default async function Page() {
         <span className="text-light"> - meterless 37.5% damage </span>
       </p>
 
-      <h3>Ferra</h3>
+      <p>The Trap Drop (K) allows you to combo out of a throw.</p>
+
+      <p className="font-bold">
+        <GiPunchBlast className="mr-1 mb-1 inline" />
+        Throw <span className="text-light">small pause</span> K (trap) F32 F32 4
+        BF1 33 DB2
+        <span className="text-light"> - 22% damage out of a throw</span>
+      </p>
+
+      <p>
+        Forward 34 and 214 are now also combo starters. You can try the same
+        patterns with Best Feet Forward (FK) and one of the two moves mentioned.
+      </p>
+
+      <p className="font-bold">
+        <GiPunchBlast className="mr-1 mb-1 inline" />
+        F34 FK F32 4 BF1 33 DB2
+      </p>
+
+      <p>
+        The decisive positive with everything above is that{' '}
+        <strong>
+          you don’t have to time these moves or wait for a specific form
+        </strong>{' '}
+        to be available. They will only execute in the correct spot if your
+        previous attacks have connected.
+      </p>
+
+      <p>
+        On top of that you also have tricky wakeup setups with Slding Home (DK)
+        which is a low attack. On knocking them down you can jump and press DK
+        at the same time. They will have to block the low, giving you an
+        opportunity to hit them with an overhead. Timing it perfectly takes some
+        practice.
+      </p>
+
+      <h3>
+        Ferra - <span className="bg-surface p-1">mix-up and corner damage</span>
+      </h3>
 
       <p>
         Ferra’s plays great with the B3 move and the conditioning we mentioned
@@ -496,25 +581,22 @@ export default async function Page() {
 
       <p>Ferra can extend corner combos as well.</p>
 
-      <h3>Chameleon</h3>
+      <h3>
+        Chameleon - <span className="bg-surface p-1">difficult but fun</span>
+      </h3>
 
       <p>
         Chameleon with her forms is usually problematic for beginners. At the
         same time no one else gives as much freedom in pressure and setups.
       </p>
 
-      <p>
-        For starters she enables throw combos. The regular throw does 11%. If
-        you time her Kitana form Fan Toss with Scorpion’s no direction throw at
-        the spot where he jumps over and launches the spear you can double that
-        damage.
-      </p>
+      <p>For starters she also enables throw combos.</p>
 
       <p className="font-bold">
         <GiPunchBlast className="mr-1 mb-1 inline" />
-        Throw <span className="text-light">wait</span> K (fan toss) J2 F32 F32 4
-        BF1 33 DB2
-        <span className="text-light"> - 21.9% damage out of a throw</span>
+        Throw <span className="text-light">small pause</span> K (fan toss) J2
+        F32 F32 4 BF1 33 DB2
+        <span className="text-light"> - 21.9% damage</span>
       </p>
 
       <p>

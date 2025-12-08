@@ -66,13 +66,9 @@ export const Nav = () => {
         )}
       </div>
 
-      <div className="pb-2">
-        <SectionNav />
-      </div>
+      <SectionNav />
 
-      <div className="pb-2">
-        <TableOfContents />
-      </div>
+      <TableOfContents />
     </header>
   )
 }
