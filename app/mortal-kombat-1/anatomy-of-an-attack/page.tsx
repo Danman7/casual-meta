@@ -186,7 +186,7 @@ export default async function Page() {
       <p>
         A poke can be any single low-commitment attack - either safe on block or
         safe from a distance. It’s a check. Is their mind in the game? Are they
-        judging distance correctly. Poking is scouting your opponent’s habits
+        judging distance correctly? Poking is scouting your opponent’s habits
         and reactions. It may start combos, but that is not the focus.
       </p>
 
