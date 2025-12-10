@@ -95,6 +95,53 @@ export default async function Page() {
         get punched and backing away from a ducking opponent will not gain
         progress. It is more of a mind game.
       </p>
+
+      <h2>Conditioning</h2>
+
+      <p>
+        How can I make my opponent expect a certain action from me? Can I
+        condition them into predicting my behavior incorrectly? Certainly!
+        Conditioning is one of the building blocks of your offense and it can be
+        trained.
+      </p>
+
+      <p>
+        Every one of us has their own conduct when it comes to fighting games.
+        Because of the speed of the game, both players try to constantly read
+        each other’s intentions.
+      </p>
+
+      <p>
+        When one of them spots the same behavior in the other party in the same
+        situations they make a mental note. Are they always starting a round
+        with a jump-in? Are they constantly blocking when I dash forward even
+        when I’m some distance away? Are they punishing my slow projectile spam?
+        How should I modify my attacks?
+      </p>
+
+      <p>
+        Usually, you provoke these thoughts in your opponent with your natural
+        habits. But a skilled player can provoke them on purpose. Provided you
+        are knocked down, and you try an armored get-up twice you can condition
+        your opponent to predict you will try the same a third time and block.
+        But this time you throw them instead.
+      </p>
+
+      <p className="font-bold">
+        This is why varying your attacks is important.
+      </p>
+
+      <h3>String derail</h3>
+
+      <p>
+        One approach is to cut one of your strings short. Say your character has
+        a standing 122 that ends with a slow punch or a 124 that goes into a
+        prolonged kick. If you do these often enough when you approach your foe,
+        they will get used to them. The best counter measure is to block through
+        the last hit and counterattack. But what if you cut the string short and
+        do a throw instead - 12 (or whatever) into a throw? This is a string
+        delay and is a way to keep them guessing.
+      </p>
     </article>
   )
 }

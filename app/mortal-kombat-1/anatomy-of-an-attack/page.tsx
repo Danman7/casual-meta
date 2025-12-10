@@ -57,7 +57,9 @@ export default async function Page() {
         If one player throws an attack, but the other one is not within reach,
         the attack will miss. This is the best possible outcome for the target.
         While the attacker will have to recover to be able to block, the other
-        side is free to do anything.
+        side is free to do anything. The most commont term you will see related
+        to missing is a <strong>whiff</strong>. To whiff an attack means to miss
+        completely.
       </p>
 
       <h2>Block type</h2>
