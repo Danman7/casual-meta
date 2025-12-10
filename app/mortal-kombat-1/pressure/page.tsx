@@ -140,7 +140,7 @@ export default async function Page() {
         they will get used to them. The best counter measure is to block through
         the last hit and counterattack. But what if you cut the string short and
         do a throw instead - 12 (or whatever) into a throw? This is a string
-        delay and is a way to keep them guessing.
+        derail and is a way to keep them guessing.
       </p>
     </article>
   )

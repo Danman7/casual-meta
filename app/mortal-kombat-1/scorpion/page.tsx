@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import { GiPunchBlast } from 'react-icons/gi'
 
+import scorpAirDB2 from '@/app/assets/mk1/scorp_air_db2.webp'
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
+import scorpMovado from '@/app/assets/mk1/scorp_movado.webp'
 import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
@@ -451,6 +453,12 @@ export default async function Page() {
         <span className="text-light">for 44.9% two meter damage</span>
       </p>
 
+      <ImageWithCaption
+        src={scorpAirDB2}
+        alt="Scorpion's air down back 2 special."
+        caption="Scorpion's enhanced air Down Back 2 can be chained multiple times in a row, but costs meter each time and has diminishing returns compared to continuing with 111."
+      />
+
       <h3>Corner combos</h3>
 
       <p>
@@ -498,7 +506,7 @@ export default async function Page() {
       </p>
 
       <h3>
-        Movado - <span className="bg-surface p-1">solves problems</span>
+        Movado - <span className="bg-alt-surface p-1">solves problems</span>
       </h3>
 
       <p>
@@ -549,6 +557,12 @@ export default async function Page() {
         F34 FK F32 4 BF1 33 DB2
       </p>
 
+      <ImageWithCaption
+        src={scorpMovado}
+        alt="Movado extending a Scorpion combo."
+        caption="Here movado steps in with his Forward Kameo move to extend the otherwise non-extendable Scorpion Forward 34 string."
+      />
+
       <p>
         The decisive positive with everything above is that{' '}
         <strong>
@@ -567,7 +581,8 @@ export default async function Page() {
       </p>
 
       <h3>
-        Ferra - <span className="bg-surface p-1">mix-up and corner damage</span>
+        Ferra -{' '}
+        <span className="bg-alt-surface p-1">mix-up and corner damage</span>
       </h3>
 
       <p>
@@ -582,7 +597,8 @@ export default async function Page() {
       <p>Ferra can extend corner combos as well.</p>
 
       <h3>
-        Chameleon - <span className="bg-surface p-1">difficult but fun</span>
+        Chameleon -{' '}
+        <span className="bg-alt-surface p-1">difficult but fun</span>
       </h3>
 
       <p>

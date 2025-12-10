@@ -1,4 +1,9 @@
+import duckHigh from '@/app/assets/mk1/duck_high.webp'
+import raidenB2 from '@/app/assets/mk1/raiden_b2.webp'
+import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
+import subB3 from '@/app/assets/mk1/sub_b3.webp'
 import { MK1_TITLE } from '@/app/constants'
+import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 3
@@ -83,6 +88,12 @@ export default async function Page() {
         common among move lists for all characters.
       </p>
 
+      <ImageWithCaption
+        src={duckHigh}
+        alt="Liu Kang ducking under Raiden's high punch."
+        caption="Here Liu Kang duck under Raidens 1 high punch, avoiding damage and stun."
+      />
+
       <p>
         A <strong>Mid</strong> (short for Middle) attack{' '}
         <strong>must be blocked both ways.</strong> The duck maneuver from above
@@ -98,6 +109,12 @@ export default async function Page() {
         down + button move, these are much less common than highs and mids.
       </p>
 
+      <ImageWithCaption
+        src={subB3}
+        alt="Sub-zero performing a standing low attack."
+        caption="Sub-zero is about to hit Scorpion with his Back 3 standing low attack. Scorpion's standing block is not going to cut it."
+      />
+
       <p>
         Up to this point, low blocking counters every attack type. This is where
         overheads come in. An <strong>Overhead</strong> attack{' '}
@@ -105,6 +122,12 @@ export default async function Page() {
         blocking or not. Sanding overheads are rare, but same as with lows, each
         character can do a jump-in attack. These are considered overhead.
       </p>
+
+      <ImageWithCaption
+        src={raidenB2}
+        alt="Raiden performing an overhead attack."
+        caption="Raiden's Back 2 is an overhead attack. It is about to hit Liu Kang, breaking his low block."
+      />
 
       <p>
         So low blocking will defer any attacks but an overhead. And overheads
@@ -154,6 +177,12 @@ export default async function Page() {
         characters and situations better without the help of online guides. The
         in-game tutorial explains it in a nice visual way.
       </p>
+
+      <ImageWithCaption
+        src={raidenMoveList}
+        alt="Raiden's move list showing frame data."
+        caption="Raiden's move list provides detailed frame data for each attack."
+      />
 
       <p>
         To grasp the numbers, we must review that MK is fixed to 60 frames per
