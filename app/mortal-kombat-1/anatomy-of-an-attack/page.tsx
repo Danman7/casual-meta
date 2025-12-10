@@ -138,6 +138,13 @@ export default async function Page() {
         attack must miss completely.
       </p>
 
+      <p>
+        So, every attack and every block have the appropriate counter (provided
+        you can react fast enough). They keep blocking high mix it up with a low
+        attack. If they keep blocking low, throw in an overhead. If they keep
+        guessing the block type correctly, trick them with a throw.
+      </p>
+
       <h2>Frame data</h2>
 
       <p>
