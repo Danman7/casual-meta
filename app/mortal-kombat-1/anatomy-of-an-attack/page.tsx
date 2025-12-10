@@ -14,48 +14,50 @@ export default async function Page() {
   return (
     <article className="max-w-3xl mx-auto">
       <h1>{navTitle}</h1>
-      <p className="text-lg text-light">
-        If you must read only a single article in the MK section, let it be this
-        one.
-      </p>
 
       <p>
-        In this page we will look at how moves work in detail. You can use this
-        to better judge characters and situations. You can pause all game modes
-        to bring up your chosen character's move list and follow along.
+        In this page we will look at how moves work in detail. You can pause all
+        game modes to bring up your chosen character's move list and follow
+        along.
       </p>
 
       <h2>Hit vs block vs miss</h2>
 
       <p>
-        Every attack takes some time to execute during which you won’t be able
-        to do anything else.
-      </p>
-      <p>
-        If a character happens to be within reach of an attack at the time it is
-        active, it will register a hit. This will cause the appropriate damage
-        and hit stun. The target will not be able to do anything for a period,
-        while the attacker moves or follows up with another attack.
+        Every attack takes some time to execute during which the attacker won’t
+        be able to do anything else. Both characters can attack at the same
+        time.
       </p>
 
       <p>
-        If the same occurs, but the target is blocking, the attack will connect
-        but will only do block (aka. chip) damage. It is significantly less than
-        normal damage. The stun from blocking is also much shorter than the one
-        from taking a hit. The target may or may not have time to counterattack.
-        This is the essence of safe vs unsafe attacks.
+        If one of them happens to be within reach of an attack at the time it is
+        active, it will register a hit. This will cause damage and hit stun. The
+        one being hit will not be able to do anything for a period. How much is
+        determined by the frame data. This leaves time for the attacker to move
+        or follow up with another attack.
       </p>
 
       <p>
-        If the target is not in range of the attack, the latter will miss. This
-        is the best possible effect for the target. While the attacker will
-        still have to recover to be able to block, the other side is free to do
-        anything.
+        If both players happen to be within reach of each other’s attack while
+        they are active, they will both take a hit. This is called a{' '}
+        <strong>trade</strong>. It is possible for one of them to recover
+        quicker. Which one depends on the attack’s frame data.
       </p>
 
       <p>
-        The frame data determines how much damage and time in a scenario each
-        side has.
+        If an attack from one player connects with another, but the target is
+        blocking, it will only cause block (aka. chip) damage. It is
+        significantly less than normal damage. The stun from blocking is also
+        much shorter than the one from taking a hit. The target may or may not
+        have time to counterattack. This is the essence of safe vs unsafe
+        attacks.
+      </p>
+
+      <p>
+        If one player throws an attack, but the other one is not within reach,
+        the attack will miss. This is the best possible outcome for the target.
+        While the attacker will have to recover to be able to block, the other
+        side is free to do anything.
       </p>
 
       <h2>Block type</h2>
@@ -63,49 +65,101 @@ export default async function Page() {
       <p>
         Underneath the frame data there is a basic rock-paper-scissors game
         based on stances. Next to every move in any fighter’s move list is a
-        Block Type column (or section if you are in advanced view).
+        Block Type column (or section if you are in advanced view). This
+        determines how each move must be blocked.
       </p>
 
       <p>
         A <strong>High</strong> attack{' '}
-        <strong>can be blocked while standing or crouching</strong>. It,
-        however,{' '}
+        <strong>will connect with any standing target</strong>, blocking or not.
+        It will also do so with one that is crouching and holding block. If,
+        however, the{' '}
         <strong>
-          will miss if the opponent ducks underneath without blocking
+          target ducks and doesn’t press block the high attack will miss them
         </strong>
-        . This allows you to follow up with a quick attack.
+        . This will give them an opportunity to counterattack. High attacks are
+        common among move lists for all characters.
       </p>
 
       <p>
         A <strong>Mid</strong> (short for Middle) attack{' '}
-        <strong>must be blocked both ways.</strong> If you try the duck maneuver
-        from above it will still hit you.
+        <strong>must be blocked both ways.</strong> The duck maneuver from above
+        won't work. That is why Mids are considered the best at checking your
+        opponent’s block. They are among the most common attacks for all
+        fighters.
       </p>
 
       <p>
-        A <strong>Low</strong> attack <strong>must be blocked low</strong>. It
-        will hit a standing opponent, even if blocking.
+        A <strong>Low</strong> attack <strong>must be blocked low</strong>. If
+        the target is standing, blocking or not, a Low attack will hit them.
+        While every character has at least a few low attacks in the form of a
+        down + button move, these are much less common than highs and mids.
       </p>
 
       <p>
-        An <strong>Overhead</strong> attack{' '}
-        <strong>must be blocked high</strong>. It will hit a low blocking
-        player. All basic jump-in attacks are overheads. If the defender
-        counters an overhead with a high block they will instantly recover and
-        can counterattack.
+        Up to this point, low blocking counters every attack type. This is where
+        overheads come in. An <strong>Overhead</strong> attack{' '}
+        <strong>must be blocked high</strong>. It will hit any crouching foe,
+        blocking or not. Sanding overheads are rare, but same as with lows, each
+        character can do a jump-in attack. These are considered overhead.
       </p>
 
       <p>
-        A <strong>Throw</strong> connects the same way as a high attack -
-        standing and crouching if they are pressing block. But it will do its
-        damage even if the opponent is blocking. It is an anti-block move. It
-        can be ducked under same as a high attack.
+        So low blocking will defer any attacks but an overhead. And overheads
+        are usually slower than mids and lows. This gives the defender time to
+        spot the overhead, let go of down while still holding block and meet the
+        attack with a standing block. If he predicts a low attack afterwards, he
+        can keep holding block and press down again. This is called{' '}
+        <strong>fuzzy blocking</strong> (or fuzzing, or block os, or block
+        switching, or fuzzy os etc.).
       </p>
 
       <p>
-        <strong>Unblockable</strong> means that the attack will do its damage
-        any time it connects, no matter the stance. To avoid the damage it must
-        miss completely.{' '}
+        If a player is good at fuzzy blocking, they will still take chip damage,
+        but no attack will get through. This is where throws come in. A{' '}
+        <strong>Throw</strong> move grabs any blocking opponent, both standing
+        or ducking, within reach and causes damage (and usually results in a
+        knockdown) same as a regular attack. This is a dedicated anti-block
+        move. It can be ducked under, however, same as a high attack. Also, if
+        one presses the correct buttons in time, they can break away from the
+        throw, canceling it. This is called <em>to tech the throw</em>.
+      </p>
+
+      <p>
+        Every character has a forward throw and a back throw. But some have
+        special throws that are usually a part of some string. These are{' '}
+        <em>command grabs or command throws</em>. They cannot be teched and if
+        they catch the target, it must take the damage.
+      </p>
+
+      <p>
+        If the block type next to a move states <strong>Unblockable</strong> the
+        target will always take damage if the attack connects. To avoid it the
+        attack must miss completely.
+      </p>
+
+      <h2>Frame data</h2>
+
+      <p>
+        Frame data looks intimidating but understanding it will help you judge
+        characters and situations better without the help of online guides. The
+        in-game tutorial explains it in a nice visual way.
+      </p>
+
+      <p>
+        To grasp the numbers, we must review that MK is fixed to 60 frames per
+        second because it uses frame-based animations, instead of time-based
+        ones (same as most fighting and all souls-borne games). This gives
+        another degree of accuracy as you know just how many frames each move
+        takes and you can calculate relative to one second.
+      </p>
+
+      <h3>Fast vs slow moves</h3>
+
+      <p>
+        Each move has three segments - startup, active and recovery. They are
+        executed in the same sequence. When a player presses a button the start
+        sequence begins.
       </p>
 
       <h2>Beyond the move list</h2>
