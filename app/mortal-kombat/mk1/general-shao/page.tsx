@@ -4,7 +4,7 @@ import { GiScales, GiSharpAxe } from 'react-icons/gi'
 
 import Shao from '@/app/assets/mk1/shao.webp'
 import shao2 from '@/app/assets/mk1/shao_2.webp'
-import { MK1_BASE_URL, MK1_TITLE } from '@/app/constants'
+import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -13,7 +13,7 @@ export const navOrder = 10
 export const navTitle = 'General Shao'
 
 export const metadata = generatePageMetadata(
-  `${MK1_TITLE}: ${navTitle}`,
+  `${MK_TITLE}: ${navTitle}`,
   'A breakdown of General Shao in Mortal Kombat 1.',
 )
 
@@ -32,16 +32,16 @@ export default async function Page() {
         <p className="md:w-1/2">
           General Shao is a close-to-mid range bruiser that excels at scouting
           and bullying his opponents in{' '}
-          <Link href={`${MK1_BASE_URL}/neutral`}>neutral</Link>. His
-          stance-based style alternates between the axe with the famed
-          far-reaching disjointed normals and unarmed where he is faster, safer
-          with plus frames on block. He is tough (high HP), moves fast and hits
-          hard. At the same time, his offense has gaps that can be abused at
-          higher ranks. And he lacks sufficient long-range instruments. Both
-          issues are fixed with the proper Kameo partner, of which he can choose
-          between plenty of good options. But if you don’t have the right tools
-          at the right time (wrong Kameo/stance) you will have a hard time
-          reverting pressure.
+          <Link href={`${MK_BASE_URL}/neutral`}>neutral</Link>. His stance-based
+          style alternates between the axe with the famed far-reaching
+          disjointed normals and unarmed where he is faster, safer with plus
+          frames on block. He is tough (high HP), moves fast and hits hard. At
+          the same time, his offense has gaps that can be abused at higher
+          ranks. And he lacks sufficient long-range instruments. Both issues are
+          fixed with the proper Kameo partner, of which he can choose between
+          plenty of good options. But if you don’t have the right tools at the
+          right time (wrong Kameo/stance) you will have a hard time reverting
+          pressure.
         </p>
       </div>
 

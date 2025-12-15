@@ -7,7 +7,7 @@ import scorpMovado from '@/app/assets/mk1/scorp_movado.webp'
 import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
-import { MK1_TITLE } from '@/app/constants'
+import { MK_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { Callout } from '@/app/ui/Callout'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
@@ -18,7 +18,7 @@ export const navOrder = 8
 export const navTitle = 'Scorpion'
 
 export const metadata = generatePageMetadata(
-  `${MK1_TITLE}: ${navTitle}`,
+  `${MK_TITLE}: ${navTitle}`,
   'A breakdown of Scorpion in Mortal Kombat 1.',
 )
 

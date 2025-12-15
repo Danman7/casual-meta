@@ -2,7 +2,7 @@ import duckHigh from '@/app/assets/mk1/duck_high.webp'
 import raidenB2 from '@/app/assets/mk1/raiden_b2.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import subB3 from '@/app/assets/mk1/sub_b3.webp'
-import { MK1_TITLE } from '@/app/constants'
+import { MK_TITLE } from '@/app/constants'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -11,7 +11,7 @@ export const navOrder = 3
 export const navTitle = 'Anatomy of an attack'
 
 export const metadata = generatePageMetadata(
-  `${MK1_TITLE}: ${navTitle}`,
+  `${MK_TITLE}: ${navTitle}`,
   'How moves work in Mortal Kombat.',
 )
 
@@ -63,8 +63,20 @@ export default async function Page() {
         the attack will miss. This is the best possible outcome for the target.
         While the attacker will have to recover to be able to block, the other
         side is free to do anything. The most commont term you will see related
-        to missing is a <strong>whiff</strong>. To whiff an attack means to miss
+        to missing is a <em>whiff</em>. To whiff an attack means to miss
         completely.
+      </p>
+
+      <p>
+        In all scenarios we talk about damage, but also about stun. The stun is
+        the basis of <em>frame traps</em>. Whoever recovers first gets to act
+        first. When you invest frames into a move, you may come on top, or it
+        may backfire.
+      </p>
+
+      <p className="text-lg text-light">
+        Every attack is a commitment. A round is a sequence of commitments. Your
+        goal is for the total sum of those to be positive for you.
       </p>
 
       <h2>Block type</h2>
@@ -163,9 +175,9 @@ export default async function Page() {
         attack must miss completely.
       </p>
 
-      <p>
-        So, every attack and every block have the appropriate counter (provided
-        you can react fast enough). They keep blocking high mix it up with a low
+      <p className="text-light text-lg">
+        Every attack and every block have the appropriate counter (provided you
+        can react fast enough). They keep blocking high mix it up with a low
         attack. If they keep blocking low, throw in an overhead. If they keep
         guessing the block type correctly, trick them with a throw.
       </p>
@@ -197,8 +209,21 @@ export default async function Page() {
       <p>
         Each move has three segments - startup, active and recovery. They are
         executed in the same sequence. When a player presses a button the start
-        sequence begins.
+        sequence begins. The attack gains momentum. This takes the amount of
+        frames written next to start-up. This is knows simply as start-up. You
+        will see things like 15f start-up, which means this particular attack
+        takes 15 frames to become active. During start-up time the attack is not
+        active yet.
       </p>
+
+      <p>
+        If the other player steps away out of range during this time, the attack
+        will miss. If they launch an attack with fewer start-up frames that the
+        one currently being executed, they can interupt it and hit the initial
+        attacker bofore getting hit.
+      </p>
+
+      <h3>Safe vs unsafe moves</h3>
 
       <h2>Beyond the move list</h2>
 

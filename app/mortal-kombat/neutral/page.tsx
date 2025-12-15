@@ -3,7 +3,7 @@ import Image from 'next/image'
 import knockbackDistance from '@/app/assets/mk1/distance_after_knockback.webp'
 import duelStart from '@/app/assets/mk1/duel_start.webp'
 import knockback from '@/app/assets/mk1/knockback.webp'
-import { MK1_TITLE } from '@/app/constants'
+import { MK_TITLE } from '@/app/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 5
@@ -11,7 +11,7 @@ export const navOrder = 5
 export const navTitle = 'Neutral'
 
 export const metadata = generatePageMetadata(
-  `${MK1_TITLE}: ${navTitle}`,
+  `${MK_TITLE}: ${navTitle}`,
   'Understanding the Neutral state in Mortal Kombat 1 and its significance in gameplay.',
 )
 
