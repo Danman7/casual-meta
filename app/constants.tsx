@@ -14,19 +14,16 @@ export const HOMM3_TITLE = 'Heroes of Might and Magic 3'
 export const ROOT_NAVIGATION_ITEMS = [
   {
     name: HOMM3_TITLE,
-    shortTitle: 'HoMM3',
     href: HOMM3_BASE_URL,
     icon: <GiCastle />,
   },
   {
     name: MK_TITLE,
-    shortTitle: 'MK',
     href: MK_BASE_URL,
     icon: <GiDeathSkull />,
   },
   {
     name: WH40K_TITLE,
-    shortTitle: 'WH40k',
     href: WH40K_BASE_URL,
     icon: <GiBolterGun />,
   },
