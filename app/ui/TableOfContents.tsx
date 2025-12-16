@@ -70,7 +70,7 @@ export function TableOfContents() {
   if (headings.length === 0) return null
 
   return (
-    <nav className="pb-2 xl:fixed xl:top-20 xl:right-6 ">
+    <nav className="pb-2 xl:fixed xl:top-20 xl:right-6 xl:max-h-[calc(100vh-6rem)] xl:overflow-y-auto">
       <button
         type="button"
         className="w-full inline-flex items-center gap-1 text-foreground hover:opacity-80"
