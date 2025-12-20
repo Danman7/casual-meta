@@ -1,5 +1,3 @@
-import { GiBolterGun, GiCastle, GiDeathSkull } from 'react-icons/gi'
-
 export const METADATA_SUFFIX = '| Casual Meta'
 
 export const WH40K_BASE_URL = '/warhammer-40k'
@@ -15,16 +13,13 @@ export const ROOT_NAVIGATION_ITEMS = [
   {
     name: HOMM3_TITLE,
     href: HOMM3_BASE_URL,
-    icon: <GiCastle />,
   },
   {
     name: MK_TITLE,
     href: MK_BASE_URL,
-    icon: <GiDeathSkull />,
   },
   {
     name: WH40K_TITLE,
     href: WH40K_BASE_URL,
-    icon: <GiBolterGun />,
   },
 ]

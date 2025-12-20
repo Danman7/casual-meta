@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <Nav />
 
-        <main className="mx-auto w-full p-6 pt-20 grow max-w-3xl">
+        <main className="mx-auto w-full p-6 grow max-w-3xl">
           <SectionNav />
 
           <TableOfContents />
@@ -40,7 +40,7 @@ export default function RootLayout({
           {children}
         </main>
 
-        <footer className="inset-shadow-sm text-center md:flex md:justify-between p-8 gap-4 shadow-md bg-surface z-10">
+        <footer className="inset-shadow-sm text-center md:flex md:justify-between mt-12 p-8 gap-4 shadow-md bg-surface z-10">
           <div className="mb-2 md:mb-0">
             <Link href="/">Casual Meta</Link>
           </div>

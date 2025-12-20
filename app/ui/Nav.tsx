@@ -8,6 +8,7 @@ import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
 import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
 import { Anchor } from '@/app/ui/Anchor'
+import { FlexWrapper } from '@/app/ui/FlexWrapper'
 
 export const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -23,48 +24,44 @@ export const Nav = () => {
   }
 
   return (
-    <>
-      <header className="shadow-md z-10 bg-surface px-6 top-0 left-0 right-0 py-4 fixed">
-        <nav className="flex items-center justify-between">
-          <div className="flex items-center gap-10">
-            <div className="text-2xl">
-              <Link
-                className="flex items-center gap-4 text-foreground! font-bold no-underline!"
-                href="/"
-              >
-                <BsPcDisplay />
-                Casual Meta
-              </Link>
-            </div>
+    <header className="shadow-md z-10 bg-surface px-6 top-0 left-0 right-0 py-4 fixed">
+      <nav className="flex items-center gap-4 justify-between">
+        <Link className="flex items-center gap-4 font-bold text-2xl" href="/">
+          <BsPcDisplay />
+          Casual Meta
+        </Link>
 
-            <div className="gap-4 hidden md:flex">
-              {ROOT_NAVIGATION_ITEMS.map((item) => (
-                <Anchor key={item.href} href={item.href}>
-                  {item.icon} {item.name}
-                </Anchor>
-              ))}
-            </div>
-          </div>
+        <div className="gap-4 hidden md:flex">
+          {ROOT_NAVIGATION_ITEMS.map((item) => (
+            <Anchor key={item.href} href={item.href}>
+              {item.name}
+            </Anchor>
+          ))}
+        </div>
 
-          <div className="justify-end md:hidden">
-            {isMobileMenuOpen ? (
-              <IoMdClose className="text-xl" onClick={toggleMobileMenu} />
-            ) : (
-              <IoMdMenu className="text-xl" onClick={toggleMobileMenu} />
-            )}
-          </div>
+        <FlexWrapper
+          className="md:hidden cursor-pointer hover:text-primary transition hover:scale-105 active:scale-95"
+          onClick={toggleMobileMenu}
+        >
+          {isMobileMenuOpen ? (
+            <IoMdClose className="text-xl" />
+          ) : (
+            <IoMdMenu className="text-xl" />
+          )}
+          Menu
+        </FlexWrapper>
+      </nav>
+
+      {isMobileMenuOpen && (
+        <nav className="md:hidden flex flex-col items-start gap-4 pt-4">
+          {ROOT_NAVIGATION_ITEMS.map((item) => (
+            <Anchor key={item.href} href={item.href}>
+              {' '}
+              {item.name}
+            </Anchor>
+          ))}
         </nav>
-
-        {isMobileMenuOpen && (
-          <nav className="md:hidden flex flex-col gap-4 overflow-hidden pt-4">
-            {ROOT_NAVIGATION_ITEMS.map((item) => (
-              <Anchor key={item.href} href={item.href}>
-                {item.icon} {item.name}
-              </Anchor>
-            ))}
-          </nav>
-        )}
-      </header>
-    </>
+      )}
+    </header>
   )
 }

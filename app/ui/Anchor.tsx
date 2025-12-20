@@ -13,17 +13,14 @@ export const Anchor: React.FC<{
 
   const isActive = pathname.startsWith(href)
 
-  const baseClasses =
-    'hover:text-foreground inline-flex items-center gap-2 no-underline!'
-
-  const activeClasses = isActive ? '' : ' text-foreground!'
-
-  const combinedClasses = [baseClasses, activeClasses, className]
-    .filter(Boolean)
-    .join(' ')
+  const activeClasses = isActive ? 'opacity-100! border-b-2' : ''
 
   return (
-    <Link className={combinedClasses} href={href} onClick={onClick}>
+    <Link
+      className={`inline-flex items-center gap-2 transition ${activeClasses} ${className}`}
+      href={href}
+      onClick={onClick}
+    >
       {children}
     </Link>
   )

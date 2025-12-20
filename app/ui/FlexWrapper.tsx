@@ -1,10 +1,13 @@
 import React from 'react'
 
 export const FlexWrapper: React.FC<
-  React.PropsWithChildren<{ className?: string }>
-> = ({ children, className = '' }) => {
+  React.PropsWithChildren<{ className?: string; onClick?: () => void }>
+> = ({ children, className = '', onClick }) => {
   return (
-    <div className={`flex flex-wrap gap-2 items-center ${className}`}>
+    <div
+      className={`flex flex-wrap gap-2 items-center ${className}`}
+      onClick={onClick}
+    >
       {children}
     </div>
   )

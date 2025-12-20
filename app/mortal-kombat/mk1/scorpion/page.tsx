@@ -36,13 +36,12 @@ export default async function Page() {
 
         <div className="md:w-1/2">
           <p className="text-lg text-light">
-            An uncomplicated punisher that can convert a mistake anywhere on the
-            screen into damage.
+            Straightforward. Can punish a mistake from across the screen.
           </p>
 
           <p>
             Scorpion in Mortal Kombat 1 is polarizing: some praise him, others
-            find him flat or weak. Nevertheless, he remains a straightforward
+            find him flat or weak. Nevertheless, he remains an uncomplicated
             character frequently played at all levels. He has tools for fighting
             both up close and against zoning players who prefer distance. On his
             own, he performs best when reacting to the opponent - punishing and
