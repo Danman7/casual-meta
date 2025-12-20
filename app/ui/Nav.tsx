@@ -52,16 +52,20 @@ export const Nav = () => {
         </FlexWrapper>
       </nav>
 
-      {isMobileMenuOpen && (
-        <nav className="md:hidden flex flex-col items-start gap-4 pt-4">
-          {ROOT_NAVIGATION_ITEMS.map((item) => (
-            <Anchor key={item.href} href={item.href}>
-              {' '}
-              {item.name}
-            </Anchor>
-          ))}
-        </nav>
-      )}
+      <nav
+        className={`md:hidden flex flex-col items-start gap-4  transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen
+            ? 'max-h-96 opacity-100 pt-4'
+            : 'max-h-0 opacity-0 pt-0'
+        }`}
+      >
+        {ROOT_NAVIGATION_ITEMS.map((item) => (
+          <Anchor key={item.href} href={item.href}>
+            {' '}
+            {item.name}
+          </Anchor>
+        ))}
+      </nav>
     </header>
   )
 }
