@@ -26,7 +26,7 @@ export default async function Page() {
         along.
       </p>
 
-      <h2>Hit vs block vs miss</h2>
+      <h2 id="hit-vs-block-vs-miss">Hit vs block vs miss</h2>
 
       <p>
         Every attack takes some time to execute during which the attacker won’t

@@ -12,7 +12,6 @@ interface Heading {
 
 export function TableOfContents() {
   const [headings, setHeadings] = useState<Heading[]>([])
-  const [activeId, setActiveId] = useState<string>('')
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
@@ -25,55 +24,25 @@ export function TableOfContents() {
     const headingData: Heading[] = []
 
     headingElements.forEach((heading) => {
-      const id =
-        heading.id ||
-        heading.textContent
-          ?.toLowerCase()
-          .replace(/\s+/g, '-')
-          .replace(/[^\w-]/g, '') ||
-        ''
-      if (!heading.id && id) {
-        heading.id = id
+      if (heading.id) {
+        headingData.push({
+          id: heading.id,
+          text: heading.textContent || '',
+          level: parseInt(heading.tagName[1]),
+        })
       }
-
-      headingData.push({
-        id,
-        text: heading.textContent || '',
-        level: parseInt(heading.tagName[1]),
-      })
     })
 
     setHeadings(headingData)
   }, [pathname])
 
-  useEffect(() => {
-    // Track active heading on scroll
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id)
-          }
-        })
-      },
-      { rootMargin: '-100px 0px -80% 0px' },
-    )
-
-    headings.forEach(({ id }) => {
-      const element = document.getElementById(id)
-      if (element) observer.observe(element)
-    })
-
-    return () => observer.disconnect()
-  }, [headings])
-
   if (headings.length === 0) return null
 
   return (
-    <nav className="pb-2 xl:fixed xl:top-20 xl:right-6 xl:max-h-[calc(100vh-6rem)] xl:overflow-y-auto">
+    <nav className="">
       <button
         type="button"
-        className="w-full inline-flex items-center gap-1 text-foreground hover:opacity-80"
+        className="w-full inline-flex items-center gap-1 text-foreground hover:text-primary cursor-pointer"
         aria-expanded={open}
         aria-controls="toc-root"
         onClick={() => setOpen((v) => !v)}
@@ -83,23 +52,20 @@ export function TableOfContents() {
       </button>
 
       {open && (
-        <ul id="toc-root" className="mt-2 space-y-1">
+        <ul id="toc-root" className="space-y-1">
           {headings.map((heading) => (
             <li key={heading.id} className={heading.level === 3 ? 'ml-4' : ''}>
               <a
                 href={`#${heading.id}`}
-                className={`block hover:text-primary transition-colors ${
-                  activeId === heading.id
-                    ? 'text-primary font-semibold'
-                    : 'text-foreground/70'
-                }`}
                 onClick={(e) => {
                   e.preventDefault()
                   setOpen(false)
-                  document.getElementById(heading.id)?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                  })
+                  const element = document.getElementById(heading.id)
+                  if (element) {
+                    const y =
+                      element.getBoundingClientRect().top + window.scrollY
+                    window.scrollTo({ top: y, behavior: 'smooth' })
+                  }
                 }}
               >
                 {heading.text}

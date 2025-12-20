@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 import '@/app/globals.css'
 import { Nav } from '@/app/ui/Nav'
-import { SectionNav } from '@/app/ui/SectionNav'
 import { TableOfContents } from '@/app/ui/TableOfContents'
 
 const notoSerif = Noto_Serif({
@@ -33,8 +32,6 @@ export default function RootLayout({
         <Nav />
 
         <main className="mx-auto w-full p-6 grow max-w-3xl">
-          <SectionNav />
-
           <TableOfContents />
 
           {children}

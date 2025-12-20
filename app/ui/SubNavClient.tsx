@@ -47,10 +47,10 @@ export function SubNavClient({ items, title }: Props) {
   const handleSelect = () => setOpen(false)
 
   return (
-    <nav className="pb-2 xl:fixed xl:top-20 xl:left-6 xl:max-h-[calc(100vh-6rem)] xl:overflow-y-auto">
+    <nav className="bg-alt-surface">
       <button
         type="button"
-        className="w-full inline-flex items-center gap-1 text-foreground font-bold hover:opacity-80"
+        className="w-full inline-flex items-center gap-1 text-foreground font-bold hover:text-primary cursor-pointer px-6 py-2"
         aria-expanded={open}
         aria-controls="subnav-root"
         onClick={() => setOpen((v) => !v)}
@@ -60,7 +60,7 @@ export function SubNavClient({ items, title }: Props) {
       </button>
 
       {open && (
-        <ul id="subnav-root" className="mt-2 space-y-1">
+        <ul id="subnav-root" className="mt-2 space-y-1 px-6 pb-2">
           {items.map((item) => (
             <TreeNode key={item.href} item={item} onSelect={handleSelect} />
           ))}

@@ -10,12 +10,12 @@ export const SubPageNav: React.FC<SubPageNavProps> = async ({ route }) => {
   const items = await getRouteTreeForPath(route)
 
   return (
-    <div className="flex flex-col mt-4 space-y-4">
+    <ul className="mt-4 space-y-2">
       {items.map((item) => (
-        <Link key={item.href} href={item.href}>
-          {item.title}
-        </Link>
+        <li key={item.href}>
+          <Link href={item.href}>{item.title}</Link>
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
