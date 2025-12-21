@@ -47,7 +47,7 @@ export function SubNavClient({ items, title }: Props) {
   const handleSelect = () => setOpen(false)
 
   return (
-    <nav className="bg-alt-surface">
+    <nav className="bg-alt-surface shadow-md">
       <button
         type="button"
         className="w-full inline-flex items-center gap-1 text-foreground font-bold hover:text-primary cursor-pointer px-6 py-2"

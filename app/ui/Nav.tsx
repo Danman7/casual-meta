@@ -28,7 +28,10 @@ export const Nav = () => {
     <header className="z-10">
       <nav className="shadow-md bg-surface px-6 py-4">
         <div className="flex items-center gap-4 justify-between">
-          <Link className="flex items-center gap-4 font-bold text-2xl" href="/">
+          <Link
+            className="flex items-center gap-4 font-bold text-2xl text-foreground!"
+            href="/"
+          >
             <BsPcDisplay />
             Casual Meta
           </Link>

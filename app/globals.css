@@ -6,6 +6,7 @@
   --surface: var(--color-slate-100);
   --alt-surface: var(--color-slate-200);
   --primary: var(--color-blue-700);
+  --visited: var(--color-purple-700);
   --success: var(--color-green-700);
   --error: var(--color-red-700);
   --warning: var(--color-yellow-700);
@@ -17,6 +18,7 @@
   --color-surface: var(--surface);
   --color-alt-surface: var(--alt-surface);
   --color-primary: var(--primary);
+  --color-visited: var(--visited);
   --color-success: var(--success);
   --color-error: var(--error);
   --color-warning: var(--warning);
@@ -29,6 +31,7 @@
     --surface: var(--color-slate-900);
     --alt-surface: var(--color-slate-800);
     --primary: var(--color-blue-400);
+    --visited: var(--color-purple-400);
     --success: var(--color-green-400);
     --error: var(--color-red-400);
     --warning: var(--color-yellow-400);
@@ -91,6 +94,10 @@ article li {
 a {
   text-decoration: none;
   transition: all 0.1s;
+
+  &:visited {
+    color: var(--visited);
+  }
 
   &:hover {
     color: var(--primary);
