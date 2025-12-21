@@ -7,7 +7,6 @@ import { BsPcDisplay } from 'react-icons/bs'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
 import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
-import { Anchor } from '@/app/ui/Anchor'
 import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { SectionNav } from '@/app/ui/SectionNav'
 

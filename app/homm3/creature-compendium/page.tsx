@@ -13,7 +13,7 @@ export const metadata = generatePageMetadata(
 
 export default function Page() {
   return (
-    <article>
+    <>
       <div className="max-w-3xl mx-auto">
         <h1>{navTitle}</h1>
 
@@ -25,6 +25,6 @@ export default function Page() {
       </div>
 
       <CreatureTable />
-    </article>
+    </>
   )
 }

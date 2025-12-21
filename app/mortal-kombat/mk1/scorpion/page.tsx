@@ -25,7 +25,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <h1 className="text-6xl font-light tracking-tight mb-10">{navTitle}</h1>
+      <h1>{navTitle}</h1>
 
       <p className="text-xl">
         A reactive punisher that can convert a mistake anywhere on the screen

@@ -4,7 +4,6 @@ import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import subB3 from '@/app/assets/mk1/sub_b3.webp'
 import { MK_TITLE } from '@/app/constants'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { PageWrapper } from '@/app/ui/PageWrapper'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 3
@@ -18,7 +17,9 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <PageWrapper title={navTitle}>
+    <>
+      <h1>{navTitle}</h1>
+
       <p>
         In this page we will look at how moves work in detail. You can pause all
         game modes to bring up your chosen character's move list and follow
@@ -251,6 +252,6 @@ export default async function Page() {
         ducked. The further reaching the better but also speed and safety are
         considerations.
       </p>
-    </PageWrapper>
+    </>
   )
 }

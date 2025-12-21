@@ -18,7 +18,7 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
+    <>
       <h1>{navTitle}</h1>
 
       <p className="text-lg text-light">
@@ -133,6 +133,6 @@ export default async function Page() {
         wouldn’t want to. A quirk of the flow is that the level 3 dwelling - the
         Griffin Tower, requires the level 4 dwelling - the Barracks.
       </p>
-    </article>
+    </>
   )
 }

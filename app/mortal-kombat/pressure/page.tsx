@@ -14,7 +14,7 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
+    <>
       <h1>{navTitle}</h1>
 
       <p className="text-lg text-light">
@@ -142,6 +142,6 @@ export default async function Page() {
         do a throw instead - 12 (or whatever) into a throw? This is a string
         derail and is a way to keep them guessing.
       </p>
-    </article>
+    </>
   )
 }

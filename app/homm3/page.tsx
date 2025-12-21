@@ -10,7 +10,7 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
+    <>
       <h1>{HOMM3_TITLE}</h1>
 
       <p>
@@ -34,6 +34,6 @@ export default async function Page() {
       />
 
       <SubPageNav route={HOMM3_BASE_URL} />
-    </article>
+    </>
   )
 }

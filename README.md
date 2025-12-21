@@ -103,7 +103,7 @@ export default function Page() {
       <p>Content...</p>
       <h3>Subsection</h3>
       <p>More content...</p>
-    </article>
+    </>
   )
 }
 ```

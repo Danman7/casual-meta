@@ -19,7 +19,7 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
+    <>
       <h1>{navTitle}</h1>
 
       <div className="md:flex items-center gap-4">
@@ -144,6 +144,6 @@ export default async function Page() {
         interrupt advances, as a buffer attack and even as a frontal anti-air
         due to Shao’s height.
       </p>
-    </article>
+    </>
   )
 }

@@ -18,7 +18,7 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
+    <>
       <h1>{navTitle}</h1>
 
       <p>
@@ -115,6 +115,6 @@ export default async function Page() {
       <h2>Further Reading</h2>
 
       <SubPageNav route={`${WH40K_BASE_URL}/space-marines`} />
-    </article>
+    </>
   )
 }

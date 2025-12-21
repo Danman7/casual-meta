@@ -2,7 +2,6 @@ import Image from 'next/image'
 
 import mk1Title from '@/app/assets/mk1/mk1-title.webp'
 import { MK_BASE_URL } from '@/app/constants'
-import { PageWrapper } from '@/app/ui/PageWrapper'
 import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -15,7 +14,9 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <PageWrapper title={navTitle}>
+    <>
+      <h1>{navTitle}</h1>
+
       <Image
         src={mk1Title}
         alt="Mortal Kombat 1 Title Screen"
@@ -32,6 +33,6 @@ export default async function Page() {
       </p>
 
       <SubPageNav route={`${MK_BASE_URL}/mk1`} />
-    </PageWrapper>
+    </>
   )
 }
