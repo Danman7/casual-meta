@@ -38,9 +38,11 @@ export default function RootLayout({
 
         <LayoutContent>{children}</LayoutContent>
 
-        <footer className="inset-shadow-sm text-center md:flex md:justify-between mt-12 px-6 py-4 gap-4 shadow-md bg-surface z-10">
+        <footer className="inset-shadow-sm text-center md:flex md:justify-between mt-24 px-6 py-4 gap-4 shadow-md bg-surface z-10">
           <div className="mb-2 md:mb-0">
-            <Link href="/">Casual Meta</Link>
+            <Link href="/" className="text-foreground!">
+              Casual Meta
+            </Link>
           </div>
 
           <div>

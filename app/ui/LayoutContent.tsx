@@ -10,7 +10,7 @@ export function LayoutContent({ children }: { children: React.ReactNode }) {
   const isHomepage = pathname === '/'
 
   return (
-    <div className="flex gap-4 px-6 py-12 relative min-h-screen grow">
+    <div className="flex gap-4 px-6 py-12 relative grow">
       {!isHomepage && (
         <aside className="w-56 shrink-0 hidden md:block ">
           <div className="sticky top-6 overflow-x-visible overflow-y-auto max-h-[calc(100vh-5rem)] px-6">
