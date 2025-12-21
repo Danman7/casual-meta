@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Noto_Serif } from 'next/font/google'
+import { Noto_Sans, Noto_Serif } from 'next/font/google'
 import Link from 'next/link'
 
 import '@/app/globals.css'
@@ -8,6 +8,11 @@ import { TableOfContents } from '@/app/ui/TableOfContents'
 
 const notoSerif = Noto_Serif({
   variable: '--font-noto-serif',
+  subsets: ['latin'],
+})
+
+const notoSans = Noto_Sans({
+  variable: '--font-noto-sans',
   subsets: ['latin'],
 })
 
@@ -27,7 +32,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${notoSerif.variable} font-serif antialiased h-full flex flex-col`}
+        className={`${notoSerif.variable} ${notoSans.variable} font-serif antialiased h-full flex flex-col`}
       >
         <Nav />
 

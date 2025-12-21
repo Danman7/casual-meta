@@ -11,6 +11,7 @@ import { MK_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { Callout } from '@/app/ui/Callout'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
+import { PageWrapper } from '@/app/ui/PageWrapper'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 8
@@ -24,9 +25,11 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <article className="max-w-3xl mx-auto">
-      <h1>{navTitle}</h1>
-
+    <PageWrapper title={navTitle}>
+      <p className="text-xl">
+        A reactive punisher that can convert a mistake anywhere on the screen
+        into easy combos.{' '}
+      </p>
       <div className="md:flex items-center gap-4">
         <Image
           className="max-h-72 object-cover object-[0%_0%]  md:w-1/2 md:max-h-full"
@@ -35,10 +38,6 @@ export default async function Page() {
         />
 
         <div className="md:w-1/2">
-          <p className="text-lg text-light">
-            Straightforward. Can punish a mistake from across the screen.
-          </p>
-
           <p>
             Scorpion in Mortal Kombat 1 is polarizing: some praise him, others
             find him flat or weak. Nevertheless, he remains an uncomplicated
@@ -660,6 +659,6 @@ export default async function Page() {
         while throwing a low Kameo move or Movado’s Trap Drop. It’s a niche
         tactic.
       </p>
-    </article>
+    </PageWrapper>
   )
 }

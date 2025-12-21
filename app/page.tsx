@@ -23,7 +23,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="space-y-4 border-b-2 pb-12 mb-12">
+      <section className="space-y-6 border-b-2 pb-16 mb-16">
         <Callout>
           <div className="text-xl">
             Games can be <em>fun</em>. They can be <em>hard</em> as well.{' '}
@@ -42,7 +42,7 @@ export default function Page() {
         </p>
       </section>
 
-      <section className="space-y-4">
+      <section className="space-y-6">
         <p className="text-lg">What drives your interest?</p>
 
         <FlexWrapper className="gap-4">
