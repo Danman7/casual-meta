@@ -10,6 +10,7 @@ import type { RouteItem } from '@/lib/routes'
 type Props = {
   items: RouteItem[]
   title: string
+  isTopNav?: boolean
 }
 
 function TreeNode({
@@ -36,31 +37,39 @@ function TreeNode({
   )
 }
 
-export function SubNavClient({ items, title }: Props) {
+export function SubNavClient({ items, title, isTopNav }: Props) {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
+  const closeNav = () => setOpen(!isTopNav)
+
   useEffect(() => {
-    setOpen(false)
+    closeNav()
   }, [pathname])
 
-  const handleSelect = () => setOpen(false)
+  const handleSelect = () => closeNav()
 
   return (
-    <nav className="bg-alt-surface shadow-md">
-      <button
-        type="button"
-        className="w-full inline-flex items-center gap-1 text-foreground font-bold hover:text-primary cursor-pointer px-6 py-2"
-        aria-expanded={open}
-        aria-controls="subnav-root"
-        onClick={() => setOpen((v) => !v)}
-      >
-        {open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
-        <span>{title || 'Menu'}</span>
-      </button>
+    <nav
+      className={`${isTopNav ? 'bg-alt-surface shadow-md md:hidden px-6' : ''}`}
+    >
+      {isTopNav ? (
+        <button
+          type="button"
+          className="w-full inline-flex items-center gap-1 text-foreground font-bold hover:text-primary cursor-pointer py-2"
+          aria-expanded={open}
+          aria-controls="subnav-root"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {isTopNav && open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
+          <span>{title || 'Menu'}</span>
+        </button>
+      ) : (
+        <h4 className="text-lg font-bold">{title}</h4>
+      )}
 
       {open && (
-        <ul id="subnav-root" className="mt-2 space-y-1 px-6 pb-2">
+        <ul id="subnav-root" className="mt-2 space-y-1 pb-2">
           {items.map((item) => (
             <TreeNode key={item.href} item={item} onSelect={handleSelect} />
           ))}

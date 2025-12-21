@@ -38,9 +38,13 @@ export const Nav = () => {
 
           <div className="gap-4 hidden md:flex">
             {ROOT_NAVIGATION_ITEMS.map((item) => (
-              <Anchor key={item.href} href={item.href}>
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-foreground!"
+              >
                 {item.name}
-              </Anchor>
+              </Link>
             ))}
           </div>
 
@@ -59,16 +63,20 @@ export const Nav = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden flex flex-col items-start gap-4 mt-4">
             {ROOT_NAVIGATION_ITEMS.map((item) => (
-              <Anchor key={item.href} href={item.href}>
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-foreground!"
+              >
                 {' '}
                 {item.name}
-              </Anchor>
+              </Link>
             ))}
           </div>
         )}
       </nav>
 
-      <SectionNav />
+      <SectionNav isTopNav />
     </header>
   )
 }

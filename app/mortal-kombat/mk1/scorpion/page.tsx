@@ -11,7 +11,6 @@ import { MK_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
 import { Callout } from '@/app/ui/Callout'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { PageWrapper } from '@/app/ui/PageWrapper'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 8
@@ -25,7 +24,9 @@ export const metadata = generatePageMetadata(
 
 export default async function Page() {
   return (
-    <PageWrapper title={navTitle}>
+    <>
+      <h1 className="text-6xl font-light tracking-tight mb-10">{navTitle}</h1>
+
       <p className="text-xl">
         A reactive punisher that can convert a mistake anywhere on the screen
         into easy combos.{' '}
@@ -50,7 +51,7 @@ export default async function Page() {
         </div>
       </div>
 
-      <h2>Should I play or skip Scorpion?</h2>
+      <h2 id="should-play-or-skip">Should I play or skip Scorpion?</h2>
 
       <BulletList
         className="text-success"
@@ -83,7 +84,7 @@ export default async function Page() {
         ]}
       />
 
-      <h2>Main buttons</h2>
+      <h2 id="main-buttons">Main buttons</h2>
 
       <Callout>
         <div className="tracking-widest">Poke</div>
@@ -180,7 +181,7 @@ export default async function Page() {
         </ul>
       </Callout>
 
-      <h2>How do I play Neutral?</h2>
+      <h2 id="how-to-play-neutral">How do I play Neutral?</h2>
 
       <p className="text-lg text-light">
         Scorpion lacks a true mix-up or frame advantage. Instead, he has simple
@@ -659,6 +660,6 @@ export default async function Page() {
         while throwing a low Kameo move or Movado’s Trap Drop. It’s a niche
         tactic.
       </p>
-    </PageWrapper>
+    </>
   )
 }

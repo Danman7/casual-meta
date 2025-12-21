@@ -8,7 +8,7 @@ import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
 import { SubNavClient } from '@/app/ui/SubNavClient'
 import type { RouteItem } from '@/lib/routes'
 
-export const SectionNav: React.FC = () => {
+export const SectionNav: React.FC<{ isTopNav?: boolean }> = ({ isTopNav }) => {
   const pathname = usePathname()
   const [items, setItems] = useState<RouteItem[] | null>(null)
   const [title, setTitle] = useState<string>('')
@@ -45,5 +45,5 @@ export const SectionNav: React.FC = () => {
 
   if (!items || items.length === 0) return null
 
-  return <SubNavClient items={items} title={title} />
+  return <SubNavClient items={items} title={title} isTopNav={isTopNav} />
 }

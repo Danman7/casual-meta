@@ -2,7 +2,6 @@
 
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { IoMdArrowDropdown, IoMdArrowDropright } from 'react-icons/io'
 
 interface Heading {
   id: string
@@ -10,9 +9,8 @@ interface Heading {
   level: number
 }
 
-export function TableOfContents() {
+export const TableOfContents: React.FC = () => {
   const [headings, setHeadings] = useState<Heading[]>([])
-  const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -40,40 +38,29 @@ export function TableOfContents() {
 
   return (
     <nav className="">
-      <button
-        type="button"
-        className="w-full inline-flex items-center gap-1 text-foreground hover:text-primary cursor-pointer"
-        aria-expanded={open}
-        aria-controls="toc-root"
-        onClick={() => setOpen((v) => !v)}
-      >
-        {open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
-        <span>On This Page</span>
-      </button>
+      <h4 className="font-bold mb-2">On This Page</h4>
 
-      {open && (
-        <ul id="toc-root" className="space-y-1">
-          {headings.map((heading) => (
-            <li key={heading.id} className={heading.level === 3 ? 'ml-4' : ''}>
-              <a
-                href={`#${heading.id}`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  setOpen(false)
-                  const element = document.getElementById(heading.id)
-                  if (element) {
-                    const y =
-                      element.getBoundingClientRect().top + window.scrollY
-                    window.scrollTo({ top: y, behavior: 'smooth' })
-                  }
-                }}
-              >
-                {heading.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul id="toc-root" className="space-y-1">
+        {headings.map((heading) => (
+          <li key={heading.id} className={heading.level === 3 ? 'ml-4' : ''}>
+            <a
+              href={`#${heading.id}`}
+              className="text-sm"
+              onClick={(e) => {
+                e.preventDefault()
+
+                const element = document.getElementById(heading.id)
+                if (element) {
+                  const y = element.getBoundingClientRect().top + window.scrollY
+                  window.scrollTo({ top: y, behavior: 'smooth' })
+                }
+              }}
+            >
+              {heading.text}
+            </a>
+          </li>
+        ))}
+      </ul>
     </nav>
   )
 }

@@ -8,22 +8,18 @@ import { FlexWrapper } from '@/app/ui/FlexWrapper'
 export default function Page() {
   return (
     <article className="max-w-3xl mx-auto">
-      <section className="text-5xl space-y-2 text-center h-screen flex flex-col justify-around items-center relative">
+      <section className="text-5xl space-y-2 text-center h-96 flex flex-col justify-around items-center relative">
         <div>
-          <div className="text-primary font-bold animate-[fadeIn_1s_ease-in-out]">
+          <div className="text-primary font-bold animate-[slideLeft_0.5s_ease-in-out_both]">
             Docs
           </div>
-          <div className="text-4xl animate-[fadeIn_1s_0.5s_ease-in-out_both]">
+          <div className="text-4xl animate-[slideRight_0.5s_0.25s_ease-in-out_both]">
             for <span className="italic border-b-2">casual</span> players
           </div>
         </div>
-
-        <div className="animate-[fadeIn_1s_1s_ease-in-out_both]">
-          <RiScrollToBottomLine className="animate-bounce" />
-        </div>
       </section>
 
-      <section className="space-y-6 border-b-2 pb-16 mb-16">
+      <section className="space-y-8 border-b-2 pb-16 mb-16">
         <Callout>
           <div className="text-xl">
             Games can be <em>fun</em>. They can be <em>hard</em> as well.{' '}
@@ -37,12 +33,12 @@ export default function Page() {
           pulled out the simple ideas from the complexity of mechanics.
         </p>
 
-        <p className="text-xl font-bold">
+        <p className="text-lg italic">
           We hope to build relationships alongside the skills.
         </p>
       </section>
 
-      <section className="space-y-6">
+      <section className="space-y-8">
         <p className="text-lg">What drives your interest?</p>
 
         <FlexWrapper className="gap-4">
