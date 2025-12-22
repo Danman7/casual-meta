@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { BsPcDisplay } from 'react-icons/bs'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
@@ -12,12 +12,16 @@ import { SectionNav } from '@/app/ui/SectionNav'
 
 export const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [lastPathname, setLastPathname] = useState<string | null>(null)
   const pathname = usePathname()
 
   // Close mobile menu when route changes
-  useEffect(() => {
+  if (pathname !== lastPathname && isMobileMenuOpen) {
     setIsMobileMenuOpen(false)
-  }, [pathname])
+    setLastPathname(pathname)
+  } else if (pathname !== lastPathname) {
+    setLastPathname(pathname)
+  }
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev)

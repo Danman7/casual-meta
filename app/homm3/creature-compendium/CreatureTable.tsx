@@ -133,6 +133,7 @@ export function CreatureTable() {
     return filtered
   }, [townFilter, levelFilter, typeFilter])
 
+  // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data: filteredData as Creature[],
     columns,

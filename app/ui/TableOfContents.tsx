@@ -14,24 +14,29 @@ export const TableOfContents: React.FC = () => {
   const pathname = usePathname()
 
   useEffect(() => {
-    // Extract headings from the page
-    const articleElement = document.querySelector('article, main')
-    if (!articleElement) return
+    // Use requestAnimationFrame to defer the DOM query until after render
+    const rafId = requestAnimationFrame(() => {
+      // Extract headings from the page
+      const articleElement = document.querySelector('article, main')
+      if (!articleElement) return
 
-    const headingElements = articleElement.querySelectorAll('h2, h3')
-    const headingData: Heading[] = []
+      const headingElements = articleElement.querySelectorAll('h2, h3')
+      const headingData: Heading[] = []
 
-    headingElements.forEach((heading) => {
-      if (heading.id) {
-        headingData.push({
-          id: heading.id,
-          text: heading.textContent || '',
-          level: parseInt(heading.tagName[1]),
-        })
-      }
+      headingElements.forEach((heading) => {
+        if (heading.id) {
+          headingData.push({
+            id: heading.id,
+            text: heading.textContent || '',
+            level: parseInt(heading.tagName[1]),
+          })
+        }
+      })
+
+      setHeadings(headingData)
     })
 
-    setHeadings(headingData)
+    return () => cancelAnimationFrame(rafId)
   }, [pathname])
 
   if (headings.length === 0) return null

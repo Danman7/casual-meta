@@ -1,11 +1,7 @@
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-
 import importPlugin from 'eslint-plugin-import'
+import reactPlugin from 'eslint-plugin-react'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import tseslint from 'typescript-eslint'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
 
 const eslintConfig = [
   // Ignore heavy/generated folders
@@ -19,6 +15,8 @@ const eslintConfig = [
       'coverage',
     ],
   },
+  // TypeScript recommended configs
+  ...tseslint.configs.recommended,
   // Base project linting without legacy compat to avoid circular config issues
   {
     files: ['**/*.{ts,tsx,js,jsx}'],
@@ -27,10 +25,19 @@ const eslintConfig = [
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
     },
-    plugins: { import: importPlugin },
+    plugins: {
+      import: importPlugin,
+      react: reactPlugin,
+      'react-hooks': reactHooksPlugin,
+    },
     rules: {
+      ...reactPlugin.configs.recommended.rules,
+      ...reactHooksPlugin.configs.recommended.rules,
       'import/order': [
         'error',
         {
@@ -52,6 +59,14 @@ const eslintConfig = [
       ],
       'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0, maxBOF: 0 }],
       'import/newline-after-import': ['error', { considerComments: true }],
+      'react/react-in-jsx-scope': 'off', // Not needed in Next.js
+      'react/no-unescaped-entities': 'off', // Allow apostrophes and quotes in JSX
+      'react/prop-types': 'off', // Using TypeScript for type checking
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
     },
   },
 ]

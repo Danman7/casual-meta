@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState, startTransition } from 'react'
 import { IoMdArrowDropdown, IoMdArrowDropright } from 'react-icons/io'
 
 import { Anchor } from '@/app/ui/Anchor'
@@ -38,14 +38,28 @@ function TreeNode({
 }
 
 export function SubNavClient({ items, title, isTopNav }: Props) {
-  const [open, setOpen] = useState(false)
+  const [isManuallyToggled, setIsManuallyToggled] = useState(false)
   const pathname = usePathname()
+  const prevPathnameRef = useRef(pathname)
 
-  const closeNav = () => setOpen(!isTopNav)
+  // Derive open state: desktop sidebars are always open, mobile nav follows manual toggle
+  const open = isTopNav ? isManuallyToggled : true
 
+  // Reset mobile nav when pathname changes
   useEffect(() => {
-    closeNav()
-  }, [pathname])
+    if (isTopNav && prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname
+      startTransition(() => {
+        setIsManuallyToggled(false)
+      })
+    }
+  }, [pathname, isTopNav])
+
+  const closeNav = () => {
+    if (isTopNav) {
+      setIsManuallyToggled(false)
+    }
+  }
 
   const handleSelect = () => closeNav()
 
@@ -59,7 +73,7 @@ export function SubNavClient({ items, title, isTopNav }: Props) {
           className="w-full inline-flex items-center gap-1 text-foreground font-bold hover:text-primary cursor-pointer py-2"
           aria-expanded={open}
           aria-controls="subnav-root"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => setIsManuallyToggled((v) => !v)}
         >
           {isTopNav && open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
           <span>{title || 'Menu'}</span>
