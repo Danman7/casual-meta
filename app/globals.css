@@ -69,7 +69,6 @@ article h1 {
   font-size: var(--text-6xl);
   font-weight: var(--font-weight-light);
   letter-spacing: -1.5px;
-  margin: 4rem 0 2rem;
 
   @media (max-width: 768px) {
     font-size: var(--text-5xl);
@@ -78,8 +77,8 @@ article h1 {
 
 article h2 {
   font-size: var(--text-3xl);
-  padding-top: 40px;
-  margin: 88px 0 36px;
+  padding-top: 20px;
+  margin: 60px 0 36px;
   letter-spacing: -0.5px;
   border-top: 2px solid var(--foreground);
   font-weight: var(--font-weight-light);
@@ -93,7 +92,7 @@ p,
 article ul,
 article img,
 figure {
-  margin: 1.5rem 0;
+  margin: 1.25rem 0;
   line-height: 1.6;
 }
 

@@ -29,7 +29,7 @@ export default async function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <p className="text-xl">
+      <p>
         In this page we will take a look at Mortal Kombat 1's returning
         character Scorpion.
       </p>
@@ -42,13 +42,13 @@ export default async function Page() {
 
         <div className="md:w-1/2">
           <p>
-            Scorpions is a beginner-friendly, straightforward character. His
-            strength is to reliably convert unsafe actions into damage anywhere
-            on the screen. His combos are easy and modular. He has tools for
-            fighting at any range, but lacks efficient offense on his own. For
-            that one will need an appropriate Kameo pair. Beginners will find
-            him easier when reacting to their opponents rather than initiating
-            pressure.
+            Scorpion is a beginner-friendly character yet he is frequently
+            played at all levels. His strength is to reliably convert unsafe
+            actions into damage anywhere on the screen. His combos are easy and
+            modular. He has tools for fighting at any range, but lacks efficient
+            offense on his own. For that one will need an appropriate Kameo
+            pair. New players will find him easier when reacting to their
+            opponents rather than initiating pressure.
           </p>
         </div>
       </div>
@@ -58,7 +58,7 @@ export default async function Page() {
           Should I play or skip Scorpion?
         </h2>
 
-        <div className="md:flex gap-6 mt-6 text-lg">
+        <div className="md:flex gap-6 mt-6">
           <div className="md:w-1/2">
             <FlexWrapper className="font-bold">
               <FaPlus className="text-success" /> Positives
@@ -68,8 +68,8 @@ export default async function Page() {
               <li>He has no stances or forms to manage.</li>
 
               <li>
-                The Spear special is excellent at controlling space and setting
-                up combos.
+                The Spear special is superb at controlling space and setting up
+                combos.
               </li>
 
               <li>
@@ -78,11 +78,6 @@ export default async function Page() {
               </li>
 
               <li>He has multiple specials that cover the whole screen.</li>
-
-              <li>
-                Also has normals and specials that are good at interrupting
-                offense.
-              </li>
             </ul>
           </div>
 
@@ -95,10 +90,12 @@ export default async function Page() {
                 Poor mix-up. No chainable standing overhead or low attacks.
               </li>
 
+              <li>Few and low advantage on block attacks.</li>
+
               <li>
                 Low difficulty may lead to higher predictability. You will have
-                to learn harder moves together with a Kameo to catch up to a
-                skilled foe.
+                to learn harder sequences with a Kameo to catch up to a skilled
+                foe.
               </li>
             </ul>
           </div>
@@ -153,7 +150,7 @@ export default async function Page() {
         </li>
 
         <li>
-          <Badge>Down Back 2</Badge> is the Twisted Kyo - your optimal combo
+          <Badge>Down Back 2</Badge> is the Twisted Kyo - your foremost combo
           ender (e.g. try <Badge>33 DB2</Badge>).
         </li>
 
@@ -176,18 +173,25 @@ export default async function Page() {
         </li>
       </ul>
 
-      <h2 id="how-to-play-neutral">How do I play Neutral?</h2>
+      <h2 id="neutral">Playing Neutral</h2>
 
-      <p className="text-lg text-light">
-        Scorpion lacks a true mix-up or frame advantage. Instead, he has simple
-        moves for each distance and scenario.
+      <p>
+        In this section we will look at ways to gain the upper hand in{' '}
+        <em>Neutral</em> engagements.
+      </p>
+
+      <p className="text-lg font-semibold">
+        Scorpion lacks a true mix-up or frame advantage. Instead, he has
+        straightforward moves available for each distance and scenario.
       </p>
 
       <p>
-        First goal for new players: learn Standing 2’s sweet spot and keep them
-        there. Confirm hits with Standing 21. If they block it, stop. If it
-        connects, continue into Spear - 21 BF1. Don’t commit into a combo if
-        they block the first two hits. They will have time to punish you.
+        As a novice your first goal should be to learn <Badge>2</Badge>'s range.
+        Keeping Scorpion at around that distance from the other fighter is a
+        good starting point. When they approach aim to hit them at the attack's
+        maximum range. Confirm your hits with <Badge>21</Badge>. If you see them
+        being hit, continue into Spear - <Badge>21 BF1</Badge>. If they block
+        it, stop or you may get punished.
       </p>
 
       <ImageWithCaption
@@ -198,7 +202,7 @@ export default async function Page() {
 
       <p>
         If they stay out of reach, skip Standing 2 and check them with Spear.
-        Many players get comfortable at mid-range and won’t anticipate it.
+        Many players get comfortable at mid-range and won't anticipate it.
       </p>
 
       <ImageWithCaption
@@ -306,8 +310,8 @@ export default async function Page() {
         </p>
 
         <p>
-          <strong>B3 exDB3</strong> cancels into Enhanced Teleport. This is an
-          excellent way to force them into blocking, giving your teleport more
+          <strong>B3 exDB3</strong> cancels into Enhanced Teleport. This is a
+          very good way to force them into blocking, giving your teleport more
           freedom.
         </p>
 
