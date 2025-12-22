@@ -297,7 +297,7 @@ export function CreatureTable() {
             ))}
           </tbody>
           <tfoot>
-            <tr className="border-t-2 border-light bg-surface/50 font-semibold">
+            <tr className="border-t border-light bg-surface/50 font-semibold">
               <td className="px-4 py-2 text-sm">Average</td>
               <td className="px-4 py-2 text-sm">-</td>
               <td className="px-4 py-2 text-sm">-</td>

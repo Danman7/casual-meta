@@ -13,7 +13,7 @@ export const Anchor: React.FC<{
 
   const isActive = pathname.startsWith(href)
 
-  const activeClasses = isActive ? 'opacity-100! border-b-2' : ''
+  const activeClasses = isActive ? 'opacity-100! border-b' : ''
 
   return (
     <Link

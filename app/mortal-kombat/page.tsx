@@ -1,5 +1,5 @@
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
-import { BulletList } from '@/app/ui/BulletList'
+import { Callout } from '@/app/ui/Callout'
 import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -13,24 +13,44 @@ export default async function Page() {
     <>
       <h1>{MK_TITLE}</h1>
 
+      <div className="pb-10 border-b mb-20">
+        <p className="text-lg">
+          Mortal Kombat (MK) refers to the popular franchise of fighting games
+          best known for their fast-paced action and gory graphics. This section
+          is dedicated to the modern series known as the NRS era.
+        </p>
+
+        <Callout>
+          <p className="my-0! text-sm">
+            NetherRealm Studios acquired all right to the Mortal Kombat
+            trademark in 2009. This led to the creation of Mortal Kombat (MK9),
+            Mortal Kombat X, Mortal Kombat 11 and Mortal Kombat 1.
+          </p>
+        </Callout>
+      </div>
+
       <p>
-        Modern Mortal Kombat is about reading the intentions of your adversary
-        and choosing the best course of action in response. Everything any
-        character can throw at you can be countered and even punished. But
-        things happen so fast!
+        In its essence, Mortal Kombat is a duel to the death. Two players try to
+        outsmart each other within the allotted time and space. Action unfolds
+        rapidly which makes mastering it an arduous journey. Especially for new
+        players. Nevertheless, it boils down to a number of simple mechanics
+        which can be grasped.
       </p>
 
-      <div className="text-lg my-8 space-y-4">
-        <p>In these pages we will:</p>
-        <BulletList
-          icon="GiDeathSkull"
-          items={[
-            'Focus on Player vs Player (PvP)',
-            'Give you the toolset to learn any character.',
-            "Consolidate the community's knowledge.",
-          ]}
-        />
-      </div>
+      <p className="text-lg italic">
+        You may not have someone else’s reflexes, but you can understand how
+        they make decisions.
+      </p>
+
+      <p>
+        In the following pages we explain the quirks of the game as well as
+        attempt to teach you about reading and conditioning the actions of your
+        opponent. It’s as much about quick reaction as it is a mind game. We
+        will focus on the online Player vs Player (PvP) aspect, giving you the
+        tools to learn any character.
+      </p>
+
+      <h2>Contents</h2>
 
       <SubPageNav route={MK_BASE_URL} />
     </>

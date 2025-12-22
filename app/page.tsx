@@ -14,11 +14,11 @@ export default function Page() {
           </div>
 
           <div className="text-4xl animate-[slideRight_0.5s_0.25s_ease-in-out_both]">
-            for <span className="italic border-b-2">casual</span> players
+            for <span className="italic border-b">casual</span> players
           </div>
         </div>
 
-        <FlexWrapper>
+        <FlexWrapper className="justify-center">
           {ROOT_NAVIGATION_ITEMS.map((item, index) => (
             <Link
               key={item.href}

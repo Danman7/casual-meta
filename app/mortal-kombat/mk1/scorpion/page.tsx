@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { FaMinus, FaPlus } from 'react-icons/fa6'
 import { GiPunchBlast } from 'react-icons/gi'
 
 import scorpAirDB2 from '@/app/assets/mk1/scorp_air_db2.webp'
@@ -8,8 +9,9 @@ import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK_TITLE } from '@/app/constants'
-import { BulletList } from '@/app/ui/BulletList'
+import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
+import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -28,8 +30,8 @@ export default async function Page() {
       <h1>{navTitle}</h1>
 
       <p className="text-xl">
-        A reactive punisher that can convert a mistake anywhere on the screen
-        into easy combos.{' '}
+        In this page we will take a look at Mortal Kombat 1's returning
+        character Scorpion.
       </p>
       <div className="md:flex items-center gap-4">
         <Image
@@ -40,61 +42,74 @@ export default async function Page() {
 
         <div className="md:w-1/2">
           <p>
-            Scorpion in Mortal Kombat 1 is polarizing: some praise him, others
-            find him flat or weak. Nevertheless, he remains an uncomplicated
-            character frequently played at all levels. He has tools for fighting
-            both up close and against zoning players who prefer distance. On his
-            own, he performs best when reacting to the opponent - punishing and
-            interrupting. For optimal offense he needs help from an appropriate
-            Kameo partner.
+            Scorpions is a beginner-friendly, straightforward character. His
+            strength is to reliably convert unsafe actions into damage anywhere
+            on the screen. His combos are easy and modular. He has tools for
+            fighting at any range, but lacks efficient offense on his own. For
+            that one will need an appropriate Kameo pair. Beginners will find
+            him easier when reacting to their opponents rather than initiating
+            pressure.
           </p>
         </div>
       </div>
 
-      <h2 id="should-play-or-skip">Should I play or skip Scorpion?</h2>
+      <Callout>
+        <h2 id="should-play-or-skip" className="border-t-0! pt-0!">
+          Should I play or skip Scorpion?
+        </h2>
 
-      <BulletList
-        className="text-success"
-        icon="FaScaleUnbalanced"
-        items={[
-          'No stances or forms to manage.',
-          'Spear controls space and sets up combos.',
-          'Easy combos with straightforward extensions.',
-          'The Spear, Flame-Port and Devouring Flame control the whole screen.',
-          'The Blazing Charge, Back 3, Back 2 and the Spear are good mid-screen interruptions. ',
-          'Can be paired with a lot of Kameos.',
-        ]}
-      />
+        <div className="md:flex gap-6 mt-6 text-lg">
+          <div className="md:w-1/2">
+            <FlexWrapper className="font-bold">
+              <FaPlus className="text-success" /> Positives
+            </FlexWrapper>
 
-      <BulletList
-        className="text-warning"
-        icon="FaScaleBalanced"
-        items={[
-          'Low technicality can lead to higher predictability.',
-          'Skilled players may push your attack to the limit.',
-        ]}
-      />
+            <ul>
+              <li>He has no stances or forms to manage.</li>
 
-      <BulletList
-        className="text-error"
-        icon="FaScaleUnbalancedFlip"
-        items={[
-          'No standing overhead attack.',
-          'No standing low attack that cancels. ',
-        ]}
-      />
+              <li>
+                The Spear special is excellent at controlling space and setting
+                up combos.
+              </li>
+
+              <li>
+                Simple ways to start a combo and extend it up to 350 - 400
+                damage.
+              </li>
+
+              <li>He has multiple specials that cover the whole screen.</li>
+
+              <li>
+                Also has normals and specials that are good at interrupting
+                offense.
+              </li>
+            </ul>
+          </div>
+          <div className="md:w-1/2">
+            <FlexWrapper className="font-bold">
+              <FaMinus className="text-error" /> Negatives
+            </FlexWrapper>
+            <ul>
+              <li>
+                Poor mix-up. No chainable standing overhead or low attacks.
+              </li>
+
+              <li>
+                Low difficulty may lead to higher predictability. You will have
+                to learn harder moves together with a Kameo to catch up to a
+                skilled foe.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </Callout>
 
       <h2 id="main-buttons">Main buttons</h2>
 
-      <Callout>
-        <div className="tracking-widest">Poke</div>
-        <ul>
-          <li>
-            <strong>Standing 2</strong> is your primary poke - fast, safe,
-            disjointed high with surprising reach.
-          </li>
-        </ul>
-      </Callout>
+      <p>
+        <Badge>Standing 2</Badge> is your primary poke - fast, safe, disjointed
+        high with surprising reach.
+      </p>
 
       <Callout className="bg-alt-surface!">
         <div className="tracking-widest">Space Control</div>
