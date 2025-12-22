@@ -54,7 +54,7 @@ export default async function Page() {
       </div>
 
       <Callout>
-        <h2 id="should-play-or-skip" className="border-t-0! pt-0!">
+        <h2 id="should-play-or-skip" className="border-t-0! pt-0! mt-0!">
           Should I play or skip Scorpion?
         </h2>
 
@@ -85,6 +85,7 @@ export default async function Page() {
               </li>
             </ul>
           </div>
+
           <div className="md:w-1/2">
             <FlexWrapper className="font-bold">
               <FaMinus className="text-error" /> Negatives
@@ -107,94 +108,73 @@ export default async function Page() {
       <h2 id="main-buttons">Main buttons</h2>
 
       <p>
-        <Badge>Standing 2</Badge> is your primary poke - fast, safe, disjointed
-        high with surprising reach.
+        In case you've never played Scorpion in MK1 you should first get a
+        feeling for his moves in practice mode. Here is a list of the ones that
+        will be useful frequently.
       </p>
 
-      <Callout className="bg-alt-surface!">
-        <div className="tracking-widest">Space Control</div>
+      <ul>
+        <li>
+          <Badge>Standing 21</Badge> is your main hit-confirm string. It is a
+          fast, safe, and starts with a disjointed high attack with surprising
+          reach.
+        </li>
 
-        <ul>
-          <li>
-            <strong>Back 3</strong> - very far reaching, mid-low attack. The
-            first hit can be cancelled into any special or Kameo move.
-          </li>
+        <li>
+          <Badge>Back 3</Badge> is a very far reaching, albeit slow and unsafe,
+          mid-low attack. The first hit can be cancelled (e.g. try Back 1
+          Forward 1).
+        </li>
 
-          <li>
-            <strong>Back Forward 1</strong> is the Spear - an excellent full
-            screen check and combo extender. It is slow and unsafe. Use with
-            caution.
-          </li>
-        </ul>
-      </Callout>
+        <li>
+          <Badge>Back Forward 1</Badge> is Scorpion's signature Spear. It's an
+          excellent full screen check and combo extender, but slow and unsafe.
+        </li>
 
-      <Callout className="bg-dark-surface!">
-        <div className="tracking-widest">Hit-confirm</div>
+        <li>
+          <Badge>Forward 32</Badge> is your optimal combo starter. It launches
+          the opponent into the air, yet has a shorter reach than Standing 2.
+        </li>
 
-        <ul>
-          <li>
-            <strong>Standing 21</strong> - main hit-confirm and combo starter.
-          </li>
-          <li>
-            <strong>Forward 32</strong> - your best launch and combo starter,
-            albeit slower with shorter reach than standing 21.
-          </li>
+        <li>
+          <Badge>Standing 12</Badge> is the fastest hit-confirm. Prefer it to
+          Forward 32 or Standing 21 only if you are touching your foe.
+        </li>
 
-          <li>
-            <strong>Standing 12</strong> - fastest hit-confirm. Prefer only when
-            speed is of the essence.
-          </li>
-        </ul>
-      </Callout>
+        <li>
+          <Badge>Back Forward 2</Badge> is the Charge. It's a fast mid special
+          that covers good distance. It can start a combo only with the proper
+          Kameos. Enhanced version has armor for a wakeup reversal.
+        </li>
 
-      <Callout>
-        <div className="tracking-widest">Defense</div>
-        <ul>
-          <li>
-            <strong>Back 2</strong> - best anti-air into a full combo option.
-          </li>
+        <li>
+          <Badge>Back 2</Badge> is Scorpion's best anti-air. It can be canceled
+          into the Charge or Spear for full combo.
+        </li>
 
-          <li>
-            <strong>Back Forward 2</strong> is the Charge - fast mid attack that
-            covers good distance. Can start a combo only with the proper Kameos.
-            Enhanced version has armor. It is a good wakeup reversal.
-          </li>
-        </ul>
-      </Callout>
+        <li>
+          <Badge>Down Back 2</Badge> is the Twisted Kyo - your optimal combo
+          ender (e.g. try <Badge>33 DB2</Badge>).
+        </li>
 
-      <Callout className="bg-alt-surface!">
-        <div className="tracking-widest">Combo extensions and enders</div>
+        <li>
+          <Badge>Down Back 3</Badge> is the versatile Flame Port. It can
+          initiate combos, punish zoning, or simply play mind game with your
+          adversary. The enhanced version skips the hit and resets Scorpion.
+        </li>
 
-        <ul>
-          <li>
-            <strong>Air Down Back 2 Enhanced</strong> is a key aerial combo
-            extender.
-          </li>
+        <li>
+          <Badge>Back Forward 4</Badge> is the Devouring Flame. It is a final
+          full-screen measure against players who like to block and keep their
+          distance.
+        </li>
 
-          <li>
-            <strong>Down Back 2</strong> is the Twisted Kyo - your optimal combo
-            ender.
-          </li>
-        </ul>
-      </Callout>
-
-      <Callout className="bg-dark-surface!">
-        <div className="tracking-widest">Full-screen</div>
-
-        <ul>
-          <li>
-            <strong>Down Back 3</strong> is the Flame Port. It is a dedicated
-            full-screen punish. Can also extend combos. The Enhanced version
-            opens doors to some mind games.
-          </li>
-
-          <li>
-            <strong>Back Forward 4</strong> is the Devouring Flame - a final
-            full-screen measure against players who like to block and keep their
-            distance.
-          </li>
-        </ul>
-      </Callout>
+        <li>
+          <Badge>Air Down Back 2 Enhanced</Badge> is a key aerial combo
+          extender. It has application only when the opponent is already
+          launched (e.g. try <Badge>F32 J12 airDB2ex 111</Badge>).
+        </li>
+      </ul>
 
       <h2 id="how-to-play-neutral">How do I play Neutral?</h2>
 

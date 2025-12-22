@@ -17,7 +17,7 @@ export const Anchor: React.FC<{
 
   return (
     <Link
-      className={`inline-flex items-center gap-2 transition ${activeClasses} ${className}`}
+      className={`inline-flex items-center gap-2 ${activeClasses} ${className}`}
       href={href}
       onClick={onClick}
     >
