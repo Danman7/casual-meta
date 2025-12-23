@@ -64,22 +64,20 @@ export function SubNavClient({ items, title, isTopNav }: Props) {
   const handleSelect = () => closeNav()
 
   return (
-    <nav
-      className={`${isTopNav ? 'bg-alt-surface shadow-md md:hidden px-6' : ''}`}
-    >
+    <nav className={`${isTopNav ? 'md:hidden inset-shadow-xs' : ''}`}>
       {isTopNav ? (
         <button
           type="button"
-          className="w-full inline-flex items-center gap-1 text-foreground font-bold hover:text-primary cursor-pointer py-2"
+          className="w-full inline-flex items-center gap-1 text-foreground font-serif font-semibold hover:bg-primary hover:text-background cursor-pointer px-4 py-2 transition-all"
           aria-expanded={open}
           aria-controls="subnav-root"
           onClick={() => setIsManuallyToggled((v) => !v)}
         >
           {isTopNav && open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
-          <span>{title || 'Menu'}</span>
+          <span>{title} Menu</span>
         </button>
       ) : (
-        <h4 className="text-lg font-bold">{title}</h4>
+        <h4 className="text-lg font-semibold">{title}</h4>
       )}
 
       {open && (

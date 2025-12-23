@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { IoMdArrowForward } from 'react-icons/io'
 
 export const Anchor: React.FC<{
   children: React.ReactNode
@@ -11,16 +12,15 @@ export const Anchor: React.FC<{
 }> = ({ href, children, className = '', onClick }) => {
   const pathname = usePathname()
 
-  const isActive = pathname.startsWith(href)
-
-  const activeClasses = isActive ? 'opacity-100! border-b' : ''
+  const isActive = pathname.endsWith(href)
 
   return (
     <Link
-      className={`inline-flex items-center gap-2 ${activeClasses} ${className}`}
+      className={`inline-flex items-center gap-1 ${className}`}
       href={href}
       onClick={onClick}
     >
+      {isActive && <IoMdArrowForward />}
       {children}
     </Link>
   )

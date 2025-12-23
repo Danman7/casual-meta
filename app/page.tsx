@@ -7,31 +7,31 @@ import { FlexWrapper } from '@/app/ui/FlexWrapper'
 export default function Page() {
   return (
     <>
-      <section className="space-y-16 text-center h-[calc(100dvh-(--spacing(32)))] flex flex-col justify-around items-center relative">
+      <section className="space-y-16 text-center h-[calc(100dvh-(--spacing(32)))] flex flex-col justify-around items-center">
         <div>
-          <div className="text-5xl text-primary font-bold animate-[slideLeft_0.5s_ease-in-out_both]">
+          <div className="text-5xl text-primary font-bold animate-slide-left">
             Docs
           </div>
 
-          <div className="text-4xl animate-[slideRight_0.5s_0.25s_ease-in-out_both]">
+          <div className="text-4xl animate-slide-right">
             for <span className="italic border-b">casual</span> players
           </div>
         </div>
 
-        <FlexWrapper className="justify-center">
+        <FlexWrapper className="justify-center font-semibold">
           {ROOT_NAVIGATION_ITEMS.map((item, index) => (
             <Link
               key={item.href}
               href={item.href}
-              style={{ animationDelay: `${0.5 + index * 0.25}s` }}
-              className="text-lg animate-[fadeIn_0.5s_ease-in-out_both] px-4"
+              style={{ animationDelay: `${index * 0.25}s` }}
+              className="text-lg animate-fade-in-scale px-4"
             >
               {item.name}
             </Link>
           ))}
         </FlexWrapper>
 
-        <Callout className="animate-[fadeIn_0.5s_1s_ease-in-out_both] px-4">
+        <Callout className="animate-fade-in-scale delay-75 px-4">
           <div className="text-xl">
             Games can be <em>fun</em>. They can be <em>hard</em> as well.{' '}
             <strong>Can’t they be both?</strong>

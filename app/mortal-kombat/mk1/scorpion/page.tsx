@@ -58,8 +58,8 @@ export default async function Page() {
 
         <div className="md:flex gap-6 mt-6">
           <div className="md:w-1/2">
-            <FlexWrapper className="font-bold">
-              <FaPlus className="text-success" /> Positives
+            <FlexWrapper className="font-bold text-success">
+              <FaPlus /> Positives
             </FlexWrapper>
 
             <ul className="list-inside list-disc">
@@ -80,8 +80,8 @@ export default async function Page() {
           </div>
 
           <div className="md:w-1/2">
-            <FlexWrapper className="font-bold">
-              <FaMinus className="text-error" /> Negatives
+            <FlexWrapper className="font-bold text-error">
+              <FaMinus /> Negatives
             </FlexWrapper>
             <ul className="list-inside list-disc mb-0!">
               <li>
@@ -182,7 +182,7 @@ export default async function Page() {
         good starting point. When they approach aim to hit them at the attack's
         maximum range. Confirm your hits with <Badge>21</Badge>.
       </p>
-      ````
+
       <ul className="list-inside list-disc">
         <li>
           On hit: continue into spear - <Badge>21 BF1</Badge>

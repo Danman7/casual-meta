@@ -7,7 +7,7 @@ import { BsPcDisplay } from 'react-icons/bs'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
 import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
-import { FlexWrapper } from '@/app/ui/FlexWrapper'
+import { Anchor } from '@/app/ui/Anchor'
 import { SectionNav } from '@/app/ui/SectionNav'
 
 export const Nav = () => {
@@ -28,31 +28,27 @@ export const Nav = () => {
   }
 
   return (
-    <header className="z-10 sticky top-0">
-      <nav className="shadow-md bg-surface px-6 py-4">
+    <header className="z-10 sticky top-0 shadow-md bg-surface">
+      <nav className="p-4">
         <div className="flex items-center gap-4 justify-between">
           <Link
-            className="flex items-center gap-4 font-bold text-2xl text-foreground!"
+            className="flex items-center gap-1 hover:gap-2 hover:text-primary font-semibold text-2xl font-serif no-underline transition-all text-foreground"
             href="/"
           >
-            <BsPcDisplay />
+            <BsPcDisplay className="text-primary" />
             Casual Meta
           </Link>
 
           <div className="gap-4 hidden md:flex">
             {ROOT_NAVIGATION_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-foreground!"
-              >
+              <Anchor key={item.href} href={item.href}>
                 {item.name}
-              </Link>
+              </Anchor>
             ))}
           </div>
 
-          <FlexWrapper
-            className="md:hidden cursor-pointer hover:text-primary transition hover:scale-105 active:scale-95"
+          <button
+            className="flex items-center gap-1 md:hidden cursor-pointer hover:text-primary transition-all"
             onClick={toggleMobileMenu}
           >
             {isMobileMenuOpen ? (
@@ -60,20 +56,16 @@ export const Nav = () => {
             ) : (
               <IoMdMenu className="text-xl" />
             )}
-            Menu
-          </FlexWrapper>
+            Main Menu
+          </button>
         </div>
         {isMobileMenuOpen && (
           <div className="md:hidden flex flex-col items-start gap-4 mt-4">
             {ROOT_NAVIGATION_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-foreground!"
-              >
+              <Anchor key={item.href} href={item.href}>
                 {' '}
                 {item.name}
-              </Link>
+              </Anchor>
             ))}
           </div>
         )}
