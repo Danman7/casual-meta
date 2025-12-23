@@ -1,27 +1,5 @@
 @import 'tailwindcss';
 
-:root {
-  --background: var(--color-slate-50);
-  --foreground: var(--color-slate-950);
-  --surface: var(--color-slate-100);
-  --alt-surface: var(--color-slate-200);
-  --primary: var(--color-blue-700);
-  --visited: var(--color-purple-700);
-  --success: var(--color-green-700);
-  --error: var(--color-red-700);
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-alt-surface: var(--alt-surface);
-  --color-primary: var(--primary);
-  --color-visited: var(--visited);
-  --color-success: var(--success);
-  --color-error: var(--error);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--color-slate-950);
@@ -35,90 +13,80 @@
   }
 }
 
-html {
-  height: 100%;
+@theme inline {
+  --color-background: var(--color-slate-50);
+  --color-foreground: var(--color-slate-950);
+  --color-surface: var(--color-slate-100);
+  --color-alt-surface: var(--color-slate-200);
+  --color-primary: var(--color-blue-700);
+  --color-visited: var(--color-purple-700);
+  --color-success: var(--color-green-700);
+  --color-error: var(--color-red-700);
+  --font-sans: var(--font-noto-sans);
+  --font-serif: var(--font-noto-serif);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-noto-serif), Georgia, 'Times New Roman', Times, serif;
-  margin: 0;
-  padding: 0;
-}
+@layer base {
+  h1 {
+    font-size: var(--text-6xl);
+    font-weight: var(--font-weight-light);
+    letter-spacing: -1.5px;
 
-p,
-li {
-  letter-spacing: 0.5px;
-}
-
-article p,
-article li {
-  font-family:
-    var(--font-noto-sans),
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-}
-
-article h1 {
-  font-size: var(--text-6xl);
-  font-weight: var(--font-weight-light);
-  letter-spacing: -1.5px;
-
-  @media (max-width: 768px) {
-    font-size: var(--text-5xl);
-  }
-}
-
-article h2 {
-  font-size: var(--text-3xl);
-  padding-top: 20px;
-  margin: 60px 0 36px;
-  letter-spacing: -0.5px;
-  border-top: 2px solid var(--foreground);
-  font-weight: var(--font-weight-light);
-}
-
-h3 {
-  font-size: var(--text-2xl);
-}
-
-p,
-article ul,
-article img,
-figure {
-  margin: 1.25rem 0;
-  line-height: 1.6;
-}
-
-article li {
-  margin-top: 0.5em;
-}
-
-a {
-  text-decoration: none;
-  transition: all 0.1s;
-
-  &:visited {
-    color: var(--visited);
+    @media (max-width: 768px) {
+      font-size: var(--text-5xl);
+    }
   }
 
-  &:hover {
-    color: var(--primary);
+  h2 {
+    font-size: var(--text-3xl);
+    padding-top: 20px;
+    margin: 60px 0 36px;
+    letter-spacing: -0.5px;
+    border-top: 2px solid var(--color-foreground);
+    font-weight: var(--font-weight-light);
   }
 
-  &:active {
-    scale: 0.95;
+  h3 {
+    font-size: var(--text-2xl);
   }
-}
 
-article a {
-  text-decoration: underline;
+  p,
+  li {
+    letter-spacing: 0.5px;
+  }
+
+  article p,
+  article ul,
+  article img,
+  figure {
+    margin: 1.25rem 0;
+    line-height: 1.6;
+  }
+
+  article li {
+    margin-top: 0.5em;
+  }
+
+  a {
+    text-decoration: none;
+    transition: all 0.1s;
+
+    &:visited {
+      color: var(--visited);
+    }
+
+    &:hover {
+      color: var(--primary);
+    }
+
+    &:active {
+      scale: 0.95;
+    }
+  }
+
+  article a {
+    text-decoration: underline;
+  }
 }
 
 @keyframes fadeIn {

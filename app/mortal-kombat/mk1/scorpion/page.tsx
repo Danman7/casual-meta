@@ -28,8 +28,7 @@ export default async function Page() {
   return (
     <>
       <h1>{navTitle}</h1>
-
-      <p>
+      <p className="mt-0! text-sm italic">
         In this page we will take a look at Mortal Kombat 1's returning
         character Scorpion.
       </p>
@@ -84,7 +83,7 @@ export default async function Page() {
             <FlexWrapper className="font-bold">
               <FaMinus className="text-error" /> Negatives
             </FlexWrapper>
-            <ul className="list-inside list-disc">
+            <ul className="list-inside list-disc mb-0!">
               <li>
                 Poor mix-up. No chainable standing overhead or low attacks.
               </li>
@@ -168,9 +167,7 @@ export default async function Page() {
           launched (e.g. try <Badge>F32 J12 airDB2ex 111</Badge>).
         </li>
       </ul>
-
       <h2 id="neutral">Playing Neutral</h2>
-
       <p>
         In this section we will look at ways to gain the upper hand in{' '}
         <em>Neutral</em> engagements.
@@ -179,17 +176,19 @@ export default async function Page() {
         Scorpion lacks a true mix-up or frame advantage. Instead, he has
         straightforward moves available for each distance and scenario.
       </p>
-
       <p>
         As a novice your first goal should be to learn <Badge>2</Badge>'s range.
         Keeping Scorpion at around that distance from the other fighter is a
         good starting point. When they approach aim to hit them at the attack's
-        maximum range. Confirm your hits with <Badge>21</Badge>. If you see them
-        being hit, continue into Spear - <Badge>21 BF1</Badge>. If they block
-        it, stop or you may get punished.
+        maximum range. Confirm your hits with <Badge>21</Badge>.
       </p>
-
-      <ul className="list-inside list-disc"></ul>
+      ````
+      <ul className="list-inside list-disc">
+        <li>
+          On hit: continue into spear - <Badge>21 BF1</Badge>
+        </li>
+        <li>On block: stop.</li>
+      </ul>
       <ImageWithCaption
         src={scorp2}
         alt="Scorpion's Standing 2 attack."

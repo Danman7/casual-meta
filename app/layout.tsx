@@ -27,12 +27,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full bg-background text-foreground">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${notoSerif.variable} ${notoSans.variable} font-serif antialiased h-full flex flex-col`}
+        className={`${notoSerif.variable} ${notoSans.variable} antialiased h-full flex flex-col font-sans`}
       >
         <Nav />
 
