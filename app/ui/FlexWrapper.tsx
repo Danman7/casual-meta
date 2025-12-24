@@ -5,7 +5,7 @@ export const FlexWrapper: React.FC<
 > = ({ children, className = '', onClick }) => {
   return (
     <div
-      className={`flex flex-wrap gap-2 items-center ${className}`}
+      className={`flex flex-wrap gap-1 items-center ${className}`}
       onClick={onClick}
     >
       {children}

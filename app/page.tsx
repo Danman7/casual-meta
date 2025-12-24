@@ -23,7 +23,7 @@ export default function Page() {
             <Link
               key={item.href}
               href={item.href}
-              style={{ animationDelay: `${index * 0.25}s` }}
+              style={{ animationDelay: `${0.3 + index * 0.3}s` }}
               className="text-lg animate-fade-in-scale px-4"
             >
               {item.name}

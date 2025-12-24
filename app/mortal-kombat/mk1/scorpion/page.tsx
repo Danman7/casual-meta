@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { FaMinus, FaPlus } from 'react-icons/fa6'
 import { GiPunchBlast } from 'react-icons/gi'
 
@@ -8,11 +9,12 @@ import scorpMovado from '@/app/assets/mk1/scorp_movado.webp'
 import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
-import { MK_TITLE } from '@/app/constants'
+import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
 import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
+import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 8
@@ -27,11 +29,8 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
-      <p className="mt-0! text-sm italic">
-        In this page we will take a look at Mortal Kombat 1's returning
-        character Scorpion.
-      </p>
+      <PageTitle title={navTitle} subtitle="Character overview & guide" />
+
       <div className="md:flex items-center gap-4">
         <Image
           className="max-h-72 object-cover object-[0%_0%]  md:w-1/2 md:max-h-full"
@@ -41,39 +40,37 @@ export default async function Page() {
 
         <div className="md:w-1/2">
           <p>
-            Scorpion is a beginner-friendly character yet he is frequently
-            played at all levels. His strength is to reliably convert unsafe
-            actions into damage anywhere on the screen. His combos are easy and
-            modular. He has tools for fighting at any range, but lacks efficient
-            offense on his own. For that one will need an appropriate Kameo
-            pair. New players will find him easier when reacting to their
-            opponents rather than initiating pressure.
+            Scorpion is a beginner-friendly character that is frequently played
+            at all levels. A major strength of his is to reliably interrupt
+            unsafe actions from anywhere on the screen. He can then convert them
+            into one of his simple modular combos. His toolbox includes both
+            close and long range instruments, but lacks efficient offense. In
+            that regard new players will find him easier when reacting rather
+            than initiating pressure. For the latter, he will need aid from a
+            proper Kameo.
           </p>
         </div>
       </div>
-      <Callout>
-        <h2 id="should-play-or-skip" className="border-t-0! pt-0! mt-0!">
-          Should I play or skip Scorpion?
+
+      <Callout className="space-y-4">
+        <h2 id="play-or-skip" className="pt-0! mt-0!">
+          Play or skip?
         </h2>
 
-        <div className="md:flex gap-6 mt-6">
+        <div className="md:flex gap-4">
           <div className="md:w-1/2">
             <FlexWrapper className="font-bold text-success">
               <FaPlus /> Positives
             </FlexWrapper>
 
-            <ul className="list-inside list-disc">
+            <ul className="divide-y space-y-4 *:pb-2 *:last:pb-0 md:mb-0! mb-8">
               <li>He has no stances or forms to manage.</li>
 
               <li>
-                The Spear special is superb at controlling space and setting up
-                combos.
+                The Spear is superb at controlling space and setting up combos.
               </li>
 
-              <li>
-                Simple ways to start a combo and extend it up to 350 - 400
-                damage.
-              </li>
+              <li>Starting and extending combos is uncomplicated.</li>
 
               <li>He has multiple specials that cover the whole screen.</li>
             </ul>
@@ -83,29 +80,27 @@ export default async function Page() {
             <FlexWrapper className="font-bold text-error">
               <FaMinus /> Negatives
             </FlexWrapper>
-            <ul className="list-inside list-disc mb-0!">
+
+            <ul className="divide-y space-y-4 *:pb-2 *:last:pb-0 mb-0!">
               <li>
-                Poor mix-up. No chainable standing overhead or low attacks.
+                He lacks a good mix-up - no chainable standing overheads or
+                lows.
               </li>
 
-              <li>Few and low advantage on block attacks.</li>
-
-              <li>
-                Low difficulty may lead to higher predictability. You will have
-                to learn harder sequences with a Kameo to catch up to a skilled
-                foe.
-              </li>
+              <li>Almost none of his attacks are plus on block.</li>
             </ul>
           </div>
         </div>
       </Callout>
+
       <h2 id="main-buttons">Main buttons</h2>
-      <p>
-        In case you've never played Scorpion in MK1 you should first get a
-        feeling for his moves in practice mode. Here is a list of the ones that
-        will be useful frequently.
+
+      <p className="text-sm italic">
+        Here is a list of the more frequently used moves. Before anything else,
+        get a feeling for them in practice mode.
       </p>
-      <ul className="list-inside list-disc">
+
+      <ul className="list-inside list-disc space-y-2">
         <li>
           <Badge>Standing 21</Badge> is your main hit-confirm string. It is a
           fast, safe, and starts with a disjointed high attack with surprising
@@ -167,20 +162,23 @@ export default async function Page() {
           launched (e.g. try <Badge>F32 J12 airDB2ex 111</Badge>).
         </li>
       </ul>
+
       <h2 id="neutral">Playing Neutral</h2>
-      <p>
+
+      <p className="text-sm italic">
         In this section we will look at ways to gain the upper hand in{' '}
-        <em>Neutral</em> engagements.
+        <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link> engagements.
       </p>
+
       <p className="text-lg font-semibold">
         Scorpion lacks a true mix-up or frame advantage. Instead, he has
-        straightforward moves available for each distance and scenario.
+        straightforward moves for each distance and scenario.
       </p>
+
       <p>
-        As a novice your first goal should be to learn <Badge>2</Badge>'s range.
-        Keeping Scorpion at around that distance from the other fighter is a
-        good starting point. When they approach aim to hit them at the attack's
-        maximum range. Confirm your hits with <Badge>21</Badge>.
+        A good starting point is to learn <Badge>Standing 2</Badge>'s range.
+        When they approach aim to hit them at the attack's maximum range.
+        Confirm your hits with <Badge>21</Badge>.
       </p>
 
       <ul className="list-inside list-disc">

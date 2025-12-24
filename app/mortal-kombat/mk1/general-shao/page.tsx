@@ -32,7 +32,7 @@ export default async function Page() {
         <p className="md:w-1/2">
           General Shao is a close-to-mid range bruiser that excels at scouting
           and bullying his opponents in{' '}
-          <Link href={`${MK_BASE_URL}/neutral`}>neutral</Link>. His stance-based
+          <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>. His stance-based
           style alternates between the axe with the famed far-reaching
           disjointed normals and unarmed where he is faster, safer with plus
           frames on block. He is tough (high HP), moves fast and hits hard. At

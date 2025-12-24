@@ -2,19 +2,19 @@
 
 :root {
   --background: var(--color-neutral-50);
-  --foreground: var(--color-neutral-900);
+  --foreground: var(--color-neutral-950);
   --light-foreground: var(--color-neutral-700);
   --surface: var(--color-neutral-100);
-  --primary: var(--color-red-700);
+  --primary: var(--color-emerald-700);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--color-neutral-950);
-    --foreground: var(--color-neutral-100);
-    --light-foreground: var(--color-neutral-300);
-    --surface: var(--color-neutral-900);
-    --primary: var(--color-blue-400);
+    --background: var(--color-neutral-900);
+    --foreground: var(--color-neutral-200);
+    --light-foreground: var(--color-neutral-400);
+    --surface: var(--color-neutral-800);
+    --primary: var(--color-emerald-500);
   }
 }
 
@@ -68,42 +68,27 @@
 }
 
 @layer base {
-  h1,
   h2,
   h3 {
     font-family: var(--font-noto-serif);
   }
 
-  h1,
   h2,
   h3,
   strong {
     color: var(--color-light-foreground);
   }
 
-  strong {
-    font-weight: var(--font-weight-semibold);
-  }
-
-  h1 {
-    font-size: var(--text-6xl);
-    font-weight: var(--font-weight-light);
-    letter-spacing: var(--tracking-tight);
-
-    @media (max-width: 768px) {
-      font-size: var(--text-5xl);
-    }
-  }
-
   h2 {
-    font-size: var(--text-4xl);
+    font-size: var(--text-3xl);
     padding-top: --spacing(4);
     margin-top: --spacing(4);
     font-weight: var(--font-weight-light);
   }
 
   h3 {
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-bold);
   }
 
   p,
@@ -112,10 +97,6 @@
   figure {
     letter-spacing: 0.5px;
     margin: 1.25rem 0;
-  }
-
-  article li {
-    margin-top: 0.5em;
   }
 
   a {

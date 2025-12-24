@@ -22,7 +22,7 @@ function TreeNode({
 }) {
   const hasChildren = !!item.children?.length
   return (
-    <li>
+    <li className="mt-2">
       <Anchor href={item.href} onClick={onSelect}>
         {item.title}
       </Anchor>
@@ -42,10 +42,8 @@ export function SubNavClient({ items, title, isTopNav }: Props) {
   const pathname = usePathname()
   const prevPathnameRef = useRef(pathname)
 
-  // Derive open state: desktop sidebars are always open, mobile nav follows manual toggle
   const open = isTopNav ? isManuallyToggled : true
 
-  // Reset mobile nav when pathname changes
   useEffect(() => {
     if (isTopNav && prevPathnameRef.current !== pathname) {
       prevPathnameRef.current = pathname
@@ -74,14 +72,14 @@ export function SubNavClient({ items, title, isTopNav }: Props) {
           onClick={() => setIsManuallyToggled((v) => !v)}
         >
           {isTopNav && open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
-          <span>{title} Menu</span>
+          <span>{title} Chapters</span>
         </button>
       ) : (
-        <h4 className="text-lg font-semibold">{title}</h4>
+        <h4 className="text-lg font-semibold">{title} Chapters</h4>
       )}
 
       {open && (
-        <ul id="subnav-root" className="mt-2 space-y-1 pb-2">
+        <ul id="subnav-root" className={`${isTopNav ? 'px-4' : ''} mt-0`}>
           {items.map((item) => (
             <TreeNode key={item.href} item={item} onSelect={handleSelect} />
           ))}
