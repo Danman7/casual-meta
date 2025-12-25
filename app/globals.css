@@ -11,8 +11,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--color-neutral-900);
-    --foreground: var(--color-neutral-200);
-    --light-foreground: var(--color-neutral-400);
+    --foreground: var(--color-neutral-100);
+    --light-foreground: var(--color-neutral-300);
     --surface: var(--color-neutral-800);
     --primary: var(--color-emerald-500);
   }
@@ -81,8 +81,8 @@
 
   h2 {
     font-size: var(--text-3xl);
-    padding-top: --spacing(4);
-    margin-top: --spacing(4);
+    padding-top: --spacing(6);
+    margin-top: --spacing(6);
     font-weight: var(--font-weight-light);
   }
 
@@ -95,8 +95,9 @@
   ul,
   img,
   figure {
+    line-height: 1.6;
     letter-spacing: 0.5px;
-    margin: 1rem 0;
+    margin-block: --spacing(5);
   }
 
   a {

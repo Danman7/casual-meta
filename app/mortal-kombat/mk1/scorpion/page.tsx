@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { GiPunchBlast } from 'react-icons/gi'
+import { GiPunchBlast, GiSpearHook } from 'react-icons/gi'
 import { IoIosThumbsDown, IoIosThumbsUp } from 'react-icons/io'
 
 import scorpAirDB2 from '@/app/assets/mk1/scorp_air_db2.webp'
@@ -73,7 +73,8 @@ export default async function Page() {
               <li>He has no stances or forms to manage.</li>
 
               <li>
-                The Spear is superb at controlling space and setting up combos.
+                The Spear <GiSpearHook className="inline" /> is superb at
+                controlling space and setting up combos.
               </li>
 
               <li>He has multiple specials that cover the whole screen.</li>
@@ -140,12 +141,13 @@ export default async function Page() {
       />
 
       <p>
-        The Spear <Badge>BF1</Badge> is an <em>excellent mid-range check</em>.
-        Think of it initially as a Standing 2 with a longer reach in the form of
-        a high projectile. It is slower and is unsafe, but many players get so
-        comfortable at jump distance away a Spear catches them off-guard more
-        often than it should. It interrupts dashes, catches them at the end of
-        their jumps, stuns them during launching a projectile and etc.
+        <em>The Spear</em> <Badge>BF1</Badge> is an{' '}
+        <em>excellent mid-range check</em>. Think of it initially as a Standing
+        2 with a longer reach in the form of a high projectile. It is slower and
+        is unsafe, but many players get so comfortable at jump distance away a
+        Spear catches them off-guard more often than it should. It interrupts
+        dashes, catches them at the end of their jumps, stuns them during
+        launching a projectile and etc.
       </p>
 
       <ImageWithCaption
@@ -160,40 +162,48 @@ export default async function Page() {
       <p>
         You can expect opponents to block, jump, or teleport around your Spear.
         But because it is high, some players will also try to duck under it. If
-        you spot this pattern in your foe, do a <Badge>BF1ex</Badge>
-        Enhanced Spear - it <em>hits mid</em>.
+        you spot this pattern in your foe, do a <Badge>BF1ex</Badge> Enhanced
+        Spear - it <em>hits mid</em>.
+      </p>
+
+      <p>
+        Speaking of jumping over your Spear, <Badge>Back 2</Badge> is Scorpion's
+        best anti-air option. It can be <em>shortcut cancelled</em> into any
+        back-forward move. For example <Badge>B2 F1</Badge> cancels into Spear
+        without having to press Back twice. This can lead to a full combo out of
+        anti-air. You'd want to practice this early with a forward jumping
+        dummy.
       </p>
 
       <h3 id="up-close">Up close</h3>
 
       <p>
-        <Badge>21</Badge> is your most consistent hit-confirm, but{' '}
-        <Badge>12</Badge> is the fastest. It can be your "go-to" if they get in
-        closer than 3 steps away. If it hits, continue in the same manner{' '}
-        <Badge>12 BF1</Badge>.
+        <Badge>12</Badge> has shorter reach and lower damage than{' '}
+        <Badge>21</Badge>, but is faster. It can be your "go-to" if they get in
+        close. On hit: continue in the same manner - <Badge>12 BF1</Badge>.
       </p>
 
       <p>
-        Of course, it is also not a bad idea to just block the incoming attacks.
-        On blocking a move you consider to be unsafe, Don't be alarmed if you
-        need to keep blocking for an extended period. Eventually they will throw
-        an unsafe attack - one which takes a long time to recover from. This is
-        your queue. After blocking such an attack initiate counter-pressure with
-        12 or F32. Prefer the latter as it will give you more options to extend
-        the offense.
+        It is also never a bad idea to just block. Stop an unsafe attack first,
+        then respond with one of the strings above.
       </p>
 
       <p>
-        <strong>
-          The Back 2 shortcut cancels into the Spear without the need to press
-          back twice - B2 F1.
-        </strong>{' '}
-        Thus, if you spot a jump-in attempt, you can react with B2 into Spear
-        for a full combo punish. Timing is a bit strict, so practice it in
-        training mode.
+        Once you get comfortable with playing Scorpion at close-to-mid range
+        practice connecting with <Badge>Forward 32</Badge> - your{' '}
+        <em>optimal combo starter</em>. This string launches your opponent into
+        the air. It can be <em>chained up to three times</em> and can be
+        extended further in multiple ways. The first hit is an advancing mid so
+        it also acts as a good poke.
       </p>
 
-      <h3>Anti-zoning</h3>
+      <h3 id="full-screen">Full-screen</h3>
+
+      <p>
+        Facing someone who likes to keep their distance is not a problem for
+        Scorpion.
+      </p>
+
       <p>
         On condition that you are facing a character that has good full-screen
         pressure (e.g. Sindel, Shang Tsung, Liu Kang) you have the Flame Port.
@@ -203,6 +213,7 @@ export default async function Page() {
         fireball. If you time the teleport right, he will get hit and you will
         end up next to him.
       </p>
+
       <p>
         Provided they do block your teleports regularly, mix them up with the{' '}
         <strong>enhanced version into a throw.</strong> This is a simple way to

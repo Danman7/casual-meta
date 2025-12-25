@@ -43,9 +43,9 @@ export const TableOfContents: React.FC = () => {
 
   return (
     <nav className="">
-      <h4 className="font-bold mb-2">On This Page</h4>
+      <h4 className="font-bold">On This Page</h4>
 
-      <ul id="toc-root" className="space-y-1">
+      <ul id="toc-root" className="mt-0">
         {headings.map((heading) => (
           <li key={heading.id} className={heading.level === 3 ? 'ml-4' : ''}>
             <a
