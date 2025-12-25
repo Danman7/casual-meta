@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaMinus, FaPlus } from 'react-icons/fa6'
 import { GiPunchBlast } from 'react-icons/gi'
+import { IoIosThumbsDown, IoIosThumbsUp } from 'react-icons/io'
 
 import scorpAirDB2 from '@/app/assets/mk1/scorp_air_db2.webp'
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
@@ -12,6 +12,8 @@ import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
+import { Emphasis } from '@/app/ui/Emphasis'
+import { Flavor } from '@/app/ui/Flavor'
 import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
@@ -57,31 +59,40 @@ export default async function Page() {
           Play or skip?
         </h2>
 
+        <Flavor>Should you try Scorpion?</Flavor>
+
         <div className="md:flex gap-4">
           <div className="md:w-1/2">
             <FlexWrapper className="font-bold text-success">
-              <FaPlus /> Positives
+              <IoIosThumbsUp /> Maybe, yes
             </FlexWrapper>
 
             <ul className="divide-y space-y-4 *:pb-2 *:last:pb-0 md:mb-0! mb-8">
+              <li>Scorpion is uncomplicated in general.</li>
+
               <li>He has no stances or forms to manage.</li>
 
               <li>
                 The Spear is superb at controlling space and setting up combos.
               </li>
 
-              <li>Starting and extending combos is uncomplicated.</li>
-
               <li>He has multiple specials that cover the whole screen.</li>
+
+              <li>Extending combos is not difficult.</li>
             </ul>
           </div>
 
           <div className="md:w-1/2">
             <FlexWrapper className="font-bold text-error">
-              <FaMinus /> Negatives
+              <IoIosThumbsDown /> Maybe, no
             </FlexWrapper>
 
             <ul className="divide-y space-y-4 *:pb-2 *:last:pb-0 mb-0!">
+              <li>
+                Scorpion can struggle with breaking up the defense of a skilled
+                foe.
+              </li>
+
               <li>
                 He lacks a good mix-up - no chainable standing overheads or
                 lows.
@@ -93,135 +104,85 @@ export default async function Page() {
         </div>
       </Callout>
 
-      <h2 id="main-buttons">Main buttons</h2>
+      <h2 id="neutral">Scouting the opponent</h2>
 
-      <p className="text-sm italic">
-        Here is a list of the more frequently used moves. Before anything else,
-        get a feeling for them in practice mode.
-      </p>
-
-      <ul className="list-inside list-disc space-y-2">
-        <li>
-          <Badge>Standing 21</Badge> is your main hit-confirm string. It is a
-          fast, safe, and starts with a disjointed high attack with surprising
-          reach.
-        </li>
-
-        <li>
-          <Badge>Back 3</Badge> is a very far reaching, albeit slow and unsafe,
-          mid-low attack. The first hit can be cancelled (e.g. try Back 1
-          Forward 1).
-        </li>
-
-        <li>
-          <Badge>Back Forward 1</Badge> is Scorpion's signature Spear. It's an
-          excellent full screen check and combo extender, but slow and unsafe.
-        </li>
-
-        <li>
-          <Badge>Forward 32</Badge> is your optimal combo starter. It launches
-          the opponent into the air, yet has a shorter reach than Standing 2.
-        </li>
-
-        <li>
-          <Badge>Standing 12</Badge> is the fastest hit-confirm. Prefer it to
-          Forward 32 or Standing 21 only if you are touching your foe.
-        </li>
-
-        <li>
-          <Badge>Back Forward 2</Badge> is the Charge. It's a fast mid special
-          that covers good distance. It can start a combo only with the proper
-          Kameos. Enhanced version has armor for a wakeup reversal.
-        </li>
-
-        <li>
-          <Badge>Back 2</Badge> is Scorpion's best anti-air. It can be canceled
-          into the Charge or Spear for full combo.
-        </li>
-
-        <li>
-          <Badge>Down Back 2</Badge> is the Twisted Kyo - your foremost combo
-          ender (e.g. try <Badge>33 DB2</Badge>).
-        </li>
-
-        <li>
-          <Badge>Down Back 3</Badge> is the versatile Flame Port. It can
-          initiate combos, punish zoning, or simply play mind game with your
-          adversary. The enhanced version skips the hit and resets Scorpion.
-        </li>
-
-        <li>
-          <Badge>Back Forward 4</Badge> is the Devouring Flame. It is a final
-          full-screen measure against players who like to block and keep their
-          distance.
-        </li>
-
-        <li>
-          <Badge>Air Down Back 2 Enhanced</Badge> is a key aerial combo
-          extender. It has application only when the opponent is already
-          launched (e.g. try <Badge>F32 J12 airDB2ex 111</Badge>).
-        </li>
-      </ul>
-
-      <h2 id="neutral">Playing Neutral</h2>
-
-      <p className="text-sm italic">
+      <Flavor>
         In this section we will look at ways to gain the upper hand in{' '}
-        <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link> engagements.
-      </p>
+        <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>. Key attacks will
+        be introduced, one at a time. First, try them out in Practice Mode.
+      </Flavor>
 
-      <p className="text-lg font-semibold">
-        Scorpion lacks a true mix-up or frame advantage. Instead, he has
+      <Emphasis>
+        Scorpion lacks a true mix-up or frame advantage. Instead, he relies on
         straightforward moves for each distance and scenario.
-      </p>
+      </Emphasis>
 
       <p>
-        A good starting point is to learn <Badge>Standing 2</Badge>'s range.
-        When they approach aim to hit them at the attack's maximum range.
-        Confirm your hits with <Badge>21</Badge>.
+        A good starting point is to learn how far <Badge>Standing 2</Badge>{' '}
+        stretches. That is <em>your primary poke</em> - safe, fast, disjointed
+        high punch with a good span. Aim to hit them at the attack's maximum
+        range. Once you get a feeling for it, start confirming hits with{' '}
+        <Badge>21</Badge>.
       </p>
 
-      <ul className="list-inside list-disc">
+      <ul className="list-inside list-disc pl-4">
+        <li>If they block: stop.</li>
+
         <li>
-          On hit: continue into spear - <Badge>21 BF1</Badge>
+          On hit: continue into Spear - <Badge>21 BF1</Badge>
         </li>
-        <li>On block: stop.</li>
       </ul>
+
       <ImageWithCaption
         src={scorp2}
         alt="Scorpion's Standing 2 attack."
-        caption="Scorpion's Standing 2 catches advancing Sub-Zero off-guard."
+        caption="Scorpion's Standing 2 often surprises foes trying to get in close."
       />
+
       <p>
-        If they stay out of reach, skip Standing 2 and check them with Spear.
-        Many players get comfortable at mid-range and won't anticipate it.
+        The Spear <Badge>BF1</Badge> is an <em>excellent mid-range check</em>.
+        Think of it initially as a Standing 2 with a longer reach in the form of
+        a high projectile. It is slower and is unsafe, but many players get so
+        comfortable at jump distance away a Spear catches them off-guard more
+        often than it should. It interrupts dashes, catches them at the end of
+        their jumps, stuns them during launching a projectile and etc.
       </p>
+
       <ImageWithCaption
         src={spear}
         alt="Scorpion's spear move."
         className="shadow-md"
-        caption="The Spear can catch the other party all the way across the screen."
+        caption="On top of reaching full-screen and stunning
+        your foe, the Spear brings them next to you and restands them for you to
+        proceed in any manner. This leads beginners to abuse it. If you attempt to Spear them in a predictable manner, they will punish you."
       />
+
       <p>
-        Expect opponents to block, jump, or even teleport around your Spear. But
-        because it is a high attack, some players will also attempt to duck
-        under it.{' '}
-        <strong>The enhanced spear consumes a meter, but hits mid</strong>,
-        which will catch a ducking foe. If you see this habit in your rival,
-        throw an occasional enhanced spear.
+        You can expect opponents to block, jump, or teleport around your Spear.
+        But because it is high, some players will also try to duck under it. If
+        you spot this pattern in your foe, do a <Badge>BF1ex</Badge>
+        Enhanced Spear - it <em>hits mid</em>.
       </p>
+
+      <h3 id="up-close">Up close</h3>
+
       <p>
-        Supposing they come up close and knock you down. If you keep getting
-        persistently knocked down, don't you can reset the pressure and gain
-        some distance with an armored enhanced BF2 just as you are getting up.
+        <Badge>21</Badge> is your most consistent hit-confirm, but{' '}
+        <Badge>12</Badge> is the fastest. It can be your "go-to" if they get in
+        closer than 3 steps away. If it hits, continue in the same manner{' '}
+        <Badge>12 BF1</Badge>.
       </p>
+
       <p>
-        Don't be alarmed if you need to keep blocking for an extended period.
-        Eventually they will throw an unsafe attack - one which takes a long
-        time to recover from. This is your queue. After blocking such an attack
-        initiate counter-pressure with 12 or F32. Prefer the latter as it will
-        give you more options to extend the offense.
+        Of course, it is also not a bad idea to just block the incoming attacks.
+        On blocking a move you consider to be unsafe, Don't be alarmed if you
+        need to keep blocking for an extended period. Eventually they will throw
+        an unsafe attack - one which takes a long time to recover from. This is
+        your queue. After blocking such an attack initiate counter-pressure with
+        12 or F32. Prefer the latter as it will give you more options to extend
+        the offense.
       </p>
+
       <p>
         <strong>
           The Back 2 shortcut cancels into the Spear without the need to press
@@ -231,6 +192,7 @@ export default async function Page() {
         for a full combo punish. Timing is a bit strict, so practice it in
         training mode.
       </p>
+
       <h3>Anti-zoning</h3>
       <p>
         On condition that you are facing a character that has good full-screen

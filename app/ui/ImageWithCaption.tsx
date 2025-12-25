@@ -1,5 +1,7 @@
 import Image, { StaticImageData } from 'next/image'
 
+import { Flavor } from '@/app/ui/Flavor'
+
 export const ImageWithCaption: React.FC<{
   src: StaticImageData
   alt: string
@@ -8,9 +10,11 @@ export const ImageWithCaption: React.FC<{
 }> = ({ src, alt, caption, className }) => {
   return (
     <figure className="text-sm text-light">
-      <Image src={src} alt={alt} className={`shadow-md ${className}`} />
+      <Image src={src} alt={alt} className={`shadow-md mb-0 ${className}`} />
 
-      <figcaption>{caption}</figcaption>
+      <figcaption>
+        <Flavor className="mt-0">{caption}</Flavor>
+      </figcaption>
     </figure>
   )
 }
