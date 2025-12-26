@@ -194,8 +194,7 @@ export default async function Page() {
         practice connecting with <Badge>Forward 32</Badge> - your{' '}
         <em>optimal combo starter</em>. This string launches your opponent into
         the air. It can be <em>chained up to three times</em> and can be
-        extended further in multiple ways. The first hit is an advancing mid so
-        it also acts as a good poke.
+        extended further in multiple ways.
       </p>
 
       <p>
@@ -246,113 +245,162 @@ export default async function Page() {
         defensive.
       </p>
 
-      <h3 id="conditioning">Conditioning and baiting whiffs</h3>
+      <h3 id="conditioning">Conditioning</h3>
 
       <p>
-        Scorpion's Back 3 is a very singular move. He launches his Kunai for a
-        mid-low disjointed attack. It is slow and unsafe, but reaches very far.
-        The threat of a low hit at such a distance makes your rival constantly
-        expect either to low block or jump over it. You can condition them to
-        jump forward expecting a Back 3 where you didn't execute one. Then you
-        can punish them with your Back 2.
+        Scorpion's <Badge>Back 3</Badge> is a very singular move. He launches
+        his Kunai for a disjointed two hit mid-low attack. It is slow and
+        unsafe, but reaches very far. The threat of a low hit at such a distance
+        conditions your rival to block low or jump over it preemptively. Such a
+        jump can and should be punished with <Badge>B2</Badge> into spear, into
+        full combo.
       </p>
 
       <ImageWithCaption
         src={scorpb3}
         alt="Scorpion's back 3 attack."
         className="shadow-md max-h-80 object-cover object-[0%_50%]"
-        caption="Back 3 catches Sub-Zero at the distance of a jump plus a dash."
+        caption="Back 3 reaches quite far, but not the entire screen. It can be punished with a well-timed projectile or jump attack."
       />
+
       <Callout className="mt-4">
-        <div className="tracking-widest">Back 3 Cancels</div>
+        <Emphasis className="mt-0">Back 3 cancels</Emphasis>
+
+        <Flavor>
+          The first mid hit of <Badge>B3</Badge> can be cancelled into any
+          special or Kameo move.
+        </Flavor>
 
         <p>
-          <strong>B3 F1</strong> cancels into Spear.
-        </p>
-        <p>
-          <strong>B3 F2</strong> cancels into Dash.
+          <strong>B3 F1</strong> cancels into Spear. <strong>B3 F2</strong>{' '}
+          cancels into Dash.
         </p>
 
         <p>
-          <strong>B3 exF4</strong> cancels into enhanced Devouring Flame -
-          guaranteed damage chip resource, but unsafe.
+          <strong>B3 F4ex</strong> cancels into enhanced Devouring Flame - which
+          is good chip damage, but unsafe.
         </p>
 
         <p>
           <strong>B3 exDB3</strong> cancels into Enhanced Teleport. This is a
-          very good way to force them into blocking, giving your teleport more
+          fine way to force them into blocking, giving your teleport more
           freedom.
         </p>
-
-        <p>
-          As mentioned, Scorpion has a poor mix-up without Kameos. The B3 cancel
-          is a good candidate for Kameo synergy.
-        </p>
       </Callout>
+
       <p>
-        You can also prompt your opponent to dash forward if you throw a punch
-        into empty air at medium distance. Often, when they see a whiff, they
-        spring into action. You can use that to land a Spear. Just promptly tap
-        1 (quickest recovery) into BF1 at jump distance away. This is cheap but
-        legit tech.
+        If both of you keep a bit of distance (4-6 steps away) for some time,
+        promptly tap <Badge>1</Badge> (quickest recovery) into{' '}
+        <Badge>BF1</Badge>. Seeing a whiff into empty air may promtp your
+        opponent into dashing forward or doing an unsafe move. If this happens,
+        the Spear will connect. This is cheap but legit tech.
       </p>
+
       <p>
-        A more consistent close-range approach is to derail one of your normal
-        strings. Standing 122 ends in an overhead that can be punished with an
-        up block. Cut it short - 12 into a throw. Same thing with Forward 34. It
-        is a decent mid-mid poke that doesn't chain outside a dash or some Kameo
-        moves. But if they keep expecting it, you can do F3 into a throw.
+        Another approach is to <em>derail</em> one of your normal strings.
+        <Badge>122</Badge> has a punishable gap between the second and third
+        hit. It is also vulnerable to up block on the last overhead hit. A
+        player that sees you doing this a handful of times can catch up to it.
+        Cut it short - <Badge>12</Badge> into a throw.
       </p>
+
       <p>
-        Speaking of Forward 3, it is also your best shimmy. You might want to
-        keep walking forward into your foe after you knock them down. Normally,
-        this indicates an attempt to throw. They may decide to duck under it as
-        they get up and punish. Given that they do, you can launch a Forward 3
-        instead which hits mid.
+        Same thing with any Forward 3 string - <Badge>F32</Badge> or{' '}
+        <Badge>F34</Badge>. If they keep predicting the full string, you can do
+        only <Badge>F3</Badge> into a throw. <Badge>F3</Badge> is also a good{' '}
+        <em>shimmy</em>. If you delay pressing Forward 3 while walking up to
+        them, they may interpret this a an attempt to throw and duck under.
+        Throwing the mid instead will hit them.
       </p>
-      <h2>What combos should I learn first?</h2>
+
+      <h2 id="damage">Converting into damage</h2>
+
+      <Flavor>
+        This section covers how you can continue after landing a hit.
+      </Flavor>
+
+      <Emphasis>
+        As modular as Scorpion's move set is, when playing online, consistent
+        execution will outweight maximum damage.
+      </Emphasis>
+
       <p>
-        As modular as Scorpion's move set is, when playing online, execution
-        will overcome damage. You already have the basics of footsie into punish
-        from the neutral section. Let's put that together:
+        You can start by following up on what you already know about neutral
+        engagements. Starting with <Badge>12/21</Badge> gives you the option to
+        continue with a Spear. Ending with <Badge>33 DB2</Badge> where possible
+        is the best way to squeeze extra damage.
       </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mb-1 inline" /> 21 BF1 33 DB2{' '}
-        <span className="text-light">- meterless 21% </span>
-      </p>
+
+      <Callout>
+        <div>
+          <Badge>21 BF1 33 DB2</Badge> - 210 damage.
+        </div>
+        <Flavor className="my-0">
+          A decent starter combo. Keep practicing this in actual matches before
+          moving on.
+        </Flavor>
+      </Callout>
+
       <p>
-        This is a fair beginners combo. For the best damage-for-consistency,
-        however, you will have to learn to juggle the opponent three times.
+        Beyond this, the easiest route to maximum effect is to juggle the
+        opponent with <Badge>F32</Badge>. But if you chain out of a Spear you
+        must modify the ender.
       </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mb-1 inline" /> F32 F32 F32 4 BF1 33 DB2{' '}
-        <span className="text-light">- resourceless 36.5% damage </span>
-      </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mb-1 inline" /> F32 F32 J12 airDB2ex{' '}
-        <span className="text-sm italic">small pause</span> 111 BF1 33 DB2{' '}
-        <span className="text-light">- one bar 40.7% damage</span>
-      </p>
+
+      <Callout>
+        <Badge>21 BF1 F32 F32 F32 F34 BF2</Badge> - meterless 342 damage.
+        <Flavor className="my-0">
+          The height after the third F32 is low. Connecting with the F34 into
+          Charge can be a bit tight.
+        </Flavor>
+      </Callout>
+
       <p>
-        These are your bread-and-butter routes. 36-40% damage is more than
-        enough. The difficulty with the latter one is to delay the 111 until
-        both of you are closer to the ground. If executed correctly, they will
-        bounce off the ground,, allowing for the follow up spear.
+        Starting with <Badge>F32</Badge> instead and delaying the Spear will
+        allow you to use the better ender and give better results.
       </p>
+
+      <Callout>
+        <Badge>F32 F32 F32 4 BF1 33 DB2</Badge> - meterless 365 damage.
+        <Flavor className="my-0">
+          Connecting the Standing 4 after the last F32 will be the trickiest
+          part.
+        </Flavor>
+      </Callout>
+
       <p>
-        Now, if you do land a spear early, you still have the three F32s. Your
-        combo ender, though, must modify as you don't have the re-stand anymore.
+        The last two can be your bread-and-butter combos. Once you feel
+        comfortable with them and the methods in the Scouting section you can
+        consider the basics of Scorpion grasped. Of course, you can spend meter
+        to further enhance the damage, but it will require the use of the{' '}
+        <em>enhanced air Kyo Snag</em>. Before trying, do the following in
+        practice: <Badge>F32 J12 airDB2ex</Badge>. It may feew awkward at first,
+        but if you get it you can do the following.
       </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mb-1 inline" /> 21 BF1 F32 F32 F32 F34 BF2{' '}
-        <span className="text-light">- resourceless 34.2% damage </span>
-      </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mb-1 inline" /> 21 BF1 F32 F32 J12 airDB2ex{' '}
-        <span className="text-sm italic">small pause</span> 111 airDB2{' '}
-        <span className="text-light"> - one bar 37.7% damage</span>
-      </p>
-      <h3>Extending via air Flame-Port</h3>
+
+      <Callout>
+        <Badge>
+          21 BF1 F32 F32 J12 airDB2ex{' '}
+          <em className="text-sm text-light-foreground">small pause</em> 111
+          airDB2
+        </Badge>{' '}
+        - one bar 377 damage.
+        <Flavor className="mt-0">
+          The idea of the pause it to delay the 111 until both fighters are
+          lower to the ground. This makes connecting the final airDB2 possible.
+        </Flavor>
+        <Badge>
+          F32 F32 J12 airDB2ex <em>small pause</em> 111 BF1 33 DB2
+        </Badge>{' '}
+        - one bar <strong>407</strong> damage.
+        <Flavor className="my-0">
+          Same dellay but this time, because you delayed the Spear, you can
+          connect into the familiar ender.
+        </Flavor>
+      </Callout>
+
+      <h3>Extending via Flame Port</h3>
+
       <p>
         You can expand combos with Scorpion's teleport. Nevertheless, it is much
         harder and isn't necessarily worth the effort.

@@ -1,3 +1,5 @@
-export const Emphasis: React.FC<React.PropsWithChildren> = ({ children }) => (
-  <p className="text-lg font-semibold">{children}</p>
+export const Emphasis: React.FC<
+  React.PropsWithChildren<{ className?: string }>
+> = ({ children, className }) => (
+  <p className={`text-lg font-semibold ${className}`}>{children}</p>
 )
