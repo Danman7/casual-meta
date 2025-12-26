@@ -5,7 +5,6 @@ import { IoIosThumbsDown, IoIosThumbsUp } from 'react-icons/io'
 
 import scorpAirDB2 from '@/app/assets/mk1/scorp_air_db2.webp'
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
-import scorpMovado from '@/app/assets/mk1/scorp_movado.webp'
 import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
@@ -118,6 +117,8 @@ export default async function Page() {
         straightforward moves for each distance and scenario.
       </Emphasis>
 
+      <h3 id="standing-2">Mid-screen</h3>
+
       <p>
         A good starting point is to learn how far <Badge>Standing 2</Badge>{' '}
         stretches. That is <em>your primary poke</em> - safe, fast, disjointed
@@ -220,12 +221,12 @@ export default async function Page() {
       <p>
         For one, you can reliably interrupt heavy zoners. Record a dummy
         spamming projectiles (e.g., Liu Kang's BF1) and exercise timing the Port
-        with the spell being thrown. You can't start a combo out of it, but a
-        few successful teleports may discourage your opponent from zoning.
+        with the spell being thrown. A few successful hits may be enough to
+        discourage your opponent from zoning.
       </p>
 
       <p>
-        An experienced player, however, can bait throwing a projectile and
+        An experienced player, nevertheless, can bait throwing a projectile and
         instead block your Port. It is very unsafe, and you will get punished.
         That is why it is good practice to occasionally use the enhanced version{' '}
         <Badge>DB3ex</Badge>. It skips the attack and only restands Scorpion on
@@ -324,6 +325,8 @@ export default async function Page() {
         execution will outweight maximum damage.
       </Emphasis>
 
+      <h3 id="bread-n-butter">Bread and butter combos</h3>
+
       <p>
         You can start by following up on what you already know about neutral
         engagements. Starting with <Badge>12/21</Badge> gives you the option to
@@ -333,11 +336,11 @@ export default async function Page() {
 
       <Callout>
         <div>
-          <Badge>21 BF1 33 DB2</Badge> - 210 damage.
+          <Badge>21 BF1 33 DB2</Badge>
         </div>
-        <Flavor className="my-0">
-          A decent starter combo. Keep practicing this in actual matches before
-          moving on.
+        <Flavor className="mt-2">
+          A decent 210 damage starter combo. Keep practicing this in actual
+          matches before moving on.
         </Flavor>
       </Callout>
 
@@ -349,7 +352,7 @@ export default async function Page() {
 
       <Callout>
         <Badge>21 BF1 F32 F32 F32 F34 BF2</Badge> - meterless 342 damage.
-        <Flavor className="my-0">
+        <Flavor className="mt-2">
           The height after the third F32 is low. Connecting with the F34 into
           Charge can be a bit tight.
         </Flavor>
@@ -361,135 +364,188 @@ export default async function Page() {
       </p>
 
       <Callout>
-        <Badge>F32 F32 F32 4 BF1 33 DB2</Badge> - meterless 365 damage.
-        <Flavor className="my-0">
-          Connecting the Standing 4 after the last F32 will be the trickiest
-          part.
+        <Badge>F32 F32 F32 4 BF1 33 DB2</Badge>
+        <Flavor className="mt-2">
+          Meterless 365 damage. Connecting the Standing 4 after the last F32
+          will be the trickiest part.
         </Flavor>
       </Callout>
 
       <p>
-        The last two can be your bread-and-butter combos. Once you feel
+        The last two can be your bread and butter combos. Once you feel
         comfortable with them and the methods in the Scouting section you can
         consider the basics of Scorpion grasped. Of course, you can spend meter
         to further enhance the damage, but it will require the use of the{' '}
-        <em>enhanced air Kyo Snag</em>. Before trying, do the following in
-        practice: <Badge>F32 J12 airDB2ex</Badge>. It may feew awkward at first,
-        but if you get it you can do the following.
+        <em>enhanced air Kyo Snag</em>. It is a Spear-like special used mid-air
+        to grab the opponent after a strig and quickly return them to you for
+        additional punishment. Before trying, do the following in practice:{' '}
+        <Badge>F32 J12 airDB2ex</Badge>. It may feew awkward at first, but if
+        you get it you can do the following.
       </p>
 
       <Callout>
-        <Badge>
-          21 BF1 F32 F32 J12 airDB2ex{' '}
-          <em className="text-sm text-light-foreground">small pause</em> 111
-          airDB2
-        </Badge>{' '}
-        - one bar 377 damage.
-        <Flavor className="mt-0">
-          The idea of the pause it to delay the 111 until both fighters are
-          lower to the ground. This makes connecting the final airDB2 possible.
-        </Flavor>
-        <Badge>
-          F32 F32 J12 airDB2ex <em>small pause</em> 111 BF1 33 DB2
-        </Badge>{' '}
-        - one bar <strong>407</strong> damage.
-        <Flavor className="my-0">
-          Same dellay but this time, because you delayed the Spear, you can
-          connect into the familiar ender.
-        </Flavor>
+        <ul className="space-y-6 my-0">
+          <li>
+            <Badge>
+              21 BF1 F32 F32 J12 airDB2ex <Flavor>small pause</Flavor> 111
+              airDB2
+            </Badge>
+            <Flavor className="mt-2">
+              One bar 377 damage. The idea of the pause it to delay the 111
+              until both fighters are lower to the ground. This makes connecting
+              the final airDB2 possible.
+            </Flavor>
+          </li>
+          <li>
+            <Badge>
+              F32 F32 J12 airDB2ex <Flavor>small pause</Flavor> 111 BF1 33 DB2
+            </Badge>{' '}
+            <Flavor className="mt-2">
+              One bar <strong>407</strong> damage. Same pause but this time,
+              because you delayed the Spear, you can connect into the familiar
+              ender.
+            </Flavor>
+          </li>
+        </ul>
       </Callout>
 
-      <h3>Extending via Flame Port</h3>
-
-      <p>
-        You can expand combos with Scorpion's teleport. Nevertheless, it is much
-        harder and isn't necessarily worth the effort.
-      </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mb-1 inline" /> J3 airDB3{' '}
-        <span className="text-sm italic">land</span> B2 F2{' '}
-        <span className="text-light"> - resourceless 21.7% damage</span>
-      </p>
-      <p>
-        If your rival is standing, the teleport must be very close to the
-        ground.
-      </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mb-1 inline" /> F32 J12 airDB3ex J13{' '}
-        <span className="text-sm italic">land</span> BF1 33 DB3{' '}
-        <span className="text-light"> - one bar 33.4% damage</span>
-      </p>
-      <p>
-        The timing with the enhanced teleport into the 13 is awkward. Often the
-        teleport will miss.
-      </p>
-      <p>
-        What can be effective is an enhanced air teleport from a distance. Most
-        players don't expect to be hit by a foe jumping away from them. To make
-        the damage notable, however, you will need to work harder.
-      </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mb-1 inline" /> airDB3ex J3{' '}
-        <span className="text-sm italic">land</span> BF1 F32 F32 F34 BF2{' '}
-        <span className="text-light"> - one bar 30.8% damage</span>
-      </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mr-1 mb-1 inline" /> airDB3ex J3 DB3{' '}
-        <span className="text-sm italic">land</span> F32 F32 4 BF1 33 DB2{' '}
-        <span className="text-light">for 41.1% one meter damage</span>
-      </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mr-1 mb-1 inline" /> airDB3ex J3 DB3{' '}
-        <span className="text-sm italic">land</span> 4 BF1 F32 J12 airDB2ex{' '}
-        <span className="text-sm italic">small pause</span> J111 JDB2{' '}
-        <span className="text-light">for 44.9% two meter damage</span>
-      </p>
       <ImageWithCaption
         src={scorpAirDB2}
         alt="Scorpion's air down back 2 special."
         caption="Scorpion's enhanced air Down Back 2 can be chained multiple times in a row, but costs meter each time and has diminishing returns compared to continuing with 111."
       />
-      <h3>Corner combos</h3>
+
+      <h3 id="in-the-corner">In the corner</h3>
+
       <p>
-        You can really spike the damage in the corner. Standing 4 is not
-        impressive, but its damage scales down very well. Moreover, in the
-        corner, its knockback is not a factor. You can chain two Standing 4
-        kicks in row.
+        <Badge>Standing 4</Badge> keeps most of its damage trough scaling. It
+        serves as a nice continuation of an airborne foe in combination with a
+        Spear. That is unless you are in the corner where it's knockback is not
+        a factor and you can chain two of these in a row. You can use this to
+        spike up your damage.
       </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mr-1 mb-1 inline" />
-        F32 4 4 BF1 F32 J12 airDB2ex{' '}
-        <span className="text-sm italic">small pause</span> J111 JDB2
-        <span className="text-light"> - one bar 44.6% damage</span>
-      </p>
+
+      <Callout>
+        <ul className="space-y-6 my-0">
+          <li>
+            <Badge>
+              F32 4 4 BF1 F32 J12 airDB2ex <Flavor>small pause</Flavor> J111
+              JDB2
+            </Badge>
+            <Flavor className="mt-2">
+              One bar <strong>446</strong> damage. If you find chaining the two{' '}
+              <Badge>4</Badge>s difficult, you can do a single one and still get
+              over 400 damage.
+            </Flavor>
+          </li>
+          <li>
+            <Badge>
+              F32 4 4 BF1 F32 J12 airDB2ex <Flavor>small pause</Flavor> J111{' '}
+              <Flavor>land</Flavor> B2 BF4ex
+            </Badge>{' '}
+            <Flavor className="mt-2">
+              If you manage to do this two bar monster you will be rewarded with{' '}
+              <strong>502</strong> damage. This sequence is designed for
+              situations where you are about to win the round. The enhanced
+              Devouring Flame is guaranteed damage, but you cannot recover in
+              time to block. If they survive, they will get a free wakeup
+              punish.
+            </Flavor>
+          </li>
+        </ul>
+      </Callout>
+
+      <h3 id="extending-via-flame-port">Extending via Flame Port</h3>
+
       <p>
-        Even a single Standing 4 in this sequence will lead to 40% damage. If
-        you are about to win the round, however, and you feel confident, you can
-        spice the above further with some tight timings.
+        Apart from anti-zoning and mind games, Scorpion's teleport can be used
+        to extend combos as well. However, it is much harder and isn't
+        necessarily worth the effort.
       </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mr-1 mb-1 inline" />
-        F32 4 4 BF1 F32 J12 airDB2ex{' '}
-        <span className="text-sm italic">small pause</span> J111{' '}
-        <span className="text-light">land</span> B2 BF4ex
-        <span className="text-light">
-          {' '}
-          for a whooping 50.2% one meter damage
-        </span>
-      </p>
+
       <p>
-        The enhanced Devouring Flame is guaranteed damage, <em>but</em> if they
-        survive, they also get a guaranteed wakeup punish.
+        One issue is that the grounded version cannot be cancelled. You must do{' '}
+        <Badge>DB3</Badge> while in the air, even if you're trying to hit a
+        standing target.
       </p>
+
+      <Callout>
+        <ul className="space-y-6 my-0">
+          <li>
+            <Badge>
+              J3 airDB3 <Flavor>land</Flavor> B2 F2
+            </Badge>
+            <Flavor className="mt-2">
+              Even this combo from the challenges at 217 damage has tricky
+              timing. The jump kick and the teleport must be initiated very
+              close to the ground - just before landing.
+            </Flavor>
+          </li>
+
+          <li>
+            <Badge>
+              F32 J12 airDB3ex J13 <Flavor>land</Flavor> BF1 33 DB3
+            </Badge>{' '}
+            <Flavor className="mt-2">
+              One bar 334 damage. Only an ehnaced air port will be fast enough
+              to connect. Connecting the <Badge>J13</Badge> is awkard. Often the
+              Port will miss. There must be a very short delay after the J12.
+            </Flavor>
+          </li>
+        </ul>
+      </Callout>
+
+      <p>
+        If you wish to explore this branch of Scorpion's combos, it is probably
+        better to learn to iniciate them out of the enhanced air Port. It is
+        faster than the standard version, but you will have to time your own
+        kick. This is preferable as a teleport hit out of a far away jump is
+        less predicatable. Here are some less and more optimal options.
+      </p>
+
+      <Callout>
+        <ul className="space-y-6 my-0">
+          <li>
+            <Badge>
+              airDB3ex J3 <Flavor>land</Flavor> BF1 F32 F32 F34 BF2
+            </Badge>
+            <Flavor className="mt-2">
+              An easier version for one bar 308 damage.
+            </Flavor>
+          </li>
+
+          <li>
+            <Badge>
+              airDB3ex J3 DB3 <Flavor>land</Flavor> F32 F32 4 BF1 33 DB2
+            </Badge>{' '}
+            <Flavor className="mt-2">
+              A challengig double-port one bar 411 damage variant.
+            </Flavor>
+          </li>
+
+          <li>
+            <Badge>
+              airDB3ex J3 DB3 <Flavor>land</Flavor> 4 BF1 F32 J12 airDB2ex
+            </Badge>{' '}
+            <Flavor className="mt-2">
+              A fancy two meter <strong>449</strong> damage advanced combo.
+            </Flavor>
+          </li>
+        </ul>
+      </Callout>
+
       <h2>Kameos</h2>
+      <Flavor>
+        In this section, we will consider Kameo pairs. It is a vast topic, so
+        only top choices will be discussed.
+      </Flavor>
+
       <p>
-        If you have a grip on Scorpion's flow, we can look at how to optimize
-        his offense. Start by experimenting with these in practice mode before
-        choosing which one seems the best fit for you.
+        Scorpions can deal with most situations on his own, but discovering his
+        true offensive potential in MK1 begins with the right Kameo partner.
       </p>
-      <h3>
-        Movado - <span className="bg-alt-surface p-1">solves problems</span>
-      </h3>
+
+      <h3>Movado</h3>
       <p>
         Movado is the one we recommend for new players. He helps Scorpion out
         with many things. He is simple yet teaches good practices instead of
@@ -529,11 +585,7 @@ export default async function Page() {
         <GiPunchBlast className="mr-1 mb-1 inline" />
         F34 FK F32 4 BF1 33 DB2
       </p>
-      <ImageWithCaption
-        src={scorpMovado}
-        alt="Movado extending a Scorpion combo."
-        caption="Here movado steps in with his Forward Kameo move to extend the otherwise non-extendable Scorpion Forward 34 string."
-      />
+
       <p>
         The decisive positive with everything above is that{' '}
         <strong>

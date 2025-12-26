@@ -13,7 +13,7 @@ export const ImageWithCaption: React.FC<{
       <Image src={src} alt={alt} className={`shadow-md mb-0 ${className}`} />
 
       <figcaption>
-        <Flavor className="mt-0">{caption}</Flavor>
+        <Flavor>{caption}</Flavor>
       </figcaption>
     </figure>
   )
