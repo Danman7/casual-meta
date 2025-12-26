@@ -204,28 +204,49 @@ export default async function Page() {
         <em>Armored Enhanced Charge</em> <Badge>BF2ex</Badge>. It is a fast
         advancing mid special that just about covers the jump distance. Still,
         it has short active frames and you might not hit someone at medium
-        distance. And the Spear often performs better when more than a few steps
-        away.
+        distance. And on his own, Scorpion cannot start a kombo out of the
+        Charge. The Spear often performs better mid-screen.
       </p>
 
       <h3 id="full-screen">Full screen</h3>
 
       <p>
         Facing someone who is hugging the other end of the arena is not a
-        problem for Scorpion. The Charge won't reach and the Spear is a bit too
-        slow at a distance, but you have the <em>Flame Port</em>{' '}
-        <Badge>DB3</Badge>. Scorpion dashes away from his foe, loops trough the
-        screen and throws a punch from the other side. It is a multi-purpose
-        teleport move.
+        problem. The Charge won't reach and the Spear is too slow at a distance,
+        but you have the <em>Flame Port</em> <Badge>DB3</Badge>. Scorpion dashes
+        away from his foe, loops trough the screen and throws a punch from the
+        other side. It is a multi-purpose teleport move.
       </p>
 
       <p>
         For one, you can reliably interrupt heavy zoners. Record a dummy
         spamming projectiles (e.g. Liu Kang's BF1) and excercise timing the Port
-        with the spell being thrown.
+        with the spell being thrown. You can't start a combo out of it, but a
+        few successful teleports may discourage your opponent from zoning.
       </p>
 
-      <h3>Conditioning and baiting whiffs</h3>
+      <p>
+        An experienced player howerver can bait throwing a projectile and
+        instead block your Port. It is very unsafe and you will get punished.
+        That is why it is good practice to occasionally use the enhanced version{' '}
+        <Badge>DB3ex</Badge>. It skps the attack and only restands Scorpion on
+        the other side of the target. Then you can mix in a Down 1 punch. Or
+        micro-duck right after teleporting into a high punch. Or even simply
+        execute a Throw.
+      </p>
+
+      <p>
+        These are the many mind games related to Scoprion's Port, that can
+        disrupt one's defense form a distance. But the cool thing is that you
+        don't necessarily need to cover the distance. Your{' '}
+        <em>Devouring Flame</em> <Badge>DB4</Badge> is a low special attack that
+        spawns under the target's feet at any distance. The enhanced version
+        does guaranteed damage over time if it connects. Just keep in mind that
+        it is slow and unsafe. Use it if you feel your foe is rather passive
+        defensive.
+      </p>
+
+      <h3 id="conditioning">Conditioning and baiting whiffs</h3>
 
       <p>
         Scorpion's Back 3 is a very singular move. He launches his Kunai for a
@@ -529,7 +550,9 @@ export default async function Page() {
         true might, however, once you start using her resets.
       </p>
       <h2>Advanced Tech</h2>
+
       <h3>Enhanced Flame-Port jail</h3>
+
       <p>
         Ending a corner combo with an enhanced air teleport into a kick will
         jail your opponent. If they press any button other than block during
@@ -537,7 +560,9 @@ export default async function Page() {
         face you as you come from the corner. You will get a free hit, even
         break armor. It's inconsistent. Don't expect it to work every time.
       </p>
+
       <h3>Air Kyo Snag bait</h3>
+
       <p>
         Air DB2 has instant recovery. Even the regular version. Assuming you
         jump over your adversary you can throw this move into empty air, and it
