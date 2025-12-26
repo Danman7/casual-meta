@@ -55,7 +55,7 @@ export default async function Page() {
       </div>
 
       <Callout className="space-y-4">
-        <h2 id="play-or-skip" className="pt-0! mt-0!">
+        <h2 id="play-or-skip" className="pt-0! mt-0! border-t-0">
           Play or skip?
         </h2>
 
@@ -143,11 +143,12 @@ export default async function Page() {
       <p>
         <em>The Spear</em> <Badge>BF1</Badge> is an{' '}
         <em>excellent mid-range check</em>. Think of it initially as a Standing
-        2 with a longer reach in the form of a high projectile. It is slower and
-        is unsafe, but many players get so comfortable at jump distance away a
-        Spear catches them off-guard more often than it should. It interrupts
-        dashes, catches them at the end of their jumps, stuns them during
-        launching a projectile and etc.
+        2 with a longer reach in the form of a high projectile. If they stay out
+        of <Badge>2</Badge>'s span, go for it. It is slower and is unsafe, but
+        many players get so comfortable at jump distance away a Spear catches
+        them off-guard more often than it should. It interrupts dashes, catches
+        them at the end of their jumps, stuns them during launching a projectile
+        and etc.
       </p>
 
       <ImageWithCaption
@@ -197,41 +198,35 @@ export default async function Page() {
         it also acts as a good poke.
       </p>
 
-      <h3 id="full-screen">Full-screen</h3>
-
       <p>
-        Facing someone who likes to keep their distance is not a problem for
-        Scorpion.
+        No matter how good you are at blocking, you will get knocked down. In
+        case you keep being pressured on wakeup, you can use the{' '}
+        <em>Armored Enhanced Charge</em> <Badge>BF2ex</Badge>. It is a fast
+        advancing mid special that just about covers the jump distance. Still,
+        it has short active frames and you might not hit someone at medium
+        distance. And the Spear often performs better when more than a few steps
+        away.
       </p>
 
+      <h3 id="full-screen">Full screen</h3>
+
       <p>
-        On condition that you are facing a character that has good full-screen
-        pressure (e.g. Sindel, Shang Tsung, Liu Kang) you have the Flame Port.
-        It is unsafe and predictable. The trick is to time it with their
-        projectiles. To practice record a Liu Kang backing away, throwing BF1
-        and blocking afterwards. He can't block while moving or throwing a
-        fireball. If you time the teleport right, he will get hit and you will
-        end up next to him.
+        Facing someone who is hugging the other end of the arena is not a
+        problem for Scorpion. The Charge won't reach and the Spear is a bit too
+        slow at a distance, but you have the <em>Flame Port</em>{' '}
+        <Badge>DB3</Badge>. Scorpion dashes away from his foe, loops trough the
+        screen and throws a punch from the other side. It is a multi-purpose
+        teleport move.
       </p>
 
       <p>
-        Provided they do block your teleports regularly, mix them up with the{' '}
-        <strong>enhanced version into a throw.</strong> This is a simple way to
-        mess up their defense. They predict they will get punched, but get
-        grabbed instead. Such is the nature of conditioning, however, that they
-        will learn to look for your enhanced teleport and counter punch it. It
-        may be a bit exacting, but you can micro-duck (press down briefly)
-        underneath their fist, just as you come out the other side and hit a
-        quick 1 to counter-punch.
+        For one, you can reliably interrupt heavy zoners. Record a dummy
+        spamming projectiles (e.g. Liu Kang's BF1) and excercise timing the Port
+        with the spell being thrown.
       </p>
-      <p>
-        When you don't feel confident with your teleport play, switch to
-        checking them with the BF4 Devouring Flame. Many forget Scorpion even
-        has that move. It is especially slow and unsafe, but a good way to flush
-        them out of hiding and remind them - yes, I can get you there. The
-        enhanced version is guaranteed damage.
-      </p>
+
       <h3>Conditioning and baiting whiffs</h3>
+
       <p>
         Scorpion's Back 3 is a very singular move. He launches his Kunai for a
         mid-low disjointed attack. It is slow and unsafe but reaches very far.
@@ -240,6 +235,7 @@ export default async function Page() {
         jump forward expecting a Back 3 where you didn't execute one. Then you
         can punish them with your Back 2.
       </p>
+
       <ImageWithCaption
         src={scorpb3}
         alt="Scorpion's back 3 attack."

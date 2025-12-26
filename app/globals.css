@@ -82,8 +82,9 @@
   h2 {
     font-size: var(--text-3xl);
     padding-top: --spacing(6);
-    margin-top: --spacing(6);
+    margin-top: --spacing(12);
     font-weight: var(--font-weight-light);
+    border-top: 1px solid var(--color-foreground);
   }
 
   h3 {
