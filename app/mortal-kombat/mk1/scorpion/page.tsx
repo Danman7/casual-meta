@@ -47,7 +47,7 @@ export default async function Page() {
             unsafe actions from anywhere on the screen. He can then convert them
             into one of his simple modular combos. His toolbox includes both
             close and long range instruments, but lacks efficient offense. In
-            that regard new players will find him easier when reacting rather
+            that regard, new players will find him easier when reacting rather
             than initiating pressure. For the latter, he will need aid from a
             proper Kameo.
           </p>
@@ -108,7 +108,7 @@ export default async function Page() {
       <h2 id="neutral">Scouting the opponent</h2>
 
       <Flavor>
-        In this section we will look at ways to gain the upper hand in{' '}
+        In this section, we will look at ways to gain the upper hand in{' '}
         <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>. Key attacks will
         be introduced, one at a time. First, try them out in Practice Mode.
       </Flavor>
@@ -145,10 +145,10 @@ export default async function Page() {
         <em>excellent mid-range check</em>. Think of it initially as a Standing
         2 with a longer reach in the form of a high projectile. If they stay out
         of <Badge>2</Badge>'s span, go for it. It is slower and is unsafe, but
-        many players get so comfortable at jump distance away a Spear catches
-        them off-guard more often than it should. It interrupts dashes, catches
-        them at the end of their jumps, stuns them during launching a projectile
-        and etc.
+        many players get so comfortable at jump distance away that a Spear
+        catches them off-guard more often than it should. It interrupts dashes,
+        catches them at the end of their jumps, stuns them during launching a
+        projectile and etc.
       </p>
 
       <ImageWithCaption
@@ -220,24 +220,24 @@ export default async function Page() {
 
       <p>
         For one, you can reliably interrupt heavy zoners. Record a dummy
-        spamming projectiles (e.g. Liu Kang's BF1) and excercise timing the Port
+        spamming projectiles (e.g., Liu Kang's BF1) and exercise timing the Port
         with the spell being thrown. You can't start a combo out of it, but a
         few successful teleports may discourage your opponent from zoning.
       </p>
 
       <p>
-        An experienced player howerver can bait throwing a projectile and
-        instead block your Port. It is very unsafe and you will get punished.
+        An experienced player, however, can bait throwing a projectile and
+        instead block your Port. It is very unsafe, and you will get punished.
         That is why it is good practice to occasionally use the enhanced version{' '}
-        <Badge>DB3ex</Badge>. It skps the attack and only restands Scorpion on
+        <Badge>DB3ex</Badge>. It skips the attack and only restands Scorpion on
         the other side of the target. Then you can mix in a Down 1 punch. Or
         micro-duck right after teleporting into a high punch. Or even simply
         execute a Throw.
       </p>
 
       <p>
-        These are the many mind games related to Scoprion's Port, that can
-        disrupt one's defense form a distance. But the cool thing is that you
+        These are the many mind games related to Scorpion's Port that can
+        disrupt one's defense from a distance. But the cool thing is that you
         don't necessarily need to cover the distance. Your{' '}
         <em>Devouring Flame</em> <Badge>DB4</Badge> is a low special attack that
         spawns under the target's feet at any distance. The enhanced version
@@ -250,7 +250,7 @@ export default async function Page() {
 
       <p>
         Scorpion's Back 3 is a very singular move. He launches his Kunai for a
-        mid-low disjointed attack. It is slow and unsafe but reaches very far.
+        mid-low disjointed attack. It is slow and unsafe, but reaches very far.
         The threat of a low hit at such a distance makes your rival constantly
         expect either to low block or jump over it. You can condition them to
         jump forward expecting a Back 3 where you didn't execute one. Then you
@@ -290,8 +290,8 @@ export default async function Page() {
         </p>
       </Callout>
       <p>
-        You can also promote your opponent to dash forward if you throw a punch
-        into empty air at medium distance. Often when they see a whiff they
+        You can also prompt your opponent to dash forward if you throw a punch
+        into empty air at medium distance. Often, when they see a whiff, they
         spring into action. You can use that to land a Spear. Just promptly tap
         1 (quickest recovery) into BF1 at jump distance away. This is cheap but
         legit tech.
@@ -301,7 +301,7 @@ export default async function Page() {
         strings. Standing 122 ends in an overhead that can be punished with an
         up block. Cut it short - 12 into a throw. Same thing with Forward 34. It
         is a decent mid-mid poke that doesn't chain outside a dash or some Kameo
-        moves. But if they keep expecting it you can do F3 into a throw.
+        moves. But if they keep expecting it, you can do F3 into a throw.
       </p>
       <p>
         Speaking of Forward 3, it is also your best shimmy. You might want to
@@ -336,12 +336,12 @@ export default async function Page() {
       <p>
         These are your bread-and-butter routes. 36-40% damage is more than
         enough. The difficulty with the latter one is to delay the 111 until
-        both of you are closer to the ground. If executed correctly they will
-        bounce off the ground allowing for the follow up spear.
+        both of you are closer to the ground. If executed correctly, they will
+        bounce off the ground,, allowing for the follow up spear.
       </p>
       <p>
-        Now if you do land a spear early you still have the three F32s. Your
-        combo ender though must modify as you don't have the re-stand anymore.
+        Now, if you do land a spear early, you still have the three F32s. Your
+        combo ender, though, must modify as you don't have the re-stand anymore.
       </p>
       <p className="font-bold">
         <GiPunchBlast className="mb-1 inline" /> 21 BF1 F32 F32 F32 F34 BF2{' '}
@@ -405,8 +405,8 @@ export default async function Page() {
       <p>
         You can really spike the damage in the corner. Standing 4 is not
         impressive, but its damage scales down very well. Moreover, in the
-        corner its knockback is not a factor. You can chain two Standing 4 kicks
-        in row.
+        corner, its knockback is not a factor. You can chain two Standing 4
+        kicks in row.
       </p>
       <p className="font-bold">
         <GiPunchBlast className="mr-1 mb-1 inline" />
@@ -495,9 +495,9 @@ export default async function Page() {
         previous attacks have connected.
       </p>
       <p>
-        On top of that you also have tricky wakeup setups with Slding Home (DK)
-        which is a low attack. On knocking them down you can jump and press DK
-        at the same time. They will have to block the low, giving you an
+        On top of that, you also have tricky wakeup setups with Slding Home (DK)
+        which is a low attack. After knocking them down, you can jump and press
+        DK at the same time. They will have to block the low, giving you an
         opportunity to hit them with an overhead. Timing it perfectly takes some
         practice.
       </p>
@@ -506,12 +506,12 @@ export default async function Page() {
         <span className="bg-alt-surface p-1">mix-up and corner damage</span>
       </h3>
       <p>
-        Ferra's plays great with the B3 move and the conditioning we mentioned
+        Ferra plays great with the B3 move and the conditioning we mentioned
         earlier. You can do B3 K 2 for an overhead mix or B3 K 3 for a low
         follow up that can be continued with a combo (unlike the regular B3 low
         which knocks down). The other player will get tired of getting into the
-        mix and they will try to preemptively jump forward at which point you B2
-        them.
+        mix, and they will try to preemptively jump forward at which point you
+        B2 them.
       </p>
       <p>Ferra can extend corner combos as well.</p>
       <h3>
@@ -519,10 +519,10 @@ export default async function Page() {
         <span className="bg-alt-surface p-1">difficult but fun</span>
       </h3>
       <p>
-        Chameleon with her forms is usually problematic for beginners. At the
-        same time no one else gives as much freedom in pressure and setups.
+        Chameleon, with her forms, is usually problematic for beginners. At the
+        same time, no one else gives as much freedom in pressure and setups.
       </p>
-      <p>For starters she also enables throw combos.</p>
+      <p>For starters, she also enables throw combos.</p>
       <p className="font-bold">
         <GiPunchBlast className="mr-1 mb-1 inline" />
         Throw <span className="text-light">small pause</span> K (fan toss) J2
@@ -530,9 +530,9 @@ export default async function Page() {
         <span className="text-light"> - 21.9% damage</span>
       </p>
       <p>
-        Mileena's Sai (FK) like Movado's Nindrop makes your Charge a combo
-        starter. The difference is that unlike Movado, Chameleon can only extend
-        with a spear.
+        Mileena's Sai (FK), like Movado's Nindrop, makes your Charge a combo
+        starter. The difference is that, unlike Movado, Chameleon can only
+        extend with a spear.
       </p>
       <p className="font-bold">
         <GiPunchBlast className="mr-1 mb-1 inline" />
@@ -543,7 +543,7 @@ export default async function Page() {
       </p>
       <p>
         Jade's Glow gives projectile immunity for a brief time. It is not only
-        additional help with zoners but also alleviates mirror match spears.
+        additional help with zoners, but also alleviates mirror match spears.
       </p>
       <p>
         These are some simple ways to start off with her. You will grasp her
@@ -564,10 +564,10 @@ export default async function Page() {
       <h3>Air Kyo Snag bait</h3>
 
       <p>
-        Air DB2 has instant recovery. Even the regular version. Assuming you
-        jump over your adversary you can throw this move into empty air, and it
-        will stop and drop you down. They must be ready for a timely anti-air
-        otherwise you are safe. The idea is to bait a high attack from them
+        Air DB2 has instant recovery—even the regular version. Assuming you jump
+        over your adversary, you can throw this move into empty air, and it will
+        stop and drop you down. They must be ready for a timely anti-air;
+        otherwise, you are safe. The idea is to bait a high attack from them
         while throwing a low Kameo move or Movado's Trap Drop. It's a niche
         tactic.
       </p>

@@ -98,3 +98,19 @@ Custom flat config in [eslint.config.mjs](eslint.config.mjs) with:
 - Client components must use `'use client'` directive (e.g., [app/ui/Nav.tsx](app/ui/Nav.tsx))
 - Article `h2` headings automatically get top border via global CSS
 - Route generation happens at build time via filesystem scanning in [lib/routes.ts](lib/routes.ts)
+
+## Common Editing Tasks
+
+### Proofread Command
+
+When the user asks to **"proofread"** or **"proofread this article"**:
+
+1. Go through all paragraphs, headings, and list items in the current file
+2. Fix typos and spelling errors
+3. Add missing commas, especially:
+   - After introductory phrases ("In that regard,")
+   - After transitional phrases ("At the same time,")
+   - Before coordinating conjunctions in compound sentences
+   - Around non-restrictive clauses
+4. Improve punctuation (em dashes, semicolons) where appropriate
+5. Use multi_replace_string_in_file for efficiency when making multiple edits
