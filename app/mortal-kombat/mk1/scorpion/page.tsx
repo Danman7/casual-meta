@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { GiPunchBlast, GiSpearHook } from 'react-icons/gi'
 import { IoIosThumbsDown, IoIosThumbsUp } from 'react-icons/io'
 
+import ferra from '@/app/assets/mk1/ferra.webp'
+import movado from '@/app/assets/mk1/movado.webp'
 import scorpAirDB2 from '@/app/assets/mk1/scorp_air_db2.webp'
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import spear from '@/app/assets/mk1/scorp_spear.webp'
@@ -77,6 +79,8 @@ export default async function Page() {
               </li>
 
               <li>He has multiple specials that cover the whole screen.</li>
+
+              <li>Can combo out of his throw with the right Kameo.</li>
 
               <li>Extending combos is not difficult.</li>
             </ul>
@@ -534,10 +538,10 @@ export default async function Page() {
         </ul>
       </Callout>
 
-      <h2>Kameos</h2>
+      <h2 id="kameos">Kameos</h2>
       <Flavor>
-        In this section, we will consider Kameo pairs. It is a vast topic, so
-        only top choices will be discussed.
+        In this section, we will consider Kameo pairs. This topic is vast. Only
+        a few choices are presented.
       </Flavor>
 
       <p>
@@ -545,84 +549,109 @@ export default async function Page() {
         true offensive potential in MK1 begins with the right Kameo partner.
       </p>
 
-      <h3>Movado</h3>
+      <h3 id="movado">Movado</h3>
+
+      <Image
+        className="max-w-24 float-left mb-0 mr-2"
+        src={movado}
+        alt="A portrait of Movado."
+      />
+
       <p>
-        Movado is the one we recommend for new players. He helps Scorpion out
-        with many things. He is simple yet teaches good practices instead of
-        single button spams.
-      </p>
-      <p>
-        Movado's Nindrop (UK) enables Scorpion to start combos out of his
-        Charge. This gives you armored combo options.
-      </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mr-1 mb-1 inline" />
-        BF2ex UK <span className="text-light">switch sides</span> dash F32 F32 4
-        BF1 33 DB2
-        <span className="text-light"> - meterless 25.9% damage </span>
-      </p>
-      <p>
-        The same Kameo move allows you to keep your air extension meterless.
-      </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mr-1 mb-1 inline" />
-        F32 F32 J12 airDB2ex UK <span className="text-sm italic">land</span> 1
-        BF1 33 DB2
-        <span className="text-light"> - meterless 37.5% damage </span>
-      </p>
-      <p>The Trap Drop (K) allows you to combo out of a throw.</p>
-      <p className="font-bold">
-        <GiPunchBlast className="mr-1 mb-1 inline" />
-        Throw <span className="text-light">small pause</span> K (trap) F32 F32 4
-        BF1 33 DB2
-        <span className="text-light"> - 22% damage out of a throw</span>
-      </p>
-      <p>
-        Forward 34 and 214 are now also combo starters. You can try the same
-        patterns with Best Feet Forward (FK) and one of the two moves mentioned.
-      </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mr-1 mb-1 inline" />
-        F34 FK F32 4 BF1 33 DB2
+        As far as new players are concerned, Movado is the pair we recommend. He
+        couples nicely the moves and helps out with various aspects of
+        Scorpion's play without being demanding. Most of his assists only
+        execute if the correct conditions are met so timing is not an issue.
       </p>
 
       <p>
-        The decisive positive with everything above is that{' '}
-        <strong>
-          you don't have to time these moves or wait for a specific form
-        </strong>{' '}
-        to be available. They will only execute in the correct spot if your
-        previous attacks have connected.
+        Nindrop <Badge>Up K</Badge> can start combos out of Scorpions Charge
+        giving you <em>armored</em> options. You can also use it to keep your
+        air extension meterless. Knockback moves like <Badge>F34</Badge> and{' '}
+        <Badge>214</Badge> can also be chained thanks to Best Feet Forward{' '}
+        <Badge>Forward K</Badge>. Both moves will only activate on an airborne
+        opponent.
       </p>
+
       <p>
-        On top of that, you also have tricky wakeup setups with Slding Home (DK)
-        which is a low attack. After knocking them down, you can jump and press
-        DK at the same time. They will have to block the low, giving you an
-        opportunity to hit them with an overhead. Timing it perfectly takes some
-        practice.
+        The low Slding Home <Badge>Down K</Badge> provides a tricky wake up mix.
+        After knocking your adversary down, you can jump and press{' '}
+        <Badge>DK</Badge> at the same time you press <Badge>J3/J4</Badge>. They
+        will have to block the low, allowing the overhead to connect, but the
+        timing is awkward and requires some practice.
       </p>
-      <h3>
-        Ferra -{' '}
-        <span className="bg-alt-surface p-1">mix-up and corner damage</span>
-      </h3>
+
       <p>
-        Ferra plays great with the B3 move and the conditioning we mentioned
-        earlier. You can do B3 K 2 for an overhead mix or B3 K 3 for a low
-        follow up that can be continued with a combo (unlike the regular B3 low
-        which knocks down). The other player will get tired of getting into the
-        mix, and they will try to preemptively jump forward at which point you
-        B2 them.
+        The Trap Drop <Badge>K</Badge> thorws a stun bomb on the ground next to
+        the opponent that takes a second to detonate. It gives a tremendous
+        amount of stun forcing your opponent to block low. If you time it with
+        the moment in Scorpion's throw animation where he jumps off his foe you
+        can combo out of it.
       </p>
-      <p>Ferra can extend corner combos as well.</p>
-      <h3>
-        Chameleon -{' '}
-        <span className="bg-alt-surface p-1">difficult but fun</span>
-      </h3>
+
+      <Callout>
+        <ul className="space-y-6 my-0">
+          <li>
+            <Badge>
+              BF2ex UK <Flavor>switch sides</Flavor> dash F32 F32 4 BF1 33 DB2
+            </Badge>
+            <Flavor className="mt-2">
+              Meterless armored combo for 259 damage.
+            </Flavor>
+          </li>
+
+          <li>
+            <Badge>
+              F32 F32 J12 airDB2ex UK <Flavor>land</Flavor> BF1 33 DB2
+            </Badge>{' '}
+            <Flavor className="mt-2">
+              The same juggle to air extension combo as before, but meterless
+              for 375 damage.
+            </Flavor>
+          </li>
+
+          <li>
+            <Badge>
+              Throw <Flavor>time during animation</Flavor> K (trap) F32 F32 4
+              BF1 33 DB2
+            </Badge>{' '}
+            <Flavor className="mt-2">
+              220 damage out of a throw (normally 110).
+            </Flavor>
+          </li>
+
+          <li>
+            <Badge>F34 FK F32 4 BF1 33 DB2</Badge>
+          </li>
+        </ul>
+      </Callout>
+
+      <h3 id="ferra">Ferra </h3>
+
+      <Image
+        className="max-w-24 float-left mb-0 mr-2"
+        src={ferra}
+        alt="A portrait of Ferra."
+      />
+
       <p>
-        Chameleon, with her forms, is usually problematic for beginners. At the
-        same time, no one else gives as much freedom in pressure and setups.
+        Ferra also extends combos and contributes to the mix-up more directly.
+        Yes she is a bit more technical than Movado. On pressing{' '}
+        <Badge>K</Badge> she goes into a "attached to your back" stance. From
+        there pressing a face button perrforms different attacks. For example
+        pressing <Badge>2</Badge> does an overhead, while <Badge>3</Badge> does
+        a low. This plays nicely with Scorpion's <Badge>B3</Badge> -{' '}
+        <Badge>B3 K 2</Badge> or <Badge>B3 K 3</Badge>.
       </p>
-      <p>For starters, she also enables throw combos.</p>
+
+      <h3 id="chameleon">Chameleon</h3>
+
+      <p>
+        Chameleon is an advanced partner. Managing her stances is usually
+        problematic for beginners. At the same time she offers a ton of utility
+        and can be fun once mastered. She also enables throw and armored combos.
+      </p>
+
       <p className="font-bold">
         <GiPunchBlast className="mr-1 mb-1 inline" />
         Throw <span className="text-light">small pause</span> K (fan toss) J2
@@ -649,9 +678,10 @@ export default async function Page() {
         These are some simple ways to start off with her. You will grasp her
         true might, however, once you start using her resets.
       </p>
-      <h2>Advanced Tech</h2>
 
-      <h3>Enhanced Flame-Port jail</h3>
+      <h2 id="advanced-tech">Advanced Tech</h2>
+
+      <h3 id="enhanced-flame-port-jail">Enhanced Flame-Port jail</h3>
 
       <p>
         Ending a corner combo with an enhanced air teleport into a kick will
@@ -661,7 +691,7 @@ export default async function Page() {
         break armor. It's inconsistent. Don't expect it to work every time.
       </p>
 
-      <h3>Air Kyo Snag bait</h3>
+      <h3 id="air-kyo-snag-bait">Air Kyo Snag bait</h3>
 
       <p>
         Air DB2 has instant recovery—even the regular version. Assuming you jump
