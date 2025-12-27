@@ -6,6 +6,7 @@ import Shao from '@/app/assets/mk1/shao.webp'
 import shao2 from '@/app/assets/mk1/shao_2.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
+import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -20,7 +21,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <PageTitle title={navTitle} subtitle="Character overview & guide" />
 
       <div className="md:flex items-center gap-4">
         <Image
@@ -30,18 +31,13 @@ export default async function Page() {
         />
 
         <p className="md:w-1/2">
-          General Shao is a close-to-mid range bruiser that excels at scouting
-          and bullying his opponents in{' '}
-          <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>. His stance-based
-          style alternates between the axe with the famed far-reaching
-          disjointed normals and unarmed where he is faster, safer with plus
-          frames on block. He is tough (high HP), moves fast and hits hard. At
-          the same time, his offense has gaps that can be abused at higher
-          ranks. And he lacks sufficient long-range instruments. Both issues are
-          fixed with the proper Kameo partner, of which he can choose between
-          plenty of good options. But if you don’t have the right tools at the
-          right time (wrong Kameo/stance) you will have a hard time reverting
-          pressure.
+          General Shao is a <em>stance</em> based bruiser that excels at
+          scouting and bullying his opponents in{' '}
+          <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>. His axe controls
+          space with far-reaching disjointed normals, while the unarmed stance
+          gives him faster and safer mix-ups with plus frames. At the same time
+          he lacks good full screen moves and has punishable gaps in his
+          offense. Both issues can be addressed with the right Kameo partner.
         </p>
       </div>
 

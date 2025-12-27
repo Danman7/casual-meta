@@ -5,7 +5,7 @@ import { IoIosThumbsDown, IoIosThumbsUp } from 'react-icons/io'
 
 import chameleon from '@/app/assets/mk1/chameleon.webp'
 import ferra from '@/app/assets/mk1/ferra.webp'
-import movado from '@/app/assets/mk1/movado.webp'
+import Movado from '@/app/assets/mk1/movado.webp'
 import scorpAirDB2 from '@/app/assets/mk1/scorp_air_db2.webp'
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import spear from '@/app/assets/mk1/scorp_spear.webp'
@@ -219,7 +219,7 @@ export default async function Page() {
         Facing someone who is hugging the other end of the arena is not a
         problem. The Charge won't reach and the Spear is too slow at a distance,
         but you have the <em>Flame Port</em> <Badge>DB3</Badge>. Scorpion dashes
-        away from his foe, loops trough the screen and throws a punch from the
+        away from his foe, loops through the screen and throws a punch from the
         other side. It is a multi-purpose teleport move.
       </p>
 
@@ -297,7 +297,7 @@ export default async function Page() {
       <p>
         If both of you keep a bit of distance (4-6 steps away) for some time,
         promptly tap <Badge>1</Badge> (quickest recovery) into{' '}
-        <Badge>BF1</Badge>. Seeing a whiff into empty air may promtp your
+        <Badge>BF1</Badge>. Seeing a whiff into empty air may prompt your
         opponent into dashing forward or doing an unsafe move. If this happens,
         the Spear will connect. This is cheap but legit tech.
       </p>
@@ -382,9 +382,9 @@ export default async function Page() {
         consider the basics of Scorpion grasped. Of course, you can spend meter
         to further enhance the damage, but it will require the use of the{' '}
         <em>enhanced air Kyo Snag</em>. It is a Spear-like special used mid-air
-        to grab the opponent after a strig and quickly return them to you for
+        to grab the opponent after a string and quickly return them to you for
         additional punishment. Before trying, do the following in practice:{' '}
-        <Badge>F32 J12 airDB2ex</Badge>. It may feew awkward at first, but if
+        <Badge>F32 J12 airDB2ex</Badge>. It may feel awkward at first, but if
         you get it you can do the following.
       </p>
 
@@ -396,7 +396,7 @@ export default async function Page() {
               airDB2
             </Badge>
             <Flavor className="mt-2">
-              One bar 377 damage. The idea of the pause it to delay the 111
+              One bar 377 damage. The idea of the pause is to delay the 111
               until both fighters are lower to the ground. This makes connecting
               the final airDB2 possible.
             </Flavor>
@@ -423,7 +423,7 @@ export default async function Page() {
       <h3 id="in-the-corner">In the corner</h3>
 
       <p>
-        <Badge>Standing 4</Badge> keeps most of its damage trough scaling. It
+        <Badge>Standing 4</Badge> keeps most of its damage through scaling. It
         serves as a nice continuation of an airborne foe in combination with a
         Spear. That is unless you are in the corner where it's knockback is not
         a factor and you can chain two of these in a row. You can use this to
@@ -492,9 +492,10 @@ export default async function Page() {
               F32 J12 airDB3ex J13 <Flavor>land</Flavor> BF1 33 DB3
             </Badge>{' '}
             <Flavor className="mt-2">
-              One bar 334 damage. Only an ehnaced air port will be fast enough
-              to connect. Connecting the <Badge>J13</Badge> is awkard. Often the
-              Port will miss. There must be a very short delay after the J12.
+              One bar 334 damage. Only an enhanced air port will be fast enough
+              to connect. Connecting the <Badge>J13</Badge> is awkward. Often
+              the Port will miss. There must be a very short delay after the
+              J12.
             </Flavor>
           </li>
         </ul>
@@ -502,10 +503,10 @@ export default async function Page() {
 
       <p>
         If you wish to explore this branch of Scorpion's combos, it is probably
-        better to learn to iniciate them out of the enhanced air Port. It is
+        better to learn to initiate them out of the enhanced air Port. It is
         faster than the standard version, but you will have to time your own
         kick. This is preferable as a teleport hit out of a far away jump is
-        less predicatable. Here are some less and more optimal options.
+        less predictable. Here are some less and more optimal options.
       </p>
 
       <Callout>
@@ -524,7 +525,7 @@ export default async function Page() {
               airDB3ex J3 DB3 <Flavor>land</Flavor> F32 F32 4 BF1 33 DB2
             </Badge>{' '}
             <Flavor className="mt-2">
-              A challengig double-port one bar 411 damage variant.
+              A challenging double-port one bar 411 damage variant.
             </Flavor>
           </li>
 
@@ -554,7 +555,7 @@ export default async function Page() {
 
       <Image
         className="max-w-24 float-left mb-0 mr-2"
-        src={movado}
+        src={Movado}
         alt="A portrait of Movado."
       />
 
@@ -575,15 +576,15 @@ export default async function Page() {
       </p>
 
       <p>
-        The low Slding Home <Badge>Down K</Badge> provides a tricky wake up mix.
-        After knocking your adversary down, you can jump and press{' '}
+        The low Sliding Home <Badge>Down K</Badge> provides a tricky wake up
+        mix. After knocking your adversary down, you can jump and press{' '}
         <Badge>DK</Badge> at the same time you press <Badge>J3/J4</Badge>. They
         will have to block the low, allowing the overhead to connect, but the
         timing is awkward and requires some practice.
       </p>
 
       <p>
-        The Trap Drop <Badge>K</Badge> thorws a stun bomb on the ground next to
+        The Trap Drop <Badge>K</Badge> throws a stun bomb on the ground next to
         the opponent that takes a second to detonate. It gives a tremendous
         amount of stun forcing your opponent to block low. If you time it with
         the moment in Scorpion's throw animation where he jumps off his foe you
@@ -639,7 +640,7 @@ export default async function Page() {
         Ferra also extends combos and contributes to the mix-up more directly.
         She is a little bit more technical than Movado. On pressing{' '}
         <Badge>K</Badge> she goes into a "attached to your back" stance. From
-        there pressing a face button perrforms different attacks. For example
+        there pressing a face button performs different attacks. For example
         pressing <Badge>2</Badge> does an overhead, while <Badge>3</Badge> does
         a low. This plays nicely with Scorpion's <Badge>B3</Badge> -{' '}
         <Badge>B3 K 2</Badge> or <Badge>B3 K 3</Badge>.
@@ -656,8 +657,8 @@ export default async function Page() {
       <p>
         Chameleon is an advanced Kameo. Managing her <em>stances</em> (Jade,
         Kitana, Mileena) is usually problematic for beginners, but she offers a
-        ton of utility. Jade's Glow gives projectile immunity which helps with
-        zoners and Spears in mirror matches. Like Movado she also enables
+        ton of utility. Jade's Glow gives projectile immunity, which helps with
+        zoners and Spears in mirror matches. Like Movado, she also enables
         armored and throw combos.
       </p>
 
@@ -692,7 +693,7 @@ export default async function Page() {
       <h2 id="advanced-tech">Advanced Tech</h2>
 
       <Flavor className="mb-5">
-        This section describes niche techniques that require more practice .
+        This section describes niche techniques that require more practice.
       </Flavor>
 
       <h3 id="enhanced-flame-port-jail">Enhanced Flame-Port jail</h3>
@@ -710,7 +711,7 @@ export default async function Page() {
       <p>
         Air DB2 has instant recovery—even the regular version. Assuming you jump
         over your adversary, you can throw this move into empty air, and it will
-        stop and drop you down. They must be ready for a timely anti-air;
+        stop and drop you down. They must be ready for a timely anti-air,
         otherwise, you are safe. The idea is to bait a high attack from them
         while throwing a low Kameo move or Movado's Trap Drop. It's a niche
         tactic.
