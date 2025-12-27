@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { GiPunchBlast, GiSpearHook } from 'react-icons/gi'
+import { GiSpearHook } from 'react-icons/gi'
 import { IoIosThumbsDown, IoIosThumbsUp } from 'react-icons/io'
 
+import chameleon from '@/app/assets/mk1/chameleon.webp'
 import ferra from '@/app/assets/mk1/ferra.webp'
 import movado from '@/app/assets/mk1/movado.webp'
 import scorpAirDB2 from '@/app/assets/mk1/scorp_air_db2.webp'
@@ -636,7 +637,7 @@ export default async function Page() {
 
       <p>
         Ferra also extends combos and contributes to the mix-up more directly.
-        Yes she is a bit more technical than Movado. On pressing{' '}
+        She is a little bit more technical than Movado. On pressing{' '}
         <Badge>K</Badge> she goes into a "attached to your back" stance. From
         there pressing a face button perrforms different attacks. For example
         pressing <Badge>2</Badge> does an overhead, while <Badge>3</Badge> does
@@ -646,40 +647,53 @@ export default async function Page() {
 
       <h3 id="chameleon">Chameleon</h3>
 
+      <Image
+        className="max-w-24 float-left mb-0 mr-2"
+        src={chameleon}
+        alt="A portrait of Chameleon."
+      />
+
       <p>
-        Chameleon is an advanced partner. Managing her stances is usually
-        problematic for beginners. At the same time she offers a ton of utility
-        and can be fun once mastered. She also enables throw and armored combos.
+        Chameleon is an advanced Kameo. Managing her <em>stances</em> (Jade,
+        Kitana, Mileena) is usually problematic for beginners, but she offers a
+        ton of utility. Jade's Glow gives projectile immunity which helps with
+        zoners and Spears in mirror matches. Like Movado she also enables
+        armored and throw combos.
       </p>
 
-      <p className="font-bold">
-        <GiPunchBlast className="mr-1 mb-1 inline" />
-        Throw <span className="text-light">small pause</span> K (fan toss) J2
-        F32 F32 4 BF1 33 DB2
-        <span className="text-light"> - 21.9% damage</span>
-      </p>
+      <Callout>
+        <ul className="space-y-6 my-0">
+          <li>
+            <Badge>
+              Throw <Flavor>time during animation</Flavor> K (fan toss) J2 F32
+              F32 4 BF1 33 DB2
+            </Badge>
+            <Flavor className="mt-2">
+              Must be in Kitana Form. 219 damage throw combo.
+            </Flavor>
+          </li>
+
+          <li>
+            <Badge>
+              BF2 FK <Flavor>switch sides</Flavor> BF1 F32 F32 4 BF2
+            </Badge>{' '}
+            <Flavor className="mt-2">
+              Kitana form. Meterles 234 damage armored combo.
+            </Flavor>
+          </li>
+        </ul>
+      </Callout>
+
       <p>
-        Mileena's Sai (FK), like Movado's Nindrop, makes your Charge a combo
-        starter. The difference is that, unlike Movado, Chameleon can only
-        extend with a spear.
-      </p>
-      <p className="font-bold">
-        <GiPunchBlast className="mr-1 mb-1 inline" />
-        BF2 FK{' '}
-        <span className="text-light">(the Charge will switch sides)</span> BF1
-        F32 F32 4 BF2
-        <span className="text-light"> - 23.4% damage </span>
-      </p>
-      <p>
-        Jade's Glow gives projectile immunity for a brief time. It is not only
-        additional help with zoners, but also alleviates mirror match spears.
-      </p>
-      <p>
-        These are some simple ways to start off with her. You will grasp her
-        true might, however, once you start using her resets.
+        Chameleon's fan toss also enables resets where two otherwise
+        non-chainable moves can be linked into a combo.
       </p>
 
       <h2 id="advanced-tech">Advanced Tech</h2>
+
+      <Flavor className="mb-5">
+        This section describes niche techniques that require more practice .
+      </Flavor>
 
       <h3 id="enhanced-flame-port-jail">Enhanced Flame-Port jail</h3>
 
