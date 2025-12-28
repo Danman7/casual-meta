@@ -1,11 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { GiScales, GiSharpAxe } from 'react-icons/gi'
+import { IoIosThumbsDown, IoIosThumbsUp } from 'react-icons/io'
 
 import Shao from '@/app/assets/mk1/shao.webp'
 import shao2 from '@/app/assets/mk1/shao_2.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
-import { BulletList } from '@/app/ui/BulletList'
+import { Badge } from '@/app/ui/Badge'
+import { Callout } from '@/app/ui/Callout'
+import { Emphasis } from '@/app/ui/Emphasis'
+import { Flavor } from '@/app/ui/Flavor'
+import { FlexWrapper } from '@/app/ui/FlexWrapper'
+import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -41,105 +46,84 @@ export default async function Page() {
         </p>
       </div>
 
-      <h2 className="flex items-center gap-2">
-        Why play or skip General Shao? <GiScales />
-      </h2>
+      <Callout className="space-y-4">
+        <h2 id="play-or-skip" className="pt-0! mt-0! border-t-0">
+          Play or skip?
+        </h2>
 
-      <BulletList
-        className="text-success"
-        icon="GiDeathSkull"
-        items={[
-          <>
-            <strong>Durable</strong> - highest health in the game.
-          </>,
-          <>
-            <strong>Long reach with axe</strong> - great disjointed mids and
-            aerials.
-          </>,
+        <Flavor className="mb-4">Should you try General Shao?</Flavor>
 
-          <>
-            <strong>Strong mixup in both stances</strong> - multiple overheads,
-            lows and command grabs. Real 50/50s when unarmed.
-          </>,
-          <>
-            <strong>Excellent air control</strong> - good anti-air options, even
-            normals due to his height advantage.
-          </>,
-          <>
-            <strong>Superb corner pressure</strong> - additional setups, armored
-            plus frames and turn steals on top of his mix-up.
-          </>,
-        ]}
-      />
-      <BulletList
-        className="text-warning"
-        icon="GiDeathSkull"
-        items={[
-          <>
-            <strong>Armor</strong> - Multiple wakeup and launch options, but
-            punishable.
-          </>,
-          <>
-            <strong>Kameo versatility and dependency</strong> - Shao works well
-            a lot of Kameos but is also very dependent on them to patch gaps and
-            confirm mids.
-          </>,
-          <>
-            <strong>Stances</strong> - The Axe gives you excellent space, while
-            unarmed is devastating up close. At the same time playing outside a
-            stance’s forte can be difficult.
-          </>,
-        ]}
-      />
-      <BulletList
-        className="text-error"
-        icon="GiDeathSkull"
-        items={[
-          <>
-            <strong>Unsafe pressure</strong> - safe moves have gaps; gapless
-            ones are unsafe.
-          </>,
-          <>
-            <strong>No projectiles or teleports</strong> - his only full screen
-            reaching move is slow and as mentioned he requires a Kameo to cover
-            the distance.
-          </>,
-        ]}
-      />
+        <div className="md:flex gap-4">
+          <div className="md:w-1/2">
+            <FlexWrapper className="font-bold text-success">
+              <IoIosThumbsUp /> Maybe, yes
+            </FlexWrapper>
 
-      <h2 className="flex items-center gap-2">
-        <GiSharpAxe />
-        The Axe
-      </h2>
+            <ul className="divide-y space-y-4 *:pb-2 *:last:pb-0 md:mb-0! mb-8">
+              <li>Shao has a strong mix-up in both stances.</li>
+
+              <li>At 1100 HP he is durable.</li>
+
+              <li>Some of the best normals in Axe stance.</li>
+
+              <li>Good air control due to his height.</li>
+
+              <li>
+                His close-range pressure is excellent, especially in the corner.
+              </li>
+            </ul>
+          </div>
+
+          <div className="md:w-1/2">
+            <FlexWrapper className="font-bold text-error">
+              <IoIosThumbsDown /> Maybe, no
+            </FlexWrapper>
+
+            <ul className="divide-y space-y-4 *:pb-2 *:last:pb-0 mb-0!">
+              <li>Transition between axe and no axe has to be managed well.</li>
+
+              <li>
+                Some of his key moves have gaps that can be exploited by
+                experienced players.
+              </li>
+
+              <li>
+                He has no projectiles or teleports. His only full-screen special
+                is slow.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </Callout>
+
+      <h2 id="the-axe">The Axe</h2>
+
+      <Flavor>
+        In this section we will look at a simple way to play Shao with the axe
+        in hand.
+      </Flavor>
+
+      <Emphasis>
+        The Axe is your primary Neutral tool. Shao's pressure peaks in Unarmed
+        stance, but he looses his reach. How you transitions between the two can
+        make or break a round. So this is where we start.
+      </Emphasis>
 
       <p>
-        The Axe gives Shao the disjointed normals with first-rate range that
-        makes him a master of mid-range engagements. It lacks the good mids and
-        mixup of the unarmed stance, but how you transition from axe to no axe
-        makes or breaks Shao’s game.
+        <Badge>Standing 2</Badge> is one of the best standing normals in the
+        game. It is a fast, safe, disjointed high attack with excellent reach.
+        Begin by practicing with a CPU to stay a few steps away from them and
+        poke at its maximum reach.
       </p>
 
-      <h3>A simple approach to mix-ups</h3>
-
-      <p>
-        Pressing 2 with the axe while holding no direction will execute a very
-        fast, safe, disjointed attack with superb reach. It checks out all the
-        essentials of a good attack and is among the best standing punches in
-        the game.
-      </p>
-
-      <Image
+      <ImageWithCaption
         className="shadow-md max-h-96 object-cover object-[0%_50%]"
         src={shao2}
         alt="General Shao doing standing 2 attack."
+        caption="Shao's Standing 2 controls a big chunk of space in front of him. No opponent can comfortably approach without respecting it."
       />
 
-      <p>
-        <strong>This is your bread and butter.</strong> Learn to measure its
-        range and practice dashing into it. You will use it to whiff punish,
-        interrupt advances, as a buffer attack and even as a frontal anti-air
-        due to Shao’s height.
-      </p>
+      <h2 id="unarmed">Unarmed stance</h2>
     </>
   )
 }

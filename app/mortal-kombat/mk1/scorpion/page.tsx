@@ -61,7 +61,7 @@ export default async function Page() {
           Play or skip?
         </h2>
 
-        <Flavor>Should you try Scorpion?</Flavor>
+        <Flavor className="mb-4">Should you try Scorpion?</Flavor>
 
         <div className="md:flex gap-4">
           <div className="md:w-1/2">
@@ -80,6 +80,8 @@ export default async function Page() {
               </li>
 
               <li>He has multiple specials that cover the whole screen.</li>
+
+              <li>Good anti-zoning and anti-air.</li>
 
               <li>Can combo out of his throw with the right Kameo.</li>
 
