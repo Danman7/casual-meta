@@ -1,5 +1,6 @@
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
+import { PageTitle } from '@/app/ui/PageTitle'
 import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -11,9 +12,9 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <h1>{MK_TITLE}</h1>
+      <PageTitle title={MK_TITLE} />
 
-      <div className="pb-10 border-b mb-20">
+      <div className="mb-12">
         <p className="text-lg">
           Mortal Kombat (MK) refers to the popular franchise of fighting games
           best known for their fast-paced action and gory graphics. This section

@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState, startTransition } from 'react'
 import { IoMdArrowDropdown, IoMdArrowDropright } from 'react-icons/io'
@@ -10,6 +11,7 @@ import type { RouteItem } from '@/lib/routes'
 type Props = {
   items: RouteItem[]
   title: string
+  rootUrl: string
   isTopNav?: boolean
 }
 
@@ -37,7 +39,7 @@ function TreeNode({
   )
 }
 
-export function SubNavClient({ items, title, isTopNav }: Props) {
+export function SubNavClient({ items, title, rootUrl, isTopNav }: Props) {
   const [isManuallyToggled, setIsManuallyToggled] = useState(false)
   const pathname = usePathname()
   const prevPathnameRef = useRef(pathname)
@@ -72,10 +74,12 @@ export function SubNavClient({ items, title, isTopNav }: Props) {
           onClick={() => setIsManuallyToggled((v) => !v)}
         >
           {isTopNav && open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
-          <span>{title} Chapters</span>
+          <span>{title}</span>
         </button>
       ) : (
-        <h4 className="text-lg font-semibold">{title} Chapters</h4>
+        <Link href={rootUrl} className="text-lg font-semibold">
+          {title}
+        </Link>
       )}
 
       {open && (

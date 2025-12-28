@@ -12,6 +12,7 @@ export const SectionNav: React.FC<{ isTopNav?: boolean }> = ({ isTopNav }) => {
   const pathname = usePathname()
   const [items, setItems] = useState<RouteItem[] | null>(null)
   const [title, setTitle] = useState<string>('')
+  const [rootUrl, setRootUrl] = useState<string>('')
 
   useEffect(() => {
     let active = true
@@ -32,6 +33,7 @@ export const SectionNav: React.FC<{ isTopNav?: boolean }> = ({ isTopNav }) => {
       }
 
       setTitle(section.name)
+      setRootUrl(section.href)
       const data = await getRouteTreeForPath(section.href)
       if (active) setItems(data)
     }
@@ -45,5 +47,12 @@ export const SectionNav: React.FC<{ isTopNav?: boolean }> = ({ isTopNav }) => {
 
   if (!items || items.length === 0) return null
 
-  return <SubNavClient items={items} title={title} isTopNav={isTopNav} />
+  return (
+    <SubNavClient
+      items={items}
+      title={title}
+      rootUrl={rootUrl}
+      isTopNav={isTopNav}
+    />
+  )
 }

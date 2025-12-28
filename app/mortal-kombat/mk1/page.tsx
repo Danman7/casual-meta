@@ -2,6 +2,8 @@ import Image from 'next/image'
 
 import mk1Title from '@/app/assets/mk1/mk1-title.webp'
 import { MK_BASE_URL } from '@/app/constants'
+import { Flavor } from '@/app/ui/Flavor'
+import { PageTitle } from '@/app/ui/PageTitle'
 import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -15,7 +17,15 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <PageTitle title={navTitle} subtitle="Series title" />
+
+      <p>
+        In 2023, NetherRealm Studios released Mortal Kombat 1 (technicaly the
+        12th game in the series). It is not exactly a reboot as it follows the
+        events of Mortal Kombat 11 where Liu Kang became the god of fire and
+        created a new timeline. It is rather a reimagined storyline where the
+        familiar characters have different fates and relationships.
+      </p>
 
       <Image
         src={mk1Title}
@@ -23,14 +33,16 @@ export default async function Page() {
         className="shadow-md"
       />
 
-      <p>
-        As a fighting game MK1 has both similarities and differences from other
-        titles in the genre or even titles in the series. The game has a steep
-        learning curve and takes effort to grasp. The extensive in-game tutorial
-        does a good job at explaining the mechanics, both basic and advanced.
-        However, it lacks some community terms, overall strategy and
-        per-character breakdowns.
-      </p>
+      <Flavor>
+        In the following sections we will look at how MK1 is different from
+        other titles in the series.
+      </Flavor>
+
+      <h2 id="kameos">Kameos</h2>
+
+      <p>A major difference</p>
+
+      <h2 id="contents">Contents</h2>
 
       <SubPageNav route={`${MK_BASE_URL}/mk1`} />
     </>
