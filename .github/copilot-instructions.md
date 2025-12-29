@@ -101,16 +101,49 @@ Custom flat config in [eslint.config.mjs](eslint.config.mjs) with:
 
 ## Common Editing Tasks
 
-### Proofread Command
+### Proofread & Clean Command
 
-When the user asks to **"proofread"** or **"proofread this article"**:
+When the user asks to **"proofread"**, **"clean up"**, **"make cleaner"**, or **"make easier to understand"**:
 
-1. Go through all paragraphs, headings, and list items in the current file
-2. Fix typos and spelling errors
-3. Add missing commas, especially:
+1. **Fix typos and spelling errors**
+   - Check all paragraphs, headings, and list items
+   - Fix commonly confused words (e.g., "it's" vs "its", "their" vs "they're")
+   - Correct singular/plural agreement
+
+2. **Add missing commas**
    - After introductory phrases ("In that regard,")
-   - After transitional phrases ("At the same time,")
+   - After transitional phrases ("At the same time,", "However,")
    - Before coordinating conjunctions in compound sentences
    - Around non-restrictive clauses
-4. Improve punctuation (em dashes, semicolons) where appropriate
-5. Use multi_replace_string_in_file for efficiency when making multiple edits
+   - After dependent clauses at the beginning of sentences
+
+3. **Improve punctuation**
+   - Use em dashes (—) instead of hyphens for breaks in thought
+   - Apply semicolons for closely related independent clauses
+   - Fix hyphenation (e.g., "off guard" not "off-guard", "wakeup" or "wake-up" consistently)
+
+4. **Remove wordiness and improve clarity**
+   - Replace verbose phrases: "As far as X is concerned" → "For X"
+   - Remove redundant words: "and etc." → "etc."
+   - Replace weak constructions: "A major strength of his is to" → "His major strength is"
+   - Simplify transitions: "But the cool thing is that" → "However"
+   - Remove unnecessary qualifiers: "a little bit more" → "slightly more"
+
+5. **Improve sentence structure**
+   - Fix sentence fragments by integrating them into complete sentences
+   - Reorder awkward phrases: "couples nicely the moves" → "complements the moves nicely"
+   - Replace passive voice with active where appropriate
+   - Ensure parallel structure in lists and comparisons
+
+6. **Maintain consistency**
+   - Use consistent terminology (e.g., "opponent" throughout, not mixing "rival", "adversary", "foe")
+   - Keep verb tenses consistent within sections
+   - Maintain consistent voice (first person plural "we" or second person "you")
+
+7. **Preserve tone and meaning**
+   - Keep technical terminology and game-specific language
+   - Maintain the casual, instructional tone
+   - Don't oversimplify or change the author's intent
+   - Be thrifty—only change what needs improvement
+
+8. **Use multi_replace_string_in_file for efficiency** when making multiple edits
