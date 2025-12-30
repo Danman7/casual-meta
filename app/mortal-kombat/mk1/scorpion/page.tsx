@@ -44,12 +44,12 @@ export default async function Page() {
 
         <div className="md:w-1/2">
           <p>
-            Scorpion is a beginner-friendly character that is frequently played
-            at all levels. His major strength is reliably interrupting unsafe
-            actions from anywhere on the screen. He can then convert them into
-            one of his simple modular combos. His toolbox includes both close
-            and long range instruments, but lacks an efficient offense. In that
-            regard, new players will find him easier when reacting rather than
+            Scorpion is a beginner-friendly character, frequently played at all
+            levels. His major strength is reliably interrupting unsafe actions
+            from anywhere on the screen. He can then convert them into one of
+            his simple modular combos. His toolbox includes both close and long
+            range instruments, but lacks an efficient offense. In that regard,
+            new players will find him easier when reacting rather than
             initiating pressure. For the latter, he needs a proper Kameo.
           </p>
         </div>
@@ -59,8 +59,6 @@ export default async function Page() {
         <h2 id="play-or-skip" className="pt-0! mt-0! border-t-0">
           Play or skip?
         </h2>
-
-        <Flavor className="mb-4">Should you try Scorpion?</Flavor>
 
         <div className="md:flex gap-4">
           <div className="md:w-1/2">
@@ -80,7 +78,7 @@ export default async function Page() {
 
               <li>He has multiple specials that cover the whole screen.</li>
 
-              <li>Good anti-zoning and anti-air.</li>
+              <li>Good interruption - anti-zoning and anti-air options.</li>
 
               <li>Can combo out of his throw with the right Kameo.</li>
 
@@ -104,7 +102,7 @@ export default async function Page() {
                 lows.
               </li>
 
-              <li>Almost none of his attacks are plus on block.</li>
+              <li>No frame traps. Cannot press the attack for long.</li>
             </ul>
           </div>
         </div>
@@ -113,9 +111,8 @@ export default async function Page() {
       <h2 id="neutral">Scouting the opponent</h2>
 
       <Flavor>
-        This section covers ways to gain the upper hand in{' '}
-        <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>. Key attacks will
-        be introduced, one at a time. First, try them out in Practice Mode.
+        This section covers key moves and methods, helpful in{' '}
+        <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>.
       </Flavor>
 
       <Emphasis>
@@ -129,17 +126,10 @@ export default async function Page() {
         A good starting point is to learn how far <Badge>Standing 2</Badge>{' '}
         stretches. That is <em>your primary poke</em> - safe, fast, disjointed
         high punch with a good span. Aim to hit them at the attack's maximum
-        range. Once you get a feeling for it, start confirming hits with{' '}
-        <Badge>21</Badge>.
+        range. Once you get a feel for it, start confirming hits with{' '}
+        <Badge>21</Badge>. If they block: stop. On hit: continue into Spear -{' '}
+        <Badge>21 BF1</Badge>
       </p>
-
-      <ul className="list-inside list-disc pl-4">
-        <li>If they block: stop.</li>
-
-        <li>
-          On hit: continue into Spear - <Badge>21 BF1</Badge>
-        </li>
-      </ul>
 
       <ImageWithCaption
         src={scorp2}
@@ -150,11 +140,9 @@ export default async function Page() {
       <p>
         <em>The Spear</em> <Badge>BF1</Badge> is an{' '}
         <em>excellent mid-range check</em>. Think of it as a Standing 2 with
-        longer reach—a high projectile. If they stay out of <Badge>2</Badge>'s
-        span, go for it. It is slower and is unsafe, but many players get so
-        comfortable at jump distance away that a Spear catches them off guard
-        more often than it should. It interrupts dashes, catches them at the end
-        of their jumps, stuns them during launching a projectile, etc.
+        longer reach. It is slower and is unsafe, but players often get so
+        comfortable that a Spear interrupts their dashes, or catches them at the
+        end of their jumps, or during casting projectiles.
       </p>
 
       <ImageWithCaption
@@ -162,103 +150,93 @@ export default async function Page() {
         alt="Scorpion's spear move."
         className="shadow-md"
         caption="On top of reaching full-screen and stunning
-        your foe, the Spear brings them next to you and restands them for you to
-        proceed in any manner. This leads beginners to abuse it. If you attempt to Spear them in a predictable manner, they will punish you."
+        your foe, the Spear brings them next to you for you to
+        proceed in any manner. This leads beginners to abuse it, making them predictable."
       />
 
       <p>
         You can expect opponents to block, jump, or teleport around your Spear.
-        But because it is high, some players will also try to duck under it. If
-        you spot this pattern in your foe, do a <Badge>BF1ex</Badge> Enhanced
-        Spear - it <em>hits mid</em>.
+        But because it is a <em>high</em> projectile, some players will also try
+        to duck under it. If you spot this pattern in your foe, do a{' '}
+        <Badge>BF1ex</Badge> Enhanced Spear which hits <em>mid</em> to surprise
+        them.
       </p>
 
       <p>
-        Speaking of jumping over your Spear, <Badge>Back 2</Badge> is Scorpion's
-        best anti-air option. It can be <em>shortcut cancelled</em> into any
-        back-forward move. For example <Badge>B2 F1</Badge> cancels into Spear
-        without having to press Back twice. This can lead to a full combo out of
-        anti-air. You'll want to practice this early with a forward jumping
-        dummy.
+        <Badge>Back 2</Badge> is your best anti-air. It can be{' '}
+        <em>shortcut cancelled</em> into any back-forward move. For example{' '}
+        <Badge>B2 F1</Badge> cancels into Spear without having to press back
+        twice. Get the hang of this early to control air pressure.
       </p>
 
       <h3 id="up-close">Up close</h3>
 
       <p>
-        <Badge>12</Badge> has shorter reach and lower damage than{' '}
-        <Badge>21</Badge>, but is faster. It can be your "go-to" if they get in
-        close. On hit: continue in the same manner - <Badge>12 BF1</Badge>.
+        <Badge>Forward 32</Badge> is your{' '}
+        <em>optimal launcher and combo starter</em>. It can be{' '}
+        <em>chained up to three times</em>, with multiple ways to extend
+        further. The first hit is an advancing <em>mid</em> which is also a
+        decent check for crouching opponents. Strive to start your pressure with
+        this string whenever <Badge>21</Badge> doesn't feel right.
       </p>
 
       <p>
-        It is also never a bad idea to just block. Stop an unsafe attack first,
-        then respond with one of the strings above.
+        In case you are touching and their pressure is too much, you can go for{' '}
+        <Badge>12</Badge>. It is your fastest hit confirm, but has a shorter
+        reach, lower damage and limited extensions.
       </p>
 
       <p>
-        Once you get comfortable with playing Scorpion at close-to-mid range,
-        practice connecting with <Badge>Forward 32</Badge> - your{' '}
-        <em>optimal combo starter</em>. This string launches your opponent into
-        the air. It can be <em>chained up to three times</em> and can be
-        extended further in multiple ways.
+        Simply blocking is also always an option, but be prepared to get knocked
+        down eventually. Provided they sustain the pressure on your wakeup,
+        execute an <em>Armored Enhanced Charge</em> <Badge>BF2ex</Badge>. Unless
+        they block, it will suspend their offense and can even be comboed out of
+        with the proper Kameos.
       </p>
 
-      <p>
-        No matter how good you are at blocking, you will get knocked down. If
-        you're repeatedly pressured on wakeup, you can use the{' '}
-        <em>Armored Enhanced Charge</em> <Badge>BF2ex</Badge>. It is a fast
-        advancing mid special that just about covers the jump distance. Still,
-        it has short active frames and you might not hit someone at medium
-        distance. And on his own, Scorpion cannot start a kombo out of the
-        Charge. The Spear often performs better mid-screen.
-      </p>
-
-      <h3 id="full-screen">Full screen</h3>
+      <h3 id="far-away">Far away</h3>
 
       <p>
-        Facing someone who is hugging the other end of the arena is not a
-        problem. The Charge won't reach and the Spear is too slow at a distance,
-        but you have the <em>Flame Port</em> <Badge>DB3</Badge>. Scorpion dashes
-        away from his foe, loops through the screen and throws a punch from the
-        other side. It is a multi-purpose teleport move.
+        The Charge won't reach and the Spear is too slow at full screen. For
+        that distance you have the <em>Flame Port</em> <Badge>DB3</Badge>.
+        Scorpion dashes away from his foe, loops through the screen and throws a
+        punch from the other side. It is a multi-purpose teleport move.
       </p>
 
       <p>
         For one, you can reliably interrupt heavy zoners. Record a dummy
         spamming projectiles (e.g., Liu Kang's BF1) and exercise timing the Port
-        with the spell being thrown. A few successful hits may be enough to
-        discourage your opponent from zoning.
+        with the spell being thrown. A few successful hits will discourage your
+        opponent from zoning.
       </p>
 
       <p>
-        However, an experienced player can bait throwing a projectile and
-        instead block your Port. It is very unsafe, and you will get punished.
-        That is why it is good practice to occasionally use the enhanced version{' '}
-        <Badge>DB3ex</Badge>. It skips the attack and only restands Scorpion on
-        the other side of the target. Then you can mix in a Down 1 punch. Or
-        micro-duck right after teleporting into a high punch. Or even simply
-        execute a Throw.
+        An experienced player however can bait throwing a projectile and instead
+        block your Port which is very unsafe. A good practice is to occasionally
+        vary with the enhanced version <Badge>DB3ex</Badge>. It estands Scorpion
+        on the other side of the target, skipping the attack. Enhanced Port into
+        a Throw is the simplest route to mess up their defense. You can also
+        practive Enhanced Port into <Badge>Down 1</Badge> or into micro-duck
+        then <Badge>Standing 1</Badge>.
       </p>
 
       <p>
-        These are the many mind games related to Scorpion's Port that can
-        disrupt one's defense from a distance. However, you don't necessarily
-        need to cover the distance. Your <em>Devouring Flame</em>{' '}
-        <Badge>DB4</Badge> is a low special attack that spawns under the
-        target's feet at any distance. The enhanced version does guaranteed
-        damage over time if it connects. Just keep in mind that it is slow and
-        unsafe. Use it if you feel your foe is rather passive defensive.
+        Finally, you have the <em>Devouring Flame</em> <Badge>DB4</Badge> for
+        any play who like to just stay away and block. It is a <em>low</em>
+        -hitting special that spawns under the target's feet at any distance.
+        The enhanced version does guaranteed damage over time if it connects.
+        Just keep in mind that it is slow and unsafe and can be punished by a
+        rather mobile foe.
       </p>
 
       <h3 id="conditioning">Conditioning</h3>
 
       <p>
-        Scorpion's <Badge>Back 3</Badge> is a very singular move. He launches
-        his Kunai for a disjointed two hit mid-low attack. It is slow and
-        unsafe, but reaches very far. The threat of a low hit at such a distance
-        conditions your opponent to block low or jump over it preemptively. Such
-        a jump can and should be punished with <Badge>B2</Badge> into spear,
-        into full combo.
+        Scorpion's <Badge>Back 3</Badge> is a unique move. He launches his Kunai
+        for a disjointed two-hit mid-low attack. It is slow and unsafe, but
+        reaches very far. The threat of a low hit at this distance conditions
+        your opponent to preemptively block low or jump forward. Don't forget
+        about your <Badge>B2</Badge>.
       </p>
 
       <ImageWithCaption
@@ -287,35 +265,33 @@ export default async function Page() {
         </p>
 
         <p>
-          <strong>B3 exDB3</strong> cancels into Enhanced Teleport. This is a
+          <strong>B3 DB3ex</strong> cancels into Enhanced Teleport. This is a
           fine way to force them into blocking, giving your teleport more
           freedom.
         </p>
       </Callout>
 
       <p>
-        If both of you keep a bit of distance (4-6 steps away) for some time,
-        promptly tap <Badge>1</Badge> (quickest recovery) into{' '}
-        <Badge>BF1</Badge>. Seeing a whiff into empty air may prompt your
-        opponent into dashing forward or doing an unsafe move. If this happens,
-        the Spear will connect. This is cheap but legit tech.
+        If neither of you commits to attacking, try promptly tapping{' '}
+        <Badge>1</Badge> (quickest recovery) into <Badge>BF1</Badge>. Seeing a
+        whiff into empty air may motivate your opponent to dash forward or do an
+        unsafe move. If this happens, the Spear will connect. This is cheap but
+        legit tech.
       </p>
 
       <p>
-        Another approach is to <em>derail</em> one of your normal strings.
+        Another approach is to <em>derail</em> one of your strings.{' '}
         <Badge>122</Badge> has a punishable gap between the second and third
-        hit. It is also vulnerable to up block on the last overhead hit. A
-        player that sees you doing this a handful of times can catch up to it.
-        Cut it short - <Badge>12</Badge> into a throw.
+        hit. It is also vulnerable to up block. Cut it short - <Badge>12</Badge>{' '}
+        into a throw. If your foe expects the full string, they will be thrown.
       </p>
 
       <p>
         Same thing with any Forward 3 string - <Badge>F32</Badge> or{' '}
-        <Badge>F34</Badge>. If they keep predicting the full string, you can do
-        only <Badge>F3</Badge> into a throw. <Badge>F3</Badge> is also a good{' '}
-        <em>shimmy</em>. If you delay pressing Forward 3 while walking up to
-        them, they may interpret this as an attempt to throw and duck under.
-        Throwing the mid instead will hit them.
+        <Badge>F34</Badge>. If they keep predicting the full string, do only{' '}
+        <Badge>F3</Badge> into a throw. <Badge>F3</Badge> is also a good{' '}
+        <em>shimmy</em>. If you delay pressing Forward 3 while walking up, they
+        may duck expecting a throw. The mid will hit them instead.
       </p>
 
       <h2 id="damage">Converting into damage</h2>
@@ -332,10 +308,10 @@ export default async function Page() {
       <h3 id="bread-n-butter">Bread and butter combos</h3>
 
       <p>
-        You can start by following up on what you already know about neutral
-        engagements. Starting with <Badge>12/21</Badge> gives you the option to
-        continue with a Spear. Ending with <Badge>33 DB2</Badge> where possible
-        is the best way to squeeze extra damage.
+        Start by following up on what you already know. Open with{' '}
+        <Badge>12/21/B2</Badge> into Spear. An optimal ender is{' '}
+        <Badge>33 DB2</Badge>. That is how you squeeze the most damage. but is
+        not always available.
       </p>
 
       <Callout>
@@ -343,22 +319,21 @@ export default async function Page() {
           <Badge>21 BF1 33 DB2</Badge>
         </div>
         <Flavor className="mt-2">
-          A decent 210 damage starter combo. Keep practicing this in actual
-          matches before moving on.
+          A basic 210 damage starter combo. Go into your first online matches
+          with this. Once you get consistent, move on.
         </Flavor>
       </Callout>
 
       <p>
-        Beyond this, the easiest route to maximum effect is to juggle the
-        opponent with <Badge>F32</Badge>. But if you chain out of a Spear you
-        must modify the ender.
+        To maximize effect you must learn to juggle the opponent with{' '}
+        <Badge>F32</Badge>.
       </p>
 
       <Callout>
-        <Badge>21 BF1 F32 F32 F32 F34 BF2</Badge> - meterless 342 damage.
+        <Badge>21 BF1 F32 F32 F32 F34 BF2</Badge>
         <Flavor className="mt-2">
-          The height after the third F32 is low. Connecting with the F34 into
-          Charge can be a bit tight.
+          Meterless 342 damage. The height after the third F32 is low.
+          Connecting with the F34 into Charge can be a bit tight.
         </Flavor>
       </Callout>
 
@@ -376,15 +351,10 @@ export default async function Page() {
       </Callout>
 
       <p>
-        The last two can be your bread and butter combos. Once you feel
-        comfortable with them and the methods in the Scouting section you can
-        consider the basics of Scorpion grasped. Of course, you can spend meter
-        to further enhance the damage, but it will require the use of the{' '}
-        <em>enhanced air Kyo Snag</em>. It is a Spear-like special used mid-air
-        to grab the opponent after a string and quickly return them to you for
-        additional punishment. Before trying, do the following in practice:{' '}
-        <Badge>F32 J12 airDB2ex</Badge>. It may feel awkward at first, but if
-        you get it you can do the following.
+        The last two can be your bread and butter combos. Of course, you can
+        spend meter to further enhance the damage, but it will require the use
+        of the <em>enhanced air Kyo Snag</em>. It is a Spear-like special used
+        mid-air to grab the opponent.
       </p>
 
       <Callout>
@@ -501,11 +471,11 @@ export default async function Page() {
       </Callout>
 
       <p>
-        If you wish to explore this branch of Scorpion's combos, it is probably
-        better to learn to initiate them out of the enhanced air Port. It is
-        faster than the standard version, but you will have to time your own
-        kick. This is preferable as a teleport hit out of a far away jump is
-        less predictable. Here are some less and more optimal options.
+        If you wish to explore this branch of Scorpion's combos, learn to
+        initiate them out of the enhanced air Port. It is faster than the
+        standard version, but you will have to time your own kick. This is
+        preferable as a teleport hit out of a far away jump is less predictable.
+        Here are some less and more optimal options.
       </p>
 
       <Callout>
@@ -576,18 +546,17 @@ export default async function Page() {
 
       <p>
         The low Sliding Home <Badge>Down K</Badge> provides a tricky wakeup mix.
-        After knocking your opponent down, you can jump and press{' '}
-        <Badge>DK</Badge> at the same time you press <Badge>J3/J4</Badge>. They
-        will have to block the low, allowing the overhead to connect, but the
-        timing is awkward and requires some practice.
+        After knocking your opponent down, jump and press <Badge>DK</Badge> at
+        the same time as <Badge>J3/J4</Badge>. They must block the low, allowing
+        the overhead to connect, though the timing requires practice.
       </p>
 
       <p>
         The Trap Drop <Badge>K</Badge> throws a stun bomb on the ground next to
-        the opponent that takes a second to detonate. It gives a tremendous
-        amount of stun, forcing your opponent to block low. If you time it with
-        the moment in Scorpion's throw animation where he jumps off his foe, you
-        can combo out of it.
+        the opponent that takes a second to detonate. It gives tremendous stun,
+        forcing your opponent to block low. If you time it with the moment in
+        Scorpion's throw animation where he jumps off his foe, you can combo out
+        of it.
       </p>
 
       <Callout>
@@ -655,10 +624,10 @@ export default async function Page() {
 
       <p>
         Chameleon is an advanced Kameo. Managing her <em>stances</em> (Jade,
-        Kitana, Mileena) is usually problematic for beginners, but she offers a
-        ton of utility. Jade's Glow gives projectile immunity, which helps with
-        zoners and Spears in mirror matches. Like Movado, she also enables
-        armored and throw combos.
+        Kitana, Mileena) is problematic for beginners, but she offers tremendous
+        utility. Jade's Glow gives projectile immunity, which helps with zoners
+        and Spears in mirror matches. Like Movado, she also enables armored and
+        throw combos.
       </p>
 
       <Callout>
@@ -701,16 +670,16 @@ export default async function Page() {
         Ending a corner combo with an enhanced air teleport into a kick will
         jail your opponent. If they press any button other than block during
         getup, they will get hit. Do it correctly, and they will spin around to
-        face you as you come from the corner. You will get a free hit, even
-        break armor. It's inconsistent. Don't expect it to work every time.
+        face you as you come from the corner. You will get a free hit and can
+        even break armor, though it's inconsistent.
       </p>
 
       <h3 id="air-kyo-snag-bait">Air Kyo Snag bait</h3>
 
       <p>
-        Air DB2 has instant recovery—even the regular version. Assuming you jump
-        over your adversary, you can throw this move into empty air, and it will
-        stop and drop you down. They must be ready for a timely anti-air,
+        Air DB2 has instant recovery - even the regular version. Assuming you
+        jump over your adversary, you can throw this move into empty air, and it
+        will stop and drop you down. They must be ready for a timely anti-air,
         otherwise, you are safe. The idea is to bait a high attack from them
         while throwing a low Kameo move or Movado's Trap Drop. It's a niche
         tactic.

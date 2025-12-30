@@ -147,3 +147,41 @@ When the user asks to **"proofread"**, **"clean up"**, **"make cleaner"**, or **
    - Be thrifty—only change what needs improvement
 
 8. **Use multi_replace_string_in_file for efficiency** when making multiple edits
+
+### Make Shorter Command
+
+When the user asks to **"make shorter"**, **"make more concise"**, **"trim"**, or **"reduce wordiness"**:
+
+1. **Remove hedge words and phrases**
+   - "probably", "usually", "generally", "typically"
+   - "just about", "a bit", "a little bit", "kind of", "sort of"
+   - "rather", "somewhat", "quite", "fairly"
+   - "it is X to" → direct statement
+   - "can be your go-to" → "use it"
+
+2. **Eliminate redundancy**
+   - "tremendous amount of" → "tremendous"
+   - "for some time" → (remove if time already implied)
+   - "a handful of times" → "repeatedly"
+   - Combine sentences that repeat the same concept
+   - Remove explanations that state the obvious
+
+3. **Simplify wordy constructions**
+   - "It is also never a bad idea to" → "Always" or direct statement
+   - "As far as X is concerned" → "For X"
+   - "may be enough to" → "will"
+   - "can and should be" → "should be"
+   - "you can do only" → "do only"
+
+4. **Condense repetitive explanations**
+   - Merge closely related sentences
+   - Remove restating of the same point
+   - Cut unnecessary examples if the concept is clear
+
+5. **Preserve clarity and tone**
+   - Don't sacrifice clarity for brevity
+   - Keep technical accuracy intact
+   - Maintain the instructional tone
+   - Be thrifty—only remove what's truly redundant
+
+6. **Use multi_replace_string_in_file for efficiency** when making multiple edits
