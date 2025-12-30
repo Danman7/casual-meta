@@ -516,33 +516,26 @@ export default async function Page() {
       />
 
       <p>
-        Movado is our top pick. He complements Scorpion's moves nicely and helps
-        out with various aspects of his play without being demanding. Most of
-        his assists only execute if the correct conditions are met, so timing is
-        not an issue. And he teaches the character, not button spams.
+        Movado is a good pick for beginners and advanced players alike. He opens
+        up a lot of new routes out of otherwise non-chainable moves. Thanks to{' '}
+        <Badge>Forward K</Badge>, knockback strings like <Badge>214</Badge> and{' '}
+        <Badge>F34</Badge> become starters. Nindrop <Badge>Up K</Badge> can
+        combo out of the Charge (giving armored combos) and keep the any{' '}
+        <Badge>airDB2ex</Badge> extended combo meterless.
       </p>
 
       <p>
-        Nindrop <Badge>Up K</Badge> can start combos out of Scorpions Charge
-        giving you <em>armored</em> options. You can also use it to keep your
-        air extension meterless. Knockback moves like <Badge>F34</Badge> and{' '}
-        <Badge>214</Badge> can also be chained thanks to Best Feet Forward{' '}
-        <Badge>Forward K</Badge>.
-      </p>
-
-      <p>
-        The low Sliding Home <Badge>Down K</Badge> provides a tricky wakeup mix.
-        After knocking your opponent down, jump and press <Badge>DK</Badge> at
-        the same time as <Badge>J3/J4</Badge>. They must block the low, allowing
-        the overhead to connect, though the timing requires practice.
+        After knocking your opponent down you can jump and press{' '}
+        <Badge>Down K</Badge> at the same time as <Badge>Jump Kick</Badge>. They
+        must block the low, allowing the overhead to connect, though the timing
+        requires practice.
       </p>
 
       <p>
         The Trap Drop <Badge>K</Badge> throws a stun bomb on the ground next to
-        the opponent that takes a second to detonate. It gives tremendous stun,
-        forcing your opponent to block low. If you time it with the moment in
-        Scorpion's throw animation where he jumps off his foe, you can combo out
-        of it.
+        the opponent that takes a second to detonate. If you time it with the
+        moment in Scorpion's throw animation where he jumps off his foe, you can
+        combo out of it.
       </p>
 
       <Callout>
@@ -591,7 +584,7 @@ export default async function Page() {
       />
 
       <p>
-        Ferra also extends combos and contributes to the mix-up more directly.
+        Ferra contributes to the mix-up more directly.
         She's slightly more technical than Movado. On pressing <Badge>K</Badge>{' '}
         she goes into a "attached to your back" stance. From there, pressing a
         face button performs different attacks. For example, pressing{' '}
