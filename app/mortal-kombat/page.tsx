@@ -44,10 +44,12 @@ export default async function Page() {
       </p>
 
       <p>
-        We explain the game's quirks and teach you about reading and
-        conditioning your opponent's actions. It's as much about quick reactions
-        as it is a mind game. We will focus on the online Player vs Player (PvP)
-        aspect, giving you the tools to learn any character.
+        The online gauntlet is unfair to beginners. They can go 15-20 games
+        without a win. This can be very discouraging. We will try to explain the
+        game's quirks and teach you about reading and conditioning your
+        opponent's actions. It's as much about quick reactions as it is a mind
+        game. We will focus on the online Player vs Player (PvP) aspect, giving
+        you the tools to learn any character.
       </p>
 
       <h2>Contents</h2>

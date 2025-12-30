@@ -392,11 +392,9 @@ export default async function Page() {
       <h3 id="in-the-corner">In the corner</h3>
 
       <p>
-        <Badge>Standing 4</Badge> keeps most of its damage through scaling. It
-        serves as a nice continuation of an airborne foe in combination with a
-        Spear. That is unless you are in the corner where its knockback is not a
-        factor and you can chain two of these in a row. You can use this to
-        spike up your damage.
+        <Badge>Standing 4</Badge> keeps most of its damage through combo
+        scaling. In the corner its knockback is not a factor and you can chain
+        two of these in a row to spike up your damage.
       </p>
 
       <Callout>
@@ -407,9 +405,9 @@ export default async function Page() {
               JDB2
             </Badge>
             <Flavor className="mt-2">
-              One bar <strong>446</strong> damage. If you find chaining the two{' '}
-              <Badge>4</Badge>s difficult, you can do a single one and still get
-              over 400 damage.
+              One bar <strong>446</strong> damage. If you find chaining the
+              second <Badge>4</Badge> difficult, even a single one will still
+              get over 400 damage.
             </Flavor>
           </li>
           <li>
@@ -418,12 +416,10 @@ export default async function Page() {
               <Flavor>land</Flavor> B2 BF4ex
             </Badge>{' '}
             <Flavor className="mt-2">
-              If you manage to do this two bar monster you will be rewarded with{' '}
-              <strong>502</strong> damage. This sequence is designed for
-              situations where you are about to win the round. The enhanced
-              Devouring Flame is guaranteed damage, but you cannot recover in
-              time to block. If they survive, they will get a free wakeup
-              punish.
+              Attempt this two bar <strong>502</strong> damage monster if you
+              are about to win the round. The enhanced Devouring Flame is
+              guaranteed damage, but you cannot recover in time to block. If
+              they survive, they will get a free wakeup punish.
             </Flavor>
           </li>
         </ul>
@@ -432,15 +428,8 @@ export default async function Page() {
       <h3 id="extending-via-flame-port">Extending via Flame Port</h3>
 
       <p>
-        Apart from anti-zoning and mind games, Scorpion's teleport can be used
-        to extend combos as well. However, it is much harder and isn't
-        necessarily worth the effort.
-      </p>
-
-      <p>
-        One issue is that the grounded version cannot be cancelled. You must do{' '}
-        <Badge>DB3</Badge> while in the air, even if you're trying to hit a
-        standing target.
+        Scorpion's teleport can be used to extend combos, however, it is hard
+        and isn't necessarily worth the effort.
       </p>
 
       <Callout>
@@ -450,9 +439,8 @@ export default async function Page() {
               J3 airDB3 <Flavor>land</Flavor> B2 F2
             </Badge>
             <Flavor className="mt-2">
-              Even this 217-damage combo from the challenges has tricky timing.
               The jump kick and the teleport must be initiated very close to the
-              ground - just before landing.
+              ground.
             </Flavor>
           </li>
 
@@ -471,11 +459,9 @@ export default async function Page() {
       </Callout>
 
       <p>
-        If you wish to explore this branch of Scorpion's combos, learn to
-        initiate them out of the enhanced air Port. It is faster than the
-        standard version, but you will have to time your own kick. This is
-        preferable as a teleport hit out of a far away jump is less predictable.
-        Here are some less and more optimal options.
+        Starting a combo out of enhanced air Port is usually best as it's less
+        predictable. Players just don't expect to get hit out of a far away
+        jump.
       </p>
 
       <Callout>
@@ -510,9 +496,10 @@ export default async function Page() {
       </Callout>
 
       <h2 id="kameos">Kameos</h2>
+
       <Flavor>
-        In this section, we will consider Kameo pairs. This topic is vast. Only
-        a few choices are presented.
+        Pairing a character with a Kameo is a vast topic. In this section, we
+        will only discuss a few choices.
       </Flavor>
 
       <p>
@@ -529,10 +516,10 @@ export default async function Page() {
       />
 
       <p>
-        For new players, we recommend Movado. He complements Scorpion's moves
-        nicely and helps out with various aspects of Scorpion's play without
-        being demanding. Most of his assists only execute if the correct
-        conditions are met, so timing is not an issue.
+        Movado is our top pick. He complements Scorpion's moves nicely and helps
+        out with various aspects of his play without being demanding. Most of
+        his assists only execute if the correct conditions are met, so timing is
+        not an issue. And he teaches the character, not button spams.
       </p>
 
       <p>
@@ -540,8 +527,7 @@ export default async function Page() {
         giving you <em>armored</em> options. You can also use it to keep your
         air extension meterless. Knockback moves like <Badge>F34</Badge> and{' '}
         <Badge>214</Badge> can also be chained thanks to Best Feet Forward{' '}
-        <Badge>Forward K</Badge>. Both moves will only activate on an airborne
-        opponent.
+        <Badge>Forward K</Badge>.
       </p>
 
       <p>
