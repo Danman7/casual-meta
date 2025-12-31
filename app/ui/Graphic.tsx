@@ -6,7 +6,7 @@ export const Graphic: React.FC<
 > = ({ children, className, description }) => (
   <>
     <FlexWrapper
-      className={`justify-around bg-neutral-100 shadow-md rounded ${className}`}
+      className={`pt-2 justify-around bg-neutral-100 shadow-md rounded ${className}`}
     >
       {children}
     </FlexWrapper>

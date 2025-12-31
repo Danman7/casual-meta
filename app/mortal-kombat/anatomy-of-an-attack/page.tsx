@@ -15,8 +15,11 @@ import overheadHit from '@/app/assets/mk/overhead_hit_low.webp'
 import standingHit from '@/app/assets/mk/stand_hit.webp'
 import throwGrab from '@/app/assets/mk/throw.webp'
 import throwTech from '@/app/assets/mk/throw_tech.webp'
+import unblockable from '@/app/assets/mk/unblockable.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import { MK_TITLE } from '@/app/constants'
+import { Emphasis } from '@/app/ui/Emphasis'
+import { Flavor } from '@/app/ui/Flavor'
 import { Graphic } from '@/app/ui/Graphic'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
@@ -36,10 +39,10 @@ export default async function Page() {
     <>
       <PageTitle title={navTitle} subtitle="Core Mechanics" />
 
-      <p>
-        This page explains how moves work in detail. Pause any game mode to
-        bring up your character's move list and follow along.
-      </p>
+      <Flavor>
+        This page covers all mechanics related to attacks in Mortal Kombat in
+        detail.
+      </Flavor>
 
       <h2 id="hit-vs-block-vs-miss">Hit vs block vs miss</h2>
 
@@ -87,7 +90,7 @@ export default async function Page() {
         goal is for the total sum of those to be positive for you.
       </p>
 
-      <h2>Block type</h2>
+      <h2 id="block-type">Block type</h2>
 
       <p>
         Underneath all the mechanics there is a basic rock-paper-scissors game
@@ -248,17 +251,34 @@ export default async function Page() {
       <p>
         Some special mover are throws, while some strings end up with a throw.
         These are called <strong>command grabs</strong>. They can be avoided,
-        but can't be teched. If the target is grabbed they are going for a ride
-        no matter what they press.
+        but <strong>can't be teched</strong>. If the target is grabbed they are
+        going for a ride no matter what they press.
       </p>
 
-      <p className="text-light text-lg">
-        Every attack and block has the appropriate counter. If they keep
-        blocking high, mix in a low attack. If they keep blocking low, throw in
-        an overhead. If they keep guessing correctly, trick them with a throw.
+      <p>
+        Some moves have <strong>Unblockable</strong> listed on their Block Type.
+        If such a move connects with the target, they will take damage
+        regardless of blocking.
       </p>
 
-      <h2>Frame data</h2>
+      <Graphic description="Unblockables are mostly special moves. They have a certain hitbox that must be avoided in order to skip damage.">
+        <div className="flex flex-col font-semibold items-center">
+          <div>Guaranteed damage on hit</div>
+
+          <Image
+            src={unblockable}
+            alt="A representation of an unblockable attack."
+          />
+        </div>
+      </Graphic>
+
+      <Emphasis>
+        Every block has the appropriate counter. If they keep blocking high, mix
+        in a low attack. If they keep blocking low, throw in an overhead. If
+        they keep guessing correctly, trick them with a throw.
+      </Emphasis>
+
+      <h2 id="frame-data">Frame data</h2>
 
       <p>
         Frame data looks intimidating, but understanding it helps you judge
