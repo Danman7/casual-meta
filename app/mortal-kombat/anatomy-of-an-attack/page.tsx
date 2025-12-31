@@ -1,8 +1,13 @@
-import duckHigh from '@/app/assets/mk1/duck_high.webp'
+import Image from 'next/image'
+
+import blockHigh from '@/app/assets/mk/block_high.webp'
+import blockHighLow from '@/app/assets/mk/block_high_low.webp'
+import duckUnderHigh from '@/app/assets/mk/duck_under_high.webp'
 import raidenB2 from '@/app/assets/mk1/raiden_b2.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import subB3 from '@/app/assets/mk1/sub_b3.webp'
 import { MK_TITLE } from '@/app/constants'
+import { Graphic } from '@/app/ui/Graphic'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -100,11 +105,19 @@ export default async function Page() {
         common among move lists for all characters.
       </p>
 
-      <ImageWithCaption
-        src={duckHigh}
-        alt="Liu Kang ducking under Raiden's high punch."
-        caption="Here Liu Kang duck under Raidens 1 high punch, avoiding damage and stun."
-      />
+      <Graphic>
+        <div>
+          <Image src={blockHigh} alt="A high punch being blocked." />
+        </div>
+
+        <div>
+          <Image src={blockHighLow} alt="A high kick being low blocked." />
+        </div>
+
+        <div>
+          <Image src={duckUnderHigh} alt="A high punch being ducked under." />
+        </div>
+      </Graphic>
 
       <p>
         A <strong>Mid</strong> (short for Middle) attack{' '}
