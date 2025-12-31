@@ -1,3 +1,7 @@
+import Image from 'next/image'
+
+import MKMonk from '@/app/assets/mk/monk.webp'
+import Arena from '@/app/assets/mk/shang_tung_arena.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
 import { PageTitle } from '@/app/ui/PageTitle'
@@ -14,21 +18,25 @@ export default async function Page() {
     <>
       <PageTitle title={MK_TITLE} />
 
-      <div className="mb-12">
-        <p className="text-lg">
-          Mortal Kombat (MK) is a popular franchise of fighting games best known
-          for fast-paced action and gory graphics. This section is dedicated to
-          the modern series known as the NRS era.
-        </p>
+      <p className="text-lg">
+        Mortal Kombat (MK) is a popular franchise of fighting games best known
+        for fast-paced action and gory graphics. This section is dedicated to
+        the modern series known as the NRS era.
+      </p>
 
-        <Callout>
-          <p className="my-0! text-sm">
-            NetherRealm Studios acquired all rights to the Mortal Kombat
-            trademark in 2009. This led to the creation of Mortal Kombat (MK9),
-            Mortal Kombat X, Mortal Kombat 11 and Mortal Kombat 1.
-          </p>
-        </Callout>
-      </div>
+      <Callout>
+        <p className="my-0! text-sm">
+          NetherRealm Studios acquired all rights to the Mortal Kombat trademark
+          in 2009. This led to the creation of Mortal Kombat (MK9), Mortal
+          Kombat X, Mortal Kombat 11 and Mortal Kombat 1.
+        </p>
+      </Callout>
+
+      <Image
+        src={MKMonk}
+        alt="Mortal Kombat monk character."
+        className="mx-auto"
+      />
 
       <p>
         At its core, Mortal Kombat is a duel to the death. Two players try to
@@ -42,6 +50,12 @@ export default async function Page() {
         You may not have someone else’s reflexes, but you can understand how
         they make decisions.
       </p>
+
+      <Image
+        src={Arena}
+        alt="Shang Tsung's arena in Mortal Kombat."
+        className="mx-auto"
+      />
 
       <p>
         The online gauntlet is unfair to beginners. They can go 15-20 games

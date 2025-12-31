@@ -3,12 +3,23 @@ import Image from 'next/image'
 import blockHigh from '@/app/assets/mk/block_high.webp'
 import blockHighLow from '@/app/assets/mk/block_high_low.webp'
 import duckUnderHigh from '@/app/assets/mk/duck_under_high.webp'
-import raidenB2 from '@/app/assets/mk1/raiden_b2.webp'
+import duckUnderThrow from '@/app/assets/mk/duck_under_throw.webp'
+import jumpHitLow from '@/app/assets/mk/jump_hit_low.webp'
+import lowBlock from '@/app/assets/mk/low_block.webp'
+import lowHit from '@/app/assets/mk/low_hit.webp'
+import midBlockLow from '@/app/assets/mk/mid_block_low.webp'
+import midHitLow from '@/app/assets/mk/mid_hit_low.webp'
+import midHitStanding from '@/app/assets/mk/mid_hit_standing.webp'
+import overheadBlock from '@/app/assets/mk/overhead_block.webp'
+import overheadHit from '@/app/assets/mk/overhead_hit_low.webp'
+import standingHit from '@/app/assets/mk/stand_hit.webp'
+import throwGrab from '@/app/assets/mk/throw.webp'
+import throwTech from '@/app/assets/mk/throw_tech.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
-import subB3 from '@/app/assets/mk1/sub_b3.webp'
 import { MK_TITLE } from '@/app/constants'
 import { Graphic } from '@/app/ui/Graphic'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
+import { PageTitle } from '@/app/ui/PageTitle'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 3
@@ -23,12 +34,11 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <PageTitle title={navTitle} subtitle="Core Mechanics" />
 
       <p>
-        In this page we will look at how moves work in detail. You can pause all
-        game modes to bring up your chosen character's move list and follow
-        along.
+        This page explains how moves work in detail. Pause any game mode to
+        bring up your character's move list and follow along.
       </p>
 
       <h2 id="hit-vs-block-vs-miss">Hit vs block vs miss</h2>
@@ -40,43 +50,36 @@ export default async function Page() {
       </p>
 
       <p>
-        If one of them happens to be within reach of an attack at the time it is
-        active, it will register a hit. This will cause damage and hit stun. The
-        one being hit will not be able to do anything for a period. How much is
-        determined by the frame data. This leaves time for the attacker to move
-        or follow up with another attack.
+        If one happens to be within reach when an attack is active, it will
+        register a hit, causing damage and hit stun. The one being hit cannot
+        act for a period determined by the frame data, leaving time for the
+        attacker to move or follow up.
       </p>
 
       <p>
-        If both players happen to be within reach of each other’s attack while
-        they are active, they will both take a hit. This is called a{' '}
-        <strong>trade</strong>. It is possible for one of them to recover
-        quicker. Which one depends on the attack’s frame data.
+        If both players are within reach of each other's attack while active,
+        they will both take a hit. This is called a <strong>trade</strong>.
+        Which one recovers quicker depends on the attack's frame data.
       </p>
 
       <p>
-        If an attack from one player connects with another, but the target is
-        blocking, it will only cause block (aka. chip) damage. It is
-        significantly less than normal damage. The stun from blocking is also
-        much shorter than the one from taking a hit. The target may or may not
-        have time to counterattack. This is the essence of safe vs unsafe
-        attacks.
+        If an attack connects but the target is blocking, it will only cause
+        block (aka. chip) damage. The stun from blocking is much shorter than
+        from taking a hit. The target may or may not have time to counterattack.
+        This is the essence of safe vs. unsafe attacks.
       </p>
 
       <p>
-        If one player throws an attack, but the other one is not within reach,
-        the attack will miss. This is the best possible outcome for the target.
-        While the attacker will have to recover to be able to block, the other
-        side is free to do anything. The most commont term you will see related
-        to missing is a <em>whiff</em>. To whiff an attack means to miss
-        completely.
+        If an attack is thrown but the opponent is not within reach, it will
+        miss. This is the best outcome for the target. While the attacker
+        recovers, the opponent is free to act. The most common term for missing
+        is a <em>whiff</em>.
       </p>
 
       <p>
-        In all scenarios we talk about damage, but also about stun. The stun is
-        the basis of <em>frame traps</em>. Whoever recovers first gets to act
-        first. When you invest frames into a move, you may come on top, or it
-        may backfire.
+        All scenarios involve damage and stun. Stun is the basis of{' '}
+        <em>frame traps</em>. Whoever recovers first acts first. When you invest
+        frames into a move, you may come out on top or it may backfire.
       </p>
 
       <p className="text-lg text-light">
@@ -87,120 +90,180 @@ export default async function Page() {
       <h2>Block type</h2>
 
       <p>
-        Underneath the frame data there is a basic rock-paper-scissors game
-        based on stances. Next to every move in any fighter’s move list is a
-        Block Type column (or section if you are in advanced view). This
-        determines how each move must be blocked.
+        Underneath all the mechanics there is a basic rock-paper-scissors game
+        based on stances. Every move has a Block Type that determines how it
+        must be blocked.
       </p>
 
       <p>
         A <strong>High</strong> attack{' '}
-        <strong>will connect with any standing target</strong>, blocking or not.
-        It will also do so with one that is crouching and holding block. If,
-        however, the{' '}
-        <strong>
-          target ducks and doesn’t press block the high attack will miss them
-        </strong>
-        . This will give them an opportunity to counterattack. High attacks are
-        common among move lists for all characters.
+        <strong>must be blocked if standing</strong>, but it{' '}
+        <strong>will miss if crouching</strong>. High attacks are common. Most
+        are performed while standing, retaining the character's mobility.
       </p>
 
-      <Graphic>
-        <div>
+      <Graphic description="A high attack will still connect with a target that is both crouching and blocking. In order to completely avoid the stun, you must take a risk and duck without blocking.">
+        <div className="flex flex-col font-semibold items-center">
+          <div>Hit</div>
+          <Image
+            src={standingHit}
+            alt="A high punch hitting a standing opponent."
+          />
+        </div>
+
+        <div className="flex flex-col font-semibold items-center">
+          <div>Block</div>
           <Image src={blockHigh} alt="A high punch being blocked." />
         </div>
 
-        <div>
+        <div className="flex flex-col font-semibold items-center">
+          <div>Block</div>
           <Image src={blockHighLow} alt="A high kick being low blocked." />
         </div>
 
-        <div>
+        <div className="flex flex-col font-semibold items-center">
+          <div>Miss</div>
           <Image src={duckUnderHigh} alt="A high punch being ducked under." />
         </div>
       </Graphic>
 
       <p>
-        A <strong>Mid</strong> (short for Middle) attack{' '}
-        <strong>must be blocked both ways.</strong> The duck maneuver from above
-        won't work. That is why Mids are considered the best at checking your
-        opponent’s block. They are among the most common attacks for all
-        fighters.
+        A <strong>Mid</strong> attack{' '}
+        <strong>must be blocked both if standing or crouching.</strong> Mids are
+        also common.
+      </p>
+
+      <Graphic description="Mids, especially advancing ones, are designed as block checks. Here, ducking under the attack won't work, forcing the opponent to block.">
+        <div className="flex flex-col font-semibold items-center">
+          <div>Hit</div>
+          <Image
+            src={midHitStanding}
+            alt="A mid kick hitting a standing opponent."
+          />
+        </div>
+
+        <div className="flex flex-col font-semibold items-center">
+          <div>Hit</div>
+          <Image
+            src={midHitLow}
+            alt="A mid kick hitting a crouching opponent."
+          />
+        </div>
+
+        <div className="flex flex-col font-semibold items-center">
+          <div>Block</div>
+          <Image src={midBlockLow} alt="A mid kick being low blocked." />
+        </div>
+      </Graphic>
+
+      <p>
+        A <strong>Low</strong> attack <strong>must be blocked low</strong>. Low
+        moves are less common and usually involve crouching to perform and
+        result in a knockdown. Standing low moves are even rarer as they are
+        quick and retain mobility.
+      </p>
+
+      <Graphic
+        description="A
+        standing target will get hit by a low attack. Lows mix things up for opponents that like to keep blocking high."
+      >
+        <div className="flex flex-col font-semibold items-center">
+          <div>Hit</div>
+          <Image src={lowHit} alt="A low kick hitting a crouching opponent." />
+        </div>
+
+        <div className="flex flex-col font-semibold items-center">
+          <div>Block</div>
+          <Image src={lowBlock} alt="A low kick being low blocked." />
+        </div>
+      </Graphic>
+
+      <p>
+        So far, blocking low counters every attack type. This is where overheads
+        come in. An <strong>Overhead</strong> attack{' '}
+        <strong>must be blocked standing</strong>. Like lows, overhead moves are
+        less common. All jump-in attacks are overheads. Standing overheads are
+        rare.
+      </p>
+
+      <Graphic description="Overheads force a defender to stand up and block. This prevents players from crouch blocking for a long time.">
+        <div className="flex flex-col font-semibold items-center">
+          <div>Hit</div>
+          <Image src={jumpHitLow} alt="Jimp kick hits crouching opponent." />
+        </div>
+
+        <div className="flex flex-col font-semibold items-center">
+          <div>Hit</div>
+          <Image
+            src={overheadHit}
+            alt="An overhead attack hitting a crouching opponent."
+          />
+        </div>
+
+        <div className="flex flex-col font-semibold items-center">
+          <div>Block</div>
+          <Image src={overheadBlock} alt="An overhead attack being blocked." />
+        </div>
+      </Graphic>
+
+      <p>
+        Overheads are usually slower than mids and lows. If the defenders spots
+        or predicts an overhead coming while crouch blocking, he can release the
+        down button while still holding block. His character will stand up to
+        block the overhead. After that they can press down again to meet any
+        follow-up mids or lows. This is called <strong>fuzzy blocking</strong>{' '}
+        (or fuzzing, block os, or block switching). Athough it sounds simple, it
+        takes time to learn which attacks of which characters can be fuzzy
+        blocked and when.
       </p>
 
       <p>
-        A <strong>Low</strong> attack <strong>must be blocked low</strong>. If
-        the target is standing, blocking or not, a Low attack will hit them.
-        While every character has at least a few low attacks in the form of a
-        down + button move, these are much less common than highs and mids.
+        Technically, it is possible for a player to block all attacks if they
+        are really good at it. However,{' '}
+        <strong>throws skip any blocking</strong>, be it standing or ducking. If
+        the target is within reach they will get grabbed. Unless A: they duck
+        under without blocking or B: tech press the correct button in time to
+        break the throw. B is commonly known as{' '}
+        <strong>teching the throw</strong>. Throws can go in two directions -
+        forward or backwards.
       </p>
 
-      <ImageWithCaption
-        src={subB3}
-        alt="Sub-zero performing a standing low attack."
-        caption="Sub-zero is about to hit Scorpion with his Back 3 standing low attack. Scorpion's standing block is not going to cut it."
-      />
+      <Graphic description="Throws mix things up for good blockers. Pressing 2/4 for forward and 1/3 for backward throws will tech them. Taking a risk and ducking will skip the grab.">
+        <div className="flex flex-col font-semibold items-center">
+          <div>Throw</div>
+          <Image src={throwGrab} alt="Throw grabbing an opponent." />
+        </div>
+
+        <div className="flex flex-col font-semibold items-center">
+          <div>Tech</div>
+          <Image src={throwTech} alt="A throw being teched by the opponent." />
+        </div>
+
+        <div className="flex flex-col font-semibold items-center">
+          <div>Miss</div>
+          <Image src={duckUnderThrow} alt="A throw being ducked under." />
+        </div>
+      </Graphic>
 
       <p>
-        Up to this point, low blocking counters every attack type. This is where
-        overheads come in. An <strong>Overhead</strong> attack{' '}
-        <strong>must be blocked high</strong>. It will hit any crouching foe,
-        blocking or not. Sanding overheads are rare, but same as with lows, each
-        character can do a jump-in attack. These are considered overhead.
-      </p>
-
-      <ImageWithCaption
-        src={raidenB2}
-        alt="Raiden performing an overhead attack."
-        caption="Raiden's Back 2 is an overhead attack. It is about to hit Liu Kang, breaking his low block."
-      />
-
-      <p>
-        So low blocking will defer any attacks but an overhead. And overheads
-        are usually slower than mids and lows. This gives the defender time to
-        spot the overhead, let go of down while still holding block and meet the
-        attack with a standing block. If he predicts a low attack afterwards, he
-        can keep holding block and press down again. This is called{' '}
-        <strong>fuzzy blocking</strong> (or fuzzing, or block os, or block
-        switching, or fuzzy os etc.).
-      </p>
-
-      <p>
-        If a player is good at fuzzy blocking, they will still take chip damage,
-        but no attack will get through. This is where throws come in. A{' '}
-        <strong>Throw</strong> move grabs any blocking opponent, both standing
-        or ducking, within reach and causes damage (and usually results in a
-        knockdown) same as a regular attack. This is a dedicated anti-block
-        move. It can be ducked under, however, same as a high attack. Also, if
-        one presses the correct buttons in time, they can break away from the
-        throw, canceling it. This is called <em>to tech the throw</em>.
-      </p>
-
-      <p>
-        Every character has a forward throw and a back throw. But some have
-        special throws that are usually a part of some string. These are{' '}
-        <em>command grabs or command throws</em>. They cannot be teched and if
-        they catch the target, it must take the damage.
-      </p>
-
-      <p>
-        If the block type next to a move states <strong>Unblockable</strong> the
-        target will always take damage if the attack connects. To avoid it the
-        attack must miss completely.
+        Some special mover are throws, while some strings end up with a throw.
+        These are called <strong>command grabs</strong>. They can be avoided,
+        but can't be teched. If the target is grabbed they are going for a ride
+        no matter what they press.
       </p>
 
       <p className="text-light text-lg">
-        Every attack and every block have the appropriate counter (provided you
-        can react fast enough). They keep blocking high mix it up with a low
-        attack. If they keep blocking low, throw in an overhead. If they keep
-        guessing the block type correctly, trick them with a throw.
+        Every attack and block has the appropriate counter. If they keep
+        blocking high, mix in a low attack. If they keep blocking low, throw in
+        an overhead. If they keep guessing correctly, trick them with a throw.
       </p>
 
       <h2>Frame data</h2>
 
       <p>
-        Frame data looks intimidating but understanding it will help you judge
-        characters and situations better without the help of online guides. The
-        in-game tutorial explains it in a nice visual way.
+        Frame data looks intimidating, but understanding it helps you judge
+        characters and situations without online guides. The in-game tutorial
+        explains it visually.
       </p>
 
       <ImageWithCaption
@@ -210,33 +273,27 @@ export default async function Page() {
       />
 
       <p>
-        To grasp the numbers, we must review that MK is fixed to 60 frames per
-        second because it uses frame-based animations, instead of time-based
-        ones (same as most fighting and all souls-borne games). This gives
-        another degree of accuracy as you know just how many frames each move
-        takes and you can calculate relative to one second.
+        MK runs at 60 frames per second using frame-based animations instead of
+        time-based ones (like most fighting games). This gives accuracy—you know
+        exactly how many frames each move takes.
       </p>
 
       <h3>Fast vs slow moves</h3>
 
       <p>
-        Each move has three segments - startup, active and recovery. They are
-        executed in the same sequence. When a player presses a button the start
-        sequence begins. The attack gains momentum. This takes the amount of
-        frames written next to start-up. This is knows simply as start-up. You
-        will see things like 15f start-up, which means this particular attack
-        takes 15 frames to become active. During start-up time the attack is not
-        active yet.
+        Each move has three segments—startup, active, and recovery. When a
+        player presses a button, the startup begins. This takes the number of
+        frames listed next to startup. A 15f startup means the attack takes 15
+        frames to become active. During startup, the attack is not yet active.
       </p>
 
       <p>
-        If the other player steps away out of range during this time, the attack
-        will miss. If they launch an attack with fewer start-up frames that the
-        one currently being executed, they can interupt it and hit the initial
-        attacker bofore getting hit.
+        If the opponent steps out of range during startup, the attack will miss.
+        If they launch an attack with fewer startup frames, they can interrupt
+        and hit first.
       </p>
 
-      <h3>Safe vs unsafe moves</h3>
+      <h3>Safe vs. unsafe moves</h3>
 
       <h2>Beyond the move list</h2>
 
@@ -245,25 +302,19 @@ export default async function Page() {
         sheets.
       </p>
 
-      <h2>Other Terms</h2>
-      <p>
-        This section aims to clarify community terms related to attacks. Some
-        are general for all fighting games.
-      </p>
+      <h2>Other terms</h2>
+      <p>This section clarifies community terms related to attacks.</p>
 
       <h3>Pokes</h3>
       <p>
-        A poke can be any single low-commitment attack - either safe on block or
-        safe from a distance. It’s a check. Is their mind in the game? Are they
-        judging distance correctly? Poking is scouting your opponent’s habits
-        and reactions. It may start combos, but that is not the focus.
+        A poke is any low-commitment attack—safe on block or from a distance.
+        It's a check: Are they focused? Judging distance correctly? Poking
+        scouts your opponent's habits and reactions.
       </p>
 
       <p>
-        Because you are testing them,{' '}
-        <strong>mids are usually the best pokes</strong> as they can’t be
-        ducked. The further reaching the better but also speed and safety are
-        considerations.
+        <strong>Mids are the best pokes</strong> as they can't be ducked. Range,
+        speed, and safety are key considerations.
       </p>
     </>
   )
