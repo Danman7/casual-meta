@@ -9,11 +9,11 @@ export default function Page() {
     <>
       <section className="max-w-3xl mx-auto space-y-16 text-center h-[calc(100dvh-(--spacing(32)))] flex flex-col justify-around items-center">
         <div className="font-display">
-          <div className="text-6xl text-primary font-bold animate-slide-left">
+          <div className="text-5xl md:text-7xl text-primary font-bold animate-slide-left">
             Docs
           </div>
 
-          <div className="text-4xl animate-slide-right">
+          <div className="text-4xl md:text-5xl animate-slide-right">
             for <span className="italic border-b">casual</span> players
           </div>
         </div>
