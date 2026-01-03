@@ -1,9 +1,7 @@
 export const Callout: React.FC<
   React.PropsWithChildren<{ className?: string }>
 > = ({ children, className }) => (
-  <div
-    className={`bg-surface p-4 rounded shadow-sm my-4 border-l-4 border-primary  ${className}`}
-  >
+  <div className={`bg-surface rounded p-4 shadow-sm my-4 ${className}`}>
     {children}
   </div>
 )

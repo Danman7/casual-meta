@@ -3,29 +3,27 @@
 :root {
   --background: var(--color-neutral-50);
   --foreground: var(--color-neutral-950);
-  --light-foreground: var(--color-neutral-700);
   --surface: var(--color-neutral-100);
-  --primary: var(--color-emerald-700);
+  --primary: var(--color-red-800);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--color-neutral-900);
     --foreground: var(--color-neutral-100);
-    --light-foreground: var(--color-neutral-300);
     --surface: var(--color-neutral-800);
-    --primary: var(--color-emerald-500);
+    --primary: var(--color-red-500);
   }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-light-foreground: var(--light-foreground);
   --color-surface: var(--surface);
   --color-primary: var(--primary);
   --font-sans: var(--font-noto-sans);
   --font-serif: var(--font-noto-serif);
+  --font-display: var(--font-noto-serif-display);
 
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out both;
 
@@ -73,18 +71,10 @@
     font-family: var(--font-noto-serif);
   }
 
-  h2,
-  h3,
-  strong {
-    color: var(--color-light-foreground);
-  }
-
   h2 {
     font-size: var(--text-3xl);
     padding-top: --spacing(6);
-    margin-top: --spacing(12);
-    font-weight: var(--font-weight-light);
-    border-top: 1px solid var(--color-foreground);
+    margin-top: --spacing(6);
   }
 
   h3 {
@@ -93,16 +83,18 @@
   }
 
   p,
-  ul,
   img,
   figure {
-    line-height: 1.6;
-    letter-spacing: 0.5px;
     margin-block: --spacing(5);
   }
 
-  a {
-    color: var(--primary);
+  article a {
     text-decoration: underline;
+    font-weight: var(--font-weight-semibold);
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }

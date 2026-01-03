@@ -584,13 +584,13 @@ export default async function Page() {
       />
 
       <p>
-        Ferra contributes to the mix-up more directly.
-        She's slightly more technical than Movado. On pressing <Badge>K</Badge>{' '}
-        she goes into a "attached to your back" stance. From there, pressing a
-        face button performs different attacks. For example, pressing{' '}
-        <Badge>2</Badge> does an overhead, while <Badge>3</Badge> does a low.
-        This plays nicely with Scorpion's <Badge>B3</Badge> -{' '}
-        <Badge>B3 K 2</Badge> or <Badge>B3 K 3</Badge>.
+        Ferra contributes to the mix-up more directly. She's slightly more
+        technical than Movado. On pressing <Badge>K</Badge> she goes into a
+        "attached to your back" stance. From there, pressing a face button
+        performs different attacks. For example, pressing <Badge>2</Badge> does
+        an overhead, while <Badge>3</Badge> does a low. This plays nicely with
+        Scorpion's <Badge>B3</Badge> - <Badge>B3 K 2</Badge> or{' '}
+        <Badge>B3 K 3</Badge>.
       </p>
 
       <h3 id="chameleon">Chameleon</h3>

@@ -54,7 +54,7 @@ export default async function Page() {
       <Image
         src={Arena}
         alt="Shang Tsung's arena in Mortal Kombat."
-        className="mx-auto"
+        className="mx-auto shadow-md"
       />
 
       <p>

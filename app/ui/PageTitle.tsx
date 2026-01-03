@@ -2,10 +2,8 @@ export const PageTitle: React.FC<{ title: string; subtitle?: string }> = ({
   title,
   subtitle,
 }) => (
-  <div className="rounded border-l-4 border-primary pl-4 mb-4">
-    {subtitle && <div className="font-serif italic">{subtitle}</div>}
-    <h1 className="text-5xl font-serif text-light-foreground tracking-tight">
-      {title}
-    </h1>
+  <div className="border-l border-primary pl-4 mb-8 font-serif">
+    {subtitle && <div>{subtitle}</div>}
+    <h1 className="text-4xl font-semibold">{title}</h1>
   </div>
 )

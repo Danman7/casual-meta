@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState, startTransition } from 'react'
 import { IoMdArrowDropdown, IoMdArrowDropright } from 'react-icons/io'
@@ -20,16 +19,17 @@ function TreeNode({
   onSelect,
 }: {
   item: RouteItem
+  isTopNav?: boolean
   onSelect: () => void
 }) {
   const hasChildren = !!item.children?.length
   return (
-    <li className="mt-2">
+    <li className="w-full">
       <Anchor href={item.href} onClick={onSelect}>
         {item.title}
       </Anchor>
       {hasChildren && (
-        <ul className="ml-5 mt-1 space-y-1">
+        <ul className="ml-4">
           {item.children!.map((child) => (
             <TreeNode key={child.href} item={child} onSelect={onSelect} />
           ))}
@@ -64,7 +64,10 @@ export function SubNavClient({ items, title, rootUrl, isTopNav }: Props) {
   const handleSelect = () => closeNav()
 
   return (
-    <nav className={`${isTopNav ? 'md:hidden inset-shadow-xs' : ''}`}>
+    <nav
+      className={`${isTopNav ? 'md:hidden inset-shadow-xs' : ''}`}
+      aria-labelledby="section-navigation"
+    >
       {isTopNav ? (
         <button
           type="button"
@@ -77,13 +80,13 @@ export function SubNavClient({ items, title, rootUrl, isTopNav }: Props) {
           <span>{title}</span>
         </button>
       ) : (
-        <Link href={rootUrl} className="text-lg font-semibold">
+        <Anchor href={rootUrl} className="text-xl font-bold border-b mb-4">
           {title}
-        </Link>
+        </Anchor>
       )}
 
       {open && (
-        <ul id="subnav-root" className={`${isTopNav ? 'px-4' : ''} mt-0`}>
+        <ul id="subnav-root">
           {items.map((item) => (
             <TreeNode key={item.href} item={item} onSelect={handleSelect} />
           ))}

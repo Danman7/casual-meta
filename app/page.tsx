@@ -8,8 +8,8 @@ export default function Page() {
   return (
     <>
       <section className="space-y-16 text-center h-[calc(100dvh-(--spacing(32)))] flex flex-col justify-around items-center">
-        <div>
-          <div className="text-5xl text-primary font-bold animate-slide-left">
+        <div className="font-display">
+          <div className="text-6xl text-primary font-bold animate-slide-left">
             Docs
           </div>
 
@@ -18,13 +18,13 @@ export default function Page() {
           </div>
         </div>
 
-        <FlexWrapper className="justify-center font-semibold">
+        <FlexWrapper className="justify-center font-semibold font-serif text-xl">
           {ROOT_NAVIGATION_ITEMS.map((item, index) => (
             <Link
               key={item.href}
               href={item.href}
               style={{ animationDelay: `${0.3 + index * 0.3}s` }}
-              className="text-lg animate-fade-in-scale px-4"
+              className="animate-fade-in-scale px-4 py-2 hover:text-primary transition"
             >
               {item.name}
             </Link>

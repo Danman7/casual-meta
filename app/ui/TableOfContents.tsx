@@ -14,9 +14,7 @@ export const TableOfContents: React.FC = () => {
   const pathname = usePathname()
 
   useEffect(() => {
-    // Use requestAnimationFrame to defer the DOM query until after render
     const rafId = requestAnimationFrame(() => {
-      // Extract headings from the page
       const articleElement = document.querySelector('article, main')
       if (!articleElement) return
 
@@ -42,8 +40,8 @@ export const TableOfContents: React.FC = () => {
   if (headings.length === 0) return null
 
   return (
-    <nav className="">
-      <h4 className="font-bold">On This Page</h4>
+    <nav aria-labelledby="page-navigation">
+      <h4 className="font-bold mb-4 border-b">On This Page</h4>
 
       <ul id="toc-root" className="mt-0">
         {headings.map((heading) => (
