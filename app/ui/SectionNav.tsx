@@ -65,13 +65,13 @@ export function SectionNav({ items, title, rootUrl, isTopNav }: Props) {
 
   return (
     <nav
-      className={`${isTopNav ? 'md:hidden inset-shadow-xs' : ''}`}
+      className={`${isTopNav ? 'lg:hidden ' : ''}`}
       aria-labelledby="section-navigation"
     >
       {isTopNav ? (
         <button
           type="button"
-          className="w-full inline-flex items-center gap-1 text-foreground font-serif font-semibold hover:bg-primary hover:text-background cursor-pointer px-4 py-2 transition-all"
+          className="w-full mb-4 inline-flex items-center gap-1 text-foreground font-serif font-semibold hover:text-primary cursor-pointer transition-all"
           aria-expanded={open}
           aria-controls="subnav-root"
           onClick={() => setIsManuallyToggled((v) => !v)}
@@ -86,7 +86,7 @@ export function SectionNav({ items, title, rootUrl, isTopNav }: Props) {
       )}
 
       {open && (
-        <ul id="subnav-root">
+        <ul id="subnav-root" className={isTopNav ? 'mb-4' : ''}>
           {items.map((item) => (
             <TreeNode key={item.href} item={item} onSelect={handleSelect} />
           ))}
