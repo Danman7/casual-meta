@@ -1,58 +1,97 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState, startTransition } from 'react'
+import { IoMdArrowDropdown, IoMdArrowDropright } from 'react-icons/io'
 
-import { getRouteTreeForPath } from '@/app/actions/getRouteTree'
-import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
-import { SubNavClient } from '@/app/ui/SubNavClient'
+import { Anchor } from '@/app/ui/Anchor'
 import type { RouteItem } from '@/lib/routes'
 
-export const SectionNav: React.FC<{ isTopNav?: boolean }> = ({ isTopNav }) => {
+type Props = {
+  items: RouteItem[]
+  title: string
+  rootUrl: string
+  isTopNav?: boolean
+}
+
+function TreeNode({
+  item,
+  onSelect,
+}: {
+  item: RouteItem
+  isTopNav?: boolean
+  onSelect: () => void
+}) {
+  const hasChildren = !!item.children?.length
+  return (
+    <li className="w-full">
+      <Anchor href={item.href} onClick={onSelect}>
+        {item.title}
+      </Anchor>
+      {hasChildren && (
+        <ul className="ml-4">
+          {item.children!.map((child) => (
+            <TreeNode key={child.href} item={child} onSelect={onSelect} />
+          ))}
+        </ul>
+      )}
+    </li>
+  )
+}
+
+export function SectionNav({ items, title, rootUrl, isTopNav }: Props) {
+  const [isManuallyToggled, setIsManuallyToggled] = useState(false)
   const pathname = usePathname()
-  const [items, setItems] = useState<RouteItem[] | null>(null)
-  const [title, setTitle] = useState<string>('')
-  const [rootUrl, setRootUrl] = useState<string>('')
+  const prevPathnameRef = useRef(pathname)
+
+  const open = isTopNav ? isManuallyToggled : true
 
   useEffect(() => {
-    let active = true
-
-    async function run() {
-      if (!pathname) {
-        if (active) setItems(null)
-        return
-      }
-
-      const section = ROOT_NAVIGATION_ITEMS.find((item) =>
-        pathname.startsWith(item.href),
-      )
-
-      if (!section) {
-        if (active) setItems(null)
-        return
-      }
-
-      setTitle(section.name)
-      setRootUrl(section.href)
-      const data = await getRouteTreeForPath(section.href)
-      if (active) setItems(data)
+    if (isTopNav && prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname
+      startTransition(() => {
+        setIsManuallyToggled(false)
+      })
     }
+  }, [pathname, isTopNav])
 
-    run()
-
-    return () => {
-      active = false
+  const closeNav = () => {
+    if (isTopNav) {
+      setIsManuallyToggled(false)
     }
-  }, [pathname])
+  }
 
-  if (!items || items.length === 0) return null
+  const handleSelect = () => closeNav()
 
   return (
-    <SubNavClient
-      items={items}
-      title={title}
-      rootUrl={rootUrl}
-      isTopNav={isTopNav}
-    />
+    <nav
+      className={`${isTopNav ? 'md:hidden inset-shadow-xs' : ''}`}
+      aria-labelledby="section-navigation"
+    >
+      {isTopNav ? (
+        <button
+          type="button"
+          className="w-full inline-flex items-center gap-1 text-foreground font-serif font-semibold hover:bg-primary hover:text-background cursor-pointer px-4 py-2 transition-all"
+          aria-expanded={open}
+          aria-controls="subnav-root"
+          onClick={() => setIsManuallyToggled((v) => !v)}
+        >
+          {isTopNav && open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
+          <span>{title}</span>
+        </button>
+      ) : (
+        <Anchor href={rootUrl} className="text-xl font-bold border-b mb-4">
+          {title}
+        </Anchor>
+      )}
+
+      {open && (
+        <ul id="subnav-root">
+          {items.map((item) => (
+            <TreeNode key={item.href} item={item} onSelect={handleSelect} />
+          ))}
+        </ul>
+      )}
+    </nav>
   )
 }

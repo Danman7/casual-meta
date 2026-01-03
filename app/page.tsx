@@ -7,7 +7,7 @@ import { FlexWrapper } from '@/app/ui/FlexWrapper'
 export default function Page() {
   return (
     <>
-      <section className="space-y-16 text-center h-[calc(100dvh-(--spacing(32)))] flex flex-col justify-around items-center">
+      <section className="max-w-3xl mx-auto space-y-16 text-center h-[calc(100dvh-(--spacing(32)))] flex flex-col justify-around items-center">
         <div className="font-display">
           <div className="text-6xl text-primary font-bold animate-slide-left">
             Docs
@@ -24,7 +24,7 @@ export default function Page() {
               key={item.href}
               href={item.href}
               style={{ animationDelay: `${0.3 + index * 0.3}s` }}
-              className="animate-fade-in-scale px-4 py-2 hover:text-primary transition"
+              className="animate-fade-in-scale px-4 py-2 hover:text-primary transition underline"
             >
               {item.name}
             </Link>
@@ -39,7 +39,7 @@ export default function Page() {
         </Callout>
       </section>
 
-      <section className="space-y-8">
+      <section className="space-y-8 max-w-3xl mx-auto">
         <p>
           We think they can. This is why we consolidated the community knowledge
           (YouTube, reddit, official guides, forums, wikis) in this place. We

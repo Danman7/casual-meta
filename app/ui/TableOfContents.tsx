@@ -48,7 +48,7 @@ export const TableOfContents: React.FC = () => {
           <li key={heading.id} className={heading.level === 3 ? 'ml-4' : ''}>
             <a
               href={`#${heading.id}`}
-              className="text-sm"
+              className="text-sm hover:underline"
               onClick={(e) => {
                 e.preventDefault()
 

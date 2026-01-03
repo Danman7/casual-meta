@@ -4,7 +4,7 @@
   --background: var(--color-neutral-50);
   --foreground: var(--color-neutral-950);
   --surface: var(--color-neutral-100);
-  --primary: var(--color-red-800);
+  --primary: var(--color-red-700);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -91,10 +91,9 @@
   article a {
     text-decoration: underline;
     font-weight: var(--font-weight-semibold);
-    opacity: 0.9;
 
     &:hover {
-      opacity: 1;
+      color: var(--color-primary);
     }
   }
 }

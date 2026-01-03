@@ -7,7 +7,6 @@ import { BsPcDisplay } from 'react-icons/bs'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
 import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
-import { SectionNav } from '@/app/ui/SectionNav'
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -28,7 +27,7 @@ export const Header = () => {
 
   return (
     <header className="z-10 sticky top-0 shadow-md bg-surface">
-      <nav className="p-4" aria-labelledby="primary-navigation">
+      <nav className="px-6 py-4" aria-labelledby="primary-navigation">
         <div className="flex items-center gap-4 justify-between">
           <Link
             className="flex items-center gap-1 hover:gap-2 hover:text-primary font-semibold text-2xl font-serif no-underline transition-all text-foreground"
@@ -65,8 +64,6 @@ export const Header = () => {
           </div>
         )}
       </nav>
-
-      <SectionNav isTopNav />
     </header>
   )
 }
