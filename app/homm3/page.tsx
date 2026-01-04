@@ -32,8 +32,6 @@ export default async function Page() {
           'Consolidate the community’s knowledge and experience.',
         ]}
       />
-
-      <SubPageNav route={HOMM3_BASE_URL} />
     </>
   )
 }

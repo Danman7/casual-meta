@@ -55,11 +55,7 @@ export default async function Page() {
         </div>
       </div>
 
-      <Callout className="space-y-4">
-        <h2 id="play-or-skip" className="pt-0! mt-0! border-t-0">
-          Play or skip?
-        </h2>
-
+      <Callout titleId="play-or-skip" title="Play or skip?">
         <div className="md:flex gap-4">
           <div className="md:w-1/2">
             <FlexWrapper className="font-bold text-success">

@@ -111,10 +111,6 @@ export default async function Page() {
       <p>
         The Oath is more powerful against fewer, tougher targets than swarms.
       </p>
-
-      <h2>Further Reading</h2>
-
-      <SubPageNav route={`${WH40K_BASE_URL}/space-marines`} />
     </>
   )
 }

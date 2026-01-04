@@ -65,10 +65,6 @@ export default async function Page() {
         game. We will focus on the online Player vs Player (PvP) aspect, giving
         you the tools to learn any character.
       </p>
-
-      <h2>Contents</h2>
-
-      <SubPageNav route={MK_BASE_URL} />
     </>
   )
 }

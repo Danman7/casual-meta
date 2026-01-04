@@ -53,8 +53,6 @@ export default async function Page() {
           ]}
         />
       </div>
-
-      <SubPageNav route={WH40K_BASE_URL} />
     </>
   )
 }

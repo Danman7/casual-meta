@@ -23,7 +23,7 @@ export function SectionLayout({
       <div className="flex relative grow px-6 py-12 gap-6">
         <aside className="hidden lg:flex flex-1 justify-end">
           <div className="shrink-0">
-            <div className="sticky top-28 max-h-[calc(100vh-5rem)]">
+            <div className="sticky top-22 max-h-[calc(100vh-5rem)]">
               <SectionNav items={items} title={title} rootUrl={rootUrl} />
             </div>
           </div>
@@ -35,7 +35,7 @@ export function SectionLayout({
 
         <aside className="hidden xl:flex flex-1 justify-start">
           <div className="shrink-0">
-            <div className="sticky top-28 max-h-[calc(100vh-5rem)]">
+            <div className="sticky top-22 max-h-[calc(100vh-5rem)]">
               <TableOfContents />
             </div>
           </div>

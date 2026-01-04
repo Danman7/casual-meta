@@ -4,7 +4,7 @@
   --background: var(--color-neutral-50);
   --foreground: var(--color-neutral-950);
   --surface: var(--color-neutral-100);
-  --primary: var(--color-red-700);
+  --primary: var(--color-red-800);
 }
 
 @media (prefers-color-scheme: dark) {

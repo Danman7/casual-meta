@@ -41,10 +41,6 @@ export default async function Page() {
       <h2 id="kameos">Kameos</h2>
 
       <p>A major difference</p>
-
-      <h2 id="contents">Contents</h2>
-
-      <SubPageNav route={`${MK_BASE_URL}/mk1`} />
     </>
   )
 }
