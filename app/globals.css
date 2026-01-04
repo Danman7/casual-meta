@@ -5,6 +5,7 @@
   --foreground: var(--color-neutral-950);
   --surface: var(--color-neutral-100);
   --primary: var(--color-red-800);
+  --header-offset: 80px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -81,6 +82,11 @@
   h3 {
     font-size: var(--text-xl);
     font-weight: var(--font-weight-bold);
+  }
+
+  article h2,
+  article h3 {
+    scroll-margin-top: var(--header-offset);
   }
 
   p,

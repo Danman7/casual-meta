@@ -55,7 +55,15 @@ export const TableOfContents: React.FC = () => {
                 const element = document.getElementById(heading.id)
                 if (element) {
                   const y = element.getBoundingClientRect().top + window.scrollY
-                  window.scrollTo({ top: y, behavior: 'smooth' })
+                  const rawOffset = getComputedStyle(
+                    document.documentElement,
+                  ).getPropertyValue('--header-offset')
+                  const headerOffset = Number.parseFloat(rawOffset) || 0
+
+                  window.scrollTo({
+                    top: Math.max(y - headerOffset, 0),
+                    behavior: 'smooth',
+                  })
                 }
               }}
             >
