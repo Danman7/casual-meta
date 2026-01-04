@@ -18,9 +18,9 @@ import { IoPeople } from 'react-icons/io5'
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
-import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
 import { FlexWrapper } from '@/app/ui/FlexWrapper'
+import { Pill } from '@/app/ui/Pill'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 11
@@ -55,29 +55,29 @@ export default async function Page() {
 
       <h3>Intercessor Squad</h3>
       <FlexWrapper className="mt-2">
-        <Badge className="text-success border-success">
+        <Pill className="text-success border-success">
           <GiPencilRuler /> Best Utility
-        </Badge>
+        </Pill>
 
-        <Badge className="text-success border-success">
+        <Pill className="text-success border-success">
           <GiFlyingFlag /> Sticky Objectives
-        </Badge>
+        </Pill>
 
-        <Badge className="text-success border-success">
+        <Pill className="text-success border-success">
           <GiBolterGun /> Consistent ranged damage
-        </Badge>
+        </Pill>
 
-        <Badge className="text-success border-success">
+        <Pill className="text-success border-success">
           <GiSkullCrack /> Good vs GEQ
-        </Badge>
+        </Pill>
 
-        <Badge>
+        <Pill>
           <GiSkullCrack /> OK vs MEQ
-        </Badge>
+        </Pill>
 
-        <Badge className="text-error border-error!">
+        <Pill className="text-error border-error!">
           <GiBlackHandShield /> Weak vs T5+
-        </Badge>
+        </Pill>
       </FlexWrapper>
 
       <Image
@@ -205,29 +205,29 @@ export default async function Page() {
       <h3>Assault Intercessor Squad</h3>
 
       <FlexWrapper className="mt-2">
-        <Badge className="text-success border-success">
+        <Pill className="text-success border-success">
           <GiTwoCoins /> Expendable
-        </Badge>
+        </Pill>
 
-        <Badge className="text-success border-success">
+        <Pill className="text-success border-success">
           <GiSkullCrack /> Good vs GEQ
-        </Badge>
+        </Pill>
 
-        <Badge className="text-success border-success">
+        <Pill className="text-success border-success">
           <IoPeople /> Strong Character Support
-        </Badge>
+        </Pill>
 
-        <Badge className="text-error border-error!">
+        <Pill className="text-error border-error!">
           <GiBlackHandShield /> Weak vs T5+
-        </Badge>
+        </Pill>
 
-        <Badge className="text-error border-error!">
+        <Pill className="text-error border-error!">
           <GiSnail /> Slow for role
-        </Badge>
+        </Pill>
 
-        <Badge className="text-error border-error!">
+        <Pill className="text-error border-error!">
           <GiShadowFollower /> Better Alternatives
-        </Badge>
+        </Pill>
       </FlexWrapper>
       <Image
         src={assaultIntercessors}

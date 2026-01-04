@@ -5,13 +5,13 @@ import { IoIosThumbsDown, IoIosThumbsUp } from 'react-icons/io'
 import Shao from '@/app/assets/mk1/shao.webp'
 import shao2 from '@/app/assets/mk1/shao_2.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
-import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
 import { Emphasis } from '@/app/ui/Emphasis'
 import { Flavor } from '@/app/ui/Flavor'
 import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { Pill } from '@/app/ui/Pill'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -110,10 +110,10 @@ export default async function Page() {
       </Emphasis>
 
       <p>
-        <Badge>Standing 2</Badge> is one of the best standing normals in the
-        game. It is a fast, safe, disjointed high attack with excellent reach.
-        Begin by practicing with a CPU to stay a few steps away from them and
-        poke at its maximum reach.
+        <Pill>Standing 2</Pill> is one of the best standing normals in the game.
+        It is a fast, safe, disjointed high attack with excellent reach. Begin
+        by practicing with a CPU to stay a few steps away from them and poke at
+        its maximum reach.
       </p>
 
       <ImageWithCaption

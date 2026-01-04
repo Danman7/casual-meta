@@ -12,13 +12,13 @@ import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
-import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
 import { Emphasis } from '@/app/ui/Emphasis'
 import { Flavor } from '@/app/ui/Flavor'
 import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { Pill } from '@/app/ui/Pill'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 8
@@ -119,12 +119,12 @@ export default async function Page() {
       <h3 id="standing-2">Mid-screen</h3>
 
       <p>
-        A good starting point is to learn how far <Badge>Standing 2</Badge>{' '}
+        A good starting point is to learn how far <Pill>Standing 2</Pill>{' '}
         stretches. That is <em>your primary poke</em> - safe, fast, disjointed
         high punch with a good span. Aim to hit them at the attack's maximum
         range. Once you get a feel for it, start confirming hits with{' '}
-        <Badge>21</Badge>. If they block: stop. On hit: continue into Spear -{' '}
-        <Badge>21 BF1</Badge>
+        <Pill>21</Pill>. If they block: stop. On hit: continue into Spear -{' '}
+        <Pill>21 BF1</Pill>
       </p>
 
       <ImageWithCaption
@@ -134,7 +134,7 @@ export default async function Page() {
       />
 
       <p>
-        <em>The Spear</em> <Badge>BF1</Badge> is an{' '}
+        <em>The Spear</em> <Pill>BF1</Pill> is an{' '}
         <em>excellent mid-range check</em>. Think of it as a Standing 2 with
         longer reach. It is slower and is unsafe, but players often get so
         comfortable that a Spear interrupts their dashes, or catches them at the
@@ -154,38 +154,38 @@ export default async function Page() {
         You can expect opponents to block, jump, or teleport around your Spear.
         But because it is a <em>high</em> projectile, some players will also try
         to duck under it. If you spot this pattern in your foe, do a{' '}
-        <Badge>BF1ex</Badge> Enhanced Spear which hits <em>mid</em> to surprise
+        <Pill>BF1ex</Pill> Enhanced Spear which hits <em>mid</em> to surprise
         them.
       </p>
 
       <p>
-        <Badge>Back 2</Badge> is your best anti-air. It can be{' '}
+        <Pill>Back 2</Pill> is your best anti-air. It can be{' '}
         <em>shortcut cancelled</em> into any back-forward move. For example{' '}
-        <Badge>B2 F1</Badge> cancels into Spear without having to press back
+        <Pill>B2 F1</Pill> cancels into Spear without having to press back
         twice. Get the hang of this early to control air pressure.
       </p>
 
       <h3 id="up-close">Up close</h3>
 
       <p>
-        <Badge>Forward 32</Badge> is your{' '}
+        <Pill>Forward 32</Pill> is your{' '}
         <em>optimal launcher and combo starter</em>. It can be{' '}
         <em>chained up to three times</em>, with multiple ways to extend
         further. The first hit is an advancing <em>mid</em> which is also a
         decent check for crouching opponents. Strive to start your pressure with
-        this string whenever <Badge>21</Badge> doesn't feel right.
+        this string whenever <Pill>21</Pill> doesn't feel right.
       </p>
 
       <p>
         In case you are touching and their pressure is too much, you can go for{' '}
-        <Badge>12</Badge>. It is your fastest hit confirm, but has a shorter
+        <Pill>12</Pill>. It is your fastest hit confirm, but has a shorter
         reach, lower damage and limited extensions.
       </p>
 
       <p>
         Simply blocking is also always an option, but be prepared to get knocked
         down eventually. Provided they sustain the pressure on your wakeup,
-        execute an <em>Armored Enhanced Charge</em> <Badge>BF2ex</Badge>. Unless
+        execute an <em>Armored Enhanced Charge</em> <Pill>BF2ex</Pill>. Unless
         they block, it will suspend their offense and can even be comboed out of
         with the proper Kameos.
       </p>
@@ -194,7 +194,7 @@ export default async function Page() {
 
       <p>
         The Charge won't reach and the Spear is too slow at full screen. For
-        that distance you have the <em>Flame Port</em> <Badge>DB3</Badge>.
+        that distance you have the <em>Flame Port</em> <Pill>DB3</Pill>.
         Scorpion dashes away from his foe, loops through the screen and throws a
         punch from the other side. It is a multi-purpose teleport move.
       </p>
@@ -209,16 +209,16 @@ export default async function Page() {
       <p>
         An experienced player however can bait throwing a projectile and instead
         block your Port which is very unsafe. A good practice is to occasionally
-        vary with the enhanced version <Badge>DB3ex</Badge>. It estands Scorpion
+        vary with the enhanced version <Pill>DB3ex</Pill>. It estands Scorpion
         on the other side of the target, skipping the attack. Enhanced Port into
         a Throw is the simplest route to mess up their defense. You can also
-        practive Enhanced Port into <Badge>Down 1</Badge> or into micro-duck
-        then <Badge>Standing 1</Badge>.
+        practive Enhanced Port into <Pill>Down 1</Pill> or into micro-duck then{' '}
+        <Pill>Standing 1</Pill>.
       </p>
 
       <p>
-        Finally, you have the <em>Devouring Flame</em> <Badge>DB4</Badge> for
-        any play who like to just stay away and block. It is a <em>low</em>
+        Finally, you have the <em>Devouring Flame</em> <Pill>DB4</Pill> for any
+        play who like to just stay away and block. It is a <em>low</em>
         -hitting special that spawns under the target's feet at any distance.
         The enhanced version does guaranteed damage over time if it connects.
         Just keep in mind that it is slow and unsafe and can be punished by a
@@ -228,11 +228,11 @@ export default async function Page() {
       <h3 id="conditioning">Conditioning</h3>
 
       <p>
-        Scorpion's <Badge>Back 3</Badge> is a unique move. He launches his Kunai
+        Scorpion's <Pill>Back 3</Pill> is a unique move. He launches his Kunai
         for a disjointed two-hit mid-low attack. It is slow and unsafe, but
         reaches very far. The threat of a low hit at this distance conditions
         your opponent to preemptively block low or jump forward. Don't forget
-        about your <Badge>B2</Badge>.
+        about your <Pill>B2</Pill>.
       </p>
 
       <ImageWithCaption
@@ -246,8 +246,8 @@ export default async function Page() {
         <Emphasis className="mt-0">Back 3 cancels</Emphasis>
 
         <Flavor>
-          The first mid hit of <Badge>B3</Badge> can be cancelled into any
-          special or Kameo move.
+          The first mid hit of <Pill>B3</Pill> can be cancelled into any special
+          or Kameo move.
         </Flavor>
 
         <p>
@@ -269,23 +269,23 @@ export default async function Page() {
 
       <p>
         If neither of you commits to attacking, try promptly tapping{' '}
-        <Badge>1</Badge> (quickest recovery) into <Badge>BF1</Badge>. Seeing a
-        whiff into empty air may motivate your opponent to dash forward or do an
+        <Pill>1</Pill> (quickest recovery) into <Pill>BF1</Pill>. Seeing a whiff
+        into empty air may motivate your opponent to dash forward or do an
         unsafe move. If this happens, the Spear will connect. This is cheap but
         legit tech.
       </p>
 
       <p>
         Another approach is to <em>derail</em> one of your strings.{' '}
-        <Badge>122</Badge> has a punishable gap between the second and third
-        hit. It is also vulnerable to up block. Cut it short - <Badge>12</Badge>{' '}
-        into a throw. If your foe expects the full string, they will be thrown.
+        <Pill>122</Pill> has a punishable gap between the second and third hit.
+        It is also vulnerable to up block. Cut it short - <Pill>12</Pill> into a
+        throw. If your foe expects the full string, they will be thrown.
       </p>
 
       <p>
-        Same thing with any Forward 3 string - <Badge>F32</Badge> or{' '}
-        <Badge>F34</Badge>. If they keep predicting the full string, do only{' '}
-        <Badge>F3</Badge> into a throw. <Badge>F3</Badge> is also a good{' '}
+        Same thing with any Forward 3 string - <Pill>F32</Pill> or{' '}
+        <Pill>F34</Pill>. If they keep predicting the full string, do only{' '}
+        <Pill>F3</Pill> into a throw. <Pill>F3</Pill> is also a good{' '}
         <em>shimmy</em>. If you delay pressing Forward 3 while walking up, they
         may duck expecting a throw. The mid will hit them instead.
       </p>
@@ -305,14 +305,14 @@ export default async function Page() {
 
       <p>
         Start by following up on what you already know. Open with{' '}
-        <Badge>12/21/B2</Badge> into Spear. An optimal ender is{' '}
-        <Badge>33 DB2</Badge>. That is how you squeeze the most damage. but is
-        not always available.
+        <Pill>12/21/B2</Pill> into Spear. An optimal ender is{' '}
+        <Pill>33 DB2</Pill>. That is how you squeeze the most damage. but is not
+        always available.
       </p>
 
       <Callout>
         <div>
-          <Badge>21 BF1 33 DB2</Badge>
+          <Pill>21 BF1 33 DB2</Pill>
         </div>
         <Flavor className="mt-2">
           A basic 210 damage starter combo. Go into your first online matches
@@ -322,11 +322,11 @@ export default async function Page() {
 
       <p>
         To maximize effect you must learn to juggle the opponent with{' '}
-        <Badge>F32</Badge>.
+        <Pill>F32</Pill>.
       </p>
 
       <Callout>
-        <Badge>21 BF1 F32 F32 F32 F34 BF2</Badge>
+        <Pill>21 BF1 F32 F32 F32 F34 BF2</Pill>
         <Flavor className="mt-2">
           Meterless 342 damage. The height after the third F32 is low.
           Connecting with the F34 into Charge can be a bit tight.
@@ -334,12 +334,12 @@ export default async function Page() {
       </Callout>
 
       <p>
-        Starting with <Badge>F32</Badge> instead and delaying the Spear will
-        allow you to use the better ender and give better results.
+        Starting with <Pill>F32</Pill> instead and delaying the Spear will allow
+        you to use the better ender and give better results.
       </p>
 
       <Callout>
-        <Badge>F32 F32 F32 4 BF1 33 DB2</Badge>
+        <Pill>F32 F32 F32 4 BF1 33 DB2</Pill>
         <Flavor className="mt-2">
           Meterless 365 damage. Connecting the Standing 4 after the last F32
           will be the trickiest part.
@@ -356,10 +356,10 @@ export default async function Page() {
       <Callout>
         <ul className="space-y-6 my-0">
           <li>
-            <Badge>
+            <Pill>
               21 BF1 F32 F32 J12 airDB2ex <Flavor>small pause</Flavor> 111
               airDB2
-            </Badge>
+            </Pill>
             <Flavor className="mt-2">
               One bar 377 damage. The idea of the pause is to delay the 111
               until both fighters are lower to the ground. This makes connecting
@@ -367,9 +367,9 @@ export default async function Page() {
             </Flavor>
           </li>
           <li>
-            <Badge>
+            <Pill>
               F32 F32 J12 airDB2ex <Flavor>small pause</Flavor> 111 BF1 33 DB2
-            </Badge>{' '}
+            </Pill>{' '}
             <Flavor className="mt-2">
               One bar <strong>407</strong> damage. Same pause but this time,
               because you delayed the Spear, you can connect into the familiar
@@ -388,29 +388,29 @@ export default async function Page() {
       <h3 id="in-the-corner">In the corner</h3>
 
       <p>
-        <Badge>Standing 4</Badge> keeps most of its damage through combo
-        scaling. In the corner its knockback is not a factor and you can chain
-        two of these in a row to spike up your damage.
+        <Pill>Standing 4</Pill> keeps most of its damage through combo scaling.
+        In the corner its knockback is not a factor and you can chain two of
+        these in a row to spike up your damage.
       </p>
 
       <Callout>
         <ul className="space-y-6 my-0">
           <li>
-            <Badge>
+            <Pill>
               F32 4 4 BF1 F32 J12 airDB2ex <Flavor>small pause</Flavor> J111
               JDB2
-            </Badge>
+            </Pill>
             <Flavor className="mt-2">
               One bar <strong>446</strong> damage. If you find chaining the
-              second <Badge>4</Badge> difficult, even a single one will still
-              get over 400 damage.
+              second <Pill>4</Pill> difficult, even a single one will still get
+              over 400 damage.
             </Flavor>
           </li>
           <li>
-            <Badge>
+            <Pill>
               F32 4 4 BF1 F32 J12 airDB2ex <Flavor>small pause</Flavor> J111{' '}
               <Flavor>land</Flavor> B2 BF4ex
-            </Badge>{' '}
+            </Pill>{' '}
             <Flavor className="mt-2">
               Attempt this two bar <strong>502</strong> damage monster if you
               are about to win the round. The enhanced Devouring Flame is
@@ -431,9 +431,9 @@ export default async function Page() {
       <Callout>
         <ul className="space-y-6 my-0">
           <li>
-            <Badge>
+            <Pill>
               J3 airDB3 <Flavor>land</Flavor> B2 F2
-            </Badge>
+            </Pill>
             <Flavor className="mt-2">
               The jump kick and the teleport must be initiated very close to the
               ground.
@@ -441,14 +441,13 @@ export default async function Page() {
           </li>
 
           <li>
-            <Badge>
+            <Pill>
               F32 J12 airDB3ex J13 <Flavor>land</Flavor> BF1 33 DB3
-            </Badge>{' '}
+            </Pill>{' '}
             <Flavor className="mt-2">
               One bar 334 damage. Only an enhanced air port will be fast enough
-              to connect. Connecting the <Badge>J13</Badge> is awkward. Often
-              the Port will miss. There must be a very short delay after the
-              J12.
+              to connect. Connecting the <Pill>J13</Pill> is awkward. Often the
+              Port will miss. There must be a very short delay after the J12.
             </Flavor>
           </li>
         </ul>
@@ -463,27 +462,27 @@ export default async function Page() {
       <Callout>
         <ul className="space-y-6 my-0">
           <li>
-            <Badge>
+            <Pill>
               airDB3ex J3 <Flavor>land</Flavor> BF1 F32 F32 F34 BF2
-            </Badge>
+            </Pill>
             <Flavor className="mt-2">
               An easier version for one bar 308 damage.
             </Flavor>
           </li>
 
           <li>
-            <Badge>
+            <Pill>
               airDB3ex J3 DB3 <Flavor>land</Flavor> F32 F32 4 BF1 33 DB2
-            </Badge>{' '}
+            </Pill>{' '}
             <Flavor className="mt-2">
               A challenging double-port one bar 411 damage variant.
             </Flavor>
           </li>
 
           <li>
-            <Badge>
+            <Pill>
               airDB3ex J3 DB3 <Flavor>land</Flavor> 4 BF1 F32 J12 airDB2ex
-            </Badge>{' '}
+            </Pill>{' '}
             <Flavor className="mt-2">
               A fancy two meter <strong>449</strong> damage advanced combo.
             </Flavor>
@@ -514,21 +513,21 @@ export default async function Page() {
       <p>
         Movado is a good pick for beginners and advanced players alike. He opens
         up a lot of new routes out of otherwise non-chainable moves. Thanks to{' '}
-        <Badge>Forward K</Badge>, knockback strings like <Badge>214</Badge> and{' '}
-        <Badge>F34</Badge> become starters. Nindrop <Badge>Up K</Badge> can
-        combo out of the Charge (giving armored combos) and keep the any{' '}
-        <Badge>airDB2ex</Badge> extended combo meterless.
+        <Pill>Forward K</Pill>, knockback strings like <Pill>214</Pill> and{' '}
+        <Pill>F34</Pill> become starters. Nindrop <Pill>Up K</Pill> can combo
+        out of the Charge (giving armored combos) and keep the any{' '}
+        <Pill>airDB2ex</Pill> extended combo meterless.
       </p>
 
       <p>
         After knocking your opponent down you can jump and press{' '}
-        <Badge>Down K</Badge> at the same time as <Badge>Jump Kick</Badge>. They
+        <Pill>Down K</Pill> at the same time as <Pill>Jump Kick</Pill>. They
         must block the low, allowing the overhead to connect, though the timing
         requires practice.
       </p>
 
       <p>
-        The Trap Drop <Badge>K</Badge> throws a stun bomb on the ground next to
+        The Trap Drop <Pill>K</Pill> throws a stun bomb on the ground next to
         the opponent that takes a second to detonate. If you time it with the
         moment in Scorpion's throw animation where he jumps off his foe, you can
         combo out of it.
@@ -537,18 +536,18 @@ export default async function Page() {
       <Callout>
         <ul className="space-y-6 my-0">
           <li>
-            <Badge>
+            <Pill>
               BF2ex UK <Flavor>switch sides</Flavor> dash F32 F32 4 BF1 33 DB2
-            </Badge>
+            </Pill>
             <Flavor className="mt-2">
               Meterless armored combo for 259 damage.
             </Flavor>
           </li>
 
           <li>
-            <Badge>
+            <Pill>
               F32 F32 J12 airDB2ex UK <Flavor>land</Flavor> BF1 33 DB2
-            </Badge>{' '}
+            </Pill>{' '}
             <Flavor className="mt-2">
               The same juggle to air extension combo as before, but meterless
               for 375 damage.
@@ -556,17 +555,17 @@ export default async function Page() {
           </li>
 
           <li>
-            <Badge>
+            <Pill>
               Throw <Flavor>time during animation</Flavor> K (trap) F32 F32 4
               BF1 33 DB2
-            </Badge>{' '}
+            </Pill>{' '}
             <Flavor className="mt-2">
               220 damage out of a throw (normally 110).
             </Flavor>
           </li>
 
           <li>
-            <Badge>F34 FK F32 4 BF1 33 DB2</Badge>
+            <Pill>F34 FK F32 4 BF1 33 DB2</Pill>
           </li>
         </ul>
       </Callout>
@@ -581,12 +580,11 @@ export default async function Page() {
 
       <p>
         Ferra contributes to the mix-up more directly. She's slightly more
-        technical than Movado. On pressing <Badge>K</Badge> she goes into a
+        technical than Movado. On pressing <Pill>K</Pill> she goes into a
         "attached to your back" stance. From there, pressing a face button
-        performs different attacks. For example, pressing <Badge>2</Badge> does
-        an overhead, while <Badge>3</Badge> does a low. This plays nicely with
-        Scorpion's <Badge>B3</Badge> - <Badge>B3 K 2</Badge> or{' '}
-        <Badge>B3 K 3</Badge>.
+        performs different attacks. For example, pressing <Pill>2</Pill> does an
+        overhead, while <Pill>3</Pill> does a low. This plays nicely with
+        Scorpion's <Pill>B3</Pill> - <Pill>B3 K 2</Pill> or <Pill>B3 K 3</Pill>.
       </p>
 
       <h3 id="chameleon">Chameleon</h3>
@@ -608,19 +606,19 @@ export default async function Page() {
       <Callout>
         <ul className="space-y-6 my-0">
           <li>
-            <Badge>
+            <Pill>
               Throw <Flavor>time during animation</Flavor> K (fan toss) J2 F32
               F32 4 BF1 33 DB2
-            </Badge>
+            </Pill>
             <Flavor className="mt-2">
               Must be in Kitana Form. 219 damage throw combo.
             </Flavor>
           </li>
 
           <li>
-            <Badge>
+            <Pill>
               BF2 FK <Flavor>switch sides</Flavor> BF1 F32 F32 4 BF2
-            </Badge>{' '}
+            </Pill>{' '}
             <Flavor className="mt-2">
               Kitana form. Meterles 234 damage armored combo.
             </Flavor>

@@ -48,7 +48,7 @@ Components in [app/ui/](app/ui/) follow these conventions:
 - Simple, functional components with `React.FC` type
 - Accept `children` and `className` props for composition
 - Use inline Tailwind classes (no CSS modules)
-- Example: [app/ui/FlexWrapper.tsx](app/ui/FlexWrapper.tsx), [app/ui/Badge.tsx](app/ui/Badge.tsx)
+- Example: [app/ui/FlexWrapper.tsx](app/ui/FlexWrapper.tsx), [app/ui/Pill.tsx](app/ui/Pill.tsx)
 
 ### Layout Components
 

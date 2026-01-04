@@ -89,12 +89,6 @@
     scroll-margin-top: var(--header-offset);
   }
 
-  p,
-  img,
-  figure {
-    margin-block: --spacing(5);
-  }
-
   article a {
     text-decoration: underline;
     font-weight: var(--font-weight-semibold);

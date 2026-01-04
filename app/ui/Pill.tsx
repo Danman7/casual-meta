@@ -1,4 +1,4 @@
-export const Badge: React.FC<
+export const Pill: React.FC<
   React.PropsWithChildren<{ className?: string }>
 > = ({ children, className }) => (
   <span
