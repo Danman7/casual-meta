@@ -2,9 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import wh40kTitle from '@/app/assets/wh40k/wh40k-battle.webp'
-import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
+import { WH40K_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
-import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(

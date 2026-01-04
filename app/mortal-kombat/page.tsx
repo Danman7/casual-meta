@@ -2,10 +2,9 @@ import Image from 'next/image'
 
 import MKMonk from '@/app/assets/mk/monk.webp'
 import Arena from '@/app/assets/mk/shang_tung_arena.webp'
-import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
+import { MK_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
 import { PageTitle } from '@/app/ui/PageTitle'
-import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(

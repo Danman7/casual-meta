@@ -1,6 +1,5 @@
-import { HOMM3_BASE_URL, HOMM3_TITLE } from '@/app/constants'
+import { HOMM3_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
-import { SubPageNav } from '@/app/ui/SubPageNav'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(
