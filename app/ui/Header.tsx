@@ -7,8 +7,18 @@ import { BsPcDisplay } from 'react-icons/bs'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
 import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
+import { SectionNav } from '@/app/ui/SectionNav'
+import type { RouteItem } from '@/lib/routes'
 
-export const Header = () => {
+type HeaderProps = {
+  sectionNav?: {
+    items: RouteItem[]
+    title: string
+    rootUrl: string
+  }
+}
+
+export const Header = ({ sectionNav }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [lastPathname, setLastPathname] = useState<string | null>(null)
   const pathname = usePathname()
@@ -27,8 +37,8 @@ export const Header = () => {
 
   return (
     <header className="z-10 sticky top-0 shadow-md bg-surface">
-      <nav className="px-6 py-4" aria-labelledby="primary-navigation">
-        <div className="flex items-center gap-4 justify-between">
+      <nav aria-labelledby="primary-navigation">
+        <div className="px-6 py-4 flex items-center gap-4 justify-between">
           <Link
             className="flex items-center gap-1 hover:gap-2 hover:text-primary font-semibold text-2xl font-serif no-underline transition-all text-foreground"
             href="/"
@@ -50,12 +60,12 @@ export const Header = () => {
           </button>
         </div>
         {isMobileMenuOpen && (
-          <div className="flex flex-col items-start gap-4 mt-4">
+          <div className="flex flex-col items-start text-lg  px-6">
             {ROOT_NAVIGATION_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="font-serif hover:text-primary transition"
+                className="font-serif hover:text-primary transition cursor-pointer py-2 w-full"
               >
                 {' '}
                 {item.name}
@@ -63,6 +73,17 @@ export const Header = () => {
             ))}
           </div>
         )}
+
+        {sectionNav ? (
+          <div className="md:hidden">
+            <SectionNav
+              items={sectionNav.items}
+              title={sectionNav.title}
+              rootUrl={sectionNav.rootUrl}
+              isTopNav
+            />
+          </div>
+        ) : null}
       </nav>
     </header>
   )

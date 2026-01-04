@@ -29,7 +29,7 @@ function TreeNode({
         {item.title}
       </Anchor>
       {hasChildren && (
-        <ul className="ml-4">
+        <ul className="ml-6">
           {item.children!.map((child) => (
             <TreeNode key={child.href} item={child} onSelect={onSelect} />
           ))}
@@ -71,7 +71,7 @@ export function SectionNav({ items, title, rootUrl, isTopNav }: Props) {
       {isTopNav ? (
         <button
           type="button"
-          className="w-full mb-4 inline-flex items-center gap-1 text-foreground font-serif font-semibold hover:text-primary cursor-pointer transition-all"
+          className="px-6 py-2 w-full inline-flex items-center gap-1 text-foreground font-serif font-semibold hover:bg-primary hover:text-surface cursor-pointer transition-all"
           aria-expanded={open}
           aria-controls="subnav-root"
           onClick={() => setIsManuallyToggled((v) => !v)}
@@ -80,13 +80,13 @@ export function SectionNav({ items, title, rootUrl, isTopNav }: Props) {
           <span>{title}</span>
         </button>
       ) : (
-        <Anchor href={rootUrl} className="text-xl font-bold border-b mb-4">
+        <Anchor href={rootUrl} className="text-xl font-bold pb-4">
           {title}
         </Anchor>
       )}
 
       {open && (
-        <ul id="subnav-root" className={isTopNav ? 'mb-4' : ''}>
+        <ul id="subnav-root">
           {items.map((item) => (
             <TreeNode key={item.href} item={item} onSelect={handleSelect} />
           ))}

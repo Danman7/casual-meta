@@ -1,6 +1,7 @@
+import { Header } from '@/app/ui/Header'
 import { SectionNav } from '@/app/ui/SectionNav'
 import { TableOfContents } from '@/app/ui/TableOfContents'
-import { RouteItem } from '@/lib/routes'
+import type { RouteItem } from '@/lib/routes'
 
 interface SectionLayoutProps {
   children: React.ReactNode
@@ -16,31 +17,26 @@ export function SectionLayout({
   rootUrl,
 }: SectionLayoutProps) {
   return (
-    <div className="flex gap-4 relative grow">
-      <aside className="w-56 shrink-0 hidden lg:block">
-        <div className="sticky top-22 max-h-[calc(100vh-5rem)]">
-          <SectionNav items={items} title={title} rootUrl={rootUrl} />
-        </div>
-      </aside>
+    <div className="flex flex-col min-h-full">
+      <Header sectionNav={{ items, title, rootUrl }} />
 
-      <main className="grow">
-        <article className="max-w-3xl mx-auto">
-          <SectionNav
-            items={items}
-            title={title}
-            rootUrl={rootUrl}
-            isTopNav={true}
-          />
+      <div className="flex relative grow px-6 py-12">
+        <aside className="w-56 shrink-0 hidden lg:block">
+          <div className="sticky top-28 max-h-[calc(100vh-5rem)]">
+            <SectionNav items={items} title={title} rootUrl={rootUrl} />
+          </div>
+        </aside>
 
-          {children}
-        </article>
-      </main>
+        <main className="grow">
+          <article className="max-w-3xl mx-auto">{children}</article>
+        </main>
 
-      <aside className="w-56 shrink-0 hidden xl:block ">
-        <div className="sticky top-22 max-h-[calc(100vh-5rem)]">
-          <TableOfContents />
-        </div>
-      </aside>
+        <aside className="w-56 shrink-0 hidden xl:block ">
+          <div className="sticky top-28 max-h-[calc(100vh-5rem)]">
+            <TableOfContents />
+          </div>
+        </aside>
+      </div>
     </div>
   )
 }

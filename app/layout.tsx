@@ -3,7 +3,6 @@ import { Noto_Sans, Noto_Serif, Noto_Serif_Display } from 'next/font/google'
 import Link from 'next/link'
 
 import '@/app/globals.css'
-import { Header } from '@/app/ui/Header'
 
 const notoSerif = Noto_Serif({
   variable: '--font-noto-serif',
@@ -38,9 +37,7 @@ export default function RootLayout({
       <body
         className={`${notoSerif.variable} ${notoSans.variable} ${notoSerifDisplay.variable} antialiased h-full flex flex-col font-sans`}
       >
-        <Header />
-
-        <main className="grow px-6 py-12">{children}</main>
+        <main className="grow">{children}</main>
 
         <footer className="inset-shadow-sm text-center md:flex md:justify-between px-6 py-4 gap-4 shadow-md bg-surface z-10">
           <div className="mb-2 md:mb-0">

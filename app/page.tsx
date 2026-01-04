@@ -6,7 +6,7 @@ import { FlexWrapper } from '@/app/ui/FlexWrapper'
 
 export default function Page() {
   return (
-    <>
+    <div className="px-6 py-12 space-y-16">
       <section className="max-w-3xl mx-auto space-y-16 text-center h-[calc(100dvh-(--spacing(32)))] flex flex-col justify-around items-center">
         <div className="font-display">
           <div className="text-5xl md:text-7xl text-primary font-bold animate-slide-left">
@@ -50,6 +50,6 @@ export default function Page() {
           We hope to build relationships alongside the skills.
         </p>
       </section>
-    </>
+    </div>
   )
 }
