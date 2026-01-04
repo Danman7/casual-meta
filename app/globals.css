@@ -67,26 +67,15 @@
 }
 
 @layer base {
-  h2,
-  h3 {
-    font-family: var(--font-noto-serif);
-  }
-
-  h2 {
-    font-size: var(--text-2xl);
-    font-weight: var(--font-weight-bold);
-    padding-top: --spacing(6);
-    margin-top: --spacing(6);
-  }
-
-  h3 {
-    font-size: var(--text-xl);
-    font-weight: var(--font-weight-bold);
-  }
-
   article h2,
   article h3 {
     scroll-margin-top: var(--header-offset);
+  }
+
+  section h3 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-noto-serif);
   }
 
   article a {

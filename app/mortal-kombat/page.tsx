@@ -4,7 +4,10 @@ import MKMonk from '@/app/assets/mk/monk.webp'
 import Arena from '@/app/assets/mk/shang_tung_arena.webp'
 import { MK_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
+import { Emphasis } from '@/app/ui/Emphasis'
+import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(
@@ -17,53 +20,58 @@ export default async function Page() {
     <>
       <PageTitle title={MK_TITLE} />
 
-      <p className="text-lg">
-        Mortal Kombat (MK) is a popular franchise of fighting games best known
-        for fast-paced action and gory graphics. This section is dedicated to
-        the modern series known as the NRS era.
-      </p>
-
-      <Callout>
-        <p className="my-0! text-sm">
-          NetherRealm Studios acquired all rights to the Mortal Kombat trademark
-          in 2009. This led to the creation of Mortal Kombat (MK9), Mortal
-          Kombat X, Mortal Kombat 11 and Mortal Kombat 1.
+      <Section>
+        <p>
+          Mortal Kombat (MK) is a popular franchise of fighting games best known
+          for fast-paced action and gory graphics. This section is dedicated to
+          the modern series known as the NRS era.
         </p>
-      </Callout>
 
-      <Image
-        src={MKMonk}
-        alt="Mortal Kombat monk character."
-        className="mx-auto"
-      />
+        <Callout>
+          <p className="my-0! text-sm">
+            NetherRealm Studios acquired all rights to the Mortal Kombat
+            trademark in 2009. This led to the creation of Mortal Kombat (MK9),
+            Mortal Kombat X, Mortal Kombat 11 and Mortal Kombat 1.
+          </p>
+        </Callout>
 
-      <p>
-        At its core, Mortal Kombat is a duel to the death. Two players try to
-        outsmart each other within the allotted time and space. Action unfolds
-        rapidly, which makes mastering it an arduous journey, especially for new
-        players. Nevertheless, it comes down to simple mechanics that can be
-        learned.
-      </p>
+        <Image
+          src={MKMonk}
+          alt="Mortal Kombat monk character."
+          className="mx-auto"
+        />
+      </Section>
 
-      <p className="text-lg italic">
-        You may not have someone else’s reflexes, but you can understand how
-        they make decisions.
-      </p>
+      <Section>
+        <p>
+          At its core, Mortal Kombat is a duel to the death. Two players try to
+          outsmart each other within the allotted time and space. Action unfolds
+          rapidly, which makes mastering it an arduous journey, especially for
+          new players. Nevertheless, it comes down to simple mechanics that can
+          be learned.
+        </p>
 
-      <Image
-        src={Arena}
-        alt="Shang Tsung's arena in Mortal Kombat."
-        className="mx-auto shadow-md"
-      />
+        <Emphasis>
+          You may not have someone else’s reflexes, but you can understand how
+          they make decisions.
+        </Emphasis>
 
-      <p>
-        The online gauntlet is unfair to beginners. They can go 15-20 games
-        without a win. This can be very discouraging. We will try to explain the
-        game's quirks and teach you about reading and conditioning your
-        opponent's actions. It's as much about quick reactions as it is a mind
-        game. We will focus on the online Player vs Player (PvP) aspect, giving
-        you the tools to learn any character.
-      </p>
+        <ImageWithCaption
+          src={Arena}
+          alt="Shang Tsung's arena in Mortal Kombat."
+          className="mx-auto shadow-md"
+          caption="Art representation of a classical arena in MK - Shang Tsung's temple."
+        />
+
+        <p>
+          The online gauntlet is unfair to beginners. They can go 15-20 games
+          without a win. This can be very discouraging. We will try to explain
+          the game's quirks and teach you about reading and conditioning your
+          opponent's actions. It's as much about quick reactions as it is a mind
+          game. We will focus on the online Player vs Player (PvP) aspect,
+          giving you the tools to learn any character.
+        </p>
+      </Section>
     </>
   )
 }

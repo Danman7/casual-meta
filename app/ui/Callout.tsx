@@ -11,7 +11,7 @@ export const Callout: React.FC<
     {title && (
       <div className="bg-primary text-surface px-4 py-1">
         {titleId ? (
-          <h2 id={titleId} className="m-0 p-0">
+          <h2 id={titleId} className="font-serif text-2xl">
             {title}
           </h2>
         ) : (

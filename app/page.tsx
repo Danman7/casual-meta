@@ -39,7 +39,7 @@ export default function Page() {
         </Callout>
       </section>
 
-      <section className="space-y-8 max-w-3xl mx-auto">
+      <section className="space-y-8 max-w-2xl mx-auto">
         <p>
           We think they can. This is why we consolidated the community knowledge
           (YouTube, reddit, official guides, forums, wikis) in this place. We
