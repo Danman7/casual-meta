@@ -37,11 +37,10 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle title={navTitle} subtitle="Core Mechanics" />
+      <PageTitle title={navTitle} subtitle="Core Mortal Kombat mechanics" />
 
       <Flavor>
-        This page covers all mechanics related to attacks in Mortal Kombat in
-        detail.
+        This page explores attacking and blocking in Mortal Kombat in detail.
       </Flavor>
 
       <h2 id="hit-vs-block-vs-miss">Hit vs block vs miss</h2>

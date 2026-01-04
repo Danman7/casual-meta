@@ -75,7 +75,7 @@ export const Header = ({ sectionNav }: HeaderProps) => {
         )}
 
         {sectionNav ? (
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <SectionNav
               items={sectionNav.items}
               title={sectionNav.title}

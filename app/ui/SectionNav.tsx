@@ -29,7 +29,7 @@ function TreeNode({
         {item.title}
       </Anchor>
       {hasChildren && (
-        <ul className="ml-6">
+        <ul className="mx-6">
           {item.children!.map((child) => (
             <TreeNode key={child.href} item={child} onSelect={onSelect} />
           ))}
@@ -77,16 +77,16 @@ export function SectionNav({ items, title, rootUrl, isTopNav }: Props) {
           onClick={() => setIsManuallyToggled((v) => !v)}
         >
           {isTopNav && open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
-          <span>{title}</span>
+          <span>{title} Chapters</span>
         </button>
       ) : (
-        <Anchor href={rootUrl} className="text-xl font-bold pb-4">
-          {title}
+        <Anchor href={rootUrl} className="text-xl font-bold py-4">
+          {title} Chapters
         </Anchor>
       )}
 
       {open && (
-        <ul id="subnav-root">
+        <ul id="subnav-root" className="mb-2">
           {items.map((item) => (
             <TreeNode key={item.href} item={item} onSelect={handleSelect} />
           ))}
