@@ -16,6 +16,7 @@ type Props = {
 
 function TreeNode({
   item,
+  isTopNav,
   onSelect,
 }: {
   item: RouteItem
@@ -29,7 +30,7 @@ function TreeNode({
         {item.title}
       </Anchor>
       {hasChildren && (
-        <ul className="mx-6">
+        <ul className={`${isTopNav ? 'mx-6 ' : 'pl-6'}  `}>
           {item.children!.map((child) => (
             <TreeNode key={child.href} item={child} onSelect={onSelect} />
           ))}
@@ -80,15 +81,20 @@ export function SectionNav({ items, title, rootUrl, isTopNav }: Props) {
           <span>{title} Chapters</span>
         </button>
       ) : (
-        <Anchor href={rootUrl} className="text-xl font-bold py-4">
+        <Anchor href={rootUrl} className="text-xl font-bold mb-2">
           {title} Chapters
         </Anchor>
       )}
 
       {open && (
-        <ul id="subnav-root" className="mb-2">
+        <ul id="subnav-root" className={`${isTopNav ? 'mx-6 ' : ''} mb-2`}>
           {items.map((item) => (
-            <TreeNode key={item.href} item={item} onSelect={handleSelect} />
+            <TreeNode
+              key={item.href}
+              item={item}
+              isTopNav={isTopNav}
+              onSelect={handleSelect}
+            />
           ))}
         </ul>
       )}

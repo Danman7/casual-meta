@@ -55,19 +55,19 @@ export default async function Page() {
 
       <h3>Intercessor Squad</h3>
       <FlexWrapper className="mt-2">
-        <Pill className="text-success border-success">
+        <Pill className="border-success">
           <GiPencilRuler /> Best Utility
         </Pill>
 
-        <Pill className="text-success border-success">
+        <Pill className="border-success">
           <GiFlyingFlag /> Sticky Objectives
         </Pill>
 
-        <Pill className="text-success border-success">
+        <Pill className="border-success">
           <GiBolterGun /> Consistent ranged damage
         </Pill>
 
-        <Pill className="text-success border-success">
+        <Pill className="border-success">
           <GiSkullCrack /> Good vs GEQ
         </Pill>
 
@@ -205,15 +205,15 @@ export default async function Page() {
       <h3>Assault Intercessor Squad</h3>
 
       <FlexWrapper className="mt-2">
-        <Pill className="text-success border-success">
+        <Pill className="border-success">
           <GiTwoCoins /> Expendable
         </Pill>
 
-        <Pill className="text-success border-success">
+        <Pill className="border-success">
           <GiSkullCrack /> Good vs GEQ
         </Pill>
 
-        <Pill className="text-success border-success">
+        <Pill className="border-success">
           <IoPeople /> Strong Character Support
         </Pill>
 

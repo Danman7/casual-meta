@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
-import { Emphasis } from '@/app/ui/Emphasis'
 import { Flavor } from '@/app/ui/Flavor'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { Section } from '@/app/ui/Section'
@@ -38,10 +37,10 @@ export default async function Page() {
           During the recovery they are unable to act.
         </p>
 
-        <Emphasis>
+        <p className="font-bold">
           In fighting games, a cancel is removing the recovery of an action by
           cancelling it into another action.
-        </Emphasis>
+        </p>
 
         <p>
           If you input two moves, one after the other, where the first is

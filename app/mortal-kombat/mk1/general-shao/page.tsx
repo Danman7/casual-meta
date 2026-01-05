@@ -1,17 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { IoIosThumbsDown, IoIosThumbsUp } from 'react-icons/io'
 
 import Shao from '@/app/assets/mk1/shao.webp'
 import shao2 from '@/app/assets/mk1/shao_2.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
-import { Callout } from '@/app/ui/Callout'
-import { Emphasis } from '@/app/ui/Emphasis'
 import { Flavor } from '@/app/ui/Flavor'
-import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
+import { ProsConsList } from '@/app/ui/ProsConsList'
+import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -26,9 +24,12 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle title={navTitle} subtitle="Character overview & guide" />
+      <PageTitle
+        title={navTitle}
+        subtitle="Mortal Kombat 1 - Character guide"
+      />
 
-      <div className="md:flex items-center gap-4">
+      <Section className="md:flex items-center gap-4">
         <Image
           className="max-h-72 object-cover object-[0%_0%]  md:w-1/2 md:max-h-full"
           src={Shao}
@@ -44,86 +45,82 @@ export default async function Page() {
           he lacks good full screen moves and has punishable gaps in his
           offense. Both issues can be addressed with the right Kameo partner.
         </p>
-      </div>
+      </Section>
 
-      <Callout className="space-y-4">
-        <h2 id="play-or-skip" className="pt-0! mt-0! border-t-0">
-          Play or skip?
-        </h2>
-
-        <Flavor className="mb-4">Should you try General Shao?</Flavor>
-
-        <div className="md:flex gap-4">
-          <div className="md:w-1/2">
-            <FlexWrapper className="font-bold text-success">
-              <IoIosThumbsUp /> Maybe, yes
-            </FlexWrapper>
-
-            <ul className="divide-y space-y-4 *:pb-2 *:last:pb-0 md:mb-0! mb-8">
-              <li>Shao has a strong mix-up in both stances.</li>
-
-              <li>At 1100 HP he is durable.</li>
-
-              <li>Some of the best normals in Axe stance.</li>
-
-              <li>Good air control due to his height.</li>
-
-              <li>
-                His close-range pressure is excellent, especially in the corner.
-              </li>
-            </ul>
-          </div>
-
-          <div className="md:w-1/2">
-            <FlexWrapper className="font-bold text-error">
-              <IoIosThumbsDown /> Maybe, no
-            </FlexWrapper>
-
-            <ul className="divide-y space-y-4 *:pb-2 *:last:pb-0 mb-0!">
-              <li>Transition between axe and no axe has to be managed well.</li>
-
-              <li>
-                Some of his key moves have gaps that can be exploited by
-                experienced players.
-              </li>
-
-              <li>
-                He has no projectiles or teleports. His only full-screen special
-                is slow.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </Callout>
-
-      <h2 id="the-axe">The Axe</h2>
-
-      <Flavor>
-        In this section we will look at a simple way to play Shao with the axe
-        in hand.
-      </Flavor>
-
-      <Emphasis>
-        The Axe is your primary Neutral tool. Shao's pressure peaks in Unarmed
-        stance, but he looses his reach. How you transitions between the two can
-        make or break a round. So this is where we start.
-      </Emphasis>
-
-      <p>
-        <Pill>Standing 2</Pill> is one of the best standing normals in the game.
-        It is a fast, safe, disjointed high attack with excellent reach. Begin
-        by practicing with a CPU to stay a few steps away from them and poke at
-        its maximum reach.
-      </p>
-
-      <ImageWithCaption
-        className="shadow-md max-h-96 object-cover object-[0%_50%]"
-        src={shao2}
-        alt="General Shao doing standing 2 attack."
-        caption="Shao's Standing 2 controls a big chunk of space in front of him. No opponent can comfortably approach without respecting it."
+      <ProsConsList
+        pros={[
+          <>
+            <p className="font-semibold">Very strong close-range offense.</p>
+            <Flavor>
+              Some of the best normals in the game in Axe stance. Strong mix-up
+              in both stances. Excellent pressure, especially in the corner.
+              Armored options.
+            </Flavor>
+          </>,
+          <>
+            <p className="font-semibold">Decent defense.</p>
+            <Flavor>
+              Superb durability at 1100 HP. Good air control due to his height.
+            </Flavor>
+          </>,
+          <>
+            <p className="font-semibold">Kameos synergy.</p>
+            <Flavor>
+              Because of his high health and versatile move set, he has good
+              Kameo choices.
+            </Flavor>
+          </>,
+        ]}
+        cons={[
+          <>
+            <p className="font-semibold">Poor at long range.</p>
+            <Flavor>
+              He has no projectiles or teleports. His only full-screen special
+              is slow.
+            </Flavor>
+          </>,
+          <>
+            <p className="font-semibold">Stances have to be managed.</p>
+            <Flavor>
+              The transition from Axe to Unarmed can make or break a round.
+            </Flavor>
+          </>,
+          <>
+            <p className="font-semibold">Openings in his attacks.</p>
+            <Flavor>
+              Some of his moves have punishable gaps. Primarily at higher
+              levels.
+            </Flavor>
+          </>,
+        ]}
       />
 
-      <h2 id="unarmed">Unarmed stance</h2>
+      <Section title="Axe stance" id="axe-stance">
+        <Flavor>
+          In this section we will look at a simple way to play Shao with the axe
+          in hand.
+        </Flavor>
+
+        <p className="font-bold">
+          The Axe is your primary Neutral tool. Shao's pressure peaks in Unarmed
+          stance, but he looses his reach. How you transitions between the two
+          can make or break a round. So this is where we start.
+        </p>
+
+        <p>
+          <Pill>Standing 2</Pill> is one of the best standing normals in the
+          game. It is a fast, safe, disjointed high attack with excellent reach.
+          Begin by practicing with a CPU to stay a few steps away from them and
+          poke at its maximum reach.
+        </p>
+
+        <ImageWithCaption
+          className="shadow-md max-h-96 object-cover object-[0%_50%]"
+          src={shao2}
+          alt="General Shao doing standing 2 attack."
+          caption="Shao's Standing 2 controls a big chunk of space in front of him. No opponent can comfortably approach without respecting it."
+        />
+      </Section>
     </>
   )
 }

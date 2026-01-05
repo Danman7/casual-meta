@@ -18,7 +18,6 @@ import throwTech from '@/app/assets/mk/throw_tech.webp'
 import unblockable from '@/app/assets/mk/unblockable.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import { MK_TITLE } from '@/app/constants'
-import { Emphasis } from '@/app/ui/Emphasis'
 import { Flavor } from '@/app/ui/Flavor'
 import { Graphic } from '@/app/ui/Graphic'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
@@ -88,10 +87,10 @@ export default async function Page() {
           invest frames into a move, you may come out on top or it may backfire.
         </p>
 
-        <Emphasis>
+        <p className="font-bold">
           Every attack is a commitment. A round is a sequence of commitments.
           Your goal is for the total sum of those to be positive for you.
-        </Emphasis>
+        </p>
       </Section>
 
       <Section title="Block type" id="block-type">
@@ -284,11 +283,11 @@ export default async function Page() {
           </div>
         </Graphic>
 
-        <Emphasis>
+        <p className="font-bold">
           Every block has the appropriate counter. If they keep blocking high,
           mix in a low attack. If they keep blocking low, throw in an overhead.
           If they keep guessing correctly, trick them with a throw.
-        </Emphasis>
+        </p>
       </Section>
 
       <Section title="Frame data" id="frame-data">

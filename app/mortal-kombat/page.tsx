@@ -4,7 +4,6 @@ import MKMonk from '@/app/assets/mk/monk.webp'
 import Arena from '@/app/assets/mk/shang_tung_arena.webp'
 import { MK_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
-import { Emphasis } from '@/app/ui/Emphasis'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { Section } from '@/app/ui/Section'
@@ -51,10 +50,10 @@ export default async function Page() {
           be learned.
         </p>
 
-        <Emphasis>
+        <p className="font-bold">
           You may not have someone else’s reflexes, but you can understand how
           they make decisions.
-        </Emphasis>
+        </p>
 
         <ImageWithCaption
           src={Arena}
