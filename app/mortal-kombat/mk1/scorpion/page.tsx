@@ -31,10 +31,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle
-        title={navTitle}
-        subtitle="Mortal Kombat 1 - Character guide"
-      />
+      <PageTitle title={navTitle} subtitle="Character overview & guide" />
 
       <Section className="md:flex items-center gap-4 mb-8">
         <Image

@@ -37,7 +37,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle title={navTitle} subtitle="Mortal Kombat - Core mechanics" />
+      <PageTitle title={navTitle} subtitle="Core mechanics" />
 
       <Section>
         <Flavor>

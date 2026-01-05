@@ -4,7 +4,11 @@ import castle from '@/app/assets/homm3/castle.webp'
 import castleMap from '@/app/assets/homm3/castle_map.webp'
 import { HOMM3_TITLE } from '@/app/constants'
 import { BulletList } from '@/app/ui/BulletList'
+import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
+import { PageTitle } from '@/app/ui/PageTitle'
+import { ProsConsList } from '@/app/ui/ProsConsList'
+import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -19,29 +23,57 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <PageTitle title={navTitle} subtitle="Town overview" />
 
-      <p className="text-lg text-light">
-        You can put any hero in charge of them and more often than not they will
-        come on top.
-      </p>
+      <Section className="flex items-center justify-center gap-4 my-12!">
+        <p className="w-1/2">
+          Castle is a powerful yet simple town to play. Its high build-up cost
+          is offset by how balanced the creatures' composition is. Most of them
+          are strong for their own level. And at the head, the strongest Level 7
+          adversary - the Angel. If you play Castle, you will find your early
+          games easy and your end games strong.
+        </p>
 
-      <ImageWithCaption
-        src={castle}
-        alt="A fully built Castle town."
-        className="shadow-md"
-        caption="A fully built Castle town."
+        <div className="w-1/2 flex items-center justify-center">
+          <Image src={castleMap} alt="A fully built Castle town." />
+        </div>
+      </Section>
+
+      <ProsConsList
+        pros={[
+          <>
+            <p className="font-semibold">Beginner-friendly.</p>
+            <Flavor>
+              He has no stances or forms to manage. Starting and extending
+              combos is easy.
+            </Flavor>
+          </>,
+          <>
+            <p className="font-semibold">Good utility.</p>
+            <Flavor>
+              The Spear is superb at controlling space and setting up combos. He
+              has multiple specials that cover the whole screen. Good
+              interruptions. Anti-zoning and anti-air options.
+            </Flavor>
+          </>,
+          <>
+            <p className="font-semibold">Kameos synergy.</p>
+            <Flavor>
+              His moves combine well with a lot of Kameos. He can combo out of
+              his throw with the right Kameo.
+            </Flavor>
+          </>,
+        ]}
+        cons={[
+          <>
+            <p className="font-semibold">Can struggle with offense.</p>
+            <Flavor>
+              He lacks mix-ups. No chainable standing overheads or lows. No
+              frame traps. Cannot press the attack for long.
+            </Flavor>
+          </>,
+        ]}
       />
-
-      <p>
-        Castle is a powerful yet simple town to play. Its high build-up cost is
-        offset by how balanced the creatures’ composition is. Most of them are
-        strong for their own level. And at the head, the strongest Level 7
-        adversary - the Angel. If you play Castle, you will find your early
-        games easy and your end games strong.
-      </p>
-
-      <h2>Why play or skip Castle?</h2>
 
       <BulletList
         className="text-success"
@@ -104,10 +136,11 @@ export default async function Page() {
 
       <h2>Town Economics</h2>
 
-      <Image
-        className="float-left max-w-36 pr-4 pt-2"
-        src={castleMap}
+      <ImageWithCaption
+        src={castle}
         alt="A fully built Castle town."
+        className="shadow-md"
+        caption="A fully built Castle town."
       />
 
       <p>
