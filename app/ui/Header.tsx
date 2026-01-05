@@ -59,6 +59,7 @@ export const Header = ({ sectionNav }: HeaderProps) => {
             Menu
           </button>
         </div>
+
         {isMobileMenuOpen && (
           <div className="flex flex-col items-start text-lg  px-6">
             {ROOT_NAVIGATION_ITEMS.map((item) => (

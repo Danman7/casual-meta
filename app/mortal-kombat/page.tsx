@@ -4,6 +4,7 @@ import MKMonk from '@/app/assets/mk/monk.webp'
 import Arena from '@/app/assets/mk/shang_tung_arena.webp'
 import { MK_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
+import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { Section } from '@/app/ui/Section'
@@ -27,11 +28,11 @@ export default async function Page() {
         </p>
 
         <Callout>
-          <p className="my-0! text-sm">
+          <Flavor>
             NetherRealm Studios acquired all rights to the Mortal Kombat
             trademark in 2009. This led to the creation of Mortal Kombat (MK9),
             Mortal Kombat X, Mortal Kombat 11 and Mortal Kombat 1.
-          </p>
+          </Flavor>
         </Callout>
 
         <Image
