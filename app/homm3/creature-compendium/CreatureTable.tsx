@@ -257,15 +257,20 @@ export function CreatureTable() {
         </div>
       </div>
 
-      <div className="overflow-x-auto px-6 lg:w-screen lg:relative lg:left-1/2 lg:-ml-[50vw] lg:right-1/2 lg:-mr-[50vw]">
+      <div className="overflow-x-auto">
         <table className="w-full border-collapse min-w-max">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id} className="border-b border-light">
                 {headerGroup.headers.map((header) => (
+                  // Keep the Name column sticky on horizontal scroll.
                   <th
                     key={header.id}
-                    className="px-4 py-3 text-left text-sm font-semibold bg-surface cursor-pointer hover:bg-light/10"
+                    className={`px-4 py-3 text-left text-sm font-semibold bg-surface cursor-pointer hover:bg-light/10 ${
+                      header.column.id === 'name'
+                        ? 'sticky left-0 z-30 border-r border-light'
+                        : ''
+                    }`}
                     onClick={header.column.getToggleSortingHandler()}
                   >
                     <FlexWrapper>
@@ -287,10 +292,17 @@ export function CreatureTable() {
             {table.getRowModel().rows.map((row) => (
               <tr
                 key={row.id}
-                className="border-b border-light hover:bg-surface transition-colors"
+                className="group border-b border-light hover:bg-surface transition-colors"
               >
                 {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id} className="px-4 py-2 text-sm">
+                  <td
+                    key={cell.id}
+                    className={`px-4 py-2 text-sm ${
+                      cell.column.id === 'name'
+                        ? 'sticky left-0 z-20 bg-background group-hover:bg-surface border-r border-light'
+                        : ''
+                    }`}
+                  >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}
@@ -299,7 +311,9 @@ export function CreatureTable() {
           </tbody>
           <tfoot>
             <tr className="border-t border-light bg-surface/50 font-semibold">
-              <td className="px-4 py-2 text-sm">Average</td>
+              <td className="px-4 py-2 text-sm sticky left-0 z-20 border-r border-light bg-surface/50">
+                Average
+              </td>
               <td className="px-4 py-2 text-sm">-</td>
               <td className="px-4 py-2 text-sm">-</td>
               <td className="px-4 py-2 text-sm">-</td>
@@ -327,7 +341,9 @@ export function CreatureTable() {
               <td className="px-4 py-2 text-sm">-</td>
             </tr>
             <tr className="border-t border-light bg-surface font-semibold">
-              <td className="px-4 py-2 text-sm">Total</td>
+              <td className="px-4 py-2 text-sm sticky left-0 z-20 border-r border-light bg-surface">
+                Total
+              </td>
               <td className="px-4 py-2 text-sm">-</td>
               <td className="px-4 py-2 text-sm">-</td>
               <td className="px-4 py-2 text-sm">-</td>

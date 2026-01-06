@@ -3,7 +3,6 @@ import Image from 'next/image'
 import castle from '@/app/assets/homm3/castle.webp'
 import castleMap from '@/app/assets/homm3/castle_map.webp'
 import { HOMM3_TITLE } from '@/app/constants'
-import { BulletList } from '@/app/ui/BulletList'
 import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
@@ -25,147 +24,99 @@ export default async function Page() {
     <>
       <PageTitle title={navTitle} subtitle="Town overview" />
 
-      <Section className="flex items-center justify-center gap-4 my-12!">
-        <p className="w-1/2">
-          Castle is a powerful yet simple town to play. Its high build-up cost
-          is offset by how balanced the creatures' composition is. Most of them
-          are strong for their own level. And at the head, the strongest Level 7
-          adversary - the Angel. If you play Castle, you will find your early
-          games easy and your end games strong.
-        </p>
-
-        <div className="w-1/2 flex items-center justify-center">
+      <Section className="md:flex items-center justify-center gap-4 my-12!">
+        <div className="md:w-1/2 flex items-center justify-center">
           <Image src={castleMap} alt="A fully built Castle town." />
         </div>
+
+        <p className="md:w-1/2">
+          Castle is powerful yet straightforward to play. Its steep build-up
+          cost is offset by a well-balanced creature lineup; most units
+          outperform their tier, and Angels lead as the strongest level 7
+          adversary. Expect easy early creeping and dominant late-game armies.
+        </p>
       </Section>
 
       <ProsConsList
         pros={[
           <>
+            <p className="font-semibold">Exceptional army as a whole.</p>
+            <Flavor>
+              Two ranged shooters, two flyers, and three capable brawlers make
+              for a balanced composition. Almost every unit is good for its
+              tier. Angels are arguably the best level 7 unit, and the key
+              upgrades, especially Archers, Griffins, and Angels, are excellent.
+            </Flavor>
+          </>,
+          <>
+            <p className="font-semibold">First in battle (often).</p>
+            <Flavor>
+              The Archangels are the second-fastest faction unit in the game,
+              trailing only Phoenixes.
+            </Flavor>
+          </>,
+          <>
             <p className="font-semibold">Beginner-friendly.</p>
             <Flavor>
-              He has no stances or forms to manage. Starting and extending
-              combos is easy.
-            </Flavor>
-          </>,
-          <>
-            <p className="font-semibold">Good utility.</p>
-            <Flavor>
-              The Spear is superb at controlling space and setting up combos. He
-              has multiple specials that cover the whole screen. Good
-              interruptions. Anti-zoning and anti-air options.
-            </Flavor>
-          </>,
-          <>
-            <p className="font-semibold">Kameos synergy.</p>
-            <Flavor>
-              His moves combine well with a lot of Kameos. He can combo out of
-              his throw with the right Kameo.
+              Castle's strong army allows for a more relaxed game, and the
+              naturally high morale of Castle heroes often grants a bonus turn.
             </Flavor>
           </>,
         ]}
         cons={[
           <>
-            <p className="font-semibold">Can struggle with offense.</p>
+            <p className="font-semibold">Very expensive.</p>
             <Flavor>
-              He lacks mix-ups. No chainable standing overheads or lows. No
-              frame traps. Cannot press the attack for long.
+              Second in total build-up cost only to Tower. However, this is
+              primarily felt during the later development stages.
+            </Flavor>
+          </>,
+          <>
+            <p className="font-semibold">Mediocre outside the army.</p>
+            <Flavor>
+              Castle heroes aren't bad, but they don't excel in anything either.
+              With the exception of Sir Mullich, who is often banned in
+              multiplayer games, there are no exceptional specialties. The Magic
+              Guild reaches only level 4, and the special buildings are
+              underwhelming.
             </Flavor>
           </>,
         ]}
       />
 
-      <BulletList
-        className="text-success"
-        icon="GiCastle"
-        items={[
-          <>
-            <strong>Balanced army</strong> - two ranged shooters, two flyers,
-            three capable brawlers.
-          </>,
-          <>
-            <strong>Beginner friendly</strong> - the early game army is strong
-            enough; heroes are versatile.
-          </>,
-          <>
-            <strong>First to take a turn in battle</strong> – Archangels have 18
-            speed, second only after Phoenixes.
-          </>,
-          <>
-            <strong>Good creature upgrades</strong> - especially Archers,
-            Griffins, and Angels.
-          </>,
-          <>
-            <strong>Morale Advantage</strong> - all Castle heroes either come
-            with or have a good chance to develop Leadership.
-          </>,
-          'Stables provide a mobility bonus to armies.',
-          'Most units are good for their tiers.',
-        ]}
-      />
+      <Section title="Town economics" id="economics">
+        <ImageWithCaption
+          src={castle}
+          alt="A fully built Castle town."
+          className="shadow-md"
+          caption="A fully built Castle town."
+        />
 
-      <BulletList
-        className="text-error"
-        icon="GiCastle"
-        items={[
-          <>
-            <strong>Very expensive</strong> – The total cost to fully develop a
-            Castle town is second only to Tower. This is mostly felt during the
-            later stages of development and comes primarily from secondary
-            resource requirements (Gems, Mercury etc.)
-          </>,
-          <>
-            <strong>Mediocre Heroes and Magic</strong> – Because they are
-            balanced, the heroes also don't excel in anything, often leading
-            players to hire heroes from other factions. The Magic Guild reaches
-            up to level 4 which means they must find and build up another magic
-            guild to get a chance at level 5 spells.
-          </>,
-          <>
-            <strong>Weak special buildings</strong> – The Brotherhood of the
-            Sword and the Colossus (grail building) give morale which may be
-            redundant. The Lighthouse and Shipyard are situational for water
-            maps. The Resource Silo may serve a better purpose if it gave Gems.
-          </>,
-          <>
-            <strong>High dwelling dependencies</strong> – You will have to build
-            up pretty much everything to reach the high-tier dwellings.
-          </>,
-        ]}
-      />
+        <p>
+          As mentioned above, building up a Castle is costly. It requires more
+          gold, mercury, sulfur, crystal, and gems than most other towns. Two of
+          its dwellings, the Monastery (level 5) and the Portal of Glory (level
+          7), demand several of every secondary resource. The Portal of Glory
+          alone costs 20,000 gold for the base and upgraded structures.
+          Recruiting Angels also consumes gems, with three more needed for the
+          upgraded Archangels, making them the most resource-intensive tier 7
+          creatures.
+        </p>
 
-      <h2>Town Economics</h2>
+        <p>
+          Castles have no unique economic buildings. Their Resource Silo gives
+          +1 wood and +1 ore daily, which is unfortunate because the town has
+          moderate wood and one of the lowest ore consumptions in the game.
+        </p>
 
-      <ImageWithCaption
-        src={castle}
-        alt="A fully built Castle town."
-        className="shadow-md"
-        caption="A fully built Castle town."
-      />
-
-      <p>
-        As mentioned above, building up a Castle is costly. It requires more
-        gold, mercury, sulfur, crystal and gems than most other towns. Two of
-        its dwellings, the Monastery (level 5 unit) and the Portal of Glory
-        (level 7 unit) require multiple of each secondary resource. The latter
-        requires 20k gold for both the base and upgraded buildings. Gems are
-        also required for recruiting Angels and three for the upgraded
-        Archangels, making them the most resource costly tier 7 creatures.{' '}
-      </p>
-
-      <p>
-        Castles have no unique economic buildings. Their Resource Silos give +1
-        wood and +1 ore daily which is a shame as the town has moderate wood and
-        one of the lowest ore consumptions in the game.
-      </p>
-
-      <p>
-        The dwelling dependency tree is complex. The Portal of Glory requires a
-        Monastery, which requires the level 1 Mage Guild and Barracks.
-        Basically, you can skip the Archers, Griffins and Cavaliers, but you
-        wouldn’t want to. A quirk of the flow is that the level 3 dwelling - the
-        Griffin Tower, requires the level 4 dwelling - the Barracks.
-      </p>
+        <p>
+          The dwelling dependency tree is complex. The Portal of Glory requires
+          a Monastery, which in turn needs the level 1 Mage Guild and the
+          Barracks. Basically, you can skip the Archers, Griffins, and
+          Cavaliers, but you wouldn't want to. Oddly, the level 3 Griffin Tower
+          requires the level 4 Barracks.
+        </p>
+      </Section>
     </>
   )
 }
