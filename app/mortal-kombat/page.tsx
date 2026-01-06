@@ -12,7 +12,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(
   MK_TITLE,
-  'Mortal Kombat 1 or MK1 is the latest chapter in the long-running, celebrated fighting game series.',
+  'Mortal Kombat 1 (MK1) is the latest chapter in the long-running, celebrated fighting game series.',
 )
 
 export default async function Page() {
@@ -21,17 +21,26 @@ export default async function Page() {
       <PageTitle title={MK_TITLE} />
 
       <Section>
+        <Flavor>
+          This section is dedicated to the modern Mortal Kombat series - the
+          NetherRealm Studios (NRS) era.
+        </Flavor>
+      </Section>
+
+      <Section title="What is Mortal Kombat?" id="what-is-mk">
         <p>
           Mortal Kombat (MK) is a popular franchise of fighting games best known
-          for fast-paced action and gory graphics. This section is dedicated to
-          the modern series known as the NRS era.
+          for fast-paced action and gory graphics. At its core, Mortal Kombat is
+          a duel to the death. Two players try to outsmart each other within the
+          allotted time and space. There is a wide variety of characters and
+          fighting styles to explore, which keeps attracting new players.
         </p>
 
         <Callout>
           <Flavor>
             NetherRealm Studios acquired all rights to the Mortal Kombat
             trademark in 2009. This led to the creation of Mortal Kombat (MK9),
-            Mortal Kombat X, Mortal Kombat 11 and Mortal Kombat 1.
+            Mortal Kombat X, Mortal Kombat 11, and Mortal Kombat 1.
           </Flavor>
         </Callout>
 
@@ -44,15 +53,13 @@ export default async function Page() {
 
       <Section>
         <p>
-          At its core, Mortal Kombat is a duel to the death. Two players try to
-          outsmart each other within the allotted time and space. Action unfolds
-          rapidly, which makes mastering it an arduous journey, especially for
-          new players. Nevertheless, it comes down to simple mechanics that can
-          be learned.
+          The essence of learning Mortal Kombat is adapting to how quickly
+          action unfolds, which makes mastery an arduous journey. Nevertheless,
+          it comes down to simple mechanics that can be broken down and learned.
         </p>
 
         <p className="font-bold">
-          You may not have someone else’s reflexes, but you can understand how
+          You may not have someone else's reflexes, but you can understand how
           they make decisions.
         </p>
 
@@ -60,16 +67,23 @@ export default async function Page() {
           src={Arena}
           alt="Shang Tsung's arena in Mortal Kombat."
           className="mx-auto shadow-md"
-          caption="Art representation of a classical arena in MK - Shang Tsung's temple."
+          caption="An artistic representation of a classic MK arena - Shang Tsung's temple."
         />
 
         <p>
-          The online gauntlet is unfair to beginners. They can go 15-20 games
+          Online play can be rough for beginners - you might go 15-20 games
           without a win. This can be very discouraging. We will try to explain
           the game's quirks and teach you about reading and conditioning your
-          opponent's actions. It's as much about quick reactions as it is a mind
-          game. We will focus on the online Player vs Player (PvP) aspect,
+          opponent. It's as much about quick reactions as it is about mind
+          games. We will focus on the online Player vs Player (PvP) aspect,
           giving you the tools to learn any character.
+        </p>
+      </Section>
+
+      <Section title="Diagrams" id="diagrams">
+        <p>
+          To better visualise mechanics, we use sprites from the older MK games
+          to form diagrams. They are primitive, but easy to read and color-code.
         </p>
       </Section>
     </>

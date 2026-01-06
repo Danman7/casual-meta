@@ -118,7 +118,8 @@ When the user asks to **"proofread"**, **"clean up"**, **"make cleaner"**, or **
    - After dependent clauses at the beginning of sentences
 
 3. **Improve punctuation**
-   - Use em dashes (—) instead of hyphens for breaks in thought
+   - Use plain ASCII punctuation only: use `'` (apostrophe) and `-` (hyphen)
+   - Avoid typographic punctuation that can introduce hidden characters: no smart quotes (`’`, `“`), no en/em dashes (`–`, `—`)
    - Apply semicolons for closely related independent clauses
    - Fix hyphenation (e.g., "off guard" not "off-guard", "wakeup" or "wake-up" consistently)
 

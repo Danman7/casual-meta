@@ -78,11 +78,11 @@ export function SectionNav({ items, title, rootUrl, isTopNav }: Props) {
           onClick={() => setIsManuallyToggled((v) => !v)}
         >
           {isTopNav && open ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
-          <span>{title} Chapters</span>
+          <span>{title}</span>
         </button>
       ) : (
         <Anchor href={rootUrl} className="text-xl font-bold mb-2">
-          {title} Chapters
+          {title}
         </Anchor>
       )}
 

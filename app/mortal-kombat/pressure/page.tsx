@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Flavor } from '@/app/ui/Flavor'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -151,6 +152,27 @@ export default async function Page() {
           short and do a throw instead - 12 (or whatever) into a throw? This is
           a string derail and is a way to keep them guessing.
         </p>
+      </Section>
+
+      <Section
+        title="Countering pressure and resetting"
+        id="countering-pressure"
+      >
+        <h3 id="the-down-1">The low jab</h3>
+
+        <p>
+          Every character has access to a quick <Pill>Down 1</Pill> low risk
+          attack. Is is very fast and difficult to be countered by a fast high
+          punch. This infamous move can:
+        </p>
+
+        <ul className="list-disc list-inside">
+          <li>Reset opponent's pressure.</li>
+          <li>Steal your turn back.</li>
+          <li>Interrupt high strings.</li>
+        </ul>
+
+        <p>The best counter is usually a low punch of your own.</p>
       </Section>
     </>
   )
