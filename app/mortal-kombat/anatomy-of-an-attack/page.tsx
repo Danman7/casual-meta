@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import attackPhases from '@/app/assets/mk/attack_phases.webp'
 import blockHigh from '@/app/assets/mk/block_high.webp'
 import blockHighLow from '@/app/assets/mk/block_high_low.webp'
 import duckUnderHigh from '@/app/assets/mk/duck_under_high.webp'
@@ -340,6 +341,16 @@ export default async function Page() {
           called <em>start-up</em>, <em>active</em>, and <em>recovery</em>{' '}
           frames.
         </p>
+
+        <Graphic description="">
+          <div className="flex flex-col font-semibold items-center">
+            <div>Start-up &rarr; Active &rarr; Recovery</div>
+            <Image
+              src={attackPhases}
+              alt="The three phases of an attack in blue, red and green."
+            />
+          </div>
+        </Graphic>
 
         <p>
           The beginning is the start-up: the time from pressing the button until
