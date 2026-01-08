@@ -1,9 +1,11 @@
 import Image from 'next/image'
 
+import attackPhases from '@/app/assets/mk/attack_phases.webp'
 import MKMonk from '@/app/assets/mk/monk.webp'
 import Arena from '@/app/assets/mk/shang_tung_arena.webp'
 import { MK_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
+import { Diagram } from '@/app/ui/Diagram'
 import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
@@ -85,6 +87,21 @@ export default async function Page() {
           To better visualise mechanics, we use sprites from the older MK games
           to form diagrams. They are primitive, but easy to read and color-code.
         </p>
+
+        <Diagram description="This is a representation of a regular punch broken down into its three phases.">
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>
+              <span className="text-blue-700">Start-up</span> &rarr;{' '}
+              <span className="text-red-700">Active</span>
+              &rarr; <span className="text-green-700">Recovery</span>
+            </div>
+
+            <Image
+              src={attackPhases}
+              alt="The three phases of an attack in blue, red and green."
+            />
+          </div>
+        </Diagram>
       </Section>
     </>
   )

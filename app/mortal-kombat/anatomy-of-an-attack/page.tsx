@@ -22,8 +22,8 @@ import liMeiAdvancedView from '@/app/assets/mk1/advanced_view.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
+import { Diagram } from '@/app/ui/Diagram'
 import { Flavor } from '@/app/ui/Flavor'
-import { Graphic } from '@/app/ui/Graphic'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { Section } from '@/app/ui/Section'
@@ -124,7 +124,7 @@ export default async function Page() {
           are performed while standing, retaining the character's mobility.
         </p>
 
-        <Graphic description="A high attack will still connect with a target that is both crouching and blocking. In order to completely avoid the stun, you must take a risk and duck without blocking.">
+        <Diagram description="A high attack will still connect with a target that is both crouching and blocking. In order to completely avoid the stun, you must take a risk and duck without blocking.">
           <div className="flex flex-col font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -147,7 +147,7 @@ export default async function Page() {
             <div>Miss</div>
             <Image src={duckUnderHigh} alt="A high punch being ducked under." />
           </div>
-        </Graphic>
+        </Diagram>
 
         <p>
           A <strong>Mid</strong> attack{' '}
@@ -155,7 +155,7 @@ export default async function Page() {
           are also common.
         </p>
 
-        <Graphic description="Mids, especially advancing ones, are designed as block checks. Here, ducking under the attack won't work, forcing the opponent to block.">
+        <Diagram description="Mids, especially advancing ones, are designed as block checks. Here, ducking under the attack won't work, forcing the opponent to block.">
           <div className="flex flex-col font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -176,7 +176,7 @@ export default async function Page() {
             <div>Block</div>
             <Image src={midBlockLow} alt="A mid kick being low blocked." />
           </div>
-        </Graphic>
+        </Diagram>
 
         <p>
           A <strong>Low</strong> attack <strong>must be blocked low</strong>.
@@ -185,7 +185,7 @@ export default async function Page() {
           quick and retain mobility.
         </p>
 
-        <Graphic description="A standing target will get hit by a low attack. Lows mix things up for opponents that like to keep blocking high.">
+        <Diagram description="A standing target will get hit by a low attack. Lows mix things up for opponents that like to keep blocking high.">
           <div className="flex flex-col font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -198,7 +198,7 @@ export default async function Page() {
             <div>Block</div>
             <Image src={lowBlock} alt="A low kick being low blocked." />
           </div>
-        </Graphic>
+        </Diagram>
 
         <p>
           So far, blocking low counters every attack type. This is where
@@ -208,7 +208,7 @@ export default async function Page() {
           are rare.
         </p>
 
-        <Graphic description="Overheads force a defender to stand up and block. This prevents players from crouch blocking for a long time.">
+        <Diagram description="Overheads force a defender to stand up and block. This prevents players from crouch blocking for a long time.">
           <div className="flex flex-col font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -232,7 +232,7 @@ export default async function Page() {
               alt="An overhead attack being blocked."
             />
           </div>
-        </Graphic>
+        </Diagram>
 
         <p>
           Overheads are usually slower than mids and lows. If the defender spots
@@ -256,7 +256,7 @@ export default async function Page() {
           forward or backward.
         </p>
 
-        <Graphic description="Throws mix things up for good blockers. Pressing 2/4 for forward and 1/3 for backward throws will tech them. Taking a risk and ducking will skip the grab.">
+        <Diagram description="Throws mix things up for good blockers. Pressing 2/4 for forward and 1/3 for backward throws will tech them. Taking a risk and ducking will skip the grab.">
           <div className="flex flex-col font-semibold items-center">
             <div>Throw</div>
             <Image src={throwGrab} alt="Throw grabbing an opponent." />
@@ -274,7 +274,7 @@ export default async function Page() {
             <div>Miss</div>
             <Image src={duckUnderThrow} alt="A throw being ducked under." />
           </div>
-        </Graphic>
+        </Diagram>
 
         <p>
           Some special moves are throws, while some strings end with a throw.
@@ -289,7 +289,7 @@ export default async function Page() {
           regardless of blocking.
         </p>
 
-        <Graphic description="Unblockables are mostly special moves. They have a certain hitbox that must be avoided in order to skip damage.">
+        <Diagram description="Unblockables are mostly special moves. They have a certain hitbox that must be avoided in order to skip damage.">
           <div className="flex flex-col font-semibold items-center">
             <div>Guaranteed damage on hit</div>
 
@@ -298,7 +298,7 @@ export default async function Page() {
               alt="A representation of an unblockable attack."
             />
           </div>
-        </Graphic>
+        </Diagram>
 
         <p className="font-bold">
           Every block has the appropriate counter. If they keep blocking high,
@@ -309,8 +309,8 @@ export default async function Page() {
 
       <Section title="Frame data" id="frame-data">
         <p>
-          Pressing the advanced view button while hilighting a move in the move
-          list, opens up its frame data and notes.
+          Pressing the advanced view button while highlighting a move in the
+          move list opens up its frame data and notes.
         </p>
 
         <ImageWithCaption
@@ -337,20 +337,10 @@ export default async function Page() {
 
         <p>
           Every attack can be broken down into a <em>beginning</em>,{' '}
-          <em>middle</em>, and <em>end</em>. In the game, these are respectfully
+          <em>middle</em>, and <em>end</em>. In the game, these are respectively
           called <em>start-up</em>, <em>active</em>, and <em>recovery</em>{' '}
           frames.
         </p>
-
-        <Graphic description="">
-          <div className="flex flex-col font-semibold items-center">
-            <div>Start-up &rarr; Active &rarr; Recovery</div>
-            <Image
-              src={attackPhases}
-              alt="The three phases of an attack in blue, red and green."
-            />
-          </div>
-        </Graphic>
 
         <p>
           The beginning is the start-up: the time from pressing the button until
@@ -358,6 +348,21 @@ export default async function Page() {
           long the attack can hit. Finally, recovery is the time it takes after
           hitting for the character to be free to act again.
         </p>
+
+        <Diagram description="This is a representation of a regular punch broken down into its three phases.">
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>
+              <span className="text-blue-700">Start-up</span> &rarr;{' '}
+              <span className="text-red-700">Active</span>
+              &rarr; <span className="text-green-700">Recovery</span>
+            </div>
+
+            <Image
+              src={attackPhases}
+              alt="The three phases of an attack in blue, red and green."
+            />
+          </div>
+        </Diagram>
 
         <h3 id="fast-vs-slow">Fast vs slow</h3>
 
@@ -428,26 +433,26 @@ export default async function Page() {
 
         <p>
           Player A throws an attack which Player B blocks. Even if A's attack is
-          minus on block and B counter attacks the moment they recover, B's
+          minus on block and B counter-attacks the moment they recover, B's
           attack will still take its start-up frames to activate. This means
-          that B's attack must have shorter start-up than the block disadvantege
+          that B's attack must have shorter start-up than the block disadvantage
           of A's move in order to hit.
         </p>
 
         <Callout title="Actual disadvantage on block">
           <p>
             Continuing the above example: if A's attack is -10 on block, then B
-            can hit them if their counter attack has less than 10 start-up
+            can hit them if their counter-attack has less than 10 start-up
             frames. If that is a regular 7-frame start-up punch, they can
-            definetely punish A.{' '}
+            definitely punish A.{' '}
             <em>Provided they react within 2 frames of recovery</em>. If they
             take 4 frames to react, their attack won't hit.
           </p>
 
           <ul className="list-disc list-inside">
             <li>
-              Blocking a -10 on block move then immediately counter attacking
-              with a 7-frame start-up move will hit with 3 drames to spare: -10
+              Blocking a -10 on block move then immediately counter-attacking
+              with a 7-frame start-up move will hit with 3 frames to spare: -10
               + 7 = -3.
             </li>
 
@@ -475,22 +480,22 @@ export default async function Page() {
         </Callout>
 
         <p>
-          All of the above also depens on range. Maybe A throws a projectile
-          from across the screen. Sure, B has enogh quick attacks to counter
+          All of the above also depends on range. Maybe A throws a projectile
+          from across the screen. Sure, B has enough quick attacks to counter
           after block, but can they reach?
         </p>
 
         <p>So what makes an attack safe or unsafe?</p>
 
         <p className="font-bold">
-          If most characters' fastest attack is 7 frames per second, than
+          If most characters' fastest attack is 7 frames per second, then
           anything with more than -6 Block Advantage is completely safe.
         </p>
 
         <p>
-          A -7 on block move is technically unsafe. That is of course if the
-          attack is that fast. Most of the time -7 and -8 on block moves provide
-          little enough time to react that they prove to be safe.
+          A -7 on block move is technically unsafe, of course, if the
+          counterattack is that fast. Most of the time, -7 and -8 on block moves
+          provide little enough time to react that they prove to be safe.
         </p>
 
         <p>
@@ -518,7 +523,7 @@ export default async function Page() {
         </p>
 
         <p className="font-bold">
-          A Counter is any attack that hits an opponent during theri attack's
+          A Counter is any attack that hits an opponent during their attack's
           start-up.
         </p>
 
