@@ -25,10 +25,11 @@ export default async function Page() {
           created a new timeline. It is rather a reimagined storyline where the
           familiar characters have different fates and relationships.
         </p>
+
         <Image
           src={mk1Title}
           alt="Mortal Kombat 1 Title Screen"
-          className="shadow-md"
+          className="shadow-sm"
         />
 
         <Flavor>

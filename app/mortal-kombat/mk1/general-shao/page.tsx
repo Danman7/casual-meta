@@ -112,7 +112,7 @@ export default async function Page() {
         </p>
 
         <ImageWithCaption
-          className="shadow-md max-h-96 object-cover object-[0%_50%]"
+          className="max-h-96 object-cover object-[0%_50%]"
           src={shao2}
           alt="General Shao doing standing 2 attack."
           caption="Shao's Standing 2 controls a big chunk of space in front of him. No opponent can comfortably approach without respecting it."

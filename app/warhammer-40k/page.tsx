@@ -41,7 +41,6 @@ export default async function Page() {
         <ImageWithCaption
           src={wh40kTitle}
           alt="A small detachment of Space Marines"
-          className="shadow-md"
           caption="On this image we see a battle between Ultramarines and Chaos Space Marines. The two armies are led by legendary heroes like Roboute Guilliman, Marneus Calgar and Abaddon the Despoiler."
         />
 

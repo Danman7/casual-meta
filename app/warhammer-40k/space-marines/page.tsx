@@ -30,7 +30,7 @@ export default async function Page() {
       <Image
         src={wh40kTitle}
         alt="A small detachment of Space Marines"
-        className="shadow-md"
+        className="shadow-sm"
       />
 
       <p>
@@ -73,7 +73,7 @@ export default async function Page() {
       <Image
         src={chapters}
         alt="A collection of space marine chapter banners."
-        className="shadow-md"
+        className="shadow-sm"
       />
 
       <p>

@@ -50,7 +50,6 @@ export default async function Page() {
         <ImageWithCaption
           src={duelStart}
           alt="A neutral position at the start of a duel."
-          className="shadow-md"
           caption="In this image we see the start of a match between Raiden and Liu Kang. The beginning of the first round is a perfect example of Neutral."
         />
 
@@ -98,13 +97,13 @@ export default async function Page() {
           <Image
             src={knockback}
             alt="Scorpion knocking back Sub-Zero with a kick."
-            className="sm:w-1/2 object-cover shadow-md"
+            className="sm:w-1/2 object-cover"
           />
 
           <Image
             src={knockbackDistance}
             alt="Scorpion and Sub-Zero after the knockback, at a distance."
-            className="sm:w-1/2 object-cover shadow-md"
+            className="sm:w-1/2 object-cover"
           />
         </div>
 

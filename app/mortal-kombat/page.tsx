@@ -68,7 +68,6 @@ export default async function Page() {
         <ImageWithCaption
           src={Arena}
           alt="Shang Tsung's arena in Mortal Kombat."
-          className="mx-auto shadow-md"
           caption="An artistic representation of a classic MK arena - Shang Tsung's temple."
         />
 

@@ -129,7 +129,6 @@ export default async function Page() {
         <ImageWithCaption
           src={spear}
           alt="Scorpion's spear move."
-          className="shadow-md"
           caption="On top of reaching full-screen and stunning
         your foe, the Spear brings them next to you for you to
         proceed in any manner. This leads beginners to abuse it, making them predictable."
@@ -223,7 +222,7 @@ export default async function Page() {
         <ImageWithCaption
           src={scorpb3}
           alt="Scorpion's back 3 attack."
-          className="shadow-md max-h-80 object-cover object-[0%_50%]"
+          className="max-h-80 object-cover object-[0%_50%]"
           caption="Back 3 reaches quite far, but not the entire screen. It can be punished with a well-timed projectile or jump attack."
         />
 

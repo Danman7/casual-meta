@@ -88,7 +88,6 @@ export default async function Page() {
         <ImageWithCaption
           src={castle}
           alt="A fully built Castle town."
-          className="shadow-md"
           caption="A fully built Castle town."
         />
 

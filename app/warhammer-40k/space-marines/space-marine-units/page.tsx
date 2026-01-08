@@ -83,7 +83,7 @@ export default async function Page() {
       <Image
         src={intercessors}
         alt="A squad of Space Marine Intercessors advancing."
-        className="shadow-md max-h-96 object-cover object-[0%_65%]"
+        className="max-h-96 object-cover object-[0%_65%]"
       />
 
       <Callout>
@@ -232,7 +232,7 @@ export default async function Page() {
       <Image
         src={assaultIntercessors}
         alt="A squad of Assault Intercessors."
-        className="shadow-md max-h-96 object-cover object-[0%_65%]"
+        className="max-h-96 object-cover object-[0%_65%]"
       />
 
       <Callout>

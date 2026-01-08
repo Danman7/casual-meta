@@ -65,7 +65,7 @@ export default async function Page() {
       <Image
         src={guardsmen}
         alt="Cadian Shock Troops"
-        className="h-48 object-cover object-[0%_50%] shadow-md"
+        className="h-48 object-cover object-[0%_50%]"
       />
 
       <p>
@@ -152,7 +152,7 @@ export default async function Page() {
       <Image
         src={intercessors}
         alt="Space Marines Intercessors"
-        className="max-h-72 object-cover object-[0%_65%] shadow-md"
+        className="max-h-72 object-cover object-[0%_65%]"
       />
 
       <p>
