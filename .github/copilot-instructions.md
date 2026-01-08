@@ -151,38 +151,55 @@ When the user asks to **"proofread"**, **"clean up"**, **"make cleaner"**, or **
 
 ### Make Shorter Command
 
-When the user asks to **"make shorter"**, **"make more concise"**, **"trim"**, or **"reduce wordiness"**:
+When the user asks to **"make shorter"**, **"make more concise"**, **"trim"**, or **"reduce wordiness"**, apply **AP Style principles** for clear, direct writing:
 
-1. **Remove hedge words and phrases**
-   - "probably", "usually", "generally", "typically"
-   - "just about", "a bit", "a little bit", "kind of", "sort of"
-   - "rather", "somewhat", "quite", "fairly"
-   - "it is X to" → direct statement
-   - "can be your go-to" → "use it"
+1. **Use active voice**
+   - "The attack will hit the target" not "The target will be hit by the attack"
+   - "Player A blocks the move" not "The move is blocked by Player A"
+   - Active voice is shorter, clearer, and more direct
 
-2. **Eliminate redundancy**
-   - "tremendous amount of" → "tremendous"
-   - "for some time" → (remove if time already implied)
-   - "a handful of times" → "repeatedly"
-   - Combine sentences that repeat the same concept
-   - Remove explanations that state the obvious
+2. **Cut unnecessary words**
+   - Remove hedge words: "probably", "usually", "generally", "typically", "somewhat", "quite", "fairly"
+   - Remove intensifiers: "very", "really", "extremely", "highly"
+   - Remove filler: "just", "actually", "basically", "essentially", "literally"
+   - "in order to" → "to"
+   - "due to the fact that" → "because"
+   - "at this point in time" → "now"
 
-3. **Simplify wordy constructions**
-   - "It is also never a bad idea to" → "Always" or direct statement
+3. **Replace wordy phrases with direct language**
+   - "It is important to note that" → (delete)
    - "As far as X is concerned" → "For X"
-   - "may be enough to" → "will"
-   - "can and should be" → "should be"
-   - "you can do only" → "do only"
+   - "in the event that" → "if"
+   - "a number of" → "many" or "several"
+   - "has the ability to" → "can"
+   - "make use of" → "use"
+   - "take into consideration" → "consider"
 
-4. **Condense repetitive explanations**
-   - Merge closely related sentences
-   - Remove restating of the same point
-   - Cut unnecessary examples if the concept is clear
+4. **Eliminate redundancy**
+   - "completely eliminate" → "eliminate"
+   - "advance planning" → "planning"
+   - "end result" → "result"
+   - "past history" → "history"
+   - "merge together" → "merge"
+   - Combine sentences that repeat the same concept
 
-5. **Preserve clarity and tone**
+5. **Use strong, specific verbs**
+   - "make a decision" → "decide"
+   - "give consideration to" → "consider"
+   - "is able to" → "can"
+   - "provides assistance to" → "helps"
+   - "make an attempt" → "try"
+
+6. **Keep sentences short and direct**
+   - One idea per sentence when possible
+   - Break long sentences with multiple clauses into shorter ones
+   - Cut sentences that simply restate what was just said
+   - Remove unnecessary introductions and conclusions
+
+7. **Preserve clarity and accuracy**
    - Don't sacrifice clarity for brevity
-   - Keep technical accuracy intact
+   - Keep technical terminology when needed
    - Maintain the instructional tone
    - Be thrifty—only remove what's truly redundant
 
-6. **Use multi_replace_string_in_file for efficiency** when making multiple edits
+8. **Use multi_replace_string_in_file for efficiency** when making multiple edits

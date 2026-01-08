@@ -46,69 +46,59 @@ export default async function Page() {
       <Section>
         <Flavor>
           This page explores the details of attacking and blocking in Mortal
-          Kombat. It is the basis for evaluating moves and understanding the
-          game in general.
+          Kombat - the basis for evaluating moves and understanding the game.
         </Flavor>
 
         <p>
-          Modern MK games expose each move's <em>frame data</em>. It tells the
-          story of how that move works in detail, but it looks more complex than
-          it is. To give context and ease into it, we will first cover some very
-          basic concepts about attacks.
+          Modern MK games expose each move's <em>frame data</em>. It tells how a
+          move works in detail. First, we cover basic attack concepts.
         </p>
       </Section>
 
       <Section title="Hit vs block vs miss" id="hit-vs-block-vs-miss">
         <p>
-          Every attack takes some time to execute during which the attacker
-          won't be able to do anything else. Both characters can attack at the
-          same time.
+          During an attack, the attacker can't do anything else. Both characters
+          can attack simultaneously.
         </p>
 
         <p>
-          If one happens to be within reach when an attack is active, it will
-          register a hit, causing damage and hit stun. The one being hit cannot
-          act for a period determined by the frame data, leaving time for the
-          attacker to move or follow up.
+          If within reach when an attack is active, it registers a hit, causing
+          hit stun. They cannot act until the frame data allows, leaving time
+          for the attacker to follow up.
         </p>
 
         <p>
-          If both players are within reach of each other's attack while active,
-          they will both take a hit. This is called a <strong>trade</strong>.
-          Which one recovers quicker depends on the attack's frame data.
+          If both attacks are active within reach, both take a hit. This is
+          called a <strong>trade</strong>. Recovery depends on frame data.
         </p>
 
         <p>
-          If an attack connects but the target is blocking, it will only cause
-          block (also known as chip) damage. The stun from blocking is much
-          shorter than from taking a hit. The target may or may not have time to
-          counterattack. This is the essence of safe vs. unsafe attacks.
+          If an attack connects but is blocked, it causes block damage. The stun
+          from blocking is shorter than from taking a hit. The target might
+          counterattack - the basis of safe vs. unsafe attacks.
         </p>
 
         <p>
-          If an attack is thrown but the opponent is not within reach, it will
-          miss. This is the best outcome for the target. While the attacker
-          recovers, the opponent is free to act. The most common term for
-          missing is a <em>whiff</em>.
+          If an attack misses, the opponent is free to act while the attacker
+          recovers. Missing is called a <em>whiff</em>.
         </p>
 
         <p>
-          These scenarios involve damage and/or stun. Stun is the basis of{' '}
-          <em>frame traps</em>. Whoever recovers first acts first. When you
-          invest frames into a move, you may come out on top or it may backfire.
+          These cause damage and stun. Stun is the basis of <em>frame traps</em>
+          . Whoever recovers first acts first. When you invest frames into a
+          move, you win or lose.
         </p>
 
         <p className="font-bold">
           Every attack is a commitment. A round is a sequence of commitments.
-          Your goal is for the total sum of those to be positive for you.
+          Your goal is to come out ahead.
         </p>
       </Section>
 
       <Section title="Block type" id="block-type">
         <p>
-          Underneath all the mechanics, there is a basic rock-paper-scissors
-          game based on stances. Every move has a Block Type that determines how
-          it must be blocked.
+          A basic rock-paper-scissors game exists based on stances. Every move
+          has a Block Type determining how it must be blocked.
         </p>
 
         <ImageWithCaption
@@ -119,12 +109,12 @@ export default async function Page() {
 
         <p>
           A <strong>High</strong> attack{' '}
-          <strong>must be blocked if standing</strong>, but it{' '}
-          <strong>will miss if crouching</strong>. High attacks are common. Most
-          are performed while standing, retaining the character's mobility.
+          <strong>must be blocked standing</strong> but{' '}
+          <strong>misses if crouching</strong>. High attacks are common. Most
+          are performed standing.
         </p>
 
-        <Diagram description="A high attack will still connect with a target that is both crouching and blocking. In order to completely avoid the stun, you must take a risk and duck without blocking.">
+        <Diagram description="A high attack will connect with a crouching, blocking target. To avoid stun, duck without blocking.">
           <div className="flex flex-col font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -151,11 +141,11 @@ export default async function Page() {
 
         <p>
           A <strong>Mid</strong> attack{' '}
-          <strong>must be blocked whether standing or crouching.</strong> Mids
-          are also common.
+          <strong>must be blocked standing or crouching.</strong> Mids are
+          common.
         </p>
 
-        <Diagram description="Mids, especially advancing ones, are designed as block checks. Here, ducking under the attack won't work, forcing the opponent to block.">
+        <Diagram description="Mids, especially advancing ones, check blocks. Ducking won't work, forcing the opponent to block.">
           <div className="flex flex-col font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -180,12 +170,11 @@ export default async function Page() {
 
         <p>
           A <strong>Low</strong> attack <strong>must be blocked low</strong>.
-          Low moves are less common and usually involve crouching to perform and
-          result in a knockdown. Standing low moves are even rarer as they are
-          quick and retain mobility.
+          Low moves are less common and require crouching, causing knockdown.
+          Standing lows are rarer because they're quick and retain mobility.
         </p>
 
-        <Diagram description="A standing target will get hit by a low attack. Lows mix things up for opponents that like to keep blocking high.">
+        <Diagram description="Low attacks hit standing targets. Lows mix things up for opponents who keep blocking high.">
           <div className="flex flex-col font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -201,14 +190,14 @@ export default async function Page() {
         </Diagram>
 
         <p>
-          So far, blocking low counters every attack type. This is where
-          overheads come in. An <strong>Overhead</strong> attack{' '}
-          <strong>must be blocked standing</strong>. Like lows, overhead moves
-          are less common. All jump-in attacks are overheads. Standing overheads
-          are rare.
+          So far, blocking low counters every attack type. Overheads counter
+          this. An <strong>Overhead</strong> attack{' '}
+          <strong>must be blocked standing</strong>. Like lows, overheads are
+          less common. All jump-in attacks are overheads. Standing overheads are
+          rare.
         </p>
 
-        <Diagram description="Overheads force a defender to stand up and block. This prevents players from crouch blocking for a long time.">
+        <Diagram description="Overheads force a defender to stand and block, preventing crouch blocking.">
           <div className="flex flex-col font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -235,28 +224,24 @@ export default async function Page() {
         </Diagram>
 
         <p>
-          Overheads are usually slower than mids and lows. If the defender spots
-          or predicts an overhead coming while crouch-blocking, they can release
-          the down button while still holding block. Their character will stand
-          up to block the overhead. After that, they can press down again to
-          meet any follow-up mids or lows. This is called{' '}
-          <strong>fuzzy blocking</strong> (or fuzzing, block OS, or block
-          switching). Although it sounds simple, it takes time to learn which
-          attacks can be fuzzy blocked, and when.
+          Overheads are slower than mids and lows. If the defender spots or
+          predicts an overhead while crouch-blocking, they can release the down
+          button while still holding block. Their character will stand to block
+          the overhead, then presses down again to meet follow-up mids or lows.
+          This is called <strong>fuzzy blocking</strong> (or fuzzing, block OS,
+          or block switching). Learning which attacks can be fuzzy blocked, and
+          when, takes practice.
         </p>
 
         <p>
-          Technically, it is possible for a player to block all attacks if they
-          are really good at it. However,{' '}
-          <strong>throws skip any blocking</strong>, be it standing or ducking.
-          If the target is within reach, they will get grabbed - unless (A) they
-          duck without blocking or (B) they press the correct button in time to
-          break the throw. (B) is commonly known as{' '}
-          <strong>teching the throw</strong>. Throws can go in two directions -
-          forward or backward.
+          A skilled player can block all attacks. However,{' '}
+          <strong>throws skip blocking</strong>. If the target is within reach,
+          they get grabbed - unless they duck without blocking or press the
+          correct button to break the throw. Breaking a throw is called{' '}
+          <strong>teching</strong>. Throws can go forward or backward.
         </p>
 
-        <Diagram description="Throws mix things up for good blockers. Pressing 2/4 for forward and 1/3 for backward throws will tech them. Taking a risk and ducking will skip the grab.">
+        <Diagram description="Throws mix things up for good blockers. Pressing 2/4 for forward and 1/3 for backward throws will tech them. Ducking will skip the grab.">
           <div className="flex flex-col font-semibold items-center">
             <div>Throw</div>
             <Image src={throwGrab} alt="Throw grabbing an opponent." />
@@ -277,19 +262,18 @@ export default async function Page() {
         </Diagram>
 
         <p>
-          Some special moves are throws, while some strings end with a throw.
-          These are called <strong>command grabs</strong>. They can be avoided,
+          Some special moves are throws, and some strings end with a throw.
+          These are called <strong>command grabs</strong>. They can be avoided
           but <strong>can't be teched</strong>. If the target is grabbed, they
-          are going for a ride no matter what they press.
+          take damage.
         </p>
 
         <p>
-          Some moves have <strong>Unblockable</strong> listed on their Block
-          Type. If such a move connects with the target, they will take damage
-          regardless of blocking.
+          Some moves are <strong>Unblockable</strong>. If they connect, the
+          target takes damage.
         </p>
 
-        <Diagram description="Unblockables are mostly special moves. They have a certain hitbox that must be avoided in order to skip damage.">
+        <Diagram description="Unblockables are mostly special moves. They have a hitbox that must be avoided to skip damage.">
           <div className="flex flex-col font-semibold items-center">
             <div>Guaranteed damage on hit</div>
 
@@ -301,16 +285,15 @@ export default async function Page() {
         </Diagram>
 
         <p className="font-bold">
-          Every block has the appropriate counter. If they keep blocking high,
-          mix in a low attack. If they keep blocking low, throw in an overhead.
-          If they keep guessing correctly, trick them with a throw.
+          Every block has a counter. If they keep blocking high, mix in a low
+          attack. If they keep blocking low, throw in an overhead. If they keep
+          guessing correctly, trick them with a throw.
         </p>
       </Section>
 
       <Section title="Frame data" id="frame-data">
         <p>
-          Pressing the advanced view button while highlighting a move in the
-          move list opens up its frame data and notes.
+          Pressing the advanced view button opens a move's frame data and notes.
         </p>
 
         <ImageWithCaption
@@ -320,33 +303,30 @@ export default async function Page() {
         />
 
         <p className="font-bold">
-          Frame data measures how long it takes for a character to execute and
-          recover from a move based on whether the move hit, missed, or was
-          blocked.
+          Frame data measures how long a character takes to execute and recover
+          from a move based on whether the move hit, missed, or was blocked.
         </p>
 
         <p>
-          MK runs at 60 frames per second using frame-based animations (like
-          most fighting games) instead of time-based ones. This provides an
-          additional layer of accuracy - you know exactly how many frames each
-          move takes. Understanding frame data is essential to learning the
-          strengths and weaknesses of a move, hence its purpose.
+          MK runs at 60 frames per second using frame-based animations instead
+          of time-based ones. This shows exactly how many frames each move
+          takes. Understanding frame data is essential for learning a move's
+          strengths and weaknesses.
         </p>
 
         <h3 id="move-phases">Move phases</h3>
 
         <p>
-          Every attack can be broken down into a <em>beginning</em>,{' '}
-          <em>middle</em>, and <em>end</em>. In the game, these are respectively
-          called <em>start-up</em>, <em>active</em>, and <em>recovery</em>{' '}
-          frames.
+          Every attack has a <em>beginning</em>, <em>middle</em>, and{' '}
+          <em>end</em>. In the game, these are called <em>start-up</em>,{' '}
+          <em>active</em>, and <em>recovery</em> frames.
         </p>
 
         <p>
-          The beginning is the start-up: the time from pressing the button until
-          the attack becomes active. This is followed by the active frames - how
-          long the attack can hit. Finally, recovery is the time it takes after
-          hitting for the character to be free to act again.
+          The beginning is start-up: the time from pressing the button until the
+          attack becomes active. Active frames follow - how long the attack can
+          hit. Recovery is the time after hitting until the character can act
+          again.
         </p>
 
         <Diagram description="This is a representation of a regular punch broken down into its three phases.">
@@ -371,23 +351,19 @@ export default async function Page() {
         </p>
 
         <p>
-          Whether a move feels fast or slow is entirely subjective to the
-          players. Some people can consistently react within 10 frames, but most
-          of us need more time. This is why we learn to read the opponent and
+          Whether a move feels fast or slow is subjective. Some can react within
+          10 frames, but most need more time. We learn to read opponents and
           plan ahead.
         </p>
 
         <p className="font-bold">
-          For a baseline, we can consider 10 frames (1/6th of a second) and
-          below to be quick, while 20 frames (1/3rd of a second) and above to be
-          slow.
+          As a baseline, 10 frames (1/6th of a second) and below is quick, while
+          20 frames (1/3rd of a second) and above is slow.
         </p>
 
         <p>
-          In general, punches are quick, kicks and special moves are slower.
-          Most punches have 7-8 frames start-up, so that is considered the
-          standard for fastest attacks. This will come into play when discussing
-          safe and unsafe moves.
+          Punches are quick, kicks and special moves are slower. Most punches
+          have 7-8 frames start-up, the standard for fastest attacks.
         </p>
 
         <p>
@@ -399,52 +375,45 @@ export default async function Page() {
         <h3 id="safe-vs-unsafe">Safe vs unsafe</h3>
 
         <p className="font-bold">
-          The safety of a move is determined by its recovery in the context of
-          hitting, missing or blocking. Recovery is often called advantage.
+          A move's safety is determined by its recovery when hitting, missing,
+          or blocking. Recovery is often called advantage.
         </p>
 
         <p>
-          The frames listed in the <em>Recovery</em> section of the frame data
-          are valid only on miss. If that happens, the opponent will have this
-          amount of frames to hit you while you recover. Most attacks have slow
-          recovery on miss making <em>whiff (miss) baiting</em> a central tactic
-          in <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>.
+          The frames in the <em>Recovery</em> section are valid on miss. The
+          opponent has these frames to hit you while you recover. Most attacks
+          have slow recovery on miss, making <em>whiff baiting</em> a central
+          tactic in <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>.
         </p>
 
         <p>
-          <em>Hit advantage</em> shows how much sooner the attacker will be able
-          to act before the defender if the attack hits. The additional frames
-          given after a hit are a key mechanic in combos along with{' '}
-          <Link href={`${MK_BASE_URL}/cancelling`}>Canceling</Link>. The longer
-          the frames the bigger the freedom, thus the advantage on hit.
+          <em>Hit advantage</em> shows how much sooner the attacker can act if
+          the attack hits. The additional frames after a hit are key for combos
+          along with <Link href={`${MK_BASE_URL}/cancelling`}>Canceling</Link>.
+          More frames mean more freedom.
         </p>
 
         <p>
-          <em>Block advantage</em> compares the recovery of an attack after it
-          is blocked. Here the value can be a negative number as well. This
-          indicates that the defender will recover sooner than the attacker on
-          block. In fact, most of the moves in the game have negative block
-          advantage. Some are zero on block, which means they are neutral - both
-          attacker and defender recover at the same time. Very few attacks are
-          positive on block, which gives the attacker more freedom even if the
-          move is blocked. These are called <em>plus frames</em> and are the
-          basis for <em>frame traps and jails</em>.
+          <em>Block advantage</em> compares recovery after blocking. The value
+          can be negative, meaning the defender recovers sooner. Most moves have
+          negative block advantage. Some are zero on block, making them neutral
+          - both recover simultaneously. Few attacks are positive on block,
+          giving the attacker more freedom when blocked. These are called{' '}
+          <em>plus frames</em> and enable <em>frame traps and jails</em>.
         </p>
 
         <p>
-          Player A throws an attack which Player B blocks. Even if A's attack is
-          minus on block and B counter-attacks the moment they recover, B's
-          attack will still take its start-up frames to activate. This means
-          that B's attack must have shorter start-up than the block disadvantage
-          of A's move in order to hit.
+          Player A throws an attack which Player B blocks. If A's attack is
+          minus on block and B counter-attacks immediately, B's attack needs its
+          start-up frames to activate. B's attack must have shorter start-up
+          than A's block disadvantage to hit.
         </p>
 
         <Callout title="Actual disadvantage on block">
           <p>
-            Continuing the above example: if A's attack is -10 on block, then B
-            can hit them if their counter-attack has less than 10 start-up
-            frames. If that is a regular 7-frame start-up punch, they can
-            definitely punish A.{' '}
+            Continuing the above example: if A's attack is -10 on block, B can
+            hit them if their counter-attack has less than 10 start-up frames.
+            If that is a regular 7-frame start-up punch, they can punish A.{' '}
             <em>Provided they react within 2 frames of recovery</em>. If they
             take 4 frames to react, their attack won't hit.
           </p>
@@ -480,28 +449,28 @@ export default async function Page() {
         </Callout>
 
         <p>
-          All of the above also depends on range. Maybe A throws a projectile
-          from across the screen. Sure, B has enough quick attacks to counter
-          after block, but can they reach?
+          All of the above depends on range. Maybe A throws a projectile from
+          across the screen. B has quick attacks to counter after block, but can
+          they reach?
         </p>
 
         <p>So what makes an attack safe or unsafe?</p>
 
         <p className="font-bold">
-          If most characters' fastest attack is 7 frames per second, then
-          anything with more than -6 Block Advantage is completely safe.
+          If most characters' fastest attack is 7 frames per second, anything
+          with more than -6 Block Advantage is safe.
         </p>
 
         <p>
-          A -7 on block move is technically unsafe, of course, if the
-          counterattack is that fast. Most of the time, -7 and -8 on block moves
-          provide little enough time to react that they prove to be safe.
+          A -7 on block move is unsafe if the counterattack is that fast. -7 and
+          -8 on block moves provide little time to react, making them
+          effectively safe.
         </p>
 
         <p>
-          Almost all special moves and many of the longer reaching or damaging
-          moves are unsafe on block. Unsafe attacks may produce better effects,
-          but needless to say should be used carefully - in a combo for example.
+          Most special moves and many longer-reaching or damaging moves are
+          unsafe on block. Unsafe attacks produce better effects but should be
+          used carefully - in a combo, for example.
         </p>
 
         <h3 id="punish">Punish and Counter</h3>
@@ -511,15 +480,13 @@ export default async function Page() {
         </p>
 
         <p>
-          That is if the attack is fast enough and the opponent is within reach.
-          During play, it is indicated by a Punish popup on the side of the
-          screen. If your counterattack starts at the exact frame of recovery
-          after blocking, a Reversal Punish popup will appear.
+          The attack must be fast enough and the opponent within reach. A Punish
+          popup appears on screen. If your counterattack starts at the exact
+          frame of recovery after blocking, a Reversal Punish popup appears.
         </p>
 
         <p>
-          Evading an attack completely, not only avoids block damage, but also
-          leaves more time to properly react.
+          Evading an attack avoids block damage and leaves more time to react.
         </p>
 
         <p className="font-bold">
@@ -530,11 +497,9 @@ export default async function Page() {
         <h3 id="space-control">Space control</h3>
 
         <p>
-          We covered how important start-ups and recoveries are and how big is
-          the frame difference from move to move. What about active frames?
-          There is much less variety here, as the vast majority of attacks have
-          short active frames - usually between 2 and 6 frames. But some moves
-          and most projectiles remain active much longer.
+          Start-ups and recoveries vary widely between moves. What about active
+          frames? Most attacks have short active frames - 2 to 6 frames. But
+          some moves and most projectiles remain active much longer.
         </p>
 
         <p className="font-bold">
@@ -542,37 +507,30 @@ export default async function Page() {
         </p>
 
         <p>
-          You can think of them as eating space away from the opponent. They
-          must respect their extended presence and trajectory. Usually this
-          involves staying put and blocking/ducking. Facing a space controlling
-          move it becomes risky to commit hasty actions like jumping or dashing.
+          They eat space away from the opponent. They must respect their
+          extended presence and trajectory. This involves staying put and
+          blocking/ducking. Facing a space-controlling move, committing to hasty
+          actions like jumping or dashing becomes risky.
         </p>
       </Section>
 
       <Section title="Beyond the move list" id="beyond-the-move-list">
         <Flavor>
-          This section covers attack traits that are not listed in the frame
-          data.
+          This section covers attack traits not listed in frame data.
         </Flavor>
 
-        <p>
-          There are some attack characteristics that are not mentioned in the
-          data sheets.
-        </p>
+        <p>Some attack characteristics aren't in the data sheets.</p>
 
         <h3 id="launch">Launch</h3>
         <h3 id="knockdown">Knockdown</h3>
 
         <p>
-          Some attacks knock the opponent down on the ground. This usually
-          involves a much better advantage on hit.
+          Some attacks knock the opponent down, giving better advantage on hit.
         </p>
       </Section>
 
       <Section title="Other terms" id="other-terms">
-        <Flavor>
-          This section clarifies community terms related to attacks.
-        </Flavor>
+        <Flavor>Community terms related to attacks.</Flavor>
 
         <h3 id="pokes">Pokes</h3>
 

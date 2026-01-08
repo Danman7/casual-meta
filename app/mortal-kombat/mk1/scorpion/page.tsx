@@ -43,13 +43,13 @@ export default async function Page() {
 
         <div className="md:w-1/2">
           <p>
-            Scorpion is a beginner-friendly character, frequently played at all
-            levels. His major strength is reliably interrupting unsafe actions
-            from anywhere on the screen. He can then convert them into one of
-            his simple adaptable combos. His toolbox includes both close and
-            long range instruments, but lacks an efficient offense. In that
-            regard, new players will find him easier when reacting rather than
-            initiating pressure. For the latter, he needs a proper Kameo.
+            Scorpion in Mortal Kombat 1 is beginner-friendly and frequently
+            played at all levels. His major strength is interrupting unsafe
+            actions from anywhere on the screen, converting them into simple
+            adaptable combos. His toolbox includes both close and long-range
+            options but lacks efficient offense. For that, he needs a proper
+            Kameo. New players will find him easier when reacting rather than
+            initiating pressure.
           </p>
         </div>
       </Section>
@@ -58,33 +58,29 @@ export default async function Page() {
         pros={[
           <>
             <p className="font-semibold">Beginner-friendly.</p>
-            <Flavor>
-              He has no stances or forms to manage. Starting and extending
-              combos is easy.
-            </Flavor>
+            <Flavor>No stances or forms to manage. Easy combos.</Flavor>
           </>,
           <>
             <p className="font-semibold">Good utility.</p>
             <Flavor>
-              The Spear is superb at controlling space and setting up combos. He
-              has multiple specials that cover the whole screen. Good
-              interruptions. Anti-zoning and anti-air options.
+              The Spear controls space and sets up combos. Multiple specials
+              cover the whole screen. Good interruptions, anti-zoning, and
+              anti-air options.
             </Flavor>
           </>,
           <>
             <p className="font-semibold">Kameos synergy.</p>
             <Flavor>
-              His moves combine well with a lot of Kameos. He can combo out of
-              his throw with the right Kameo.
+              His moves combine well with many Kameos. Can combo out of throws.
             </Flavor>
           </>,
         ]}
         cons={[
           <>
-            <p className="font-semibold">Can struggle with offense.</p>
+            <p className="font-semibold">Struggles with offense.</p>
             <Flavor>
-              He lacks mix-ups. No chainable standing overheads or lows. No
-              frame traps. Cannot press the attack for long.
+              Lacks mix-ups. No chainable standing overheads or lows. No frame
+              traps. Cannot sustain pressure.
             </Flavor>
           </>,
         ]}
@@ -97,56 +93,52 @@ export default async function Page() {
         </Flavor>
 
         <p className="font-bold">
-          Scorpion lacks a true mix-up or frame advantage. Instead, he relies on
+          Scorpion lacks mix-ups or frame advantage. He relies on
           straightforward moves for each distance and scenario.
         </p>
 
         <h3 id="standing-2">Mid-screen</h3>
 
         <p>
-          A good starting point is to learn how far <Pill>Standing 2</Pill>{' '}
-          stretches. That is <em>your primary poke</em> - safe, fast, disjointed
-          high punch with a good span. Aim to hit them at the attack's maximum
-          range. Once you get a feel for it, start confirming hits with{' '}
-          <Pill>21</Pill>. If they block: stop. On hit: continue into Spear -{' '}
-          <Pill>21 BF1</Pill>
+          Learn how far <Pill>Standing 2</Pill> stretches. This is{' '}
+          <em>your primary poke</em> - safe, fast, disjointed high punch with
+          good range. Aim to hit approaching foes at its maximum range. Once
+          comfortable, start confirming hits with <Pill>21</Pill>. If they
+          block: stop. On hit: continue into Spear - <Pill>21 BF1</Pill>
         </p>
 
         <ImageWithCaption
           src={scorp2}
           alt="Scorpion's Standing 2 attack."
-          caption="Scorpion's Standing 2 often surprises foes trying to get in close."
+          caption="Scorpion's Standing 2 reaches far for a regular punch. Half of its hitbox is disjointed, making it safe to most quick counter-pokes."
         />
 
         <p>
-          <em>The Spear</em> <Pill>BF1</Pill> is an{' '}
-          <em>excellent mid-range check</em>. Think of it as a Standing 2 with
-          longer reach. It is slower and is unsafe, but players often get so
-          comfortable that a Spear interrupts their dashes, or catches them at
-          the end of their jumps, or during casting projectiles.
+          If Standing 2 doesn't reach go for the <em>The Spear</em>{' '}
+          <Pill>BF1</Pill>. It is Scorpion's signature space control high
+          projectile - unsafe, somewhat slow, with infinite active frames.
+          Although expected, it often interrupts opponents' dashes, catches them
+          at jump ends, or during projectile casts.
         </p>
 
         <ImageWithCaption
           src={spear}
           alt="Scorpion's spear move."
-          caption="On top of reaching full-screen and stunning
-        your foe, the Spear brings them next to you for you to
-        proceed in any manner. This leads beginners to abuse it, making them predictable."
+          caption="Here we see the Spear catching Sub-Zero at full range. It will stun and bring him next to Scorpion for a free combo."
         />
 
         <p>
-          You can expect opponents to block, jump, or teleport around your
-          Spear. But because it is a <em>high</em> projectile, some players will
-          also try to duck under it. If you spot this pattern in your foe, do a{' '}
-          <Pill>BF1ex</Pill> Enhanced Spear which hits <em>mid</em> to surprise
-          them.
+          They will block, jump, or teleport around your Spear. Because it's a{' '}
+          <em>high</em> attack, some players will duck under it. If you spot
+          this pattern, use <Pill>BF1ex</Pill> Enhanced Spear, which hits{' '}
+          <em>mid</em>.
         </p>
 
         <p>
           <Pill>Back 2</Pill> is your best anti-air. It can be{' '}
-          <em>shortcut cancelled</em> into any back-forward move. For example{' '}
-          <Pill>B2 F1</Pill> cancels into Spear without having to press back
-          twice. Get the hang of this early to control air pressure.
+          <em>shortcut cancelled</em> into any back-forward move.{' '}
+          <Pill>B2 F1</Pill> cancels into Spear without pressing back twice.
+          Learn this early to control air pressure.
         </p>
 
         <h3 id="up-close">Up close</h3>
@@ -154,76 +146,73 @@ export default async function Page() {
         <p>
           <Pill>Forward 32</Pill> is your{' '}
           <em>optimal launcher and combo starter</em>. It can be{' '}
-          <em>chained up to three times</em>, with multiple ways to extend
-          further. The first hit is an advancing <em>mid</em> which is also a
-          decent check for crouching opponents. Strive to start your pressure
-          with this string whenever <Pill>21</Pill> doesn't feel right.
+          <em>chained up to three times</em>, with multiple extensions. The
+          first hit is an advancing <em>mid</em> and a decent check for
+          crouching opponents. Start pressure with this string when{' '}
+          <Pill>21</Pill> doesn't feel right.
         </p>
 
         <p>
-          In case you are touching and their pressure is too much, you can go
-          for <Pill>12</Pill>. It is your fastest hit confirm, but has a shorter
-          reach, lower damage and limited extensions.
+          If you're touching and their pressure is too much, use <Pill>12</Pill>
+          . It's your fastest hit confirm but has shorter reach, lower damage,
+          and limited extensions.
         </p>
 
         <p>
-          Simply blocking is also always an option, but be prepared to get
-          knocked down eventually. Provided they sustain the pressure on your
-          wakeup, execute an <em>Armored Enhanced Charge</em> <Pill>BF2ex</Pill>
-          . Unless they block, it will suspend their offense and can even be
-          comboed out of with the proper Kameos.
+          Blocking is always an option, but expect to get knocked down. If they
+          sustain pressure on your wakeup, use{' '}
+          <em>Armored Enhanced Blazing Charge</em> <Pill>BF2ex</Pill>. Unless
+          they block, it suspends their offense and can be comboed out of with
+          the right Kameos. The Charge is quicker than the Spear, but fails at
+          controlling space due to short active frames.
         </p>
 
         <h3 id="far-away">Far away</h3>
 
         <p>
           The Charge won't reach and the Spear is too slow at full screen. For
-          that distance you have the <em>Flame Port</em> <Pill>DB3</Pill>.
-          Scorpion dashes away from his foe, loops through the screen and throws
-          a punch from the other side. It is a multi-purpose teleport move.
+          this distance, use <em>Flame Port</em> <Pill>DB3</Pill>. Scorpion
+          dashes away from his foe, loops through the screen, and throws a punch
+          from the other side. It's a multi-purpose teleport.
         </p>
 
         <p>
-          For one, you can reliably interrupt heavy zoners. Record a dummy
-          spamming projectiles (e.g., Liu Kang's BF1) and exercise timing the
-          Port with the spell being thrown. A few successful hits will
-          discourage your opponent from zoning.
+          You can interrupt heavy zoners. Record a dummy spamming projectiles
+          (e.g., Liu Kang's BF1) and practice timing the Port with the spell. A
+          few successful hits will discourage zoning.
         </p>
 
         <p>
-          An experienced player however can bait throwing a projectile and
-          instead block your Port which is very unsafe. A good practice is to
-          occasionally vary with the enhanced version <Pill>DB3ex</Pill>. It
-          estands Scorpion on the other side of the target, skipping the attack.
-          Enhanced Port into a Throw is the simplest route to mess up their
-          defense. You can also practive Enhanced Port into <Pill>Down 1</Pill>{' '}
-          or into micro-duck then <Pill>Standing 1</Pill>.
+          Experienced players can bait a projectile throw and block your Port,
+          which is unsafe. Occasionally vary with the enhanced version{' '}
+          <Pill>DB3ex</Pill>. It lands Scorpion on the other side, skipping the
+          attack. Enhanced Port into Throw is the simplest route to disrupt
+          their defense. You can also practice Enhanced Port into{' '}
+          <Pill>Down 1</Pill> or micro-duck then <Pill>Standing 1</Pill>.
         </p>
 
         <p>
-          Finally, you have the <em>Devouring Flame</em> <Pill>DB4</Pill> for
-          any play who like to just stay away and block. It is a <em>low</em>
-          -hitting special that spawns under the target's feet at any distance.
-          The enhanced version does guaranteed damage over time if it connects.
-          Just keep in mind that it is slow and unsafe and can be punished by a
-          rather mobile foe.
+          <em>Devouring Flame</em> <Pill>DB4</Pill> works against players who
+          stay away and block. It's a <em>low</em>-hitting special that spawns
+          under the target's feet at any distance. The enhanced version does
+          guaranteed damage over time if it connects. Keep in mind it's slow and
+          unsafe and can be punished by mobile foes.
         </p>
 
         <h3 id="conditioning">Conditioning</h3>
 
         <p>
-          Scorpion's <Pill>Back 3</Pill> is a unique move. He launches his Kunai
-          for a disjointed two-hit mid-low attack. It is slow and unsafe, but
-          reaches very far. The threat of a low hit at this distance conditions
-          your opponent to preemptively block low or jump forward. Don't forget
-          about your <Pill>B2</Pill>.
+          Scorpion's <Pill>Back 3</Pill> is unique. He launches his Kunai for a
+          disjointed two-hit mid-low attack. It's slow and unsafe but reaches
+          far. The threat of a low hit at this distance conditions opponents to
+          block low or jump forward. Don't forget your <Pill>B2</Pill>.
         </p>
 
         <ImageWithCaption
           src={scorpb3}
           alt="Scorpion's back 3 attack."
           className="max-h-80 object-cover object-[0%_50%]"
-          caption="Back 3 reaches quite far, but not the entire screen. It can be punished with a well-timed projectile or jump attack."
+          caption="Back 3 reaches far but not full-screen. Can be punished with a well-timed projectile or jump attack."
         />
 
         <Callout title="Back 3 Cancels">
@@ -239,38 +228,35 @@ export default async function Page() {
 
           <p>
             <strong>B3 F4ex</strong> cancels into enhanced Devouring Flame -
-            which is good chip damage, but unsafe.
+            good chip damage but unsafe.
           </p>
 
           <p>
-            <strong>B3 DB3ex</strong> cancels into Enhanced Teleport. This is a
-            fine way to force them into blocking, giving your teleport more
-            freedom.
+            <strong>B3 DB3ex</strong> cancels into Enhanced Teleport. Forces
+            them to block, giving your teleport more freedom.
           </p>
         </Callout>
 
         <p>
-          If neither of you commits to attacking, try promptly tapping{' '}
-          <Pill>1</Pill> (quickest recovery) into <Pill>BF1</Pill>. Seeing a
-          whiff into empty air may motivate your opponent to dash forward or do
-          an unsafe move. If this happens, the Spear will connect. This is cheap
-          but legit tech.
+          If neither commits to attacking, promptly tap <Pill>1</Pill> (quickest
+          recovery) into <Pill>BF1</Pill>. Seeing a whiff may motivate opponents
+          to dash forward or do an unsafe move. If this happens, the Spear
+          connects. This is cheap but legit tech.
         </p>
 
         <p>
-          Another approach is to <em>derail</em> one of your strings.{' '}
-          <Pill>122</Pill> has a punishable gap between the second and third
-          hit. It is also vulnerable to up block. Cut it short - <Pill>12</Pill>{' '}
-          into a throw. If your foe expects the full string, they will be
-          thrown.
+          Another approach is <em>derailing</em> your strings. <Pill>122</Pill>{' '}
+          has a punishable gap between the second and third hit and is
+          vulnerable to up block. Cut it short - <Pill>12</Pill> into throw. If
+          your foe expects the full string, they get thrown.
         </p>
 
         <p>
-          Same thing with any Forward 3 string - <Pill>F32</Pill> or{' '}
-          <Pill>F34</Pill>. If they keep predicting the full string, do only{' '}
-          <Pill>F3</Pill> into a throw. <Pill>F3</Pill> is also a good{' '}
-          <em>shimmy</em>. If you delay pressing Forward 3 while walking up,
-          they may duck expecting a throw. The mid will hit them instead.
+          Same with any Forward 3 string - <Pill>F32</Pill> or <Pill>F34</Pill>.
+          If they predict the full string, do only <Pill>F3</Pill> into throw.{' '}
+          <Pill>F3</Pill> is also a good <em>shimmy</em>. If you delay Forward 3
+          while walking up, they may duck expecting a throw. The mid hits them
+          instead.
         </p>
       </Section>
 
@@ -280,17 +266,15 @@ export default async function Page() {
         </Flavor>
 
         <p className="font-bold">
-          As modular as Scorpion's move set is, when playing online, consistent
-          execution will outweigh maximum damage.
+          When playing online, consistent execution outweighs maximum damage.
         </p>
 
         <h3 id="bread-n-butter">Bread and butter combos</h3>
 
         <p>
-          Start by following up on what you already know. Open with{' '}
-          <Pill>12/21/B2</Pill> into Spear. An optimal ender is{' '}
-          <Pill>33 DB2</Pill>. That is how you squeeze the most damage. but is
-          not always available.
+          Follow up on what you know. Open with <Pill>12/21/B2</Pill> into
+          Spear. The optimal ender is <Pill>33 DB2</Pill>. This maximizes damage
+          but isn't always available.
         </p>
 
         <Callout>
@@ -298,42 +282,40 @@ export default async function Page() {
             <Pill>21 BF1 33 DB2</Pill>
           </div>
           <Flavor className="mt-2">
-            A basic 210 damage starter combo. Go into your first online matches
-            with this. Once you get consistent, move on.
+            Basic 210 damage starter. Use this for your first online matches.
+            Once consistent, move on.
           </Flavor>
         </Callout>
 
         <p>
-          To maximize effect you must learn to juggle the opponent with{' '}
-          <Pill>F32</Pill>.
+          To maximize damage, learn to juggle opponents with <Pill>F32</Pill>.
         </p>
 
         <Callout>
           <Pill>21 BF1 F32 F32 F32 F34 BF2</Pill>
           <Flavor className="mt-2">
             Meterless 342 damage. The height after the third F32 is low.
-            Connecting with the F34 into Charge can be a bit tight.
+            Connecting F34 into Charge can be tight.
           </Flavor>
         </Callout>
 
         <p>
-          Starting with <Pill>F32</Pill> instead and delaying the Spear will
-          allow you to use the better ender and give better results.
+          Starting with <Pill>F32</Pill> and delaying the Spear lets you use the
+          better ender for better results.
         </p>
 
         <Callout>
           <Pill>F32 F32 F32 4 BF1 33 DB2</Pill>
           <Flavor className="mt-2">
-            Meterless 365 damage. Connecting the Standing 4 after the last F32
-            will be the trickiest part.
+            Meterless 365 damage. Connecting Standing 4 after the last F32 is
+            the trickiest part.
           </Flavor>
         </Callout>
 
         <p>
-          The last two can be your bread and butter combos. Of course, you can
-          spend meter to further enhance the damage, but it will require the use
-          of the <em>enhanced air Kyo Snag</em>. It is a Spear-like special used
-          mid-air to grab the opponent.
+          The last two can be your bread and butter combos. You can spend meter
+          to enhance damage, but it requires <em>enhanced air Kyo Snag</em>.
+          This is a Spear-like special used mid-air to grab opponents.
         </p>
 
         <Callout>
@@ -344,9 +326,8 @@ export default async function Page() {
                 airDB2
               </Pill>
               <Flavor className="mt-2">
-                One bar 377 damage. The idea of the pause is to delay the 111
-                until both fighters are lower to the ground. This makes
-                connecting the final airDB2 possible.
+                One bar 377 damage. The pause delays 111 until both fighters are
+                lower to the ground, making the final airDB2 connect.
               </Flavor>
             </li>
             <li>
@@ -372,8 +353,8 @@ export default async function Page() {
 
         <p>
           <Pill>Standing 4</Pill> keeps most of its damage through combo
-          scaling. In the corner its knockback is not a factor and you can chain
-          two of these in a row to spike up your damage.
+          scaling. In the corner, knockback isn't a factor and you can chain two
+          in a row to spike damage.
         </p>
 
         <Callout>
@@ -384,9 +365,9 @@ export default async function Page() {
                 JDB2
               </Pill>
               <Flavor className="mt-2">
-                One bar <strong>446</strong> damage. If you find chaining the
-                second <Pill>4</Pill> difficult, even a single one will still
-                get over 400 damage.
+                One bar <strong>446</strong> damage. If chaining the second{' '}
+                <Pill>4</Pill> is difficult, a single one still exceeds 400
+                damage.
               </Flavor>
             </li>
             <li>
@@ -395,10 +376,10 @@ export default async function Page() {
                 <Flavor>land</Flavor> B2 BF4ex
               </Pill>{' '}
               <Flavor className="mt-2">
-                Attempt this two bar <strong>502</strong> damage monster if you
-                are about to win the round. The enhanced Devouring Flame is
-                guaranteed damage, but you cannot recover in time to block. If
-                they survive, they will get a free wakeup punish.
+                Attempt this two bar <strong>502</strong> damage monster if
+                you're about to win the round. The enhanced Devouring Flame is
+                guaranteed damage, but you can't recover in time to block. If
+                they survive, they get a free wakeup punish.
               </Flavor>
             </li>
           </ul>
@@ -407,8 +388,8 @@ export default async function Page() {
         <h3 id="extending-via-flame-port">Extending via Flame Port</h3>
 
         <p>
-          Scorpion's teleport can be used to extend combos, however, it is hard
-          and isn't necessarily worth the effort.
+          Scorpion's teleport can extend combos, but it's hard and not
+          necessarily worth the effort.
         </p>
 
         <Callout>
@@ -428,10 +409,9 @@ export default async function Page() {
                 F32 J12 airDB3ex J13 <Flavor>land</Flavor> BF1 33 DB3
               </Pill>{' '}
               <Flavor className="mt-2">
-                One bar 334 damage. Only an enhanced air port will be fast
-                enough to connect. Connecting the <Pill>J13</Pill> is awkward.
-                Often the Port will miss. There must be a very short delay after
-                the J12.
+                One bar 334 damage. Only enhanced air port is fast enough to
+                connect. Connecting <Pill>J13</Pill> is awkward. The Port often
+                misses. There must be a short delay after J12.
               </Flavor>
             </li>
           </ul>
@@ -439,8 +419,7 @@ export default async function Page() {
 
         <p>
           Starting a combo out of enhanced air Port is usually best as it's less
-          predictable. Players just don't expect to get hit out of a far away
-          jump.
+          predictable. Players don't expect to get hit from a far jump.
         </p>
 
         <Callout>
@@ -482,8 +461,8 @@ export default async function Page() {
         </Flavor>
 
         <p>
-          Scorpion can deal with most situations on his own, but discovering his
-          true offensive potential in MK1 begins with the right Kameo partner.
+          Scorpion can handle most situations on his own, but discovering his
+          offensive potential in MK1 begins with the right Kameo partner.
         </p>
 
         <h3 id="movado">Movado</h3>
@@ -495,26 +474,24 @@ export default async function Page() {
         />
 
         <p>
-          Movado is a good pick for beginners and advanced players alike. He
-          opens up a lot of new routes out of otherwise non-chainable moves.
-          Thanks to <Pill>Forward K</Pill>, knockback strings like{' '}
-          <Pill>214</Pill> and <Pill>F34</Pill> become starters. Nindrop{' '}
-          <Pill>Up K</Pill> can combo out of the Charge (giving armored combos)
-          and keep the any <Pill>airDB2ex</Pill> extended combo meterless.
+          Movado is a good pick for beginners and advanced players. He opens
+          many routes out of otherwise non-chainable moves. Thanks to{' '}
+          <Pill>Forward K</Pill>, knockback strings like <Pill>214</Pill> and{' '}
+          <Pill>F34</Pill> become starters. Nindrop <Pill>Up K</Pill> can combo
+          out of the Charge (giving armored combos) and keep any{' '}
+          <Pill>airDB2ex</Pill> extended combo meterless.
         </p>
 
         <p>
-          After knocking your opponent down you can jump and press{' '}
-          <Pill>Down K</Pill> at the same time as <Pill>Jump Kick</Pill>. They
-          must block the low, allowing the overhead to connect, though the
-          timing requires practice.
+          After knocking opponents down, jump and press <Pill>Down K</Pill> at
+          the same time as <Pill>Jump Kick</Pill>. They must block the low,
+          allowing the overhead to connect, though timing requires practice.
         </p>
 
         <p>
-          The Trap Drop <Pill>K</Pill> throws a stun bomb on the ground next to
-          the opponent that takes a second to detonate. If you time it with the
-          moment in Scorpion's throw animation where he jumps off his foe, you
-          can combo out of it.
+          Trap Drop <Pill>K</Pill> throws a stun bomb next to the opponent that
+          detonates after a second. If you time it when Scorpion jumps off his
+          foe in the throw animation, you can combo out of it.
         </p>
 
         <Callout>
@@ -533,8 +510,8 @@ export default async function Page() {
                 F32 F32 J12 airDB2ex UK <Flavor>land</Flavor> BF1 33 DB2
               </Pill>{' '}
               <Flavor className="mt-2">
-                The same juggle to air extension combo as before, but meterless
-                for 375 damage.
+                Same juggle-to-air extension as before, but meterless for 375
+                damage.
               </Flavor>
             </li>
 
@@ -563,13 +540,12 @@ export default async function Page() {
         />
 
         <p>
-          Ferra contributes to the mix-up more directly. She's slightly more
-          technical than Movado. On pressing <Pill>K</Pill> she goes into a
+          Ferra contributes to mix-ups more directly. She's slightly more
+          technical than Movado. On pressing <Pill>K</Pill>, she goes into an
           "attached to your back" stance. From there, pressing a face button
-          performs different attacks. For example, pressing <Pill>2</Pill> does
-          an overhead, while <Pill>3</Pill> does a low. This plays nicely with
-          Scorpion's <Pill>B3</Pill> - <Pill>B3 K 2</Pill> or{' '}
-          <Pill>B3 K 3</Pill>.
+          performs different attacks. Pressing <Pill>2</Pill> does an overhead,
+          while <Pill>3</Pill> does a low. This works well with Scorpion's{' '}
+          <Pill>B3</Pill> - <Pill>B3 K 2</Pill> or <Pill>B3 K 3</Pill>.
         </p>
 
         <h3 id="chameleon">Chameleon</h3>
@@ -582,10 +558,10 @@ export default async function Page() {
 
         <p>
           Chameleon is an advanced Kameo. Managing her <em>stances</em> (Jade,
-          Kitana, Mileena) is problematic for beginners, but she offers
-          tremendous utility. Jade's Glow gives projectile immunity, which helps
-          with zoners and Spears in mirror matches. Like Movado, she also
-          enables armored and throw combos.
+          Kitana, Mileena) is problematic for beginners, but she offers great
+          utility. Jade's Glow gives projectile immunity, which helps with
+          zoners and Spears in mirror matches. Like Movado, she enables armored
+          and throw combos.
         </p>
 
         <Callout>
@@ -612,8 +588,8 @@ export default async function Page() {
         </Callout>
 
         <p>
-          Chameleon's fan toss also enables resets where two otherwise
-          non-chainable moves can be linked into a combo.
+          Chameleon's fan toss enables resets where two otherwise non-chainable
+          moves link into a combo.
         </p>
       </Section>
 
@@ -625,22 +601,21 @@ export default async function Page() {
         <h3 id="enhanced-flame-port-jail">Enhanced Flame-Port jail</h3>
 
         <p>
-          Ending a corner combo with an enhanced air teleport into a kick will
-          jail your opponent. If they press any button other than block during
-          getup, they will get hit. Do it correctly, and they will spin around
-          to face you as you come from the corner. You will get a free hit and
-          can even break armor, though it's inconsistent.
+          Ending a corner combo with enhanced air teleport into kick jails your
+          opponent. If they press any button other than block during getup, they
+          get hit. Do it correctly, and they spin around to face you as you come
+          from the corner. You get a free hit and can break armor, though it's
+          inconsistent.
         </p>
 
         <h3 id="air-kyo-snag-bait">Air Kyo Snag bait</h3>
 
         <p>
-          Air DB2 has instant recovery - even the regular version. Assuming you
-          jump over your adversary, you can throw this move into empty air, and
-          it will stop and drop you down. They must be ready for a timely
-          anti-air, otherwise, you are safe. The idea is to bait a high attack
-          from them while throwing a low Kameo move or Movado's Trap Drop. It's
-          a niche tactic.
+          Air DB2 has instant recovery - even the regular version. If you jump
+          over your adversary, you can throw this move into empty air, and it
+          stops and drops you down. They must be ready for a timely anti-air,
+          otherwise you're safe. The idea is to bait a high attack while
+          throwing a low Kameo move or Movado's Trap Drop. It's a niche tactic.
         </p>
       </Section>
     </>
