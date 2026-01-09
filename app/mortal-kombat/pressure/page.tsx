@@ -166,9 +166,9 @@ export default async function Page() {
         </p>
 
         <ul className="list-disc list-inside">
-          <li>Reset opponent's pressure.</li>
-          <li>Steal your turn back.</li>
-          <li>Interrupt high strings.</li>
+          <li>Reset opponent's pressure</li>
+          <li>Steal your turn back</li>
+          <li>Interrupt high strings</li>
         </ul>
 
         <p>The best counter is usually a low punch of your own.</p>

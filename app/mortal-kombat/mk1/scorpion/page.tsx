@@ -57,11 +57,11 @@ export default async function Page() {
       <ProsConsList
         pros={[
           <>
-            <p className="font-semibold">Beginner-friendly.</p>
+            <p className="font-semibold">Beginner-friendly</p>
             <Flavor>No stances or forms to manage. Easy combos.</Flavor>
           </>,
           <>
-            <p className="font-semibold">Good utility.</p>
+            <p className="font-semibold">Good utility</p>
             <Flavor>
               The Spear controls space and sets up combos. Multiple specials
               cover the whole screen. Good interruptions, anti-zoning, and
@@ -69,7 +69,7 @@ export default async function Page() {
             </Flavor>
           </>,
           <>
-            <p className="font-semibold">Kameos synergy.</p>
+            <p className="font-semibold">Kameos synergy</p>
             <Flavor>
               His moves combine well with many Kameos. Can combo out of throws.
             </Flavor>
@@ -77,7 +77,7 @@ export default async function Page() {
         ]}
         cons={[
           <>
-            <p className="font-semibold">Struggles with offense.</p>
+            <p className="font-semibold">Struggles with offense</p>
             <Flavor>
               Lacks mix-ups. No chainable standing overheads or lows. No frame
               traps. Cannot sustain pressure.

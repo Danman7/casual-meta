@@ -83,13 +83,13 @@ export default async function Page() {
         </p>
 
         <ul className="list-inside list-disc">
-          <li>Explain game mechanics and concepts.</li>
-          <li>Focus on the multiplayer.</li>
+          <li>Explain game mechanics and concepts</li>
+          <li>Focus on the multiplayer</li>
           <li>
             Focus on random generated map templates - the core of today's
             multiplayer.
           </li>
-          <li>Consolidate the community's knowledge and experience.</li>
+          <li>Consolidate the community's knowledge and experience</li>
         </ul>
       </Section>
     </>

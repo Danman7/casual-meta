@@ -43,7 +43,7 @@ export default async function Page() {
       <ProsConsList
         pros={[
           <>
-            <p className="font-semibold">Exceptional army as a whole.</p>
+            <p className="font-semibold">Exceptional army as a whole</p>
             <Flavor>
               Two ranged shooters, two flyers, and three capable brawlers make
               for a balanced composition. Almost every unit is good for its
@@ -52,14 +52,14 @@ export default async function Page() {
             </Flavor>
           </>,
           <>
-            <p className="font-semibold">First in battle (often).</p>
+            <p className="font-semibold">First in battle (often)</p>
             <Flavor>
               The Archangels are the second-fastest faction unit in the game,
               trailing only Phoenixes.
             </Flavor>
           </>,
           <>
-            <p className="font-semibold">Beginner-friendly.</p>
+            <p className="font-semibold">Beginner-friendly</p>
             <Flavor>
               Castle's strong army allows for a more relaxed game, and the
               naturally high morale of Castle heroes often grants a bonus turn.
@@ -68,14 +68,14 @@ export default async function Page() {
         ]}
         cons={[
           <>
-            <p className="font-semibold">Very expensive.</p>
+            <p className="font-semibold">Very expensive</p>
             <Flavor>
               Second in total build-up cost only to Tower. However, this is
               primarily felt during the later development stages.
             </Flavor>
           </>,
           <>
-            <p className="font-semibold">Mediocre outside the army.</p>
+            <p className="font-semibold">Mediocre outside the army</p>
             <Flavor>
               Castle heroes aren't bad, but they don't excel in anything either.
               With the exception of Sir Mullich, who is often banned in

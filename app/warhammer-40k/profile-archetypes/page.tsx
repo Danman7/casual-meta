@@ -88,7 +88,7 @@ export default async function Page() {
 
         <li>Chaos Cultists;</li>
 
-        <li>Eldar Guardian Defenders (better Save at 4+) and many more.</li>
+        <li>Eldar Guardian Defenders (better Save at 4+) and many more</li>
       </ul>
 
       <p>
@@ -170,7 +170,7 @@ export default async function Page() {
           Khorne Berzerkers;
         </li>
         <li>Tau Stealth Battlesuits;</li>
-        <li>Eldar Shining Spears.</li>
+        <li>Eldar Shining Spears</li>
       </ul>
 
       <p>

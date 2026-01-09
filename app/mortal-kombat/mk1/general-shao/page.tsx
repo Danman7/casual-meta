@@ -47,7 +47,7 @@ export default async function Page() {
       <ProsConsList
         pros={[
           <>
-            <p className="font-semibold">Very strong close-range offense.</p>
+            <p className="font-semibold">Very strong close-range offense</p>
             <Flavor>
               Some of the best normals in the game in Axe stance. Strong mix-up
               in both stances. Excellent pressure, especially in the corner.
@@ -55,13 +55,13 @@ export default async function Page() {
             </Flavor>
           </>,
           <>
-            <p className="font-semibold">Decent defense.</p>
+            <p className="font-semibold">Decent defense</p>
             <Flavor>
               Superb durability at 1100 HP. Good air control due to his height.
             </Flavor>
           </>,
           <>
-            <p className="font-semibold">Kameos synergy.</p>
+            <p className="font-semibold">Kameos synergy</p>
             <Flavor>
               Because of his high health and versatile move set, he has good
               Kameo choices.
@@ -70,20 +70,20 @@ export default async function Page() {
         ]}
         cons={[
           <>
-            <p className="font-semibold">Poor at long range.</p>
+            <p className="font-semibold">Poor at long range</p>
             <Flavor>
               He has no projectiles or teleports. His only full-screen special
               is slow.
             </Flavor>
           </>,
           <>
-            <p className="font-semibold">Stances have to be managed.</p>
+            <p className="font-semibold">Stances have to be managed</p>
             <Flavor>
               The transition from Axe to Unarmed can make or break a round.
             </Flavor>
           </>,
           <>
-            <p className="font-semibold">Openings in his attacks.</p>
+            <p className="font-semibold">Openings in his attacks</p>
             <Flavor>
               Some of his moves have punishable gaps. Primarily at higher
               levels.
