@@ -52,7 +52,7 @@ export default async function Page() {
             </Flavor>
           </>,
           <>
-            <p className="font-semibold">First in battle (often)</p>
+            <p className="font-semibold">First in battle</p>
             <Flavor>
               The Archangels are the second-fastest faction unit in the game,
               trailing only Phoenixes.

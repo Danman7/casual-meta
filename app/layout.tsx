@@ -35,7 +35,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${notoSerif.variable} ${notoSans.variable} ${notoSerifDisplay.variable} antialiased h-full flex flex-col font-sans`}
+        className={`${notoSerif.variable} ${notoSans.variable} ${notoSerifDisplay.variable} antialiased h-full flex flex-col font-sans selection:bg-primary selection:text-background`}
       >
         <main className="grow">{children}</main>
 

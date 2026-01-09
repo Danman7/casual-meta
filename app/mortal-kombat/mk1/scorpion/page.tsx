@@ -31,7 +31,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle title={navTitle} subtitle="Character overview & guide" />
+      <PageTitle title={navTitle} subtitle="Character overview and guide" />
 
       <Section className="md:flex items-center gap-4 mb-8">
         <Image

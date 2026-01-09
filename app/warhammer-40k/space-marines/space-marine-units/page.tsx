@@ -311,7 +311,7 @@ export default async function Page() {
 
         <p>
           Blood Angels with the Liberator Assault Group gives +2 Strength, +1
-          Attack, Advance & Charge, Lethal Hits.
+          Attack, Advance and Charge, Lethal Hits.
         </p>
 
         <p>
