@@ -29,7 +29,7 @@ export default async function Page() {
         the vast array of choices, we can recognize common profiles.
       </p>
 
-      <h2>Damage and Durability</h2>
+      <h2>Damage and durability</h2>
 
       <p>
         With hundreds of units available in the current edition of WH40k, there
@@ -51,7 +51,7 @@ export default async function Page() {
         weapons.
       </p>
 
-      <h3>The GEQ - Light Infantry</h3>
+      <h3>The GEQ - Light infantry</h3>
 
       <p className="font-bold">T3|Sv5+|W1</p>
 

@@ -66,9 +66,9 @@ export default async function Page() {
         ]}
       />
 
-      <h2>Faction Specifics</h2>
+      <h2>Faction specifics</h2>
 
-      <h3>Space Marine Chapters</h3>
+      <h3>Space Marine chapters</h3>
 
       <Image
         src={chapters}

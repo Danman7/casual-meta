@@ -53,7 +53,7 @@ export default async function Page() {
         army list depending on the mission you are playing.
       </p>
 
-      <h3>Intercessor Squad</h3>
+      <h3>Intercessor squad</h3>
       <FlexWrapper className="mt-2">
         <Pill className="border-success">
           <GiPencilRuler /> Best Utility
@@ -202,7 +202,7 @@ export default async function Page() {
         </p>
       </Callout>
 
-      <h3>Assault Intercessor Squad</h3>
+      <h3>Assault Intercessor squad</h3>
 
       <FlexWrapper className="mt-2">
         <Pill className="border-success">

@@ -593,7 +593,7 @@ export default async function Page() {
         </p>
       </Section>
 
-      <Section title="Advanced Tech" id="advanced-tech">
+      <Section title="Advanced tech" id="advanced-tech">
         <Flavor className="mb-5">
           This section describes niche techniques that require more practice.
         </Flavor>
