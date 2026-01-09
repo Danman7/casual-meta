@@ -103,8 +103,9 @@ export default async function Page() {
 
         <ImageWithCaption
           src={raidenMoveList}
-          alt="Raiden's move list showing frame data."
-          caption="Here we see a section of Raiden's move list, in simple view, listing damage and block type. This is from Mortal Kombat 1, but the other games also have similar move lists."
+          alt="Raiden's move list in basic view."
+          caption="In Mortal Kombat 1, the basic move list of a character shows each move's damage and block type."
+          className="max-h-96 object-cover"
         />
 
         <p>
@@ -141,7 +142,7 @@ export default async function Page() {
 
         <p>
           A <strong>Mid</strong> attack{' '}
-          <strong>must be blocked standing or crouching.</strong> Mids are
+          <strong>must be blocked standing or crouching.</strong> Mids are also
           common.
         </p>
 
@@ -329,7 +330,7 @@ export default async function Page() {
           again.
         </p>
 
-        <Diagram description="This is a representation of a regular punch broken down into its three phases.">
+        <Diagram description="We can split any attack into three sections - start-up in blue, active in red and recovery in green.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>
               <span className="text-blue-700">Start-up</span> &rarr;{' '}
@@ -339,7 +340,7 @@ export default async function Page() {
 
             <Image
               src={attackPhases}
-              alt="The three phases of an attack in blue, red and green."
+              alt="The three phases of the basic punch."
             />
           </div>
         </Diagram>

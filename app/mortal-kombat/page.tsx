@@ -48,7 +48,7 @@ export default async function Page() {
 
         <Image
           src={MKMonk}
-          alt="Mortal Kombat monk character."
+          alt="A Shadow Priest from the classical Evil Tower stage."
           className="mx-auto"
         />
       </Section>
@@ -67,8 +67,8 @@ export default async function Page() {
 
         <ImageWithCaption
           src={Arena}
-          alt="Shang Tsung's arena in Mortal Kombat."
-          caption="An artistic representation of a classic MK arena - Shang Tsung's temple."
+          alt="Shang Tsung's arena."
+          caption="Shang Tsung, sitting on his throne, watching the combatants is a classic Mortal Kombat scene."
         />
 
         <p>
@@ -87,7 +87,7 @@ export default async function Page() {
           to form diagrams. They are primitive, but easy to read and color-code.
         </p>
 
-        <Diagram description="This is a representation of a regular punch broken down into its three phases.">
+        <Diagram description="We can split any attack into three sections - start-up in blue, active in red and recovery in green.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>
               <span className="text-blue-700">Start-up</span> &rarr;{' '}
@@ -97,7 +97,7 @@ export default async function Page() {
 
             <Image
               src={attackPhases}
-              alt="The three phases of an attack in blue, red and green."
+              alt="The three phases of the basic punch."
             />
           </div>
         </Diagram>

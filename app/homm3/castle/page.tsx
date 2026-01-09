@@ -26,7 +26,10 @@ export default async function Page() {
 
       <Section className="md:flex items-center justify-center gap-4 my-12!">
         <div className="md:w-1/2 flex items-center justify-center">
-          <Image src={castleMap} alt="A fully built Castle town." />
+          <Image
+            src={castleMap}
+            alt="A Castle town as it appears on the adventure map."
+          />
         </div>
 
         <p className="md:w-1/2">
@@ -88,7 +91,7 @@ export default async function Page() {
         <ImageWithCaption
           src={castle}
           alt="A fully built Castle town."
-          caption="A fully built Castle town."
+          caption="When all buildings are present, a Castle town looks beautiful. But not all of them are always beneficial."
         />
 
         <p>
