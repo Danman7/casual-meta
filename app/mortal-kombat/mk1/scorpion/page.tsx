@@ -124,7 +124,7 @@ export default async function Page() {
         <ImageWithCaption
           src={spear}
           alt="Scorpion's spear move."
-          caption="Here we see the Spear catching Sub-Zero at full range. It will stun and bring him next to Scorpion for a free combo."
+          caption="The Spear can catch a foe at full screen distance. It will stun and bring him next to Scorpion for a free combo."
         />
 
         <p>

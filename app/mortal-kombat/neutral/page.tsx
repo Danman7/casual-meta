@@ -49,8 +49,8 @@ export default async function Page() {
 
         <ImageWithCaption
           src={duelStart}
-          alt="A neutral position at the start of a duel."
-          caption="In this image we see the start of a match between Raiden and Liu Kang. The beginning of the first round is a perfect example of Neutral."
+          alt="A neutral position at the start of a duel between Liu Kang and Raiden."
+          caption="The beginning of the first round is a perfect example of Neutral."
         />
 
         <p className="font-bold">All rounds start in Neutral.</p>

@@ -93,15 +93,12 @@ export default async function Page() {
       />
 
       <Section title="Axe stance" id="axe-stance">
-        <Flavor>
-          In this section we will look at a simple way to play Shao with the axe
-          in hand.
-        </Flavor>
+        <Flavor>Simple tactics for Axe stance.</Flavor>
 
         <p className="font-bold">
           The Axe is your primary Neutral tool. Shao's pressure peaks in Unarmed
           stance, but he looses his reach. How you transitions between the two
-          can make or break a round. So this is where we start.
+          can make or break a round.
         </p>
 
         <p>

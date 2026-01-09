@@ -29,7 +29,7 @@ export default async function Page() {
 
       <Section title="What is a cancel?" id="what-is-a-cancel">
         <p>
-          As we know, every action has a recovery{' '}
+          Every action has a recovery{' '}
           <Link href={`${MK_BASE_URL}/anatomy-of-attacks#move-phases`}>
             phase
           </Link>{' '}

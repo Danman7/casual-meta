@@ -23,10 +23,9 @@ export default async function Page() {
 
       <Section>
         <Flavor>
-          In this page we will explain the many mind games and frame traps that
-          go into converting a good{' '}
-          <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link> position into
-          actual damage.
+          This page explains the many mind games and frame traps that go into
+          converting a good <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>{' '}
+          position into actual damage.
         </Flavor>
 
         <p>
