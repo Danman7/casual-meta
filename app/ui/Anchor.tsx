@@ -15,7 +15,7 @@ export const Anchor: React.FC<{
 
   return (
     <Link
-      className={`px-6 py-1 w-full inline-flex items-center cursor-pointer! hover:bg-surface hover:text-primary active:inset-shadow-sm ${isActive ? 'bg-surface shadow-sm  rounded' : ''} ${className}`}
+      className={`px-6 py-1 w-full inline-flex items-center cursor-pointer!  hover:text-primary active:inset-shadow-sm ${isActive ? 'bg-surface shadow-sm  rounded' : ''} ${className}`}
       href={href}
       onClick={onClick}
     >

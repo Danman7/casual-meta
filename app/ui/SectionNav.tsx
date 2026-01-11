@@ -30,7 +30,7 @@ function TreeNode({
         {item.title}
       </Anchor>
       {hasChildren && (
-        <ul className={`${isTopNav ? 'mx-6 ' : 'pl-6'}  `}>
+        <ul className={`${isTopNav ? 'mx-4 text-sm' : 'pl-4 text-sm'}  `}>
           {item.children!.map((child) => (
             <TreeNode key={child.href} item={child} onSelect={onSelect} />
           ))}
@@ -87,7 +87,7 @@ export function SectionNav({ items, title, rootUrl, isTopNav }: Props) {
       )}
 
       {open && (
-        <ul id="subnav-root" className={`${isTopNav ? 'mx-6 ' : ''} mb-2`}>
+        <ul id="subnav-root">
           {items.map((item) => (
             <TreeNode
               key={item.href}

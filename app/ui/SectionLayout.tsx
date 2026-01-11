@@ -29,7 +29,7 @@ export function SectionLayout({
           </div>
         </aside>
 
-        <main className="mx-auto lg:max-w-2xl xl:max-w-3xl w-full">
+        <main className="mx-auto lg:max-w-2xl w-full">
           <article className="mx-auto">{children}</article>
         </main>
 

@@ -17,6 +17,8 @@ import overheadHit from '@/app/assets/mk/overhead_hit_low.webp'
 import standingHit from '@/app/assets/mk/stand_hit.webp'
 import throwGrab from '@/app/assets/mk/throw.webp'
 import throwTech from '@/app/assets/mk/throw_tech.webp'
+import trade1 from '@/app/assets/mk/trade1.webp'
+import trade2 from '@/app/assets/mk/trade2.webp'
 import unblockable from '@/app/assets/mk/unblockable.webp'
 import liMeiAdvancedView from '@/app/assets/mk1/advanced_view.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
@@ -26,6 +28,7 @@ import { Diagram } from '@/app/ui/Diagram'
 import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -53,45 +56,85 @@ export default async function Page() {
           Modern MK games expose each move's <em>frame data</em>. It tells how a
           move works in detail. First, we cover basic attack concepts.
         </p>
-      </Section>
-
-      <Section title="Hit vs block vs miss" id="hit-vs-block-vs-miss">
-        <p>
-          During an attack, the attacker can't do anything else. Both characters
-          can attack simultaneously.
-        </p>
-
-        <p>
-          If within reach when an attack is active, it registers a hit, causing
-          hit stun. They cannot act until the frame data allows, leaving time
-          for the attacker to follow up.
-        </p>
-
-        <p>
-          If both attacks are active within reach, both take a hit. This is
-          called a <strong>trade</strong>. Recovery depends on frame data.
-        </p>
-
-        <p>
-          If an attack connects but is blocked, it causes block damage. The stun
-          from blocking is shorter than from taking a hit. The target might
-          counterattack - the basis of safe vs. unsafe attacks.
-        </p>
-
-        <p>
-          If an attack misses, the opponent is free to act while the attacker
-          recovers. Missing is called a <em>whiff</em>.
-        </p>
-
-        <p>
-          These cause damage and stun. Stun is the basis of <em>frame traps</em>
-          . Whoever recovers first acts first. When you invest frames into a
-          move, you win or lose.
-        </p>
 
         <p className="font-bold">
           Every attack is a commitment. A round is a sequence of commitments.
           Your goal is to come out ahead.
+        </p>
+      </Section>
+
+      <Section title="Hit vs block vs miss" id="hit-vs-block-vs-miss">
+        <p>
+          When you press a button or a combination that results in an attack for
+          a given fighter, e.g. <Pill>2</Pill> or <Pill>F3</Pill> or{' '}
+          <Pill>BF1</Pill>, your character can't do anything else until the
+          attack finishes. During that time one of three things can happen:
+        </p>
+
+        <ul className="list-disc list-inside">
+          <li>
+            The attack can <em>hit</em> if the opponent is withing reach and
+            isn't blocking.
+          </li>
+
+          <li>
+            The attack can be <em>blocked</em> if the opponent is within reach
+            but is pressing block.
+          </li>
+
+          <li>
+            The attack can <em>miss</em> if the opponent is not within reach.
+          </li>
+        </ul>
+
+        <Diagram>
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>Hit</div>
+            <Image
+              src={standingHit}
+              alt="A high punch hitting a standing opponent."
+            />
+          </div>
+
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>Block</div>
+            <Image src={blockHigh} alt="A high punch being blocked." />
+          </div>
+
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>Miss</div>
+            <Image src={duckUnderHigh} alt="A high punch being ducked under." />
+          </div>
+        </Diagram>
+
+        <p>
+          Also, it is possible for both players to hit each other at the same
+          time. This is called a <em>trade</em>.
+        </p>
+
+        <Diagram>
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>Punch at the same time</div>
+            <Image
+              src={trade1}
+              alt="A high punch hitting a standing opponent."
+            />
+          </div>
+
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>Results in a trade</div>
+            <Image src={trade2} alt="A high punch being ducked under." />
+          </div>
+        </Diagram>
+
+        <p>
+          If the attack hits, the target suffers damage and <em>hit stun:</em>{' '}
+          it cannot act for some time after the attacker recovers. If the attack
+          is blocked, the target suffers block or <em>chip</em> damage and{' '}
+          <em>block stun</em>, both of which are much shorter than when being
+          hit. If the attack misses, the target is absolved from damage and
+          stun, but the attacker still has to recover. Baiting a miss is central
+          to gameplay.
         </p>
       </Section>
 
@@ -104,7 +147,7 @@ export default async function Page() {
         <ImageWithCaption
           src={raidenMoveList}
           alt="Raiden's move list in basic view."
-          caption="In Mortal Kombat 1, the basic move list of a character shows each move's damage and block type."
+          caption="In Mortal Kombat 1, the basic move list of a character shows each move's damage and block type. This shows xbox annotations."
           className="max-h-96 object-cover"
         />
 
@@ -115,8 +158,8 @@ export default async function Page() {
           are performed standing.
         </p>
 
-        <Diagram description="A high attack will connect with a crouching, blocking target. To avoid stun, duck without blocking.">
-          <div className="flex flex-col font-semibold items-center">
+        <Diagram description="A high attack hits standing targets. It also connects with any blocking targets. It will miss if the target is crouching and NOT blocking.">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
               src={standingHit}
@@ -124,17 +167,17 @@ export default async function Page() {
             />
           </div>
 
-          <div className="flex flex-col font-semibold items-center">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Block</div>
             <Image src={blockHigh} alt="A high punch being blocked." />
           </div>
 
-          <div className="flex flex-col font-semibold items-center">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Block</div>
             <Image src={blockHighLow} alt="A high kick being low blocked." />
           </div>
 
-          <div className="flex flex-col font-semibold items-center">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Miss</div>
             <Image src={duckUnderHigh} alt="A high punch being ducked under." />
           </div>
@@ -146,8 +189,8 @@ export default async function Page() {
           common.
         </p>
 
-        <Diagram description="Mids, especially advancing ones, check blocks. Ducking won't work, forcing the opponent to block.">
-          <div className="flex flex-col font-semibold items-center">
+        <Diagram description="Mids hit both standing and crouching targets. They must be blocked or evaded.">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
               src={midHitStanding}
@@ -155,7 +198,7 @@ export default async function Page() {
             />
           </div>
 
-          <div className="flex flex-col font-semibold items-center">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
               src={midHitLow}
@@ -163,7 +206,7 @@ export default async function Page() {
             />
           </div>
 
-          <div className="flex flex-col font-semibold items-center">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Block</div>
             <Image src={midBlockLow} alt="A mid kick being low blocked." />
           </div>
@@ -175,8 +218,8 @@ export default async function Page() {
           Standing lows are rarer because they're quick and retain mobility.
         </p>
 
-        <Diagram description="Low attacks hit standing targets. Lows mix things up for opponents who keep blocking high.">
-          <div className="flex flex-col font-semibold items-center">
+        <Diagram description="Low attacks hit and often knockdown standing targets, irregardless of blocking.">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
               src={lowHit}
@@ -184,7 +227,7 @@ export default async function Page() {
             />
           </div>
 
-          <div className="flex flex-col font-semibold items-center">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Block</div>
             <Image src={lowBlock} alt="A low kick being low blocked." />
           </div>
@@ -198,8 +241,8 @@ export default async function Page() {
           rare.
         </p>
 
-        <Diagram description="Overheads force a defender to stand and block, preventing crouch blocking.">
-          <div className="flex flex-col font-semibold items-center">
+        <Diagram description="Overheads hit crouching targets, irregardless of blocking.">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
               src={jumpHitLow}
@@ -207,7 +250,7 @@ export default async function Page() {
             />
           </div>
 
-          <div className="flex flex-col font-semibold items-center">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
               src={overheadHit}
@@ -215,7 +258,7 @@ export default async function Page() {
             />
           </div>
 
-          <div className="flex flex-col font-semibold items-center">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Block</div>
             <Image
               src={overheadBlock}
@@ -243,12 +286,12 @@ export default async function Page() {
         </p>
 
         <Diagram description="Throws mix things up for good blockers. Pressing 2/4 for forward and 1/3 for backward throws will tech them. Ducking will skip the grab.">
-          <div className="flex flex-col font-semibold items-center">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Throw</div>
             <Image src={throwGrab} alt="Throw grabbing an opponent." />
           </div>
 
-          <div className="flex flex-col font-semibold items-center">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Tech</div>
             <Image
               src={throwTech}
@@ -256,7 +299,7 @@ export default async function Page() {
             />
           </div>
 
-          <div className="flex flex-col font-semibold items-center">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Miss</div>
             <Image src={duckUnderThrow} alt="A throw being ducked under." />
           </div>
@@ -275,7 +318,7 @@ export default async function Page() {
         </p>
 
         <Diagram description="Unblockables are mostly special moves. They have a hitbox that must be avoided to skip damage.">
-          <div className="flex flex-col font-semibold items-center">
+          <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Guaranteed damage on hit</div>
 
             <Image
@@ -300,7 +343,7 @@ export default async function Page() {
         <ImageWithCaption
           src={liMeiAdvancedView}
           alt="Li Mei's move list showing frame data."
-          caption="Here we see a section of Li Mei's special moves list, in advanced view."
+          caption="The move list's advanced view shows frame data and notes for each move. This shows PC anotations."
         />
 
         <p className="font-bold">

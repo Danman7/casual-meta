@@ -3,6 +3,7 @@ import Image from 'next/image'
 import attackPhases from '@/app/assets/mk/attack_phases.webp'
 import MKMonk from '@/app/assets/mk/monk.webp'
 import Arena from '@/app/assets/mk/shang_tung_arena.webp'
+import duelStart from '@/app/assets/mk1/duel_start.webp'
 import { MK_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
 import { Diagram } from '@/app/ui/Diagram'
@@ -27,16 +28,6 @@ export default async function Page() {
           This section is dedicated to the modern Mortal Kombat series - the
           NetherRealm Studios (NRS) era.
         </Flavor>
-      </Section>
-
-      <Section title="What is Mortal Kombat?" id="what-is-mk">
-        <p>
-          Mortal Kombat (MK) is a popular franchise of fighting games best known
-          for fast-paced action and gory graphics. At its core, Mortal Kombat is
-          a duel to the death. Two players try to outsmart each other within the
-          allotted time and space. There is a wide variety of characters and
-          fighting styles to explore, which keeps attracting new players.
-        </p>
 
         <Callout>
           <Flavor>
@@ -45,6 +36,29 @@ export default async function Page() {
             Mortal Kombat X, Mortal Kombat 11, and Mortal Kombat 1.
           </Flavor>
         </Callout>
+      </Section>
+
+      <Section title="What is Mortal Kombat?" id="what-is-mk">
+        <p>
+          Mortal Kombat (MK) is a popular franchise of fighting games best known
+          for fast-paced action and gory graphics. At its core, it's a duel to
+          the death where two players try to outsmart each other within the
+          allotted time and space. Whoever's life drops to zero points, loses a
+          round. Win two rounds and you win the duel.
+        </p>
+
+        <ImageWithCaption
+          src={duelStart}
+          alt='The "Fight" screen from the start of a duel.'
+          caption="A duel in Mortal Kombat 1 between Liu Kang and Raiden is about to begin. They are classic series characters, appearing in every game."
+        />
+
+        <p>
+          MK is a long runing series. The first game saw the world in 1992 and
+          since then over 25 games, spinoffs and version have been released.
+          There is a wide variety of characters and fighting styles to explore,
+          which keeps attracting new players.
+        </p>
 
         <Image
           src={MKMonk}
