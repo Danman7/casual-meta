@@ -1,15 +1,15 @@
 import Image from 'next/image'
 
 import attackPhases from '@/app/assets/mk/attack_phases.webp'
+import mkLogo from '@/app/assets/mk/mk_logo.webp'
 import MKMonk from '@/app/assets/mk/monk.webp'
-import Arena from '@/app/assets/mk/shang_tung_arena.webp'
 import duelStart from '@/app/assets/mk1/duel_start.webp'
 import { MK_TITLE } from '@/app/constants'
-import { Callout } from '@/app/ui/Callout'
 import { Diagram } from '@/app/ui/Diagram'
 import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
+import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -21,77 +21,81 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle title={MK_TITLE} />
-
       <Section>
+        <PageTitle title={MK_TITLE} />
+
         <Flavor>
           This section is dedicated to the modern Mortal Kombat series - the
           NetherRealm Studios (NRS) era.
         </Flavor>
-
-        <Callout>
-          <Flavor>
-            NetherRealm Studios acquired all rights to the Mortal Kombat
-            trademark in 2009. This led to the creation of Mortal Kombat (MK9),
-            Mortal Kombat X, Mortal Kombat 11, and Mortal Kombat 1.
-          </Flavor>
-        </Callout>
       </Section>
 
       <Section title="What is Mortal Kombat?" id="what-is-mk">
+        <Image
+          src={mkLogo}
+          alt="The Mortal Kombat logo, a dragon in a circle."
+          className="float-left pr-4 mb-0! max-w-32 md:max-w-full"
+        />
+        <p className="text-lg">
+          Mortal Kombat (MK) is a long-running franchise of fighting games (and
+          comic books, TV shows, etc.), popular for fast-paced action and gory
+          graphics. It's recognized by the many versions of its famous dragon
+          logo.
+        </p>
         <p>
-          Mortal Kombat (MK) is a popular franchise of fighting games best known
-          for fast-paced action and gory graphics. At its core, it's a duel to
-          the death where two players try to outsmart each other within the
-          allotted time and space. Whoever's life drops to zero points, loses a
-          round. Win two rounds and you win the duel.
+          The first Mortal Kombat game was made by Midway Games and released in
+          1992. In 2009, the development team was acquired by Warner Bros. and
+          re-established as NetherRealm Studios. This led to the creation of
+          Mortal Kombat (MK9), Mortal Kombat X, Mortal Kombat 11, and Mortal
+          Kombat 1. These titles form what is known as the{' '}
+          <em>modern MK era</em>.
         </p>
 
         <ImageWithCaption
           src={duelStart}
-          alt='The "Fight" screen from the start of a duel.'
-          caption="A duel in Mortal Kombat 1 between Liu Kang and Raiden is about to begin. They are classic series characters, appearing in every game."
+          alt="Start of a duel between Liu Kang and Raiden."
+          caption="The well known 'Fight' screen signals the start of a duel in Mortal Kombat 1 between Liu Kang and Raiden - classic series characters appearing in almos every game."
         />
 
+        <div className="space-y-2">
+          <p>At its core, Mortal Kombat keeps most of it original formula:</p>
+          <ul className="list-disc list-inside">
+            <li>One-on-one combat to the death.</li>
+            <li>
+              Players try to outplay each other within the alloted time and
+              space.
+            </li>
+            <li>Delpete your opponent's health bar to win a round.</li>
+
+            <li>Win two rounds to win the match.</li>
+          </ul>
+        </div>
+
         <p>
-          MK is a long runing series. The first game saw the world in 1992 and
-          since then over 25 games, spinoffs and version have been released.
-          There is a wide variety of characters and fighting styles to explore,
-          which keeps attracting new players.
+          Modern games add new mechanics on top of that, but you can expect all
+          the basics to be the same.
         </p>
 
         <Image
           src={MKMonk}
           alt="A Shadow Priest from the classical Evil Tower stage."
-          className="mx-auto"
+          className="mx-auto max-w-96"
         />
       </Section>
 
       <Section>
         <p>
           The essence of learning Mortal Kombat is adapting to how quickly
-          action unfolds, which makes mastery an arduous journey. Nevertheless,
-          it comes down to simple mechanics that can be broken down and learned.
+          action unfolds. There is a learning curve and often a skill gap
+          between players. Nevertheless, it comes down to simple mechanics that
+          can be broken down and learned. Once you understand these you can
+          begin to read your opponent's intentions and even influence their
+          habits.
         </p>
 
         <p className="font-bold">
           You may not have someone else's reflexes, but you can understand how
           they make decisions.
-        </p>
-
-        <ImageWithCaption
-          src={Arena}
-          alt="Shang Tsung's arena."
-          caption="Shang Tsung, sitting on his throne, watching the combatants is a classic Mortal Kombat scene."
-        />
-
-        <p>
-          Online play can be rough for beginners - you might go 15-20 games
-          without a win. This can be very discouraging. We will try to explain
-          the game's quirks and teach you about reading and conditioning your
-          opponent. It's as much about quick reactions as it is about mind
-          games. We will focus on the online Player vs Player (PvP) aspect,
-          giving you the tools to learn any character.
         </p>
       </Section>
 
@@ -115,6 +119,69 @@ export default async function Page() {
             />
           </div>
         </Diagram>
+      </Section>
+
+      <Section title="Move annotations" id="move-annotations">
+        <p className="font-bold">
+          Because Mortal Kombat games run on multiple platforms, using different
+          controllers, the community has agreed on a simplified notation using
+          numbers instead.
+        </p>
+
+        <p>
+          It is important to learn how to read those notations to understand how
+          to perform the moves. Most controllers have four buttons somewhere on
+          the right side. These are called <em>face buttons</em>. For xbox they
+          are A, B, X and Y. For PlayStation they are Cross, Circle, Square and
+          Triangle.
+        </p>
+
+        <Diagram description="Gamepad layout with d-pad directions and attack buttons.">
+          <div className="w-36 h-36"></div>
+        </Diagram>
+
+        <div className="space-y-2">
+          <p>These are mapped like so:</p>
+
+          <ul className="list-disc list-inside">
+            <li>1 - Front Punch (X / Square)</li>
+            <li>2 - Back Punch (Y / Triangle)</li>
+            <li>3 - Front Kick (A / Cross)</li>
+            <li>4 - Back Kick (B / Circle)</li>
+          </ul>
+        </div>
+
+        <div className="space-y-2">
+          <p>
+            The D-Pad on a gamepad is universal. Directions are described
+            related to the position of the enemy like so:
+          </p>
+
+          <ul className="list-disc list-inside">
+            <li>F - Forward / Towards your foe</li>
+            <li>B - Backward / Away from your foe</li>
+            <li>D - Down / Crouch</li>
+            <li>J - Jump / Up usually followed by a string</li>
+          </ul>
+        </div>
+
+        <p>
+          And finally we have whatever special commands are assigned to the
+          rear/paddle buttons like block, grab, etc. described as they are.
+        </p>
+
+        <p>
+          This documentation uses <Pill>Pills</Pill> to mark button strings. So
+          if you see <Pill>1</Pill> that means press Front Punch / X / Square
+          button without any direction. If you see <Pill>F3</Pill> that means
+          press Forward and Front Kick / A / Cross. <Pill>DB2</Pill> means press
+          Down then Back then Rear Punch / Y / Triangle.
+        </p>
+
+        <p>
+          If you are playing on a PC with a keyboard, or are using another type
+          of device, refer to the in-game button mapping.
+        </p>
       </Section>
     </>
   )

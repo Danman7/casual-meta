@@ -30,7 +30,7 @@ function TreeNode({
         {item.title}
       </Anchor>
       {hasChildren && (
-        <ul className={`${isTopNav ? 'mx-4 text-sm' : 'pl-4 text-sm'}  `}>
+        <ul className={`${isTopNav ? 'mx-4' : 'pl-4'}  `}>
           {item.children!.map((child) => (
             <TreeNode key={child.href} item={child} onSelect={onSelect} />
           ))}
