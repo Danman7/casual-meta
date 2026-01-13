@@ -6,7 +6,7 @@ export const Diagram: React.FC<
 > = ({ children, className, description }) => (
   <div>
     <FlexWrapper
-      className={`p-2 justify-around text-neutral-800 bg-neutral-100 shadow-sm rounded ${className}`}
+      className={`p-4 justify-around text-neutral-800 bg-neutral-100 shadow-sm rounded ${className}`}
     >
       {children}
     </FlexWrapper>
