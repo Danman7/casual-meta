@@ -21,23 +21,19 @@ export function SectionLayout({
       <Header sectionNav={{ items, title, rootUrl }} />
 
       <div className="flex relative grow px-6 py-12 gap-6">
-        <aside className="hidden lg:flex flex-1 justify-end">
-          <div className="shrink-0">
-            <div className="sticky top-20 max-w-76 max-h-[calc(100vh-5rem)]">
-              <SectionNav items={items} title={title} rootUrl={rootUrl} />
-            </div>
+        <aside className="hidden lg:flex flex-1">
+          <div className="sticky top-20 max-h-[calc(100vh-5rem)]">
+            <SectionNav items={items} title={title} rootUrl={rootUrl} />
           </div>
         </aside>
 
-        <main className="mx-auto lg:max-w-2xl w-full">
+        <main className="mx-auto max-w-3xl">
           <article className="mx-auto">{children}</article>
         </main>
 
-        <aside className="hidden xl:flex flex-1 justify-start">
-          <div className="shrink-0">
-            <div className="sticky top-20 max-w-76 max-h-[calc(100vh-5rem)]">
-              <TableOfContents />
-            </div>
+        <aside className="hidden xl:flex flex-1 justify-end">
+          <div className="sticky top-20 max-h-[calc(100vh-5rem)]">
+            <TableOfContents />
           </div>
         </aside>
       </div>

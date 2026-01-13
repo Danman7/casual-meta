@@ -38,7 +38,7 @@ export const Header = ({ sectionNav }: HeaderProps) => {
   return (
     <header className="z-50 sticky top-0 shadow-md bg-surface">
       <nav aria-labelledby="primary-navigation">
-        <div className="px-6 md:px-0 py-4 flex items-center gap-4 justify-between max-w-2xl mx-auto">
+        <div className="px-6 py-4 flex items-center gap-4 justify-between">
           <Link
             className="flex items-center gap-1 hover:gap-2 hover:text-primary font-semibold text-2xl font-serif no-underline transition-all text-foreground"
             href="/"
@@ -61,7 +61,7 @@ export const Header = ({ sectionNav }: HeaderProps) => {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="flex flex-col items-start text-lg max-w-2xl mx-auto px-6 md:px-0">
+          <div className="flex flex-col items-start text-lg px-6 md:px-0">
             {ROOT_NAVIGATION_ITEMS.map((item) => (
               <Link
                 key={item.href}

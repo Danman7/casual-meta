@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { TbXboxX, TbXboxY } from 'react-icons/tb'
 
 import attackPhases from '@/app/assets/mk/attack_phases.webp'
 import mkLogo from '@/app/assets/mk/mk_logo.webp'
@@ -137,7 +138,11 @@ export default async function Page() {
         </p>
 
         <Diagram description="Gamepad layout with d-pad directions and attack buttons.">
-          <div className="w-36 h-36"></div>
+          <div className="w-6 h-6 relative">
+            <TbXboxX className="left-0 top-3 absolute" />
+
+            <TbXboxY className="top-0 left-3 absolute" />
+          </div>
         </Diagram>
 
         <div className="space-y-2">
