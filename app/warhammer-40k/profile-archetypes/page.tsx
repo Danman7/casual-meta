@@ -4,7 +4,6 @@ import { GiBolterGun } from 'react-icons/gi'
 import guardsmen from '@/app/assets/wh40k/CadianShockTroops.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_TITLE } from '@/app/constants'
-import { BulletList } from '@/app/ui/BulletList'
 import { Callout } from '@/app/ui/Callout'
 import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -234,25 +233,22 @@ export default async function Page() {
 
       <p>With movement things are much simpler.</p>
 
-      <BulletList
-        icon="GiDeathSkull"
-        items={[
-          <>
-            Most <strong>models on foot</strong> will have <strong>M6"</strong>.
-            Heavy infantry units may have M5", while Eldar battleline units tend
-            to have M7".
-          </>,
-          <>
-            Most <strong>vehicles and infantry equipped with jump packs</strong>{' '}
-            normally have <strong>M12"</strong>.
-          </>,
-          <>
-            Models <strong>hovering</strong> over the ground tend to have{' '}
-            <strong>M14"</strong>, while <strong>flying units</strong> –{' '}
-            <strong>M20"</strong>.
-          </>,
-        ]}
-      />
+      <ul role="list" className="list-disc list-inside">
+        <li>
+          Most <strong>models on foot</strong> will have <strong>M6"</strong>.
+          Heavy infantry units may have M5", while Eldar battleline units tend
+          to have M7".
+        </li>
+        <li>
+          Most <strong>vehicles and infantry equipped with jump packs</strong>{' '}
+          normally have <strong>M12"</strong>.
+        </li>
+        <li>
+          Models <strong>hovering</strong> over the ground tend to have{' '}
+          <strong>M14"</strong>, while <strong>flying units</strong> –{' '}
+          <strong>M20"</strong>.
+        </li>
+      </ul>
     </>
   )
 }

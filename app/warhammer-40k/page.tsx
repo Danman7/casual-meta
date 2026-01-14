@@ -2,7 +2,6 @@ import Link from 'next/link'
 
 import wh40kTitle from '@/app/assets/wh40k/wh40k-battle.webp'
 import { WH40K_TITLE } from '@/app/constants'
-import { BulletList } from '@/app/ui/BulletList'
 import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
@@ -52,18 +51,6 @@ export default async function Page() {
           everywhere there are rule we see overly-detailed explanations.
         </p>
       </Section>
-
-      <div className="text-lg my-8 space-y-4">
-        <p>We will try to:</p>
-        <BulletList
-          icon="GiDeathSkull"
-          items={[
-            'Shed the lore and painting.',
-            'Simplify the rules.',
-            'Introduce concepts that may not be in the rulebook.',
-          ]}
-        />
-      </div>
     </>
   )
 }

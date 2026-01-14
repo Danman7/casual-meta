@@ -3,7 +3,6 @@ import Image from 'next/image'
 import chapters from '@/app/assets/wh40k/space-marine-chapter-banners.webp'
 import wh40kTitle from '@/app/assets/wh40k/Ultramarines.webp'
 import { WH40K_TITLE } from '@/app/constants'
-import { BulletList } from '@/app/ui/BulletList'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -37,34 +36,6 @@ export default async function Page() {
         You will often hear the Latin term <strong>Adeptus Astartes</strong>{' '}
         which is the formal name for the Space Marines.
       </p>
-
-      <h2>Why play or skip Space Marines?</h2>
-
-      <BulletList
-        className="text-success"
-        icon="GiDeathSkull"
-        items={[
-          'Widely considered one of the best armies for beginners.',
-          'Jacks-of-all-trades – balanced units and weapons for every scenario.',
-        ]}
-      />
-
-      <BulletList
-        className="text-warning"
-        icon="GiDeathSkull"
-        items={[
-          'A wide array of infantry, vehicles and characters available gives players choices, but also can become overwhelming and confusing.',
-        ]}
-      />
-
-      <BulletList
-        className="text-error"
-        icon="GiDeathSkull"
-        items={[
-          'Tend to change frequently. Units are introduced then removed in subsequent codex editions.',
-          'Units tend to overlap and outclass each other for a given role.',
-        ]}
-      />
 
       <h2>Faction specifics</h2>
 
