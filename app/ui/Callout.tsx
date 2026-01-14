@@ -9,7 +9,7 @@ export const Callout: React.FC<
     className={`bg-surface rounded overflow-hidden shadow-sm my-4 ${className}`}
   >
     {title && (
-      <div className="bg-alt-surface font-bold font-serif px-4 py-1">
+      <div className="bg-alt-surface font-bold font-serif px-4 py-2">
         {titleId ? (
           <h2 id={titleId} className="text-2xl">
             {title}

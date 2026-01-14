@@ -35,7 +35,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <Section>
+      <Section className="mt-0!">
         <PageTitle title={MK_TITLE} />
 
         <Flavor>

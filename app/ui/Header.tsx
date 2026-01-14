@@ -38,7 +38,7 @@ export const Header = ({ sectionNav }: HeaderProps) => {
 
   return (
     <>
-      <header className="z-50 sticky top-0 shadow-lg bg-surface h-14 flex items-center text-2xl">
+      <header className="z-50 sticky top-0 shadow-lg bg-surface h-14 flex items-center text-2xl lg:hidden">
         <nav aria-labelledby="primary-navigation">
           <div className="px-4 sm:px-6 flex items-center gap-4">
             <button
@@ -50,7 +50,7 @@ export const Header = ({ sectionNav }: HeaderProps) => {
             </button>
 
             <Link
-              className="flex items-center gap-2 hover:gap-4 hover:text-primary font-semibold font-serif no-underline transition-all text-foreground p-2"
+              className="flex items-center gap-2 hover:gap-4 hover:text-primary font-semibold font-serif no-underline transition-all p-2"
               href="/"
               aria-label="Go to homepage"
             >

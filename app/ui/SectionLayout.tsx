@@ -1,5 +1,5 @@
 import { Header } from '@/app/ui/Header'
-import { SectionNav } from '@/app/ui/SectionNav'
+import { SideNavigation } from '@/app/ui/SideNavigation'
 import { TableOfContents } from '@/app/ui/TableOfContents'
 import type { RouteItem } from '@/lib/routes'
 
@@ -20,21 +20,17 @@ export function SectionLayout({
     <div className="flex flex-col min-h-full">
       <Header sectionNav={{ items, title, rootUrl }} />
 
-      <div className="flex relative grow px-4 sm:px-6 py-12 gap-6">
-        <aside className="hidden lg:flex flex-1">
-          <div className="sticky top-20 max-h-[calc(100vh-5rem)] overflow-y-auto">
-            <SectionNav items={items} title={title} rootUrl={rootUrl} />
-          </div>
+      <div className="flex relative grow gap-6">
+        <aside className="hidden lg:flex">
+          <SideNavigation sectionNav={{ items, title, rootUrl }} />
         </aside>
 
-        <main className="mx-auto max-w-3xl">
+        <main className="mx-auto max-w-4xl px-4 sm:px-6 py-12">
           <article className="mx-auto">{children}</article>
         </main>
 
-        <aside className="hidden xl:flex flex-1 justify-end">
-          <div className="sticky top-20 max-h-[calc(100vh-5rem)] overflow-y-auto">
-            <TableOfContents />
-          </div>
+        <aside className="hidden xl:flex">
+          <TableOfContents />
         </aside>
       </div>
     </div>
