@@ -7,6 +7,7 @@ import { BsPcDisplay } from 'react-icons/bs'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
 import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
+import { Anchor } from '@/app/ui/Anchor'
 import { SectionNav } from '@/app/ui/SectionNav'
 import type { RouteItem } from '@/lib/routes'
 
@@ -36,56 +37,57 @@ export const Header = ({ sectionNav }: HeaderProps) => {
   }
 
   return (
-    <header className="z-50 sticky top-0 shadow-md bg-surface">
-      <nav aria-labelledby="primary-navigation">
-        <div className="px-6 py-4 flex items-center gap-4 justify-between">
-          <Link
-            className="flex items-center gap-1 hover:gap-2 hover:text-primary font-semibold text-2xl font-serif no-underline transition-all text-foreground"
-            href="/"
-          >
-            <BsPcDisplay className="text-primary" />
-            Casual Meta
-          </Link>
+    <>
+      <header className="z-50 sticky top-0 shadow-lg bg-surface h-14 flex items-center text-2xl">
+        <nav aria-labelledby="primary-navigation">
+          <div className="px-4 sm:px-6 flex items-center gap-4">
+            <button
+              className="cursor-pointer hover:text-primary transition-all pr-2 pb-2 pt-2"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <IoMdClose /> : <IoMdMenu />}
+            </button>
 
-          <button
-            className="flex items-center gap-1 cursor-pointer hover:text-primary transition-all font-serif text-lg"
-            onClick={toggleMobileMenu}
-          >
-            {isMobileMenuOpen ? (
-              <IoMdClose className="text-xl" />
-            ) : (
-              <IoMdMenu className="text-xl" />
-            )}
-            Menu
-          </button>
+            <Link
+              className="flex items-center gap-2 hover:gap-4 hover:text-primary font-semibold font-serif no-underline transition-all text-foreground p-2"
+              href="/"
+              aria-label="Go to homepage"
+            >
+              <BsPcDisplay />
+              <span className="hidden sm:inline">Casual Meta</span>
+            </Link>
+          </div>
+        </nav>
+      </header>
+
+      <nav
+        aria-labelledby="mobile-navigation"
+        className={`fixed top-14 left-0 bottom-0 w-full max-w-82 transition ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} bg-surface shadow-md z-40 flex flex-col lg:hidden`}
+      >
+        <div className="flex flex-col my-2">
+          {ROOT_NAVIGATION_ITEMS.map((item) => (
+            <Anchor
+              key={item.href}
+              href={item.href}
+              className="text-lg font-semibold"
+            >
+              {' '}
+              {item.name}
+            </Anchor>
+          ))}
         </div>
 
-        {isMobileMenuOpen && (
-          <div className="flex flex-col items-start text-lg px-6 md:px-0">
-            {ROOT_NAVIGATION_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="font-serif hover:text-primary transition cursor-pointer py-2 w-full"
-              >
-                {' '}
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        )}
-
         {sectionNav ? (
-          <div className="lg:hidden">
+          <div className="bg-alt-surface grow overflow-y-auto py-4">
             <SectionNav
               items={sectionNav.items}
               title={sectionNav.title}
               rootUrl={sectionNav.rootUrl}
-              isTopNav
             />
           </div>
         ) : null}
       </nav>
-    </header>
+    </>
   )
 }

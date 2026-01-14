@@ -4,15 +4,17 @@
   --background: var(--color-neutral-50);
   --foreground: var(--color-neutral-950);
   --surface: var(--color-neutral-100);
+  --alt-surface: var(--color-neutral-200);
   --primary: var(--color-red-800);
   --header-offset: 80px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--color-neutral-900);
+    --background: var(--color-neutral-950);
     --foreground: var(--color-neutral-100);
-    --surface: var(--color-neutral-800);
+    --surface: var(--color-neutral-900);
+    --alt-surface: var(--color-neutral-800);
     --primary: var(--color-red-500);
   }
 }
@@ -21,6 +23,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
+  --color-alt-surface: var(--alt-surface);
   --color-primary: var(--primary);
   --font-sans: var(--font-noto-sans);
   --font-serif: var(--font-noto-serif);

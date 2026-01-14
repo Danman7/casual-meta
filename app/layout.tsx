@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         <main className="grow">{children}</main>
 
-        <footer className="inset-shadow-sm text-center md:flex md:justify-between px-6 py-4 gap-4 shadow-md bg-surface z-10">
+        <footer className="inset-shadow-sm text-center sm:flex sm:justify-between px-6 py-2 gap-4 shadow-md bg-surface z-10">
           <div className="mb-2 md:mb-0">
             <Link href="/" className="text-foreground!">
               Casual Meta
