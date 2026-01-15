@@ -19,7 +19,7 @@ type SideNavigationProps = {
 export const SideNavigation = ({ sectionNav }: SideNavigationProps) => (
   <nav
     aria-labelledby="primary-navigation"
-    className="flex flex-col bg-surface shadow-md sticky top-0 max-h-screen overflow-y-auto w-82"
+    className="flex flex-col bg-surface shadow-md sticky top-0 max-h-screen overflow-y-auto w-60 divide-y divide-foreground/50"
   >
     <Link
       className="flex items-center gap-2 hover:gap-4 hover:text-primary font-semibold font-serif no-underline transition-all p-6 text-2xl"
@@ -30,13 +30,9 @@ export const SideNavigation = ({ sectionNav }: SideNavigationProps) => (
       <span className="hidden sm:inline">Casual Meta</span>
     </Link>
 
-    <div className="flex flex-col my-2">
+    <div className="flex flex-col py-6">
       {ROOT_NAVIGATION_ITEMS.map((item) => (
-        <Anchor
-          key={item.href}
-          href={item.href}
-          className="text-lg font-semibold"
-        >
+        <Anchor key={item.href} href={item.href} className="font-semibold">
           {' '}
           {item.name}
         </Anchor>
@@ -44,7 +40,7 @@ export const SideNavigation = ({ sectionNav }: SideNavigationProps) => (
     </div>
 
     {sectionNav ? (
-      <div className="bg-alt-surface grow py-4">
+      <div className="grow py-6">
         <SectionNav
           items={sectionNav.items}
           title={sectionNav.title}
