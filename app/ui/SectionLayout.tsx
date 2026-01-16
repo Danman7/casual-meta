@@ -21,12 +21,14 @@ export function SectionLayout({
       <Header sectionNav={{ items, title, rootUrl }} />
 
       <div className="flex relative grow gap-6">
-        <aside className="hidden lg:flex">
+        <aside className="hidden md:flex">
           <SideNavigation sectionNav={{ items, title, rootUrl }} />
         </aside>
 
         <main className="mx-auto max-w-4xl px-4 sm:px-6 py-12">
-          <article className="mx-auto">{children}</article>
+          <article className="mx-auto max-w-[70ch] text-base md:text-[1.0625rem] lg:text-lg leading-relaxed space-y-6">
+            {children}
+          </article>
         </main>
 
         <aside className="hidden xl:flex">

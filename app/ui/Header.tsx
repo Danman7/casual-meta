@@ -36,7 +36,7 @@ export const Header = ({ sectionNav }: HeaderProps) => {
 
   return (
     <>
-      <header className="z-50 sticky top-0 shadow-lg bg-surface h-14 flex items-center text-2xl lg:hidden">
+      <header className="z-50 sticky top-0 shadow-lg bg-surface h-14 flex items-center text-2xl md:hidden">
         <nav aria-labelledby="primary-navigation">
           <div className="px-4 sm:px-6 flex items-center gap-4">
             <button

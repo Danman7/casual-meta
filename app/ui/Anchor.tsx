@@ -15,7 +15,7 @@ export const Anchor: React.FC<{
 
   return (
     <Link
-      className={`px-4 sm:px-6 py-1 w-full inline-flex items-center hover:pl-8 hover:text-primary transition-all ${isActive ? 'text-primary' : ''} ${className}`}
+      className={`w-full inline-flex items-center px-4 sm:px-6 py-1.5 border-l-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary hover:text-primary hover:bg-alt-surface ${isActive ? 'text-primary bg-alt-surface border-primary' : 'border-transparent'} ${className}`}
       href={href}
       onClick={onClick}
     >

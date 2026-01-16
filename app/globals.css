@@ -82,7 +82,10 @@
   }
 
   article a {
+    color: var(--color-primary);
     text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
     font-weight: var(--font-weight-semibold);
 
     &:hover {
