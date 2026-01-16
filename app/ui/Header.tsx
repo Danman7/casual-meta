@@ -6,9 +6,7 @@ import { useState } from 'react'
 import { BsPcDisplay } from 'react-icons/bs'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
-import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
-import { Anchor } from '@/app/ui/Anchor'
-import { SectionNav } from '@/app/ui/SectionNav'
+import { SideNavigation } from '@/app/ui/SideNavigation'
 import type { RouteItem } from '@/lib/routes'
 
 type HeaderProps = {
@@ -61,33 +59,11 @@ export const Header = ({ sectionNav }: HeaderProps) => {
         </nav>
       </header>
 
-      <nav
-        aria-labelledby="mobile-navigation"
-        className={`fixed top-14 left-0 bottom-0 w-full max-w-82 transition ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} bg-surface shadow-md z-40 flex flex-col lg:hidden`}
+      <div
+        className={`fixed top-14 left-0 w-full max-w-82 h-[calc(100vh-3.5rem)] transition ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} z-40 lg:hidden`}
       >
-        <div className="flex flex-col my-2">
-          {ROOT_NAVIGATION_ITEMS.map((item) => (
-            <Anchor
-              key={item.href}
-              href={item.href}
-              className="text-lg font-semibold"
-            >
-              {' '}
-              {item.name}
-            </Anchor>
-          ))}
-        </div>
-
-        {sectionNav ? (
-          <div className="bg-alt-surface grow overflow-y-auto py-4">
-            <SectionNav
-              items={sectionNav.items}
-              title={sectionNav.title}
-              rootUrl={sectionNav.rootUrl}
-            />
-          </div>
-        ) : null}
-      </nav>
+        <SideNavigation sectionNav={sectionNav} hideLogo isMobile />
+      </div>
     </>
   )
 }

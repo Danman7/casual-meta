@@ -14,21 +14,31 @@ type SideNavigationProps = {
     title: string
     rootUrl: string
   }
+  hideLogo?: boolean
+  isMobile?: boolean
 }
 
-export const SideNavigation = ({ sectionNav }: SideNavigationProps) => (
+export const SideNavigation = ({
+  sectionNav,
+  hideLogo,
+  isMobile,
+}: SideNavigationProps) => (
   <nav
     aria-labelledby="primary-navigation"
-    className="flex flex-col bg-surface shadow-md sticky top-0 max-h-screen overflow-y-auto w-60 divide-y divide-foreground/50"
+    className={`flex flex-col bg-surface shadow-md overflow-y-auto w-60 divide-y divide-foreground/50 ${
+      isMobile ? 'h-full' : 'sticky top-0 max-h-screen'
+    }`}
   >
-    <Link
-      className="flex items-center gap-2 hover:gap-4 hover:text-primary font-semibold font-serif no-underline transition-all p-6 text-2xl"
-      href="/"
-      aria-label="Go to homepage"
-    >
-      <BsPcDisplay />
-      <span className="hidden sm:inline">Casual Meta</span>
-    </Link>
+    {!hideLogo && (
+      <Link
+        className="flex items-center gap-2 hover:gap-4 hover:text-primary font-semibold font-serif no-underline transition-all p-6 text-2xl"
+        href="/"
+        aria-label="Go to homepage"
+      >
+        <BsPcDisplay />
+        <span className="hidden sm:inline">Casual Meta</span>
+      </Link>
+    )}
 
     <div className="flex flex-col py-6">
       {ROOT_NAVIGATION_ITEMS.map((item) => (
