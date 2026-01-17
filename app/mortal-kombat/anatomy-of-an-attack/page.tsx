@@ -114,7 +114,7 @@ export default async function Page() {
 
         <Diagram>
           <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Punch at the same time</div>
+            <div>Punching at the same time</div>
             <Image
               src={trade1}
               alt="A high punch hitting a standing opponent."
@@ -122,7 +122,7 @@ export default async function Page() {
           </div>
 
           <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Results in a trade</div>
+            <div>...results in a trade</div>
             <Image src={trade2} alt="A high punch being ducked under." />
           </div>
         </Diagram>
@@ -375,11 +375,7 @@ export default async function Page() {
 
         <Diagram description="We can split any attack into three sections - start-up in blue, active in red and recovery in green.">
           <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>
-              <span className="text-blue-700">Start-up</span> &rarr;{' '}
-              <span className="text-red-700">Active</span>
-              &rarr; <span className="text-green-700">Recovery</span>
-            </div>
+            <div>Start-up &rarr; Active &rarr; Recovery</div>
 
             <Image
               src={attackPhases}

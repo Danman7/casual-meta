@@ -121,11 +121,7 @@ export default async function Page() {
 
         <Diagram description="We can split any attack into three sections - start-up in blue, active in red and recovery in green.">
           <div className="flex flex-col gap-4 font-semibold items-center">
-            <div>
-              <span className="text-blue-700">Start-up</span> &rarr;{' '}
-              <span className="text-red-700">Active</span>
-              &rarr; <span className="text-green-700">Recovery</span>
-            </div>
+            <div>Start-up &rarr; Active &rarr; Recovery</div>
 
             <Image
               src={attackPhases}
@@ -152,7 +148,7 @@ export default async function Page() {
 
         <Diagram
           className="text-4xl"
-          description="Gamepad layout with d-pad directions and attack buttons."
+          description="The first two layouts are for xbox and playstation. The thirs one, the numbers notations, equalizes them."
         >
           <div className="w-20 h-20 grid grid-cols-3 grid-rows-3">
             <div></div>

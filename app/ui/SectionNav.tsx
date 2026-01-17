@@ -12,11 +12,11 @@ type Props = {
 function TreeNode({ item }: { item: RouteItem }) {
   const hasChildren = !!item.children?.length
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col space-y-1">
       <Anchor href={item.href}>{item.title}</Anchor>
 
       {hasChildren && (
-        <div className="ml-4 flex flex-col">
+        <div className="ml-4 flex flex-col space-y-1">
           {item.children!.map((child) => (
             <TreeNode key={child.href} item={child} />
           ))}

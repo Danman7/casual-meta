@@ -1,8 +1,4 @@
-import Image from 'next/image'
-
-import knockbackDistance from '@/app/assets/mk1/distance_after_knockback.webp'
 import duelStart from '@/app/assets/mk1/duel_start.webp'
-import knockback from '@/app/assets/mk1/knockback.webp'
 import { MK_TITLE } from '@/app/constants'
 import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
@@ -92,20 +88,6 @@ export default async function Page() {
         </p>
 
         <p>It can favor both the agressor and the defender.</p>
-
-        <div className="flex flex-col sm:flex-row">
-          <Image
-            src={knockback}
-            alt="Scorpion knocking back Sub-Zero with a kick."
-            className="sm:w-1/2 object-cover"
-          />
-
-          <Image
-            src={knockbackDistance}
-            alt="Scorpion and Sub-Zero after the knockback, at a distance."
-            className="sm:w-1/2 object-cover"
-          />
-        </div>
 
         <p>
           A combo ending in knockback can create enough distance between the
