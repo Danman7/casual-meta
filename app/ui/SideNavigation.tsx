@@ -25,7 +25,7 @@ export const SideNavigation = ({
 }: SideNavigationProps) => (
   <nav
     aria-labelledby="primary-navigation"
-    className={`flex flex-col bg-surface shadow-md overflow-y-auto w-60 divide-y divide-foreground/50 ${
+    className={`flex flex-col bg-surface shadow-lg overflow-y-auto w-60 divide-y divide-foreground/50 ${
       isMobile ? 'h-full' : 'sticky top-0 max-h-screen'
     }`}
   >
@@ -40,9 +40,9 @@ export const SideNavigation = ({
       </Link>
     )}
 
-    <div className="flex flex-col py-6">
+    <div className="flex flex-col p-2 space-y-2 font-semibold">
       {ROOT_NAVIGATION_ITEMS.map((item) => (
-        <Anchor key={item.href} href={item.href} className="font-semibold">
+        <Anchor key={item.href} href={item.href}>
           {' '}
           {item.name}
         </Anchor>
@@ -50,13 +50,11 @@ export const SideNavigation = ({
     </div>
 
     {sectionNav ? (
-      <div className="grow py-6">
-        <SectionNav
-          items={sectionNav.items}
-          title={sectionNav.title}
-          rootUrl={sectionNav.rootUrl}
-        />
-      </div>
+      <SectionNav
+        items={sectionNav.items}
+        title={sectionNav.title}
+        rootUrl={sectionNav.rootUrl}
+      />
     ) : null}
   </nav>
 )

@@ -1,21 +1,25 @@
 @import 'tailwindcss';
 
 :root {
-  --background: var(--color-neutral-50);
-  --foreground: var(--color-neutral-950);
-  --surface: var(--color-neutral-100);
-  --alt-surface: var(--color-neutral-200);
-  --primary: var(--color-red-800);
+  --background: var(--color-slate-50);
+  --foreground: var(--color-slate-950);
+  --surface: var(--color-slate-100);
+  --dim-surface: var(--color-slate-200);
+  --primary: var(--color-blue-500);
+  --primary-surface: var(--color-blue-100);
+  --primary-text: var(--color-blue-900);
   --header-offset: 80px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--color-neutral-950);
-    --foreground: var(--color-neutral-100);
-    --surface: var(--color-neutral-900);
-    --alt-surface: var(--color-neutral-800);
-    --primary: var(--color-red-500);
+    --background: var(--color-slate-950);
+    --foreground: var(--color-slate-100);
+    --surface: var(--color-slate-900);
+    --dim-surface: var(--color-slate-800);
+    --primary: var(--color-blue-500);
+    --primary-surface: var(--color-blue-900);
+    --primary-text: var(--color-blue-300);
   }
 }
 
@@ -23,8 +27,10 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
-  --color-alt-surface: var(--alt-surface);
+  --color-dim-surface: var(--dim-surface);
   --color-primary: var(--primary);
+  --color-primary-surface: var(--primary-surface);
+  --color-primary-text: var(--primary-text);
   --font-sans: var(--font-noto-sans);
   --font-serif: var(--font-noto-serif);
   --font-display: var(--font-noto-serif-display);
@@ -82,14 +88,12 @@
   }
 
   article a {
-    color: var(--color-primary);
+    color: var(--color-primary-text);
     text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.2em;
     font-weight: var(--font-weight-semibold);
 
     &:hover {
-      color: var(--color-primary);
+      color: var(--color-primary-text);
     }
   }
 }
