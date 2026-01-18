@@ -3,7 +3,9 @@
 :root {
   --background: var(--color-slate-50);
   --foreground: var(--color-slate-950);
+  --foreground-dim: var(--color-slate-600);
   --surface: var(--color-slate-100);
+  --surface-dim: var(--color-slate-200);
   --primary: var(--color-blue-500);
   --primary-surface: var(--color-blue-100);
   --primary-text: var(--color-blue-900);
@@ -13,7 +15,9 @@
   :root {
     --background: var(--color-slate-950);
     --foreground: var(--color-slate-50);
+    --foreground-dim: var(--color-slate-400);
     --surface: var(--color-slate-900);
+    --surface-dim: var(--color-slate-800);
     --primary-surface: var(--color-blue-950);
     --primary-text: var(--color-blue-300);
   }
@@ -22,11 +26,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-foreground-dim: var(--foreground-dim);
   --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
   --color-primary: var(--primary);
   --color-primary-surface: var(--primary-surface);
   --color-primary-text: var(--primary-text);
-  --font-sans: var(--font-noto-sans);
   --font-serif: var(--font-noto-serif);
   --font-display: var(--font-noto-serif-display);
 
@@ -83,9 +88,11 @@
 
 @layer base {
   section h3 {
-    font-size: var(--text-xl);
-    font-weight: var(--font-weight-bold);
-    font-family: var(--font-noto-serif);
+    scroll-margin-top: 4.5rem;
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    margin-top: --spacing(8) !important;
+    margin-bottom: --spacing(3) !important;
   }
 
   article a {
@@ -94,7 +101,8 @@
     font-weight: var(--font-weight-semibold);
 
     &:hover {
-      color: var(--color-primary-text);
+      text-decoration-color: var(--color-primary);
+      text-decoration-thickness: 2px;
     }
   }
 }

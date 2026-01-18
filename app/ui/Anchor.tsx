@@ -11,11 +11,11 @@ export const Anchor: React.FC<{
 }> = ({ href, children, className = '', onClick }) => {
   const pathname = usePathname()
 
-  const isActive = pathname.startsWith(href)
+  const isActive = pathname.endsWith(href)
 
   return (
     <Link
-      className={`rounded w-full px-4 py-1 hover:bg-primary-surface hover:text-primary-text ${isActive ? 'border-l-4 bg-primary-surface border-primary text-primary-text' : ''} ${className}`}
+      className={`rounded w-full px-2 py-1 hover:bg-surface-dim border border-transparent hover:border-foreground/10 ${isActive ? 'bg-primary-surface border-primary/20! text-primary-text' : ''} ${className}`}
       href={href}
       onClick={onClick}
     >

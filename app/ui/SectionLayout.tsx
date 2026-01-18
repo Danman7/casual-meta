@@ -20,13 +20,13 @@ export function SectionLayout({
     <div className="flex flex-col min-h-full">
       <Header sectionNav={{ items, title, rootUrl }} />
 
-      <div className="flex relative grow gap-6">
+      <div className="flex relative grow gap-6 items-stretch">
         <aside className="hidden md:flex">
           <SideNavigation sectionNav={{ items, title, rootUrl }} />
         </aside>
 
-        <main className="mx-auto max-w-4xl px-4 sm:px-6 py-12">
-          <article className="mx-auto max-w-[70ch] text-base md:text-[1.0625rem] lg:text-lg leading-relaxed space-y-6">
+        <main className="mx-auto max-w-4xl px-4 pt-8 pb-32">
+          <article className="mx-auto max-w-3xl text-base space-y-6">
             {children}
           </article>
         </main>

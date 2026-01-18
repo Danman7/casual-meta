@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Noto_Sans, Noto_Serif, Noto_Serif_Display } from 'next/font/google'
+import { Noto_Serif, Noto_Serif_Display } from 'next/font/google'
 import Link from 'next/link'
 
 import PageTransition from '@/app/ui/PageTransition'
@@ -13,11 +13,6 @@ const notoSerif = Noto_Serif({
 
 const notoSerifDisplay = Noto_Serif_Display({
   variable: '--font-noto-serif-display',
-  subsets: ['latin'],
-})
-
-const notoSans = Noto_Sans({
-  variable: '--font-noto-sans',
   subsets: ['latin'],
 })
 
@@ -37,13 +32,13 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${notoSerif.variable} ${notoSans.variable} ${notoSerifDisplay.variable} antialiased h-full flex flex-col font-sans selection:bg-primary selection:text-background`}
+        className={`${notoSerif.variable} ${notoSerifDisplay.variable} antialiased h-full flex flex-col font-serif selection:bg-primary selection:text-background`}
       >
         <main className="grow">
           <PageTransition>{children}</PageTransition>
         </main>
 
-        <footer className="inset-shadow-sm text-center sm:flex sm:justify-between px-6 py-2 gap-4 shadow-md bg-surface z-10">
+        <footer className="inset-shadow-sm text-center sm:flex sm:justify-between px-6 py-4 gap-4 shadow-md bg-surface z-10">
           <div className="mb-2 md:mb-0">
             <Link href="/" className="text-foreground!">
               Casual Meta

@@ -25,13 +25,13 @@ export const SideNavigation = ({
 }: SideNavigationProps) => (
   <nav
     aria-labelledby="primary-navigation"
-    className={`flex flex-col bg-surface shadow-lg overflow-y-auto w-60 divide-y divide-foreground/50 ${
+    className={`flex flex-col bg-surface shadow-lg overflow-y-auto w-64 divide-y space-y-4 divide-foreground/10 p-4 *:space-y-1 ${
       isMobile ? 'h-full' : 'sticky top-0 max-h-screen'
     }`}
   >
     {!hideLogo && (
       <Link
-        className="flex items-center gap-2 hover:gap-4 hover:text-primary font-semibold font-serif no-underline transition-all p-6 text-2xl"
+        className="flex items-center gap-2 hover:gap-4 hover:text-primary font-bold no-underline transition-all text-xl px-2 pb-4"
         href="/"
         aria-label="Go to homepage"
       >
@@ -40,7 +40,7 @@ export const SideNavigation = ({
       </Link>
     )}
 
-    <div className="flex flex-col p-2 space-y-2 font-semibold">
+    <div className="flex flex-col font-semibold pb-4">
       {ROOT_NAVIGATION_ITEMS.map((item) => (
         <Anchor key={item.href} href={item.href}>
           {' '}

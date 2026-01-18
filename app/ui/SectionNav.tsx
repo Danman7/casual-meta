@@ -12,11 +12,11 @@ type Props = {
 function TreeNode({ item }: { item: RouteItem }) {
   const hasChildren = !!item.children?.length
   return (
-    <div className="flex flex-col space-y-1">
+    <div className="flex flex-col">
       <Anchor href={item.href}>{item.title}</Anchor>
 
       {hasChildren && (
-        <div className="ml-4 flex flex-col space-y-1">
+        <div className="ml-4 flex flex-col">
           {item.children!.map((child) => (
             <TreeNode key={child.href} item={child} />
           ))}
@@ -28,10 +28,7 @@ function TreeNode({ item }: { item: RouteItem }) {
 
 export function SectionNav({ items }: Props) {
   return (
-    <nav
-      aria-labelledby="section-navigation"
-      className="grow flex flex-col p-2 space-y-1 text-sm"
-    >
+    <nav aria-labelledby="section-navigation" className="grow flex flex-col">
       {items.map((item) => (
         <TreeNode key={item.href} item={item} />
       ))}

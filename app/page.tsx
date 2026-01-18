@@ -19,7 +19,7 @@ export default function Page() {
           </div>
         </div>
 
-        <FlexWrapper className="justify-center font-semibold font-serif text-xl">
+        <FlexWrapper className="justify-center font-semibold text-xl">
           {ROOT_NAVIGATION_ITEMS.map((item, index) => (
             <Link
               key={item.href}
@@ -49,7 +49,7 @@ export default function Page() {
           <em>players</em> who:
         </p>
 
-        <ul role="list" className="list-disc list-inside">
+        <ul role="list" className="mb-4 ml-4.5 list-disc">
           <li>Want to get into a game, but feel intimidated;</li>
           <li>
             Are playing a game for some time, but feel a lack of progress or

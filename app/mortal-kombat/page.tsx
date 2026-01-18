@@ -71,19 +71,17 @@ export default async function Page() {
           caption="The well known 'Fight' screen signals the start of a duel in Mortal Kombat 1 between Liu Kang and Raiden - classic series characters appearing in almos every game."
         />
 
-        <div className="space-y-2">
-          <p>At its core, Mortal Kombat keeps most of it original formula:</p>
-          <ul className="list-disc list-inside">
-            <li>One-on-one combat to the death.</li>
-            <li>
-              Players try to outplay each other within the alloted time and
-              space.
-            </li>
-            <li>Delpete your opponent's health bar to win a round.</li>
+        <p>At its core, Mortal Kombat keeps most of it original formula:</p>
 
-            <li>Win two rounds to win the match.</li>
-          </ul>
-        </div>
+        <ul className="mb-4 ml-4.5 list-disc">
+          <li>One-on-one combat to the death.</li>
+          <li>
+            Players try to outplay each other within the alloted time and space.
+          </li>
+          <li>Delpete your opponent's health bar to win a round.</li>
+
+          <li>Win two rounds to win the match.</li>
+        </ul>
 
         <p>
           Modern games add new mechanics on top of that, but you can expect all
@@ -184,30 +182,26 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <div className="space-y-2">
-          <p>These are mapped like so:</p>
+        <p>These are mapped like so:</p>
 
-          <ul className="list-disc list-inside">
-            <li>1 - Front Punch (X / Square)</li>
-            <li>2 - Back Punch (Y / Triangle)</li>
-            <li>3 - Front Kick (A / Cross)</li>
-            <li>4 - Back Kick (B / Circle)</li>
-          </ul>
-        </div>
+        <ul className="mb-4 ml-4.5 list-disc">
+          <li>1 - Front Punch (X / Square)</li>
+          <li>2 - Back Punch (Y / Triangle)</li>
+          <li>3 - Front Kick (A / Cross)</li>
+          <li>4 - Back Kick (B / Circle)</li>
+        </ul>
 
-        <div className="space-y-2">
-          <p>
-            The D-Pad on a gamepad is universal. Directions are described
-            related to the position of the enemy like so:
-          </p>
+        <p>
+          The D-Pad on a gamepad is universal. Directions are described related
+          to the position of the enemy like so:
+        </p>
 
-          <ul className="list-disc list-inside">
-            <li>F - Forward / Towards your foe</li>
-            <li>B - Backward / Away from your foe</li>
-            <li>D - Down / Crouch</li>
-            <li>J - Jump / Up usually followed by a string</li>
-          </ul>
-        </div>
+        <ul className="mb-4 ml-4.5 list-disc">
+          <li>F - Forward / Towards your foe</li>
+          <li>B - Backward / Away from your foe</li>
+          <li>D - Down / Crouch</li>
+          <li>J - Jump / Up usually followed by a string</li>
+        </ul>
 
         <p>
           And finally we have whatever special commands are assigned to the

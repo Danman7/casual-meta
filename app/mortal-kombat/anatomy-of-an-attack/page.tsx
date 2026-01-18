@@ -71,7 +71,7 @@ export default async function Page() {
           attack finishes. During that time one of three things can happen:
         </p>
 
-        <ul className="list-disc list-inside">
+        <ul className="mb-4 ml-4.5 list-disc">
           <li>
             The attack can <em>hit</em> if the opponent is withing reach and
             isn't blocking.
@@ -458,7 +458,7 @@ export default async function Page() {
             take 4 frames to react, their attack won't hit.
           </p>
 
-          <ul className="list-disc list-inside">
+          <ul className="mb-4 ml-4.5 list-disc">
             <li>
               Blocking a -10 on block move then immediately counter-attacking
               with a 7-frame start-up move will hit with 3 frames to spare: -10

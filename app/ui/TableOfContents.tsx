@@ -42,9 +42,11 @@ export const TableOfContents: React.FC = () => {
   return (
     <nav
       aria-labelledby="page-navigation"
-      className="sticky top-0 max-h-screen overflow-y-auto w-56 pt-12 pr-6"
+      className="sticky top-0 max-h-screen overflow-y-auto w-56 pt-10 pr-4"
     >
-      <h4 className="font-bold mb-4 border-b">On This Page</h4>
+      <h4 className="font-bold mb-4 border-b border-foreground/10">
+        On This Page
+      </h4>
 
       <ul id="toc-root" className="mt-0">
         {headings.map((heading) => (

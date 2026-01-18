@@ -319,7 +319,7 @@ export default async function Page() {
         </p>
 
         <Callout>
-          <ul className="space-y-6 my-0">
+          <ul className="space-y-4">
             <li>
               <Pill>
                 21 BF1 F32 F32 J12 airDB2ex <Flavor>small pause</Flavor> 111
@@ -358,7 +358,7 @@ export default async function Page() {
         </p>
 
         <Callout>
-          <ul className="space-y-6 my-0">
+          <ul className="space-y-4">
             <li>
               <Pill>
                 F32 4 4 BF1 F32 J12 airDB2ex <Flavor>small pause</Flavor> J111
@@ -393,7 +393,7 @@ export default async function Page() {
         </p>
 
         <Callout>
-          <ul className="space-y-6 my-0">
+          <ul className="space-y-4">
             <li>
               <Pill>
                 J3 airDB3 <Flavor>land</Flavor> B2 F2
@@ -423,7 +423,7 @@ export default async function Page() {
         </p>
 
         <Callout>
-          <ul className="space-y-6 my-0">
+          <ul className="space-y-4">
             <li>
               <Pill>
                 airDB3ex J3 <Flavor>land</Flavor> BF1 F32 F32 F34 BF2
@@ -495,7 +495,7 @@ export default async function Page() {
         </p>
 
         <Callout>
-          <ul className="space-y-6 my-0">
+          <ul className="space-y-4">
             <li>
               <Pill>
                 BF2ex UK <Flavor>switch sides</Flavor> dash F32 F32 4 BF1 33 DB2
@@ -565,7 +565,7 @@ export default async function Page() {
         </p>
 
         <Callout>
-          <ul className="space-y-6 my-0">
+          <ul className="space-y-4">
             <li>
               <Pill>
                 Throw <Flavor>time during animation</Flavor> K (fan toss) J2 F32

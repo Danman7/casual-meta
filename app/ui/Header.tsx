@@ -36,9 +36,9 @@ export const Header = ({ sectionNav }: HeaderProps) => {
 
   return (
     <>
-      <header className="z-50 sticky top-0 shadow-lg bg-surface h-14 flex items-center text-2xl md:hidden">
+      <header className="z-50 sticky top-0 shadow-md bg-surface h-14 flex items-center text-xl md:hidden">
         <nav aria-labelledby="primary-navigation">
-          <div className="px-4 sm:px-6 flex items-center gap-4">
+          <div className="px-4 flex items-center">
             <button
               className="cursor-pointer hover:text-primary transition-all pr-2 pb-2 pt-2"
               onClick={toggleMobileMenu}
@@ -48,7 +48,7 @@ export const Header = ({ sectionNav }: HeaderProps) => {
             </button>
 
             <Link
-              className="flex items-center gap-2 hover:gap-4 hover:text-primary font-semibold font-serif no-underline transition-all p-2"
+              className="flex items-center gap-2 hover:gap-4 hover:text-primary font-bold no-underline transition-all p-2"
               href="/"
               aria-label="Go to homepage"
             >
