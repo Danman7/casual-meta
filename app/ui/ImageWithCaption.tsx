@@ -9,12 +9,8 @@ export const ImageWithCaption: React.FC<{
   className?: string
 }> = ({ src, alt, caption, className }) => {
   return (
-    <figure className="text-sm text-light">
-      <Image
-        src={src}
-        alt={alt}
-        className={`shadow-sm mb-0 rounded ${className}`}
-      />
+    <figure className="text-sm text-light space-y-1">
+      <Image src={src} alt={alt} className={`shadow-sm rounded ${className}`} />
 
       <figcaption>
         <Flavor>{caption}</Flavor>

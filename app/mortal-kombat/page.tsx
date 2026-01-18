@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   TbCircleNumber1,
   TbCircleNumber2,
@@ -16,9 +17,8 @@ import {
 
 import attackPhases from '@/app/assets/mk/attack_phases.webp'
 import mkLogo from '@/app/assets/mk/mk_logo.webp'
-import MKMonk from '@/app/assets/mk/monk.webp'
 import duelStart from '@/app/assets/mk1/duel_start.webp'
-import { MK_TITLE } from '@/app/constants'
+import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Diagram } from '@/app/ui/Diagram'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
@@ -36,78 +36,97 @@ export default async function Page() {
     <>
       <PageTitle
         title={MK_TITLE}
-        subtitle="This section is dedicated to the modern Mortal Kombat series - the
-          NetherRealm Studios (NRS) era."
+        subtitle="Mortal Kombat (MK) is a long-running franchise of fighting games, popular for fast-paced action and gory graphics."
       />
 
-      <Section title="What is Mortal Kombat?" id="what-is-mk">
+      <Section>
         <Image
           src={mkLogo}
           alt="The Mortal Kombat logo, a dragon in a circle."
-          className="float-left pr-4 mb-0! max-w-32 md:max-w-full"
+          className="float-left pr-4 mb-0! max-w-32"
         />
-        <p className="text-lg">
-          Mortal Kombat (MK) is a long-running franchise of fighting games (and
-          comic books, TV shows, etc.), popular for fast-paced action and gory
-          graphics. It's recognized by the many versions of its famous dragon
-          logo.
-        </p>
+
         <p>
-          The first Mortal Kombat game was made by Midway Games and released in
-          1992. In 2009, the development team was acquired by Warner Bros. and
+          The dragon logo marks a duel of skill that often ends in virtual
+          death, ever since the first MK was released by Midway Games in 1992.
+          Thenceforth, the series has expanded in characters, timelines,
+          mechanics, and popularity.
+        </p>
+
+        <p>
+          In 2009, the development team was acquired by Warner Bros. and
           re-established as NetherRealm Studios. This led to the creation of
           Mortal Kombat (MK9), Mortal Kombat X, Mortal Kombat 11, and Mortal
-          Kombat 1. These titles form what is known as the{' '}
-          <em>modern MK era</em>.
+          Kombat 1. These titles form what is known as the <em>modern MK</em> or{' '}
+          <em>NRS</em> era, which will be the focus of this documentation.
         </p>
+      </Section>
+
+      <Section title="Fundamentals" id="fundamentals">
+        <p>At its core, modern MK remains:</p>
+
+        <ul className="ml-4.5 list-disc">
+          <li>One-on-one combat</li>
+          <li>
+            Players outplaying each other within the allotted time and space
+          </li>
+          <li>Losing your health bar loses the round</li>
+          <li>Win two rounds to win the match</li>
+        </ul>
 
         <ImageWithCaption
           src={duelStart}
           alt="Start of a duel between Liu Kang and Raiden."
-          caption="The well known 'Fight' screen signals the start of a duel in Mortal Kombat 1 between Liu Kang and Raiden - classic series characters appearing in almos every game."
+          caption="The 'Fight' screen signals the start of a duel. The returning characters of Liu Kang and Raiden are about to show off their skills in Mortal Kombat 1."
         />
 
-        <p>At its core, Mortal Kombat keeps most of it original formula:</p>
+        {/* <Image
+          src={MKMonk}
+          alt="A Shadow Priest from the classical Evil Tower stage."
+          className="mx-auto max-w-96 w-full"
+        /> */}
 
-        <ul className="mb-4 ml-4.5 list-disc">
-          <li>One-on-one combat to the death.</li>
+        <p>
+          New players flock to the series because of the cinematic visuals, the
+          growing popularity in esports, the large roster of both classic MK and
+          guest characters from other franchises, and the chance to combat
+          friends. However, the games' difficulty seems to falter their spirits
+          after some time. MK <em>feels hard</em> because:
+        </p>
+
+        <ul className="ml-4.5 list-disc">
+          <li>Action unfolds very quickly</li>
+          <li>Skill gap between players</li>
+          <li>Learning curve can feel steep</li>
+        </ul>
+
+        <p>At the same time:</p>
+
+        <ul className="ml-4.5 list-disc">
+          <li>Each mechanic can be broken down into simple parts</li>
           <li>
-            Players try to outplay each other within the alloted time and space.
+            Mastering basic moves often yields better results than long combos
           </li>
-          <li>Delpete your opponent's health bar to win a round.</li>
-
-          <li>Win two rounds to win the match.</li>
+          <li>
+            Players can learn to read and predict their opponent's moves instead
+            of reacting quickly
+          </li>
+          <li>Some characters are simpler than others</li>
         </ul>
 
         <p>
-          Modern games add new mechanics on top of that, but you can expect all
-          the basics to be the same.
-        </p>
-
-        <Image
-          src={MKMonk}
-          alt="A Shadow Priest from the classical Evil Tower stage."
-          className="mx-auto max-w-96"
-        />
-      </Section>
-      <Section>
-        <p>
-          The essence of learning Mortal Kombat is adapting to how quickly
-          action unfolds. There is a learning curve and often a skill gap
-          between players. Nevertheless, it comes down to simple mechanics that
-          can be broken down and learned. Once you understand these you can
-          begin to read your opponent's intentions and even influence their
-          habits.
-        </p>
-
-        <p className="font-bold">
-          You may not have someone else's reflexes, but you can understand how
-          they make decisions.
+          <em>
+            You may not have someone else's reflexes, but you can understand how
+            they make decisions.
+          </em>
         </p>
       </Section>
-      <Section title="Diagrams" id="diagrams">
+
+      <Section title="About this documentation" id="about">
+        <h3 id="diagrams">Diagrams</h3>
+
         <p>
-          To better visualise mechanics, we use sprites from the older MK games
+          To better visualize mechanics, we use sprites from the older MK games
           to form diagrams. They are primitive, but easy to read and color-code.
         </p>
 
@@ -121,25 +140,25 @@ export default async function Page() {
             />
           </div>
         </Diagram>
-      </Section>
-      <Section title="Move annotations" id="move-annotations">
-        <p className="font-bold">
+
+        <h3 id="move-annotations">Move annotations</h3>
+
+        <p>
           Because Mortal Kombat games run on multiple platforms, using different
           controllers, the community has agreed on a simplified notation using
-          numbers instead.
+          numbers instead. It is important to learn how to read those to
+          understand how to perform the moves.
         </p>
 
         <p>
-          It is important to learn how to read those notations to understand how
-          to perform the moves. Most controllers have four buttons somewhere on
-          the right side. These are called <em>face buttons</em>. For xbox they
-          are A, B, X and Y. For PlayStation they are Cross, Circle, Square and
-          Triangle.
+          Most controllers have four buttons somewhere on the right side. These
+          are called <em>face buttons</em>. For xbox they are A, B, X, and Y.
+          For PlayStation they are Cross, Circle, Square, and Triangle.
         </p>
 
         <Diagram
           className="text-4xl"
-          description="The first two layouts are for xbox and playstation. The thirs one, the numbers notations, equalizes them."
+          description="This is how the face buttons look on Xbox, PlayStation and the number notation used in Mortal Kombat."
         >
           <div className="w-20 h-20 grid grid-cols-3 grid-rows-3">
             <div></div>
@@ -175,9 +194,9 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <p>These are mapped like so:</p>
+        <p>The buttons are mapped like so:</p>
 
-        <ul className="mb-4 ml-4.5 list-disc">
+        <ul className="ml-4.5 list-disc">
           <li>1 - Front Punch (X / Square)</li>
           <li>2 - Back Punch (Y / Triangle)</li>
           <li>3 - Front Kick (A / Cross)</li>
@@ -185,15 +204,15 @@ export default async function Page() {
         </ul>
 
         <p>
-          The D-Pad on a gamepad is universal. Directions are described related
-          to the position of the enemy like so:
+          The D-Pad on a gamepad is universal. Directions are described in
+          relation to the position of the enemy like so:
         </p>
 
-        <ul className="mb-4 ml-4.5 list-disc">
+        <ul className="ml-4.5 list-disc">
           <li>F - Forward / Towards your foe</li>
           <li>B - Backward / Away from your foe</li>
           <li>D - Down / Crouch</li>
-          <li>J - Jump / Up usually followed by a string</li>
+          <li>J - Jump / Up, usually followed by a string</li>
         </ul>
 
         <p>
@@ -212,6 +231,30 @@ export default async function Page() {
         <p>
           If you are playing on a PC with a keyboard, or are using another type
           of device, refer to the in-game button mapping.
+        </p>
+      </Section>
+
+      <Section title="First steps" id="next-steps">
+        <p>
+          It is recommended to begin with the in-game tutorials. MK11 and MK1
+          have in-depth tutorial modes that explain even advanced mechanics.
+          Even MKX has a few basic lessons.
+        </p>
+
+        <p>
+          You can start at the beginning with{' '}
+          <Link href={`${MK_BASE_URL}/movement`}>Movement</Link>, although the
+          most elaborate piece of the puzzle among fundamentals is the{' '}
+          <Link href={`${MK_BASE_URL}/anatomy-of-an-attack`}>
+            Anatomy of attacks
+          </Link>
+          .
+        </p>
+
+        <p>
+          If you feel you have a grasp on core mechanics, you can start with
+          advanced concepts like{' '}
+          <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>.
         </p>
       </Section>
     </>

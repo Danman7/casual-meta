@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaWrench } from 'react-icons/fa'
+import { GiDeathSkull } from 'react-icons/gi'
 
 import attackPhases from '@/app/assets/mk/attack_phases.webp'
 import blockHigh from '@/app/assets/mk/block_high.webp'
@@ -23,6 +25,7 @@ import unblockable from '@/app/assets/mk/unblockable.webp'
 import liMeiAdvancedView from '@/app/assets/mk1/advanced_view.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
+import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
 import { Diagram } from '@/app/ui/Diagram'
 import { Flavor } from '@/app/ui/Flavor'
@@ -44,22 +47,26 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle title={navTitle} subtitle="Core mechanics" />
+      <PageTitle
+        title={navTitle}
+        subtitle="Every attack is a commitment. A round is a sequence of commitments.
+          Your goal is to come out ahead."
+        tags={
+          <>
+            <Badge primary>
+              <GiDeathSkull /> Mortal Kombat
+            </Badge>
+            <Badge>
+              <FaWrench /> Core Mechanics
+            </Badge>
+          </>
+        }
+      />
 
       <Section>
-        <Flavor>
-          This page explores the details of attacking and blocking in Mortal
-          Kombat - the basis for evaluating moves and understanding the game.
-        </Flavor>
-
         <p>
           Modern MK games expose each move's <em>frame data</em>. It tells how a
           move works in detail. First, we cover basic attack concepts.
-        </p>
-
-        <p className="font-bold">
-          Every attack is a commitment. A round is a sequence of commitments.
-          Your goal is to come out ahead.
         </p>
       </Section>
 
