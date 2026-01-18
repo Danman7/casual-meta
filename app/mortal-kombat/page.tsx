@@ -25,11 +25,14 @@ import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
+import { createRouteLookup } from '@/lib/routeLinks'
 
 export const metadata = generatePageMetadata(
   MK_TITLE,
   'Mortal Kombat 1 (MK1) is the latest chapter in the long-running, celebrated fighting game series.',
 )
+
+const mkRoute = createRouteLookup(MK_BASE_URL)
 
 export default async function Page() {
   return (
@@ -243,18 +246,14 @@ export default async function Page() {
 
         <p>
           You can start at the beginning with{' '}
-          <Link href={`${MK_BASE_URL}/movement`}>Movement</Link>, although the
-          most elaborate piece of the puzzle among fundamentals is the{' '}
-          <Link href={`${MK_BASE_URL}/anatomy-of-an-attack`}>
-            Anatomy of attacks
-          </Link>
-          .
+          <Link href={mkRoute('Movement')}>Movement</Link>, although the most
+          elaborate piece of the puzzle among fundamentals is the{' '}
+          <Link href={mkRoute('Anatomy of attacks')}>Anatomy of attacks</Link>.
         </p>
 
         <p>
           If you feel you have a grasp on core mechanics, you can start with
-          advanced concepts like{' '}
-          <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>.
+          advanced concepts like <Link href={mkRoute('Neutral')}>Neutral</Link>.
         </p>
       </Section>
     </>

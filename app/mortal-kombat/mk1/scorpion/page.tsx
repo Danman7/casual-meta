@@ -18,6 +18,7 @@ import { Pill } from '@/app/ui/Pill'
 import { ProsConsList } from '@/app/ui/ProsConsList'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
+import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 8
 
@@ -27,6 +28,8 @@ export const metadata = generatePageMetadata(
   `${MK_TITLE}: ${navTitle}`,
   'A breakdown of Scorpion in Mortal Kombat 1.',
 )
+
+const mkRoute = createRouteLookup(MK_BASE_URL)
 
 export default async function Page() {
   return (
@@ -89,7 +92,7 @@ export default async function Page() {
       <Section title="Scouting the opponent" id="neutral">
         <Flavor>
           This section covers key moves and methods, helpful in{' '}
-          <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>.
+          <Link href={mkRoute('Neutral')}>Neutral</Link>.
         </Flavor>
 
         <p className="font-bold">

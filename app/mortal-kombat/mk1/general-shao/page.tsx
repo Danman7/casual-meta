@@ -11,6 +11,7 @@ import { Pill } from '@/app/ui/Pill'
 import { ProsConsList } from '@/app/ui/ProsConsList'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
+import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 10
 
@@ -20,6 +21,8 @@ export const metadata = generatePageMetadata(
   `${MK_TITLE}: ${navTitle}`,
   'A breakdown of General Shao in Mortal Kombat 1.',
 )
+
+const mkRoute = createRouteLookup(MK_BASE_URL)
 
 export default async function Page() {
   return (
@@ -36,11 +39,11 @@ export default async function Page() {
         <p className="md:w-1/2">
           General Shao is a <em>stance</em> based bruiser that excels at
           scouting and bullying his opponents in{' '}
-          <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>. His axe controls
-          space with far-reaching disjointed normals, while the unarmed stance
-          gives him faster and safer mix-ups with plus frames. At the same time
-          he lacks good full screen moves and has punishable gaps in his
-          offense. Both issues can be addressed with the right Kameo partner.
+          <Link href={mkRoute('Neutral')}>Neutral</Link>. His axe controls space
+          with far-reaching disjointed normals, while the unarmed stance gives
+          him faster and safer mix-ups with plus frames. At the same time he
+          lacks good full screen moves and has punishable gaps in his offense.
+          Both issues can be addressed with the right Kameo partner.
         </p>
       </Section>
 

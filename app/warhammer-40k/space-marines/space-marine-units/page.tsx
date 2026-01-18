@@ -22,6 +22,7 @@ import { Callout } from '@/app/ui/Callout'
 import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { Pill } from '@/app/ui/Pill'
 import { generatePageMetadata } from '@/lib/metadata'
+import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 11
 
@@ -32,6 +33,8 @@ export const metadata = generatePageMetadata(
   'An overview of the Space Marines battleline infantry units.',
 )
 
+const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
+
 export default async function Page() {
   return (
     <>
@@ -39,9 +42,7 @@ export default async function Page() {
 
       <p>
         If you are unfamiliar with the profile abbreviations check out our{' '}
-        <Link href={`${WH40K_BASE_URL}/profile-archetypes`}>
-          Profile Archetypes
-        </Link>{' '}
+        <Link href={wh40kRoute('Profile Archetypes')}>Profile Archetypes</Link>{' '}
         page.
       </p>
 

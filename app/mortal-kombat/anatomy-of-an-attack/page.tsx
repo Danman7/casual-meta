@@ -34,6 +34,7 @@ import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
+import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 3
 
@@ -43,6 +44,8 @@ export const metadata = generatePageMetadata(
   `${MK_TITLE}: ${navTitle}`,
   'How moves work in Mortal Kombat.',
 )
+
+const mkRoute = createRouteLookup(MK_BASE_URL)
 
 export default async function Page() {
   return (
@@ -430,14 +433,14 @@ export default async function Page() {
           The frames in the <em>Recovery</em> section are valid on miss. The
           opponent has these frames to hit you while you recover. Most attacks
           have slow recovery on miss, making <em>whiff baiting</em> a central
-          tactic in <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>.
+          tactic in <Link href={mkRoute('Neutral')}>Neutral</Link>.
         </p>
 
         <p>
           <em>Hit advantage</em> shows how much sooner the attacker can act if
           the attack hits. The additional frames after a hit are key for combos
-          along with <Link href={`${MK_BASE_URL}/cancelling`}>Canceling</Link>.
-          More frames mean more freedom.
+          along with <Link href={mkRoute('Cancelling')}>Canceling</Link>. More
+          frames mean more freedom.
         </p>
 
         <p>

@@ -6,6 +6,7 @@ import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
+import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 6
 
@@ -16,6 +17,8 @@ export const metadata = generatePageMetadata(
   'Mind games and conditioning in Mortal Kombat.',
 )
 
+const mkRoute = createRouteLookup(MK_BASE_URL)
+
 export default async function Page() {
   return (
     <>
@@ -24,7 +27,7 @@ export default async function Page() {
       <Section>
         <Flavor>
           This page explains the many mind games and frame traps that go into
-          converting a good <Link href={`${MK_BASE_URL}/neutral`}>Neutral</Link>{' '}
+          converting a good <Link href={mkRoute('Neutral')}>Neutral</Link>{' '}
           position into actual damage.
         </Flavor>
 
