@@ -3,7 +3,7 @@ export const Section: React.FC<
 > = ({ children, title, id, className }) => (
   <section className={`mt-10 space-y-4 ${className}`}>
     {title && (
-      <h2 id={id} className="scroll-mt-18 text-xl font-medium">
+      <h2 id={id} className="scroll-mt-18 text-xl font-semibold">
         {title}
       </h2>
     )}

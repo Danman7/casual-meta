@@ -30,7 +30,7 @@ export default async function Page() {
       <Section title="What is a cancel?" id="what-is-a-cancel">
         <p>
           Every action has a recovery{' '}
-          <Link href={`${MK_BASE_URL}/anatomy-of-attacks#move-phases`}>
+          <Link href={`${MK_BASE_URL}/anatomy-of-an-attack#move-phases`}>
             phase
           </Link>{' '}
           after execution, where the character returns back to neutral state.

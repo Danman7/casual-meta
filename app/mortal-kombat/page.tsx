@@ -20,7 +20,6 @@ import MKMonk from '@/app/assets/mk/monk.webp'
 import duelStart from '@/app/assets/mk1/duel_start.webp'
 import { MK_TITLE } from '@/app/constants'
 import { Diagram } from '@/app/ui/Diagram'
-import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
@@ -35,14 +34,11 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <Section className="mt-0!">
-        <PageTitle title={MK_TITLE} />
-
-        <Flavor>
-          This section is dedicated to the modern Mortal Kombat series - the
-          NetherRealm Studios (NRS) era.
-        </Flavor>
-      </Section>
+      <PageTitle
+        title={MK_TITLE}
+        subtitle="This section is dedicated to the modern Mortal Kombat series - the
+          NetherRealm Studios (NRS) era."
+      />
 
       <Section title="What is Mortal Kombat?" id="what-is-mk">
         <Image
@@ -94,7 +90,6 @@ export default async function Page() {
           className="mx-auto max-w-96"
         />
       </Section>
-
       <Section>
         <p>
           The essence of learning Mortal Kombat is adapting to how quickly
@@ -110,7 +105,6 @@ export default async function Page() {
           they make decisions.
         </p>
       </Section>
-
       <Section title="Diagrams" id="diagrams">
         <p>
           To better visualise mechanics, we use sprites from the older MK games
@@ -128,7 +122,6 @@ export default async function Page() {
           </div>
         </Diagram>
       </Section>
-
       <Section title="Move annotations" id="move-annotations">
         <p className="font-bold">
           Because Mortal Kombat games run on multiple platforms, using different

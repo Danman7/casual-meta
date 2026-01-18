@@ -51,23 +51,7 @@ export const TableOfContents: React.FC = () => {
       <ul id="toc-root" className="mt-0">
         {headings.map((heading) => (
           <li key={heading.id} className={heading.level === 3 ? 'ml-4' : ''}>
-            <a
-              href={`#${heading.id}`}
-              className="text-sm hover:underline"
-              onClick={(e) => {
-                e.preventDefault()
-
-                const element = document.getElementById(heading.id)
-                if (element) {
-                  const y = element.getBoundingClientRect().top + window.scrollY
-
-                  window.scrollTo({
-                    top: Math.max(y, 0),
-                    behavior: 'smooth',
-                  })
-                }
-              }}
-            >
+            <a href={`#${heading.id}`} className="text-sm hover:underline">
               {heading.text}
             </a>
           </li>

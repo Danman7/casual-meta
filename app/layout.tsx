@@ -2,8 +2,6 @@ import type { Metadata } from 'next'
 import { Noto_Serif, Noto_Serif_Display } from 'next/font/google'
 import Link from 'next/link'
 
-import PageTransition from '@/app/ui/PageTransition'
-
 import '@/app/globals.css'
 
 const notoSerif = Noto_Serif({
@@ -34,9 +32,7 @@ export default function RootLayout({
       <body
         className={`${notoSerif.variable} ${notoSerifDisplay.variable} antialiased h-full flex flex-col font-serif selection:bg-primary selection:text-background`}
       >
-        <main className="grow">
-          <PageTransition>{children}</PageTransition>
-        </main>
+        <main className="grow">{children}</main>
 
         <footer className="inset-shadow-sm text-center sm:flex sm:justify-between px-6 py-4 gap-4 shadow-md bg-surface z-10">
           <div className="mb-2 md:mb-0">
