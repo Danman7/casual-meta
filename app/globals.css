@@ -8,7 +8,7 @@
   --surface-dim: var(--color-slate-200);
   --primary: var(--color-blue-500);
   --primary-surface: var(--color-blue-100);
-  --primary-text: var(--color-blue-900);
+  --primary-text: var(--color-blue-800);
 }
 
 @media (prefers-color-scheme: dark) {
