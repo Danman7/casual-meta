@@ -4,6 +4,7 @@ import { FaWrench } from 'react-icons/fa'
 import { GiDeathSkull } from 'react-icons/gi'
 import { MdChevronRight } from 'react-icons/md'
 
+import arena from '@/app/assets/mk/arena.webp'
 import backward from '@/app/assets/mk/backward.webp'
 import crouch from '@/app/assets/mk/crouch.webp'
 import forward from '@/app/assets/mk/forward.webp'
@@ -12,6 +13,7 @@ import stand from '@/app/assets/mk/stand.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { Diagram } from '@/app/ui/Diagram'
+import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
@@ -53,12 +55,12 @@ export default async function Page() {
           character to the corresponding side in MK. But <strong>moves</strong>{' '}
           like attacks and specials <strong>are position-sensitive</strong>{' '}
           relative to your opponent. They are described as forward or backward
-          on the horizontal pane.
+          on the horizontal plane.
         </p>
 
         <Diagram
-          description="If you are to the left your opponent, forward is
-          right. If you are to the right - forward is left."
+          description="If you are to the left of your opponent, forward is
+          right. If you are to the right, forward is left."
         >
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Forward</div>
@@ -90,18 +92,18 @@ export default async function Page() {
         </Diagram>
 
         <p>
-          This is accounted for in the in-game moves lists. They update based on
+          This is accounted for in the in-game move lists. They update based on
           your position relative to your foe. But when reading external
-          resources you will see <Pill>F3</Pill> which means <em>towards</em>{' '}
-          them or forward then press 3. <Pill>B2</Pill> reads <em>away</em> from
-          them or back then press 2.
+          resources, you will see <Pill>F3</Pill>, which means <em>towards</em>{' '}
+          them, or forward, then press 3. <Pill>B2</Pill> reads <em>away</em>{' '}
+          from them, or back, then press 2.
         </p>
 
         <h3 id="dashing">Dashing</h3>
 
         <p>
           Holding a direction is known as <em>walking</em>. You walk up to or
-          away from your foe. In modern MK you can{' '}
+          away from your foe. In modern MK, you can{' '}
           <strong>double tap a horizontal direction</strong> to dash forward or
           backward. This propels your character quickly in the chosen direction
           and can be used to close distance or retreat.
@@ -134,11 +136,12 @@ export default async function Page() {
         <h3 id="standing">Standing</h3>
 
         <p>
-          If you are not pressing up or down your character is <em>Standing</em>
-          . This is the initial stance when a round starts. It offers the most
-          freedom - you can move, block, attack, jump and crouch. If a move
-          notation is not acompanied by a direction input, for example{' '}
-          <Pill>1</Pill> or <Pill>21</Pill>, it is performed from standing.
+          If you are not pressing up or down, your character is{' '}
+          <em>Standing</em>. This is the initial stance when a round starts. It
+          offers the most freedom - you can move, block, attack, jump and
+          crouch. If a move notation is not accompanied by a direction input,
+          for example, <Pill>1</Pill> or <Pill>21</Pill>, it is performed from
+          standing.
         </p>
 
         <h3 id="crouching">Crouching / Ducking</h3>
@@ -146,11 +149,11 @@ export default async function Page() {
         <p>
           Pressing down enters <em>Crouching</em> or <em>Ducking</em> stance.
           This reduces the size of your character's hitbox, making them harder
-          to hit as describe in{' '}
+          to hit as described in{' '}
           <Link href={`${mkRoute('Anatomy of attacks')}#block-type`}>
             Block Type
           </Link>
-          . While crouching you can block or attack, but you{' '}
+          . While crouching, you can block or attack, but you{' '}
           <strong>can't move</strong>, limiting your options.
         </p>
 
@@ -160,8 +163,8 @@ export default async function Page() {
           Pressing up makes the character <em>Jump</em>. Jumping vertically is
           called a <em>neutral jump</em>. Pressing a horizontal direction while
           jumping makes it a <em>forward</em> or <em>backward jump</em>. While
-          in the air you can attack, but you <strong>can't block</strong>. And
-          while you are technically moving, it happens on a predefined parabola.
+          in the air, you can attack, but you <strong>can't block</strong>.
+          While you are technically moving, it happens on a predefined parabola.
         </p>
 
         <p>
@@ -178,7 +181,63 @@ export default async function Page() {
         </p>
       </Section>
 
-      <Section title="Arena limitations" id="arena-limitations"></Section>
+      <Section title="Arena limitations" id="arena-limitations">
+        <p>Every duel takes place in an arena.</p>
+        <ul role="list" className="mb-4 ml-4.5 list-disc">
+          <li>
+            Arenas are horizontal spaces, with invisible boundaries on each
+            side.
+          </li>
+
+          <li>Arenas vary by size within a moderate range.</li>
+
+          <li>
+            Modern arenas are not multi-tiered like in older titles. They have
+            only one level.
+          </li>
+        </ul>
+
+        <ImageWithCaption
+          src={arena}
+          alt="Goro's Lair in Mortal Kombat 11."
+          caption="An artist's depiction of Goro's Lair in Mortal Kombat 11."
+        />
+
+        <p>
+          Upon reaching the invisible barrier either to the left or the right, a
+          character:
+        </p>
+
+        <ul className="ml-4.5 list-disc">
+          <li>Cannot move further in that direction;</li>
+          <li>Cannot be knocked back in that direction.</li>
+        </ul>
+
+        <p>
+          For the person in the corner, this is a disadvantage as they cannot
+          retreat further and control distance. They must either jump over the
+          opponent or execute a side-switching move like a back throw to escape.
+          On the other hand, the person away from the corner can pressure more
+          easily and has new combo routes open to them. Moves where knockback
+          would otherwise push them out of range can now be chained. These are
+          known as <em>corner combos</em> and are usually the most damaging
+          routes.
+        </p>
+      </Section>
+
+      <Section title="Key takeaways" id="takeaways">
+        <ul className="ml-4.5 list-disc">
+          <li>
+            Forward and backward are relative to your opponent's position.
+          </li>
+          <li>Standing is best for mobility.</li>
+          <li>Crouching prevents moving. Jumping prevents blocking.</li>
+          <li>
+            Cornering the opponent is an advantage. Being cornered is a
+            disadvantage.
+          </li>
+        </ul>
+      </Section>
 
       <Link
         className="flex gap-2 items-center"
