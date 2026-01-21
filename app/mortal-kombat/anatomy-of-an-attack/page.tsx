@@ -172,26 +172,55 @@ export default async function Page() {
         <p>
           Every move has a Block Type determining how it must be blocked. It's a
           basic rock-paper-scissors game based on{' '}
-          <Link href={`${mkRoute('Movement')}#stances`}>stances</Link>. The
-          common block types are <em>high</em>, <em>mid</em>, <em>low</em>,{' '}
-          <em>overhead</em> and <em>unblockable</em>.
+          <Link href={`${mkRoute('Movement')}#stances`}>stances</Link>.
         </p>
 
         <ImageWithCaption
           src={raidenMoveList}
-          alt="Raiden's move list in basic view."
+          alt="Raiden's MK1 move list in basic view."
           caption="In Mortal Kombat 1, the basic move list of a character shows each move's damage and block type. This is xbox annotations."
           className="max-h-96 object-cover"
         />
 
-        <p>
-          A <strong>High</strong> attack{' '}
-          <strong>must be blocked standing</strong> but{' '}
-          <strong>misses if crouching</strong>. High attacks are common. Most
-          are performed standing.
-        </p>
+        <p>The commont attacks based on their block types are:</p>
 
-        <Diagram description="A high attack hits standing targets. It also connects with any blocking targets. It will miss if the target is crouching and NOT blocking.">
+        <ul className="mb-4 ml-4.5 list-disc">
+          <li>
+            <strong>High</strong> attacks{' '}
+            <strong>must be blocked standing</strong> but{' '}
+            <strong>miss if target is crouching and not blocking</strong>.
+          </li>
+
+          <li>
+            <strong>Mid</strong> attacks{' '}
+            <strong>must be blocked if both standing or crouching.</strong>
+          </li>
+
+          <li>
+            <strong>Low</strong> attacks <strong>must be blocked low</strong>.
+          </li>
+
+          <li>
+            <strong>Overhead</strong> attacks{' '}
+            <strong>must be blocked standing</strong>. They{' '}
+            <strong>hit crouching targets</strong> even if they are blocking.
+          </li>
+
+          <li>
+            <strong>Throws connect with standing targers</strong> regardless of
+            block, and with{' '}
+            <strong>crouching targers if they are blocking</strong>, but{' '}
+            <strong>miss crouching targets if they are not blocking</strong>.
+          </li>
+
+          <li>
+            If the attack has <strong>Unblockable</strong> listed on it block
+            type, it will{' '}
+            <strong>always cause full damage if it connects</strong>.
+          </li>
+        </ul>
+
+        <Diagram description="A high attack will stil cause chip damage if blocked crouching. The defender must take the risk of not holding block to evade it. High attacks are very common. The most basic attacks of most characters are usually high.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -216,12 +245,6 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <p>
-          A <strong>Mid</strong> attack{' '}
-          <strong>must be blocked standing or crouching.</strong> Mids are also
-          common.
-        </p>
-
         <Diagram description="Mids hit both standing and crouching targets. They must be blocked or evaded.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
@@ -244,12 +267,6 @@ export default async function Page() {
             <Image src={midBlockLow} alt="A mid kick being low blocked." />
           </div>
         </Diagram>
-
-        <p>
-          A <strong>Low</strong> attack <strong>must be blocked low</strong>.
-          Low moves are less common and require crouching, causing knockdown.
-          Standing lows are rarer because they're quick and retain mobility.
-        </p>
 
         <Diagram description="Low attacks hit and often knockdown standing targets, irregardless of blocking.">
           <div className="flex flex-col gap-2 font-semibold items-center">
