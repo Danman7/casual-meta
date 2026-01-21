@@ -24,7 +24,7 @@ export const SideNavigation = ({
   isMobile,
 }: SideNavigationProps) => (
   <nav
-    aria-labelledby="primary-navigation"
+    aria-label="Primary navigation"
     className={`flex flex-col bg-surface shadow-lg overflow-y-auto w-64 divide-y space-y-4 divide-foreground/10 p-4 *:space-y-1 ${
       isMobile ? 'h-full' : 'sticky top-0 max-h-screen'
     }`}
@@ -35,7 +35,7 @@ export const SideNavigation = ({
         href="/"
         aria-label="Go to homepage"
       >
-        <BsPcDisplay />
+        <BsPcDisplay aria-hidden="true" focusable="false" />
         <span className="hidden sm:inline">Casual Meta</span>
       </Link>
     )}

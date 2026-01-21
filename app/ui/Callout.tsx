@@ -7,6 +7,9 @@ export const Callout: React.FC<
 > = ({ children, title, titleId, className }) => (
   <div
     className={`bg-surface rounded overflow-hidden shadow-sm my-4 ${className}`}
+    role="note"
+    aria-labelledby={titleId}
+    aria-label={title && !titleId ? title : undefined}
   >
     {title && (
       <div className="bg-primary-surface text-primary-text px-4 py-2">

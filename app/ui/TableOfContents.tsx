@@ -44,7 +44,10 @@ export const TableOfContents: React.FC = () => {
       aria-labelledby="page-navigation"
       className="sticky top-0 max-h-screen overflow-y-auto w-56 pt-10 pr-4"
     >
-      <h4 className="font-bold mb-4 border-b border-foreground/10">
+      <h4
+        id="page-navigation"
+        className="font-bold mb-4 border-b border-foreground/10"
+      >
         On This Page
       </h4>
 

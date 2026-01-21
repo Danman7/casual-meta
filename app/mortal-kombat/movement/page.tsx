@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaWrench } from 'react-icons/fa'
 import { GiDeathSkull } from 'react-icons/gi'
+import { MdChevronRight } from 'react-icons/md'
 
 import backward from '@/app/assets/mk/backward.webp'
 import crouch from '@/app/assets/mk/crouch.webp'
@@ -176,6 +177,15 @@ export default async function Page() {
           countering jump-ins are called <em>anti-airs</em>.
         </p>
       </Section>
+
+      <Section title="Arena limitations" id="arena-limitations"></Section>
+
+      <Link
+        className="flex gap-2 items-center"
+        href={mkRoute('Anatomy of attacks')}
+      >
+        <MdChevronRight /> Next: Anatomy of attacks
+      </Link>
     </>
   )
 }

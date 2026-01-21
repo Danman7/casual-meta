@@ -28,7 +28,7 @@ function TreeNode({ item }: { item: RouteItem }) {
 
 export function SectionNav({ items }: Props) {
   return (
-    <nav aria-labelledby="section-navigation" className="grow flex flex-col">
+    <nav aria-label="Section navigation" className="grow flex flex-col">
       {items.map((item) => (
         <TreeNode key={item.href} item={item} />
       ))}

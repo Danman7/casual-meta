@@ -147,6 +147,10 @@ export default async function Page() {
         <h3 id="move-annotations">Move annotations</h3>
 
         <p>
+          <strong>MK is primarily played with a gamepad or controller.</strong>
+        </p>
+
+        <p>
           Because Mortal Kombat games run on multiple platforms, using different
           controllers, the community has agreed on a simplified notation using
           numbers instead. It is important to learn how to read those to
@@ -165,9 +169,9 @@ export default async function Page() {
         >
           <div className="w-20 h-20 grid grid-cols-3 grid-rows-3">
             <div></div>
-            <TbXboxX />
-            <div></div>
             <TbXboxY />
+            <div></div>
+            <TbXboxX />
             <div></div>
             <TbXboxB />
             <div></div>

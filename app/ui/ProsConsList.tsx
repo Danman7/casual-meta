@@ -14,7 +14,7 @@ export const ProsConsList: React.FC<
     <div className="md:flex gap-4 space-y-4 md:space-y-0">
       <div className="md:w-1/2 space-y-2">
         <FlexWrapper className="font-bold">
-          <IoIosThumbsUp /> Maybe, yes
+          <IoIosThumbsUp aria-hidden="true" focusable="false" /> Maybe, yes
         </FlexWrapper>
 
         <ul className="divide-y *:py-2">
@@ -26,7 +26,7 @@ export const ProsConsList: React.FC<
 
       <div className="md:w-1/2 space-y-2">
         <FlexWrapper className="font-bold text-error">
-          <IoIosThumbsDown /> Maybe, no
+          <IoIosThumbsDown aria-hidden="true" focusable="false" /> Maybe, no
         </FlexWrapper>
 
         <ul className="divide-y *:py-2">
