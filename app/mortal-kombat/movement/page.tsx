@@ -179,6 +179,16 @@ export default async function Page() {
           or being caught on landing. Ground attacks that are effective at
           countering jump-ins are called <em>anti-airs</em>.
         </p>
+
+        <h3 id="blocking">Blocking</h3>
+
+        <p>
+          While holding the Block button, a player is in <em>Blocking</em> mode.
+          Each incoming attack that connects, will have reduced effects.
+          Blocking itself is not a stance, however it limits movement. It can be
+          performed while standing or crouching, but not jumping. While blocking
+          the character cannot move.
+        </p>
       </Section>
 
       <Section title="Arena limitations" id="arena-limitations">
@@ -231,7 +241,10 @@ export default async function Page() {
             Forward and backward are relative to your opponent's position.
           </li>
           <li>Standing is best for mobility.</li>
-          <li>Crouching prevents moving. Jumping prevents blocking.</li>
+          <li>
+            Crouching and Blocking both prevent moving. Jumping prevents
+            blocking.
+          </li>
           <li>
             Cornering the opponent is an advantage. Being cornered is a
             disadvantage.

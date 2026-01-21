@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaWrench } from 'react-icons/fa'
 import { GiDeathSkull } from 'react-icons/gi'
+import { MdChevronRight } from 'react-icons/md'
 
 import attackPhases from '@/app/assets/mk/attack_phases.webp'
 import blockHigh from '@/app/assets/mk/block_high.webp'
@@ -75,10 +76,18 @@ export default async function Page() {
 
       <Section title="Hit vs block vs miss" id="hit-vs-block-vs-miss">
         <p>
-          When you press a button or a combination that results in an attack for
-          a given fighter, e.g. <Pill>2</Pill> or <Pill>F3</Pill> or{' '}
-          <Pill>BF1</Pill>, your character can't do anything else until the
-          attack finishes. During that time one of three things can happen:
+          Pressing any of the{' '}
+          <Link href={`${MK_BASE_URL}#move-annotations`}>face buttons</Link> or
+          the separate Throw button results in an attack. So is any combinations
+          of directions and an attack button. For example, <Pill>4</Pill>,{' '}
+          <Pill>2</Pill>, <Pill>F3</Pill>, <Pill>B2</Pill> and
+          <Pill>BF1</Pill> are all attacks.
+        </p>
+
+        <p>
+          When one of the characters executes an attack, they can't do anything
+          else until the attack finishes. During that time one of three things
+          can happen:
         </p>
 
         <ul className="mb-4 ml-4.5 list-disc">
@@ -137,15 +146,26 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <p>
-          If the attack hits, the target suffers damage and <em>hit stun:</em>{' '}
-          it cannot act for some time after the attacker recovers. If the attack
-          is blocked, the target suffers block or <em>chip</em> damage and{' '}
-          <em>block stun</em>, both of which are much shorter than when being
-          hit. If the attack misses, the target is absolved from damage and
-          stun, but the attacker still has to recover. Baiting a miss is central
-          to gameplay.
-        </p>
+        <ul className="mb-4 ml-4.5 list-disc">
+          <li>
+            If the attack hits, the target suffers the appropriate damage and{' '}
+            <em>hit stun</em>: they cannot act for a longer period of time.
+            Usually on hitm, the attacker recovers much sooner than the target.
+          </li>
+
+          <li>
+            If the attack is blocked, the target suffers block or <em>chip</em>{' '}
+            damage and <em>block stun</em>. Both damage and stun are usually
+            much lower/shorter than taking a hit. Wether the attacker or target
+            recovers faster on block is dependent on the move's frame data.
+          </li>
+
+          <li>
+            If the attack misses, the target suffers neither damage nor stun,
+            but the attacker must still recover. Baiting a miss is a central
+            tactic.
+          </li>
+        </ul>
       </Section>
 
       <Section title="Block type" id="block-type">
@@ -595,6 +615,10 @@ export default async function Page() {
           Range, speed, and safety are key considerations.
         </p>
       </Section>
+
+      <Link className="flex gap-2 items-center" href={mkRoute('Cancelling')}>
+        <MdChevronRight /> Next: Cancelling
+      </Link>
     </>
   )
 }
