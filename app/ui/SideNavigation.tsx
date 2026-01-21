@@ -35,7 +35,7 @@ export const SideNavigation = ({
         href="/"
         aria-label="Go to homepage"
       >
-        <BsPcDisplay aria-hidden="true" focusable="false" />
+        <BsPcDisplay focusable="false" />
         <span className="hidden sm:inline">Casual Meta</span>
       </Link>
     )}

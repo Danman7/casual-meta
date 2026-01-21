@@ -182,18 +182,18 @@ export default async function Page() {
           className="max-h-96 object-cover"
         />
 
-        <p>The commont attacks based on their block types are:</p>
+        <p>The common attacks based on their block types are:</p>
 
         <ul className="mb-4 ml-4.5 list-disc">
           <li>
-            <strong>High</strong> attacks{' '}
+            <strong>High</strong> attacks which{' '}
             <strong>must be blocked standing</strong> but{' '}
-            <strong>miss if target is crouching and not blocking</strong>.
+            <strong>miss if the target is crouching and not blocking</strong>.
           </li>
 
           <li>
             <strong>Mid</strong> attacks{' '}
-            <strong>must be blocked if both standing or crouching.</strong>
+            <strong>must be blocked both if standing or crouching.</strong>
           </li>
 
           <li>
@@ -211,6 +211,8 @@ export default async function Page() {
             block, and with{' '}
             <strong>crouching targers if they are blocking</strong>, but{' '}
             <strong>miss crouching targets if they are not blocking</strong>.
+            Throws can be escape by pressing 2/4 for forward and 1/3 for
+            backward throws. This is called to <em>tech</em> a throw.
           </li>
 
           <li>
@@ -220,7 +222,7 @@ export default async function Page() {
           </li>
         </ul>
 
-        <Diagram description="A high attack will stil cause chip damage if blocked crouching. The defender must take the risk of not holding block to evade it. High attacks are very common. The most basic attacks of most characters are usually high.">
+        <Diagram description="A high attack will still connect if blocked low. A crouching defender must take the risk of not blocking at all to evade it. You can say these are the 'natural' attacks as the most basic standing attacks are usually high. They are very common.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -245,7 +247,7 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <Diagram description="Mids hit both standing and crouching targets. They must be blocked or evaded.">
+        <Diagram description="Mids are also very common. They cover both standing and crouching targets. This makes ducking under a high attack risky of getting hit by a mid.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -268,7 +270,7 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <Diagram description="Low attacks hit and often knockdown standing targets, irregardless of blocking.">
+        <Diagram description="Standing block counters highs and mids. Lows however catch a standing target off guard and often knocks them down. Although every character has a low option, they are less common and mostly performed crouching.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -283,15 +285,7 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <p>
-          So far, blocking low counters every attack type. Overheads counter
-          this. An <strong>Overhead</strong> attack{' '}
-          <strong>must be blocked standing</strong>. Like lows, overheads are
-          less common. All jump-in attacks are overheads. Standing overheads are
-          rare.
-        </p>
-
-        <Diagram description="Overheads hit crouching targets, irregardless of blocking.">
+        <Diagram description="A player can hold low block and counter all incomming high, mid and low attacks. This is where overheads come in - they force a high block. All jump-ins are overheads. Standing overheads are rare.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -317,25 +311,7 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <p>
-          Overheads are slower than mids and lows. If the defender spots or
-          predicts an overhead while crouch-blocking, they can release the down
-          button while still holding block. Their character will stand to block
-          the overhead, then presses down again to meet follow-up mids or lows.
-          This is called <strong>fuzzy blocking</strong> (or fuzzing, block OS,
-          or block switching). Learning which attacks can be fuzzy blocked, and
-          when, takes practice.
-        </p>
-
-        <p>
-          A skilled player can block all attacks. However,{' '}
-          <strong>throws skip blocking</strong>. If the target is within reach,
-          they get grabbed - unless they duck without blocking or press the
-          correct button to break the throw. Breaking a throw is called{' '}
-          <strong>teching</strong>. Throws can go forward or backward.
-        </p>
-
-        <Diagram description="Throws mix things up for good blockers. Pressing 2/4 for forward and 1/3 for backward throws will tech them. Ducking will skip the grab.">
+        <Diagram description="Throws are block punishes. They mix things up for players who tend to hold block.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Throw</div>
             <Image src={throwGrab} alt="Throw grabbing an opponent." />
@@ -355,18 +331,6 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <p>
-          Some special moves are throws, and some strings end with a throw.
-          These are called <strong>command grabs</strong>. They can be avoided
-          but <strong>can't be teched</strong>. If the target is grabbed, they
-          take damage.
-        </p>
-
-        <p>
-          Some moves are <strong>Unblockable</strong>. If they connect, the
-          target takes damage.
-        </p>
-
         <Diagram description="Unblockables are mostly special moves. They have a hitbox that must be avoided to skip damage.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Guaranteed damage on hit</div>
@@ -378,10 +342,32 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <p className="font-bold">
-          Every block has a counter. If they keep blocking high, mix in a low
-          attack. If they keep blocking low, throw in an overhead. If they keep
-          guessing correctly, trick them with a throw.
+        <ul className="mb-4 ml-4.5 list-disc">
+          <li>Standing block counters all attacks except lows.</li>
+          <li>Crouching block counters all attacks except overheads.</li>
+          <li>
+            Highs are naturally performed standing, lows crouching and overheads
+            jumping.
+          </li>
+          <li>
+            Standing low and overhead attacks are rare and valuable as they
+            don't require jump-ins or ducking and can be performed on the move.
+          </li>
+        </ul>
+
+        <p>
+          If they keep blocking high, mix in a low attack. If they keep blocking
+          low, throw in an overhead. If they keep guessing correctly, trick them
+          with a throw.
+        </p>
+
+        <h3 id="command-grabs">Command grabs</h3>
+
+        <p>
+          Some special moves are throws, and some strings end with a throw.
+          These are called <strong>command grabs</strong>. They can be avoided
+          but <strong>can't be teched</strong>. If the target is grabbed, they
+          take damage. Needless to say, these are rare.
         </p>
       </Section>
 
@@ -393,19 +379,15 @@ export default async function Page() {
         <ImageWithCaption
           src={liMeiAdvancedView}
           alt="Li Mei's move list showing frame data."
-          caption="The move list's advanced view shows frame data and notes for each move. This shows PC anotations."
+          caption="The move list's advanced view shows frame data and notes for each move. This is PC anotations."
         />
 
-        <p className="font-bold">
-          Frame data measures how long a character takes to execute and recover
-          from a move based on whether the move hit, missed, or was blocked.
-        </p>
-
         <p>
-          MK runs at 60 frames per second using frame-based animations instead
-          of time-based ones. This shows exactly how many frames each move
-          takes. Understanding frame data is essential for learning a move's
-          strengths and weaknesses.
+          Frame data measures how long a character takes to execute and recover
+          from a move based on whether the move hit, missed, or was blocked. MK,
+          same as most fighting games, runs at 60 frames per second using
+          frame-based animations instead of time-based ones. This additional
+          layer of precision evens out how many frames each move takes.
         </p>
 
         <h3 id="move-phases">Move phases</h3>
@@ -413,14 +395,10 @@ export default async function Page() {
         <p>
           Every attack has a <em>beginning</em>, <em>middle</em>, and{' '}
           <em>end</em>. In the game, these are called <em>start-up</em>,{' '}
-          <em>active</em>, and <em>recovery</em> frames.
-        </p>
-
-        <p>
-          The beginning is start-up: the time from pressing the button until the
-          attack becomes active. Active frames follow - how long the attack can
-          hit. Recovery is the time after hitting until the character can act
-          again.
+          <em>active</em>, and <em>recovery</em> frames. The beginning is
+          start-up: the time in frames from pressing the button until the attack
+          becomes active. Active frames follow - how long the attack can hit.
+          Recovery is the time after hitting until the character can act again.
         </p>
 
         <Diagram description="We can split any attack into three sections - start-up in blue, active in red and recovery in green.">
@@ -436,35 +414,40 @@ export default async function Page() {
 
         <h3 id="fast-vs-slow">Fast vs slow</h3>
 
-        <p className="font-bold">
-          The speed of a move is determined by its start-up frames.
+        <p>
+          The speed of a move is determined by its start-up frames or how much
+          time it gives the other side to spot it being executed and react.
+          Every player has different reaction time, but as a baseline:
+        </p>
+
+        <ul className="mb-4 ml-4.5 list-disc">
+          <li>
+            Moves that have up to 10 frames start-up (1/6th of a second) are
+            considered fast.
+          </li>
+          <li>Moves with start-up frames between 11 and 20 are borderline.</li>
+          <li>
+            Moves with more than 20 frames start-up (1/3rd of a second) give
+            enough time for many players to react.
+          </li>
+        </ul>
+
+        <p>
+          The fastest attacks all characters have are their standing punches.
+          They are usually 7 - 9 frames start-up. A 7 frame start-up is
+          considered the fastest, which will come into play when discussing safe
+          vs unsafe moves.
         </p>
 
         <p>
-          Whether a move feels fast or slow is subjective. Some can react within
-          10 frames, but most need more time. We learn to read opponents and
-          plan ahead.
-        </p>
-
-        <p className="font-bold">
-          As a baseline, 10 frames (1/6th of a second) and below is quick, while
-          20 frames (1/3rd of a second) and above is slow.
-        </p>
-
-        <p>
-          Punches are quick, kicks and special moves are slower. Most punches
-          have 7-8 frames start-up, the standard for fastest attacks.
-        </p>
-
-        <p>
-          Moves outside of punches vary a lot. A start-up of 13-17 frames is in
-          between fast and slow. By contrast, a 28-frame start-up gives ample
-          time to react.
+          Moves outside of punches vary a lot. A start-up of 13-17 frames can be
+          slow for some players and fast for others. By contrast, a 28-frame
+          start-up move (almost half a second) gives ample time to react.
         </p>
 
         <h3 id="safe-vs-unsafe">Safe vs unsafe</h3>
 
-        <p className="font-bold">
+        <p>
           A move's safety is determined by its recovery when hitting, missing,
           or blocking. Recovery is often called advantage.
         </p>

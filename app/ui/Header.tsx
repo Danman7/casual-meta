@@ -49,9 +49,9 @@ export const Header = ({ sectionNav }: HeaderProps) => {
               type="button"
             >
               {isMobileMenuOpen ? (
-                <IoMdClose aria-hidden="true" focusable="false" />
+                <IoMdClose focusable="false" />
               ) : (
-                <IoMdMenu aria-hidden="true" focusable="false" />
+                <IoMdMenu focusable="false" />
               )}
             </button>
 
@@ -60,7 +60,7 @@ export const Header = ({ sectionNav }: HeaderProps) => {
               href="/"
               aria-label="Go to homepage"
             >
-              <BsPcDisplay aria-hidden="true" focusable="false" />
+              <BsPcDisplay focusable="false" />
               <span className="hidden sm:inline">Casual Meta</span>
             </Link>
           </div>
@@ -69,7 +69,6 @@ export const Header = ({ sectionNav }: HeaderProps) => {
 
       <div
         id="mobile-nav"
-        aria-hidden={!isMobileMenuOpen}
         className={`fixed top-14 left-0 w-full max-w-82 h-[calc(100vh-3.5rem)] transition ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} z-40 lg:hidden`}
       >
         <SideNavigation sectionNav={sectionNav} hideLogo isMobile />
