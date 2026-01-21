@@ -149,8 +149,8 @@ export default async function Page() {
         <ul className="mb-4 ml-4.5 list-disc">
           <li>
             If the attack hits, the target suffers the appropriate damage and{' '}
-            <em>hit stun</em>: they cannot act for a longer period of time.
-            Usually on hitm, the attacker recovers much sooner than the target.
+            <em>hit stun</em>: they cannot act for a period of time. Usually on
+            hit, the attacker recovers much sooner than the target.
           </li>
 
           <li>
@@ -162,22 +162,25 @@ export default async function Page() {
 
           <li>
             If the attack misses, the target suffers neither damage nor stun,
-            but the attacker must still recover. Baiting a miss is a central
-            tactic.
+            but the attacker must still recover. Baiting a miss is central to
+            mind games.
           </li>
         </ul>
       </Section>
 
       <Section title="Block type" id="block-type">
         <p>
-          A basic rock-paper-scissors game exists based on stances. Every move
-          has a Block Type determining how it must be blocked.
+          Every move has a Block Type determining how it must be blocked. It's a
+          basic rock-paper-scissors game based on{' '}
+          <Link href={`${mkRoute('Movement')}#stances`}>stances</Link>. The
+          common block types are <em>high</em>, <em>mid</em>, <em>low</em>,{' '}
+          <em>overhead</em> and <em>unblockable</em>.
         </p>
 
         <ImageWithCaption
           src={raidenMoveList}
           alt="Raiden's move list in basic view."
-          caption="In Mortal Kombat 1, the basic move list of a character shows each move's damage and block type. This shows xbox annotations."
+          caption="In Mortal Kombat 1, the basic move list of a character shows each move's damage and block type. This is xbox annotations."
           className="max-h-96 object-cover"
         />
 

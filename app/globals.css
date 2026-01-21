@@ -77,7 +77,7 @@
 
 @layer base {
   section h3 {
-    scroll-margin-top: 4.5rem;
+    scroll-margin-top: 2rem;
     font-size: var(--text-lg);
     font-weight: var(--font-weight-medium);
     margin-top: --spacing(8) !important;
