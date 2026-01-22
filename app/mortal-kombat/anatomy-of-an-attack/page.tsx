@@ -69,8 +69,9 @@ export default async function Page() {
 
       <Section>
         <p>
-          Modern MK games expose each move's <em>frame data</em>. It tells how a
-          move works in detail. First, we cover basic attack concepts.
+          Modern MK games expose each move's <em>frame data</em>. MKX, MK11 and
+          MK1 have this feature. It tells how a move works in detail. First, we
+          cover basic attack concepts.
         </p>
       </Section>
 
@@ -105,6 +106,11 @@ export default async function Page() {
             The attack can <em>miss</em> if the opponent is not within reach.
           </li>
         </ul>
+
+        <p>
+          Missing is widely referred to as <strong>a whiff</strong> or to whiff
+          an attack.
+        </p>
 
         <Diagram>
           <div className="flex flex-col gap-2 font-semibold items-center">
@@ -415,9 +421,10 @@ export default async function Page() {
         <h3 id="fast-vs-slow">Fast vs slow</h3>
 
         <p>
-          The speed of a move is determined by its start-up frames or how much
-          time it gives the other side to spot it being executed and react.
-          Every player has different reaction time, but as a baseline:
+          The <strong>speed</strong> of a move <strong>is determined by</strong>{' '}
+          its <strong>start-up frames</strong> or how much time it gives the
+          other side to spot it being executed and react. Every player has
+          different reaction time, but as a baseline:
         </p>
 
         <ul className="mb-4 ml-4.5 list-disc">
@@ -427,152 +434,134 @@ export default async function Page() {
           </li>
           <li>Moves with start-up frames between 11 and 20 are borderline.</li>
           <li>
-            Moves with more than 20 frames start-up (1/3rd of a second) give
-            enough time for many players to react.
+            Moves with more than 20 frames start-up (1/3rd of a second) are
+            easier to spot.
           </li>
         </ul>
 
         <p>
-          The fastest attacks all characters have are their standing punches.
+          The fastest attacks for all characters are their standing punches.
           They are usually 7 - 9 frames start-up. A 7 frame start-up is
           considered the fastest, which will come into play when discussing safe
-          vs unsafe moves.
-        </p>
-
-        <p>
-          Moves outside of punches vary a lot. A start-up of 13-17 frames can be
-          slow for some players and fast for others. By contrast, a 28-frame
-          start-up move (almost half a second) gives ample time to react.
+          vs unsafe moves. Moves outside of punches vary a lot.
         </p>
 
         <h3 id="safe-vs-unsafe">Safe vs unsafe</h3>
 
         <p>
-          A move's safety is determined by its recovery when hitting, missing,
-          or blocking. Recovery is often called advantage.
+          A move's <strong>safety is determined by</strong> its{' '}
+          <strong>recovery on block</strong>. This is known as{' '}
+          <em>advantave/disadvantage on block</em>. When opening up any move's
+          frame data in a MK game that supports it, you will see these:
+        </p>
+
+        <ul className="mb-4 ml-4.5 list-disc">
+          <li>
+            <strong>Recovery</strong> is the frames it takes the character to be
+            able to act again after the move's active phase. These are important
+            mostly on miss as the opponent will have that many frames to punish
+            a whiff.
+          </li>
+
+          <li>
+            <strong>Hit advantage</strong> shows how much sooner the attacker
+            will be free to act if the attack hits. The larger the number, the
+            bigger the freedom/advantage to follow up with another attack.
+          </li>
+
+          <li>
+            <strong>Block advantage</strong> shows who will recover first if the
+            given move is blocked. If the number is positive, the attacker
+            recovers sooner, by that many frames. If negative, the defender
+            recovers sooner. If it's zero, both recover at the same time - known
+            as <em>neutral on block</em>.
+          </li>
+        </ul>
+
+        <p>
+          Very few attacks are positive on block and usually only by a few
+          frames. They give the attacker chance to lock the defender into
+          blocking, because they recover sooner and can throw another attack if
+          timed correctly. These are called <em>plus frames</em> and enable{' '}
+          <em>frame traps and jails</em>.
         </p>
 
         <p>
-          The frames in the <em>Recovery</em> section are valid on miss. The
-          opponent has these frames to hit you while you recover. Most attacks
-          have slow recovery on miss, making <em>whiff baiting</em> a central
-          tactic in <Link href={mkRoute('Neutral')}>Neutral</Link>.
+          The big majority of moves are negative on block, which means the
+          defender recovers sooner, but that doesn't make them unsafe on its
+          own. The defender must be able to throw in a quick enough attack to be
+          able to take advantage of the negative frames. Since 7 frames start-up
+          is considered standard for fastest attacks:
         </p>
 
-        <p>
-          <em>Hit advantage</em> shows how much sooner the attacker can act if
-          the attack hits. The additional frames after a hit are key for combos
-          along with <Link href={mkRoute('Cancelling')}>Canceling</Link>. More
-          frames mean more freedom.
-        </p>
+        <ul className="mb-4 ml-4.5 list-disc">
+          <li>
+            <strong>
+              Any attack with -6 block or higher is considered safe everywhere.
+            </strong>
+          </li>
+          <li>
+            Attacks worse than -6, e.g. -9 or -12, depend on whether the
+            counterattack is fast enough or the opponent is close enough.
+          </li>
+        </ul>
 
-        <p>
-          <em>Block advantage</em> compares recovery after blocking. The value
-          can be negative, meaning the defender recovers sooner. Most moves have
-          negative block advantage. Some are zero on block, making them neutral
-          - both recover simultaneously. Few attacks are positive on block,
-          giving the attacker more freedom when blocked. These are called{' '}
-          <em>plus frames</em> and enable <em>frame traps and jails</em>.
-        </p>
-
-        <p>
-          Player A throws an attack which Player B blocks. If A's attack is
-          minus on block and B counter-attacks immediately, B's attack needs its
-          start-up frames to activate. B's attack must have shorter start-up
-          than A's block disadvantage to hit.
-        </p>
-
-        <Callout title="Actual disadvantage on block">
+        <Callout title="Deep dive: actual disadvantage on block">
           <p>
-            Continuing the above example: if A's attack is -10 on block, B can
-            hit them if their counter-attack has less than 10 start-up frames.
-            If that is a regular 7-frame start-up punch, they can punish A.{' '}
-            <em>Provided they react within 2 frames of recovery</em>. If they
-            take 4 frames to react, their attack won't hit.
+            Player X throws an attack which Player Y blocks. If X's attack is
+            minus on block and Y counter-attacks immediately, Y's attack must
+            have shorter start-up than X's block disadvantage to hit.
+          </p>
+
+          <p>
+            X throws a -10 on block attack which Y blocks. X will be able to
+            block on the 11th frame. Can Y react in time:
           </p>
 
           <ul className="mb-4 ml-4.5 list-disc">
             <li>
-              Blocking a -10 on block move then immediately counter-attacking
-              with a 7-frame start-up move will hit with 3 frames to spare: -10
-              + 7 = -3.
+              A 7-frame start-up attack will hit with 3 frames to spare: -10 + 7
+              = -3. This means Y has to react within 3 frames of him recovering
+              to punish X. If Y reacts on the 4th frame his attack will become
+              active on the 11th frame so X will be able to block.
             </li>
 
             <li>
-              Blocking the same attack and reacting 2 frames after recovery will
-              hit with 1 frame to spare: -10 + 7 + 2 = -1.
+              A 9-frame attack leave only one frame to react: -10 + 9 = -1. This
+              must be the same frame Y recovers from block stun.
             </li>
 
             <li>
-              Reacting 4 frames later, however, will allow A to block: -10 + 7 +
-              4 = 1.
-            </li>
-
-            <li>
-              Blocking a -10 on block move then immediately counter with a 10
-              start-up move will hit if your timing is perfect: -10 + 10 = 0.
-            </li>
-
-            <li>
-              Blocking a -10 on block move then countering with a 12 start-up
-              attack will never work: -10 + 12 = 2. That is unless the attacker
-              does anything but block.
+              A 10 or above start-up attack will never work: -10 + 10 = 0. Both
+              attack and block become active on the 11th frame.
             </li>
           </ul>
+
+          <p>
+            Range also plays a role. A 7-frame start-up projectile might not
+            reach the opponent within the 10 frames to hit them.
+          </p>
         </Callout>
-
-        <p>
-          All of the above depends on range. Maybe A throws a projectile from
-          across the screen. B has quick attacks to counter after block, but can
-          they reach?
-        </p>
-
-        <p>So what makes an attack safe or unsafe?</p>
-
-        <p className="font-bold">
-          If most characters' fastest attack is 7 frames per second, anything
-          with more than -6 Block Advantage is safe.
-        </p>
-
-        <p>
-          A -7 on block move is unsafe if the counterattack is that fast. -7 and
-          -8 on block moves provide little time to react, making them
-          effectively safe.
-        </p>
-
-        <p>
-          Most special moves and many longer-reaching or damaging moves are
-          unsafe on block. Unsafe attacks produce better effects but should be
-          used carefully - in a combo, for example.
-        </p>
 
         <h3 id="punish">Punish and Counter</h3>
 
-        <p className="font-bold">
-          A Punish is a counterattack that hits an unsafe attack as it recovers.
-        </p>
-
-        <p>
-          The attack must be fast enough and the opponent within reach. A Punish
-          popup appears on screen. If your counterattack starts at the exact
-          frame of recovery after blocking, a Reversal Punish popup appears.
-        </p>
-
-        <p>
-          Evading an attack avoids block damage and leaves more time to react.
-        </p>
-
-        <p className="font-bold">
-          A Counter is any attack that hits an opponent during their attack's
-          start-up.
-        </p>
+        <ul className="mb-4 ml-4.5 list-disc">
+          <li>
+            A <strong>Punish</strong> is a counterattack that hits an opponent
+            during their recovery after block.
+          </li>
+          <li>
+            A <strong>Counter</strong> is an attack that hits during the
+            opponent's start-up. This requires a preemptive counterattack or
+            spotting a slow attack.
+          </li>
+        </ul>
 
         <h3 id="space-control">Space control</h3>
 
         <p>
-          Start-ups and recoveries vary widely between moves. What about active
-          frames? Most attacks have short active frames - 2 to 6 frames. But
-          some moves and most projectiles remain active much longer.
+          Start-up and recovery frame vary widely between moves. But most
+          attacks have short active frames - 2 to 6.
         </p>
 
         <p className="font-bold">
@@ -580,25 +569,32 @@ export default async function Page() {
         </p>
 
         <p>
-          They eat space away from the opponent. They must respect their
-          extended presence and trajectory. This involves staying put and
-          blocking/ducking. Facing a space-controlling move, committing to hasty
-          actions like jumping or dashing becomes risky.
+          The opponent must respect such moves' extended presence and
+          trajectory. This involves staying put and blocking/ducking. Facing a
+          space-controlling move, committing to hasty actions like jumping or
+          dashing becomes risky.
         </p>
       </Section>
 
       <Section title="Beyond the move list" id="beyond-the-move-list">
-        <Flavor>
-          This section covers attack traits not listed in frame data.
-        </Flavor>
+        <p>
+          Attacks can have traits which are not listed in the frame data, but
+          are important to their function and strategy. These characteristics
+          must be learned by experience.
+        </p>
 
-        <p>Some attack characteristics aren't in the data sheets.</p>
-
-        <h3 id="launch">Launch</h3>
-        <h3 id="knockdown">Knockdown</h3>
+        <h3 id="knockdown">Knockdown and knockback</h3>
 
         <p>
-          Some attacks knock the opponent down, giving better advantage on hit.
+          Some attacks knock the opponent down. They usually give superior
+          advantage on hit and can be recognized even by that alone.
+        </p>
+
+        <h3 id="launch">Launch</h3>
+
+        <p>
+          Some attacks launch the opponent into the air, setting up for combos
+          or extended damage.
         </p>
       </Section>
 
