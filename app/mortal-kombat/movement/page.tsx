@@ -7,9 +7,12 @@ import { MdChevronRight } from 'react-icons/md'
 import arena from '@/app/assets/mk/arena.webp'
 import backward from '@/app/assets/mk/backward.webp'
 import crouch from '@/app/assets/mk/crouch.webp'
+import crouchBlock from '@/app/assets/mk/crouchblock.webp'
 import forward from '@/app/assets/mk/forward.webp'
 import jump from '@/app/assets/mk/jump.webp'
+import knockdown from '@/app/assets/mk/knockdown.webp'
 import stand from '@/app/assets/mk/stand.webp'
+import standBlock from '@/app/assets/mk/standblock.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { Diagram } from '@/app/ui/Diagram'
@@ -179,15 +182,48 @@ export default async function Page() {
           or being caught on landing. Ground attacks that are effective at
           countering jump-ins are called <em>anti-airs</em>.
         </p>
+      </Section>
+
+      <Section title="States" id="states">
+        <Diagram>
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>Stand block</div>
+            <Image src={standBlock} alt="Character blocking high." />
+          </div>
+
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>Crouch block</div>
+            <Image src={crouchBlock} alt="Character blocking low." />
+          </div>
+
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>Knockdown</div>
+            <Image
+              src={knockdown}
+              alt="Character knocked down on the ground."
+            />
+          </div>
+        </Diagram>
 
         <h3 id="blocking">Blocking</h3>
 
         <p>
-          While holding the Block button, a player is in <em>Blocking</em> mode.
-          Each incoming attack that connects, will have reduced effects.
-          Blocking itself is not a stance, however it limits movement. It can be
-          performed while standing or crouching, but not jumping. While blocking
-          the character cannot move.
+          While holding the Block button, a player is in <em>Blocking</em>{' '}
+          state. Each incoming attack that connects, will have reduced effects.
+          It can be performed while standing or crouching, but not jumping.
+          <strong>While blocking the character cannot move.</strong>
+        </p>
+
+        <h3 id="knockdown">Knockdown</h3>
+
+        <p>
+          Some attacks leave the target flat on the ground. This is{' '}
+          <em>knocked down</em> state.{' '}
+          <strong>
+            While knocked down, the character cannot move, attack or block.
+          </strong>{' '}
+          They can only recover. This gives their opponent a significant
+          advantage to setup and pressure.
         </p>
       </Section>
 

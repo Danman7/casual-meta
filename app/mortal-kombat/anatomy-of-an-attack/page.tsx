@@ -10,6 +10,8 @@ import blockHighLow from '@/app/assets/mk/block_high_low.webp'
 import duckUnderHigh from '@/app/assets/mk/duck_under_high.webp'
 import duckUnderThrow from '@/app/assets/mk/duck_under_throw.webp'
 import jumpHitLow from '@/app/assets/mk/jump_hit_low.webp'
+import knockback from '@/app/assets/mk/knockback.webp'
+import launch from '@/app/assets/mk/launch.webp'
 import lowBlock from '@/app/assets/mk/low_block.webp'
 import lowHit from '@/app/assets/mk/low_hit.webp'
 import midBlockLow from '@/app/assets/mk/mid_block_low.webp'
@@ -29,7 +31,6 @@ import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
 import { Diagram } from '@/app/ui/Diagram'
-import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
@@ -79,7 +80,7 @@ export default async function Page() {
         <p>
           Pressing any of the{' '}
           <Link href={`${MK_BASE_URL}#move-annotations`}>face buttons</Link> or
-          the separate Throw button results in an attack. So is any combinations
+          the separate Throw button results in an attack. So is any combination
           of directions and an attack button. For example, <Pill>4</Pill>,{' '}
           <Pill>2</Pill>, <Pill>F3</Pill>, <Pill>B2</Pill> and
           <Pill>BF1</Pill> are all attacks.
@@ -93,7 +94,7 @@ export default async function Page() {
 
         <ul className="mb-4 ml-4.5 list-disc">
           <li>
-            The attack can <em>hit</em> if the opponent is withing reach and
+            The attack can <em>hit</em> if the opponent is within reach and
             isn't blocking.
           </li>
 
@@ -155,14 +156,14 @@ export default async function Page() {
         <ul className="mb-4 ml-4.5 list-disc">
           <li>
             If the attack hits, the target suffers the appropriate damage and{' '}
-            <em>hit stun</em>: they cannot act for a period of time. Usually on
+            <em>hit stun</em>: they cannot act for a period of time. Usually, on
             hit, the attacker recovers much sooner than the target.
           </li>
 
           <li>
             If the attack is blocked, the target suffers block or <em>chip</em>{' '}
             damage and <em>block stun</em>. Both damage and stun are usually
-            much lower/shorter than taking a hit. Wether the attacker or target
+            much lower/shorter than taking a hit. Whether the attacker or target
             recovers faster on block is dependent on the move's frame data.
           </li>
 
@@ -184,7 +185,7 @@ export default async function Page() {
         <ImageWithCaption
           src={raidenMoveList}
           alt="Raiden's MK1 move list in basic view."
-          caption="In Mortal Kombat 1, the basic move list of a character shows each move's damage and block type. This is xbox annotations."
+          caption="In Mortal Kombat 1, the basic move list of a character shows each move's damage and block type. This is Xbox annotations."
           className="max-h-96 object-cover"
         />
 
@@ -213,16 +214,16 @@ export default async function Page() {
           </li>
 
           <li>
-            <strong>Throws connect with standing targers</strong> regardless of
+            <strong>Throws connect with standing targets</strong> regardless of
             block, and with{' '}
-            <strong>crouching targers if they are blocking</strong>, but{' '}
+            <strong>crouching targets if they are blocking</strong>, but{' '}
             <strong>miss crouching targets if they are not blocking</strong>.
-            Throws can be escape by pressing 2/4 for forward and 1/3 for
-            backward throws. This is called to <em>tech</em> a throw.
+            Throws can be escaped by pressing 2/4 for forward and 1/3 for
+            backward throws. This is called <em>teching</em> a throw.
           </li>
 
           <li>
-            If the attack has <strong>Unblockable</strong> listed on it block
+            If the attack has <strong>Unblockable</strong> listed as its block
             type, it will{' '}
             <strong>always cause full damage if it connects</strong>.
           </li>
@@ -291,7 +292,7 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <Diagram description="A player can hold low block and counter all incomming high, mid and low attacks. This is where overheads come in - they force a high block. All jump-ins are overheads. Standing overheads are rare.">
+        <Diagram description="A player can hold low block and counter all incoming high, mid, and low attacks. This is where overheads come in - they force a high block. All jump-ins are overheads. Standing overheads are rare.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -385,13 +386,13 @@ export default async function Page() {
         <ImageWithCaption
           src={liMeiAdvancedView}
           alt="Li Mei's move list showing frame data."
-          caption="The move list's advanced view shows frame data and notes for each move. This is PC anotations."
+          caption="The move list's advanced view shows frame data and notes for each move. This is PC annotations."
         />
 
         <p>
           Frame data measures how long a character takes to execute and recover
           from a move based on whether the move hit, missed, or was blocked. MK,
-          same as most fighting games, runs at 60 frames per second using
+          like most fighting games, runs at 60 frames per second using
           frame-based animations instead of time-based ones. This additional
           layer of precision evens out how many frames each move takes.
         </p>
@@ -407,7 +408,7 @@ export default async function Page() {
           Recovery is the time after hitting until the character can act again.
         </p>
 
-        <Diagram description="We can split any attack into three sections - start-up in blue, active in red and recovery in green.">
+        <Diagram description="We can split any attack into three sections - start-up in blue, active in red, and recovery in green.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Start-up &rarr; Active &rarr; Recovery</div>
 
@@ -424,7 +425,7 @@ export default async function Page() {
           The <strong>speed</strong> of a move <strong>is determined by</strong>{' '}
           its <strong>start-up frames</strong> or how much time it gives the
           other side to spot it being executed and react. Every player has
-          different reaction time, but as a baseline:
+          different reaction times, but as a baseline:
         </p>
 
         <ul className="mb-4 ml-4.5 list-disc">
@@ -441,9 +442,9 @@ export default async function Page() {
 
         <p>
           The fastest attacks for all characters are their standing punches.
-          They are usually 7 - 9 frames start-up. A 7 frame start-up is
-          considered the fastest, which will come into play when discussing safe
-          vs unsafe moves. Moves outside of punches vary a lot.
+          They are usually 7-9 frames start-up. A 7-frame start-up is considered
+          the fastest, which will come into play when discussing safe vs unsafe
+          moves. Moves outside of punches vary a lot.
         </p>
 
         <h3 id="safe-vs-unsafe">Safe vs unsafe</h3>
@@ -451,15 +452,15 @@ export default async function Page() {
         <p>
           A move's <strong>safety is determined by</strong> its{' '}
           <strong>recovery on block</strong>. This is known as{' '}
-          <em>advantave/disadvantage on block</em>. When opening up any move's
-          frame data in a MK game that supports it, you will see these:
+          <em>advantage/disadvantage on block</em>. When opening up any move's
+          frame data in an MK game that supports it, you will see these:
         </p>
 
         <ul className="mb-4 ml-4.5 list-disc">
           <li>
             <strong>Recovery</strong> is the frames it takes the character to be
             able to act again after the move's active phase. These are important
-            mostly on miss as the opponent will have that many frames to punish
+            mostly on miss, as the opponent will have that many frames to punish
             a whiff.
           </li>
 
@@ -508,14 +509,9 @@ export default async function Page() {
 
         <Callout title="Deep dive: actual disadvantage on block">
           <p>
-            Player X throws an attack which Player Y blocks. If X's attack is
-            minus on block and Y counter-attacks immediately, Y's attack must
-            have shorter start-up than X's block disadvantage to hit.
-          </p>
-
-          <p>
-            X throws a -10 on block attack which Y blocks. X will be able to
-            block on the 11th frame. Can Y react in time:
+            Player X throws a -10 on block attack which player Y blocks. Player
+            X will recover until the 11th frame when he will be able to block.
+            Can Y react in time:
           </p>
 
           <ul className="mb-4 ml-4.5 list-disc">
@@ -527,13 +523,14 @@ export default async function Page() {
             </li>
 
             <li>
-              A 9-frame attack leave only one frame to react: -10 + 9 = -1. This
-              must be the same frame Y recovers from block stun.
+              A 9-frame attack leaves only one frame to react: -10 + 9 = -1.
+              This must be the same frame Y recovers from block stun.
             </li>
 
             <li>
-              A 10 or above start-up attack will never work: -10 + 10 = 0. Both
-              attack and block become active on the 11th frame.
+              A 10 or above start-up attack will not work: -10 + 10 = 0. Both
+              attack and block become active on the 11th frame. That is if X
+              blocks immediately after recovery.
             </li>
           </ul>
 
@@ -543,7 +540,7 @@ export default async function Page() {
           </p>
         </Callout>
 
-        <h3 id="punish">Punish and Counter</h3>
+        <h3 id="punish">Punish and counter</h3>
 
         <ul className="mb-4 ml-4.5 list-disc">
           <li>
@@ -560,7 +557,7 @@ export default async function Page() {
         <h3 id="space-control">Space control</h3>
 
         <p>
-          Start-up and recovery frame vary widely between moves. But most
+          Start-up and recovery frames vary widely between moves. But most
           attacks have short active frames - 2 to 6.
         </p>
 
@@ -586,21 +583,55 @@ export default async function Page() {
         <h3 id="knockdown">Knockdown and knockback</h3>
 
         <p>
-          Some attacks knock the opponent down. They usually give superior
-          advantage on hit and can be recognized even by that alone.
+          Whether an attack results in a{' '}
+          <Link href={`${mkRoute('Movement')}#knockdown`}>knockdown</Link> is
+          not listed in its data. If it does, it will put the opponent flat on
+          the ground next to the attacker. Some knockdown attacks also push the
+          opponent away from the attacker. This is called <em>knockback</em>.
         </p>
+
+        <Diagram description="A knockdown creates superior advantage because it leaves the target next to the attacker. A knockback gives more space, hence more time to recover.">
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>Knockdown</div>
+            <Image
+              src={lowHit}
+              alt="A low kick hitting a crouching opponent."
+            />
+          </div>
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>Knockback</div>
+            <Image src={knockback} alt="A high kick knocking opponent back." />
+          </div>
+        </Diagram>
 
         <h3 id="launch">Launch</h3>
 
         <p>
-          Some attacks launch the opponent into the air, setting up for combos
-          or extended damage.
+          Some attacks launch the opponent into the air. These are known as{' '}
+          <em>launchers</em>. All MK games have the common <Pill>D2</Pill>{' '}
+          launcher, which doesn't allow for follow-ups. But some launchers also
+          have good enough frame advantage to allow for immediate follow-up
+          attacks. These are critical for extending combos.
         </p>
+
+        <Diagram description="">
+          <div className="flex flex-col gap-2 font-semibold items-center">
+            <div>
+              <Pill>D2</Pill> launches the opponent
+            </div>
+            <Image
+              src={launch}
+              alt="A down 2 attack launching the opponent into the air."
+            />
+          </div>
+        </Diagram>
       </Section>
 
       <Section title="Other terms" id="other-terms">
-        <Flavor>Community terms related to attacks.</Flavor>
-
+        <p>
+          Some community terms describe a move's usage rather than its
+          properties.
+        </p>
         <h3 id="pokes">Pokes</h3>
 
         <p>
