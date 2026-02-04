@@ -39,10 +39,10 @@ export default async function Page() {
     <>
       <PageTitle
         title={navTitle}
-        subtitle="Movement forms the basis of combat and creates advantage even before attacks are thrown."
+        subtitle="Movement underpins combat. It creates advantage, even before the attacks begin."
         tags={
           <>
-            <Badge primary>
+            <Badge>
               <GiDeathSkull /> Mortal Kombat
             </Badge>
             <Badge>
@@ -54,17 +54,20 @@ export default async function Page() {
 
       <Section title="Forward and backward" id="forward-and-backward">
         <p>
-          Pressing left or right on the d-pad or thumbstick always moves your
-          character to the corresponding side in MK. But <strong>moves</strong>{' '}
-          like attacks and specials <strong>are position-sensitive</strong>{' '}
-          relative to your opponent. They are described as forward or backward
-          on the horizontal plane.
+          Pressing left or right always moves your character in that direction
+          on the screen. Move notation, however, is relative to your opponent.
         </p>
 
-        <Diagram
-          description="If you are to the left of your opponent, forward is
-          right. If you are to the right, forward is left."
-        >
+        <ul role="list" className="ml-4.5 list-disc">
+          <li>
+            <strong>Forward</strong>: Toward the opponent.
+          </li>
+          <li>
+            <strong>Backward</strong>: Away from the opponent.
+          </li>
+        </ul>
+
+        <Diagram description="If you are left of your opponent, forward is right. If you are right of your opponent, forward is left.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Forward</div>
             <Image src={forward} alt="Character stepping forward." />
@@ -95,28 +98,37 @@ export default async function Page() {
         </Diagram>
 
         <p>
-          This is accounted for in the in-game move lists. They update based on
-          your position relative to your foe. But when reading external
-          resources, you will see <Pill>F3</Pill>, which means <em>towards</em>{' '}
-          them, or forward, then press 3. <Pill>B2</Pill> reads <em>away</em>{' '}
-          from them, or back, then press 2.
+          In-game move lists auto-adjust. External guides do not. For example:
         </p>
+
+        <ul role="list" className="ml-4.5 list-disc">
+          <li>
+            <Pill>F3</Pill>: Toward the opponent, then press 3.
+          </li>
+          <li>
+            <Pill>B2</Pill>: Away from the opponent, then press 2.
+          </li>
+        </ul>
 
         <h3 id="dashing">Dashing</h3>
 
         <p>
-          Holding a direction is known as <em>walking</em>. You walk up to or
-          away from your foe. In modern MK, you can{' '}
-          <strong>double tap a horizontal direction</strong> to dash forward or
-          backward. This propels your character quickly in the chosen direction
-          and can be used to close distance or retreat.
+          Hold left or right to <em>walk</em> forward or backward. Double-tap
+          left or right to <em>dash</em> forward or backward.
         </p>
+
+        <ul role="list" className="ml-4.5 list-disc">
+          <li>
+            Walking moves your character cautiously toward or away from the
+            opponent.
+          </li>
+          <li>Dashes quickly close distance or create space.</li>
+        </ul>
       </Section>
 
       <Section title="Stances" id="stances">
         <p>
-          If walking and dashing portray level movement, <em>stances</em>{' '}
-          narrate how characters behave vertically.
+          <em>Stances</em> describe vertical behavior.
         </p>
 
         <Diagram>
@@ -139,48 +151,69 @@ export default async function Page() {
         <h3 id="standing">Standing</h3>
 
         <p>
-          If you are not pressing up or down, your character is{' '}
-          <em>Standing</em>. This is the initial stance when a round starts. It
-          offers the most freedom - you can move, block, attack, jump and
-          crouch. If a move notation is not accompanied by a direction input,
-          for example, <Pill>1</Pill> or <Pill>21</Pill>, it is performed from
-          standing.
+          The default state at round start is <em>Standing</em>.
+        </p>
+
+        <ul role="list" className="ml-4.5 list-disc">
+          <li>Standing is the most mobile stance.</li>
+          <li>You can move, block, attack, jump, or crouch.</li>
+        </ul>
+
+        <p>
+          Inputs without directions (e.g. <Pill>1</Pill>, <Pill>21</Pill>) are
+          performed standing. In some guides, simple annotations like{' '}
+          <Pill>1</Pill>( or any other button) are replaces with{' '}
+          <Pill>Standing 1</Pill> which means the same.
         </p>
 
         <h3 id="crouching">Crouching / Ducking</h3>
 
         <p>
-          Pressing down enters <em>Crouching</em> or <em>Ducking</em> stance.
-          This reduces the size of your character's hitbox, making them harder
-          to hit as described in{' '}
-          <Link href={`${mkRoute('Anatomy of attacks')}#block-type`}>
-            Block Type
-          </Link>
-          . While crouching, you can block or attack, but you{' '}
-          <strong>can't move</strong>, limiting your options.
+          Hold down to enter <em>crouching</em> or <em>ducking</em> stance.
+        </p>
+
+        <ul role="list" className="ml-4.5 list-disc">
+          <li>While crouching you have a smaller hitbox.</li>
+          <li>You can block and attack.</li>
+          <li>
+            But you <strong>cannot move</strong>.
+          </li>
+        </ul>
+
+        <p>
+          Croushing attacks are described with D for Down in front (.e.g.{' '}
+          <Pill>D2</Pill>,<Pill>D4</Pill>).
         </p>
 
         <h3 id="jumping">Jumping</h3>
 
         <p>
-          Pressing up makes the character <em>Jump</em>. Jumping vertically is
-          called a <em>neutral jump</em>. Pressing a horizontal direction while
-          jumping makes it a <em>forward</em> or <em>backward jump</em>. While
-          in the air, you can attack, but you <strong>can't block</strong>.
-          While you are technically moving, it happens on a predefined parabola.
+          Pressing up, without holding Block, makes the character <em>jump</em>.
+        </p>
+
+        <ul role="list" className="ml-4.5 list-disc">
+          <li>
+            Jumping straight up is a <em>neutral jump</em>.
+          </li>
+          <li>
+            Pressing up and forward or backward makes it a <em>forward jump</em>{' '}
+            or <em>backward jump</em>.
+          </li>
+          <li>Jumps follow a fixed arc.</li>
+          <li>You can attack in the air.</li>
+          <li>
+            You <strong>cannot block</strong> until you land.
+          </li>
+        </ul>
+
+        <p>
+          Attacking during a forward jump is a <em>jump-in</em>.
         </p>
 
         <p>
-          Attacking while jumping forward is known as a jump attack or a{' '}
-          <em>jump-in</em>.
-        </p>
-
-        <p>
-          A jump is a more serious commitment than walking, dashing or ducking.
-          While the character can evade many ground attacks, including high or
-          low ones, because they can't block, they are vulnerable to air attacks
-          or being caught on landing. Ground attacks that are effective at
-          countering jump-ins are called <em>anti-airs</em>.
+          Jumping avoids many ground attacks but is risky. You are vulnerable to
+          air attacks and landing recovery. Ground moves designed to stop jumps
+          are <em>anti-airs</em>.
         </p>
       </Section>
 
@@ -207,40 +240,45 @@ export default async function Page() {
 
         <h3 id="blocking">Blocking</h3>
 
-        <p>
-          While holding the Block button, a player is in <em>Blocking</em>{' '}
-          state. Each incoming attack that connects, will have reduced effects.
-          It can be performed while standing or crouching, but not jumping.
-          <strong>While blocking the character cannot move.</strong>
-        </p>
+        <p>Hold the Block button to block.</p>
+        <ul role="list" className="ml-4.5 list-disc">
+          <li>Blocking reduces damage from enemy attacks.</li>
+          <li>Can block standing or crouching.</li>
+          <li>Cannot block while jumping.</li>
+          <li>Cannot move while blocking.</li>
+        </ul>
 
         <h3 id="knockdown">Knockdown</h3>
 
         <p>
-          Some attacks leave the target flat on the ground. This is{' '}
-          <em>knocked down</em> state.{' '}
-          <strong>
-            While knocked down, the character cannot move, attack or block.
-          </strong>{' '}
-          They can only recover. This gives their opponent a significant
-          advantage to setup and pressure.
+          Certain attacks knock the opponent to the ground. When you are knocked
+          downL
         </p>
+
+        <ul role="list" className="ml-4.5 list-disc">
+          <li>You cannot move, block or attack.</li>
+          <li>
+            You can only <em>recover</em> (stand up).
+          </li>
+          <li>
+            Your opponent's attacks <strong>cannot hit you</strong> until you
+            recover.
+          </li>
+          <li>
+            However, your immobility grants them strong setup and pressure.
+          </li>
+        </ul>
       </Section>
 
       <Section title="Arena limitations" id="arena-limitations">
-        <p>Every duel takes place in an arena.</p>
-        <ul role="list" className="mb-4 ml-4.5 list-disc">
-          <li>
-            Arenas are horizontal spaces, with invisible boundaries on each
-            side.
-          </li>
+        <p>All fights occur in a single-level arena.</p>
 
-          <li>Arenas vary by size within a moderate range.</li>
+        <ul role="list" className="ml-4.5 list-disc">
+          <li>Horizontal space with invisible side boundaries.</li>
 
-          <li>
-            Modern arenas are not multi-tiered like in older titles. They have
-            only one level.
-          </li>
+          <li>Arena size varies within a small range.</li>
+
+          <li>No multi-tier stages like older MK.</li>
         </ul>
 
         <ImageWithCaption
@@ -249,41 +287,24 @@ export default async function Page() {
           caption="An artist's depiction of Goro's Lair in Mortal Kombat 11."
         />
 
-        <p>
-          Upon reaching the invisible barrier either to the left or the right, a
-          character:
-        </p>
+        <p>A character at the edge of the arena:</p>
 
-        <ul className="ml-4.5 list-disc">
-          <li>Cannot move further in that direction;</li>
-          <li>Cannot be knocked back in that direction.</li>
+        <ul role="list" className="ml-4.5 list-disc">
+          <li>Cannot move farther.</li>
+          <li>Cannot be knocked in that direction.</li>
         </ul>
 
-        <p>
-          For the person in the corner, this is a disadvantage as they cannot
-          retreat further and control distance. They must either jump over the
-          opponent or execute a side-switching move like a back throw to escape.
-          On the other hand, the person away from the corner can pressure more
-          easily and has new combo routes open to them. Moves where knockback
-          would otherwise push them out of range can now be chained. These are
-          known as <em>corner combos</em> and are usually the most damaging
-          routes.
-        </p>
-      </Section>
+        <p>Being in the corner is a disadvantage.</p>
 
-      <Section title="Key takeaways" id="takeaways">
-        <ul className="ml-4.5 list-disc">
+        <ul role="list" className="ml-4.5 list-disc">
+          <li>No room to retreat.</li>
+          <li>The opponent dictates the space between the fighters.</li>
           <li>
-            Forward and backward are relative to your opponent's position.
-          </li>
-          <li>Standing is best for mobility.</li>
-          <li>
-            Crouching and Blocking both prevent moving. Jumping prevents
-            blocking.
+            Because no knockback in the corner, the opponent gains access to
+            high damage corner combos.
           </li>
           <li>
-            Cornering the opponent is an advantage. Being cornered is a
-            disadvantage.
+            Must jump over the opponent or use a side-switching move to escape.
           </li>
         </ul>
       </Section>
