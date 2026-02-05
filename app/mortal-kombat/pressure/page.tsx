@@ -168,7 +168,7 @@ export default async function Page() {
           punch. This infamous move can:
         </p>
 
-        <ul className="mb-4 ml-4.5 list-disc">
+        <ul>
           <li>Reset opponent's pressure</li>
           <li>Steal your turn back</li>
           <li>Interrupt high strings</li>

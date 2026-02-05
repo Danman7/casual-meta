@@ -68,7 +68,7 @@ export default async function Page() {
       <Section title="Fundamentals" id="fundamentals">
         <p>At its core, modern MK remains:</p>
 
-        <ul className="ml-4.5 list-disc">
+        <ul>
           <li>One-on-one combat</li>
           <li>
             Players outplaying each other within the allotted time and space
@@ -97,7 +97,7 @@ export default async function Page() {
           after some time. MK <em>feels hard</em> because:
         </p>
 
-        <ul className="ml-4.5 list-disc">
+        <ul>
           <li>Action unfolds very quickly</li>
           <li>Skill gap between players</li>
           <li>Learning curve can feel steep</li>
@@ -105,7 +105,7 @@ export default async function Page() {
 
         <p>At the same time:</p>
 
-        <ul className="ml-4.5 list-disc">
+        <ul>
           <li>Each mechanic can be broken down into simple parts</li>
           <li>
             Mastering basic moves often yields better results than long combos
@@ -203,7 +203,7 @@ export default async function Page() {
 
         <p>The buttons are mapped like so:</p>
 
-        <ul className="ml-4.5 list-disc">
+        <ul>
           <li>1 - Front Punch (X / Square)</li>
           <li>2 - Back Punch (Y / Triangle)</li>
           <li>3 - Front Kick (A / Cross)</li>
@@ -215,7 +215,7 @@ export default async function Page() {
           relation to the position of the enemy like so:
         </p>
 
-        <ul className="ml-4.5 list-disc">
+        <ul>
           <li>F - Forward / Towards your foe</li>
           <li>B - Backward / Away from your foe</li>
           <li>D - Down / Crouch</li>

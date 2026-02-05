@@ -24,7 +24,6 @@ import throwGrab from '@/app/assets/mk/throw.webp'
 import throwTech from '@/app/assets/mk/throw_tech.webp'
 import trade1 from '@/app/assets/mk/trade1.webp'
 import trade2 from '@/app/assets/mk/trade2.webp'
-import unblockable from '@/app/assets/mk/unblockable.webp'
 import liMeiAdvancedView from '@/app/assets/mk1/advanced_view.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
@@ -54,13 +53,13 @@ export default async function Page() {
     <>
       <PageTitle
         title={navTitle}
-        subtitle="Every attack is a commitment. A round is a sequence of commitments.
-          Your goal is to come out ahead."
+        subtitle="Every attack is a commitment. A round is a series of commitments. Your goal is to gain more than you give."
         tags={
           <>
-            <Badge primary>
+            <Badge>
               <GiDeathSkull /> Mortal Kombat
             </Badge>
+
             <Badge>
               <FaWrench /> Core Mechanics
             </Badge>
@@ -70,48 +69,64 @@ export default async function Page() {
 
       <Section>
         <p>
-          Modern MK games expose each move's <em>frame data</em>. MKX, MK11 and
-          MK1 have this feature. It tells how a move works in detail. First, we
-          cover basic attack concepts.
+          Modern Mortal Kombat games expose frame data for each move. MKX, MK11
+          and MK1 include this feature. It shows how a move behaves in detail.
+          First, we cover the basics.
         </p>
       </Section>
 
       <Section title="Hit vs block vs miss" id="hit-vs-block-vs-miss">
         <p>
-          Pressing any of the{' '}
-          <Link href={`${MK_BASE_URL}#move-annotations`}>face buttons</Link> or
-          the separate Throw button results in an attack. So is any combination
-          of directions and an attack button. For example, <Pill>4</Pill>,{' '}
-          <Pill>2</Pill>, <Pill>F3</Pill>, <Pill>B2</Pill> and
+          Pressing any{' '}
+          <Link href={`${MK_BASE_URL}#move-annotations`}>face button</Link>{' '}
+          (with or without a direction) or the Throw button, results in an
+          attack. Inputs like <Pill>4</Pill>, <Pill>2</Pill>, <Pill>F3</Pill>,{' '}
+          <Pill>Throw</Pill>, <Pill>B2</Pill> and
           <Pill>BF1</Pill> are all attacks.
         </p>
 
         <p>
-          When one of the characters executes an attack, they can't do anything
-          else until the attack finishes. During that time one of three things
-          can happen:
+          The player that initiates the attack is the <em>attacker</em>. The
+          other one is the <em>defender</em> or the <em>target</em>. Once an
+          attack starts, the attacker cannot act until it ends. One of three
+          outcomes can occurs:
         </p>
 
-        <ul className="mb-4 ml-4.5 list-disc">
+        <ul className="space-y-2">
           <li>
-            The attack can <em>hit</em> if the opponent is within reach and
-            isn't blocking.
+            <strong>Hit:</strong> The defender is within range of the attack and
+            not blocking.
+            <ul>
+              <li>The defender takes full damage and hit stun.</li>
+              <li>The attacker usually recovers first.</li>
+            </ul>
           </li>
 
           <li>
-            The attack can be <em>blocked</em> if the opponent is within reach
-            but is pressing block.
+            <strong>Block:</strong> The defender is within range of the attack
+            and blocking.
+            <ul>
+              <li>
+                The defender takes reduced damage known as <em>block</em> or{' '}
+                <em>chip</em> damage and reduced hit stun.
+              </li>
+              <li>Who recovers first depends on frame data.</li>
+            </ul>
           </li>
 
           <li>
-            The attack can <em>miss</em> if the opponent is not within reach.
+            <strong>Miss aka. Whiff:</strong> The defender is not within range
+            of the attack.
+            <ul>
+              <li>The defender takes no damage or stun.</li>
+              <li>The attacker must still recover.</li>
+              <li>
+                Forcing whiffs is central to mind games as it gives the biggest
+                advantage for the defender.
+              </li>
+            </ul>
           </li>
         </ul>
-
-        <p>
-          Missing is widely referred to as <strong>a whiff</strong> or to whiff
-          an attack.
-        </p>
 
         <Diagram>
           <div className="flex flex-col gap-2 font-semibold items-center">
@@ -134,8 +149,8 @@ export default async function Page() {
         </Diagram>
 
         <p>
-          Also, it is possible for both players to hit each other at the same
-          time. This is called a <em>trade</em>.
+          Both players can hit each other at the same time. This is called a{' '}
+          <em>trade</em>.
         </p>
 
         <Diagram>
@@ -152,34 +167,14 @@ export default async function Page() {
             <Image src={trade2} alt="A high punch being ducked under." />
           </div>
         </Diagram>
-
-        <ul className="mb-4 ml-4.5 list-disc">
-          <li>
-            If the attack hits, the target suffers the appropriate damage and{' '}
-            <em>hit stun</em>: they cannot act for a period of time. Usually, on
-            hit, the attacker recovers much sooner than the target.
-          </li>
-
-          <li>
-            If the attack is blocked, the target suffers block or <em>chip</em>{' '}
-            damage and <em>block stun</em>. Both damage and stun are usually
-            much lower/shorter than taking a hit. Whether the attacker or target
-            recovers faster on block is dependent on the move's frame data.
-          </li>
-
-          <li>
-            If the attack misses, the target suffers neither damage nor stun,
-            but the attacker must still recover. Baiting a miss is central to
-            mind games.
-          </li>
-        </ul>
       </Section>
 
       <Section title="Block type" id="block-type">
         <p>
-          Every move has a Block Type determining how it must be blocked. It's a
-          basic rock-paper-scissors game based on{' '}
-          <Link href={`${mkRoute('Movement')}#stances`}>stances</Link>.
+          Each move has a block type that determines how it must be defended.
+          It's a rock-paper-scissors game based on{' '}
+          <Link href={`${mkRoute('Movement')}#stances`}>stances</Link>. A move
+          can both be a normal attack or a special.
         </p>
 
         <ImageWithCaption
@@ -189,47 +184,18 @@ export default async function Page() {
           className="max-h-96 object-cover"
         />
 
-        <p>The common attacks based on their block types are:</p>
+        <h3 id="high">High</h3>
 
-        <ul className="mb-4 ml-4.5 list-disc">
-          <li>
-            <strong>High</strong> attacks which{' '}
-            <strong>must be blocked standing</strong> but{' '}
-            <strong>miss if the target is crouching and not blocking</strong>.
-          </li>
-
-          <li>
-            <strong>Mid</strong> attacks{' '}
-            <strong>must be blocked both if standing or crouching.</strong>
-          </li>
-
-          <li>
-            <strong>Low</strong> attacks <strong>must be blocked low</strong>.
-          </li>
-
-          <li>
-            <strong>Overhead</strong> attacks{' '}
-            <strong>must be blocked standing</strong>. They{' '}
-            <strong>hit crouching targets</strong> even if they are blocking.
-          </li>
-
-          <li>
-            <strong>Throws connect with standing targets</strong> regardless of
-            block, and with{' '}
-            <strong>crouching targets if they are blocking</strong>, but{' '}
-            <strong>miss crouching targets if they are not blocking</strong>.
-            Throws can be escaped by pressing 2/4 for forward and 1/3 for
-            backward throws. This is called <em>teching</em> a throw.
-          </li>
-
-          <li>
-            If the attack has <strong>Unblockable</strong> listed as its block
-            type, it will{' '}
-            <strong>always cause full damage if it connects</strong>.
-          </li>
+        <ul>
+          <li>High attacks always hit a standing defender.</li>
+          <li>Also hit a crouching one if they are blocking.</li>
+          <li>Miss a crouching defender if they are not blocking.</li>
         </ul>
 
-        <Diagram description="A high attack will still connect if blocked low. A crouching defender must take the risk of not blocking at all to evade it. You can say these are the 'natural' attacks as the most basic standing attacks are usually high. They are very common.">
+        <Diagram
+          description="High attacks are fairly common. They are usually performed standing,
+          offering the best mobility for the attacker."
+        >
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -254,7 +220,16 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <Diagram description="Mids are also very common. They cover both standing and crouching targets. This makes ducking under a high attack risky of getting hit by a mid.">
+        <h3 id="mid">Mid</h3>
+        <ul>
+          <li>Mid attacks hit both standing and crouching defenders.</li>
+          <li>
+            If defender is within reach, they must block a mid regardless of
+            stance.
+          </li>
+        </ul>
+
+        <Diagram description="Mids are also very common and also mostly performed standing. They make ducking under a high attack risky.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -277,7 +252,14 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <Diagram description="Standing block counters highs and mids. Lows however catch a standing target off guard and often knocks them down. Although every character has a low option, they are less common and mostly performed crouching.">
+        <h3 id="low">Low</h3>
+        <ul>
+          <li>Low attacks must be blocked low.</li>
+          <li>They hit standing defenders regardless of blocking.</li>
+          <li>Often knock down the opponent.</li>
+        </ul>
+
+        <Diagram description="Most low attacks are performed while crouching. Low attacks are less common. Standing lows - even more so. Still, every character has at least a few crouching low attacks.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -292,7 +274,14 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <Diagram description="A player can hold low block and counter all incoming high, mid, and low attacks. This is where overheads come in - they force a high block. All jump-ins are overheads. Standing overheads are rare.">
+        <h3 id="overhead">Overhead</h3>
+        <ul>
+          <li>Overheads must be blocked high.</li>
+          <li>They hit crouching defenders, even if they are blocking.</li>
+          <li>All jump-ins are overhead.</li>
+        </ul>
+
+        <Diagram description="Standing overheads are rare. They make holding low block for extended periods dangerous.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Hit</div>
             <Image
@@ -318,7 +307,31 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <Diagram description="Throws are block punishes. They mix things up for players who tend to hold block.">
+        <h3 id="throws">Throw</h3>
+
+        <p>
+          A throw is a unique attack where if the defender is grabbed, a short
+          animation plays, then they are thrown either forward or backwards. A
+          back throw switches sides.
+        </p>
+
+        <ul>
+          <li>Throws grab standing defenders, regardless of block.</li>
+          <li>They grab crouch blocking defenders, same as High attacks.</li>
+          <li>
+            They miss crouching defenders that aren't blocking, same as High
+            attacks.
+          </li>
+        </ul>
+
+        <p>
+          Even if the throw grabs the defender, the latter still has a second to
+          reach and break the throw. Pressing <Pill>1</Pill> or <Pill>3</Pill>{' '}
+          for forward or <Pill>2</Pill> or <Pill>4</Pill> for back throws casues
+          them to fail. This is called to <em>tech</em> a throw.
+        </p>
+
+        <Diagram description="Throws are design for punishing players who are holding block.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Throw</div>
             <Image src={throwGrab} alt="Throw grabbing an opponent." />
@@ -338,18 +351,23 @@ export default async function Page() {
           </div>
         </Diagram>
 
-        <Diagram description="Unblockables are mostly special moves. They have a hitbox that must be avoided to skip damage.">
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Guaranteed damage on hit</div>
+        <h3 id="command-grabs">Command grabs</h3>
 
-            <Image
-              src={unblockable}
-              alt="A representation of an unblockable attack."
-            />
-          </div>
-        </Diagram>
+        <p>
+          Some special moves and strings end in throws. These are command grabs.
+        </p>
 
-        <ul className="mb-4 ml-4.5 list-disc">
+        <ul>
+          <li>
+            They cannot be teched. If they grab, the defender takes damage.
+          </li>
+
+          <li>They are rare and high-impact.</li>
+        </ul>
+
+        <h3 id="mix-up">Mix-ups</h3>
+
+        <ul>
           <li>Standing block counters all attacks except lows.</li>
           <li>Crouching block counters all attacks except overheads.</li>
           <li>
@@ -366,15 +384,6 @@ export default async function Page() {
           If they keep blocking high, mix in a low attack. If they keep blocking
           low, throw in an overhead. If they keep guessing correctly, trick them
           with a throw.
-        </p>
-
-        <h3 id="command-grabs">Command grabs</h3>
-
-        <p>
-          Some special moves are throws, and some strings end with a throw.
-          These are called <strong>command grabs</strong>. They can be avoided
-          but <strong>can't be teched</strong>. If the target is grabbed, they
-          take damage. Needless to say, these are rare.
         </p>
       </Section>
 
@@ -428,7 +437,7 @@ export default async function Page() {
           different reaction times, but as a baseline:
         </p>
 
-        <ul className="mb-4 ml-4.5 list-disc">
+        <ul>
           <li>
             Moves that have up to 10 frames start-up (1/6th of a second) are
             considered fast.
@@ -456,7 +465,7 @@ export default async function Page() {
           frame data in an MK game that supports it, you will see these:
         </p>
 
-        <ul className="mb-4 ml-4.5 list-disc">
+        <ul>
           <li>
             <strong>Recovery</strong> is the frames it takes the character to be
             able to act again after the move's active phase. These are important
@@ -495,7 +504,7 @@ export default async function Page() {
           is considered standard for fastest attacks:
         </p>
 
-        <ul className="mb-4 ml-4.5 list-disc">
+        <ul>
           <li>
             <strong>
               Any attack with -6 block or higher is considered safe everywhere.
@@ -514,7 +523,7 @@ export default async function Page() {
             Can Y react in time:
           </p>
 
-          <ul className="mb-4 ml-4.5 list-disc">
+          <ul>
             <li>
               A 7-frame start-up attack will hit with 3 frames to spare: -10 + 7
               = -3. This means Y has to react within 3 frames of him recovering
@@ -542,7 +551,7 @@ export default async function Page() {
 
         <h3 id="punish">Punish and counter</h3>
 
-        <ul className="mb-4 ml-4.5 list-disc">
+        <ul>
           <li>
             A <strong>Punish</strong> is a counterattack that hits an opponent
             during their recovery after block.

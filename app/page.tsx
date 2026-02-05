@@ -49,7 +49,7 @@ export default function Page() {
           <em>players</em> who:
         </p>
 
-        <ul role="list" className="mb-4 ml-4.5 list-disc">
+        <ul role="list">
           <li>Want to get into a game, but feel intimidated;</li>
           <li>
             Are playing a game for some time, but feel a lack of progress or

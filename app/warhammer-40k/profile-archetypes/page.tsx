@@ -74,7 +74,7 @@ export default async function Page() {
         many single wound models:
       </p>
 
-      <ul role="list" className="mb-4 ml-4.5 list-disc">
+      <ul role="list">
         <li>
           Imperial Guard infantry like Cadian Shock Troops, Catachan Jungle
           Fighters and Death Korps of Krieg;
@@ -159,7 +159,7 @@ export default async function Page() {
         <em>Pure MEQ</em>. Examples are:{' '}
       </p>
 
-      <ul role="list" className="mb-4 ml-4.5 list-disc">
+      <ul role="list">
         <li>
           Space Marines in Power Armor like Intercessors, Tactical Marines,
           Bladeguard Veterans, Eliminators, Infernius Squad and many others;
@@ -177,7 +177,7 @@ export default async function Page() {
         are near analogs:
       </p>
 
-      <ul role="list" className="mb-4 ml-4.5 list-disc">
+      <ul role="list">
         <li>Company Heroes are MEQ with 4 wounds instead of 2;</li>
         <li>Tyranid Barbgaunts are MEQ with a Save of 4+ instead of 3+;</li>
         <li>
@@ -233,7 +233,7 @@ export default async function Page() {
 
       <p>With movement things are much simpler.</p>
 
-      <ul role="list" className="mb-4 ml-4.5 list-disc">
+      <ul role="list">
         <li>
           Most <strong>models on foot</strong> will have <strong>M6"</strong>.
           Heavy infantry units may have M5", while Eldar battleline units tend

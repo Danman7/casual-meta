@@ -58,7 +58,7 @@ export default async function Page() {
           on the screen. Move notation, however, is relative to your opponent.
         </p>
 
-        <ul role="list" className="ml-4.5 list-disc">
+        <ul role="list">
           <li>
             <strong>Forward</strong>: Toward the opponent.
           </li>
@@ -101,7 +101,7 @@ export default async function Page() {
           In-game move lists auto-adjust. External guides do not. For example:
         </p>
 
-        <ul role="list" className="ml-4.5 list-disc">
+        <ul role="list">
           <li>
             <Pill>F3</Pill>: Toward the opponent, then press 3.
           </li>
@@ -117,7 +117,7 @@ export default async function Page() {
           left or right to <em>dash</em> forward or backward.
         </p>
 
-        <ul role="list" className="ml-4.5 list-disc">
+        <ul role="list">
           <li>
             Walking moves your character cautiously toward or away from the
             opponent.
@@ -154,7 +154,7 @@ export default async function Page() {
           The default state at round start is <em>Standing</em>.
         </p>
 
-        <ul role="list" className="ml-4.5 list-disc">
+        <ul role="list">
           <li>Standing is the most mobile stance.</li>
           <li>You can move, block, attack, jump, or crouch.</li>
         </ul>
@@ -172,7 +172,7 @@ export default async function Page() {
           Hold down to enter <em>crouching</em> or <em>ducking</em> stance.
         </p>
 
-        <ul role="list" className="ml-4.5 list-disc">
+        <ul role="list">
           <li>While crouching you have a smaller hitbox.</li>
           <li>You can block and attack.</li>
           <li>
@@ -191,7 +191,7 @@ export default async function Page() {
           Pressing up, without holding Block, makes the character <em>jump</em>.
         </p>
 
-        <ul role="list" className="ml-4.5 list-disc">
+        <ul role="list">
           <li>
             Jumping straight up is a <em>neutral jump</em>.
           </li>
@@ -213,7 +213,7 @@ export default async function Page() {
         <p>
           Jumping avoids many ground attacks but is risky. You are vulnerable to
           air attacks and landing recovery. Ground moves designed to stop jumps
-          are <em>anti-airs</em>.
+          are called <em>anti-airs</em>.
         </p>
       </Section>
 
@@ -241,7 +241,7 @@ export default async function Page() {
         <h3 id="blocking">Blocking</h3>
 
         <p>Hold the Block button to block.</p>
-        <ul role="list" className="ml-4.5 list-disc">
+        <ul role="list">
           <li>Blocking reduces damage from enemy attacks.</li>
           <li>Can block standing or crouching.</li>
           <li>Cannot block while jumping.</li>
@@ -252,10 +252,10 @@ export default async function Page() {
 
         <p>
           Certain attacks knock the opponent to the ground. When you are knocked
-          downL
+          down:
         </p>
 
-        <ul role="list" className="ml-4.5 list-disc">
+        <ul role="list">
           <li>You cannot move, block or attack.</li>
           <li>
             You can only <em>recover</em> (stand up).
@@ -265,7 +265,8 @@ export default async function Page() {
             recover.
           </li>
           <li>
-            However, your immobility grants them strong setup and pressure.
+            However, your immobility allows them to close the distance
+            (pressure) and attack on their terms (setup).
           </li>
         </ul>
       </Section>
@@ -273,7 +274,7 @@ export default async function Page() {
       <Section title="Arena limitations" id="arena-limitations">
         <p>All fights occur in a single-level arena.</p>
 
-        <ul role="list" className="ml-4.5 list-disc">
+        <ul role="list">
           <li>Horizontal space with invisible side boundaries.</li>
 
           <li>Arena size varies within a small range.</li>
@@ -289,14 +290,14 @@ export default async function Page() {
 
         <p>A character at the edge of the arena:</p>
 
-        <ul role="list" className="ml-4.5 list-disc">
+        <ul role="list">
           <li>Cannot move farther.</li>
-          <li>Cannot be knocked in that direction.</li>
+          <li>Cannot be knocked back in that direction.</li>
         </ul>
 
         <p>Being in the corner is a disadvantage.</p>
 
-        <ul role="list" className="ml-4.5 list-disc">
+        <ul role="list">
           <li>No room to retreat.</li>
           <li>The opponent dictates the space between the fighters.</li>
           <li>
