@@ -368,23 +368,27 @@ export default async function Page() {
         <h3 id="mix-up">Mix-ups</h3>
 
         <ul>
-          <li>Standing block counters all attacks except lows.</li>
-          <li>Crouching block counters all attacks except overheads.</li>
           <li>
-            Highs are naturally performed standing, lows crouching and overheads
-            jumping.
+            Standing block stops highs, mids and overheads, but{' '}
+            <strong>not low</strong> attacks.
           </li>
           <li>
-            Standing low and overhead attacks are rare and valuable as they
-            don't require jump-ins or ducking and can be performed on the move.
+            Crouching block stops highs, mids and lows, but{' '}
+            <strong>not overhead</strong> attacks.
           </li>
+          <li>No block stops a throw.</li>
         </ul>
 
         <p>
-          If they keep blocking high, mix in a low attack. If they keep blocking
-          low, throw in an overhead. If they keep guessing correctly, trick them
-          with a throw.
+          One way to break a patient player's defense is to mix up the attack
+          types. Maing your opponent guess is the essence of <em>mix-ups</em>:
         </p>
+
+        <ul>
+          <li>Lows mess up opponents that keep blocking high.</li>
+          <li>Overheads mess up opponents that keep blocking low.</li>
+          <li>Throws mess up opponents that keep guessing correctly.</li>
+        </ul>
       </Section>
 
       <Section title="Frame data" id="frame-data">
