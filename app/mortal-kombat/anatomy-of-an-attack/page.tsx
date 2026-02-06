@@ -494,8 +494,8 @@ export default async function Page() {
         <Callout title="Deep dive: actual disadvantage on block">
           <p>
             Player X throws a -10 on block attack which player Y blocks. Player
-            X will recover until the 11th frame when he will be able to block.
-            Can Y react in time:
+            X will recover on the 11th frame when he will be able to block. Can
+            Y react in time:
           </p>
 
           <ul>
@@ -526,49 +526,73 @@ export default async function Page() {
         <h3 id="punish">Punish and counter</h3>
         <ul>
           <li>
-            A <strong>Punish</strong> is a counterattack that hits an opponent
-            during their recovery after block.
+            <strong>Punish: </strong> Hitting an opponent during recovery or to
+            punish an unsafe move or a whiff.
           </li>
           <li>
-            A <strong>Counter</strong> is an attack that hits during the
-            opponent's start-up. This requires a preemptive counterattack or
-            spotting a slow attack.
+            <strong>Counter:</strong> Hitting an opponent during start-up. This
+            requires a good read and preemptive action.
           </li>
         </ul>
         <h3 id="space-control">Space control</h3>
         <p>
-          Start-up and recovery frames vary widely between moves. But most
-          attacks have short active frames - 2 to 6.
-        </p>
-        <p className="font-bold">
-          Moves with long active frames are good for controlling space.
-        </p>
-        <p>
-          The opponent must respect such moves' extended presence and
-          trajectory. This involves staying put and blocking/ducking. Facing a
-          space-controlling move, committing to hasty actions like jumping or
-          dashing becomes risky.
+          Most moves have short active frames. Moves with long active frames
+          control space better. These are usually special moves like
+          projectiles. They force opponents to respect their extended presence
+          by blocking, ducking, or hesitating. Jumping or dashing becomes risky.
         </p>
       </Section>
 
       <Section title="Beyond the move list" id="beyond-the-move-list">
+        <p>Some traits are not listed and must be learned through play.</p>
+
+        <h3 id="reach">Reach</h3>
+
         <p>
-          Attacks can have traits which are not listed in the frame data, but
-          are important to their function and strategy. These characteristics
-          must be learned by experience.
+          An attack's reach is probably its most important trait that is not
+          listed in the frame data. Every attack has its effective range. There
+          is no measurement unit. Visual terms are used instead:
+        </p>
+
+        <ul>
+          <li>
+            Touching: Opponent are zero steps away from each other. Here speed
+            wins over reach.
+          </li>
+          <li>
+            Short: Most basic attacks cover a few steps away. How many separates
+            good from great attacks.
+          </li>
+          <li>
+            Default a.k.a jump distance: This is the space characters are apart
+            at duel start. A forward jump just about covers it.
+          </li>
+          <li>
+            Long: Reaches more than a jump distance, but not the entire screen.
+          </li>
+
+          <li>
+            Fullscreen: Covers the entire screen. Usually projectiles, teleports
+            and other specials.
+          </li>
+        </ul>
+
+        <h3 id="advancing-attack">Advancing attack</h3>
+
+        <p>
+          Some attacks recover to the same spot they were executed in. Others
+          move the character forward, grabing space. The range of advancing
+          attacks is more difficult to judge.
         </p>
 
         <h3 id="knockdown">Knockdown and knockback</h3>
 
         <p>
-          Whether an attack results in a{' '}
-          <Link href={`${mkRoute('Movement')}#knockdown`}>knockdown</Link> is
-          not listed in its data. If it does, it will put the opponent flat on
-          the ground next to the attacker. Some knockdown attacks also push the
-          opponent away from the attacker. This is called <em>knockback</em>.
+          Knockdown puts the opponent on the ground near the attacker. Knockback
+          pushes the opponent away, creating space.
         </p>
 
-        <Diagram description="A knockdown creates superior advantage because it leaves the target next to the attacker. A knockback gives more space, hence more time to recover.">
+        <Diagram description="Knocking the opponent down near you is preferrable. Knocking them back limits the ability to follow up with more attacks.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Knockdown</div>
             <Image
@@ -585,11 +609,8 @@ export default async function Page() {
         <h3 id="launch">Launch</h3>
 
         <p>
-          Some attacks launch the opponent into the air. These are known as{' '}
-          <em>launchers</em>. All MK games have the common <Pill>D2</Pill>{' '}
-          launcher, which doesn't allow for follow-ups. But some launchers also
-          have good enough frame advantage to allow for immediate follow-up
-          attacks. These are critical for extending combos.
+          A launching attack a.k.a. a <em>launcher</em> sends the opponent
+          airborne. Many launchers allow for extended combos.
         </p>
 
         <Diagram description="">
@@ -606,21 +627,13 @@ export default async function Page() {
       </Section>
 
       <Section title="Other terms" id="other-terms">
-        <p>
-          Some community terms describe a move's usage rather than its
-          properties.
-        </p>
         <h3 id="pokes">Pokes</h3>
 
         <p>
-          A poke is any low-commitment attack - safe on block or from a
-          distance. It's a check: Are they focused? Judging distance correctly?
-          Poking scouts your opponent's habits and reactions.
-        </p>
-
-        <p>
-          <strong>Mids are the best pokes</strong> as they can't be ducked.
-          Range, speed, and safety are key considerations.
+          A poke is a low-commitment attack, designed to test the opponent's
+          reactions, spacing, and habits. Advancing mids are usually the best
+          pokes as they grab space and check crouch blocking. Quick recovery is
+          essential in case of a whiff.
         </p>
       </Section>
 
