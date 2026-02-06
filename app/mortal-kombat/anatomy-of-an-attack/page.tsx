@@ -381,7 +381,7 @@ export default async function Page() {
 
         <p>
           One way to break a patient player's defense is to mix up the attack
-          types. Maing your opponent guess is the essence of <em>mix-ups</em>:
+          types. Making your opponent guess is the essence of <em>mix-ups</em>:
         </p>
 
         <ul>
@@ -392,36 +392,33 @@ export default async function Page() {
       </Section>
 
       <Section title="Frame data" id="frame-data">
-        <p>
-          Pressing the advanced view button opens a move's frame data and notes.
-        </p>
-
         <ImageWithCaption
           src={liMeiAdvancedView}
           alt="Li Mei's move list showing frame data."
           caption="The move list's advanced view shows frame data and notes for each move. This is PC annotations."
         />
-
         <p>
-          Frame data measures how long a character takes to execute and recover
-          from a move based on whether the move hit, missed, or was blocked. MK,
-          like most fighting games, runs at 60 frames per second using
-          frame-based animations instead of time-based ones. This additional
-          layer of precision evens out how many frames each move takes.
+          Frame data measures how long a move takes to execute and recover in
+          frames. MK is capped at 60 frames per second.
         </p>
-
         <h3 id="move-phases">Move phases</h3>
 
-        <p>
-          Every attack has a <em>beginning</em>, <em>middle</em>, and{' '}
-          <em>end</em>. In the game, these are called <em>start-up</em>,{' '}
-          <em>active</em>, and <em>recovery</em> frames. The beginning is
-          start-up: the time in frames from pressing the button until the attack
-          becomes active. Active frames follow - how long the attack can hit.
-          Recovery is the time after hitting until the character can act again.
-        </p>
+        <p>Each attack has three phases in sequence:</p>
 
-        <Diagram description="We can split any attack into three sections - start-up in blue, active in red, and recovery in green.">
+        <ul>
+          <li>
+            <strong>Start-up:</strong> Time from pressing the attack button
+            utnil the attack becomes active.
+          </li>
+          <li>
+            <strong>Active:</strong> Time the attack can hit.
+          </li>
+          <li>
+            <strong>Recovery:</strong> Time before the attacker can act again.
+          </li>
+        </ul>
+
+        <Diagram description="Start-up in blue, active in red, and recovery in green.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Start-up &rarr; Active &rarr; Recovery</div>
 
@@ -435,88 +432,62 @@ export default async function Page() {
         <h3 id="fast-vs-slow">Fast vs slow</h3>
 
         <p>
-          The <strong>speed</strong> of a move <strong>is determined by</strong>{' '}
-          its <strong>start-up frames</strong> or how much time it gives the
-          other side to spot it being executed and react. Every player has
-          different reaction times, but as a baseline:
+          Speed is defined by start-up frames. Standing punches are usually the
+          fastest moves at 7–9 frames start-up. What is fast is very subjective.
+          But in general:
         </p>
 
         <ul>
-          <li>
-            Moves that have up to 10 frames start-up (1/6th of a second) are
-            considered fast.
-          </li>
-          <li>Moves with start-up frames between 11 and 20 are borderline.</li>
-          <li>
-            Moves with more than 20 frames start-up (1/3rd of a second) are
-            easier to spot.
-          </li>
+          <li>Fast: 10 frames or less (1/6th of a second).</li>
+          <li>Borderline: 11–20 frames.</li>
+          <li>Slow: More than 20 frames (1/3rd of a second).</li>
         </ul>
-
-        <p>
-          The fastest attacks for all characters are their standing punches.
-          They are usually 7-9 frames start-up. A 7-frame start-up is considered
-          the fastest, which will come into play when discussing safe vs unsafe
-          moves. Moves outside of punches vary a lot.
-        </p>
 
         <h3 id="safe-vs-unsafe">Safe vs unsafe</h3>
 
-        <p>
-          A move's <strong>safety is determined by</strong> its{' '}
-          <strong>recovery on block</strong>. This is known as{' '}
-          <em>advantage/disadvantage on block</em>. When opening up any move's
-          frame data in an MK game that supports it, you will see these:
-        </p>
+        <p>Frame data shows:</p>
 
         <ul>
           <li>
-            <strong>Recovery</strong> is the frames it takes the character to be
-            able to act again after the move's active phase. These are important
-            mostly on miss, as the opponent will have that many frames to punish
-            a whiff.
+            <strong>Recovery:</strong> Time before the attacker can act again.
           </li>
 
           <li>
-            <strong>Hit advantage</strong> shows how much sooner the attacker
-            will be free to act if the attack hits. The larger the number, the
-            bigger the freedom/advantage to follow up with another attack.
+            <strong>Hit advantage:</strong> Frames the attacker recovers before
+            the defender on hit.
           </li>
 
           <li>
-            <strong>Block advantage</strong> shows who will recover first if the
-            given move is blocked. If the number is positive, the attacker
-            recovers sooner, by that many frames. If negative, the defender
-            recovers sooner. If it's zero, both recover at the same time - known
-            as <em>neutral on block</em>.
+            <strong>Block advantage:</strong> Frames the attacker recovers
+            before or after the defender on block.
           </li>
+        </ul>
+        <p>
+          Safety depends on recovery after a block. Block advantage can be a
+          positive or a negative number:
+        </p>
+
+        <ul>
+          <li>Positive: Attacker recovers first.</li>
+
+          <li>Negative: Defender recovers first.</li>
+
+          <li>Zero: Both recover at the same time.</li>
         </ul>
 
         <p>
-          Very few attacks are positive on block and usually only by a few
-          frames. They give the attacker chance to lock the defender into
-          blocking, because they recover sooner and can throw another attack if
-          timed correctly. These are called <em>plus frames</em> and enable{' '}
-          <em>frame traps and jails</em>.
-        </p>
-
-        <p>
-          The big majority of moves are negative on block, which means the
-          defender recovers sooner, but that doesn't make them unsafe on its
-          own. The defender must be able to throw in a quick enough attack to be
-          able to take advantage of the negative frames. Since 7 frames start-up
-          is considered standard for fastest attacks:
+          Most moves are negative on block. That does not automatically make
+          them unsafe. If the fastest attacks take 7 frames to start-up, then:
         </p>
 
         <ul>
           <li>
-            <strong>
-              Any attack with -6 block or higher is considered safe everywhere.
-            </strong>
+            <strong>-6 or better</strong>: Safe.
           </li>
+
           <li>
-            Attacks worse than -6, e.g. -9 or -12, depend on whether the
-            counterattack is fast enough or the opponent is close enough.
+            <strong>-7 or worse:</strong> Punishable if the opponent has a fast
+            enough option and proper range.
           </li>
         </ul>
 
@@ -552,9 +523,7 @@ export default async function Page() {
             reach the opponent within the 10 frames to hit them.
           </p>
         </Callout>
-
         <h3 id="punish">Punish and counter</h3>
-
         <ul>
           <li>
             A <strong>Punish</strong> is a counterattack that hits an opponent
@@ -566,18 +535,14 @@ export default async function Page() {
             spotting a slow attack.
           </li>
         </ul>
-
         <h3 id="space-control">Space control</h3>
-
         <p>
           Start-up and recovery frames vary widely between moves. But most
           attacks have short active frames - 2 to 6.
         </p>
-
         <p className="font-bold">
           Moves with long active frames are good for controlling space.
         </p>
-
         <p>
           The opponent must respect such moves' extended presence and
           trajectory. This involves staying put and blocking/ducking. Facing a
