@@ -1,26 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-  GiBlackHandShield,
-  GiBolterGun,
-  GiCrocSword,
-  GiFist,
-  GiFlyingFlag,
-  GiPencilRuler,
-  GiShadowFollower,
-  GiSkullCrack,
-  GiSnail,
-  GiSpikedHalo,
-  GiTwoCoins,
-} from 'react-icons/gi'
-import { IoPeople } from 'react-icons/io5'
+import { GiBolterGun } from 'react-icons/gi'
+import { PiPersonArmsSpreadFill } from 'react-icons/pi'
 
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
+import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
-import { FlexWrapper } from '@/app/ui/FlexWrapper'
-import { Pill } from '@/app/ui/Pill'
+import { PageTitle } from '@/app/ui/PageTitle'
+import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
 
@@ -38,7 +27,22 @@ const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <PageTitle
+        title={navTitle}
+        tags={
+          <>
+            <Badge>
+              <GiBolterGun />
+              Warhammer 40,000
+            </Badge>
+
+            <Badge>
+              <PiPersonArmsSpreadFill />
+              Units overview
+            </Badge>
+          </>
+        }
+      />
 
       <p>
         If you are unfamiliar with the profile abbreviations check out our{' '}
@@ -46,298 +50,148 @@ export default async function Page() {
         page.
       </p>
 
-      <h2>Battleline</h2>
+      <Section title="Battleline" id="battleline">
+        <h3 id="intercessor">Intercessor squad</h3>
+        <Image
+          src={intercessors}
+          alt="A squad of Space Marine Intercessors advancing."
+          className="max-h-96 object-cover object-[0%_65%]"
+        />
+        <Callout>
+          <ul>
+            <li>
+              <strong>Profile:</strong> MEQ with OC2
+            </li>
 
-      <p>
-        Battleline is a keyword appearing on some datasheets allowing you to
-        take twice as many units of the same name as non-battleline units in an
-        army list depending on the mission you are playing.
-      </p>
+            <li>
+              <strong>Keywords:</strong> Infantry, Battleline, Imperium,
+              Grenades, Tacticus
+            </li>
 
-      <h3>Intercessor squad</h3>
-      <FlexWrapper className="mt-2">
-        <Pill className="border-success">
-          <GiPencilRuler /> Best Utility
-        </Pill>
+            <li>
+              <strong>Cost:</strong> 80 pts. for 5 or 160 pts. for 10 models
+            </li>
+          </ul>
 
-        <Pill className="border-success">
-          <GiFlyingFlag /> Sticky Objectives
-        </Pill>
+          <hr />
 
-        <Pill className="border-success">
-          <GiBolterGun /> Consistent ranged damage
-        </Pill>
+          <p>
+            <strong>Objective Secured:</strong> If you control an objective in
+            your Command phase, it stays yours until the opponent takes it.
+          </p>
 
-        <Pill className="border-success">
-          <GiSkullCrack /> Good vs GEQ
-        </Pill>
+          <p>
+            <strong>Target Elimination:</strong> When shooting, bolt rifles gain
+            +2 Attacks, but the unit must shoot a single unit.
+          </p>
+        </Callout>
+        <p>
+          Intercessors are currently the principal Primaris battleline infantry,
+          replacing the old Tactical Squad role. They lack the large arsenal,
+          but compensate with flexibility and dependability.
+        </p>
+        <p>
+          The sticky objectives rule allows these marines to leave an objective
+          and play a role elsewhere. It also forces the opponent to physically
+          contest the objective.
+        </p>
+        <p>
+          Intercessors are primarily a ranged squad. The bolt rifle is daunting
+          against GEQ, adequate against MEQ and at least playable against TEQ.
+          The double shots special rule's requirement to shoot at one target
+          promotes 5 over 10-man ones. The grenade launcher is never a bad idea,
+          even if one marine looses the assault keyword. Frags further help
+          againts horedes, while Kraks gives some leverage against tougher
+          targets.
+        </p>
+        <p>
+          Melee-wise the squad is nothing exceptional. It will stugggle againts
+          anything beyond GEQ. Arm the sergeant with a power fist or a thunder
+          hammer to help win trades.
+        </p>
+        <p>
+          Support for the Intercessors should be within measure. They are
+          efficient as they are and should be kept cheap.
+        </p>
+        <ul>
+          <li>
+            <strong>Armor of Contempt</strong> when surviving on an objective
+            matters.
+          </li>
 
-        <Pill>
-          <GiSkullCrack /> OK vs MEQ
-        </Pill>
+          <li>
+            <strong>Grenades</strong> when extra punch is needed.
+          </li>
 
-        <Pill className="text-error border-error!">
-          <GiBlackHandShield /> Weak vs T5+
-        </Pill>
-      </FlexWrapper>
+          <li>
+            <strong>Overwatch</strong> or a <strong>Lieutenant</strong> are
+            situational and usually best with 10-man squads.
+          </li>
+        </ul>
+        <p>Intercessors are common among competitive army lists.</p>
+        <ul>
+          <li>Prefer 5-man squads.</li>
 
-      <Image
-        src={intercessors}
-        alt="A squad of Space Marine Intercessors advancing."
-        className="max-h-96 object-cover object-[0%_65%]"
-      />
+          <li>Rush home objective then move out.</li>
 
-      <Callout>
-        <div className="text-base">
-          MEQ with OC2 |{' '}
-          <span className="text-light">
-            Infantry, Battleline, Imperium, Grenades, Tacticus
-          </span>
-        </div>
+          <li>Good OC and just enough melee to contest the midfield.</li>
+
+          <li>High volume of fire that holds light infantry at bay.</li>
+
+          <li>Sub-optimal as character escorts.</li>
+        </ul>
+        <h3 id="assault-intercessor">Assault Intercessor squad</h3>
+        <Image
+          src={assaultIntercessors}
+          alt="A squad of Assault Intercessors."
+          className="max-h-96 object-cover object-[0%_65%]"
+        />
+        <Callout>
+          <ul>
+            <li>
+              <strong>Profile:</strong> MEQ with OC2
+            </li>
+
+            <li>
+              <strong>Keywords:</strong> Infantry, Battleline, Imperium,
+              Grenades, Tacticus
+            </li>
+
+            <li>
+              <strong>Cost:</strong> 75 pts. for 5 or 150 pts. for 10 models
+            </li>
+          </ul>
+
+          <hr />
+
+          <p>
+            <strong>Shock Assault:</strong> Reroll all 1s to wound. Reroll all
+            wounds on objective. Also{' '}
+            <strong>applies to attached characters</strong>.
+          </p>
+        </Callout>
 
         <p>
-          80 pts. for 5 models or 160 pts. for 10 models{' '}
-          <span className="text-light">
-            armed with a bolt pistol, a bolt rifle, and a close combat weapon
-          </span>
-        </p>
-
-        <p>
-          <strong>Objective Secured</strong> a.k.a. Sticky Objectives: Cap an
-          objective once it stays yours until the enemy takes it.
-        </p>
-
-        <p>
-          <strong>Target Elimination</strong>: +2 attacks per bolt rifle if all
-          shoot the same target.
-        </p>
-      </Callout>
-
-      <p>
-        This is the principle Adeptus Astartes battleline squad. A sergeant
-        leads either four or nine <em>Primaris</em> marines armed with{' '}
-        <em>Bolt Rifles</em>. By Primaris we mean the "new generation" of
-        marines, making an appearance since the 8th edition of the codex, where{' '}
-        <em>Firstborn</em> is used to describe the "old" one.
-      </p>
-
-      <p>
-        Intercessors are the most overall consistent infantry squad available to
-        the Space Marines. Assault Intercessors hit harder in melee, Tacticals
-        have a wide array of special weapons, while Hellblasters are better
-        killers. But the 2 points of Objective Control along with the Sticky
-        Objectives rule, and the Assault weapon trait with the Target
-        Elimination rule give them such utility that it is never a bat idea to
-        have at leas one of these in your army list.
-      </p>
-
-      <Callout>
-        <FlexWrapper className="text-base">
-          <GiBolterGun /> <span>The Bolt Rifle</span>
-        </FlexWrapper>
-        <p className="font-bold">
-          24"|A2|BS3+|S4|AP-1|D1{' '}
-          <span className="text-light">/ Assault, Heavy</span>
-        </p>
-
-        <p className="font-bold">
-          One in five squad members can attach a Grenade Launcher to their Bolt
-          Rifle, loosing the Assault trait.
-        </p>
-
-        <p>
-          The Assault and Heavy keywords give flexibility both for staying put
-          or moving forward, playing well with their Sticky Objectives rule. The
-          rifle erases GEQ units but also performs respectably against MEQs.
-          Even without Target Elimination and Heavy kicking in, a five-man squad
-          can be expected to kill 7-8 GEQ, or 2 MEQ, or 1 TEQ per volley. With
-          Target Elimination you get 4 shots per model with 4 Strength -1 Armor
-          Penetration giving you an edge over anything below heavy/elite
-          infantry. The weapon’s effectiveness falls off against Toughness 5+
-          Armor Save 2+ foes, but the grenade launcher in krak mode can help
-          with that. And the grenade launcher in frag mode further annihilates
-          GEQ swarms.
-        </p>
-
-        <p>
-          With Target Elimination you get 4 shots per model with 4 Strength -1
-          Armor Penetration giving you an edge over anything below heavy/elite
-          infantry.
-        </p>
-      </Callout>
-
-      <p>
-        With this weapon profile and the special rules, a five-man squad is
-        always optimal. This gives you 20 bolt shots with Target Elimination
-        which is plenty and you can trade or hide the squad better. Intercessors
-        should never be your primary damage dealers, but a ten-man squad paired
-        with a Lieutenant giving them Lethal Hits and fall back and shoot
-        ability can be fun. This would also improve engagements with tougher
-        targets.
-      </p>
-
-      <p>
-        Sticky Objectives rule should be used to its full extent as it helps the
-        entire army. You can quickly tag the home objective and either advance
-        to the middle ones or anticipate a deep enemy strike by moving away to a
-        better defensive position. Either way the Assault keyword allows them to
-        contribute to the shooting phase on the move. Don’t be afraid to engage
-        or even charge light infantry at any time.
-      </p>
-
-      <Callout>
-        <FlexWrapper className="text-base">
-          <GiFist /> <span>Hand-to-hand combat and the Sergeant</span>
-        </FlexWrapper>
-
-        <p className="font-bold">Close combat weapon: A3|WS3+|S4|AP0|D1</p>
-        <p className="font-bold">Power Fist: A3|WS3+|S8|AP-2|D2</p>
-
-        <p>
-          Intercessors get 3 Attacks with their Close Combat weapons. At 4
-          Strength they deal just fine with models up to Toughness 3, so don’t
-          shy away with GEQ melee engagements. The Sergeant has the broadest
-          selection of weaponry among the Primaris infantry, but a Power Fist is
-          often the most successful option giving some leverage against more
-          resilient targets.
-        </p>
-      </Callout>
-
-      <h3>Assault Intercessor squad</h3>
-
-      <FlexWrapper className="mt-2">
-        <Pill className="border-success">
-          <GiTwoCoins /> Expendable
-        </Pill>
-
-        <Pill className="border-success">
-          <GiSkullCrack /> Good vs GEQ
-        </Pill>
-
-        <Pill className="border-success">
-          <IoPeople /> Strong Character Support
-        </Pill>
-
-        <Pill className="text-error border-error!">
-          <GiBlackHandShield /> Weak vs T5+
-        </Pill>
-
-        <Pill className="text-error border-error!">
-          <GiSnail /> Slow for role
-        </Pill>
-
-        <Pill className="text-error border-error!">
-          <GiShadowFollower /> Better Alternatives
-        </Pill>
-      </FlexWrapper>
-      <Image
-        src={assaultIntercessors}
-        alt="A squad of Assault Intercessors."
-        className="max-h-96 object-cover object-[0%_65%]"
-      />
-
-      <Callout>
-        <div className="text-base">
-          MEQ with OC2 |{' '}
-          <span className="text-light">
-            Infantry, Battleline, Imperium, Grenades, Tacticus
-          </span>
-        </div>
-
-        <p>
-          75 pts. for 5 models or 150 pts. for 10 models{' '}
-          <span className="text-light">
-            armed with a heavy bolt pistol and a Astartes chainsword.
-          </span>
+          This is the standard close combat option outside dedicated melee
+          chapters. The same intercessor profile without bolt rifles, sticky
+          objectives or double shots rule.
         </p>
 
         <p>
-          <strong>Shock Assault</strong>: Re-roll a melee wound roll of 1. If
-          the target is within range of an objective, re-roll any wound roll
-          instead. This translates to any attached characters.
-        </p>
-      </Callout>
-
-      <p>
-        <em>Assault Intercessors</em> are hand-to-hand combat adepts, meant to
-        act as an aggressive battleline for the Space Marines. As durable as any
-        MEQ yet cheaper than regular Intercessors, they act best by rushing in
-        to meet the enemy at the midfield objectives. At the same time, they
-        lack the speed of true assault troops, and their melee profile is
-        overshadowed by other specialized squads.
-      </p>
-
-      <Callout>
-        <FlexWrapper className="text-base">
-          <GiCrocSword /> <span>The Chainsword and melee damage</span>
-        </FlexWrapper>
-
-        <p className="font-bold"> Astartes chainsword: A4|WS3+|S4|AP-1|D1</p>
-
-        <p>
-          The equivalent of a five-man Bolt Rifle squad with Target Elimination
-          in close combat - 20 Chainsword attacks per Fight phase. At 4 Strength
-          and -1 AP these are dangerous to T3 and T4 units with average or below
-          armor saves. Standing close to objectives, because of the special
-          rule, you can expect on average 8-10 GEQ, or 2-3 MEQ kills and 2-3
-          wounds on TEQs.
-        </p>
-
-        <p>As always, the Power Fist is a good choice for the Sergeant. </p>
-      </Callout>
-
-      <p>
-        Assault Intercessors are not prime damage dealers. They are cheap units
-        for contesting the mid objectives, but they also do a fine job as
-        bodyguards. Pairing them with a Captain or a Lieutenant can spike their
-        damage to face mid-tiers or even vehicles -{' '}
-        <em>
-          Oath of Moment + Lethal Hits + Re-roll Wounds on Objective + Better
-          Leader Equipment
-        </em>
-        . Naturally these marines appear frequently on the lists of chapters
-        that buff close combat like the Blood Angels, Black Templars, or Space
-        Wolves.
-      </p>
-
-      <Callout>
-        <FlexWrapper className="text-base">
-          <GiSpikedHalo /> <span>Character and Chapter Combos</span>
-        </FlexWrapper>
-
-        <p>
-          A Captain with The Honor Vehement gives +1 Attack +1 Strength to any
-          melee weapons.
+          The Astartes chainswords give lots of S4|AP-1|D1 hand-to-hand attacks:
+          4 per marine. That is 20 attacks per default squad, although it might
+          be best to sacrifice one of them to give a power fist or thunder
+          hammer to the sergeant for better wound consistency. They do well
+          against foes up to Toughness 4 with rather weak armor.
         </p>
 
         <p>
-          Blood Angels with the Liberator Assault Group gives +2 Strength, +1
-          Attack, Advance and Charge, Lethal Hits.
+          The heavy bolt pistol also helps doing chip damage to target while the
+          intercessors close in.
         </p>
 
-        <p>
-          Black Templars can re-roll charges, and give melee buffs from Vows,
-          and stratagem support.
-        </p>
-
-        <p>
-          Space Wolves with Ragnar gain massive synergy from wound rerolls of
-          Assault Intercessors and his S8 attacks.
-        </p>
-      </Callout>
-
-      <p>
-        Finally, with or without a specialized chapter, give some consideration
-        to transportation of the Assault Intercessors to the midfield. You
-        should be thinking about five over ten-man squads so an Impulsor should
-        be the fastest taxi option. If not a Land Raider or a Repulsor will do.
-      </p>
-
-      <p>
-        In perspective they are competitively average. They can do well in melee
-        focused army lists, but are inefficient compared to their Jump Pack
-        equivalent.
-      </p>
+        <p>The special rule</p>
+      </Section>
     </>
   )
 }
