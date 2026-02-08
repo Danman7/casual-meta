@@ -4,6 +4,7 @@ import { GiBolterGun } from 'react-icons/gi'
 import { PiPersonArmsSpreadFill } from 'react-icons/pi'
 
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
+import heavyIntercessors from '@/app/assets/wh40k/heavyintercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
@@ -140,7 +141,7 @@ export default async function Page() {
 
           <li>Sub-optimal as character escorts.</li>
         </ul>
-        <h3 id="assault-intercessor">Assault Intercessor squad</h3>
+        <h3 id="assault-intercessor">Assault intercessor squad</h3>
         <Image
           src={assaultIntercessors}
           alt="A squad of Assault Intercessors."
@@ -173,16 +174,15 @@ export default async function Page() {
 
         <p>
           This is the standard close combat option outside dedicated melee
-          chapters. The same intercessor profile without bolt rifles, sticky
-          objectives or double shots rule.
+          chapters.
         </p>
 
         <p>
           The Astartes chainswords give lots of S4|AP-1|D1 hand-to-hand attacks:
           4 per marine. That is 20 attacks per default squad, although it might
-          be best to sacrifice one of them to give a power fist or thunder
-          hammer to the sergeant for better wound consistency. They do well
-          against foes up to Toughness 4 with rather weak armor.
+          be best to sacrifice an attack to give the sergeant a power fist or
+          thunder hammer. They do well against foes up to Toughness 4 with
+          rather weak armor.
         </p>
 
         <p>
@@ -190,7 +190,113 @@ export default async function Page() {
           intercessors close in.
         </p>
 
-        <p>The special rule</p>
+        <p>
+          The special rule pushes them to dive objectives. But because it buffs
+          a joint leader's wounds, they are also a fair inexpensive bodyguard
+          option:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Captain:</strong> heavy melee hitter and free stratagem
+            support.
+          </li>
+          <li>
+            <strong>Lieutenant:</strong> his lethal hits give extra punch,
+            although they do overlap somewhat with rerolls.
+          </li>
+
+          <li>
+            <strong>Chaplain:</strong> +1 to wound can help with tougher
+            targets.
+          </li>
+
+          <li>
+            <strong>Azrael (Dark Angels):</strong> multiple buffs to led unit.
+          </li>
+
+          <li>
+            Any big melee profile character, e.g.{' '}
+            <strong>Ragnar Blackmane</strong> (Space Wolves), that will benefit
+            from the rerolls.
+          </li>
+
+          <li>
+            Any character who is strong on their own, e.g.{' '}
+            <strong>Uriel Ventris</strong> (Ultramarines), that could use the
+            extra cheap protection.
+          </li>
+        </ul>
+
+        <p>
+          With ther regular on-foot speed, they are slow for a real assault
+          role. To quickly dive the mid objective, transportation is advised. An
+          Impulsor is the most reasonable, as bigger transports want scarier
+          payloads.
+        </p>
+
+        <p>
+          Assault intercessors are customary HQ escorts, especially in chapters
+          like the Blood Angels, where they become more serious of a
+          hand-to-hand threat.
+        </p>
+
+        <ul>
+          <li>
+            Cheap trading unit that clears light to medium infantry off
+            objectives.
+          </li>
+
+          <li>Decent bodyguards.</li>
+
+          <li>Slow. Need help reaching the midfield fast.</li>
+
+          <li>Struggle with high toughness targets. Need a good leader.</li>
+
+          <li>
+            Less mission utility than Scouts/Infiltrators/Incursors (which bring
+            deploy tricks, denial, or hit buffs).
+          </li>
+        </ul>
+
+        <h3 id="heavy-intercessor">Heavy intercessor squad</h3>
+
+        <Image
+          src={heavyIntercessors}
+          alt="A squad of Heavy Intercessors."
+          className="max-h-96 object-cover object-[0%_65%]"
+        />
+
+        <Callout>
+          <ul>
+            <li>
+              <strong>Profile:</strong> M5|T6|Sv3+|W3|OC2 between MEQ and TEQ.
+            </li>
+
+            <li>
+              <strong>Keywords:</strong> Infantry, Battleline, Imperium,
+              Grenades, Gravis
+            </li>
+
+            <li>
+              <strong>Cost:</strong> 100 pts. for 5 or 200 pts. for 10 models
+            </li>
+          </ul>
+
+          <hr />
+
+          <p>
+            <strong>Unyielding in the Face of the Foe:</strong> +1 to armore
+            saves if attacked by a D1, while near objective.
+          </p>
+        </Callout>
+
+        <p>
+          Heavy Intercessors struggle finding a role in 10th edition. They are
+          sluggish, tough for their cost, objective-focused shooters. Yet, they
+          face heavy competition from cheaper, more flexible units. Even with
+          the balance updates, they are still situational.
+        </p>
       </Section>
     </>
   )
