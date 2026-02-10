@@ -3,7 +3,7 @@
 :root {
   --background: var(--color-slate-50);
   --foreground: var(--color-slate-950);
-  --foreground-dim: var(--color-slate-600);
+  --foreground-dim: var(--color-slate-700);
   --surface: var(--color-slate-100);
   --surface-dim: var(--color-slate-200);
   --primary: var(--color-blue-500);
@@ -15,7 +15,7 @@
   :root {
     --background: var(--color-slate-950);
     --foreground: var(--color-slate-50);
-    --foreground-dim: var(--color-slate-400);
+    --foreground-dim: var(--color-slate-300);
     --surface: var(--color-slate-900);
     --surface-dim: var(--color-slate-800);
     --primary-surface: var(--color-blue-950);
@@ -76,6 +76,10 @@
 }
 
 @layer base {
+  * {
+    text-wrap: pretty;
+  }
+
   section h3 {
     scroll-margin-top: 2rem;
     font-size: var(--text-lg);
