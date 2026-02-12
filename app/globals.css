@@ -81,11 +81,11 @@
   }
 
   section h3 {
-    scroll-margin-top: 2rem;
-    font-size: var(--text-lg);
-    font-weight: var(--font-weight-medium);
-    margin-top: --spacing(8) !important;
-    margin-bottom: --spacing(3) !important;
+    @apply mt-8 mb-1.5 scroll-mt-18 text-lg font-medium text-balance;
+  }
+
+  section h4 {
+    @apply font-bold;
   }
 
   article a {
@@ -104,6 +104,6 @@
   }
 
   article ul {
-    @apply ml-4.5 list-disc [&_ul]:list-[revert] [&_ul]:ml-4.5;
+    @apply ml-4.5 list-disc *:mb-1 [&_ul]:list-[revert] [&_ul]:ml-4.5;
   }
 }

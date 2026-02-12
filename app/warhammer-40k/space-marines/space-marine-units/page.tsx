@@ -10,7 +10,6 @@ import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
-import { Flavor } from '@/app/ui/Flavor'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -57,7 +56,6 @@ export default async function Page() {
 
       <Section title="Battleline" id="battleline">
         <h3 id="intercessor">Intercessor squad</h3>
-
         <Image
           src={intercessors}
           alt="A squad of Space Marine Intercessors advancing."
@@ -66,14 +64,12 @@ export default async function Page() {
         <Callout>
           <ul>
             <li>
-              <strong>Profile:</strong> MEQ with OC2{' '}
-              <Flavor className="inline">
-                | Infantry, Battleline, Imperium, Grenades, Tacticus
-              </Flavor>
+              <strong>Profile:</strong> Typical MEQ + OC2 for better objective
+              presence
             </li>
 
             <li>
-              <strong>Cost:</strong> 80 pts. for 5 or 160 pts. for 10 models
+              <strong>Cost:</strong> 80 for 5, 160 for 10 models
             </li>
           </ul>
 
@@ -86,51 +82,62 @@ export default async function Page() {
 
           <p>
             <strong>Target Elimination:</strong> When shooting, bolt rifles gain
-            +2 Attacks, but the unit must shoot a single unit.
+            +2 Attacks, but the squad must shoot at a single unit.
           </p>
         </Callout>
 
         <p>
-          Intercessors are the principal Space Marine infantry. They are both
-          flexible because of the <em>sticky objectives</em> rule, and
-          consistend because of the <em>double shots</em> rule. This makes them
-          common among competition army lists.
+          Intercessors are the principal Space Marine infantry. They play well,
+          even without support, on various positions around the battlefield,
+          making them common among all army lists.
+        </p>
+
+        <h4>Sticky objectives - flexibility</h4>
+
+        <p>
+          This special rule allows intercessors to capture, then leave an
+          objective to play a role elsewhere. For example, you can rush the home
+          objective, then contest or support other units in the middle. Or, you
+          could rush mid then fall back to defend it from a distance.
         </p>
 
         <p>
-          With the bolt rifle{' '}
-          <Flavor className="inline">
-            assault heavy 24"|A2|BS3+|S4|AP-1|D1
-          </Flavor>{' '}
-          they are not designed as major damage dealers. However, the sheer
-          volume of attacks they get from double shots makes them a menace to
-          light infantry. The single-target requirement for double shots
-          naturally promotes 5-man squads over 10-man ones. Also, the grenade
-          launcher always helps in a pinch against both tougher targets and
-          hordes, so taking one goes by default.
+          Either way, the rule forces the opponent to contest objectives
+          physically. They can't simply shoot your intercessors off them for you
+          to lose control. This works well with more 5-man squads than fewer
+          10-man ones.
+        </p>
+
+        <h4>Mid-ranged firepower - consistency</h4>
+
+        <p>
+          The bolt rifle's profile, plus the double shots rule, produce a large
+          volume of attacks, capable of keeping light infantry at bay. The
+          requirement for a squad to shoot at a single target for this rule to
+          activate also promotes multiple 5-man squads.
         </p>
 
         <p>
-          Their melee profile is weak. Arm the sergeant with a power fist or a
-          thunder hammer to help with trades, but don't expect coherency there.
+          The grenade launcher is a welcomed free upgrade to one in five rifles.
+          Krak grenades can help with chiping wounds off tougher targerts. Frag
+          grenades blast hordes.
+        </p>
+
+        <h4>Melee and support</h4>
+
+        <p>
+          Intercessors are good as they are. Support for them should be kept
+          cheap. Situationally, <em>Armor of Contempt</em> can make a difference
+          when surviving on an objective matters. Also, <em>Grenades</em> can
+          help with mortal wounds in a pinch.
         </p>
 
         <p>
-          The sticky objectives rule is what gives intercessors great utility.
-          It allows them to capture an objective, then move on to play a role
-          elsewhere. You can tag home then screen or even contest the midfield.
-          The rule also forces the opponent to physically contest controlled
-          objectives. This is also a reason to go with 5-man squads.
-        </p>
-
-        <p>
-          Intercessors are efficient as they are, so support for them should be
-          cheap. You can try <em>Armor of Contempt</em> when surviving on an
-          objective matters or <em>Grenades</em> when extra punch is needed.
+          Their melee profile is weak and not their focal point. Arm the
+          sergeant with a power fist or a thunder hammer to help with trades.
         </p>
 
         <h3 id="assault-intercessor">Assault intercessor squad</h3>
-
         <Image
           src={assaultIntercessors}
           alt="A squad of Assault Intercessors."
@@ -139,14 +146,11 @@ export default async function Page() {
         <Callout>
           <ul>
             <li>
-              <strong>Profile:</strong> MEQ with OC2{' '}
-              <Flavor className="inline">
-                | Infantry, Battleline, Imperium, Grenades, Tacticus
-              </Flavor>
+              <strong>Profile:</strong> MEQ with OC2
             </li>
 
             <li>
-              <strong>Cost:</strong> 75 pts. for 5 or 150 pts. for 10 models
+              <strong>Cost:</strong> 75 for 5, 150 for 10
             </li>
           </ul>
 
@@ -160,27 +164,35 @@ export default async function Page() {
         </Callout>
 
         <p>
-          Assault intercessors are the standard hand-to-hand combat squad. They
-          are a natural fit for melee-focused chapters like the Blood Angels.
-          Outside those, they remain a cheap option for diving in on midfield
-          objectives, or escorting characters.
+          Assault intercessors bring the same typical marine profile, but with a
+          focus on hand-to-hand combat. They are a natural fit for melee-focused
+          chapters, like Blood Angels, but also excel as a cheep character
+          escort.
+        </p>
+
+        <h4>Expendable hand-to-hand profile</h4>
+
+        <p>
+          The Astartes chainswords provide a ton of anti-light-infantry attacks.
+          Anything with toughness above 4 and/or good armor saves will be
+          problematic, but a power fist or thunder hammer on the sergeant can
+          help. They are also armed with heavy bolt pistols for chiping damage
+          while closing in.
         </p>
 
         <p>
-          The Astartes chainswords{' '}
-          <Flavor className="inline">A4|WS3+|S4|AP-1|D1</Flavor> allow for 20
-          attacks per default squad. They do well against foes up to T4 with
-          rather weak armor, but you might still want to give the sergeant the
-          customary power fist or thunder hammer.
+          With OC2 these marines are effictient for trades on top of objectives,
+          but they remain slow. If you depend on striking the middle quickly,
+          think about an Impulsor for transportation. Bigger transports usually
+          want scarier payloads.
         </p>
+
+        <h4>Bodyguards</h4>
 
         <p>
-          The wound rerolls, coupled with OC2, are sufficient for contesting
-          objectives. But the rerolls being applied to the leader is what makes
-          them good expendable bodyguards. Some characters pairings that work
-          well are:
+          The re-rolls special rule also buffs any leader attached to this
+          squad. You might want them to escort:
         </p>
-
         <ul>
           <li>
             <strong>Captain:</strong> heavy melee hitter and free stratagem
@@ -213,32 +225,20 @@ export default async function Page() {
           </li>
         </ul>
 
-        <p>
-          Finally, even with assault in their name, these intercessors are slow.
-          If you depend on striking an objective quickly, think about an
-          Impulsor to transport them. Bigger transports usually want scarier
-          payloads.
-        </p>
-
         <h3 id="heavy-intercessor">Heavy intercessor squad</h3>
-
         <Image
           src={heavyIntercessors}
           alt="A squad of Heavy Intercessors."
           className="max-h-96 object-cover object-[0%_65%]"
         />
-
         <Callout>
           <ul>
             <li>
-              <strong>Profile:</strong> M5|T6|Sv3+|W3|OC2 a.k.a. Gravis profile{' '}
-              <Flavor className="inline">
-                | Infantry, Battleline, Imperium, Grenades, Gravis
-              </Flavor>
+              <strong>Profile:</strong> The Gravis - M5|T6|Sv3+|W3 with OC2
             </li>
 
             <li>
-              <strong>Cost:</strong> 100 pts. for 5 or 200 pts. for 10 models
+              <strong>Cost:</strong> 100 for 5, 200 for 10
             </li>
           </ul>
 
@@ -251,31 +251,35 @@ export default async function Page() {
         </Callout>
 
         <p>
-          Heavy Intercessors struggle with finding a dedicated role in the Space
-          Marines. With their durable profile, low speed, armor saves rule, and
-          OC2, they're fitted for sitting on objectives and absorbing fire. Yet,
-          cheaper, more flexible infantry units, push heavies into being
-          situational, making them rare among optimized army lists.
+          The heavies' profile is a slower, tougher version of the regular
+          intercessors, armed with heavier bolt rifles with longer reach. Yet,
+          cheaper, more flexible units often outperform them in a larger variety
+          of roles, making them rare among optimized army lists.
+        </p>
+
+        <h4>Durability - their key trait</h4>
+
+        <p>
+          This is the cheapest way to get gravis armor on the battlefield.
+          Against high-damage weapons, they are comparable to terminators, but
+          without the invulnerable saves. Anti-tank weapons remove them
+          efficiently, but the armor performs well against small arms.
         </p>
 
         <p>
-          The key trait of this squad is its high resilience for the cost. The
-          gravis armor performs great against D1 weapons and reasonably well
-          against anything up to S5. They are comparable to TEQ without the
-          invulnerable saves and are efficiently removed by anti-tank weapons.
+          With their sluggish yet resilient profile, plus the OC2, they are
+          designed to sit on objectives and absorb fire. That is until the enemy
+          gets close and makes short work of their bad melee profile.
         </p>
+
+        <h4>Ranged firepower</h4>
 
         <p>
-          The heavy bolt rifle{' '}
-          <Flavor className="inline">
-            assault heavy 30"|A2|BS3+|S5|AP-1|D2
-          </Flavor>{' '}
-          is strong into up to T5 infantry, even MEQ with W2, but is tamed by
-          good armor saves or larger hordes. It's best used for chip damage, not
-          as primary damage dealer.
+          The heavy bolt rifle is strong into T5|W2 targets. Anything with
+          higher toughness or good armor saves will give them a hard time.
         </p>
 
-        <p>Heavy intercessors play well with:</p>
+        <h4>Synergies</h4>
 
         <ul>
           <li>
@@ -299,9 +303,19 @@ export default async function Page() {
             Pain.
           </li>
         </ul>
+
+        <h4>Competition</h4>
+
+        <p>
+          Regular intercessors are cheaper, can perform better in melee with
+          sergeant upgrades and have sticky objectives. And even with the
+          heavier rifle's better profile, the double shots rule is often more
+          consistent. Heavies simply don't bring enough value for most
+          scenarios.
+        </p>
       </Section>
 
-      <Section title="Specialist" id="specialist">
+      <Section title="Specialists" id="specialists">
         <h3 id="eliminators">Eliminators</h3>
 
         <Image
@@ -317,15 +331,11 @@ export default async function Page() {
             </li>
 
             <li>
-              <strong>Keywords:</strong> Infantry, Grenades, Imperium, Phobos.
-            </li>
-
-            <li>
               <strong>Core abilities:</strong> Infiltrators, Stealth
             </li>
 
             <li>
-              <strong>Cost:</strong> 85 pts. for 3 models
+              <strong>Cost:</strong> 85 for 3
             </li>
           </ul>
 
@@ -338,55 +348,98 @@ export default async function Page() {
           </p>
 
           <p>
-            <strong>Target Elimination:</strong> If the unit remains stationary,
+            <strong>Mark the Target:</strong> If the unit remains stationary,
             its weapons gain devastating wounds for the phase.
           </p>
         </Callout>
 
         <p>
-          Eliminators are a small squad of dedicated stealthy long-range
-          high-value targets hunters. Because of the core abilities, they can
-          deploy ahead of the main force and enemies have a harder time hittig
-          them with ranged attacks. As expected, they are far from durable, so
-          Infiltrators, Stealth and the instigator trick have to be used to
-          their full potential. Each of their weapon choices encourage a
-          different playstyle.
+          The eliminators are a small stealthy sniper squad, dedicated to
+          hitting high-value targets at long ranges. Each of their weapon
+          loadouts is fitted for a different role.
+        </p>
+
+        <h4>Bolt sniper rifles for hunting characters</h4>
+
+        <p>
+          The sniper rifle has the precision keyword, so it can target
+          characters even if they are attached to a unit. It also has the heavy
+          keyword, which combined with the target special rule, makes it hit on
+          2+ and do mortal wounds on 6 to wound.
         </p>
 
         <p>
-          The Bolt sniper rifle is a S5|AP-2|D3|A1 36" heavy precision weapon,
-          that is meant to handle single multi-wound targets at long range. If
-          the squad doesn't move, with the target special rule and heavy
-          keyword, the weapon hits on 2+ roll, does flat 3 damage and
-          devastating wounds on 6s. A stationary squad usually forces one failed
-          save on a typical 4+ invulnerable character. It's very rare for them
-          to one-shot resilient foes, but they do threaten to delete support
-          characters with good rolls. This can force the opponent to respect
-          them and reposition.
+          A stationary squad usually either forces a failed save on a typical 4+
+          invulnerable character, or delets support characters on good rolls.
+          It's still rare for them to one-shot resilient targets, but they force
+          the opponent to respect the threat and reposition.
+        </p>
+
+        <h4>Las fusils for hunting heavy infantry</h4>
+
+        <p>
+          Las fusils win over sniper rifles on raw damage and armor penetration,
+          but lack the precision keyword. That is why they are better suited
+          against non-character infantry, although they can chip light vehicles
+          as well. You can expect a failed armor save per turn into things like
+          Terminators or Rhino-level targets.
+        </p>
+
+        <h4>Instigator bolt carbine for some tricks</h4>
+
+        <p>
+          The sergeant can sacrifice range and damage to equip an instigator
+          bolt carbine that enables some movement gimmicks.
         </p>
 
         <p>
-          If you expect to run into more heavy infantry than characters, you can
-          arm the squad with las fusils. The are better at picking off
-          non-character elite infantry and light vehicles, where precission is
-          less important than raw damage. Often they procure a failed save per
-          turn into things like Terminators or Rhino-level targets.
+          Eliminators can pop out, shoot and get back into cover. Or shoot, then
+          advance and contest objectives.
         </p>
 
-        <p>
-          The sergeant also can equip an instigator bolt carbine. It sacrifices
-          range and damage for some movement tricks. It enables the squad to pop
-          and shoot from and back into cover, or perform long repositions where
-          they avance shoot, then contest objectives. This is especially useful
-          if las fusil are equipped to handle non-characters. Many players take
-          this trade as you can often see two las fusils paired with a carabine
-          sergeant in competative lists.
-        </p>
+        <p>There is also the well-known Impulsor gimmick:</p>
+
+        <ul>
+          <li>Two Eliminator squads with Instigators embark in an Impulsor.</li>
+
+          <li>Disembark, shoot, then use the Instigator move to re-embark.</li>
+
+          <li>
+            The Impulsor then uses Firing Deck to effectively have them shoot
+            again.
+          </li>
+        </ul>
 
         <p>
-          Eliminators are a low-investment unit that likes buffs, but don't
-          often deserve the best of them:
+          There is so much utility with this that two las fusils + instigator is
+          often regarded as default optimized loadout.
         </p>
+
+        <h4>Synergies</h4>
+
+        <ul>
+          <li>
+            <strong>Vanguard Spearhead detachment:</strong> Extra defense plus
+            better stratagems for redeploy and retreat. Move–shoot–move plays
+            extra well here.
+          </li>
+
+          <li>
+            <strong>Anvil Siege Force:</strong> +1 to wound on static.
+          </li>
+
+          <li>
+            <strong>Deathwatch / Black Spear Strike Force:</strong> You can get
+            lethal and sustained hits on a key turn, to transform their shots
+            into reliable damage.
+          </li>
+
+          <li>
+            <strong>Phobos Captain:</strong> A free battle tactic stratagem each
+            turn and a strong redeploy ability. This is niche as it makes the
+            unit expensive for its durability and output.
+          </li>
+        </ul>
       </Section>
     </>
   )
