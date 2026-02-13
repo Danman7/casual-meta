@@ -104,6 +104,6 @@
   }
 
   article ul {
-    @apply ml-4.5 list-disc *:mb-1 [&_ul]:list-[revert] [&_ul]:ml-4.5;
+    @apply ml-4.5 list-disc [&_ul]:list-[revert] [&_ul]:ml-4.5;
   }
 }

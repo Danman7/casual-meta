@@ -64,12 +64,37 @@ export default async function Page() {
         <Callout>
           <ul>
             <li>
-              <strong>Profile:</strong> Typical MEQ + OC2 for better objective
-              presence
+              <strong>Profile:</strong> MEQ (Tacticus Armor) with improved OC2{' '}
+              <span className="text-foreground-dim text-sm">
+                | Infantry, Battleline, Tacticus, Imperium, Grenades
+              </span>
             </li>
 
             <li>
-              <strong>Cost:</strong> 80/5, 160/10
+              <strong>Cost:</strong> 80/5, 160/10{' '}
+              <span className="text-foreground-dim text-sm">
+                | 1 Sergeant, 4/9 Intercessors
+              </span>
+            </li>
+
+            <li>
+              <strong>Loadout:</strong>
+
+              <ul>
+                <li>
+                  <strong>Bolt rifle:</strong> <em>assault heavy</em>{' '}
+                  24"|A2|BS3+|S4|AP-1|D1
+                </li>
+                <li>Bolt pistol and close combat weapon.</li>
+                <li>
+                  One in five can attach a grenade launcher to their bolt rifle:
+                  lose assault keyword, get krak/frag grenades.
+                </li>
+                <li>
+                  The sergeant can replace his CCW with a standard selection of
+                  Space Marines melee weapons.
+                </li>
+              </ul>
             </li>
           </ul>
 
@@ -82,50 +107,72 @@ export default async function Page() {
 
           <p>
             <strong>Target Elimination:</strong> When shooting, bolt rifles gain
-            +2 Attacks, but the squad must shoot at a single unit.
+            +2 Attacks, but the squad must target a single unit.
           </p>
         </Callout>
 
         <p>
-          Intercessors are the principal Space Marine infantry. They play well,
-          even without support, on various positions around the battlefield,
-          making them common among all army lists.
+          Intercessors are the principal Space Marines infantry. Among the
+          battleline units, they are the ones that best scale horizontaly, and
+          bring the most mission utility. This makes them common among army
+          lists.
         </p>
 
-        <h4>Sticky objectives - flexibility</h4>
+        <h4>Consistent firepower</h4>
 
         <p>
-          This special rule allows intercessors to capture, then leave an
-          objective to play a role elsewhere. For example, you can rush the home
-          objective, then contest or support other units in the middle. Or, you
-          could rush mid then fall back to defend it from a distance.
+          The bolt rifle is flexible: can advance and shoot, or remain
+          stationary and hit on 2+ instead of 3+. Its strength is not damage,
+          but volume. When the Target Elimination rule applies, it doubles the
+          number of shots per bolt rifle. Converts the unit into focused
+          anti-infantry pressure.
         </p>
 
-        <p>
-          Either way, the rule forces the opponent to contest objectives
-          physically. They can't simply shoot your intercessors off them for you
-          to lose control. This works well with more 5-man squads than fewer
-          10-man ones.
-        </p>
-
-        <h4>Mid-ranged firepower - consistency</h4>
+        <ul>
+          <li>Devastating to GEQ.</li>
+          <li>Reasonable against MEQ.</li>
+          <li>No threat to armor or T5+,</li>
+        </ul>
 
         <p>
-          The bolt rifle's profile, plus the double shots rule, produce a large
-          volume of attacks, capable of keeping light infantry at bay. The
-          requirement for a squad to shoot at a single target for this rule to
-          activate also promotes multiple 5-man squads.
+          The rule requires no split fire. The squad must commit to one target.
+          This naturally promotes multiple 5-man squads over fewer 10-man ones.
         </p>
 
         <p>
-          The grenade launcher is a welcomed free upgrade to one in five rifles.
-          Krak grenades can help with chiping wounds off tougher targerts. Frag
-          grenades blast hordes.
+          The grenade launcher is a free upgrade. No reason to skip it. Krak
+          grenades gives some vertical reach against tougher targerts. Frag
+          grenades can help with hordes.
         </p>
 
         <p>
-          Their melee profile is weak and not their focal point. Arm the
-          sergeant with a power fist or a thunder hammer to help with trades.
+          Intercessors' melee profile is not their focal point. A power fist on
+          the sergeant meaningfully increases trading value while retaining the
+          bolt rifle. Also no reason no to take it.
+        </p>
+
+        <h4>Sticky objectives</h4>
+
+        <p>The Objective Secured rule changes how objectives are contested.</p>
+
+        <ul>
+          <li>You can tag an objective and leave it. No control is lost.</li>
+          <li>
+            The opponent must physically contest the objective. Not just shoot
+            your men off it.
+          </li>
+          <li>You can rush home, then move out and support the midfield.</li>
+          <li>
+            Or rush the middle objectives, then fall back to defent from a
+            distance.
+          </li>
+        </ul>
+
+        <p>
+          This rule effectively frees up objective control resources to be used
+          eslewhere. Like with double shots, it also scales better horizontally
+          with 5-men squads. You can pressure multiple objectives better while
+          retining focus fire on targets.
         </p>
 
         <h3 id="assault-intercessor">Assault intercessor squad</h3>
