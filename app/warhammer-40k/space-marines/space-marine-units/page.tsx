@@ -69,7 +69,7 @@ export default async function Page() {
             </li>
 
             <li>
-              <strong>Cost:</strong> 80 for 5, 160 for 10 models
+              <strong>Cost:</strong> 80/5, 160/10
             </li>
           </ul>
 
@@ -121,15 +121,6 @@ export default async function Page() {
           The grenade launcher is a welcomed free upgrade to one in five rifles.
           Krak grenades can help with chiping wounds off tougher targerts. Frag
           grenades blast hordes.
-        </p>
-
-        <h4>Melee and support</h4>
-
-        <p>
-          Intercessors are good as they are. Support for them should be kept
-          cheap. Situationally, <em>Armor of Contempt</em> can make a difference
-          when surviving on an objective matters. Also, <em>Grenades</em> can
-          help with mortal wounds in a pinch.
         </p>
 
         <p>
@@ -279,31 +270,6 @@ export default async function Page() {
           higher toughness or good armor saves will give them a hard time.
         </p>
 
-        <h4>Synergies</h4>
-
-        <ul>
-          <li>
-            <strong>Anvil Siege Force:</strong> +1 to wound when stationary
-            plays well with durability and range.
-          </li>
-
-          <li>
-            <strong>Gladius Task Force:</strong> adds some flexibility to
-            advance or fallback and shoot.
-          </li>
-
-          <li>
-            <strong>Vanguard Spearhead:</strong> the stealth can help with home
-            objectives.
-          </li>
-
-          <li>
-            Often better without a character attached but you can try{' '}
-            <strong>Iron Father Feirros</strong> (Iron Hands) for the 5+ Feel No
-            Pain.
-          </li>
-        </ul>
-
         <h4>Competition</h4>
 
         <p>
@@ -414,32 +380,6 @@ export default async function Page() {
           There is so much utility with this that two las fusils + instigator is
           often regarded as default optimized loadout.
         </p>
-
-        <h4>Synergies</h4>
-
-        <ul>
-          <li>
-            <strong>Vanguard Spearhead detachment:</strong> Extra defense plus
-            better stratagems for redeploy and retreat. Move–shoot–move plays
-            extra well here.
-          </li>
-
-          <li>
-            <strong>Anvil Siege Force:</strong> +1 to wound on static.
-          </li>
-
-          <li>
-            <strong>Deathwatch / Black Spear Strike Force:</strong> You can get
-            lethal and sustained hits on a key turn, to transform their shots
-            into reliable damage.
-          </li>
-
-          <li>
-            <strong>Phobos Captain:</strong> A free battle tactic stratagem each
-            turn and a strong redeploy ability. This is niche as it makes the
-            unit expensive for its durability and output.
-          </li>
-        </ul>
       </Section>
     </>
   )
