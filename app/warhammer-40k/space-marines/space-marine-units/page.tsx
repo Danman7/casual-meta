@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { GiBolterGun } from 'react-icons/gi'
 import { PiPersonArmsSpreadFill } from 'react-icons/pi'
@@ -313,6 +312,8 @@ export default async function Page() {
                   <em>assault, heavy, sustained hits 1</em>{' '}
                   36"|A3|BS3+|S5|AP-1|D2
                 </li>
+
+                <li>No upgrades for the sergeant.</li>
               </ul>
             </li>
           </ul>
@@ -331,20 +332,9 @@ export default async function Page() {
           <li>T6, three wounds, 3+ save for 20 points per model.</li>
           <li>Excellent versus small arms.</li>
           <li>Designed to sit in the open and absorb fire.</li>
+          <li>Comparable to terminators without the invulnerable saves.</li>
+          <li>Vulnerable to anti-tank weapons.</li>
         </ul>
-
-        <p>
-          This is the cheapest way to get gravis armor on the battlefield.
-          Against high-damage weapons, they are comparable to terminators, but
-          without the invulnerable saves. Anti-tank weapons remove them
-          efficiently, but the armor performs well against small arms.
-        </p>
-
-        <p>
-          With their sluggish yet resilient profile, plus the OC2, they are
-          designed to sit on objectives and absorb fire. That is until the enemy
-          gets close and makes short work of their bad melee profile.
-        </p>
 
         <h4>Ranged firepower</h4>
 
@@ -355,36 +345,80 @@ export default async function Page() {
 
         <h4>Competition</h4>
 
-        <p>
-          Regular intercessors are cheaper, can perform better in melee with
-          sergeant upgrades and have sticky objectives. And even with the
-          heavier rifle's better profile, the double shots rule is often more
-          consistent. Heavies simply don't bring enough value for most
-          scenarios.
-        </p>
+        <ul>
+          <li>
+            Regular intercessors remain more efficient overall: cheaper, sticky
+            objectives, double shots, power fist on sergeant.
+          </li>
+
+          <li>
+            Heavy Intercessors win on toughness, lose on flexibility and value.
+          </li>
+        </ul>
       </Section>
 
       <Section title="Specialists" id="specialists">
         <h3 id="eliminators">Eliminators</h3>
 
-        <Image
-          src={eliminators}
-          alt="A squad of Eliminators."
-          className="max-h-96 object-cover object-[0%_35%]"
+        <ImageTextSection
+          image={eliminators}
+          imageAlt="A squad of Eliminators."
+          text="The eliminators are a small stealthy sniper squad, dedicated to
+          hitting high-value targets at long ranges. Each of their weapon
+          loadouts is fitted for a different role."
+          imageClassName="max-h-96 object-[0%_35%] shadow-sm"
         />
 
         <Callout>
           <ul>
             <li>
-              <strong>Profile:</strong> Pure MEQ.
+              <strong>Profile:</strong> Pure MEQ{' '}
+              <span className="text-foreground-dim text-sm">
+                | Infantry, Phobos, Imperium, Grenades
+              </span>
             </li>
 
             <li>
-              <strong>Core abilities:</strong> Infiltrators, Stealth
+              <strong>Cost:</strong> 85/3{' '}
+              <span className="text-foreground-dim text-sm">
+                | 1 Sergeant, 2 Eliminators
+              </span>
             </li>
 
             <li>
-              <strong>Cost:</strong> 85 for 3
+              <strong>Core abilities:</strong>
+              <ul>
+                <li>
+                  <strong>Infiltrators:</strong> can be deployed anywhere unless
+                  too close to enemies.
+                </li>
+
+                <li>
+                  <strong>Stealth:</strong> -1 to hit on incoming ranged
+                  attacks.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>Loadout:</strong>
+
+              <ul>
+                <li>
+                  <strong>Bolt sniper rifle</strong> <em>heavy, precision</em>{' '}
+                  36"|A1|BS3+|S5|AP-2|D3
+                </li>
+
+                <li>
+                  <strong>Las fusil</strong> <em>heavy</em>{' '}
+                  36"|A1|BS3+|S9|AP-2|Dd6
+                </li>
+
+                <li>
+                  Sergeant can wield an <strong>Instigator bolt carbine</strong>{' '}
+                  <em>precision</em> 24"|A1|BS3+|S4|AP-2|D2
+                </li>
+              </ul>
             </li>
           </ul>
 
@@ -402,36 +436,41 @@ export default async function Page() {
           </p>
         </Callout>
 
-        <p>
-          The eliminators are a small stealthy sniper squad, dedicated to
-          hitting high-value targets at long ranges. Each of their weapon
-          loadouts is fitted for a different role.
-        </p>
-
         <h4>Bolt sniper rifles for hunting characters</h4>
 
-        <p>
-          The sniper rifle has the precision keyword, so it can target
-          characters even if they are attached to a unit. It also has the heavy
-          keyword, which combined with the target special rule, makes it hit on
-          2+ and do mortal wounds on 6 to wound.
-        </p>
+        <ul>
+          <li>
+            Precision keyword allows targeting characters even if attached to a
+            unit.
+          </li>
+
+          <li>
+            Heavy keyword + Mark the Target rule = flat 3 damage on 2+ and
+            mortal wounds on 6 if squad didn't move.
+          </li>
+        </ul>
 
         <p>
-          A stationary squad usually either forces a failed save on a typical 4+
-          invulnerable character, or delets support characters on good rolls.
-          It's still rare for them to one-shot resilient targets, but they force
-          the opponent to respect the threat and reposition.
+          A stationary squad usually forces at least one failed save on a
+          typical 4+ invulnerable character. They also can straight delete a
+          support character on a good roll. It's still rare for them to one-shot
+          resilient targets, but they force the opponent to respect the threat
+          and influence their positioning.
         </p>
 
         <h4>Las fusils for hunting heavy infantry</h4>
 
+        <ul>
+          <li>Win over sniper rifles on raw damage and armor penetration.</li>
+          <li>
+            Lack the precision keyword, hence better against elite squads.
+          </li>
+          <li>Decent chip damage against light vehicles.</li>
+        </ul>
+
         <p>
-          Las fusils win over sniper rifles on raw damage and armor penetration,
-          but lack the precision keyword. That is why they are better suited
-          against non-character infantry, although they can chip light vehicles
-          as well. You can expect a failed armor save per turn into things like
-          Terminators or Rhino-level targets.
+          You can expect at least one failed armor save per turn into things
+          like Terminators or Rhino-level targets.
         </p>
 
         <h4>Instigator bolt carbine for some tricks</h4>
@@ -462,6 +501,30 @@ export default async function Page() {
         <p>
           There is so much utility with this that two las fusils + instigator is
           often regarded as default optimized loadout.
+        </p>
+
+        <h4>Competition</h4>
+
+        <ul>
+          <li>
+            <strong>Scouts:</strong> Cheaper, more wounds per point, can return
+            to reserves, decent damage, and strong objective play.
+          </li>
+          <li>
+            <strong>Infiltrators:</strong> Weaker damage, but deep strike denial
+            ability is very strong.
+          </li>
+          <li>
+            <strong>Vindicare Assassin:</strong> Lower average damage than 3
+            Eliminators, but harder to shoot and spikes a lot of damage in key
+            moments.
+          </li>
+        </ul>
+
+        <p>
+          Overall, scouts and infiltrators appear far more often than
+          eliminators in lists. This doesn't prove them bad, just not the
+          default choice.
         </p>
       </Section>
     </>
