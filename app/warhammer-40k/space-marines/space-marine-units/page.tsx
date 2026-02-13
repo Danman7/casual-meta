@@ -10,6 +10,7 @@ import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
+import { ImageTextSection } from '@/app/ui/ImageTextSection'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -56,11 +57,14 @@ export default async function Page() {
 
       <Section title="Battleline" id="battleline">
         <h3 id="intercessor">Intercessor squad</h3>
-        <Image
-          src={intercessors}
-          alt="A squad of Space Marine Intercessors advancing."
-          className="max-h-96 object-cover object-[0%_65%]"
+
+        <ImageTextSection
+          image={intercessors}
+          imageAlt="A squad of Space Marine Intercessors advancing."
+          text="Intercessors are the principal Space Marines infantry. Among their battleline units, no one scales horizontaly better. Their flexibility and mission utility supports a wide variety of army lists."
+          imageClassName="max-h-96 object-[0%_65%] shadow-sm"
         />
+
         <Callout>
           <ul>
             <li>
@@ -85,15 +89,14 @@ export default async function Page() {
                   <strong>Bolt rifle:</strong> <em>assault heavy</em>{' '}
                   24"|A2|BS3+|S4|AP-1|D1
                 </li>
-                <li>Bolt pistol and close combat weapon.</li>
+                <li>
+                  <strong>Bolt pistol:</strong> 12"|A1|BS3+|S4|AP0|D1
+                </li>
                 <li>
                   One in five can attach a grenade launcher to their bolt rifle:
                   lose assault keyword, get krak/frag grenades.
                 </li>
-                <li>
-                  The sergeant can replace his CCW with a standard selection of
-                  Space Marines melee weapons.
-                </li>
+                <li>The sergeant can equip selection of melee weapons.</li>
               </ul>
             </li>
           </ul>
@@ -111,32 +114,14 @@ export default async function Page() {
           </p>
         </Callout>
 
-        <p>
-          Intercessors are the principal Space Marines infantry. Among the
-          battleline units, they are the ones that best scale horizontaly, and
-          bring the most mission utility. This makes them common among army
-          lists.
-        </p>
-
         <h4>Consistent firepower</h4>
 
         <p>
           The bolt rifle is flexible: can advance and shoot, or remain
-          stationary and hit on 2+ instead of 3+. Its strength is not damage,
-          but volume. When the Target Elimination rule applies, it doubles the
-          number of shots per bolt rifle. Converts the unit into focused
-          anti-infantry pressure.
-        </p>
-
-        <ul>
-          <li>Devastating to GEQ.</li>
-          <li>Reasonable against MEQ.</li>
-          <li>No threat to armor or T5+,</li>
-        </ul>
-
-        <p>
+          stationary and hit on 2+. Its strength is not damage, but volume. When
+          the Target Elimination rule applies, it doubles the number of shots
+          per bolt rifle. This makes the unit a proper threat to light infantry.
           The rule requires no split fire. The squad must commit to one target.
-          This naturally promotes multiple 5-man squads over fewer 10-man ones.
         </p>
 
         <p>
@@ -148,7 +133,7 @@ export default async function Page() {
         <p>
           Intercessors' melee profile is not their focal point. A power fist on
           the sergeant meaningfully increases trading value while retaining the
-          bolt rifle. Also no reason no to take it.
+          bolt rifle.
         </p>
 
         <h4>Sticky objectives</h4>
@@ -163,67 +148,93 @@ export default async function Page() {
           </li>
           <li>You can rush home, then move out and support the midfield.</li>
           <li>
-            Or rush the middle objectives, then fall back to defent from a
+            Or rush the middle objectives, then fall back to defend from a
             distance.
           </li>
+          <li>Effectively frees up control resources.</li>
         </ul>
 
-        <p>
-          This rule effectively frees up objective control resources to be used
-          eslewhere. Like with double shots, it also scales better horizontally
-          with 5-men squads. You can pressure multiple objectives better while
-          retining focus fire on targets.
-        </p>
+        <h4>5-man over 10-man squads</h4>
+
+        <ul>
+          <li>Pressure multiple objectives.</li>
+          <li>Retain flexibility for double shots focus fire.</li>
+          <li>Lower risk of overkill.</li>
+        </ul>
 
         <h3 id="assault-intercessor">Assault intercessor squad</h3>
-        <Image
-          src={assaultIntercessors}
-          alt="A squad of Assault Intercessors."
-          className="max-h-96 object-cover object-[0%_65%]"
+
+        <ImageTextSection
+          image={assaultIntercessors}
+          imageAlt="A squad of Assault Intercessors."
+          text="Replace the bolt rifles with chainswords, and you get an intercessor squad with
+          focus on hand-to-hand combat. They are a natural fit for melee-focused
+          chapters, like Blood Angels, but also excel as a cheap character
+          escorts or objective divers."
+          imageClassName="max-h-96 object-[0%_65%] shadow-sm"
         />
+
         <Callout>
           <ul>
             <li>
               <strong>Profile:</strong> MEQ with OC2
+              <span className="text-foreground-dim text-sm">
+                | Infantry, Battleline, Tacticus, Imperium, Grenades
+              </span>
             </li>
 
             <li>
-              <strong>Cost:</strong> 75 for 5, 150 for 10
+              <strong>Cost:</strong> 75/5, 150/10{' '}
+              <span className="text-foreground-dim text-sm">
+                | 1 Sergeant, 4/9 Intercessors
+              </span>
+            </li>
+
+            <li>
+              <strong>Loadout:</strong>
+
+              <ul>
+                <li>
+                  <strong>Astartes chainsword:</strong> A4|WS3+|S4|AP-1|D1
+                </li>
+
+                <li>
+                  <strong>Heavy bolt pistol:</strong> 18"|A1|BS3+|S4|AP-1|D1
+                </li>
+
+                <li>The sergeant can equip selection of melee weapons.</li>
+              </ul>
             </li>
           </ul>
 
           <hr />
 
           <p>
-            <strong>Shock Assault:</strong> Reroll all 1s to wound. Reroll all
-            wounds on objective. Also{' '}
-            <strong>applies to attached characters</strong>.
+            <strong>Shock Assault:</strong> Reroll 1s to wound anywhere. Reroll
+            all wounds instead if near objective. Also applies to attached
+            characters.
           </p>
         </Callout>
 
-        <p>
-          Assault intercessors bring the same typical marine profile, but with a
-          focus on hand-to-hand combat. They are a natural fit for melee-focused
-          chapters, like Blood Angels, but also excel as a cheep character
-          escort.
-        </p>
-
         <h4>Expendable hand-to-hand profile</h4>
 
-        <p>
-          The Astartes chainswords provide a ton of anti-light-infantry attacks.
-          Anything with toughness above 4 and/or good armor saves will be
-          problematic, but a power fist or thunder hammer on the sergeant can
-          help. They are also armed with heavy bolt pistols for chiping damage
-          while closing in.
-        </p>
+        <ul>
+          <li>
+            High volume of attacks + high OC + wound rerolls rule = clear light
+            infantry off objectives for 75 points.
+          </li>
 
-        <p>
-          With OC2 these marines are effictient for trades on top of objectives,
-          but they remain slow. If you depend on striking the middle quickly,
-          think about an Impulsor for transportation. Bigger transports usually
-          want scarier payloads.
-        </p>
+          <li>Always arm the sergeant with a power fist or thunder hammer.</li>
+
+          <li>
+            Don't expect to trade well with elite infantry without support.
+          </li>
+
+          <li>
+            Slow for true assault troops. Think about an Impulsor for
+            transportation.
+          </li>
+        </ul>
 
         <h4>Bodyguards</h4>
 
@@ -264,19 +275,45 @@ export default async function Page() {
         </ul>
 
         <h3 id="heavy-intercessor">Heavy intercessor squad</h3>
-        <Image
-          src={heavyIntercessors}
-          alt="A squad of Heavy Intercessors."
-          className="max-h-96 object-cover object-[0%_65%]"
+
+        <ImageTextSection
+          image={heavyIntercessors}
+          imageAlt="A squad of Heavy Intercessors."
+          text="Instead of the standard power armor, these marines don the heavier Gravis armor, making them slugish, yet resilient objective holders. They are tough for their cost and wield improved versions of the bolt rifle. Still, cheaper, more supple units oftern outperform them in a wider array of tasks, giving Heavy Intercessors a hard time finding a dedicated role."
+          imageClassName="max-h-96 object-[0%_65%] shadow-sm"
         />
+
         <Callout>
           <ul>
             <li>
-              <strong>Profile:</strong> The Gravis - M5|T6|Sv3+|W3 with OC2
+              <strong>Profile:</strong> The Gravis - M5|T6|Sv3+|W3 with OC2{' '}
+              <span className="text-foreground-dim text-sm">
+                | Infantry, Battleline, Gravis, Imperium, Grenades
+              </span>
             </li>
 
             <li>
-              <strong>Cost:</strong> 100 for 5, 200 for 10
+              <strong>Cost:</strong> 100/5, 200/10{' '}
+              <span className="text-foreground-dim text-sm">
+                | 1 Sergeant, 4/9 Intercessors
+              </span>
+            </li>
+
+            <li>
+              <strong>Loadout:</strong>
+
+              <ul>
+                <li>
+                  <strong>Heavy bolt rifle</strong> <em>assault heavy</em>{' '}
+                  30"|A2|BS3+|S5|AP-1|D2
+                </li>
+
+                <li>
+                  One in five can equip a <strong>Heavy bolter</strong>{' '}
+                  <em>assault, heavy, sustained hits 1</em>{' '}
+                  36"|A3|BS3+|S5|AP-1|D2
+                </li>
+              </ul>
             </li>
           </ul>
 
@@ -288,14 +325,13 @@ export default async function Page() {
           </p>
         </Callout>
 
-        <p>
-          The heavies' profile is a slower, tougher version of the regular
-          intercessors, armed with heavier bolt rifles with longer reach. Yet,
-          cheaper, more flexible units often outperform them in a larger variety
-          of roles, making them rare among optimized army lists.
-        </p>
+        <h4>Durability</h4>
 
-        <h4>Durability - their key trait</h4>
+        <ul>
+          <li>T6, three wounds, 3+ save for 20 points per model.</li>
+          <li>Excellent versus small arms.</li>
+          <li>Designed to sit in the open and absorb fire.</li>
+        </ul>
 
         <p>
           This is the cheapest way to get gravis armor on the battlefield.

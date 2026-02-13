@@ -12,6 +12,7 @@ import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
 import { Flavor } from '@/app/ui/Flavor'
+import { ImageTextSection } from '@/app/ui/ImageTextSection'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
@@ -36,26 +37,11 @@ export default async function Page() {
     <>
       <PageTitle title={navTitle} subtitle="Character overview and guide" />
 
-      <Section className="md:flex items-center gap-4 mb-8">
-        <Image
-          className="max-h-72 object-cover object-[0%_0%]  md:w-1/2 md:max-h-full"
-          src={Scorpion}
-          alt="Scorpion in Mortal Kombat 1"
-          loading="eager"
-        />
-
-        <div className="md:w-1/2">
-          <p>
-            Scorpion in Mortal Kombat 1 is beginner-friendly and frequently
-            played at all levels. His major strength is interrupting unsafe
-            actions from anywhere on the screen, converting them into simple
-            adaptable combos. His toolbox includes both close and long-range
-            options but lacks efficient offense. For that, he needs a proper
-            Kameo. New players will find him easier when reacting rather than
-            initiating pressure.
-          </p>
-        </div>
-      </Section>
+      <ImageTextSection
+        image={Scorpion}
+        imageAlt="Scorpion in Mortal Kombat 1"
+        text="Scorpion in Mortal Kombat 1 is beginner-friendly and frequently played at all levels. His major strength is interrupting unsafe actions from anywhere on the screen, converting them into simple adaptable combos. His toolbox includes both close and long-range options but lacks efficient offense. For that, he needs a proper Kameo. New players will find him easier when reacting rather than initiating pressure."
+      />
 
       <ProsConsList
         pros={[
