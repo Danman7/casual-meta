@@ -2,7 +2,6 @@ import Link from 'next/link'
 
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Flavor } from '@/app/ui/Flavor'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -22,7 +21,7 @@ const mkRoute = createRouteLookup(MK_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <PageTitle title={navTitle} subtitle="Advanced concepts" />
+      <h1 className="page-title">{navTitle}</h1>
 
       <Section>
         <Flavor>

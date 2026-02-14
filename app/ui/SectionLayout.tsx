@@ -30,9 +30,7 @@ export function SectionLayout({
           tabIndex={-1}
           className="mx-auto max-w-4xl px-4 pt-8 pb-32"
         >
-          <article className="mx-auto max-w-3xl text-base space-y-6">
-            {children}
-          </article>
+          <article className="mx-auto max-w-3xl">{children}</article>
         </main>
 
         <aside className="hidden xl:flex" aria-label="On this page">

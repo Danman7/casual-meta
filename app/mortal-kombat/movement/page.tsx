@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaWrench } from 'react-icons/fa'
-import { GiDeathSkull } from 'react-icons/gi'
 import { MdChevronRight } from 'react-icons/md'
 
 import arena from '@/app/assets/mk/arena.webp'
@@ -14,10 +12,8 @@ import knockdown from '@/app/assets/mk/knockdown.webp'
 import stand from '@/app/assets/mk/stand.webp'
 import standBlock from '@/app/assets/mk/standblock.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
-import { Badge } from '@/app/ui/Badge'
 import { Diagram } from '@/app/ui/Diagram'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -37,20 +33,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle
-        title={navTitle}
-        subtitle="Movement underpins combat. It creates advantage, even before the attacks begin."
-        tags={
-          <>
-            <Badge>
-              <GiDeathSkull /> Mortal Kombat
-            </Badge>
-            <Badge>
-              <FaWrench /> Core Mechanics
-            </Badge>
-          </>
-        }
-      />
+      <h1 className="page-title">{navTitle}</h1>
 
       <Section title="Forward and backward" id="forward-and-backward">
         <p>

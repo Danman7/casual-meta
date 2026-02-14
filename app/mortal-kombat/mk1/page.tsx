@@ -2,7 +2,6 @@ import Image from 'next/image'
 
 import mk1Title from '@/app/assets/mk1/mk1-title.webp'
 import { Flavor } from '@/app/ui/Flavor'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -16,7 +15,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle title={navTitle} subtitle="Series title" />
+      <h1 className="page-title">{navTitle}</h1>
       <Section>
         <p>
           In 2023, NetherRealm Studios released Mortal Kombat 1 (technicaly the

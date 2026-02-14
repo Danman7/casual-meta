@@ -2,7 +2,6 @@ import duelStart from '@/app/assets/mk1/duel_start.webp'
 import { MK_TITLE } from '@/app/constants'
 import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -18,7 +17,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle title={navTitle} subtitle="Advanced concepts" />
+      <h1 className="page-title">{navTitle}</h1>
 
       <Section>
         <Flavor>

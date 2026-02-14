@@ -1,37 +1,22 @@
 @import 'tailwindcss';
 
 :root {
-  --background: var(--color-slate-50);
-  --foreground: var(--color-slate-950);
-  --foreground-dim: var(--color-slate-700);
-  --surface: var(--color-slate-100);
-  --surface-dim: var(--color-slate-200);
-  --primary: var(--color-blue-500);
-  --primary-surface: var(--color-blue-100);
-  --primary-text: var(--color-blue-800);
+  --background: hsl(10, 10%, 98%);
+  --foreground: hsl(10, 20%, 20%);
+  --surface: hsl(10, 20%, 94%);
+  --primary: hsl(10, 80%, 50%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--color-slate-950);
-    --foreground: var(--color-slate-50);
-    --foreground-dim: var(--color-slate-300);
-    --surface: var(--color-slate-900);
-    --surface-dim: var(--color-slate-800);
-    --primary-surface: var(--color-blue-950);
-    --primary-text: var(--color-blue-300);
   }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-foreground-dim: var(--foreground-dim);
   --color-surface: var(--surface);
-  --color-surface-dim: var(--surface-dim);
   --color-primary: var(--primary);
-  --color-primary-surface: var(--primary-surface);
-  --color-primary-text: var(--primary-text);
   --font-serif: var(--font-noto-serif);
   --font-display: var(--font-noto-serif-display);
 
@@ -76,34 +61,27 @@
 }
 
 @layer base {
-  * {
-    text-wrap: pretty;
-  }
-
   section h3 {
-    @apply mt-8 mb-1.5 scroll-mt-18 text-lg font-medium text-balance;
-  }
-
-  section h4 {
-    @apply font-bold;
+    @apply text-xl tracking-wide;
   }
 
   article a {
-    color: var(--color-primary-text);
-    text-decoration: underline;
-    font-weight: var(--font-weight-semibold);
-
-    &:hover {
-      text-decoration-color: var(--color-primary);
-      text-decoration-thickness: 2px;
-    }
+    @apply text-primary underline hover:text-primary/80 active:text-primary/60 transition-colors;
   }
 
   hr {
-    @apply border-foreground/20;
+    @apply border-foreground/10;
   }
 
   article ul {
     @apply ml-4.5 list-disc [&_ul]:list-[revert] [&_ul]:ml-4.5;
+  }
+
+  .dingbat {
+    @apply inline-block w-2 h-2 bg-primary rounded-full shadow-sm;
+  }
+
+  .page-title {
+    @apply text-5xl font-bold tracking-wider text-center mt-8 md:mt-16 mb-16 md:mb-20;
   }
 }

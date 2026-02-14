@@ -1,6 +1,5 @@
 import { HOMM3_TITLE } from '@/app/constants'
 import { CreatureTable } from '@/app/homm3/creature-compendium/CreatureTable'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -16,7 +15,7 @@ export const metadata = generatePageMetadata(
 export default function Page() {
   return (
     <>
-      <PageTitle title={navTitle} subtitle="Comparison tool" />
+      <h1 className="page-title">{navTitle}</h1>
 
       <Section>
         <p>

@@ -6,7 +6,6 @@ import shao2 from '@/app/assets/mk1/shao_2.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
 import { ProsConsList } from '@/app/ui/ProsConsList'
 import { Section } from '@/app/ui/Section'
@@ -27,7 +26,7 @@ const mkRoute = createRouteLookup(MK_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <PageTitle title={navTitle} subtitle="Character overview and guide" />
+      <h1 className="page-title">{navTitle}</h1>
 
       <Section className="md:flex items-center gap-4">
         <Image

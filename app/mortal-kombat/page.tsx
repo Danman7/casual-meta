@@ -21,7 +21,6 @@ import duelStart from '@/app/assets/mk1/duel_start.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Diagram } from '@/app/ui/Diagram'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -37,10 +36,7 @@ const mkRoute = createRouteLookup(MK_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <PageTitle
-        title={MK_TITLE}
-        subtitle="Mortal Kombat (MK) is a long-running franchise of fighting games, popular for fast-paced action and gory graphics."
-      />
+      <h1 className="page-title">{MK_TITLE}</h1>
 
       <Section>
         <Image

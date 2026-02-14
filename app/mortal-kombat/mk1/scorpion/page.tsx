@@ -14,7 +14,6 @@ import { Callout } from '@/app/ui/Callout'
 import { Flavor } from '@/app/ui/Flavor'
 import { ImageTextSection } from '@/app/ui/ImageTextSection'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
 import { ProsConsList } from '@/app/ui/ProsConsList'
 import { Section } from '@/app/ui/Section'
@@ -35,7 +34,7 @@ const mkRoute = createRouteLookup(MK_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <PageTitle title={navTitle} subtitle="Character overview and guide" />
+      <h1 className="page-title">{navTitle}</h1>
 
       <ImageTextSection
         image={Scorpion}

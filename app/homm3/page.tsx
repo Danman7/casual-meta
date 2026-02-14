@@ -1,7 +1,6 @@
 import { HOMM3_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
 import { Flavor } from '@/app/ui/Flavor'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -13,7 +12,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle title={HOMM3_TITLE} />
+      <h1 className="page-title">{HOMM3_TITLE}</h1>
 
       <Section>
         <Flavor>

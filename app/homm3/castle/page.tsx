@@ -5,7 +5,6 @@ import castleMap from '@/app/assets/homm3/castle_map.webp'
 import { HOMM3_TITLE } from '@/app/constants'
 import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { ProsConsList } from '@/app/ui/ProsConsList'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -22,7 +21,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle title={navTitle} subtitle="Town overview" />
+      <h1 className="page-title">{navTitle}</h1>
 
       <Section className="md:flex items-center justify-center gap-4 my-12!">
         <div className="md:w-1/2 flex items-center justify-center">

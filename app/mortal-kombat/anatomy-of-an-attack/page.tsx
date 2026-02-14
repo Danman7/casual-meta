@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaWrench } from 'react-icons/fa'
-import { GiDeathSkull } from 'react-icons/gi'
 import { MdChevronRight } from 'react-icons/md'
 
 import attackPhases from '@/app/assets/mk/attack_phases.webp'
@@ -27,11 +25,9 @@ import trade2 from '@/app/assets/mk/trade2.webp'
 import liMeiAdvancedView from '@/app/assets/mk1/advanced_view.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
-import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
 import { Diagram } from '@/app/ui/Diagram'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -51,21 +47,7 @@ const mkRoute = createRouteLookup(MK_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <PageTitle
-        title={navTitle}
-        subtitle="Every attack is a commitment. A round is a series of commitments. Your goal is to gain more than you give."
-        tags={
-          <>
-            <Badge>
-              <GiDeathSkull /> Mortal Kombat
-            </Badge>
-
-            <Badge>
-              <FaWrench /> Core Mechanics
-            </Badge>
-          </>
-        }
-      />
+      <h1 className="page-title">{navTitle}</h1>
 
       <Section>
         <p>

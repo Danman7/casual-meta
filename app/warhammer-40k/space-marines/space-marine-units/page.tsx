@@ -1,27 +1,24 @@
+import Image from 'next/image'
 import Link from 'next/link'
-import { GiBolterGun } from 'react-icons/gi'
-import { PiPersonArmsSpreadFill } from 'react-icons/pi'
 
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import eliminators from '@/app/assets/wh40k/eliminators.webp'
 import heavyIntercessors from '@/app/assets/wh40k/heavyintercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
-import { Badge } from '@/app/ui/Badge'
 import { Callout } from '@/app/ui/Callout'
 import { ImageTextSection } from '@/app/ui/ImageTextSection'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 11
 
-export const navTitle = 'Space Marines Units'
+export const navTitle = 'Space Marine Units'
 
 export const metadata = generatePageMetadata(
   `${WH40K_TITLE}: ${navTitle}`,
-  'An overview of the Space Marines battleline infantry units.',
+  'An overview of the Space Marines units.',
 )
 
 const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
@@ -29,22 +26,7 @@ const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <PageTitle
-        title={navTitle}
-        tags={
-          <>
-            <Badge>
-              <GiBolterGun />
-              Warhammer 40,000
-            </Badge>
-
-            <Badge>
-              <PiPersonArmsSpreadFill />
-              Units overview
-            </Badge>
-          </>
-        }
-      />
+      <h1 className="page-title">{navTitle}</h1>
 
       <p>
         Having the datasheets is essential to understanding the information
@@ -55,286 +37,222 @@ export default async function Page() {
       </p>
 
       <Section title="Battleline" id="battleline">
-        <h3 id="intercessor">Intercessor squad</h3>
+        <h3 id="intercessors">Intercessors</h3>
 
-        <ImageTextSection
-          image={intercessors}
-          imageAlt="A squad of Space Marine Intercessors advancing."
-          text="Intercessors are the principal Space Marines infantry. Among their battleline units, no one scales horizontaly better. Their flexibility and mission utility supports a wide variety of army lists."
-          imageClassName="max-h-96 object-[0%_65%] shadow-sm"
+        <Image
+          src={intercessors}
+          alt="A squad of Space Marine Intercessors."
+          className="max-h-60 object-cover object-[0%_70%] rounded shadow-md"
         />
 
-        <Callout>
+        <div className="flex gap-2 flex-wrap justify-between">
+          <div>
+            <strong>Profile:</strong> Marine equivalent with OC2&uarr; (Tacticus
+            Armor)
+          </div>
+          <div>
+            <strong>Cost:</strong> 80/5, 160/10
+          </div>
+        </div>
+
+        <hr />
+
+        <p>
+          <strong>Objective Secured:</strong> If you control an objective in
+          your Command phase, it stays yours until the opponent takes it.
+        </p>
+
+        <p>
+          <strong>Target Elimination:</strong> When shooting, bolt rifles gain
+          +2 Attacks, but the squad must target a single unit.
+        </p>
+
+        <hr />
+
+        <div>
+          <div className="font-bold">Bolt rifles with double shots</div>
           <ul>
+            <li>Strength is not in damage, but volume.</li>
             <li>
-              <strong>Profile:</strong> MEQ (Tacticus Armor) with improved OC2{' '}
-              <span className="text-foreground-dim text-sm">
-                | Infantry, Battleline, Tacticus, Imperium, Grenades
-              </span>
+              Very effective against light infantry. It's not rare for them to
+              kill their own cost in a turn against guardsmen equivalents.
+            </li>
+            <li>Flexible: Can advance and shoot or hit on 2+ if stationary.</li>
+            <li>No split fire. The squad must commit to one target.</li>
+
+            <li>
+              Grenade launcher is a free upgrade: recommended by default. Krak
+              grenades against tougher targerts. Frag grenades against hordes.
             </li>
 
             <li>
-              <strong>Cost:</strong> 80/5, 160/10{' '}
-              <span className="text-foreground-dim text-sm">
-                | 1 Sergeant, 4/9 Intercessors
-              </span>
-            </li>
-
-            <li>
-              <strong>Loadout:</strong>
-
-              <ul>
-                <li>
-                  <strong>Bolt rifle:</strong> <em>assault heavy</em>{' '}
-                  24"|A2|BS3+|S4|AP-1|D1
-                </li>
-                <li>
-                  <strong>Bolt pistol:</strong> 12"|A1|BS3+|S4|AP0|D1
-                </li>
-                <li>
-                  One in five can attach a grenade launcher to their bolt rifle:
-                  lose assault keyword, get krak/frag grenades.
-                </li>
-                <li>The sergeant can equip selection of melee weapons.</li>
-              </ul>
+              Melee profile is weak. Arm sergeant with a power fist or thunder
+              hammer.
             </li>
           </ul>
+        </div>
 
-          <hr />
+        <div>
+          <div className="font-bold">
+            The sticky objectives rule changes how objectives are contested.
+          </div>
+          <ul>
+            <li>You can tag an objective and leave it. No control is lost.</li>
+            <li>
+              The opponent must physically contest the objective. Not just shoot
+              your men off it.
+            </li>
+            <li>You can rush home, then move out and support the midfield.</li>
+            <li>
+              Or rush the middle objectives, then fall back to defend from a
+              distance.
+            </li>
+            <li>Plays well with higher OC2.</li>
+            <li>Effectively frees up control resources.</li>
+          </ul>
+        </div>
 
-          <p>
-            <strong>Objective Secured:</strong> If you control an objective in
-            your Command phase, it stays yours until the opponent takes it.
-          </p>
+        <div>
+          <div className="font-bold">Scale horizontally</div>
+          <ul>
+            <li>Prefer multiple 5-man squads over fewer 10-man ones.</li>
+            <li>Pressure multiple objectives.</li>
+            <li>Retain flexibility for double shots focus fire.</li>
+            <li>Lower risk of overkill.</li>
+          </ul>
+        </div>
 
-          <p>
-            <strong>Target Elimination:</strong> When shooting, bolt rifles gain
-            +2 Attacks, but the squad must target a single unit.
-          </p>
-        </Callout>
+        <h3 id="assault-intercessors">Assault intercessors</h3>
 
-        <h4>Consistent firepower</h4>
-
-        <p>
-          The bolt rifle is flexible: can advance and shoot, or remain
-          stationary and hit on 2+. Its strength is not damage, but volume. When
-          the Target Elimination rule applies, it doubles the number of shots
-          per bolt rifle. This makes the unit a proper threat to light infantry.
-          The rule requires no split fire. The squad must commit to one target.
-        </p>
-
-        <p>
-          The grenade launcher is a free upgrade. No reason to skip it. Krak
-          grenades gives some vertical reach against tougher targerts. Frag
-          grenades can help with hordes.
-        </p>
-
-        <p>
-          Intercessors' melee profile is not their focal point. A power fist on
-          the sergeant meaningfully increases trading value while retaining the
-          bolt rifle.
-        </p>
-
-        <h4>Sticky objectives</h4>
-
-        <p>The Objective Secured rule changes how objectives are contested.</p>
-
-        <ul>
-          <li>You can tag an objective and leave it. No control is lost.</li>
-          <li>
-            The opponent must physically contest the objective. Not just shoot
-            your men off it.
-          </li>
-          <li>You can rush home, then move out and support the midfield.</li>
-          <li>
-            Or rush the middle objectives, then fall back to defend from a
-            distance.
-          </li>
-          <li>Effectively frees up control resources.</li>
-        </ul>
-
-        <h4>5-man over 10-man squads</h4>
-
-        <ul>
-          <li>Pressure multiple objectives.</li>
-          <li>Retain flexibility for double shots focus fire.</li>
-          <li>Lower risk of overkill.</li>
-        </ul>
-
-        <h3 id="assault-intercessor">Assault intercessor squad</h3>
-
-        <ImageTextSection
-          image={assaultIntercessors}
-          imageAlt="A squad of Assault Intercessors."
-          text="Replace the bolt rifles with chainswords, and you get an intercessor squad with
-          focus on hand-to-hand combat. They are a natural fit for melee-focused
-          chapters, like Blood Angels, but also excel as a cheap character
-          escorts or objective divers."
-          imageClassName="max-h-96 object-[0%_65%] shadow-sm"
+        <Image
+          src={assaultIntercessors}
+          alt="A squad of Assault Intercessors."
+          className="max-h-60 object-cover object-[0%_75%] rounded shadow-md"
         />
 
-        <Callout>
-          <ul>
-            <li>
-              <strong>Profile:</strong> MEQ with OC2
-              <span className="text-foreground-dim text-sm">
-                | Infantry, Battleline, Tacticus, Imperium, Grenades
-              </span>
-            </li>
+        <div className="flex gap-2 flex-wrap justify-between">
+          <div>
+            <strong>Profile:</strong> Marine equivalent with OC2&uarr; (Tacticus
+            Armor)
+          </div>
+          <div>
+            <strong>Cost:</strong> 75/5, 150/10
+          </div>
+        </div>
 
-            <li>
-              <strong>Cost:</strong> 75/5, 150/10{' '}
-              <span className="text-foreground-dim text-sm">
-                | 1 Sergeant, 4/9 Intercessors
-              </span>
-            </li>
-
-            <li>
-              <strong>Loadout:</strong>
-
-              <ul>
-                <li>
-                  <strong>Astartes chainsword:</strong> A4|WS3+|S4|AP-1|D1
-                </li>
-
-                <li>
-                  <strong>Heavy bolt pistol:</strong> 18"|A1|BS3+|S4|AP-1|D1
-                </li>
-
-                <li>The sergeant can equip selection of melee weapons.</li>
-              </ul>
-            </li>
-          </ul>
-
-          <hr />
-
-          <p>
-            <strong>Shock Assault:</strong> Reroll 1s to wound anywhere. Reroll
-            all wounds instead if near objective. Also applies to attached
-            characters.
-          </p>
-        </Callout>
-
-        <h4>Expendable hand-to-hand profile</h4>
-
-        <ul>
-          <li>
-            High volume of attacks + high OC + wound rerolls rule = clear light
-            infantry off objectives for 75 points.
-          </li>
-
-          <li>Always arm the sergeant with a power fist or thunder hammer.</li>
-
-          <li>
-            Don't expect to trade well with elite infantry without support.
-          </li>
-
-          <li>
-            Slow for true assault troops. Think about an Impulsor for
-            transportation.
-          </li>
-        </ul>
-
-        <h4>Bodyguards</h4>
+        <hr />
 
         <p>
-          The re-rolls special rule also buffs any leader attached to this
-          squad. You might want them to escort:
+          <strong>Shock Assault:</strong> Reroll 1s to wound anywhere. Reroll
+          all wounds instead if near objective. Also applies to attached
+          characters.
         </p>
-        <ul>
-          <li>
-            <strong>Captain:</strong> heavy melee hitter and free stratagem
-            support.
-          </li>
-          <li>
-            <strong>Lieutenant:</strong> his lethal hits give extra punch,
-            although they do overlap somewhat with rerolls.
-          </li>
 
-          <li>
-            <strong>Chaplain:</strong> +1 to wound can help with tougher
-            targets.
-          </li>
+        <hr />
 
-          <li>
-            <strong>Azrael (Dark Angels):</strong> multiple buffs to led unit.
-          </li>
-
-          <li>
-            Any big melee profile character, e.g.{' '}
-            <strong>Ragnar Blackmane</strong> (Space Wolves), that will benefit
-            from the rerolls.
-          </li>
-
-          <li>
-            Any character who is strong on their own, e.g.{' '}
-            <strong>Uriel Ventris</strong> (Ultramarines), that could use the
-            extra cheap protection.
-          </li>
-        </ul>
-
-        <h3 id="heavy-intercessor">Heavy intercessor squad</h3>
-
-        <ImageTextSection
-          image={heavyIntercessors}
-          imageAlt="A squad of Heavy Intercessors."
-          text="Instead of the standard power armor, these marines don the heavier Gravis armor, making them slugish, yet resilient objective holders. They are tough for their cost and wield improved versions of the bolt rifle. Still, cheaper, more supple units oftern outperform them in a wider array of tasks, giving Heavy Intercessors a hard time finding a dedicated role."
-          imageClassName="max-h-96 object-[0%_65%] shadow-sm"
-        />
-
-        <Callout>
+        <div>
+          <div className="font-bold">Cheap melee troops</div>
           <ul>
             <li>
-              <strong>Profile:</strong> The Gravis - M5|T6|Sv3+|W3 with OC2{' '}
-              <span className="text-foreground-dim text-sm">
-                | Infantry, Battleline, Gravis, Imperium, Grenades
-              </span>
+              Lots of attacks form chainswords, coupled with high OC, rerolls to
+              wound and low cost.
+            </li>
+
+            <li>Talanted at clearing light infantry off objectives.</li>
+
+            <li>
+              Always arm the sergeant with a power fist or thunder hammer.
             </li>
 
             <li>
-              <strong>Cost:</strong> 100/5, 200/10{' '}
-              <span className="text-foreground-dim text-sm">
-                | 1 Sergeant, 4/9 Intercessors
-              </span>
+              Don't expect to trade well with elite infantry without support.
             </li>
 
             <li>
-              <strong>Loadout:</strong>
-
-              <ul>
-                <li>
-                  <strong>Heavy bolt rifle</strong> <em>assault heavy</em>{' '}
-                  30"|A2|BS3+|S5|AP-1|D2
-                </li>
-
-                <li>
-                  One in five can equip a <strong>Heavy bolter</strong>{' '}
-                  <em>assault, heavy, sustained hits 1</em>{' '}
-                  36"|A3|BS3+|S5|AP-1|D2
-                </li>
-
-                <li>No upgrades for the sergeant.</li>
-              </ul>
+              Slow for true assault troops. Think about an Impulsor for
+              transportation.
             </li>
           </ul>
+        </div>
 
-          <hr />
+        <div>
+          <div className="font-bold">Cheap but effective bodyguards</div>
+          <ul>
+            <li>
+              The reroll to wound rule buffs attached characters as well. Here
+              are some good options.
+            </li>
 
-          <p>
-            <strong>Unyielding in the Face of the Foe:</strong> +1 to armor
-            saves if attacked by a D1 weapon, while near objective.
-          </p>
-        </Callout>
+            <li>
+              <strong>Captain:</strong> heavy melee hitter and free stratagem
+              support.
+            </li>
+            <li>
+              <strong>Lieutenant:</strong> his lethal hits give extra punch,
+              although they do overlap somewhat with rerolls.
+            </li>
 
-        <h4>Durability</h4>
+            <li>
+              <strong>Chaplain:</strong> +1 to wound can help with tougher
+              targets.
+            </li>
 
-        <ul>
-          <li>T6, three wounds, 3+ save for 20 points per model.</li>
-          <li>Excellent versus small arms.</li>
-          <li>Designed to sit in the open and absorb fire.</li>
-          <li>Comparable to terminators without the invulnerable saves.</li>
-          <li>Vulnerable to anti-tank weapons.</li>
-        </ul>
+            <li>
+              <strong>Azrael (Dark Angels):</strong> multiple buffs to led unit.
+            </li>
+
+            <li>
+              Any big melee profile character, e.g.{' '}
+              <strong>Ragnar Blackmane</strong> (Space Wolves), that will
+              benefit from the rerolls.
+            </li>
+
+            <li>
+              Any character who is strong on their own, e.g.{' '}
+              <strong>Uriel Ventris</strong> (Ultramarines), that could use the
+              extra cheap protection.
+            </li>
+          </ul>
+        </div>
+
+        <h3 id="heavy-intercessors">Heavy intercessors</h3>
+
+        <Image
+          src={heavyIntercessors}
+          alt="A squad of Heavy Intercessors."
+          className="max-h-60 object-cover object-[0%_58%] rounded shadow-md"
+        />
+
+        <div className="flex gap-2 flex-wrap justify-between">
+          <div>
+            <strong>Profile:</strong> The Gravis - M5|T6|Sv3+|W3 with OC2&uarr;
+          </div>
+          <div>
+            <strong>Cost:</strong> 100/5, 200/10
+          </div>
+        </div>
+
+        <hr />
+
+        <p>
+          <strong>Unyielding in the Face of the Foe:</strong> +1 to armor saves
+          if attacked by a D1 weapon, while near objective.
+        </p>
+
+        <hr />
+
+        <div>
+          <div className="font-bold">More durable</div>
+          <ul>
+            <li>T6, 3 wounds, 3+ save for 20 points per model.</li>
+            <li>
+              Tough, high OC, yet slow. Designed to sit on objectives and absorb
+              fire.
+            </li>
+            <li>Comparable to terminators without the invulnerable saves.</li>
+            <li>Vulnerable to anti-tank weapons.</li>
+          </ul>
+        </div>
 
         <h4>Ranged firepower</h4>
 

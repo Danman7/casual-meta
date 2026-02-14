@@ -4,7 +4,6 @@ import wh40kTitle from '@/app/assets/wh40k/wh40k-battle.webp'
 import { WH40K_TITLE } from '@/app/constants'
 import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { PageTitle } from '@/app/ui/PageTitle'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -16,7 +15,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <PageTitle title={WH40K_TITLE} />
+      <h1 className="page-title">{WH40K_TITLE}</h1>
 
       <Section>
         <Flavor>
