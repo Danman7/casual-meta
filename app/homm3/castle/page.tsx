@@ -3,9 +3,7 @@ import Image from 'next/image'
 import castle from '@/app/assets/homm3/castle.webp'
 import castleMap from '@/app/assets/homm3/castle_map.webp'
 import { HOMM3_TITLE } from '@/app/constants'
-import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { ProsConsList } from '@/app/ui/ProsConsList'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -38,53 +36,6 @@ export default async function Page() {
           adversary. Expect easy early creeping and dominant late-game armies.
         </p>
       </Section>
-
-      <ProsConsList
-        pros={[
-          <>
-            <p className="font-semibold">Exceptional army as a whole</p>
-            <Flavor>
-              Two ranged shooters, two flyers, and three capable brawlers make
-              for a balanced composition. Almost every unit is good for its
-              tier. Angels are arguably the best level 7 unit, and the key
-              upgrades, especially Archers, Griffins, and Angels, are excellent.
-            </Flavor>
-          </>,
-          <>
-            <p className="font-semibold">First in battle</p>
-            <Flavor>
-              The Archangels are the second-fastest faction unit in the game,
-              trailing only Phoenixes.
-            </Flavor>
-          </>,
-          <>
-            <p className="font-semibold">Beginner-friendly</p>
-            <Flavor>
-              Castle's strong army allows for a more relaxed game, and the
-              naturally high morale of Castle heroes often grants a bonus turn.
-            </Flavor>
-          </>,
-        ]}
-        cons={[
-          <>
-            <p className="font-semibold">Very expensive</p>
-            <Flavor>
-              Second in total build-up cost only to Tower. However, this is
-              primarily felt during the later development stages.
-            </Flavor>
-          </>,
-          <>
-            <p className="font-semibold">Mediocre outside the army</p>
-            <Flavor>
-              Castle heroes aren't bad, but they don't excel in anything either.
-              With the exception of Sir Mullich, who is often banned in
-              multiplayer games, there are no exceptional specialties. The Magic
-              Guild reaches only level 4, and the special buildings are
-              underwhelming.
-            </Flavor>
-          </>,
-        ]}
-      />
 
       <Section title="Town economics" id="economics">
         <ImageWithCaption

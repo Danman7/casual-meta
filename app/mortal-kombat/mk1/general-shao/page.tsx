@@ -7,7 +7,6 @@ import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
-import { ProsConsList } from '@/app/ui/ProsConsList'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
@@ -45,54 +44,6 @@ export default async function Page() {
           Both issues can be addressed with the right Kameo partner.
         </p>
       </Section>
-
-      <ProsConsList
-        pros={[
-          <>
-            <p className="font-semibold">Very strong close-range offense</p>
-            <Flavor>
-              Some of the best normals in the game in Axe stance. Strong mix-up
-              in both stances. Excellent pressure, especially in the corner.
-              Armored options.
-            </Flavor>
-          </>,
-          <>
-            <p className="font-semibold">Decent defense</p>
-            <Flavor>
-              Superb durability at 1100 HP. Good air control due to his height.
-            </Flavor>
-          </>,
-          <>
-            <p className="font-semibold">Kameos synergy</p>
-            <Flavor>
-              Because of his high health and versatile move set, he has good
-              Kameo choices.
-            </Flavor>
-          </>,
-        ]}
-        cons={[
-          <>
-            <p className="font-semibold">Poor at long range</p>
-            <Flavor>
-              He has no projectiles or teleports. His only full-screen special
-              is slow.
-            </Flavor>
-          </>,
-          <>
-            <p className="font-semibold">Stances have to be managed</p>
-            <Flavor>
-              The transition from Axe to Unarmed can make or break a round.
-            </Flavor>
-          </>,
-          <>
-            <p className="font-semibold">Openings in his attacks</p>
-            <Flavor>
-              Some of his moves have punishable gaps. Primarily at higher
-              levels.
-            </Flavor>
-          </>,
-        ]}
-      />
 
       <Section title="Axe stance" id="axe-stance">
         <Flavor>Simple tactics for Axe stance.</Flavor>

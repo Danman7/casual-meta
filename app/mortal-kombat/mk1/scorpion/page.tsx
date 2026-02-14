@@ -15,7 +15,6 @@ import { Flavor } from '@/app/ui/Flavor'
 import { ImageTextSection } from '@/app/ui/ImageTextSection'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
-import { ProsConsList } from '@/app/ui/ProsConsList'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
@@ -40,38 +39,6 @@ export default async function Page() {
         image={Scorpion}
         imageAlt="Scorpion in Mortal Kombat 1"
         text="Scorpion in Mortal Kombat 1 is beginner-friendly and frequently played at all levels. His major strength is interrupting unsafe actions from anywhere on the screen, converting them into simple adaptable combos. His toolbox includes both close and long-range options but lacks efficient offense. For that, he needs a proper Kameo. New players will find him easier when reacting rather than initiating pressure."
-      />
-
-      <ProsConsList
-        pros={[
-          <>
-            <p className="font-semibold">Beginner-friendly</p>
-            <Flavor>No stances or forms to manage. Easy combos.</Flavor>
-          </>,
-          <>
-            <p className="font-semibold">Good utility</p>
-            <Flavor>
-              The Spear controls space and sets up combos. Multiple specials
-              cover the whole screen. Good interruptions, anti-zoning, and
-              anti-air options.
-            </Flavor>
-          </>,
-          <>
-            <p className="font-semibold">Kameos synergy</p>
-            <Flavor>
-              His moves combine well with many Kameos. Can combo out of throws.
-            </Flavor>
-          </>,
-        ]}
-        cons={[
-          <>
-            <p className="font-semibold">Struggles with offense</p>
-            <Flavor>
-              Lacks mix-ups. No chainable standing overheads or lows. No frame
-              traps. Cannot sustain pressure.
-            </Flavor>
-          </>,
-        ]}
       />
 
       <Section title="Scouting the opponent" id="neutral">
