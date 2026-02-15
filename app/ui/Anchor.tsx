@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { FaAsterisk } from 'react-icons/fa'
 
 export const Anchor: React.FC<{
   children: React.ReactNode
@@ -15,11 +16,15 @@ export const Anchor: React.FC<{
 
   return (
     <Link
-      className={`rounded w-full px-2 py-1 border border-transparent hover:border-primary/80 ${isActive ? 'bg-background border-primary! text-primary inset-shadow-sm' : ''} ${className}`}
+      className={`flex items-center gap-1 rounded w-full px-2 py-1 border border-transparent hover:text-primary active:text-primary/80 ${className}`}
       href={href}
       onClick={onClick}
       aria-current={isActive ? 'page' : undefined}
     >
+      {isActive && (
+        <FaAsterisk focusable="false" className="text-primary text-xs" />
+      )}
+
       {children}
     </Link>
   )

@@ -21,7 +21,7 @@ export function SectionLayout({
       <Header sectionNav={{ items, title, rootUrl }} />
 
       <div className="flex relative grow gap-6 items-stretch">
-        <aside className="hidden md:flex" aria-label="Primary navigation">
+        <aside className="hidden lg:flex" aria-label="Primary navigation">
           <SideNavigation sectionNav={{ items, title, rootUrl }} />
         </aside>
 

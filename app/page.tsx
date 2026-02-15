@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { FaAsterisk } from 'react-icons/fa'
 
 import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
@@ -9,13 +10,17 @@ export default function Page() {
   return (
     <main id="main-content" tabIndex={-1} className="px-6 py-12 space-y-16">
       <Section className="max-w-3xl mx-auto space-y-16 text-center h-[calc(100dvh-(--spacing(32)))] flex flex-col justify-around items-center">
-        <div className="font-display">
+        <div>
           <div className="text-5xl md:text-7xl text-primary font-bold animate-slide-left">
             Docs
           </div>
 
           <div className="text-4xl md:text-5xl animate-slide-right">
-            for <span className="italic border-b">casual</span> players
+            for <span className="italic border-b">casual</span>{' '}
+            <sup>
+              <FaAsterisk className="inline text-primary" />
+            </sup>{' '}
+            players
           </div>
         </div>
 
@@ -34,6 +39,9 @@ export default function Page() {
 
         <Callout className="animate-fade-in-scale delay-75 px-4">
           <div className="text-xl">
+            <sup>
+              <FaAsterisk className="inline text-primary mr-2" />
+            </sup>
             Games can be <em>fun</em>. They can be <em>hard</em>. They can be{' '}
             <strong>both</strong> as well.
           </div>

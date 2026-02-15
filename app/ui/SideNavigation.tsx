@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { BsPcDisplay } from 'react-icons/bs'
+import { FaAsterisk } from 'react-icons/fa'
 
 import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
 import { Anchor } from '@/app/ui/Anchor'
@@ -35,7 +35,7 @@ export const SideNavigation = ({
         href="/"
         aria-label="Go to homepage"
       >
-        <BsPcDisplay focusable="false" />
+        <FaAsterisk focusable="false" />
         <span className="hidden sm:inline">Casual Meta</span>
       </Link>
     )}

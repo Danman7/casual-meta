@@ -39,13 +39,19 @@ export default async function Page() {
       <Section title="Battleline" id="battleline">
         <h3 id="intercessors">Intercessors</h3>
 
+        <p>
+          The principal Space Marines infantry squad. Changes how objectives are
+          contested, freeing up control resources. Keeps light infantry at bay
+          and scales well horizontally.
+        </p>
+
         <Image
           src={intercessors}
           alt="A squad of Space Marine Intercessors."
           className="max-h-60 object-cover object-[0%_70%] rounded shadow-md"
         />
 
-        <div className="flex gap-2 flex-wrap justify-between">
+        <div className="flex gap-2 flex-wrap justify-between tracking-wide text-lg">
           <div>
             <strong>Profile:</strong> Marine equivalent with OC2&uarr; (Tacticus
             Armor)
@@ -58,71 +64,72 @@ export default async function Page() {
         <hr />
 
         <p>
-          <strong>Objective Secured:</strong> If you control an objective in
-          your Command phase, it stays yours until the opponent takes it.
-        </p>
-
-        <p>
           <strong>Target Elimination:</strong> When shooting, bolt rifles gain
           +2 Attacks, but the squad must target a single unit.
         </p>
 
+        <p>
+          <strong>Objective Secured:</strong> If you control an objective in
+          your Command phase, and this unit is within range, it stays yours
+          until the opponent takes it.
+        </p>
+
         <hr />
 
-        <div>
-          <div className="font-bold">Bolt rifles with double shots</div>
-          <ul>
-            <li>Strength is not in damage, but volume.</li>
-            <li>
-              Very effective against light infantry. It's not rare for them to
-              kill their own cost in a turn against guardsmen equivalents.
-            </li>
-            <li>Flexible: Can advance and shoot or hit on 2+ if stationary.</li>
-            <li>No split fire. The squad must commit to one target.</li>
+        <p className="lead">
+          Bolt rifles with double shots for consistent firepower.
+        </p>
 
-            <li>
-              Grenade launcher is a free upgrade: recommended by default. Krak
-              grenades against tougher targerts. Frag grenades against hordes.
-            </li>
+        <p>
+          Their strength is not in damage, but volume. To activate double shots,
+          no spit fire is allowed. The squad must commit to one target.
+          Compensation is 4 attacks per model at 4 strength, -1 armor
+          penetration, making short work of gurardsman equivalents.
+        </p>
 
-            <li>
-              Melee profile is weak. Arm sergeant with a power fist or thunder
-              hammer.
-            </li>
-          </ul>
-        </div>
+        <p>
+          One in five men can attach a grenade launcher to their bolt rifle.
+          This is widely considered a free upgrade and taken by default. Frags
+          help with hordes, while kraks with tougher targers.
+        </p>
 
-        <div>
-          <div className="font-bold">
-            The sticky objectives rule changes how objectives are contested.
-          </div>
-          <ul>
-            <li>You can tag an objective and leave it. No control is lost.</li>
-            <li>
-              The opponent must physically contest the objective. Not just shoot
-              your men off it.
-            </li>
-            <li>You can rush home, then move out and support the midfield.</li>
-            <li>
-              Or rush the middle objectives, then fall back to defend from a
-              distance.
-            </li>
-            <li>Plays well with higher OC2.</li>
-            <li>Effectively frees up control resources.</li>
-          </ul>
-        </div>
+        <p>
+          Melee is not a focal point here. Give the sergeant a power fist or
+          thunder hammer.
+        </p>
 
-        <div>
-          <div className="font-bold">Scale horizontally</div>
-          <ul>
-            <li>Prefer multiple 5-man squads over fewer 10-man ones.</li>
-            <li>Pressure multiple objectives.</li>
-            <li>Retain flexibility for double shots focus fire.</li>
-            <li>Lower risk of overkill.</li>
-          </ul>
-        </div>
+        <p className="lead">
+          Sticky objectives rule means you can tag and move off.
+        </p>
+
+        <p>
+          No control is lost after intercessors move away from a controlled
+          objective. This forces the opponent to physically contest it. They
+          can't just shoot you off.
+        </p>
+
+        <p>
+          In game, intercessors are often used to rush home markers, then move
+          out to support the fight in the middle. They can also capture an
+          objective, next fall back to defend from some distance. These tactics
+          play well with their higher OC.
+        </p>
+
+        <p className="lead">Smaller squads are often superior.</p>
+
+        <p>
+          5-man squads scale better. They allow for pressure of multiple
+          objectives at the same time. They can also retain flexibility in
+          double shots rule, while lowering the risk of unnecessary overkill.
+        </p>
 
         <h3 id="assault-intercessors">Assault intercessors</h3>
+
+        <p>
+          The most expendable hand-to-hand combat squad. Act as reasonable
+          character escorts. Scale well in melee-focused chapters, like Blood
+          Angels, but should be kept within reason otherwise.
+        </p>
 
         <Image
           src={assaultIntercessors}
@@ -130,7 +137,7 @@ export default async function Page() {
           className="max-h-60 object-cover object-[0%_75%] rounded shadow-md"
         />
 
-        <div className="flex gap-2 flex-wrap justify-between">
+        <div className="flex gap-2 flex-wrap justify-between tracking-wide text-lg">
           <div>
             <strong>Profile:</strong> Marine equivalent with OC2&uarr; (Tacticus
             Armor)
@@ -150,70 +157,59 @@ export default async function Page() {
 
         <hr />
 
-        <div>
-          <div className="font-bold">Cheap melee troops</div>
-          <ul>
-            <li>
-              Lots of attacks form chainswords, coupled with high OC, rerolls to
-              wound and low cost.
-            </li>
+        <p className="lead">Resonable for trades over objectives.</p>
 
-            <li>Talanted at clearing light infantry off objectives.</li>
+        <p>
+          The astartes chainsword, with its 4 attacks per model, at 4 strength
+          and -1 armor penetration, does well against light infantry. Coupled
+          with high OC and rerolls to wound, they can at least give the enemy a
+          run for their money.
+        </p>
 
-            <li>
-              Always arm the sergeant with a power fist or thunder hammer.
-            </li>
+        <p>
+          These marines run on foot, thus they are slow for a true assault role.
+          Think about a transport, preferably an Impulsor, to improve their
+          mobility.
+        </p>
 
-            <li>
-              Don't expect to trade well with elite infantry without support.
-            </li>
+        <p className="lead">Cheap but effective bodyguards</p>
 
-            <li>
-              Slow for true assault troops. Think about an Impulsor for
-              transportation.
-            </li>
-          </ul>
-        </div>
+        <p>
+          The reroll to wound rule buffs attached characters as well. Here are
+          some good options.
+        </p>
 
-        <div>
-          <div className="font-bold">Cheap but effective bodyguards</div>
-          <ul>
-            <li>
-              The reroll to wound rule buffs attached characters as well. Here
-              are some good options.
-            </li>
+        <ul>
+          <li>
+            <strong>Captain:</strong> heavy melee hitter and free stratagem
+            support.
+          </li>
+          <li>
+            <strong>Lieutenant:</strong> his lethal hits give extra punch,
+            although they do overlap somewhat with rerolls.
+          </li>
 
-            <li>
-              <strong>Captain:</strong> heavy melee hitter and free stratagem
-              support.
-            </li>
-            <li>
-              <strong>Lieutenant:</strong> his lethal hits give extra punch,
-              although they do overlap somewhat with rerolls.
-            </li>
+          <li>
+            <strong>Chaplain:</strong> +1 to wound can help with tougher
+            targets.
+          </li>
 
-            <li>
-              <strong>Chaplain:</strong> +1 to wound can help with tougher
-              targets.
-            </li>
+          <li>
+            <strong>Azrael (Dark Angels):</strong> multiple buffs to led unit.
+          </li>
 
-            <li>
-              <strong>Azrael (Dark Angels):</strong> multiple buffs to led unit.
-            </li>
+          <li>
+            Any big melee profile character, e.g.{' '}
+            <strong>Ragnar Blackmane</strong> (Space Wolves), that will benefit
+            from the rerolls.
+          </li>
 
-            <li>
-              Any big melee profile character, e.g.{' '}
-              <strong>Ragnar Blackmane</strong> (Space Wolves), that will
-              benefit from the rerolls.
-            </li>
-
-            <li>
-              Any character who is strong on their own, e.g.{' '}
-              <strong>Uriel Ventris</strong> (Ultramarines), that could use the
-              extra cheap protection.
-            </li>
-          </ul>
-        </div>
+          <li>
+            Any character who is strong on their own, e.g.{' '}
+            <strong>Uriel Ventris</strong> (Ultramarines), that could use the
+            extra cheap protection.
+          </li>
+        </ul>
 
         <h3 id="heavy-intercessors">Heavy intercessors</h3>
 
@@ -232,8 +228,6 @@ export default async function Page() {
           </div>
         </div>
 
-        <hr />
-
         <p>
           <strong>Unyielding in the Face of the Foe:</strong> +1 to armor saves
           if attacked by a D1 weapon, while near objective.
@@ -242,14 +236,16 @@ export default async function Page() {
         <hr />
 
         <div>
-          <div className="font-bold">More durable</div>
+          <div className="lead">Durable for the cost</div>
           <ul>
-            <li>T6, 3 wounds, 3+ save for 20 points per model.</li>
+            <li>
+              Armor comparable to terminators without the invulnerable saves for
+              20 points per model.
+            </li>
             <li>
               Tough, high OC, yet slow. Designed to sit on objectives and absorb
               fire.
             </li>
-            <li>Comparable to terminators without the invulnerable saves.</li>
             <li>Vulnerable to anti-tank weapons.</li>
           </ul>
         </div>

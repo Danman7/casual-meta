@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { BsPcDisplay } from 'react-icons/bs'
+import { FaAsterisk } from 'react-icons/fa'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
 import { SideNavigation } from '@/app/ui/SideNavigation'
@@ -36,7 +36,7 @@ export const Header = ({ sectionNav }: HeaderProps) => {
 
   return (
     <>
-      <header className="z-50 sticky top-0 shadow-md bg-surface h-14 flex items-center text-xl md:hidden">
+      <header className="z-50 sticky top-0 shadow-md bg-surface h-14 flex items-center text-xl lg:hidden">
         <nav aria-label="Primary navigation">
           <div className="px-4 flex items-center">
             <button
@@ -56,11 +56,11 @@ export const Header = ({ sectionNav }: HeaderProps) => {
             </button>
 
             <Link
-              className="flex items-center gap-2 hover:gap-4 hover:text-primary font-bold no-underline transition-all p-2"
+              className="flex items-center gap-2 hover:gap-4 hover:text-primary font-bold no-underline transition-all p-2 active:text-primary/80"
               href="/"
               aria-label="Go to homepage"
             >
-              <BsPcDisplay focusable="false" />
+              <FaAsterisk focusable="false" />
               <span className="hidden sm:inline">Casual Meta</span>
             </Link>
           </div>
