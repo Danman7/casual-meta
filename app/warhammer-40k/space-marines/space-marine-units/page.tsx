@@ -6,8 +6,6 @@ import eliminators from '@/app/assets/wh40k/eliminators.webp'
 import heavyIntercessors from '@/app/assets/wh40k/heavyintercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
-import { Callout } from '@/app/ui/Callout'
-import { ImageTextSection } from '@/app/ui/ImageTextSection'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
@@ -65,7 +63,7 @@ export default async function Page() {
 
         <p>
           <strong>Target Elimination:</strong> When shooting, bolt rifles gain
-          +2 Attacks, but the squad must target a single unit.
+          +2 attacks, but the squad must target a single unit.
         </p>
 
         <p>
@@ -81,46 +79,30 @@ export default async function Page() {
         </p>
 
         <p>
-          Their strength is not in damage, but volume. To activate double shots,
-          no spit fire is allowed. The squad must commit to one target.
-          Compensation is 4 attacks per model at 4 strength, -1 armor
-          penetration, making short work of gurardsman equivalents.
-        </p>
-
-        <p>
-          One in five men can attach a grenade launcher to their bolt rifle.
-          This is widely considered a free upgrade and taken by default. Frags
-          help with hordes, while kraks with tougher targers.
-        </p>
-
-        <p>
-          Melee is not a focal point here. Give the sergeant a power fist or
-          thunder hammer.
+          Their strength is not in damage, but volume. If the squad commits to
+          one target, they double their attacks, making short work of light
+          infantry. Also, one in five marines can attach a grenade launcher to
+          their bolt rifle, which can help with tougher foes. It's considered a
+          must-have free upgrade.
         </p>
 
         <p className="lead">
-          Sticky objectives rule means you can tag and move off.
+          Sticky objectives rule means you can tag an objective then move away.
         </p>
 
         <p>
-          No control is lost after intercessors move away from a controlled
-          objective. This forces the opponent to physically contest it. They
-          can't just shoot you off.
+          No control is lost over a marker even after intercessors move away
+          from it. This forces the opponent to physically contest it, not just
+          shoot you off. After taggint an objective you can either advance
+          futher, or back away and defend from some distance.
         </p>
 
-        <p>
-          In game, intercessors are often used to rush home markers, then move
-          out to support the fight in the middle. They can also capture an
-          objective, next fall back to defend from some distance. These tactics
-          play well with their higher OC.
-        </p>
-
-        <p className="lead">Smaller squads are often superior.</p>
+        <p className="lead">5-man squads scale better.</p>
 
         <p>
-          5-man squads scale better. They allow for pressure of multiple
-          objectives at the same time. They can also retain flexibility in
-          double shots rule, while lowering the risk of unnecessary overkill.
+          More squads allow for the pressure of multiple objectives.
+          Furthermore, 5 men corelate better with the focus fire requirement for
+          double shots, with less risk of overkill.
         </p>
 
         <h3 id="assault-intercessors">Assault intercessors</h3>
