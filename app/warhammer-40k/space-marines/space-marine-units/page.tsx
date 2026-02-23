@@ -63,7 +63,8 @@ export default async function Page() {
           you can move them away without immediately losing control -{' '}
           <strong>forcing opponents to physically contest objectives</strong>{' '}
           rather than just shoot you off them. On the table, they usually rush
-          the home objective, then pivot into the midboard to support.
+          the home objective, then pivot into the midboard to support. In
+          essence, they freep up control resources.
         </p>
 
         <p>
@@ -109,82 +110,112 @@ export default async function Page() {
         </p>
 
         <p>
-          At least one intercessor squad is never a bad idea for stabilizing
-          objectives and trading into enemy utility units. They don’t usually
-          compete for battleline slots. The closest functional alternative is
-          shifting points into a dedicated removal unit like{' '}
+          <strong>At least one intercessor squad is never a bad idea</strong>{' '}
+          for stabilizing objectives and trading into enemy utility units. They
+          don’t usually compete for battleline slots. The closest functional
+          alternative is shifting points into a dedicated removal unit like{' '}
           <em>hellblasters</em>, depending on whether your list needs more
           killing power or more board control.
         </p>
 
         <h3 id="assault-intercessors">Assault intercessors</h3>
 
-        <p>
-          The most expendable hand-to-hand combat squad, that also acts as a
-          reasonable character escort. Scales well in melee-focused chapters,
-          like Blood Angels, but should be kept within reason otherwise.
-        </p>
-
         <Image
           src={assaultIntercessors}
           alt="A squad of Assault Intercessors."
-          className="max-h-60 object-cover object-[0%_75%] rounded shadow-md"
+          className="profile-img object-[0%_75%]"
         />
 
-        <div className="flex gap-2 flex-wrap justify-between tracking-wide text-lg">
-          <div>
-            <strong>Profile:</strong> Marine equivalent with OC2&uarr; (Tacticus
-            Armor)
-          </div>
-          <div>
-            <strong>Cost:</strong> 75/5, 150/10
-          </div>
-        </div>
-
-        <hr />
-
         <p>
-          <strong>Shock Assault:</strong> Reroll 1s to wound anywhere. Reroll
-          all wounds instead if near objective. Also applies to attached
-          characters.
+          <strong>Marine equivalent</strong> profile with{' '}
+          <strong>OC2&uarr;</strong> in Tacticus Armor, armed with Astartes
+          chainswords and heavy bolt pistols. Cost:{' '}
+          <strong>75 points for 5 models, 150 for 10</strong>.
         </p>
 
         <hr />
 
-        <p className="lead">Resonable for trades over objectives.</p>
-
         <p>
-          The <em>astartes chainswords</em>, with their 4 attacks per model, at
-          4 strength and -1 AP, do well against light infantry. Coupled with
-          high OC and rerolls to wound, they can at least give the enemy a run
-          for their money.
+          Assault intercessors are <strong>cheap, OC-efficient</strong> Space
+          Marines battleline infantry built for{' '}
+          <strong>close-quarters fights</strong>. As it'll become apparent,
+          unlike regular intercessors, they{' '}
+          <strong>reach full potential only with proper support</strong>.
         </p>
 
-        <p className="lead">Slow for true assault troops.</p>
-
         <p>
-          Think about a transport, preferably an Impulsor, to improve their
-          mobility. Bigger vehicles are overkill.
+          They can use their <strong>heavy bolt pistols</strong> to{' '}
+          <strong>chip away while they approach</strong> their targets. A plasma
+          pistol for the sergeant is also available and often a good pick. But
+          assault intercessors don't want to fight anywhere. They want to fight
+          hand-to-hand on top of objectives because of the{' '}
+          <strong>Shock Assault</strong> special rule:
         </p>
 
-        <p className="lead">Cheap but effective bodyguards.</p>
+        <ul>
+          <li>Reroll wound rolls of 1 at all times.</li>
+
+          <li>
+            <strong>Reroll all wound rolls when on an objective.</strong>
+          </li>
+        </ul>
 
         <p>
-          The rerolls to wound rule also buffs attached characters. This makes
-          them work well with big melee profiles, e.g. a <em>Captain</em> or{' '}
-          <em>Ragnar Blackmane</em> (Space Wolves), and characters that buff
-          their unit, like <em>Azrael</em> (Dark Angels), a <em>Lieutenant</em>,
-          or a <em>Chaplain</em>.
+          The rerolls to wound, together with the high OC and the large volume
+          of S4, D1 <strong>chainsword</strong> attacks (4 per model), secure{' '}
+          <strong>
+            reliable trades with light to medium infantry on markers
+          </strong>
+          . They are still not primary damage dealers and tougher targets with
+          good armor saves, will give them a hard time.
+        </p>
+
+        <p>
+          One defining detail is that the{' '}
+          <strong>rerolls rule also applies to any attached characters</strong>.
+          This makes them <strong>excellent character escorts</strong>. They can
+          work well with:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Captain:</strong> High-quality melee, free stratagem, and
+            spikes hard on an objective with full wound rerolls.
+          </li>
+
+          <li>
+            Any monster melee profile like <strong>Ragnar Blackmane</strong>{' '}
+            (Space Wolves).
+          </li>
+
+          <li>
+            Any strong overall character in need of additional protection like{' '}
+            <strong>Uriel Ventris</strong> (Ultramarines) or{' '}
+            <strong>Azrael</strong> (Dark Angels).
+          </li>
+        </ul>
+
+        <p>
+          Paired with the right leader, assault intercessors can gain some reach
+          against tougher targers. But it is in{' '}
+          <strong>melee-focused chapters like the Blood Angels</strong> where
+          they can <strong>elevate to top-tier</strong>. In a{' '}
+          <em>Liberator Assault Group</em> they gain{' '}
+          <strong>+2 Strength (to S6)</strong> and{' '}
+          <strong>+1 Attack (5 attacks each)</strong>, scaling them greatly both
+          horizotally and vertically.
+        </p>
+
+        <p>
+          Lastly, on the continuous theme of supporting assault intercessors,
+          they remain on-foot troops and too <strong>slow</strong> for true
+          assault roles. It's often wise to{' '}
+          <strong>deliver them with a transport</strong>. The <em>Impulsor</em>{' '}
+          is the optimal pick, as a <em>Land Raider</em> will want a scarier
+          payload and the <em>Repulsor</em> is better with a shooting one.
         </p>
 
         <h3 id="heavy-intercessors">Heavy intercessors</h3>
-
-        <p>
-          These are slower, yet much more durable intercessors, designed to sit
-          on objectives and absorb fire. They face steep competition from
-          cheaper, more flexible squads, that makes it hard for them to find a
-          role in most army lists.
-        </p>
 
         <Image
           src={heavyIntercessors}
