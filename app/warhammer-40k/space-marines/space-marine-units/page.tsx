@@ -37,72 +37,84 @@ export default async function Page() {
       <Section title="Battleline" id="battleline">
         <h3 id="intercessors">Intercessors</h3>
 
-        <p>
-          The principal Space Marines infantry squad. Changes how objectives are
-          contested, freeing up control resources. Keeps light infantry at bay
-          and scales well horizontally.
-        </p>
-
         <Image
           src={intercessors}
           alt="A squad of Space Marine Intercessors."
-          className="max-h-60 object-cover object-[0%_70%] rounded shadow-md"
+          className="profile-img object-[0%_70%]"
         />
 
-        <div className="flex gap-2 flex-wrap justify-between tracking-wide text-lg">
-          <div>
-            <strong>Profile:</strong> Marine equivalent with OC2&uarr; (Tacticus
-            Armor)
-          </div>
-          <div>
-            <strong>Cost:</strong> 80/5, 160/10
-          </div>
-        </div>
+        <p>
+          <strong>Marine equivalent</strong> profile with{' '}
+          <strong>OC2&uarr;</strong> in Tacticus Armor, armed with Bolt Rifles.
+          Cost: <strong>80 points for 5 models, 160 for 10</strong>.
+        </p>
 
         <hr />
 
         <p>
-          <strong>Target Elimination:</strong> When shooting, bolt rifles gain
-          +2 attacks, but the squad must target a single unit.
+          Intercessors are a <strong>high-utility squad</strong> that scales
+          well horizontally and fits into a wide variety of Space Marine lists.
         </p>
 
         <p>
-          <strong>Objective Secured:</strong> If you control an objective in
-          your Command phase, and this unit is within range, it stays yours
-          until the opponent takes it.
-        </p>
-
-        <hr />
-
-        <p className="lead">
-          Bolt rifles with double shots for consistent firepower.
-        </p>
-
-        <p>
-          Their strength is not in damage, but volume. If the squad commits to
-          one target, they double their attacks, making short work of light
-          infantry. Also, one in five marines can attach a grenade launcher to
-          their bolt rifle, which can help with tougher foes. It's considered a
-          must-have free upgrade.
-        </p>
-
-        <p className="lead">
-          Sticky objectives rule means you can tag an objective then move away.
+          Their key ability is{' '}
+          <strong>Objective Secured (sticky objectives)</strong>. If an
+          Intercessor squad controls an objective marker in your command phase,
+          you can move them away without immediately losing control -{' '}
+          <strong>forcing opponents to physically contest objectives</strong>{' '}
+          rather than just shoot you off them. On the table, they usually rush
+          the home objective, then pivot into the midboard to support.
         </p>
 
         <p>
-          No control is lost over a marker even after intercessors move away
-          from it. This forces the opponent to physically contest it, not just
-          shoot you off. After taggint an objective you can either advance
-          futher, or back away and defend from some distance.
+          As ranged firepower, Intercessors are{' '}
+          <strong>not primary damage dealers</strong>. They contribute through{' '}
+          <strong>volume</strong>, mainly{' '}
+          <strong>via Target Elimination</strong>: when selected to shoot, bolt
+          rifles gain <strong>+2 attacks</strong> if the whole{' '}
+          <strong>squad fires at one unit</strong>. This effectively doubles
+          bolt rifle output, to <strong>4 shots per model</strong> at S4, AP-1,
+          D1, <strong>making short work of light infantry</strong>. The tradeoff
+          is you give up split-fire.
         </p>
 
-        <p className="lead">5-man squads scale better.</p>
+        <p>
+          Reading trough the data sheet, one in five marines can take a{' '}
+          <strong>grenade launcher</strong> without loosing the rifle - only the
+          assault keyword. It's <strong>a free upgrade</strong> adding some
+          reach into tougher targets or hordes, at the cost of one less shot
+          when the squad advances.
+        </p>
 
         <p>
-          More squads allow for the pressure of multiple objectives.
-          Furthermore, 5 men corelate better with the focus fire requirement for
-          double shots, with less risk of overkill.
+          <strong>
+            Melee is just enough to trade or close the deal on already damage
+            light infantry
+          </strong>
+          . Arming the sergeant with a power fist or a thunder hammer, doesn't
+          improve that significantly, but it gives the enemy second thoughts
+          about charging them.
+        </p>
+
+        <p>
+          Intercessors <strong>work best when kept cheap</strong>.{' '}
+          <em>Armor of Contempt</em> can help if it's imperative for them to
+          survive a key turn on a marker. Given their special rules,{' '}
+          <strong>5-man squads scale better</strong>. They pressure multiple
+          objectives, and align better with the focus-fire requirement for
+          double shots, with lower risk of overkill. A 10-man squad can work
+          around the idea of high-value damage spike with an attached{' '}
+          <em>lieutenant</em>, giving them <em>lethal hits</em> and fall back
+          into shoot tactics.
+        </p>
+
+        <p>
+          At least one intercessor squad is never a bad idea for stabilizing
+          objectives and trading into enemy utility units. They don’t usually
+          compete for battleline slots. The closest functional alternative is
+          shifting points into a dedicated removal unit like{' '}
+          <em>hellblasters</em>, depending on whether your list needs more
+          killing power or more board control.
         </p>
 
         <h3 id="assault-intercessors">Assault intercessors</h3>

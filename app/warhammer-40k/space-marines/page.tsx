@@ -17,7 +17,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1 className="page-title">{navTitle}</h1>
 
       <p>
         Space Marines take a central position in the fictional universe of

@@ -59,6 +59,10 @@
     @apply text-primary underline hover:text-primary/80 active:text-primary/60 transition-colors;
   }
 
+  article p {
+    @apply my-4;
+  }
+
   hr {
     @apply border-foreground/10;
   }
@@ -68,18 +72,21 @@
   }
 
   .page-title {
-    @apply text-5xl font-bold tracking-tighter text-center my-20;
+    @apply text-5xl font-bold mt-9 mb-4 tracking-tight;
+    line-height: 1.15;
   }
 
   .section-title {
-    @apply scroll-mt-12 text-3xl font-bold tracking-wider text-center;
-  }
-
-  .lead {
-    @apply font-medium text-lg leading-relaxed;
+    @apply scroll-mt-8 font-bold text-4xl mt-9 mb-4 tracking-tight;
+    line-height: 1.15;
   }
 
   section h3 {
-    @apply text-xl font-bold tracking-wider scroll-mt-12 mt-12!;
+    @apply text-3xl mt-9 mb-4 tracking-tight scroll-mt-8;
+    line-height: 1.15;
+  }
+
+  .profile-img {
+    @apply sm:max-h-60 object-cover rounded shadow-md;
   }
 }
