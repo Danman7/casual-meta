@@ -6,6 +6,7 @@ import eliminators from '@/app/assets/wh40k/eliminators.webp'
 import heavyIntercessors from '@/app/assets/wh40k/heavyintercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
+import { Callout } from '@/app/ui/Callout'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
@@ -43,7 +44,7 @@ export default async function Page() {
           className="profile-img object-[0%_70%]"
         />
 
-        <p className="flavor">
+        <p className="lead">
           <strong>Marine equivalent</strong> profile with{' '}
           <strong>OC2&uarr;</strong> in Tacticus Armor, armed with Bolt Rifles.
           Cost: <strong>80 points for 5 models, 160 for 10</strong>.
@@ -117,66 +118,65 @@ export default async function Page() {
         <p>
           Assault intercessors are <strong>cheap, OC-efficient</strong>{' '}
           battleline infantry built for <strong>hand-to-hand</strong> combat.
-          They are situational, best fitted for melee-focused lists, and reach
-          full potential only with proper support.
+          They are dependent on the army list's flavor, and on the support
+          assigned to them.
         </p>
 
         <p>
-          Most of all, these marines{' '}
-          <strong>want to fight on top of objectives</strong>. They can use
-          their heavy bolt pistols (preferably a plasma pistol for the sergeant)
-          to chip away their prey as they approach. Yet, only when they engage
-          in melee their <strong>Shock Assault</strong> rule kicks in: Reroll
-          wound rolls of 1 at all times.{' '}
-          <strong>Reroll all wound rolls when on an objective.</strong>
+          These marines <strong>want to fight on top of objectives</strong>. The
+          heavy pistols can chip at their targets, until their chainswords start
+          hacking. Only when they engage in melee can their{' '}
+          <strong>Shock Assault</strong> rule come in to play. They get to
+          reroll wound rolls of 1, or instead{' '}
+          <strong>reroll all wound rolls when on an objective.</strong> Just
+          keep in mind that they are <strong>slow</strong> on foot. A transport,
+          preferably an <em>Impulsor</em>, is often necessary to get them into
+          position quickly.
         </p>
 
         <p>
-          The <strong>chainsword</strong> has a typical S4, AP-1, D1{' '}
-          <strong>anti-light-infantry</strong> profile, suitable for
-          single-wound targets. But with the rerolls and the high OC, they can
-          hassle even marine equivalents for control over a marker.
+          The chainsword profile is suited for{' '}
+          <strong>fighting light infantry</strong>, and with shock assault it
+          can be adequate even against other lightly armored marine equivalents.
+          However, because the{' '}
+          <strong>rerolls also apply to any attached characters</strong> assault
+          intercessors shine as <strong>affordable bodyguards</strong>.
         </p>
 
+        <Callout className="text-sm">
+          <div className="font-bold">Character Synergy</div>
+          <ul>
+            <li>
+              Captain — Likely the best fit. Adds high-quality melee, free
+              stratagem potential, and spikes hard on an objective with full
+              wound rerolls.
+            </li>
+
+            <li>
+              Uriel Ventris — Efficient melee profile plus utility. Assault
+              Intercessors provide a cheap, durable escort that benefits from
+              objective-based rerolls.
+            </li>
+            <li>
+              Azrael — Strong synergy. He wants to exist safely early and fight
+              later. The squad appreciates his invulnerable save and Sustained
+              Hits.
+            </li>
+            <li>
+              Ragnar Blackmane — Exceptional fit. High-volume, high-strength
+              melee with wound rerolls into monsters and vehicles becomes a
+              major threat.
+            </li>
+          </ul>
+        </Callout>
+
         <p>
-          One defining detail is that the{' '}
-          <strong>rerolls rule also applies to any attached characters</strong>.
-          This makes them <strong>excellent character escorts</strong>. They can
-          work well with:
-        </p>
-
-        <ul>
-          <li>
-            <strong>Captain:</strong> High-quality melee, free stratagem, and
-            spikes hard on an objective with full wound rerolls.
-          </li>
-
-          <li>
-            Any monster melee profile like <strong>Ragnar Blackmane</strong>{' '}
-            (Space Wolves).
-          </li>
-
-          <li>
-            Any strong overall character in need of additional protection like{' '}
-            <strong>Uriel Ventris</strong> (Ultramarines) or{' '}
-            <strong>Azrael</strong> (Dark Angels).
-          </li>
-        </ul>
-
-        <p>
-          It is in <strong>melee-focused chapters like the Blood Angels</strong>{' '}
-          where they can <strong>elevate to top-tier</strong>. In a{' '}
-          <em>Liberator Assault Group</em> they gain{' '}
-          <strong>+2 Strength (to S6)</strong> and{' '}
-          <strong>+1 Attack (5 attacks each)</strong>, scaling them greatly both
+          While this gives them purpose, it is in{' '}
+          <strong>melee-focused chapters like the Blood Angels</strong> where
+          they become a proper threat. In a <em>Liberator Assault Group</em>{' '}
+          they gain <strong>+2 Strength (to S6)</strong> and{' '}
+          <strong>+1 Attack (5 attacks each)</strong>, scaling greatly both
           horizotally and vertically.
-        </p>
-
-        <p>
-          Lastly, assault intercessors are <em>on-foot</em> troops and remain{' '}
-          <strong>slow</strong> for true assault roles. It's often wise to{' '}
-          <strong>deliver them with a transport</strong>, where an{' '}
-          <em>Impulsor</em> is optimal.
         </p>
 
         <h3 id="heavy-intercessors">Heavy intercessors</h3>
@@ -187,58 +187,22 @@ export default async function Page() {
           className="max-h-60 object-cover object-[0%_58%] rounded shadow-md"
         />
 
-        <div className="flex gap-2 flex-wrap justify-between tracking-wide text-lg">
-          <div>
-            <strong>Profile:</strong> The Gravis - M5|T6|Sv3+|W3 with OC2&uarr;
-          </div>
-          <div>
-            <strong>Cost:</strong> 100/5, 200/10
-          </div>
-        </div>
-
-        <hr />
-
-        <p>
-          <strong>Unyielding in the Face of the Foe:</strong> +1 to armor saves
-          if attacked by a D1 weapon, while near objective.
-        </p>
-
-        <hr />
-
-        <p className="lead">Durable for the cost.</p>
-
-        <p>
-          Against light arms, the gravis armor is comparable to terminators,
-          without the invulnerable saves. It should successfuly hold off weapons
-          up to 5 strength and 2 damage, for 20 points per model. Heavier gear,
-          like anti-tank weapons, will still delete them quickly.
-        </p>
-
-        <p className="lead">Reasonable ranged firepower. Weak hand-to-hand.</p>
-
-        <p>
-          They come with a heavier version of the bolt rifle, with superior
-          range. Its profile is strong into 4-5 toughness infantry with 2 wounds
-          or less, but falters against good armor saves. It's best used for
-          chiping at marine equivalents over greater distances.
-        </p>
-
-        <p>
-          Once the enemy closes into melee range, the heavies' resilient profile
-          slows them down, but their weak close combat gives them little
-          trouble.
-        </p>
-
         <p className="lead">
-          They win on toughness, but lose on flexibility and value.
+          <strong>Gravis</strong> armor profile (M5, T6, Sv3+, W3) with{' '}
+          <strong>OC2&uarr;</strong>, armed with Heavy Bolt Rifles. Cost:{' '}
+          <strong>100 points for 5 models, 200 for 10</strong>.
         </p>
 
+        <hr />
+
         <p>
-          Regular intercessors are cheaper, more consistent with the double
-          shots rule, and bring the sticky objectives rule. Heavies remain
-          situational, mostly relevant in detachments or with characters that
-          further boost their endurance.
+          Heavies are <strong>slower</strong>, more <strong>durable</strong>{' '}
+          intercessors,{' '}
+          <strong>designed to sit on objectives and absorb fire</strong>. They
+          are very situational, and aren't common among competitive lists.
         </p>
+
+        <p></p>
       </Section>
 
       <Section title="Specialists" id="specialists">
