@@ -102,4 +102,8 @@
   .flavor {
     @apply opacity-75 text-sm;
   }
+
+  .box {
+    @apply bg-surface rounded-lg p-4 my-4 shadow-md space-y-4!;
+  }
 }

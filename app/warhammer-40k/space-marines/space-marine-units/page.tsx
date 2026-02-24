@@ -6,7 +6,7 @@ import eliminators from '@/app/assets/wh40k/eliminators.webp'
 import heavyIntercessors from '@/app/assets/wh40k/heavyintercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
-import { Callout } from '@/app/ui/Callout'
+import { Example } from '@/app/ui/Example'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
@@ -91,12 +91,20 @@ export default async function Page() {
           Intercessors <strong>work best when kept cheap</strong> and{' '}
           <strong>multiple 5-man squads scale better</strong> than 10-man ones.
           They can pressure several objectives, and better manage the focus-fire
-          requirement for double shots with less risk of overkill. In a key turn{' '}
-          <em>Armor of Contempt</em> can help if surviving on an objective is
-          imperative. Also, if you must, a lieutenant with lethal hits can make
-          a situational 10-man squad more viable. Otherwise, they are good as
-          they are.
+          requirement for double shots with less risk of overkill.
         </p>
+
+        <Example>
+          <div>
+            During a key turn <em>Armor of Contempt</em> can help if surviving
+            on an objective is imperative.
+          </div>
+
+          <div>
+            Also, a lieutenant with lethal hits can make a situational 10-man
+            squad more viable. Otherwise, they are good as they are.
+          </div>
+        </Example>
 
         <h3 id="assault-intercessors">Assault intercessors</h3>
 
@@ -143,41 +151,24 @@ export default async function Page() {
           intercessors shine as <strong>affordable bodyguards</strong>.
         </p>
 
-        <Callout className="text-sm">
-          <div className="font-bold">Character Synergy</div>
-          <ul>
-            <li>
-              Captain — Likely the best fit. Adds high-quality melee, free
-              stratagem potential, and spikes hard on an objective with full
-              wound rerolls.
-            </li>
+        <Example>
+          <div>
+            There are many specific examples of good escort options. But in
+            general look for strong melee profiles (e.g. Captain or Ragnar
+            Blackmane from Space Wolves) that explode with wound rerolls, or
+            characters that benefit from staying alive longer (e.g. Azrael from
+            Dark Angels or Uriel Ventris from Ultramarines).
+          </div>
 
-            <li>
-              Uriel Ventris — Efficient melee profile plus utility. Assault
-              Intercessors provide a cheap, durable escort that benefits from
-              objective-based rerolls.
-            </li>
-            <li>
-              Azrael — Strong synergy. He wants to exist safely early and fight
-              later. The squad appreciates his invulnerable save and Sustained
-              Hits.
-            </li>
-            <li>
-              Ragnar Blackmane — Exceptional fit. High-volume, high-strength
-              melee with wound rerolls into monsters and vehicles becomes a
-              major threat.
-            </li>
-          </ul>
-        </Callout>
-
-        <p>
-          While this gives them purpose, it is in{' '}
-          <strong>melee-focused chapters like the Blood Angels</strong> where
-          they become a proper threat. In a <em>Liberator Assault Group</em>{' '}
-          they gain <strong>+2 Strength (to S6)</strong> and{' '}
-          <strong>+1 Attack (5 attacks each)</strong>, scaling greatly both
-          horizotally and vertically.
-        </p>
+          <div>
+            While this gives them purpose, it is in{' '}
+            <strong>melee-focused chapters like the Blood Angels</strong> where
+            they become a proper threat. In a <em>Liberator Assault Group</em>{' '}
+            they gain <strong>+2 Strength (to S6)</strong> and{' '}
+            <strong>+1 Attack (5 attacks each)</strong>, scaling greatly both
+            horizotally and vertically.
+          </div>
+        </Example>
 
         <h3 id="heavy-intercessors">Heavy intercessors</h3>
 
