@@ -43,7 +43,7 @@ export default async function Page() {
           className="profile-img object-[0%_70%]"
         />
 
-        <p>
+        <p className="opacity-85">
           <strong>Marine equivalent</strong> profile with{' '}
           <strong>OC2&uarr;</strong> in Tacticus Armor, armed with Bolt Rifles.
           Cost: <strong>80 points for 5 models, 160 for 10</strong>.
@@ -52,70 +52,65 @@ export default async function Page() {
         <hr />
 
         <p>
-          Intercessors are a <strong>high-utility squad</strong> that scales
-          well horizontally and fits into a wide variety of Space Marine lists.
+          Intercessors bring a lot of value and flexibility, because of their{' '}
+          <strong>Objective Secured (sticky objectives)</strong> rule. Normally,
+          each unit within 3" of a marker contributes to its control with their
+          OC stat. However, if an{' '}
+          <strong>intercessor squad holds an objective</strong>, it{' '}
+          <strong>remains yours, even if they move away</strong>. The enemy{' '}
+          <strong>can't just shoot your troops off</strong> the marker - they
+          must physically contest it.
         </p>
 
         <p>
-          Their key ability is{' '}
-          <strong>Objective Secured (sticky objectives)</strong>. If an
-          Intercessor squad controls an objective marker in your command phase,
-          you can move them away without immediately losing control -{' '}
-          <strong>forcing opponents to physically contest objectives</strong>{' '}
-          rather than just shoot you off them. On the table, they usually rush
-          the home objective, then pivot into the midboard to support. In
-          essence, they freep up control resources.
+          This <strong>frees up control resources</strong>. Intercessors can tag
+          the home objective and advance to contribute in the center, or tag the
+          center with their high OC and fall back to defend from some distance.
         </p>
 
         <p>
-          As ranged firepower, Intercessors are{' '}
-          <strong>not primary damage dealers</strong>. They contribute through{' '}
-          <strong>volume</strong>, mainly{' '}
-          <strong>via Target Elimination</strong>: when selected to shoot, bolt
-          rifles gain <strong>+2 attacks</strong> if the whole{' '}
-          <strong>squad fires at one unit</strong>. This effectively doubles
-          bolt rifle output, to <strong>4 shots per model</strong> at S4, AP-1,
-          D1, <strong>making short work of light infantry</strong>. The tradeoff
-          is you give up split-fire.
+          On that note, while intercessors are{' '}
+          <strong>not primary damage dealers</strong>, they{' '}
+          <strong>contribute trough volume</strong> via their second special
+          rule: <strong>Target Elimination</strong>. If the squad is elected to
+          shoot, and is <strong>shooting at a single target</strong>, bolt
+          rifles gain <strong>+2 attacks</strong>. That doubles their output to
+          4 shots per model.
         </p>
 
         <p>
-          Reading trough the data sheet, one in five marines can take a{' '}
-          <strong>grenade launcher</strong> without loosing the rifle - only the
-          assault keyword. It's <strong>a free upgrade</strong> adding some
-          reach into tougher targets or hordes, at the cost of one less shot
-          when the squad advances.
-        </p>
-
-        <p>
+          The <strong>bolt rifle</strong> itself at S4, AP-1, D1{' '}
           <strong>
-            Melee is just enough to trade or close the deal on already damage
-            light infantry
+            makes short work of single-wound, lightly armored infantry
           </strong>
-          . Arming the sergeant with a power fist or a thunder hammer, doesn't
-          improve that significantly, but it gives the enemy second thoughts
-          about charging them.
+          . One in five can attach a <strong>grenade launcher</strong> to it - a{' '}
+          <strong>free upgrade</strong>, giving punch against both tougher
+          targets (krak grenades) and swarms (frag grenades). The trade off is
+          no advance keyword for that model, which results in fewer attacks per
+          squad if they advanced that turn.
         </p>
 
         <p>
-          Intercessors <strong>work best when kept cheap</strong>.{' '}
-          <em>Armor of Contempt</em> can help if it's imperative for them to
-          survive a key turn on a marker. Given their special rules,{' '}
-          <strong>5-man squads scale better</strong>. They pressure multiple
-          objectives, and align better with the focus-fire requirement for
-          double shots, with lower risk of overkill. A 10-man squad can work
-          around the idea of high-value damage spike with an attached{' '}
-          <em>lieutenant</em>, giving them <em>lethal hits</em> and fall back
-          into shoot tactics.
+          Their <strong>melee</strong> profile <strong>is weak</strong>, but
+          giving the sergeant a power fist can help with trades when it is
+          mandatory for them to defend on top of an objective.
+        </p>
+
+        <p>
+          Intercessors <strong>work best when kept cheap</strong>. Don't commit
+          much support to them. <strong>Smaller squads scale better</strong>{' '}
+          than larger ones. They can pressure multiple objectives, and better
+          manage the single target requirement for double shots with less risk
+          of overkill. An attached lieutenant with lethal hits can make a
+          situational 10-man squad more viable.
         </p>
 
         <p>
           <strong>At least one intercessor squad is never a bad idea</strong>{' '}
           for stabilizing objectives and trading into enemy utility units. They
           don’t usually compete for battleline slots. The closest functional
-          alternative is shifting points into a dedicated removal unit like{' '}
-          <em>hellblasters</em>, depending on whether your list needs more
-          killing power or more board control.
+          alternative is a dedicated removal unit like <em>hellblasters</em>, if
+          your list needs more killing power.
         </p>
 
         <h3 id="assault-intercessors">Assault intercessors</h3>
@@ -196,10 +191,8 @@ export default async function Page() {
         </ul>
 
         <p>
-          Paired with the right leader, assault intercessors can gain some reach
-          against tougher targers. But it is in{' '}
-          <strong>melee-focused chapters like the Blood Angels</strong> where
-          they can <strong>elevate to top-tier</strong>. In a{' '}
+          It is in <strong>melee-focused chapters like the Blood Angels</strong>{' '}
+          where they can <strong>elevate to top-tier</strong>. In a{' '}
           <em>Liberator Assault Group</em> they gain{' '}
           <strong>+2 Strength (to S6)</strong> and{' '}
           <strong>+1 Attack (5 attacks each)</strong>, scaling them greatly both
@@ -207,12 +200,10 @@ export default async function Page() {
         </p>
 
         <p>
-          Lastly, on the continuous theme of supporting assault intercessors,
-          they remain on-foot troops and too <strong>slow</strong> for true
-          assault roles. It's often wise to{' '}
-          <strong>deliver them with a transport</strong>. The <em>Impulsor</em>{' '}
-          is the optimal pick, as a <em>Land Raider</em> will want a scarier
-          payload and the <em>Repulsor</em> is better with a shooting one.
+          Lastly, assault intercessors are <em>on-foot</em> troops and remain{' '}
+          <strong>slow</strong> for true assault roles. It's often wise to{' '}
+          <strong>deliver them with a transport</strong>, where an{' '}
+          <em>Impulsor</em> is optimal.
         </p>
 
         <h3 id="heavy-intercessors">Heavy intercessors</h3>
