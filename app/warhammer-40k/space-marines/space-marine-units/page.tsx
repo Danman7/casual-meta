@@ -27,9 +27,9 @@ export default async function Page() {
       <h1 className="page-title">{navTitle}</h1>
 
       <p>
-        Having the datasheets is essential to understanding the information
-        bellow. If you are unfamiliar with the profile abbreviations check out
-        our{' '}
+        Having the datasheets is not essential, but recommended for
+        understanding the information below. If you are unfamiliar with the
+        profile abbreviations, check out our{' '}
         <Link href={wh40kRoute('Profile Archetypes')}>Profile Archetypes</Link>{' '}
         page.
       </p>
@@ -43,7 +43,7 @@ export default async function Page() {
           className="profile-img object-[0%_70%]"
         />
 
-        <p className="opacity-85">
+        <p className="flavor">
           <strong>Marine equivalent</strong> profile with{' '}
           <strong>OC2&uarr;</strong> in Tacticus Armor, armed with Bolt Rifles.
           Cost: <strong>80 points for 5 models, 160 for 10</strong>.
@@ -52,65 +52,49 @@ export default async function Page() {
         <hr />
 
         <p>
-          Intercessors bring a lot of value and flexibility, because of their{' '}
-          <strong>Objective Secured (sticky objectives)</strong> rule. Normally,
-          each unit within 3" of a marker contributes to its control with their
-          OC stat. However, if an{' '}
+          Intercerssors are a{' '}
+          <strong>high-utility, flexible, ranged unit</strong> that is
+          compatible with a wide variety of army lists. Usually, at least a
+          squad is <strong>never a waste</strong> of troop slots because of
+          their two key rules.
+        </p>
+
+        <p>
+          <strong>Objective Secured (a.k.a. sticky objectives)</strong> changes
+          how objectives are held and{' '}
+          <strong>frees up control resources</strong>. Normally, a unit within
+          3" of a marker exerts control with its OC stat. However, if an{' '}
           <strong>intercessor squad holds an objective</strong>, it{' '}
-          <strong>remains yours, even if they move away</strong>. The enemy{' '}
-          <strong>can't just shoot your troops off</strong> the marker - they
-          must physically contest it.
+          <strong>remains yours, even if they move away</strong>. This opens up
+          new tactical routes. Intercessors can tag the home objective and
+          advance to contribute in the center, or tag the center and fall back
+          to defend from a distance.
         </p>
 
         <p>
-          This <strong>frees up control resources</strong>. Intercessors can tag
-          the home objective and advance to contribute in the center, or tag the
-          center with their high OC and fall back to defend from some distance.
-        </p>
-
-        <p>
-          On that note, while intercessors are{' '}
-          <strong>not primary damage dealers</strong>, they{' '}
-          <strong>contribute trough volume</strong> via their second special
-          rule: <strong>Target Elimination</strong>. If the squad is elected to
-          shoot, and is <strong>shooting at a single target</strong>, bolt
-          rifles gain <strong>+2 attacks</strong>. That doubles their output to
-          4 shots per model.
-        </p>
-
-        <p>
-          The <strong>bolt rifle</strong> itself at S4, AP-1, D1{' '}
+          They are <strong>not primary damage dealers</strong>. The bolt rifle
+          has the standard mediocre <strong>anti-light-infantry</strong> (two
+          attacks, single-wound) profile. But trough their other special rule,{' '}
+          <strong>Target Elimination</strong>, the rifles get{' '}
           <strong>
-            makes short work of single-wound, lightly armored infantry
+            double attacks if the whole squad shoots at a single target
           </strong>
-          . One in five can attach a <strong>grenade launcher</strong> to it - a{' '}
-          <strong>free upgrade</strong>, giving punch against both tougher
-          targets (krak grenades) and swarms (frag grenades). The trade off is
-          no advance keyword for that model, which results in fewer attacks per
-          squad if they advanced that turn.
+          . This gives them actual leverage not trough damage, but volume. Plus,
+          one in five can attach a <strong>grenade launcher</strong> to the
+          rifle. It's considered a <strong>free upgrade</strong>, giving some
+          punch against elites (krak grenades) and swarms (frag grenades), at
+          the cost of fewer attacks after advancing (assault keyword).
         </p>
 
         <p>
-          Their <strong>melee</strong> profile <strong>is weak</strong>, but
-          giving the sergeant a power fist can help with trades when it is
-          mandatory for them to defend on top of an objective.
-        </p>
-
-        <p>
-          Intercessors <strong>work best when kept cheap</strong>. Don't commit
-          much support to them. <strong>Smaller squads scale better</strong>{' '}
-          than larger ones. They can pressure multiple objectives, and better
-          manage the single target requirement for double shots with less risk
-          of overkill. An attached lieutenant with lethal hits can make a
-          situational 10-man squad more viable.
-        </p>
-
-        <p>
-          <strong>At least one intercessor squad is never a bad idea</strong>{' '}
-          for stabilizing objectives and trading into enemy utility units. They
-          don’t usually compete for battleline slots. The closest functional
-          alternative is a dedicated removal unit like <em>hellblasters</em>, if
-          your list needs more killing power.
+          Intercessors <strong>work best when kept cheap</strong> and{' '}
+          <strong>multiple 5-man squads scale better</strong> than 10-man ones.
+          They can pressure several objectives, and better manage the focus-fire
+          requirement for double shots with less risk of overkill. In a key turn{' '}
+          <em>Armor of Contempt</em> can help if surviving on an objective is
+          imperative. Also, if you must, a lieutenant with lethal hits can make
+          a situational 10-man squad more viable. Otherwise, they are good as
+          they are.
         </p>
 
         <h3 id="assault-intercessors">Assault intercessors</h3>
@@ -131,38 +115,27 @@ export default async function Page() {
         <hr />
 
         <p>
-          Assault intercessors are <strong>cheap, OC-efficient</strong> Space
-          Marines battleline infantry built for{' '}
-          <strong>close-quarters fights</strong>. As it'll become apparent,
-          unlike regular intercessors, they{' '}
-          <strong>reach full potential only with proper support</strong>.
+          Assault intercessors are <strong>cheap, OC-efficient</strong>{' '}
+          battleline infantry built for <strong>hand-to-hand</strong> combat.
+          They are situational, best fitted for melee-focused lists, and reach
+          full potential only with proper support.
         </p>
 
         <p>
-          They can use their <strong>heavy bolt pistols</strong> to{' '}
-          <strong>chip away while they approach</strong> their targets. A plasma
-          pistol for the sergeant is also available and often a good pick. But
-          assault intercessors don't want to fight anywhere. They want to fight
-          hand-to-hand on top of objectives because of the{' '}
-          <strong>Shock Assault</strong> special rule:
+          Most of all, these marines{' '}
+          <strong>want to fight on top of objectives</strong>. They can use
+          their heavy bolt pistols (preferably a plasma pistol for the sergeant)
+          to chip away their prey as they approach. Yet, only when they engage
+          in melee their <strong>Shock Assault</strong> rule kicks in: Reroll
+          wound rolls of 1 at all times.{' '}
+          <strong>Reroll all wound rolls when on an objective.</strong>
         </p>
 
-        <ul>
-          <li>Reroll wound rolls of 1 at all times.</li>
-
-          <li>
-            <strong>Reroll all wound rolls when on an objective.</strong>
-          </li>
-        </ul>
-
         <p>
-          The rerolls to wound, together with the high OC and the large volume
-          of S4, D1 <strong>chainsword</strong> attacks (4 per model), secure{' '}
-          <strong>
-            reliable trades with light to medium infantry on markers
-          </strong>
-          . They are still not primary damage dealers and tougher targets with
-          good armor saves, will give them a hard time.
+          The <strong>chainsword</strong> has a typical S4, AP-1, D1{' '}
+          <strong>anti-light-infantry</strong> profile, suitable for
+          single-wound targets. But with the rerolls and the high OC, they can
+          hassle even marine equivalents for control over a marker.
         </p>
 
         <p>

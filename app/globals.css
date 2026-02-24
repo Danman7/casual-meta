@@ -98,4 +98,8 @@
   .profile-img {
     @apply sm:max-h-60 object-cover rounded shadow-md;
   }
+
+  .flavor {
+    @apply opacity-75;
+  }
 }
