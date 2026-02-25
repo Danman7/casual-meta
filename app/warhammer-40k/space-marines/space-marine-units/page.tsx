@@ -67,10 +67,17 @@ export default async function Page() {
           3" of a marker exerts control with its OC stat. However, if an{' '}
           <strong>intercessor squad holds an objective</strong>, it{' '}
           <strong>remains yours, even if they move away</strong>. This opens up
-          new tactical routes. Intercessors can tag the home objective and
-          advance to contribute in the center, or tag the center and fall back
-          to defend from a distance.
+          new tactical routes.
         </p>
+
+        <Example>
+          <ul>
+            <li>Rush home objective, then move up to reinforce the center.</li>
+            <li>
+              Tag midboard early, then fall back to defend from a distance.
+            </li>
+          </ul>
+        </Example>
 
         <p>
           They are <strong>not primary damage dealers</strong>. The bolt rifle
@@ -96,13 +103,9 @@ export default async function Page() {
 
         <Example>
           <div>
-            During a key turn <em>Armor of Contempt</em> can help if surviving
-            on an objective is imperative.
-          </div>
-
-          <div>
-            Also, a lieutenant with lethal hits can make a situational 10-man
-            squad more viable. Otherwise, they are good as they are.
+            During a crucial turn <em>Armor of Contempt</em> can help if
+            surviving on an objective is imperative. Also, a lieutenant with
+            lethal hits can make a situational 10-man squad more viable.
           </div>
         </Example>
 
@@ -187,13 +190,27 @@ export default async function Page() {
         <hr />
 
         <p>
-          Heavies are <strong>slower</strong>, more <strong>durable</strong>{' '}
+          Heavies are <strong>slower</strong>, more <strong>resilient</strong>{' '}
           intercessors,{' '}
           <strong>designed to sit on objectives and absorb fire</strong>. They
           are very situational, and aren't common among competitive lists.
         </p>
 
-        <p></p>
+        <p>
+          Their base is <strong>good durability for the cost</strong>. At 20
+          points per model, you get armor which blunts common anti-marine
+          weapons (S5, D2). It's even worse for lighter arms. Their special
+          rule, <strong>Unyielding in the Face of the Foe</strong> gives{' '}
+          <strong>+1 to saves against D1 attacks</strong>. They are not quite
+          terminators, but impel the enemy to allocate anti-tank weapons
+          (plasma, lascannons, etc.) to answer.
+        </p>
+
+        <p>
+          The heavier gear they are armed with should cope with T4-T5
+          double-wound infantry (marine equivalents) at long range on paper, but
+          in practice the low AP rather chips that hurts.
+        </p>
       </Section>
 
       <Section title="Specialists" id="specialists">
