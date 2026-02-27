@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { GiCrosshair } from 'react-icons/gi'
+import { FaCrosshairs } from 'react-icons/fa'
+import { RiSwordFill } from 'react-icons/ri'
 
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import eliminators from '@/app/assets/wh40k/eliminators.webp'
@@ -9,6 +10,7 @@ import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { Example } from '@/app/ui/Example'
 import { Section } from '@/app/ui/Section'
+import { WarhammerProfile } from '@/app/ui/WarhammerProfile'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
 
@@ -41,7 +43,7 @@ export default async function Page() {
         </p>
 
         <h3 id="intercessors" className="flex-wrapper">
-          Intercessors <GiCrosshair className="circle-icon" />
+          Intercessors <FaCrosshairs className="circle-icon" />
         </h3>
 
         <Image
@@ -50,26 +52,23 @@ export default async function Page() {
           className="profile-img object-[0%_70%]"
         />
 
-        <div className="flex flex-wrap content-stretch justify-between gap-2 py-2">
-          <div>
-            <div className="flavor">Profile:</div>
-            <div>
-              <strong>Marine equivalent</strong> with <strong>OC2&uarr;</strong>{' '}
-              in Tacticus Armor
-            </div>
-            <div>
-              <strong>Bolt Rifles</strong>{' '}
-              <span className="flavor">S4, AP-1, D1</span>
-            </div>
-          </div>
-
-          <div>
-            <div className="flavor">Cost:</div>
-            <div className="font-bold">80/5 160/10</div>
-          </div>
-        </div>
-
-        <hr />
+        <WarhammerProfile
+          profile={
+            <>
+              <div>
+                <strong>Marine equivalent</strong> with{' '}
+                <strong>OC2&uarr;</strong> in Tacticus Armor
+              </div>
+              <div>
+                <strong>Bolt Rifles</strong>{' '}
+                <span className="flavor">
+                  Assault, Heavy, 24", A2, BS3+, S4, AP-1, D1
+                </span>
+              </div>
+            </>
+          }
+          cost="80/5 160/10"
+        />
 
         <p>
           Intercerssors are a{' '}
@@ -130,7 +129,9 @@ export default async function Page() {
           </div>
         </Example>
 
-        <h3 id="assault-intercessors">Assault intercessors</h3>
+        <h3 id="assault-intercessors" className="flex-wrapper">
+          Assault intercessors <RiSwordFill className="circle-icon" />
+        </h3>
 
         <Image
           src={assaultIntercessors}
@@ -138,89 +139,173 @@ export default async function Page() {
           className="profile-img object-[0%_75%]"
         />
 
-        <p>
-          <strong>Marine equivalent</strong> profile with{' '}
-          <strong>OC2&uarr;</strong> in Tacticus Armor, armed with Astartes
-          chainswords and heavy bolt pistols. Cost:{' '}
-          <strong>75 points for 5 models, 150 for 10</strong>.
-        </p>
-
-        <hr />
-
-        <p>
-          Assault intercessors are <strong>cheap, OC-efficient</strong>{' '}
-          battleline infantry built for <strong>melee</strong>. Their value
-          depends on list flavor and support.
-        </p>
-
-        <p>
-          They want to <strong>fight on objectives</strong>. Heavy pistols chip
-          targets until their chainswords engage. <strong>Shock Assault</strong>{' '}
-          lets them reroll wound rolls of 1, or all wound rolls{' '}
-          <strong>when on an objective.</strong> They're <strong>slow</strong>{' '}
-          on foot, so a transport-preferably an <em>Impulsor</em>-is usually
-          needed.
-        </p>
+        <WarhammerProfile
+          profile={
+            <>
+              <div>
+                <strong>Marine equivalent</strong> with{' '}
+                <strong>OC2&uarr;</strong> in Tacticus Armor
+              </div>
+              <div>
+                <strong>Astartes chainswords</strong>{' '}
+                <span className="flavor">A4, S4, AP-1, D1</span>
+              </div>
+              <div>
+                <strong>Heavy bolt pistols</strong>{' '}
+                <span className="flavor">18", A1, BS3+ S4, AP-1, D1</span>
+              </div>
+            </>
+          }
+          cost="75/5 150/10"
+        />
 
         <p>
-          Chainswords handle <strong>light infantry</strong> well, and with
-          Shock Assault can manage lightly armored equivalents. Their real
-          strength, though, is as <strong>affordable bodyguards</strong>-the{' '}
-          <strong>wound rerolls apply to attached characters</strong> too.
+          In terms of profile, durability and weapon output, assault
+          intercessors are very close to a <strong>melee</strong> version of
+          regular intercessors. They drop objectives utility and ranged
+          flexibility, for being <strong>cheaper</strong> with higher{' '}
+          <strong>trading value</strong>. They are very dependent on their
+          support and the flavor of the army list.
         </p>
 
         <Example>
           <div>
-            Look for strong melee profiles (e.g. Captain or Ragnar Blackmane)
-            that explode with wound rerolls, or characters that benefit from
-            surviving longer (e.g. Azrael or Uriel Ventris).
-          </div>
-
-          <div>
-            In <strong>melee-focused chapters like Blood Angels</strong> they
-            become a real threat. A <em>Liberator Assault Group</em> adds{' '}
-            <strong>+2 Strength (S6)</strong> and{' '}
-            <strong>+1 Attack (5 each)</strong>, scaling well both horizontally
+            Blood Angels elevate assault intercessors to a proper threat. As
+            part of a Liberator Assault Group detachment they gain +2 Strength
+            (to S6) and +1 Attack (5 attacks each), scaling both horizontally
             and vertically.
           </div>
         </Example>
 
-        <h3 id="heavy-intercessors">Heavy intercessors</h3>
+        <p>
+          Their special rule, <strong>Shock Assault</strong>, works like this:
+        </p>
+
+        <ul>
+          <li>Reroll wound rolls of 1 anywhere.</li>
+          <li className="font-bold">
+            Reroll all wound rolls when on an objective.
+          </li>
+          <li className="font-bold">
+            This applies to any character attached to the squad.
+          </li>
+        </ul>
+
+        <p>
+          Assault intercessors want to fight on objectives and do that{' '}
+          <strong>better if escorting a character</strong>. The heavy pistols
+          can chip targets until their chainswords engage. Both weapons perform{' '}
+          <strong>primarily against light infantry</strong>. They are also{' '}
+          <strong>slow for assault</strong> troops. A transport might be
+          necessary.
+        </p>
+
+        <Example>
+          <div>Here are some examples of character synergy:</div>
+
+          <ul>
+            <li>
+              A Captain is likely the best fit. Adds high-quality melee, free
+              stratagem potential, and spikes hard on an objective with full
+              wound rerolls.
+            </li>
+
+            <li>A Lieutenant adds lethal hits and solid output.</li>
+
+            <li>
+              Uriel Ventris (Ultramarines) has an efficient melee profile plus
+              utility. Assault Intercessors provide a cheap, durable escort that
+              benefits from objective-based rerolls.
+            </li>
+
+            <li>
+              Azrael (Dark Angels) also has strong synergy. He wants to exist
+              safely early and fight later. The squad appreciates his
+              invulnerable save and Sustained Hits.
+            </li>
+
+            <li>
+              Any monster melee profile like Ragnar Blackmane (Space Wolves) is
+              an exceptional fit. High-volume, high-strength melee with wound
+              rerolls into monsters and vehicles becomes a major threat.
+            </li>
+          </ul>
+        </Example>
+
+        <h3 id="heavy-intercessors" className="flex-wrapper">
+          Heavy Intercessors <FaCrosshairs className="circle-icon" />
+        </h3>
 
         <Image
           src={heavyIntercessors}
           alt="A squad of Heavy Intercessors."
-          className="max-h-60 object-cover object-[0%_58%] rounded shadow-md"
+          className="profile-img object-[0%_58%]"
         />
 
-        <p className="lead">
-          <strong>Gravis</strong> armor profile (M5, T6, Sv3+, W3) with{' '}
-          <strong>OC2&uarr;</strong>, armed with Heavy Bolt Rifles. Cost:{' '}
-          <strong>100 points for 5 models, 200 for 10</strong>.
-        </p>
+        <WarhammerProfile
+          profile={
+            <>
+              <div>
+                <strong>Gravis</strong> profile{' '}
+                <span className="flavor">M5, T6, Sv3+, W3</span> with{' '}
+                <strong>OC2&uarr;</strong>
+              </div>
 
-        <hr />
+              <div>
+                <strong>Heavy Bolt Rifles</strong>{' '}
+                <span className="flavor">
+                  Assault, Heavy, 30", A2, BS3+, S5, AP-1, D2
+                </span>
+              </div>
+
+              <div>
+                <strong>Heavy Bolter</strong>{' '}
+                <span className="flavor">
+                  Assault, Heavy, Sustained Hits 1, 36", A3, BS3+, S5, AP-1, D2
+                </span>
+              </div>
+            </>
+          }
+          cost="100/5 200/10"
+        />
 
         <p>
           Heavies are <strong>slower, tougher</strong> intercessors built to{' '}
-          <strong>sit on objectives and absorb fire</strong>. Situational, and
-          rare in competitive lists.
+          <strong>sit on objectives and absorb fire</strong>.
         </p>
 
         <p>
-          At 20 points per model, they blunt common anti-marine weapons (S5,
-          D2)-lighter arms fare even worse.{' '}
-          <strong>Unyielding in the Face of the Foe</strong> grants{' '}
-          <strong>+1 to saves against D1 attacks</strong>. Not quite
-          terminators, but they force opponents to commit anti-tank weapons
-          (plasma, lascannons, etc.) to answer.
+          Their headline is <strong>high durability for the cost</strong>. At 20
+          points per model, they blunt common anti-marine weapons (S5, D2).{' '}
+          <strong>Unyielding in the Face of the Foe</strong> grants them{' '}
+          <strong>+1 to saves against D1 attacks on top of objecives</strong>.
+          They are not quite terminator equivalents, but still push the opponent
+          to allocate anti-tank weapons (plasma, lascannons, etc.) to deal with
+          them quickly.
         </p>
 
         <p>
-          Their weapons can cope with T4-T5 double-wound infantry at range on
-          paper, but low AP chips rather than hurts.{' '}
-          <strong>They're grinders</strong>.
+          Their weapons at 30+ inches, S5, D2 are appropriate for engaging
+          two-wound marine equivalents at long distances. On the other hand the
+          low AP limist how they perform against infantry in cover.
         </p>
+
+        <p>
+          Heavy intercessors face stern competition from cheaper, more flexible
+          units - especially regular intercessors, who provide more utility and
+          damage per point. They're grinders that can chip and slow down the
+          enemy, but remain <strong>situational</strong>. Support that improves
+          their consistency is a best fit.
+        </p>
+
+        <Example>
+          <div>
+            Anvil Siege Force detachment has multiple buffs for squads that
+            remain stationary. Apothecary Biologis adds lethal hits. Iron Father
+            Feirros seriously spikes havies' durability and adds vehicle
+            support.
+          </div>
+        </Example>
       </Section>
 
       <Section title="Specialists" id="specialists">

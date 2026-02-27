@@ -73,7 +73,7 @@
   }
 
   hr {
-    @apply border-foreground/10;
+    @apply border-foreground/20;
   }
 
   article ul {
@@ -104,7 +104,7 @@
   }
 
   .box {
-    @apply bg-surface rounded-lg p-4 my-4 shadow-md space-y-4!;
+    @apply bg-surface rounded-lg p-2 my-4 shadow-md space-y-4!;
   }
 
   .flex-wrapper {
@@ -112,6 +112,6 @@
   }
 
   .circle-icon {
-    @apply bg-surface rounded-full w-8 h-8 p-1 border-2 border-foreground/10;
+    @apply bg-surface rounded-full w-8 h-8 p-1 border-2 border-foreground/20;
   }
 }
