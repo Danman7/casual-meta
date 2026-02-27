@@ -28,14 +28,17 @@ export default async function Page() {
       <h1 className="page-title">{navTitle}</h1>
 
       <p>
-        Having the datasheets is not essential, but recommended for
-        understanding the information below. If you are unfamiliar with the
-        profile abbreviations, check out our{' '}
-        <Link href={wh40kRoute('Profile Archetypes')}>Profile Archetypes</Link>{' '}
-        page.
+        Having the datasheets is not essential, but recommended. If you are
+        unfamiliar with profile abbreviations, check out{' '}
+        <Link href={wh40kRoute('Profile Archetypes')}>Profile Archetypes</Link>.
       </p>
 
       <Section title="Battleline" id="battleline">
+        <p>
+          Troops with the battleline keyword on their sheets have relaxed
+          restrictions on how many of the same type can be in an army list.
+        </p>
+
         <h3 id="intercessors">Intercessors</h3>
 
         <Image
@@ -44,68 +47,87 @@ export default async function Page() {
           className="profile-img object-[0%_70%]"
         />
 
-        <p className="lead">
-          <strong>Marine equivalent</strong> profile with{' '}
-          <strong>OC2&uarr;</strong> in Tacticus Armor, armed with Bolt Rifles.
-          Cost: <strong>80 points for 5 models, 160 for 10</strong>.
-        </p>
+        <div className="flex flex-wrap content-stretch justify-between gap-2 py-2">
+          <div>
+            <div className="flavor">Profile:</div>
+            <div>
+              <strong>Marine equivalent</strong> with <strong>OC2&uarr;</strong>{' '}
+              in Tacticus Armor
+            </div>
+            <div>
+              <strong>Bolt Rifles</strong>{' '}
+              <span className="flavor">S4, AP-1, D1</span>
+            </div>
+          </div>
+          {/* <div>
+            <strong>Marine equivalent</strong> profile with{' '}
+            <strong>OC2&uarr;</strong> in Tacticus Armor, armed with Bolt
+            Rifles. Cost: <strong>80 points for 5 models, 160 for 10</strong>.
+          </div> */}
+          <div>
+            <div className="flavor">Cost:</div>
+            <div className="font-bold">80/5 160/10</div>
+          </div>
+        </div>
 
         <hr />
 
         <p>
           Intercerssors are a{' '}
-          <strong>high-utility, flexible, ranged unit</strong> that is
-          compatible with a wide variety of army lists. Usually, at least a
-          squad is <strong>never a waste</strong> of troop slots because of
-          their two key rules.
+          <strong>high-utility, flexible ranged unit</strong>, compatible with
+          most army lists. A squad is <strong>never a waste</strong> if you need
+          stability around objectives or are unsure how to fill your troop
+          slots.
         </p>
 
         <p>
-          <strong>Objective Secured (a.k.a. sticky objectives)</strong> changes
-          how objectives are held and{' '}
-          <strong>frees up control resources</strong>. Normally, a unit within
-          3" of a marker exerts control with its OC stat. However, if an{' '}
-          <strong>intercessor squad holds an objective</strong>, it{' '}
-          <strong>remains yours, even if they move away</strong>. This opens up
-          new tactical routes.
-        </p>
-
-        <Example>
-          <ul>
-            <li>Rush home objective, then move up to reinforce the center.</li>
-            <li>
-              Tag midboard early, then fall back to defend from a distance.
-            </li>
-          </ul>
-        </Example>
-
-        <p>
-          They are <strong>not primary damage dealers</strong>. The bolt rifle
-          has the standard mediocre <strong>anti-light-infantry</strong> (two
-          attacks, single-wound) profile. But trough their other special rule,{' '}
-          <strong>Target Elimination</strong>, the rifles get{' '}
+          Normally, only units within 3" of an objective exert control with
+          their OC stats. <strong>Objective Secured (sticky objectives)</strong>{' '}
+          says that{' '}
           <strong>
-            double attacks if the whole squad shoots at a single target
+            if an intercessor squad holds a marker, it remains yours even after
+            they move away
           </strong>
-          . This gives them actual leverage not trough damage, but volume. Plus,
-          one in five can attach a <strong>grenade launcher</strong> to the
-          rifle. It's considered a <strong>free upgrade</strong>, giving some
-          punch against elites (krak grenades) and swarms (frag grenades), at
-          the cost of fewer attacks after advancing (assault keyword).
-        </p>
-
-        <p>
-          Intercessors <strong>work best when kept cheap</strong> and{' '}
-          <strong>multiple 5-man squads scale better</strong> than 10-man ones.
-          They can pressure several objectives, and better manage the focus-fire
-          requirement for double shots with less risk of overkill.
+          . This frees up control resources, because intercessors can tag and
+          walk. Now, the opponent can't just shoot your units off an objective.
+          They must physically contest it.
         </p>
 
         <Example>
           <div>
-            During a crucial turn <em>Armor of Contempt</em> can help if
-            surviving on an objective is imperative. Also, a lieutenant with
-            lethal hits can make a situational 10-man squad more viable.
+            On the board, it's common for intercessors to quickly capture the
+            home objective and pivot to contribute in the middle. They can also
+            rush midfield, then step back to defend from a distance.
+          </div>
+        </Example>
+
+        <p>
+          While they are <strong>not primary damage dealers</strong>, their
+          other special rule, <strong>Target Elimination</strong>, gives all
+          bolt rifles{' '}
+          <strong>
+            + 2 attacks if the whole squad shoots at a single target
+          </strong>
+          . The rifle itself has the standard{' '}
+          <strong>anti-light-infantry</strong> profile, but because of the
+          volume, they are consistent against anything that isn't armored up.
+          The free <strong>grenade launcher</strong> helps in pinches versus
+          tougher targets and swarms.
+        </p>
+
+        <p>
+          <strong>5-man squads scale better</strong> than 10-man ones. They can
+          pressure several objectives at the same time and manage the focus-fire
+          requirement with less risk of overkill. In general, intercessors are
+          good as they are. They should be <strong>kept cheap</strong> in terms
+          of support.
+        </p>
+
+        <Example>
+          <div>
+            <em>Armor of Contempt</em> can come in handy for surviving a
+            critical turn on an objective. A <em>lieutenant</em> with lethal
+            hits can make a 10-man squad more viable.
           </div>
         </Example>
 
@@ -128,48 +150,39 @@ export default async function Page() {
 
         <p>
           Assault intercessors are <strong>cheap, OC-efficient</strong>{' '}
-          battleline infantry built for <strong>hand-to-hand</strong> combat.
-          They are dependent on the army list's flavor, and on the support
-          assigned to them.
+          battleline infantry built for <strong>melee</strong>. Their value
+          depends on list flavor and support.
         </p>
 
         <p>
-          These marines <strong>want to fight on top of objectives</strong>. The
-          heavy pistols can chip at their targets, until their chainswords start
-          hacking. Only when they engage in melee can their{' '}
-          <strong>Shock Assault</strong> rule come in to play. They get to
-          reroll wound rolls of 1, or instead{' '}
-          <strong>reroll all wound rolls when on an objective.</strong> Just
-          keep in mind that they are <strong>slow</strong> on foot. A transport,
-          preferably an <em>Impulsor</em>, is often necessary to get them into
-          position quickly.
+          They want to <strong>fight on objectives</strong>. Heavy pistols chip
+          targets until their chainswords engage. <strong>Shock Assault</strong>{' '}
+          lets them reroll wound rolls of 1, or all wound rolls{' '}
+          <strong>when on an objective.</strong> They're <strong>slow</strong>{' '}
+          on foot, so a transport-preferably an <em>Impulsor</em>-is usually
+          needed.
         </p>
 
         <p>
-          The chainsword profile is suited for{' '}
-          <strong>fighting light infantry</strong>, and with shock assault it
-          can be adequate even against other lightly armored marine equivalents.
-          However, because the{' '}
-          <strong>rerolls also apply to any attached characters</strong> assault
-          intercessors shine as <strong>affordable bodyguards</strong>.
+          Chainswords handle <strong>light infantry</strong> well, and with
+          Shock Assault can manage lightly armored equivalents. Their real
+          strength, though, is as <strong>affordable bodyguards</strong>-the{' '}
+          <strong>wound rerolls apply to attached characters</strong> too.
         </p>
 
         <Example>
           <div>
-            There are many specific examples of good escort options. But in
-            general look for strong melee profiles (e.g. Captain or Ragnar
-            Blackmane from Space Wolves) that explode with wound rerolls, or
-            characters that benefit from staying alive longer (e.g. Azrael from
-            Dark Angels or Uriel Ventris from Ultramarines).
+            Look for strong melee profiles (e.g. Captain or Ragnar Blackmane)
+            that explode with wound rerolls, or characters that benefit from
+            surviving longer (e.g. Azrael or Uriel Ventris).
           </div>
 
           <div>
-            While this gives them purpose, it is in{' '}
-            <strong>melee-focused chapters like the Blood Angels</strong> where
-            they become a proper threat. In a <em>Liberator Assault Group</em>{' '}
-            they gain <strong>+2 Strength (to S6)</strong> and{' '}
-            <strong>+1 Attack (5 attacks each)</strong>, scaling greatly both
-            horizotally and vertically.
+            In <strong>melee-focused chapters like Blood Angels</strong> they
+            become a real threat. A <em>Liberator Assault Group</em> adds{' '}
+            <strong>+2 Strength (S6)</strong> and{' '}
+            <strong>+1 Attack (5 each)</strong>, scaling well both horizontally
+            and vertically.
           </div>
         </Example>
 
@@ -190,26 +203,24 @@ export default async function Page() {
         <hr />
 
         <p>
-          Heavies are <strong>slower</strong>, more <strong>resilient</strong>{' '}
-          intercessors,{' '}
-          <strong>designed to sit on objectives and absorb fire</strong>. They
-          are very situational, and aren't common among competitive lists.
+          Heavies are <strong>slower, tougher</strong> intercessors built to{' '}
+          <strong>sit on objectives and absorb fire</strong>. Situational, and
+          rare in competitive lists.
         </p>
 
         <p>
-          Their base is <strong>good durability for the cost</strong>. At 20
-          points per model, you get armor which blunts common anti-marine
-          weapons (S5, D2). It's even worse for lighter arms. Their special
-          rule, <strong>Unyielding in the Face of the Foe</strong> gives{' '}
-          <strong>+1 to saves against D1 attacks</strong>. They are not quite
-          terminators, but impel the enemy to allocate anti-tank weapons
+          At 20 points per model, they blunt common anti-marine weapons (S5,
+          D2)-lighter arms fare even worse.{' '}
+          <strong>Unyielding in the Face of the Foe</strong> grants{' '}
+          <strong>+1 to saves against D1 attacks</strong>. Not quite
+          terminators, but they force opponents to commit anti-tank weapons
           (plasma, lascannons, etc.) to answer.
         </p>
 
         <p>
-          The heavier gear they are armed with should cope with T4-T5
-          double-wound infantry (marine equivalents) at long range on paper, but
-          in practice the low AP rather chips that hurts.
+          Their weapons can cope with T4-T5 double-wound infantry at range on
+          paper, but low AP chips rather than hurts.{' '}
+          <strong>They're grinders</strong>.
         </p>
       </Section>
 
@@ -217,9 +228,9 @@ export default async function Page() {
         <h3 id="eliminators">Eliminators</h3>
 
         <p>
-          A small squad of stealthy snipers with optional mobility tricks. Even
-          if they don't easily kill high-value targets, they can still chip them
-          consistently, until they close into your main force.
+          A small squad of stealthy snipers with optional mobility tricks. They
+          may not easily kill high-value targets, but chip them consistently
+          before they reach your main force.
         </p>
 
         <Image
@@ -255,43 +266,35 @@ export default async function Page() {
         <p className="lead">Bolt sniper rifles for hunting characters.</p>
 
         <p>
-          Sniper rifles deliver flat 3 damage per wound. They have the heavy
-          keyword. Coupled with the devastating wounds rule, they hit on 2+ and
-          do mortal wounds on 6 if the squad didn't move. A stationary squad
-          usually procures a failed save on a typical 4+ invulnerable character.
-          On a good roll, they can even delete a support character. In reality,
-          it's rare for them to one-shot resilient targets, but they force the
-          opponent to respect the threat and reposition.
+          Sniper rifles deal flat 3 damage per wound and have the heavy keyword.
+          With devastating wounds, a stationary squad hits on 2+ and generates
+          mortal wounds on 6. This usually forces at least one failed save
+          against a 4+ invulnerable character-rarely a one-shot, but enough to
+          make opponents reposition.
         </p>
 
         <p>
-          The central mechanic here, however, is the precision keyword. It
-          allows them to choose an exact target within a unit, allowing them to
-          hit characters even if they are attached to a squad.
+          Their key mechanic is precision, letting them target characters even
+          inside attached squads.
         </p>
 
         <p className="lead">Las fusils for hunting heavy infantry.</p>
 
         <p>
-          Las fusils win over sniper rifles on raw damage and armor penetration,
-          but lack the precision keyword. This makes them better against elite
-          infantry and light vehicles. You can expect at least one failed armor
-          save per turn into things like Terminators or Rhino-level targets.
+          Las fusils deal more damage with better AP but lack precision. Better
+          against elite infantry and light vehicles-expect at least one failed
+          save per turn against Terminators or Rhino-level targets.
         </p>
 
         <p className="lead">Instigator bolt carbine for some tricks</p>
 
         <p>
-          The sergeant can sacrifice range and damage to equip an instigator
-          bolt carbine that enables some movement gimmicks.
+          The sergeant can swap range and damage for an instigator bolt carbine
+          to enable movement tricks: pop out, shoot, and retreat to cover, or
+          shoot and advance to contest objectives.
         </p>
 
-        <p>
-          Eliminators can pop out, shoot and get back into cover. Or shoot, then
-          advance and contest objectives.
-        </p>
-
-        <p>There is also the well-known Impulsor gimmick:</p>
+        <p>There's also the Impulsor gimmick:</p>
 
         <ul>
           <li>Two Eliminator squads with Instigators embark in an Impulsor.</li>
@@ -305,8 +308,8 @@ export default async function Page() {
         </ul>
 
         <p>
-          There is so much utility with this that two las fusils + instigator is
-          often regarded as default optimized loadout.
+          The utility here is strong enough that two las fusils + instigator is
+          often the default loadout.
         </p>
 
         <h4>Competition</h4>
@@ -328,9 +331,8 @@ export default async function Page() {
         </ul>
 
         <p>
-          Overall, scouts and infiltrators appear far more often than
-          eliminators in lists. This doesn't prove them bad, just not the
-          default choice.
+          Scouts and infiltrators appear far more often in lists-not proof that
+          eliminators are bad, just not the default choice.
         </p>
       </Section>
     </>

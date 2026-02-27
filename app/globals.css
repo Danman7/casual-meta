@@ -96,11 +96,11 @@
   }
 
   .profile-img {
-    @apply sm:max-h-60 object-cover rounded shadow-md;
+    @apply sm:max-h-56 object-cover rounded shadow-md;
   }
 
   .flavor {
-    @apply opacity-75 text-sm;
+    @apply opacity-80 text-sm;
   }
 
   .box {
