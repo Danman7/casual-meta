@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Shao from '@/app/assets/mk1/shao.webp'
 import shao2 from '@/app/assets/mk1/shao_2.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
-import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
@@ -46,7 +45,7 @@ export default async function Page() {
       </Section>
 
       <Section title="Axe stance" id="axe-stance">
-        <Flavor>Simple tactics for Axe stance.</Flavor>
+        <div className="flavor">Simple tactics for Axe stance.</div>
 
         <p className="font-bold">
           The Axe is your primary Neutral tool. Shao's pressure peaks in Unarmed

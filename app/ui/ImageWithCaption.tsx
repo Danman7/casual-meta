@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from 'next/image'
 import { useId } from 'react'
 
-import { Flavor } from '@/app/ui/Flavor'
 
 export const ImageWithCaption: React.FC<{
   src: StaticImageData
@@ -21,7 +20,7 @@ export const ImageWithCaption: React.FC<{
       />
 
       <figcaption id={captionId}>
-        <Flavor>{caption}</Flavor>
+        <div className="flavor">{caption}</div>
       </figcaption>
     </figure>
   )

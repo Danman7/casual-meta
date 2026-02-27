@@ -1,6 +1,5 @@
 import duelStart from '@/app/assets/mk1/duel_start.webp'
 import { MK_TITLE } from '@/app/constants'
-import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -20,10 +19,10 @@ export default async function Page() {
       <h1 className="page-title">{navTitle}</h1>
 
       <Section>
-        <Flavor>
+        <div className="flavor">
           This page aims to describe the somewhat hazy concept of Neutral in
           fighting games in general, and in Mortal Kobat in particular.
-        </Flavor>
+        </div>
 
         <p>
           As a result of experience, players have found ways to explain how the

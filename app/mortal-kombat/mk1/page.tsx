@@ -1,7 +1,6 @@
 import Image from 'next/image'
 
 import mk1Title from '@/app/assets/mk1/mk1-title.webp'
-import { Flavor } from '@/app/ui/Flavor'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -31,10 +30,10 @@ export default async function Page() {
           className="shadow-sm"
         />
 
-        <Flavor>
+        <div className="flavor">
           In the following sections we will look at how MK1 is different from
           other titles in the series.
-        </Flavor>
+        </div>
       </Section>
 
       <Section title="Kameos" id="kameos">

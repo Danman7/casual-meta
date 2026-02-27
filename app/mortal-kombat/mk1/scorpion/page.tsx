@@ -11,7 +11,6 @@ import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
-import { Flavor } from '@/app/ui/Flavor'
 import { ImageTextSection } from '@/app/ui/ImageTextSection'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
@@ -42,10 +41,10 @@ export default async function Page() {
       />
 
       <Section title="Scouting the opponent" id="neutral">
-        <Flavor>
+        <div className="flavor">
           This section covers key moves and methods, helpful in{' '}
           <Link href={mkRoute('Neutral')}>Neutral</Link>.
-        </Flavor>
+        </div>
 
         <p className="font-bold">
           Scorpion lacks mix-ups or frame advantage. He relies on
@@ -171,10 +170,10 @@ export default async function Page() {
         />
 
         <Callout title="Back 3 Cancels">
-          <Flavor>
+          <div className="flavor">
             The first mid hit of <Pill>B3</Pill> can be cancelled into any
             special or Kameo move.
-          </Flavor>
+          </div>
 
           <p>
             <strong>B3 F1</strong> cancels into Spear. <strong>B3 F2</strong>{' '}
@@ -216,9 +215,9 @@ export default async function Page() {
       </Section>
 
       <Section title="Converting into damage" id="damage">
-        <Flavor>
+        <div className="flavor">
           This section covers how you can continue after landing a hit.
-        </Flavor>
+        </div>
 
         <p className="font-bold">
           When playing online, consistent execution outweighs maximum damage.
@@ -236,10 +235,10 @@ export default async function Page() {
           <div>
             <Pill>21 BF1 33 DB2</Pill>
           </div>
-          <Flavor className="mt-2">
+          <div className="flavor mt-2">
             Basic 210 damage starter. Use this for your first online matches.
             Once consistent, move on.
-          </Flavor>
+          </div>
         </Callout>
 
         <p>
@@ -248,10 +247,10 @@ export default async function Page() {
 
         <Callout>
           <Pill>21 BF1 F32 F32 F32 F34 BF2</Pill>
-          <Flavor className="mt-2">
+          <div className="flavor mt-2">
             Meterless 342 damage. The height after the third F32 is low.
             Connecting F34 into Charge can be tight.
-          </Flavor>
+          </div>
         </Callout>
 
         <p>
@@ -261,10 +260,10 @@ export default async function Page() {
 
         <Callout>
           <Pill>F32 F32 F32 4 BF1 33 DB2</Pill>
-          <Flavor className="mt-2">
+          <div className="flavor mt-2">
             Meterless 365 damage. Connecting Standing 4 after the last F32 is
             the trickiest part.
-          </Flavor>
+          </div>
         </Callout>
 
         <p>
@@ -277,23 +276,23 @@ export default async function Page() {
           <ul className="space-y-4">
             <li>
               <Pill>
-                21 BF1 F32 F32 J12 airDB2ex <Flavor>small pause</Flavor> 111
+                21 BF1 F32 F32 J12 airDB2ex <div className="flavor">small pause</div> 111
                 airDB2
               </Pill>
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 One bar 377 damage. The pause delays 111 until both fighters are
                 lower to the ground, making the final airDB2 connect.
-              </Flavor>
+              </div>
             </li>
             <li>
               <Pill>
-                F32 F32 J12 airDB2ex <Flavor>small pause</Flavor> 111 BF1 33 DB2
+                F32 F32 J12 airDB2ex <div className="flavor">small pause</div> 111 BF1 33 DB2
               </Pill>{' '}
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 One bar <strong>407</strong> damage. Same pause but this time,
                 because you delayed the Spear, you can connect into the familiar
                 ender.
-              </Flavor>
+              </div>
             </li>
           </ul>
         </Callout>
@@ -316,26 +315,26 @@ export default async function Page() {
           <ul className="space-y-4">
             <li>
               <Pill>
-                F32 4 4 BF1 F32 J12 airDB2ex <Flavor>small pause</Flavor> J111
+                F32 4 4 BF1 F32 J12 airDB2ex <div className="flavor">small pause</div> J111
                 JDB2
               </Pill>
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 One bar <strong>446</strong> damage. If chaining the second{' '}
                 <Pill>4</Pill> is difficult, a single one still exceeds 400
                 damage.
-              </Flavor>
+              </div>
             </li>
             <li>
               <Pill>
-                F32 4 4 BF1 F32 J12 airDB2ex <Flavor>small pause</Flavor> J111{' '}
-                <Flavor>land</Flavor> B2 BF4ex
+                F32 4 4 BF1 F32 J12 airDB2ex <div className="flavor">small pause</div> J111{' '}
+                <div className="flavor">land</div> B2 BF4ex
               </Pill>{' '}
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 Attempt this two bar <strong>502</strong> damage monster if
                 you're about to win the round. The enhanced Devouring Flame is
                 guaranteed damage, but you can't recover in time to block. If
                 they survive, they get a free wakeup punish.
-              </Flavor>
+              </div>
             </li>
           </ul>
         </Callout>
@@ -351,23 +350,23 @@ export default async function Page() {
           <ul className="space-y-4">
             <li>
               <Pill>
-                J3 airDB3 <Flavor>land</Flavor> B2 F2
+                J3 airDB3 <div className="flavor">land</div> B2 F2
               </Pill>
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 The jump kick and the teleport must be initiated very close to
                 the ground.
-              </Flavor>
+              </div>
             </li>
 
             <li>
               <Pill>
-                F32 J12 airDB3ex J13 <Flavor>land</Flavor> BF1 33 DB3
+                F32 J12 airDB3ex J13 <div className="flavor">land</div> BF1 33 DB3
               </Pill>{' '}
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 One bar 334 damage. Only enhanced air port is fast enough to
                 connect. Connecting <Pill>J13</Pill> is awkward. The Port often
                 misses. There must be a short delay after J12.
-              </Flavor>
+              </div>
             </li>
           </ul>
         </Callout>
@@ -381,39 +380,39 @@ export default async function Page() {
           <ul className="space-y-4">
             <li>
               <Pill>
-                airDB3ex J3 <Flavor>land</Flavor> BF1 F32 F32 F34 BF2
+                airDB3ex J3 <div className="flavor">land</div> BF1 F32 F32 F34 BF2
               </Pill>
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 An easier version for one bar 308 damage.
-              </Flavor>
+              </div>
             </li>
 
             <li>
               <Pill>
-                airDB3ex J3 DB3 <Flavor>land</Flavor> F32 F32 4 BF1 33 DB2
+                airDB3ex J3 DB3 <div className="flavor">land</div> F32 F32 4 BF1 33 DB2
               </Pill>{' '}
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 A challenging double-port one bar 411 damage variant.
-              </Flavor>
+              </div>
             </li>
 
             <li>
               <Pill>
-                airDB3ex J3 DB3 <Flavor>land</Flavor> 4 BF1 F32 J12 airDB2ex
+                airDB3ex J3 DB3 <div className="flavor">land</div> 4 BF1 F32 J12 airDB2ex
               </Pill>{' '}
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 A fancy two meter <strong>449</strong> damage advanced combo.
-              </Flavor>
+              </div>
             </li>
           </ul>
         </Callout>
       </Section>
 
       <Section title="Kameos" id="kameos">
-        <Flavor>
+        <div className="flavor">
           Pairing a character with a Kameo is a vast topic. In this section, we
           will only discuss a few choices.
-        </Flavor>
+        </div>
 
         <p>
           Scorpion can handle most situations on his own, but discovering his
@@ -453,31 +452,31 @@ export default async function Page() {
           <ul className="space-y-4">
             <li>
               <Pill>
-                BF2ex UK <Flavor>switch sides</Flavor> dash F32 F32 4 BF1 33 DB2
+                BF2ex UK <div className="flavor">switch sides</div> dash F32 F32 4 BF1 33 DB2
               </Pill>
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 Meterless armored combo for 259 damage.
-              </Flavor>
+              </div>
             </li>
 
             <li>
               <Pill>
-                F32 F32 J12 airDB2ex UK <Flavor>land</Flavor> BF1 33 DB2
+                F32 F32 J12 airDB2ex UK <div className="flavor">land</div> BF1 33 DB2
               </Pill>{' '}
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 Same juggle-to-air extension as before, but meterless for 375
                 damage.
-              </Flavor>
+              </div>
             </li>
 
             <li>
               <Pill>
-                Throw <Flavor>time during animation</Flavor> K (trap) F32 F32 4
+                Throw <div className="flavor">time during animation</div> K (trap) F32 F32 4
                 BF1 33 DB2
               </Pill>{' '}
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 220 damage out of a throw (normally 110).
-              </Flavor>
+              </div>
             </li>
 
             <li>
@@ -523,21 +522,21 @@ export default async function Page() {
           <ul className="space-y-4">
             <li>
               <Pill>
-                Throw <Flavor>time during animation</Flavor> K (fan toss) J2 F32
+                Throw <div className="flavor">time during animation</div> K (fan toss) J2 F32
                 F32 4 BF1 33 DB2
               </Pill>
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 Must be in Kitana Form. 219 damage throw combo.
-              </Flavor>
+              </div>
             </li>
 
             <li>
               <Pill>
-                BF2 FK <Flavor>switch sides</Flavor> BF1 F32 F32 4 BF2
+                BF2 FK <div className="flavor">switch sides</div> BF1 F32 F32 4 BF2
               </Pill>{' '}
-              <Flavor className="mt-2">
+              <div className="flavor mt-2">
                 Kitana form. Meterles 234 damage armored combo.
-              </Flavor>
+              </div>
             </li>
           </ul>
         </Callout>
@@ -549,9 +548,9 @@ export default async function Page() {
       </Section>
 
       <Section title="Advanced tech" id="advanced-tech">
-        <Flavor className="mb-5">
+        <div className="flavor mb-5">
           This section describes niche techniques that require more practice.
-        </Flavor>
+        </div>
 
         <h3 id="enhanced-flame-port-jail">Enhanced Flame-Port jail</h3>
 

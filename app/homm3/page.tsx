@@ -1,6 +1,5 @@
 import { HOMM3_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
-import { Flavor } from '@/app/ui/Flavor'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -15,10 +14,10 @@ export default async function Page() {
       <h1 className="page-title">{HOMM3_TITLE}</h1>
 
       <Section>
-        <Flavor>
+        <div className="flavor">
           This section is dedicated to Heroes of Might and Magic 3 and its
           expansions - primarily the official ones.
-        </Flavor>
+        </div>
       </Section>
 
       <Section id="what-is-homm3" title="What is HoMM3?">
@@ -41,12 +40,12 @@ export default async function Page() {
         </p>
 
         <Callout>
-          <Flavor>
+          <div className="flavor">
             Heroes of Might and Magic: Olden Era is an upcoming title. It is an
             official installment developed by Unfrozen under an agreement with
             Ubisoft. It is coming out in 2026 and we are yet to see how it will
             hold up.
-          </Flavor>
+          </div>
         </Callout>
 
         <p>

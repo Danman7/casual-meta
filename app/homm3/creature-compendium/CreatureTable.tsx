@@ -12,7 +12,6 @@ import {
 import { useMemo, useState } from 'react'
 
 import creaturesData from '@/app/data/homm3/creatures.json'
-import { FlexWrapper } from '@/app/ui/FlexWrapper'
 
 interface Creature {
   name: string
@@ -273,7 +272,7 @@ export function CreatureTable() {
                     }`}
                     onClick={header.column.getToggleSortingHandler()}
                   >
-                    <FlexWrapper>
+                    <div className="flex-wrapper">
                       {flexRender(
                         header.column.columnDef.header,
                         header.getContext(),
@@ -282,7 +281,7 @@ export function CreatureTable() {
                         asc: ' 🔼',
                         desc: ' 🔽',
                       }[header.column.getIsSorted() as string] ?? null}
-                    </FlexWrapper>
+                    </div>
                   </th>
                 ))}
               </tr>

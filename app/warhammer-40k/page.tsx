@@ -2,7 +2,6 @@ import Link from 'next/link'
 
 import wh40kTitle from '@/app/assets/wh40k/wh40k-battle.webp'
 import { WH40K_TITLE } from '@/app/constants'
-import { Flavor } from '@/app/ui/Flavor'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -18,11 +17,11 @@ export default async function Page() {
       <h1 className="page-title">{WH40K_TITLE}</h1>
 
       <Section>
-        <Flavor>
+        <div className="flavor">
           This section is dedicated to the physical game of Warhammer 40,000
           (WH40K for short). In the vastness of the hobby, we will focus on the
           rules and armies of the latest edition.
-        </Flavor>
+        </div>
       </Section>
 
       <Section id="what-is-wh40k" title="What is Warhammer 40K?">

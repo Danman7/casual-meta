@@ -3,7 +3,6 @@ import { FaAsterisk } from 'react-icons/fa'
 
 import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
-import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { Section } from '@/app/ui/Section'
 
 export default function Page() {
@@ -24,7 +23,7 @@ export default function Page() {
           </div>
         </div>
 
-        <FlexWrapper className="justify-center font-semibold text-xl">
+        <div className="flex-wrapper justify-center font-semibold text-xl">
           {ROOT_NAVIGATION_ITEMS.map((item, index) => (
             <Link
               key={item.href}
@@ -35,7 +34,7 @@ export default function Page() {
               {item.name}
             </Link>
           ))}
-        </FlexWrapper>
+        </div>
 
         <Callout className="animate-fade-in-scale delay-75 px-4">
           <div className="text-xl">

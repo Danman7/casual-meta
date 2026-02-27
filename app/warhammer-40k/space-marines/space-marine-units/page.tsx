@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { GiCrosshair } from 'react-icons/gi'
 
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import eliminators from '@/app/assets/wh40k/eliminators.webp'
@@ -39,7 +40,9 @@ export default async function Page() {
           restrictions on how many of the same type can be in an army list.
         </p>
 
-        <h3 id="intercessors">Intercessors</h3>
+        <h3 id="intercessors" className="flex-wrapper">
+          Intercessors <GiCrosshair className="circle-icon" />
+        </h3>
 
         <Image
           src={intercessors}
@@ -59,11 +62,7 @@ export default async function Page() {
               <span className="flavor">S4, AP-1, D1</span>
             </div>
           </div>
-          {/* <div>
-            <strong>Marine equivalent</strong> profile with{' '}
-            <strong>OC2&uarr;</strong> in Tacticus Armor, armed with Bolt
-            Rifles. Cost: <strong>80 points for 5 models, 160 for 10</strong>.
-          </div> */}
+
           <div>
             <div className="flavor">Cost:</div>
             <div className="font-bold">80/5 160/10</div>

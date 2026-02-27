@@ -5,7 +5,6 @@ import guardsmen from '@/app/assets/wh40k/CadianShockTroops.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_TITLE } from '@/app/constants'
 import { Callout } from '@/app/ui/Callout'
-import { FlexWrapper } from '@/app/ui/FlexWrapper'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 5
@@ -107,9 +106,9 @@ export default async function Page() {
       </p>
 
       <Callout>
-        <FlexWrapper className="text-base font-bold">
+        <div className="flex-wrapper font-bold">
           <GiBolterGun /> <span>Weapons vs GEQ</span>
-        </FlexWrapper>
+        </div>
 
         <p>
           Most weapons will perform well against light infantry. Even the lowly
@@ -197,9 +196,9 @@ export default async function Page() {
       </p>
 
       <Callout>
-        <FlexWrapper className="text-base font-bold">
+        <div className="flex-wrapper font-bold">
           <GiBolterGun /> <span>Weapons vs MEQ</span>
-        </FlexWrapper>
+        </div>
 
         <p>
           A <em>Lasgun</em> A1|S3|AP0|D1 would struggle to do a dent with 1
