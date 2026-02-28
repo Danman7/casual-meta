@@ -73,11 +73,10 @@ export default async function Page() {
         />
 
         <p>
-          Intercerssors are a{' '}
-          <strong>high-utility, flexible ranged unit</strong>, compatible with
-          most army lists. A squad is <strong>never a waste</strong> if you need
-          stability around objectives or are unsure how to fill your troop
-          slots.
+          Intercessors are a <strong>high-utility, flexible ranged unit</strong>
+          , compatible with most army lists. A squad is{' '}
+          <strong>never a waste</strong> if you need stability around objectives
+          or are unsure how to fill your troop slots.
         </p>
 
         <p>
@@ -281,7 +280,7 @@ export default async function Page() {
           Their headline is <strong>high durability for the cost</strong>. At 20
           points per model, they blunt common anti-marine weapons (S5, D2).{' '}
           <strong>Unyielding in the Face of the Foe</strong> grants them{' '}
-          <strong>+1 to saves against D1 attacks on top of objecives</strong>.
+          <strong>+1 to saves against D1 attacks on top of objectives</strong>.
           They are not quite terminator equivalents, but still push the opponent
           to allocate anti-tank arms (plasma, lascannons, etc.) to deal with
           them quickly.
@@ -289,8 +288,8 @@ export default async function Page() {
 
         <p>
           Their weapons at 30+ inches, S5, D2 are appropriate for engaging
-          two-wound marine equivalents at long distances. On the other hand the
-          low AP limist how they perform against infantry in cover.
+          two-wound marine equivalents at long distances. On the other hand, the
+          low AP limits how they perform against infantry in cover.
         </p>
 
         <p>
@@ -305,7 +304,7 @@ export default async function Page() {
           <div>
             Anvil Siege Force detachment has multiple buffs for squads that
             remain stationary. Apothecary Biologis adds lethal hits. Iron Father
-            Feirros seriously spikes havies' durability and adds vehicle
+            Feirros seriously spikes heavies' durability and adds vehicle
             support.
           </div>
         </Example>
@@ -313,7 +312,7 @@ export default async function Page() {
 
       <Section title="Specialists" id="specialists">
         <h3 id="eliminators" className="flex-wrapper">
-          eliminators <FaCrosshairs className="circle-icon" />{' '}
+          Eliminators <FaCrosshairs className="circle-icon" />{' '}
           <BsShadows className="circle-icon" />
         </h3>
 
@@ -357,15 +356,15 @@ export default async function Page() {
         />
 
         <p>
-          eliminators are a small <strong>stealthy</strong> (forward deploy, -1
+          Eliminators are a small <strong>stealthy</strong> (forward deploy, -1
           to hit from ranged attacks) squad, dedicated to{' '}
           <strong>hitting high-value units at long ranges</strong>. It's rare
-          for them to straigh one-shot a durable target, but their presence
+          for them to straight one-shot a durable target, but their presence
           impels the opponent to{' '}
           <strong>respect the threat and reposition</strong>. Scouts and
           Infiltrators are more common for midfield roles, having lower
-          firepower but better utility. This doesn't proove eliminators bad,
-          just not the default choice.
+          firepower but better utility. This doesn't prove eliminators bad, just
+          not the default choice.
         </p>
 
         <Example>
@@ -418,7 +417,7 @@ export default async function Page() {
 
         <Example>
           <div>
-            You can often see 2 las fusils + instigator in competative lists
+            You can often see 2 las fusils + instigator in competitive lists
             because of the safety and consistency. For example, eliminators can
             pop out, shoot, then retreat back into cover. Or they can finish off
             an already damaged unit and advance to contest an objective.

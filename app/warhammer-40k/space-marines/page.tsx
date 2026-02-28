@@ -3,6 +3,7 @@ import Image from 'next/image'
 import chapters from '@/app/assets/wh40k/space-marine-chapter-banners.webp'
 import wh40kTitle from '@/app/assets/wh40k/Ultramarines.webp'
 import { WH40K_TITLE } from '@/app/constants'
+import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -21,15 +22,15 @@ export default async function Page() {
 
       <p>
         Space Marines take a central position in the fictional universe of
-        WH40k. Weather on the cover of a novel, a magazine or an online image,
-        for many fans a Space Marine model was the first thing they saw related
-        to the hobby.
+        WH40k. Weather on the cover of a novel, a magazine or an image online, a
+        Space Marine model was the first thing many fans saw related to the
+        hobby.
       </p>
 
       <Image
         src={wh40kTitle}
         alt="A small detachment of Space Marines"
-        className="shadow-sm"
+        className="profile-img object-[center_55%]"
       />
 
       <p>
@@ -37,33 +38,36 @@ export default async function Page() {
         which is the formal name for the Space Marines.
       </p>
 
-      <h2>Faction specifics</h2>
+      <Section title="Chapters" id="chapters">
+        <Image
+          src={chapters}
+          alt="A collection of space marine chapter banners."
+          className="shadow-sm"
+        />
 
-      <h3>Space Marine chapters</h3>
+        <p>
+          The Space Marines are segmented into <em>Chapters</em>. All faction
+          models will have the Adeptus Astartes faction keyword on their
+          datasheet, but some may have an additional one like{' '}
+          <em>Ultramarines, Blood Angels, Space Wolves</em> etc. The second
+          faction keyword indicates the chapter they belong to. Chapters enforce
+          additional rules:
+        </p>
 
-      <Image
-        src={chapters}
-        alt="A collection of space marine chapter banners."
-        className="shadow-sm"
-      />
+        <ul>
+          <li></li>
+        </ul>
 
-      <p>
-        The Space Marines are segmented into <em>Chapters</em>. All faction
-        models will have the Adeptus Astartes faction keyword on their
-        datasheet, but some may have an additional one like{' '}
-        <em>Ultramarines, Blood Angels, Space Wolves</em> etc. The second
-        faction keyword indicates the chapter they belong to.
-      </p>
-
-      <p>
-        General Space Marine units can be taken into any army list, but{' '}
-        <strong>
-          units from one chapter cannot be mixed in with units from another
-          chapter
-        </strong>
-        . There can also be additional rules depending on the chapter, but those
-        are described in the chapter pages.
-      </p>
+        <p>
+          General Space Marine units can be taken into any army list, but{' '}
+          <strong>
+            units from one chapter cannot be mixed in with units from another
+            chapter
+          </strong>
+          . There can also be additional rules depending on the chapter, but
+          those are described in the chapter pages.
+        </p>
+      </Section>
 
       <h3>Oath of Moment</h3>
 
