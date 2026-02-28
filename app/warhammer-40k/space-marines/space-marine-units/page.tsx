@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { BsShadows } from 'react-icons/bs'
 import { FaCrosshairs } from 'react-icons/fa'
+import { FaShield } from 'react-icons/fa6'
 import { RiSwordFill } from 'react-icons/ri'
 
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
@@ -86,14 +88,14 @@ export default async function Page() {
             if an intercessor squad holds a marker, it remains yours even after
             they move away
           </strong>
-          . This frees up control resources, because intercessors can tag and
+          . This frees up control resources, because Intercessors can tag and
           walk. Now, the opponent can't just shoot your units off an objective.
           They must physically contest it.
         </p>
 
         <Example>
           <div>
-            On the board, it's common for intercessors to quickly capture the
+            On the board, it's common for Intercessors to quickly capture the
             home objective and pivot to contribute in the middle. They can also
             rush midfield, then step back to defend from a distance.
           </div>
@@ -116,7 +118,7 @@ export default async function Page() {
         <p>
           <strong>5-man squads scale better</strong> than 10-man ones. They can
           pressure several objectives at the same time and manage the focus-fire
-          requirement with less risk of overkill. In general, intercessors are
+          requirement with less risk of overkill. In general, Intercessors are
           good as they are. They should be <strong>kept cheap</strong> in terms
           of support.
         </p>
@@ -130,7 +132,7 @@ export default async function Page() {
         </Example>
 
         <h3 id="assault-intercessors" className="flex-wrapper">
-          Assault intercessors <RiSwordFill className="circle-icon" />
+          Assault Intercessors <RiSwordFill className="circle-icon" />
         </h3>
 
         <Image
@@ -160,9 +162,9 @@ export default async function Page() {
         />
 
         <p>
-          In terms of profile, durability and weapon output, assault
-          intercessors are very close to a <strong>melee</strong> version of
-          regular intercessors. They drop objectives utility and ranged
+          In terms of profile, durability and weapon output, Assault
+          Intercessors are very close to a <strong>melee</strong> version of
+          regular Intercessors. They drop objectives utility and ranged
           flexibility, for being <strong>cheaper</strong> with higher{' '}
           <strong>trading value</strong>. They are very dependent on their
           support and the flavor of the army list.
@@ -170,7 +172,7 @@ export default async function Page() {
 
         <Example>
           <div>
-            Blood Angels elevate assault intercessors to a proper threat. As
+            Blood Angels elevate Assault Intercessors to a proper threat. As
             part of a Liberator Assault Group detachment they gain +2 Strength
             (to S6) and +1 Attack (5 attacks each), scaling both horizontally
             and vertically.
@@ -192,7 +194,7 @@ export default async function Page() {
         </ul>
 
         <p>
-          Assault intercessors want to fight on objectives and do that{' '}
+          Assault Intercessors want to fight on objectives and do that{' '}
           <strong>better if escorting a character</strong>. The heavy pistols
           can chip targets until their chainswords engage. Both weapons perform{' '}
           <strong>primarily against light infantry</strong>. They are also{' '}
@@ -233,7 +235,8 @@ export default async function Page() {
         </Example>
 
         <h3 id="heavy-intercessors" className="flex-wrapper">
-          Heavy Intercessors <FaCrosshairs className="circle-icon" />
+          Heavy Intercessors <FaCrosshairs className="circle-icon" />{' '}
+          <FaShield className="circle-icon" />
         </h3>
 
         <Image
@@ -280,7 +283,7 @@ export default async function Page() {
           <strong>Unyielding in the Face of the Foe</strong> grants them{' '}
           <strong>+1 to saves against D1 attacks on top of objecives</strong>.
           They are not quite terminator equivalents, but still push the opponent
-          to allocate anti-tank weapons (plasma, lascannons, etc.) to deal with
+          to allocate anti-tank arms (plasma, lascannons, etc.) to deal with
           them quickly.
         </p>
 
@@ -309,115 +312,144 @@ export default async function Page() {
       </Section>
 
       <Section title="Specialists" id="specialists">
-        <h3 id="eliminators">Eliminators</h3>
-
-        <p>
-          A small squad of stealthy snipers with optional mobility tricks. They
-          may not easily kill high-value targets, but chip them consistently
-          before they reach your main force.
-        </p>
+        <h3 id="eliminators" className="flex-wrapper">
+          eliminators <FaCrosshairs className="circle-icon" />{' '}
+          <BsShadows className="circle-icon" />
+        </h3>
 
         <Image
           src={eliminators}
-          alt="A squad of Eliminators."
-          className="max-h-60 object-cover object-[0%_33%] shadow-sm"
+          alt="A squad of eliminators."
+          className="profile-img object-[0%_33%]"
         />
 
-        <div className="flex gap-2 flex-wrap justify-between tracking-wide text-lg">
+        <WarhammerProfile
+          profile={
+            <>
+              <div>
+                <strong>Marine equivalent</strong> in Phobos armor
+              </div>
+
+              <div>
+                <strong>Bolt sniper rifle</strong>{' '}
+                <span className="flavor">
+                  Heavy, Precision, 36", A1, BS3+, S5, AP-2, D3
+                </span>
+              </div>
+
+              <div>
+                <strong>Las fusil</strong>{' '}
+                <span className="flavor">
+                  Heavy, 36", A1, BS3+, S9, AP-3, Dd3
+                </span>
+              </div>
+
+              <div>
+                <strong>Instigator bolt carbine</strong>{' '}
+                <span className="flavor">
+                  Precision, 24", A1, BS3+, S4, AP-2, D2
+                </span>
+              </div>
+            </>
+          }
+          cost="85/5"
+          core="Infiltrators, Stealth"
+        />
+
+        <p>
+          eliminators are a small <strong>stealthy</strong> (forward deploy, -1
+          to hit from ranged attacks) squad, dedicated to{' '}
+          <strong>hitting high-value units at long ranges</strong>. It's rare
+          for them to straigh one-shot a durable target, but their presence
+          impels the opponent to{' '}
+          <strong>respect the threat and reposition</strong>. Scouts and
+          Infiltrators are more common for midfield roles, having lower
+          firepower but better utility. This doesn't proove eliminators bad,
+          just not the default choice.
+        </p>
+
+        <Example>
           <div>
-            <strong>Profile:</strong> Pure marine equivalent (Phobos armor)
+            On the board, they often start near the middle objectives, as far as
+            cover could support them. This allows them to establish firing lanes
+            between obstacles early and control the tempo. Standing in the open,
+            trading shots is bad. Peek, shoot, get back. Advance into objectives
+            only if the situation allows.
           </div>
+        </Example>
+
+        <p>
+          If the squad doesn't move, <strong>Mark the Target</strong> activates
+          and gives them <strong>devastating wounds</strong>. All weapon choices
+          are single attack, multi-wound arms with good reach, but each loadout
+          supports a different playstyle.
+        </p>
+
+        <p>
+          <strong>Sniper rifles are for hunting characters.</strong> The
+          precision keyword allows them to select a specific target even when
+          attached to a squad. Plus, the heavy keyword works well with
+          stationary devastating wounds.
+        </p>
+
+        <Example>
           <div>
-            <strong>Cost:</strong> 85/3
+            If stationary, sniper rifles hit on 2+. If you roll a 6, that's 3
+            flat damage. It's not rare to score at least one failed
+            armor/invulnerable save per squad, per turn.
           </div>
-        </div>
-
-        <hr />
+        </Example>
 
         <p>
-          <strong>Reposition Under Covering Fire:</strong> After shooting, if
-          the sergeant is alive and has an instigator bolt carbine, the unit can
-          immediately make a normal move.
+          <strong>Las fusils</strong> win over rifles on raw damage and
+          penetration, but lack the precision keyword. This makes them more
+          appropriate versus <strong>elite infantry and light vehicles</strong>.
         </p>
 
         <p>
-          <strong>Mark the Target:</strong> If the unit remains stationary, its
-          weapons gain devastating wounds for the phase.
+          The <strong>instigator bolt carbine</strong> for the sergeant enables{' '}
+          <strong>Reposition Under Covering Fire</strong>. You sacrifice range
+          and damage, but get to{' '}
+          <strong>
+            make a normal move after shooting, if the sergeant is alive
+          </strong>
+          . That is 12" of effective repositioning per turn.
         </p>
 
-        <hr />
+        <Example>
+          <div>
+            You can often see 2 las fusils + instigator in competative lists
+            because of the safety and consistency. For example, eliminators can
+            pop out, shoot, then retreat back into cover. Or they can finish off
+            an already damaged unit and advance to contest an objective.
+          </div>
 
-        <p className="lead">Bolt sniper rifles for hunting characters.</p>
+          <div>
+            There's also the <strong>Impulsor gimmick</strong>. Two Eliminator
+            squads with Instigators embark in an Impulsor. Disembark, shoot,
+            then use the Instigator move to re-embark. The Impulsor then uses
+            Firing Deck to effectively have them shoot again.
+          </div>
+        </Example>
 
-        <p>
-          Sniper rifles deal flat 3 damage per wound and have the heavy keyword.
-          With devastating wounds, a stationary squad hits on 2+ and generates
-          mortal wounds on 6. This usually forces at least one failed save
-          against a 4+ invulnerable character-rarely a one-shot, but enough to
-          make opponents reposition.
-        </p>
+        <Example>
+          <div>
+            Eliminators work well with any support that improves either their
+            stationary or mobile performance. Anvil Siege Force gives +1 to
+            wound when stationary (generally detachment that promotes static
+            positions). Vanguard Spearhead has synergy with their reactive style
+            and defensive improvements for Phobos armor. The Instigator works
+            well with Gladius or Firestorm lists that often focus around
+            mobility.
+          </div>
 
-        <p>
-          Their key mechanic is precision, letting them target characters even
-          inside attached squads.
-        </p>
-
-        <p className="lead">Las fusils for hunting heavy infantry.</p>
-
-        <p>
-          Las fusils deal more damage with better AP but lack precision. Better
-          against elite infantry and light vehicles-expect at least one failed
-          save per turn against Terminators or Rhino-level targets.
-        </p>
-
-        <p className="lead">Instigator bolt carbine for some tricks</p>
-
-        <p>
-          The sergeant can swap range and damage for an instigator bolt carbine
-          to enable movement tricks: pop out, shoot, and retreat to cover, or
-          shoot and advance to contest objectives.
-        </p>
-
-        <p>There's also the Impulsor gimmick:</p>
-
-        <ul>
-          <li>Two Eliminator squads with Instigators embark in an Impulsor.</li>
-
-          <li>Disembark, shoot, then use the Instigator move to re-embark.</li>
-
-          <li>
-            The Impulsor then uses Firing Deck to effectively have them shoot
-            again.
-          </li>
-        </ul>
-
-        <p>
-          The utility here is strong enough that two las fusils + instigator is
-          often the default loadout.
-        </p>
-
-        <h4>Competition</h4>
-
-        <ul>
-          <li>
-            <strong>Scouts:</strong> Cheaper, more wounds per point, can return
-            to reserves, decent damage, and strong objective play.
-          </li>
-          <li>
-            <strong>Infiltrators:</strong> Weaker damage, but deep strike denial
-            ability is very strong.
-          </li>
-          <li>
-            <strong>Vindicare Assassin:</strong> Lower average damage than 3
-            Eliminators, but harder to shoot and spikes a lot of damage in key
-            moments.
-          </li>
-        </ul>
-
-        <p>
-          Scouts and infiltrators appear far more often in lists-not proof that
-          eliminators are bad, just not the default choice.
-        </p>
+          <div>
+            A Phobos Librarian grants Lone Operative (cannot be shot beyond 12
+            inches) creating a mobile, difficult-to-target objective unit. A
+            Phobos Captain grants a free Battle Tactic Stratagem each turn and
+            allows Phobos troops to redeploy.
+          </div>
+        </Example>
       </Section>
     </>
   )
