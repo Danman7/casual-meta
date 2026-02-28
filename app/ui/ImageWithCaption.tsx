@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from 'next/image'
 import { useId } from 'react'
 
-
 export const ImageWithCaption: React.FC<{
   src: StaticImageData
   alt: string
