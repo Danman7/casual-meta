@@ -24,10 +24,11 @@ export default async function Page() {
 
       <Section>
         <p>
-          Space Marines take a central position in the fictional universe of
-          WH40k. Weather on the cover of a novel, a magazine or an image online,
-          a Space Marine model was the first thing many fans saw related to the
-          hobby.
+          Space Marines are engineered superhuman soldiers - the{' '}
+          <strong>elite of mankind's Imperium</strong>. They take a central
+          position in the fictional universe of WH40k. Whether on the cover of a
+          novel, a magazine, or somewhere online, a Space Marine model was the
+          first thing many fans saw related to the hobby.
         </p>
 
         <Image
@@ -37,7 +38,7 @@ export default async function Page() {
         />
 
         <p>
-          <strong>Adeptus Astartes</strong> is the formal latin name for the
+          <strong>Adeptus Astartes</strong> is the formal Latin name for the
           Space Marines.
         </p>
       </Section>
@@ -50,7 +51,7 @@ export default async function Page() {
               <div className="flavor">
                 Models are easy to find and paint. Clear rules. Start small,
                 expand gradually, and remain competitive without mastering
-                complex army mechanics
+                complex army mechanics.
               </div>
             </div>
 
@@ -65,7 +66,7 @@ export default async function Page() {
             <div>
               <div className="font-bold">Widely used</div>
               <div className="flavor">
-                Early adoptions in new codexes. A lot of competative list
+                Early adoption in new codexes. A lot of competative list
                 examples.
               </div>
             </div>
@@ -83,35 +84,58 @@ export default async function Page() {
             <div>
               <div className="font-bold">Frequent changes</div>
               <div className="flavor">
-                They get many release, which means many updates. Strong
-                combination get nerfed quickly.
+                They get many releases, which means many updates. Strong
+                combinations get nerfed quickly.
               </div>
             </div>
 
             <div>
               <div className="font-bold">Low specialization</div>
               <div className="flavor">
-                Marines win through combined arms and focus fire, not dominating
-                a certain phase or aspect of the game.
+                Marines win through combined arms and focus fire (Oath of
+                Moment), not dominating a certain phase or aspect of the game.
               </div>
             </div>
           </>
         }
       />
 
+      <Section id="oath-of-moment" title="Oath of Moment">
+        <p>
+          Oath of Moment is a <strong>Core Army Rule</strong> for all Space
+          Marine lists. At the start of your Command phase, select one enemy
+          unit. Until your next Command phase:
+        </p>
+
+        <ul>
+          <li>All your models re-roll Hit rolls against that target.</li>
+
+          <li>
+            If using a Codex: Space Marines detachment and excluding divergent
+            chapters (Black Templars, Blood Angels, Dark Angels, Deathwatch,
+            Space Wolves), you also gain +1 to Wound rolls against that target.
+          </li>
+        </ul>
+
+        <p>
+          This pushes a clear game plan:{' '}
+          <strong>identify and delete one priority unit per turn</strong>.
+        </p>
+      </Section>
+
       <Section title="Chapters" id="chapters">
         <ImageWithCaption
           src={chapters}
-          alt="A collection of space marine chapter banners."
+          alt="An image of magnets formed as banners of different Space Marine Chapters."
           className="profile-img object-[center_0%] max-h-59"
-          caption="Space Marines chapter banners from starforged.com"
+          caption="Space Marines chapter banners from starforged.com."
         />
 
         <p>
-          Space Marines are segmented into <em>Chapters</em>. All units will
-          have the Adeptus Astartes keyword on their datasheet, but some may
-          include a second Faction keyword. That keyword defines its Chapter.
-          Units without a chapter are called <em>core units</em>.
+          Space Marines are segmented into <em>Chapters</em>. All units have the
+          Adeptus Astartes keyword on their datasheet, but some may include a
+          second Faction keyword. That keyword defines its Chapter. Units
+          without a chapter are called <em>core units</em>.
         </p>
 
         <ul>
@@ -133,23 +157,6 @@ export default async function Page() {
           options before the game begins.
         </p>
       </Section>
-
-      <h3>Oath of Moment</h3>
-
-      <p>
-        <em>Oath of Moment</em> is a faction wide ability that lets you mark one
-        enemy unit per turn, granting all your units re-rolls to hit against it.
-        As per the latest updates to the rules you can only make use of this
-        using a Codex only detachment (one found in the Space Marine Codex) and
-        you get +1 to wound rolls against the marked target if you’re running a
-        pure Codex-compliant army list (meaning no chapter specific units,
-        running only “vanilla” Marines). The additional rules have led players
-        to run chapters without their unique units.
-      </p>
-
-      <p>
-        The Oath is more powerful against fewer, tougher targets than swarms.
-      </p>
     </>
   )
 }
