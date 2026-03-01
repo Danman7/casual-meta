@@ -114,4 +114,8 @@
   .circle-icon {
     @apply bg-surface rounded-full w-8 h-8 p-1 border-2 border-foreground/20;
   }
+
+  .lead {
+    @apply text-lg font-bold;
+  }
 }

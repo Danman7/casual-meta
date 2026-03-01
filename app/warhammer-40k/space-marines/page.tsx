@@ -3,6 +3,7 @@ import Image from 'next/image'
 import chapters from '@/app/assets/wh40k/space-marine-chapter-banners.webp'
 import wh40kTitle from '@/app/assets/wh40k/Ultramarines.webp'
 import { WH40K_TITLE } from '@/app/constants'
+import { PlayOrSkip } from '@/app/ui/PlayOrSkip'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -20,52 +21,92 @@ export default async function Page() {
     <>
       <h1 className="page-title">{navTitle}</h1>
 
-      <p>
-        Space Marines take a central position in the fictional universe of
-        WH40k. Weather on the cover of a novel, a magazine or an image online, a
-        Space Marine model was the first thing many fans saw related to the
-        hobby.
-      </p>
+      <Section>
+        <p>
+          Space Marines take a central position in the fictional universe of
+          WH40k. Weather on the cover of a novel, a magazine or an image online,
+          a Space Marine model was the first thing many fans saw related to the
+          hobby.
+        </p>
 
-      <Image
-        src={wh40kTitle}
-        alt="A small detachment of Space Marines"
-        className="profile-img object-[center_55%]"
+        <Image
+          src={wh40kTitle}
+          alt="A small detachment of Space Marines"
+          className="profile-img object-[center_55%]"
+        />
+
+        <p>
+          <strong>Adeptus Astartes</strong> is the formal latin name for the
+          Space Marines.
+        </p>
+      </Section>
+
+      <PlayOrSkip
+        pros={
+          <>
+            <div>
+              <div className="font-bold">Beginner-friendly</div>
+              <div className="flavor">
+                Models are easy to find and paint. Clear rules. Start small,
+                expand gradually, and remain competitive without mastering
+                complex army mechanics
+              </div>
+            </div>
+
+            <div>
+              <div className="font-bold">Jacks-of-all-trades</div>
+              <div className="flavor">
+                Flexible detachments and leaders. Unit choices cover shooting,
+                melee, durability, mobility, and support.
+              </div>
+            </div>
+          </>
+        }
+        cons={
+          <>
+            <div>
+              <div className="font-bold">Roster bloat</div>
+              <div className="flavor">
+                Many units overlap in role, where some struggle to find a role.
+              </div>
+            </div>
+          </>
+        }
       />
-
-      <p>
-        You will often hear the Latin term <strong>Adeptus Astartes</strong>{' '}
-        which is the formal name for the Space Marines.
-      </p>
 
       <Section title="Chapters" id="chapters">
         <Image
           src={chapters}
           alt="A collection of space marine chapter banners."
-          className="shadow-sm"
+          className="profile-img object-[center_0%] max-h-59"
         />
 
         <p>
-          The Space Marines are segmented into <em>Chapters</em>. All faction
-          models will have the Adeptus Astartes faction keyword on their
-          datasheet, but some may have an additional one like{' '}
-          <em>Ultramarines, Blood Angels, Space Wolves</em> etc. The second
-          faction keyword indicates the chapter they belong to. Chapters enforce
-          additional rules:
+          Space Marines are segmented into <em>Chapters</em>. All units will
+          have the Adeptus Astartes keyword on their datasheet, but some may
+          include a second Faction keyword. That keyword defines its Chapter.
+          Units without a chapter are called <em>core units</em>.
         </p>
 
         <ul>
-          <li></li>
+          <li>
+            <strong>Units from different chapters cannot mix together.</strong>
+          </li>
+
+          <li>
+            Black Templars can have no Psykers and are restricted in terms of
+            vehicles.
+          </li>
+
+          <li>Space Wolves have restricted access to support units.</li>
+
+          <li>Deathwatch is very limited to core units.</li>
         </ul>
 
         <p>
-          General Space Marine units can be taken into any army list, but{' '}
-          <strong>
-            units from one chapter cannot be mixed in with units from another
-            chapter
-          </strong>
-          . There can also be additional rules depending on the chapter, but
-          those are described in the chapter pages.
+          These restrictions shape list-building more than battlefield tactics.
+          Choosing a Chapter determines access, synergies, and detachment
+          options before the game begins.
         </p>
       </Section>
 
