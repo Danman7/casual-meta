@@ -7,7 +7,7 @@ export const PlayOrSkip: React.FC<{
   cons: React.ReactNode
 }> = ({ pros, cons }) => (
   <Section title="Play or Skip" id="play-or-skip">
-    <div className="flex-wrapper md:flex-nowrap items-start">
+    <div className="flex-wrapper gap-4 md:flex-nowrap items-start">
       <div className="w-full md:w-1/2">
         <p className="lead flex-wrapper">
           Maybe, yes <IoThumbsUp />

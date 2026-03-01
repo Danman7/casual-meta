@@ -3,6 +3,7 @@ import Image from 'next/image'
 import chapters from '@/app/assets/wh40k/space-marine-chapter-banners.webp'
 import wh40kTitle from '@/app/assets/wh40k/Ultramarines.webp'
 import { WH40K_TITLE } from '@/app/constants'
+import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { PlayOrSkip } from '@/app/ui/PlayOrSkip'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -60,6 +61,14 @@ export default async function Page() {
                 melee, durability, mobility, and support.
               </div>
             </div>
+
+            <div>
+              <div className="font-bold">Widely used</div>
+              <div className="flavor">
+                Early adoptions in new codexes. A lot of competative list
+                examples.
+              </div>
+            </div>
           </>
         }
         cons={
@@ -67,7 +76,23 @@ export default async function Page() {
             <div>
               <div className="font-bold">Roster bloat</div>
               <div className="flavor">
-                Many units overlap in role, where some struggle to find a role.
+                Many units overlap, where some struggle to find a role.
+              </div>
+            </div>
+
+            <div>
+              <div className="font-bold">Frequent changes</div>
+              <div className="flavor">
+                They get many release, which means many updates. Strong
+                combination get nerfed quickly.
+              </div>
+            </div>
+
+            <div>
+              <div className="font-bold">Low specialization</div>
+              <div className="flavor">
+                Marines win through combined arms and focus fire, not dominating
+                a certain phase or aspect of the game.
               </div>
             </div>
           </>
@@ -75,10 +100,11 @@ export default async function Page() {
       />
 
       <Section title="Chapters" id="chapters">
-        <Image
+        <ImageWithCaption
           src={chapters}
           alt="A collection of space marine chapter banners."
           className="profile-img object-[center_0%] max-h-59"
+          caption="Space Marines chapter banners from starforged.com"
         />
 
         <p>
@@ -89,18 +115,16 @@ export default async function Page() {
         </p>
 
         <ul>
+          <li>A list can include core units and units from one chapter.</li>
+
           <li>
             <strong>Units from different chapters cannot mix together.</strong>
           </li>
 
           <li>
-            Black Templars can have no Psykers and are restricted in terms of
-            vehicles.
+            Black Templars, Space Wolves and Deathwatch have limitations on what
+            units they can take.
           </li>
-
-          <li>Space Wolves have restricted access to support units.</li>
-
-          <li>Deathwatch is very limited to core units.</li>
         </ul>
 
         <p>
