@@ -10,7 +10,6 @@ import eliminators from '@/app/assets/wh40k/eliminators.webp'
 import heavyIntercessors from '@/app/assets/wh40k/heavyintercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
-import { Example } from '@/app/ui/Example'
 import { Section } from '@/app/ui/Section'
 import { WarhammerProfile } from '@/app/ui/WarhammerProfile'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -92,13 +91,13 @@ export default async function Page() {
           They must physically contest it.
         </p>
 
-        <Example>
+        <div className="box text-sm">
           <div>
             On the board, it's common for Intercessors to quickly capture the
             home objective and pivot to contribute in the middle. They can also
             rush midfield, then step back to defend from a distance.
           </div>
-        </Example>
+        </div>
 
         <p>
           While they are <strong>not primary damage dealers</strong>, their
@@ -122,13 +121,13 @@ export default async function Page() {
           of support.
         </p>
 
-        <Example>
+        <div className="box text-sm">
           <div>
             <em>Armor of Contempt</em> can come in handy for surviving a
             critical turn on an objective. A <em>lieutenant</em> with lethal
             hits can make a 10-man squad more viable.
           </div>
-        </Example>
+        </div>
 
         <h3 id="assault-intercessors" className="flex-wrapper">
           Assault Intercessors <RiSwordFill className="circle-icon" />
@@ -169,14 +168,14 @@ export default async function Page() {
           support and the flavor of the army list.
         </p>
 
-        <Example>
+        <div className="box text-sm">
           <div>
             Blood Angels elevate Assault Intercessors to a proper threat. As
             part of a Liberator Assault Group detachment they gain +2 Strength
             (to S6) and +1 Attack (5 attacks each), scaling both horizontally
             and vertically.
           </div>
-        </Example>
+        </div>
 
         <p>
           Their special rule, <strong>Shock Assault</strong>, works like this:
@@ -201,8 +200,10 @@ export default async function Page() {
           necessary.
         </p>
 
-        <Example>
-          <div>Here are some examples of character synergy:</div>
+        <div className="box text-sm">
+          <div>
+            Here are some div className='box text-sm's of character synergy:
+          </div>
 
           <ul>
             <li>
@@ -231,7 +232,7 @@ export default async function Page() {
               rerolls into monsters and vehicles becomes a major threat.
             </li>
           </ul>
-        </Example>
+        </div>
 
         <h3 id="heavy-intercessors" className="flex-wrapper">
           Heavy Intercessors <FaCrosshairs className="circle-icon" />{' '}
@@ -300,14 +301,14 @@ export default async function Page() {
           their consistency is a best fit.
         </p>
 
-        <Example>
+        <div className="box text-sm">
           <div>
             Anvil Siege Force detachment has multiple buffs for squads that
             remain stationary. Apothecary Biologis adds lethal hits. Iron Father
             Feirros seriously spikes heavies' durability and adds vehicle
             support.
           </div>
-        </Example>
+        </div>
       </Section>
 
       <Section title="Specialists" id="specialists">
@@ -367,7 +368,7 @@ export default async function Page() {
           not the default choice.
         </p>
 
-        <Example>
+        <div className="box text-sm">
           <div>
             On the board, they often start near the middle objectives, as far as
             cover could support them. This allows them to establish firing lanes
@@ -375,7 +376,7 @@ export default async function Page() {
             trading shots is bad. Peek, shoot, get back. Advance into objectives
             only if the situation allows.
           </div>
-        </Example>
+        </div>
 
         <p>
           If the squad doesn't move, <strong>Mark the Target</strong> activates
@@ -391,13 +392,13 @@ export default async function Page() {
           stationary devastating wounds.
         </p>
 
-        <Example>
+        <div className="box text-sm">
           <div>
             If stationary, sniper rifles hit on 2+. If you roll a 6, that's 3
             flat damage. It's not rare to score at least one failed
             armor/invulnerable save per squad, per turn.
           </div>
-        </Example>
+        </div>
 
         <p>
           <strong>Las fusils</strong> win over rifles on raw damage and
@@ -415,12 +416,13 @@ export default async function Page() {
           . That is 12" of effective repositioning per turn.
         </p>
 
-        <Example>
+        <div className="box text-sm">
           <div>
             You can often see 2 las fusils + instigator in competitive lists
-            because of the safety and consistency. For example, eliminators can
-            pop out, shoot, then retreat back into cover. Or they can finish off
-            an already damaged unit and advance to contest an objective.
+            because of the safety and consistency. For div className='box
+            text-sm', eliminators can pop out, shoot, then retreat back into
+            cover. Or they can finish off an already damaged unit and advance to
+            contest an objective.
           </div>
 
           <div>
@@ -429,9 +431,9 @@ export default async function Page() {
             then use the Instigator move to re-embark. The Impulsor then uses
             Firing Deck to effectively have them shoot again.
           </div>
-        </Example>
+        </div>
 
-        <Example>
+        <div className="box text-sm">
           <div>
             Eliminators work well with any support that improves either their
             stationary or mobile performance. Anvil Siege Force gives +1 to
@@ -448,7 +450,7 @@ export default async function Page() {
             Phobos Captain grants a free Battle Tactic Stratagem each turn and
             allows Phobos troops to redeploy.
           </div>
-        </Example>
+        </div>
       </Section>
     </>
   )

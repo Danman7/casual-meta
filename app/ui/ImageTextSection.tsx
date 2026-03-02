@@ -10,7 +10,7 @@ export const ImageTextSection: React.FC<{
 }> = ({ image, imageAlt, text, imageClassName }) => (
   <Section className="md:flex items-center gap-4">
     <Image
-      className={`max-h-72 object-cover object-[0%_0%]  md:w-1/2 md:max-h-full ${imageClassName}`}
+      className={`max-h-72 object-cover object-[0%_0%] md:w-1/2 md:max-h-full ${imageClassName}`}
       src={image}
       alt={imageAlt}
       loading="eager"
