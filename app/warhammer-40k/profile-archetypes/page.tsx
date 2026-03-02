@@ -19,7 +19,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1 className="page-title">{navTitle}</h1>
 
       <p>
         Models and weapons each have six numerical characteristics in their data

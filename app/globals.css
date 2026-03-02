@@ -5,6 +5,8 @@
   --foreground: hsl(10, 20%, 20%);
   --surface: hsl(10, 20%, 94%);
   --primary: hsl(10, 80%, 45%);
+  --success: var(--color-green-600);
+  --error: var(--color-red-600);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +15,8 @@
     --foreground: hsl(10, 10%, 85%);
     --surface: hsl(10, 20%, 15%);
     --primary: hsl(10, 80%, 60%);
+    --success: var(--color-green-400);
+    --error: var(--color-red-400);
   }
 }
 
@@ -21,6 +25,8 @@
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   --color-primary: var(--primary);
+  --color-success: var(--success);
+  --color-error: var(--error);
   --font-serif: var(--font-noto-serif);
 
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out both;

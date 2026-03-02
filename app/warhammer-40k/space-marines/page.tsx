@@ -64,10 +64,18 @@ export default async function Page() {
             </div>
 
             <div>
-              <div className="font-bold">Widely used</div>
+              <div className="font-bold">Widely played</div>
               <div className="flavor">
-                Early adoption in new codexes. A lot of competative list
+                Early adoption in new codexes. A lot of competative army list
                 examples.
+              </div>
+            </div>
+
+            <div>
+              <div className="font-bold">Layered Leader buffs</div>
+              <div className="flavor">
+                You can always find a good character to support your unit
+                choices.
               </div>
             </div>
           </>
@@ -96,6 +104,16 @@ export default async function Page() {
                 Moment), not dominating a certain phase or aspect of the game.
               </div>
             </div>
+
+            <div>
+              <div className="font-bold">
+                Require discipline and efficient trading
+              </div>
+              <div className="flavor">
+                There are few trully expendable units. Overextension without
+                coordinated fire will be punished.
+              </div>
+            </div>
           </>
         }
       />
@@ -118,8 +136,9 @@ export default async function Page() {
         </ul>
 
         <p>
-          This pushes a clear game plan:{' '}
-          <strong>identify and delete one priority unit per turn</strong>.
+          This encourages Space Marine players to{' '}
+          <strong>identify and concentrate on priority units</strong>, one at a
+          time. In turn, opponents must be careful how they expose key assets.
         </p>
       </Section>
 
