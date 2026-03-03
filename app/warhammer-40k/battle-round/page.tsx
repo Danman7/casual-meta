@@ -2,7 +2,7 @@ import { WH40K_TITLE } from '@/app/constants'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
-export const navOrder = 2
+export const navOrder = 3
 
 export const navTitle = 'The Battle Round'
 
@@ -131,8 +131,24 @@ export default async function Page() {
         </ul>
 
         <p>
-          No units that moved can end within engagement range of an enemy. Units
-          that already were can either stay put, or fall back.
+          <strong>
+            No units that moved can end within engagement range of or move
+            trough enemies.
+          </strong>{' '}
+          Units that already were engaged can either stay put, or fall back.
+        </p>
+
+        <h3 id="fall-back">Fall Back</h3>
+
+        <p>
+          A fall back move is a normal move (up to the units M"), but the unit
+          must <strong>skip shoot and charge phases this turn</strong>. Unlike
+          normal moves, units falling back may pass trough enemies, but they
+          must take <strong>Desperate Escape Tests</strong>. This means{' '}
+          <strong>rolling D6 for every "desperate" model</strong>. On a{' '}
+          <strong>2 or less that model is destroyed</strong> (not just taking a
+          wound). Units that are{' '}
+          <strong>battle-shocked, always take a desperate escape test</strong>.
         </p>
 
         <h3 id="pivoting">Pivoting</h3>
@@ -153,7 +169,20 @@ export default async function Page() {
 
         <p>
           Some units may carry other units within them, usually for the benefit
-          of much higher M".
+          of much higher M". A unit can{' '}
+          <strong>
+            embark if every model ends a move wholly within 3" of the transport
+          </strong>
+          . Then the transport carries them to their destination where they can
+          disembark. If they disembark durin a turn where the transport has
+          moved, they can only shoot. Otherwise they act as normal.
+        </p>
+
+        <p>
+          If the <strong>transport is destroyed</strong>, roll D6 per embarked
+          model (not unit). On a 1 the model suffers a mortal wound. Then the
+          survivors disembark and become Battle-shocked and cannot charge that
+          turn.
         </p>
       </Section>
     </>
