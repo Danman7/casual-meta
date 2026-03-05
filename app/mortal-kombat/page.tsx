@@ -23,6 +23,7 @@ import { Diagram } from '@/app/ui/Diagram'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
+import { SourceLink } from '@/app/ui/SourceLink'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
 
@@ -59,6 +60,45 @@ export default async function Page() {
           Kombat 1. These titles form what is known as the <em>modern MK</em> or{' '}
           <em>NRS</em> era, which will be the focus of this documentation.
         </p>
+      </Section>
+
+      <Section title="Our sources" id="our-sources">
+        <div className="flex-wrapper">
+          <SourceLink
+            href="https://wiki.supercombo.gg/w/Main_Page"
+            text="SuperCombo Wiki"
+          />
+
+          <SourceLink
+            href="https://www.youtube.com/@PNDKM"
+            text="PNDK&M"
+            type="youtube"
+          />
+
+          <SourceLink
+            href="https://www.youtube.com/@Diff"
+            text="Diff"
+            type="youtube"
+          />
+
+          <SourceLink
+            href="https://www.youtube.com/@rooflemonger"
+            text="rooflemonger"
+            type="youtube"
+          />
+
+          <SourceLink
+            href="https://www.reddit.com/r/MortalKombat/"
+            text="r/MortalKombat"
+            type="reddit"
+          />
+
+          <SourceLink
+            href="https://www.reddit.com/r/MortalKombatGameplay/"
+            text="r/MortalKombatGameplay"
+            type="reddit"
+          />
+        </div>
       </Section>
 
       <Section title="Fundamentals" id="fundamentals">

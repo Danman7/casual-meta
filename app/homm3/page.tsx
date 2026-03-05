@@ -1,6 +1,6 @@
 import { HOMM3_TITLE } from '@/app/constants'
-import { Callout } from '@/app/ui/Callout'
 import { Section } from '@/app/ui/Section'
+import { SourceLink } from '@/app/ui/SourceLink'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(
@@ -14,13 +14,6 @@ export default async function Page() {
       <h1 className="page-title">{HOMM3_TITLE}</h1>
 
       <Section>
-        <div className="flavor">
-          This section is dedicated to Heroes of Might and Magic 3 and its
-          expansions - primarily the official ones.
-        </div>
-      </Section>
-
-      <Section id="what-is-homm3" title="What is HoMM3?">
         <p>
           Heroes of Might and Magic 3 (HoMM3) is a classic 2D turn-based
           strategy game from 1999. In an era where online play was nonexistent
@@ -30,23 +23,12 @@ export default async function Page() {
           front of a single CRT screen.
         </p>
 
-        <h3 id="why-third-title">Why the third title?</h3>
-
         <p>
           The HoMM series started in 1995 and concluded in 2015 with its sevent
           installment. While regarded as a part of the general Might and Magic
           fantasy franchise, sharing some of the lore, the turn based games are
           a thing of their own.
         </p>
-
-        <Callout>
-          <div className="flavor">
-            Heroes of Might and Magic: Olden Era is an upcoming title. It is an
-            official installment developed by Unfrozen under an agreement with
-            Ubisoft. It is coming out in 2026 and we are yet to see how it will
-            hold up.
-          </div>
-        </Callout>
 
         <p>
           The first three Heroes of Might and Magic titles are viewed as the
@@ -73,7 +55,44 @@ export default async function Page() {
         <p>But mostly it's because players continue to play it.</p>
       </Section>
 
-      <Section title="Key focal points" id="our-focus">
+      <Section title="Our sources" id="our-sources">
+        <div className="flex-wrapper">
+          <SourceLink
+            href="http://heroescommunity.com/forumdisplay.php3?FID=6"
+            text="Library of Enlightenment"
+          />
+
+          <SourceLink
+            href="https://homm.miraheze.org/wiki/Main_Page"
+            text="HoMM 3 Wiki"
+          />
+
+          <SourceLink
+            href="http://www.heroesofmightandmagic.com/heroes3/heroesofmightandmagic3iii.shtml"
+            text="Age of Heroes"
+          />
+
+          <SourceLink
+            href="https://www.youtube.com/@Lexiav"
+            text="Lexiav"
+            type="youtube"
+          />
+
+          <SourceLink
+            href="https://www.youtube.com/@Norovo"
+            text="Norovo"
+            type="youtube"
+          />
+
+          <SourceLink
+            href="https://www.reddit.com/r/heroes3/"
+            text="r/heroes3"
+            type="reddit"
+          />
+        </div>
+      </Section>
+
+      <Section title="About this documentation" id="our-focus">
         <p>
           In sync with Casual Meta practices, we will focus on the gameplay,
           skipping almost all of the lore. Our interest lies mostly in Player vs

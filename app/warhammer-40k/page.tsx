@@ -5,6 +5,7 @@ import { WH40K_TITLE } from '@/app/constants'
 import { DiceRoll } from '@/app/ui/DiceRoll'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Section } from '@/app/ui/Section'
+import { SourceLink } from '@/app/ui/SourceLink'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const metadata = generatePageMetadata(
@@ -41,6 +42,40 @@ export default async function Page() {
           create disputes about how situations should be resolved. Thus,
           everywhere there are rules, we see overly detailed explanations.
         </p>
+      </Section>
+
+      <Section title="Our sources" id="our-sources">
+        <div className="flex-wrapper">
+          <SourceLink
+            href="https://www.warhammer.com/"
+            text="Warhammer Official"
+          />
+
+          <SourceLink
+            href="https://1d6chan.miraheze.org/wiki/Category:Warhammer_40,000"
+            text="1d6chan"
+          />
+
+          <SourceLink href="https://wahapedia.ru/" text="Wahapedia" />
+
+          <SourceLink
+            href="https://www.youtube.com/@auspextactics"
+            text="Auspex Tactics"
+            type="youtube"
+          />
+
+          <SourceLink
+            href="https://www.reddit.com/r/Warhammer40k/"
+            text="r/Warhammer40k"
+            type="reddit"
+          />
+
+          <SourceLink
+            href="https://www.reddit.com/r/WarhammerCompetitive/"
+            text="r/WarhammerCompetitive"
+            type="reddit"
+          />
+        </div>
       </Section>
 
       <Section title="About this documentation" id="about-this-documentation">
