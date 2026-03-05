@@ -32,6 +32,25 @@ interface Creature {
   specials?: string[]
 }
 
+const comparableFields = [
+  'level',
+  'cost',
+  'attack',
+  'defense',
+  'minDamage',
+  'maxDamage',
+  'health',
+  'speed',
+] as const
+
+type ComparableField = (typeof comparableFields)[number]
+
+interface FieldExtreme {
+  best: number
+  worst: number
+  hasRange: boolean
+}
+
 export function CreatureTable() {
   const [sorting, setSorting] = useState<SortingState>([])
   const [townFilter, setTownFilter] = useState<string>('all')
@@ -198,6 +217,59 @@ export function CreatureTable() {
     return { averages, totals }
   }, [filteredData])
 
+  const columnExtremes = useMemo(() => {
+    const extremes: Partial<Record<ComparableField, FieldExtreme>> = {}
+
+    if (filteredData.length === 0) {
+      return extremes
+    }
+
+    comparableFields.forEach((field) => {
+      const values = filteredData.map((creature) => creature[field] as number)
+      const minValue = Math.min(...values)
+      const maxValue = Math.max(...values)
+      const lowerIsBetter = field === 'cost'
+
+      extremes[field] = {
+        best: lowerIsBetter ? minValue : maxValue,
+        worst: lowerIsBetter ? maxValue : minValue,
+        hasRange: minValue !== maxValue,
+      }
+    })
+
+    return extremes
+  }, [filteredData])
+
+  const getCellPerformanceClass = (
+    columnId: string,
+    value: unknown,
+  ): string => {
+    if (typeof value !== 'number') {
+      return ''
+    }
+
+    if (!comparableFields.includes(columnId as ComparableField)) {
+      return ''
+    }
+
+    const field = columnId as ComparableField
+    const extremes = columnExtremes[field]
+
+    if (!extremes || !extremes.hasRange) {
+      return ''
+    }
+
+    if (value === extremes.best) {
+      return 'text-success font-semibold'
+    }
+
+    if (value === extremes.worst) {
+      return 'text-error font-semibold'
+    }
+
+    return ''
+  }
+
   return (
     <>
       <div className="mt-8 mb-6 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
@@ -293,18 +365,30 @@ export function CreatureTable() {
                 key={row.id}
                 className="group border-b border-light hover:bg-surface transition-colors"
               >
-                {row.getVisibleCells().map((cell) => (
-                  <td
-                    key={cell.id}
-                    className={`px-4 py-2 text-sm ${
-                      cell.column.id === 'name'
-                        ? 'sticky left-0 z-20 bg-background group-hover:bg-surface border-r border-light'
-                        : ''
-                    }`}
-                  >
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td>
-                ))}
+                {row.getVisibleCells().map((cell) =>
+                  (() => {
+                    const performanceClass = getCellPerformanceClass(
+                      cell.column.id,
+                      cell.getValue(),
+                    )
+
+                    return (
+                      <td
+                        key={cell.id}
+                        className={`px-4 py-2 text-sm ${performanceClass} ${
+                          cell.column.id === 'name'
+                            ? 'sticky left-0 z-20 bg-background group-hover:bg-surface border-r border-light'
+                            : ''
+                        }`}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    )
+                  })(),
+                )}
               </tr>
             ))}
           </tbody>
