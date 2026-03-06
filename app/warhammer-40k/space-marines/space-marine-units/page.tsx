@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { BsShadows } from 'react-icons/bs'
 import { FaCrosshairs } from 'react-icons/fa'
 import { FaShield } from 'react-icons/fa6'
-import { RiSwordFill } from 'react-icons/ri'
+import { LuSwords } from 'react-icons/lu'
 
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import eliminators from '@/app/assets/wh40k/eliminators.webp'
@@ -130,7 +130,7 @@ export default async function Page() {
         </div>
 
         <h3 id="assault-intercessors" className="flex-wrapper">
-          Assault Intercessors <RiSwordFill className="circle-icon" />
+          Assault Intercessors <LuSwords className="circle-icon" />
         </h3>
 
         <Image

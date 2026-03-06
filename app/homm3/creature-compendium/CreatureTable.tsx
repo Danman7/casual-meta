@@ -20,10 +20,11 @@ interface Creature {
   upgrade: string
   cost: number
   population: number
+  bonusPopulation?: number
   health: number
   attack: number
   defense: number
-  minDamage: number
+  minDamage?: number
   maxDamage: number
   speed: number
   movement: string
@@ -35,6 +36,7 @@ interface Creature {
 const comparableFields = [
   'level',
   'cost',
+  'population',
   'attack',
   'defense',
   'minDamage',
@@ -49,6 +51,20 @@ interface FieldExtreme {
   best: number
   worst: number
   hasRange: boolean
+}
+
+const getEffectivePopulation = (creature: Creature): number =>
+  creature.population + (creature.bonusPopulation ?? 0)
+
+const getComparableValue = (
+  creature: Creature,
+  field: ComparableField,
+): number => {
+  if (field === 'population') {
+    return getEffectivePopulation(creature)
+  }
+
+  return (creature[field] as number | undefined) ?? 0
 }
 
 export function CreatureTable() {
@@ -88,6 +104,25 @@ export function CreatureTable() {
       {
         accessorKey: 'cost',
         header: 'Cost',
+      },
+      {
+        id: 'population',
+        accessorFn: (row) => getEffectivePopulation(row),
+        header: 'Pop',
+        cell: (info) => {
+          const creature = info.row.original
+          const totalPopulation = getEffectivePopulation(creature)
+          const bonusPopulation = creature.bonusPopulation ?? 0
+
+          return (
+            <span>
+              {totalPopulation}
+              {bonusPopulation > 0 && (
+                <span className="text-light"> (+{bonusPopulation})</span>
+              )}
+            </span>
+          )
+        },
       },
       {
         accessorKey: 'attack',
@@ -194,6 +229,7 @@ export function CreatureTable() {
 
     const numericFields = [
       'cost',
+      'population',
       'attack',
       'defense',
       'minDamage',
@@ -207,7 +243,11 @@ export function CreatureTable() {
 
     numericFields.forEach((field) => {
       const sum = filteredData.reduce(
-        (acc, creature) => acc + (creature[field] as number),
+        (acc, creature) =>
+          acc +
+          (field === 'population'
+            ? getEffectivePopulation(creature)
+            : ((creature[field] as number | undefined) ?? 0)),
         0,
       )
       totals[field] = sum
@@ -225,7 +265,9 @@ export function CreatureTable() {
     }
 
     comparableFields.forEach((field) => {
-      const values = filteredData.map((creature) => creature[field] as number)
+      const values = filteredData.map((creature) =>
+        getComparableValue(creature, field),
+      )
       const minValue = Math.min(...values)
       const maxValue = Math.max(...values)
       const lowerIsBetter = field === 'cost'
@@ -404,6 +446,9 @@ export function CreatureTable() {
                 {stats.averages.cost || '-'}
               </td>
               <td className="px-4 py-2 text-sm">
+                {stats.averages.population || '-'}
+              </td>
+              <td className="px-4 py-2 text-sm">
                 {stats.averages.attack || '-'}
               </td>
               <td className="px-4 py-2 text-sm">
@@ -422,6 +467,7 @@ export function CreatureTable() {
                 {stats.averages.speed || '-'}
               </td>
               <td className="px-4 py-2 text-sm">-</td>
+              <td className="px-4 py-2 text-sm">-</td>
             </tr>
             <tr className="border-t border-light bg-surface font-semibold">
               <td className="px-4 py-2 text-sm sticky left-0 z-20 border-r border-light bg-surface">
@@ -431,6 +477,9 @@ export function CreatureTable() {
               <td className="px-4 py-2 text-sm">-</td>
               <td className="px-4 py-2 text-sm">-</td>
               <td className="px-4 py-2 text-sm">{stats.totals.cost || '-'}</td>
+              <td className="px-4 py-2 text-sm">
+                {stats.totals.population || '-'}
+              </td>
               <td className="px-4 py-2 text-sm">
                 {stats.totals.attack || '-'}
               </td>
@@ -447,6 +496,7 @@ export function CreatureTable() {
                 {stats.totals.health || '-'}
               </td>
               <td className="px-4 py-2 text-sm">{stats.totals.speed || '-'}</td>
+              <td className="px-4 py-2 text-sm">-</td>
               <td className="px-4 py-2 text-sm">-</td>
             </tr>
           </tfoot>
