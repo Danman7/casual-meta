@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { BsShadows } from 'react-icons/bs'
 import { FaCrosshairs } from 'react-icons/fa'
 import { FaShield } from 'react-icons/fa6'
-import { LuSwords } from 'react-icons/lu'
+import { LuSword } from 'react-icons/lu'
 
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import eliminators from '@/app/assets/wh40k/eliminators.webp'
@@ -44,7 +44,10 @@ export default async function Page() {
         </p>
 
         <h3 id="intercessors" className="flex-wrapper">
-          Intercessors <FaCrosshairs className="circle-icon" />
+          Intercessors{' '}
+          <span className="circle-icon">
+            <FaCrosshairs />
+          </span>
         </h3>
 
         <Image
@@ -130,7 +133,10 @@ export default async function Page() {
         </div>
 
         <h3 id="assault-intercessors" className="flex-wrapper">
-          Assault Intercessors <LuSwords className="circle-icon" />
+          Assault Intercessors{' '}
+          <span className="circle-icon">
+            <LuSword />
+          </span>
         </h3>
 
         <Image
@@ -235,8 +241,13 @@ export default async function Page() {
         </div>
 
         <h3 id="heavy-intercessors" className="flex-wrapper">
-          Heavy Intercessors <FaCrosshairs className="circle-icon" />{' '}
-          <FaShield className="circle-icon" />
+          Heavy Intercessors{' '}
+          <span className="circle-icon">
+            <FaCrosshairs />
+          </span>{' '}
+          <span className="circle-icon">
+            <FaShield />
+          </span>
         </h3>
 
         <Image
@@ -313,8 +324,13 @@ export default async function Page() {
 
       <Section title="Specialists" id="specialists">
         <h3 id="eliminators" className="flex-wrapper">
-          Eliminators <FaCrosshairs className="circle-icon" />{' '}
-          <BsShadows className="circle-icon" />
+          Eliminators{' '}
+          <span className="circle-icon">
+            <FaCrosshairs />
+          </span>{' '}
+          <span className="circle-icon">
+            <BsShadows />
+          </span>
         </h3>
 
         <Image

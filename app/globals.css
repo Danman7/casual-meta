@@ -122,7 +122,7 @@
   }
 
   .circle-icon {
-    @apply bg-surface rounded-full w-8 h-8 border-2 border-foreground/20;
+    @apply inline-flex place-items-center bg-surface rounded-full w-9 h-9 p-1 border-2 border-foreground/20;
   }
 
   .lead {

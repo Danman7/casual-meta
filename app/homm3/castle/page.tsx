@@ -1,16 +1,18 @@
 import Image from 'next/image'
 import { GiLibertyWing } from 'react-icons/gi'
-import { LuSwords } from 'react-icons/lu'
+import { LuSword } from 'react-icons/lu'
 import { TbBow } from 'react-icons/tb'
 
 import archer from '@/app/assets/homm3/archer.webp'
 import bastion from '@/app/assets/homm3/bastion.webp'
 import castle from '@/app/assets/homm3/castle.webp'
 import castleMap from '@/app/assets/homm3/castle_map.webp'
+import griffin from '@/app/assets/homm3/griffin.webp'
 import conservatory from '@/app/assets/homm3/griffin_conservatory.webp'
 import halberdier from '@/app/assets/homm3/halberdier.webp'
 import marksman from '@/app/assets/homm3/marksman.webp'
 import pikeman from '@/app/assets/homm3/pikeman.webp'
+import royal_griffin from '@/app/assets/homm3/royal_griffin.webp'
 import stables from '@/app/assets/homm3/stables.webp'
 import { HOMM3_TITLE } from '@/app/constants'
 import { PlayOrSkip } from '@/app/ui/PlayOrSkip'
@@ -155,7 +157,10 @@ export default async function Page() {
 
       <Section title="Creatures" id="creatures">
         <h3 id="pikeman-halberdier" className="flex-wrapper">
-          Tier 1: Pikeman/Halberdier <LuSwords className="circle-icon" />
+          Tier 1: Pikeman/Halberdier{' '}
+          <span className="circle-icon">
+            <LuSword />
+          </span>
         </h3>
 
         <div className="float-left flex gap-4 mr-4">
@@ -176,7 +181,10 @@ export default async function Page() {
         </p>
 
         <h3 id="archer-marksman" className="flex-wrapper">
-          Tier 2: Archer/Marksman <TbBow className="circle-icon" />
+          Tier 2: Archer/Marksman{' '}
+          <span className="circle-icon">
+            <TbBow />
+          </span>
         </h3>
 
         <div className="float-left flex gap-4 mr-4">
@@ -200,9 +208,19 @@ export default async function Page() {
         </p>
 
         <h3 id="griffin-royalgriffin" className="flex-wrapper">
-          Tier 3: Griffin/Royal Griffin <LuSwords className="circle-icon" />{' '}
-          <GiLibertyWing className="circle-icon" />
+          Tier 3: Griffin/Royal Griffin{' '}
+          <span className="circle-icon">
+            <LuSword />
+          </span>{' '}
+          <span className="circle-icon">
+            <GiLibertyWing />
+          </span>
         </h3>
+
+        <div className="float-left flex gap-4 mr-4">
+          <Image src={griffin} alt="Castle Griffin" />
+          <Image src={royal_griffin} alt="Castle Royal Griffin" />
+        </div>
 
         <p>
           Griffins are <strong>fast, tough and plentiful</strong>. At 10/week,
