@@ -44,8 +44,8 @@ export default async function Page() {
           built around its all-around powerful army. They usually have a{' '}
           <strong>strong early game</strong> because of how their first 3
           creature tiers work together, and a good late game because of the
-          Champion and <strong>Archangels - best tier 7 creature</strong>. The
-          trade-off is their <strong>high cost</strong> and{' '}
+          Champion and <strong>Archangels - the best tier 7 creature</strong>.
+          The trade-off is their <strong>high cost</strong> and{' '}
           <strong>unimpressive heroes and magic</strong>.
         </p>
       </Section>
@@ -57,25 +57,25 @@ export default async function Page() {
               <div className="font-bold">Beginner-friendly</div>
               <div className="flavor">
                 You will have the right creatures for both early and late game
-                along with naturally high moral for extra turns. Special
-                buildings are bad for tournamets, but provide the basics for
-                every game scenario.
+                along with naturally high morale for extra turns. Special
+                buildings are not great for tournaments, but they provide the
+                basics for most game scenarios.
               </div>
             </div>
 
             <div>
               <div className="font-bold">Strong balanced army</div>
               <div className="flavor">
-                2 ranged shooters, 2 flying units, and 3 melee. Every unit,
-                except Monks (level 5), is at lest good for their tier.
+                2 ranged shooters, 2 flying units, and 3 melee units. Every
+                unit, except Monks (level 5), is at least good for its tier.
               </div>
             </div>
 
             <div>
               <div className="font-bold">Top-tier creature</div>
               <div className="flavor">
-                The Archangel has great attack, defense, static damage,
-                ressurect ability and is second fastest after the Phoenix, so
+                The Archangel has great attack, defense, fixed damage, a
+                resurrect ability, and is second fastest after the Phoenix, so
                 you will often act first in combat.
               </div>
             </div>
@@ -86,7 +86,7 @@ export default async function Page() {
             <div>
               <div className="font-bold">Very expensive</div>
               <div className="flavor">
-                Second to only Tower in overall cost, primarily gold and gems.
+                Second only to Tower in overall cost, primarily gold and gems.
                 Needs at least a moderate amount of everything except ore.
               </div>
             </div>
@@ -147,8 +147,9 @@ export default async function Page() {
 
         <p>
           <strong>Stables</strong> is your only "should have" bonus building in
-          most cases. It's a <strong>mobility lever</strong>, add a big weekly
-          movement boost, improving both main hero reach and scout efficiency.
+          most cases. It's a <strong>mobility lever</strong>, adding a big
+          weekly movement boost, improving both main hero reach and scout
+          efficiency.
         </p>
       </Section>
 
@@ -164,8 +165,8 @@ export default async function Page() {
 
         <p>
           <em>Pikemen</em> are <strong>slow and sturdy</strong>. With top HP for
-          a level 1 creature, next to Centaurs (Rampart), they serve the
-          purpouse of <strong>protecting your Archers</strong> well.
+          a level 1 creature, next to Centaurs (Rampart), they serve the purpose
+          of <strong>protecting your Archers</strong> well.
         </p>
 
         <p>
@@ -184,7 +185,7 @@ export default async function Page() {
         </div>
 
         <p>
-          The best ranged figher for level 2. You can take many early fights
+          The best ranged fighter for level 2. You can take many early fights
           with minimal losses by shooting stacks down before they connect. You
           should{' '}
           <strong>upgrade Archers to Marksmen as early as possible</strong>.
@@ -195,7 +196,7 @@ export default async function Page() {
           they <strong>shoot twice</strong>. This puts them second only to Storm
           Elemental if they hit on max damage.{' '}
           <strong>They are your early game damage dealers</strong>, but they are
-          not tough. Protect them with singles stacks as best you can.
+          not tough. Protect them with single stacks as best you can.
         </p>
 
         <h3 id="griffin-royalgriffin" className="flex-wrapper">
@@ -212,10 +213,11 @@ export default async function Page() {
         </p>
 
         <p>
-          It is however when they <strong>upgrade to Royal Griffins</strong>{' '}
-          when they truly shine. For only 40 gold/Griffin more, they become{' '}
-          <strong>much faster</strong> (second fastest tier 3 creature after
-          Dragon Flies) and gain <strong>endless retaliations</strong>. Now,{' '}
+          However, they truly shine when they{' '}
+          <strong>upgrade to Royal Griffins</strong>. For only 40 gold per
+          Griffin more, they become <strong>much faster</strong> (second fastest
+          tier 3 creature after Dragon Flies) and gain{' '}
+          <strong>endless retaliations</strong>. Now,{' '}
           <strong>
             attacking stronger, even ranged stacks on the map becomes viable
           </strong>
@@ -223,8 +225,8 @@ export default async function Page() {
           before most low-tier shooters) can reach the other side of the
           battlefield on the first turn. They can stick in the middle of the
           enemy to soak and punish all attacks, which should be done within
-          measure. Try not to loose too many, unless your plan is to spike
-          Angles in the end-game (see Game plan section bellow).
+          measure. Try not to lose too many, unless your plan is to spike Angels
+          in the end game (see the Game plan section below).
         </p>
 
         <p>
@@ -237,7 +239,7 @@ export default async function Page() {
       <Section title="Game plan" id="game-plan">
         <p>
           Castle leans on its <strong>ranged superiority</strong> at the very
-          begining of the game. Once you clear the immediate surroundings of
+          beginning of the game. Once you clear the immediate surroundings of
           your town, there are two major paths to take.
         </p>
 
@@ -267,8 +269,8 @@ export default async function Page() {
           Castle players can also go for a <strong>slower map play</strong>.
           Because of <strong>Griffin Conservatories</strong> (not Towers or
           Bastions), <strong>late game Angel numbers can explode</strong>. You
-          can sacrifice some early tempo and creatures to gather up resouces and
-          dwellings closer to you. The idea is to get Angels as early as
+          can sacrifice some early tempo and creatures to gather up resources
+          and dwellings closer to you. The idea is to get Angels as early as
           possible and lean on them to clear the map later.
         </p>
 
@@ -280,9 +282,28 @@ export default async function Page() {
           this strategy is very <strong>map-dependent</strong>.
         </p>
 
-        <h3 id="battles">Battles</h3>
+        <h3 id="battles">Neutral battles</h3>
 
-        <p></p>
+        <p>
+          Marksmen and Zealots deal the damage while Halberdiers and Crusader
+          soak up hits and keep threats off them. Champions and the flyers look
+          for opportunities to strike. Wear down neutrals with your shooters,
+          tie up any of theirs with Griffins and Angels.
+        </p>
+
+        <p>
+          When you get a critical mass of Griffins and Crusaders, you can leave
+          Halberdiers behind. Then Marksmen with 6 speed will be the slowest,
+          and you can move a bit faster on the map. At some point you will have
+          8-10 Angels, which will be enough on their own to quickly harvest
+          everything up to Dragon Utopias. You can even split them in two stacks
+          to resurrect each other.
+        </p>
+
+        <p>
+          <strong>Don't take Marksmen into banks and utopias.</strong> They will
+          get targeted and destroyed by the CPU.
+        </p>
       </Section>
     </>
   )
