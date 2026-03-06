@@ -7,6 +7,7 @@ import archer from '@/app/assets/homm3/archer.webp'
 import bastion from '@/app/assets/homm3/bastion.webp'
 import castle from '@/app/assets/homm3/castle.webp'
 import castleMap from '@/app/assets/homm3/castle_map.webp'
+import conservatory from '@/app/assets/homm3/griffin_conservatory.webp'
 import halberdier from '@/app/assets/homm3/halberdier.webp'
 import marksman from '@/app/assets/homm3/marksman.webp'
 import pikeman from '@/app/assets/homm3/pikeman.webp'
@@ -183,10 +184,9 @@ export default async function Page() {
         </div>
 
         <p>
-          Castle opens by leveraging its early{' '}
-          <strong>ranged superiority</strong>. Their level 2 shooters is the
-          best ranged figher for that tier. You can take many early fights with
-          minimal losses by shooting stacks down before they connect. You should{' '}
+          The best ranged figher for level 2. You can take many early fights
+          with minimal losses by shooting stacks down before they connect. You
+          should{' '}
           <strong>upgrade Archers to Marksmen as early as possible</strong>.
         </p>
 
@@ -204,19 +204,85 @@ export default async function Page() {
         </h3>
 
         <p>
-          Griffins are <strong>fast, tough and plentiful</strong>. At a total of
-          10/week, in 2 weeks you get almost 3 weeks worth of the population you
-          would get with Elves, Orcs or Beholders. They also gain a bonus
-          retaliation - helpful in tougher early fights where you need to push
-          them forward to keep the foe away from your Marksmen.
+          Griffins are <strong>fast, tough and plentiful</strong>. At 10/week,
+          in 2 weeks you get almost 3 weeks worth of the population you would
+          get with Elves, Orcs or Beholders. They also gain a bonus retaliation
+          - helpful in tougher early fights where you need to push forward to
+          keep the foe away from your Marksmen.
         </p>
 
         <p>
           It is however when they <strong>upgrade to Royal Griffins</strong>{' '}
-          when they truly shine. Only for 40 gold/griffin, they become{' '}
-          <strong>second fastest tier 3 creature</strong>, after Dragon Flies.
-          And they gain <strong>endless retaliations</strong>.
+          when they truly shine. For only 40 gold/Griffin more, they become{' '}
+          <strong>much faster</strong> (second fastest tier 3 creature after
+          Dragon Flies) and gain <strong>endless retaliations</strong>. Now,{' '}
+          <strong>
+            attacking stronger, even ranged stacks on the map becomes viable
+          </strong>
+          . Especially if you have the Haste spell, Griffins (who often play
+          before most low-tier shooters) can reach the other side of the
+          battlefield on the first turn. They can stick in the middle of the
+          enemy to soak and punish all attacks, which should be done within
+          measure. Try not to loose too many, unless your plan is to spike
+          Angles in the end-game (see Game plan section bellow).
         </p>
+
+        <p>
+          This upgrade is important, but not a priority. Delay it until your
+          Pikemen and regular Griffins can't cope with guarding your Archers
+          without losing too many creatures.
+        </p>
+      </Section>
+
+      <Section title="Game plan" id="game-plan">
+        <p>
+          Castle leans on its <strong>ranged superiority</strong> at the very
+          begining of the game. Once you clear the immediate surroundings of
+          your town, there are two major paths to take.
+        </p>
+
+        <p>
+          You can go for a <strong>quick expansion</strong> where you keep up
+          the tempo and try to{' '}
+          <strong>find the neutral towns and opponent(s) earlier</strong>. Just
+          keep fighting around your Marksmen,{' '}
+          <strong>picking safe fights</strong>, adding support as you unlock it.
+          Don't go for expensive upgrades (skip Crusaders for now) unless the
+          fight requires them, and incorporate Monks into the mix at some point.
+        </p>
+
+        <p>
+          This is what we see most players go for. It's simple and helps{' '}
+          <strong>break out into the middle of the map sooner</strong>, where
+          you can switch to heavy tech and collect resources and artifacts.
+        </p>
+
+        <Image
+          src={conservatory}
+          alt="A griffin conservatory as it appears on the map."
+          className="float-left mr-4"
+        />
+
+        <p>
+          Castle players can also go for a <strong>slower map play</strong>.
+          Because of <strong>Griffin Conservatories</strong> (not Towers or
+          Bastions), <strong>late game Angel numbers can explode</strong>. You
+          can sacrifice some early tempo and creatures to gather up resouces and
+          dwellings closer to you. The idea is to get Angels as early as
+          possible and lean on them to clear the map later.
+        </p>
+
+        <p>
+          The <strong>risk</strong> here is that if your opponent(s) break out
+          early, they can collect the priority locations and artifacts before
+          you. This means you may have to{' '}
+          <strong>fight behind on stats and key spells</strong>. Furthermore,
+          this strategy is very <strong>map-dependent</strong>.
+        </p>
+
+        <h3 id="battles">Battles</h3>
+
+        <p></p>
       </Section>
     </>
   )
