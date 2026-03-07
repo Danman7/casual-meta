@@ -6,7 +6,6 @@ import { TbBow } from 'react-icons/tb'
 import archer from '@/app/assets/homm3/archer.webp'
 import bastion from '@/app/assets/homm3/bastion.webp'
 import castle from '@/app/assets/homm3/castle.webp'
-import castleMap from '@/app/assets/homm3/castle_map.webp'
 import griffin from '@/app/assets/homm3/griffin.webp'
 import conservatory from '@/app/assets/homm3/griffin_conservatory.webp'
 import halberdier from '@/app/assets/homm3/halberdier.webp'
@@ -107,23 +106,6 @@ export default async function Page() {
       />
 
       <Section title="Buildings" id="buildings">
-        <Image
-          src={castleMap}
-          alt="A Castle town as it appears on the adventure map."
-          className="float-left mr-4"
-        />
-
-        <p>
-          As mentioned above, building up a Castle is costly. It requires more
-          gold, mercury, sulfur, crystal, and gems than most other towns. Two of
-          its dwellings, the Monastery (level 5) and the Portal of Glory (level
-          7), demand several of every secondary resource. The Portal of Glory
-          alone costs 20,000 gold for the base and upgraded structures.
-          Recruiting Angels also consumes gems, with three more needed for the
-          upgraded Archangels, making them the most resource-intensive tier 7
-          creatures.
-        </p>
-
         <div className="md:float-left flex gap-4 mr-4">
           <Image
             src={bastion}
@@ -280,7 +262,7 @@ export default async function Page() {
         <Image
           src={conservatory}
           alt="A griffin conservatory as it appears on the map."
-          className="float-left mr-4"
+          className="article-img my-0 float-left mr-4"
         />
 
         <p>

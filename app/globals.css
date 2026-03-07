@@ -105,8 +105,12 @@
     line-height: 1.15;
   }
 
+  .article-img {
+    @apply my-4 rounded shadow-md;
+  }
+
   .profile-img {
-    @apply sm:max-h-56 object-cover rounded shadow-md;
+    @apply my-4 sm:max-h-56 object-cover rounded shadow-md;
   }
 
   .flavor {

@@ -63,7 +63,7 @@ export default async function Page() {
       <h1 className="page-title">{navTitle}</h1>
 
       <Section>
-        <div className="md:flex gap-4">
+        <div className="md:flex align-start gap-4">
           <div className="box md:w-1/2 md:text-lg flex flex-col gap-2 place-items-center">
             <div>1. Command Phase</div> <TbArrowBigDown />
             <div>2. Movement Phase</div> <TbArrowBigDown />
@@ -84,6 +84,12 @@ export default async function Page() {
               During a round, all players take a turn. Each player's turn is
               divided into a sequence of phases. When it's your turn, you have
               to go through all phases to pass the turn to the next player.
+            </p>
+
+            <p>
+              In essence, a turn is to generate resources, test morale,
+              reposition, utilize ranged firepower, commit to melee, and
+              leverage consolidation to control space and objectives.
             </p>
           </div>
         </div>
@@ -191,8 +197,8 @@ export default async function Page() {
 
           <li>
             <strong>Advance:</strong> Roll D6 and add the result as inches to
-            its M" at the cost of limited shooting capabilities during the
-            following phase.
+            its M" at the cost of being unable to shoot (unless the weapon has
+            Assault) or charge this turn.
           </li>
 
           <li>
@@ -326,10 +332,16 @@ export default async function Page() {
           ranged or melee. They follow the same sequence of steps:
         </p>
         <ol>
-          <li>Roll to hit.</li>
-          <li>Roll to wound.</li>
+          <li>
+            <strong>Roll to hit</strong>.
+          </li>
+          <li>
+            <strong>Roll to wound</strong>.
+          </li>
           <li>Allocate wounds.</li>
-          <li>Roll to save - either armor or invulnerable.</li>
+          <li>
+            <strong>Roll to save</strong> - either armor or invulnerable.
+          </li>
           <li>Inflict damage.</li>
         </ol>
 
@@ -353,8 +365,9 @@ export default async function Page() {
           Precision). They decide which models take the hits. Models which
           already lost wounds or had attacks allocated this phase must be
           selected first. After wounds are allocated, the defender can make
-          saving throws: <strong>either armor saves or invulnerable saves</strong>{' '}
-          if the target has them.
+          saving throws:{' '}
+          <strong>either armor saves or invulnerable saves</strong> if the
+          target has them.
         </p>
 
         <DiceRoll
@@ -407,8 +420,8 @@ export default async function Page() {
 
       <Section title="3. Shooting Phase" id="shooting-phase">
         <p>
-          You select one eligible unit at a time to shoot. Before rolling any
-          dice:
+          Shooting follows the "Making attacks" rules from above. You select one
+          eligible unit at a time to shoot. Before rolling any dice:
         </p>
 
         <ul>
@@ -434,6 +447,78 @@ export default async function Page() {
           against ranged attacks. If this is true for the defending unit, it
           gains +1 to armor saves, unless it has Sv3+ or better and the weapon
           has AP0. Multiple instances of cover are not cumulative.
+        </p>
+      </Section>
+
+      <Section title="4. Charge Phase" id="charge-phase">
+        <p>
+          Charging is rushing a unit into melee combat. Units within 12" that
+          didn't advance this turn may declare a charge.
+        </p>
+
+        <DiceRoll
+          title="Charge roll"
+          dice='2D6"'
+          effect='If the total is
+          enough to move within 1" (Engagement range), the charge succeeds and the unit may move into position. If it fails, the unit stays put.'
+        />
+
+        <p>
+          A unit may charge multiple targets, but you must engage every declared
+          target for the charge to succeed. Positioning matters. You can block
+          follow-up charges with your own units, or you can overcommit a large
+          squad and bog down your attack.
+        </p>
+      </Section>
+
+      <Section title="5. Fight Phase" id="fight-phase">
+        <p>
+          All units that either{' '}
+          <strong>
+            made a charge this turn, or are already in Engagement range
+          </strong>{' '}
+          are eligible to fight. Units that{' '}
+          <strong>charged, gain Fights First</strong> ability. There are also
+          units that have native Fights First. In this phase the{' '}
+          <strong>non-active player goes first</strong> if they have eligable
+          units.
+        </p>
+
+        <p>Who fights when?</p>
+
+        <ol>
+          <li>Non-active player's units that have Fights First.</li>
+          <li>Active player's units that have Fights First.</li>
+          <li>All other eligable non-active player's units.</li>
+          <li>All other eligable active player's units.</li>
+        </ol>
+
+        <p>
+          What does it mean to fight? When it's your turn to fight, the selected
+          unit:
+        </p>
+
+        <ol>
+          <li>
+            <strong>Pile in - move up to 3", ending in Engagement range</strong>
+            . If base-to-base contact is possible, it must be made.
+          </li>
+
+          <li>
+            Execute all attacks with melee weapons according to the Making
+            attacks rules.
+          </li>
+
+          <li>
+            <strong>Consolidate - move another 3"</strong> only if there are
+            models that are outside Engagement range and may move into it, or
+            within range of an objective marker.
+          </li>
+        </ol>
+
+        <p>
+          Pile-ins and consolidations are powerful for repositioning, tagging
+          units, and stealing objectives.
         </p>
       </Section>
     </>

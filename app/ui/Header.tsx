@@ -60,7 +60,7 @@ export const Header = ({ sectionNav }: HeaderProps) => {
               href="/"
               aria-label="Go to homepage"
             >
-              <FaAsterisk focusable="false" />
+              <FaAsterisk focusable="false" className="text-primary" />
               <span className="hidden sm:inline">Casual Meta</span>
             </Link>
           </div>

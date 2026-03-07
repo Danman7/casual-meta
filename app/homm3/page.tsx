@@ -1,3 +1,6 @@
+import Image from 'next/image'
+
+import title from '@/app/assets/homm3/title.webp'
 import { HOMM3_TITLE } from '@/app/constants'
 import { Section } from '@/app/ui/Section'
 import { SourceLink } from '@/app/ui/SourceLink'
@@ -14,6 +17,12 @@ export default async function Page() {
       <h1 className="page-title">{HOMM3_TITLE}</h1>
 
       <Section>
+        <Image
+          src={title}
+          alt="Box art of Heroes of Might and Magic 3"
+          className="float-left mt-2 mr-4 max-w-1/2 md:max-w-48"
+        />
+
         <p>
           Heroes of Might and Magic 3 (HoMM3) is a classic 2D turn-based
           strategy game from 1999. In an era where online play was nonexistent

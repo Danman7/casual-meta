@@ -1,9 +1,10 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
+import dice from '@/app/assets/wh40k/dice.webp'
 import wh40kTitle from '@/app/assets/wh40k/wh40k-battle.webp'
 import { WH40K_TITLE } from '@/app/constants'
 import { DiceRoll } from '@/app/ui/DiceRoll'
-import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Section } from '@/app/ui/Section'
 import { SourceLink } from '@/app/ui/SourceLink'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -29,10 +30,10 @@ export default async function Page() {
           opponents through a mixture of skill, tactics, and luck.
         </p>
 
-        <ImageWithCaption
+        <Image
           src={wh40kTitle}
           alt="Space Marines doing battle with Chaos Space Marines"
-          caption="A battle is raging between Ultramarines and Chaos Space Marines. The two armies are led by legendary heroes like Roboute Guilliman, Marneus Calgar and Abaddon the Despoiler."
+          className="article-img"
         />
 
         <p>
@@ -93,6 +94,12 @@ export default async function Page() {
 
         <h3 id="dice-rolls">Dice rolls</h3>
 
+        <Image
+          src={dice}
+          alt="Space Marines doing battle with Chaos Space Marines"
+          className="article-img float-left mt-0 max-w-1/2 mr-4"
+        />
+
         <p>
           Warhammer 40,000 is a game played with dice. This brings a degree of
           chance/randomness to the game, making each battle unique,
@@ -102,10 +109,11 @@ export default async function Page() {
         <p>
           <strong>A typical six-sided dice is called a D6</strong> - a common
           abbreviation from dice games (e.g. Dungeons and Dragons). Most throws
-          use one or multiple D6s, but some state that a three-sided dice (D3)
-          must be rolled. In that case, split a regular D6 into three segments:
-          1 or 2 = 1, 3 or 4 = 2, 5 or 6 = 3. Dice throws are described with a
-          section like this one:
+          use one or multiple D6s. If it's multiple the number will be added in
+          front like 3D6. Some state that a three-sided dice (D3) must be
+          rolled. In that case, split a regular D6 into three segments: 1 or 2 =
+          1, 3 or 4 = 2, 5 or 6 = 3. Dice throws are described with a section
+          like this one:
         </p>
 
         <DiceRoll
@@ -113,6 +121,12 @@ export default async function Page() {
           dice="2D6"
           effect="Which means roll two six-sided dice and compare the result to some value."
         />
+
+        <p>
+          In the case where a dice roll adds to movement inches (e.g. advancing
+          during movement phase), it can be written as D6", which means roll a
+          six-sided dice and add the result as inches.
+        </p>
       </Section>
     </>
   )
