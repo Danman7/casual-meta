@@ -62,6 +62,12 @@ export default async function Page() {
         </p>
 
         <p>
+          Because MEQ is one of the most frequent infantry profiles, many
+          weapons are specifically designed to counter it. The Heavy Bolter with
+          2 Damage, 5 Strength is a good example.
+        </p>
+
+        <p>
           Units with this exact profile are <strong>strong examples</strong>,
           a.k.a <em>pure MEQ</em>.
         </p>
@@ -163,6 +169,60 @@ export default async function Page() {
         />
 
         <div className="box text-lg font-bold text-center">T3|Sv5+|W1</div>
+
+        <p>
+          <strong>GEQ</strong> means <strong>Guard Equivalent</strong>,
+          representing <em>light infantry</em> similar to Imperial Guardsmen.
+          These units rely on <strong>numbers over durability</strong>.
+        </p>
+
+        <p>
+          High damage, high strength weapons step down in effectiveness to{' '}
+          <strong>large volumes of attacks</strong>. Bolters, lasguns, flamers,
+          and blast weapons are particularly successful against GEQ. Prefer D1
+          weapons. Extra Damage per hit is wasted.
+        </p>
+
+        <p>Strong examples:</p>
+
+        <ul>
+          <li>
+            Typical Astra Militarum units like Cadian Shock Troops, Catachan
+            Jungle Fighters and Death Korps Of Krieg.
+          </li>
+
+          <li>
+            Tyranid battleline like Termagants, Hormagaunts and Hormagaunts
+            (worse Save).
+          </li>
+
+          <li>Chaos Cultist Mob are GEQ with worse Saves.</li>
+        </ul>
+
+        <p>All of the following are GEQ with slightly better Saves:</p>
+
+        <ul>
+          <li>Adeptus Mechanicus Skitarii Rangers and Vanguard.</li>
+
+          <li>
+            Eldar battleline, e.g. Storm Guardians and Guardian Defenders.
+          </li>
+
+          <li>Tau battleline like Breacher and Strike Teams.</li>
+
+          <li>Battle Sisters Squad.</li>
+        </ul>
+
+        <p>Lose examples:</p>
+
+        <ul>
+          <li>
+            Chaos Daemons like Bloodletters or Daemonettes have worse Armor
+            Save, but also an Invulnerable Save. Generally behave like GEQ on
+            board.
+          </li>
+          <li>Ork Boyz are GEQ with better Toughness.</li>
+        </ul>
       </Section>
     </>
   )
