@@ -1,11 +1,13 @@
 import Image from 'next/image'
-import { GiBolterGun } from 'react-icons/gi'
+import Link from 'next/link'
 
 import guardsmen from '@/app/assets/wh40k/CadianShockTroops.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
-import { WH40K_TITLE } from '@/app/constants'
-import { Callout } from '@/app/ui/Callout'
+import terminators from '@/app/assets/wh40k/terminators.webp'
+import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
+import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
+import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 5
 
@@ -16,238 +18,152 @@ export const metadata = generatePageMetadata(
   'Common profile archetypes in Warhammer 40k to help understand unit roles.',
 )
 
+const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
+
 export default async function Page() {
   return (
     <>
       <h1 className="page-title">{navTitle}</h1>
 
-      <p>
-        Models and weapons each have six numerical characteristics in their data
-        sheets describing their potential performance. To be able to navigate
-        the vast array of choices, we can recognize common profiles.
-      </p>
-
-      <h2>Damage and durability</h2>
-
-      <p>
-        With hundreds of units available in the current edition of WH40k, there
-        are thousands of possible interactions between a weapon and a model. To
-        reduce this complexity players have identified several common
-        archetypes.
-      </p>
-
-      <p>
-        <strong>Damage in WH40k is expressed via wounds</strong>. To understand
-        how effective a weapon is against a model, we can remove factors like
-        positioning, range, accuracy, speed, morale and objectives control.
-      </p>
-
-      <p>
-        If we accept the weapon will hit its target then that leaves only{' '}
-        <strong>Toughness, Save and Wounds</strong> for models, and{' '}
-        <strong>Attacks, Strength, Armor Penetration and Damage</strong> for
-        weapons.
-      </p>
-
-      <h3>The GEQ - Light infantry</h3>
-
-      <p className="font-bold">T3|Sv5+|W1</p>
-
-      <p>
-        <em>Guardsman Equivalent</em> or <strong>GEQ</strong> refers to any unit
-        with a profile of <strong>3 Toughness and 1 Wound</strong>, often
-        accompanied by weak armor saves like 5+. GEQ describes what can be
-        considered <em>light infantry</em>.
-      </p>
-
-      <Image
-        src={guardsmen}
-        alt="Cadian Shock Troops"
-        className="h-48 object-cover object-[0%_50%]"
-      />
-
-      <p>
-        The title comes from the trooper of the standard Imperial Guard Infantry
-        Squad being named a Guardsman. This is the traditional designation for
-        the weakest human soldier up to 9th codex edition, but it extends to
-        many single wound models:
-      </p>
-
-      <ul role="list">
-        <li>
-          Imperial Guard infantry like Cadian Shock Troops, Catachan Jungle
-          Fighters and Death Korps of Krieg;
-        </li>
-
-        <li>
-          Tyranid battleline - Termagants, Hormagaunts and Gargoyles (even
-          weaker Save at 6+);
-        </li>
-
-        <li>Chaos Cultists;</li>
-
-        <li>Eldar Guardian Defenders (better Save at 4+) and many more</li>
-      </ul>
-
-      <p>
-        GEQ units are <strong>cheap and expendable</strong>. What they lack in
-        resilience, they make up in volume. These are not meant to survive, but
-        rather slow down the enemy or take the focus away from your best units.
-      </p>
-
-      <p>
-        Such troops frequently come in large squads, up to 20 models. This makes
-        them vulnerable to weapons that do more attacks, especially{' '}
-        <em>Blast</em> weapons that do additional attacks the more models are in
-        the targeted unit. At the same time a weapon meant to counter elite
-        infantry will perform poorly as even though it will often kill a model
-        every time it strikes, a GEQ unit will have the numbers to survive
-        trough. And a high profile is wasted on light infantry.
-      </p>
-
-      <Callout>
-        <div className="flex-wrapper font-bold">
-          <GiBolterGun /> <span>Weapons vs GEQ</span>
-        </div>
-
+      <Section>
         <p>
-          Most weapons will perform well against light infantry. Even the lowly
-          <em>Lasgun</em> A1|S3|AP0|D1 with its Rapid Fire doubling its attacks
-          at close range and caried in sizeable units will suffice. Same for the
-          standard <em>Boltgun</em> A2|S4|AP0|D1 which hits Toughness 3 models
-          on 3+.
+          <Link href={wh40kRoute('Datasheets')}>Datasheets</Link> explain the
+          performance of a weapon or model(s) using numerical characteristics.
+          With hundreds of units available, each with several loadouts, there
+          are thousands of possible interactions between a weapon and a target.
         </p>
 
         <p>
-          Weapons that do multiple attacks especially dice rolls to determine
-          the amount of attacks will do better. The <em>Flamer</em>{' '}
-          AD6|S4|AP0|D1 and <em>Pyreblaster</em> AD6|S5|AP-1|D1 as Torrent
-          weapons (guaranteed hits) are terrifying against light infantry. So
-          are grenades and a Blast weapon like the{' '}
-          <em>Missile launcher in frag mode</em> AD6|S4|AP0|D1. At melee range
-          the <em>Chainsaw</em> with 4 attacks also tends to mow GEQ down.
+          <strong>MEQ, GEQ, and TEQ</strong> are community shorthands used in
+          Warhammer 40,000 to describe common profiles. Using standardized
+          target profiles simplifies discussion about damage and weapon balance.
+          Instead of analyzing every unit individually, players can ask
+          questions like "Is this weapon efficient into MEQ?" or "Can it
+          reliably kill TEQ or vehicles?"
+        </p>
+      </Section>
+
+      <Section title="MEQ (Marine Equivalent)" id="meq">
+        <Image
+          src={intercessors}
+          alt="A squad of Space Marine Intercessors."
+          className="profile-img object-[0%_70%]"
+        />
+
+        <div className="box text-lg font-bold text-center">T4|Sv3+|W2</div>
+
+        <p>
+          MEQ refers to infantry with{' '}
+          <strong>durability similar to a standard Space Marine</strong>, hence
+          it can be called <em>standard infantry</em>. The defining traits are{' '}
+          <strong>Toughness 4, two Wounds, and a 3+ armor save</strong>. This
+          profile is very common across many of the factions in the game, and
+          it's often used as a benchmark.
         </p>
 
         <p>
-          Any weapon with more than 1 Damage like the{' '}
-          <em>Heavy Bolter, Lascannon, Meltagun</em> etc., is overkill.
+          Units with this exact profile are <strong>strong examples</strong>,
+          a.k.a <em>pure MEQ</em>.
         </p>
-      </Callout>
 
-      <h3>The MEQ - Marines</h3>
-
-      <p className="font-bold">T4|Sv3+|W2</p>
-
-      <p>
-        <em>Marine Equivalent</em> or <strong>MEQ</strong> refers to any unit
-        with a profile of{' '}
-        <strong>4 Toughness, 3+ Armor Save and 2 Wounds</strong>. It is very
-        common among Space Marines infantry, hence the name. You can think about
-        this as the standard infantry profile. Sometimes people refer to this
-        simply as “Marines”, as in “does well/worse against Marines”.
-      </p>
-
-      <Image
-        src={intercessors}
-        alt="Space Marines Intercessors"
-        className="max-h-72 object-cover object-[0%_65%]"
-      />
-
-      <p>
-        Any model with T4|Sv3+|W2 on their data sheet is considered{' '}
-        <em>Pure MEQ</em>. Examples are:{' '}
-      </p>
-
-      <ul role="list">
-        <li>
-          Space Marines in Power Armor like Intercessors, Tactical Marines,
-          Bladeguard Veterans, Eliminators, Infernius Squad and many others;
-        </li>
-        <li>
-          Chaos Space Marines, for example Legionaries, Rubric Marines and
-          Khorne Berzerkers;
-        </li>
-        <li>Tau Stealth Battlesuits;</li>
-        <li>Eldar Shining Spears</li>
-      </ul>
-
-      <p>
-        With many pure MEQ units, there is an even larger number of units that
-        are near analogs:
-      </p>
-
-      <ul role="list">
-        <li>Company Heroes are MEQ with 4 wounds instead of 2;</li>
-        <li>Tyranid Barbgaunts are MEQ with a Save of 4+ instead of 3+;</li>
-        <li>
-          Eldar Windriders and Dark Eldar Reavers are MEQ with Save of 4+ and
-          Invulnerable Save of 6+;
-        </li>
-        <li>
-          Necron Immortals are MEQ with 1 Wound, but their faction ability
-          <em>Reanimation Protocols</em> brings them pretty close to pure MEQ.
-        </li>
-      </ul>
-
-      <p>
-        To stand even odds against Marines with 4 Toughness 2 Wounds you are
-        looking for at least a 4 Strength weapon, preferably dealing 2 Damage.
-        More is misspent.
-      </p>
-
-      <Callout>
-        <div className="flex-wrapper font-bold">
-          <GiBolterGun /> <span>Weapons vs MEQ</span>
-        </div>
+        <ul role="list">
+          <li>
+            Space Marines in Power Armor like Intercessors, Tactical Marines,
+            Bladeguard Veterans, Eliminators, Devastators, Infernius Squad and
+            many others;
+          </li>
+          <li>
+            Chaos Space Marines like Legionaries, Rubric Marines and Khorne
+            Berzerkers;
+          </li>
+          <li>Tau Stealth Battlesuits;</li>
+          <li>Eldar Shining Spears.</li>
+        </ul>
 
         <p>
-          A <em>Lasgun</em> A1|S3|AP0|D1 would struggle to do a dent with 1
-          Damage and Strength 3 to Toughness 4 (wounds on 5+).
+          <strong>Loose examples</strong> are units that resemble Marines but
+          differ in durability or saves.
         </p>
+
+        <ul>
+          <li>Company Heroes are MEQ with double the wounds;</li>
+
+          <li>Necron Lychguard are MEQ with better Toughness;</li>
+
+          <li>
+            Tyranid Genestealers and Barbgaunts are MEQ with weaker armor saves.
+          </li>
+          <li>
+            Necron Immortals are MEQ with 1 Wound, but their faction ability
+            <em>Reanimation Protocols</em> brings them pretty close to pure MEQ.
+          </li>
+          <li>
+            Eldar Windriders and Dark Eldar Reavers are MEQ with Sv4+/6++;
+          </li>
+
+          <li>Ork Nobz are Marines with better toughness, but worse armor.</li>
+        </ul>
+      </Section>
+
+      <Section title="TEQ (Terminator Equivalent)" id="teq">
+        <Image
+          src={terminators}
+          alt="A squad of Space Marine Terminators."
+          className="profile-img object-[0%_55%]"
+        />
+
+        <div className="box text-lg font-bold text-center">T5|Sv2+/4++|W3</div>
 
         <p>
-          A <em>Boltgun</em> A2|S4|AP0|D1 is still inefficient with 1 Damage but
-          will do better with 2 Attacks and 4 Strength (50% chance to wound).
+          <strong>TEQ</strong> stands for <strong>Terminator Equivalent</strong>
+          . These units represent <strong>elite heavy infantry</strong>, tougher
+          than Marines due to better armor, more wounds, or invulnerable saves.
+          This means{' '}
+          <strong>
+            high AP weapons have diminishing returns, and multi-damage weapons
+            become more important
+          </strong>
+          . Heavy infantry is tougher, but fills a similar battlefield role.
         </p>
 
-        <p>
-          The <em>Heavy Bolter</em>’s profile A3|S5|AP-1|D2 is optimal against
-          Marine equivalents with Strength 5 (wounds on 3+), some AP to reduce
-          the Save to 4+ and 2 wounds.
-        </p>
+        <p>Strong examples:</p>
 
-        <p>
-          A supercharged <em>Plasma Cannon</em> AD3|S8|AP-3|D2 will decimate a
-          MEQ (wounds on 2+, reduces Save to 6+), but is dangerous to the
-          operator.
-        </p>
+        <ul>
+          <li>Space Marine and Chaos Terminators;</li>
 
-        <p>
-          At close range, the <em>Power Fist</em> A3|S8|AP-1|D2 is apt to
-          perform well against MEQ.
-        </p>
-      </Callout>
+          <li>Grey Knight Paladins;</li>
+        </ul>
 
-      <h2>Movement</h2>
+        <p>Loose examples:</p>
 
-      <p>With movement things are much simpler.</p>
+        <ul>
+          <li>
+            Adeptus Custodes units (e.g. Wardens, Allarus Custodians and
+            Custodian Guard) are TEQ with various Toughness;
+          </li>
 
-      <ul role="list">
-        <li>
-          Most <strong>models on foot</strong> will have <strong>M6"</strong>.
-          Heavy infantry units may have M5", while Eldar battleline units tend
-          to have M7".
-        </li>
-        <li>
-          Most <strong>vehicles and infantry equipped with jump packs</strong>{' '}
-          normally have <strong>M12"</strong>.
-        </li>
-        <li>
-          Models <strong>hovering</strong> over the ground tend to have{' '}
-          <strong>M14"</strong>, while <strong>flying units</strong> –{' '}
-          <strong>M20"</strong>.
-        </li>
-      </ul>
+          <li>
+            Tau Crisis Battlesuits are TEQ with worse Saves, but more Wounds;
+          </li>
+
+          <li>
+            Imperial Guard Bullgryns are TEQ with better Toughness but worse
+            Saves.
+          </li>
+
+          <li>Eldar Wraithguard are TEQ with T6 and no invulnerable save.</li>
+        </ul>
+      </Section>
+
+      <Section title="GEQ (Guard Equivalent)" id="geq">
+        <Image
+          src={guardsmen}
+          alt="A squad of Imperial Guard Cadia Shock Troops."
+          className="profile-img object-[0%_25%]"
+        />
+
+        <div className="box text-lg font-bold text-center">T3|Sv5+|W1</div>
+      </Section>
     </>
   )
 }
