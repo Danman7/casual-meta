@@ -362,6 +362,13 @@ export default async function Page() {
           <strong>fail</strong>.
         </p>
 
+        <p>
+          This <strong>whole sequence</strong> for a given weapon is often
+          called <strong>an activation</strong>. The more attacks a weapon
+          makes, the more activations it has, thus better chance to score a
+          wound.
+        </p>
+
         <div className="example">
           <p>
             Heavy Intercessors fire 5 heavy bolt rifles at a squad of Ork Boyz
