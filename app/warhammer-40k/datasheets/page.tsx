@@ -4,6 +4,8 @@ import Link from 'next/link'
 import datasheet from '@/app/assets/wh40k/datasheet.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { Section } from '@/app/ui/Section'
+import { Table } from '@/app/ui/Table'
+import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
 
@@ -24,57 +26,93 @@ export default async function Page() {
       <h1 className="page-title">{navTitle}</h1>
       <Section>
         <p>
-          For every unit there is a datasheet. It clarifies the rules that unit
-          follows and its available loadouts.{' '}
-          <Link href={wh40kRoute('The Battle Round')}>The Battle Round</Link> is
-          tightly connected to datasheets. One explains the phases of the game,
-          while the other describes how well the given unit is likely to perform
-          in each phase.
+          A unit's datasheet is a card, that describes it's profile and lists
+          available loadouts, special rules and access to support trough
+          keywords. Every unit eligible to play has a datasheet.
         </p>
+
         <Image src={datasheet} alt="Space Marine Terminators Datasheet" />
+
         <p className="lead">
-          All stats deal with probability and dice roll gates. Better
-          characteristics mean better consistency, not certainty.
+          All characteristics deal with probability and dice rolls. Better stats
+          mean better consistency, not certainty.
         </p>
       </Section>
 
       <Section title="Unit Profiles" id="unit-profiles">
         <p>
-          Underneath the unit name, there are 6 characteristics. They tell the
-          tale of its durability, speed, objective pressure and how likely it is
-          to become{' '}
-          <Link href={`${wh40kRoute('The Battle Round')}#battle-shock-tests`}>
+          Underneath the name of the datasheet there are 6 characteristics. They
+          form the unit's profile. It gives insight on how well the unit is
+          likely to perform during different phases of the{' '}
+          <Link href={wh40kRoute('The Battle Round')}>Battle Round</Link>
+          {/* <Link href={`${wh40kRoute('The Battle Round')}#battle-shock-tests`}>
             battle-shocked
-          </Link>
+          </Link> */}
           .
         </p>
 
-        <h3 id="movement">Movement (M")</h3>
+        <h3 id="movement">Move (M")</h3>
+
+        <p>Higher is better.</p>
 
         <p>
-          This is the{' '}
+          Move is{' '}
           <strong>
-            maximum amount of inches the unit can move without modifiers
+            the maximum amount of inches the unit can move, advance or fall back
+            in a single turn, without modifiers.
           </strong>{' '}
-          during the{' '}
+          A higher number means more options to reposition, following the rules
+          of the{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
             movement phase
           </Link>
-          . Even with debuffs, it can never be less than 1". Most infantry has a
-          M6" plus-minus 1". Assault troups and skirmish vehicles are usually
-          around M12". Flyers - around M20".
+          . Larger models pay additionaly for pivoting to change direction
+          during a move. M" can never be zero.
+        </p>
+
+        <p>
+          Most infantry has M6" ± 1. Assault troups and skirmish vehicles are
+          usually around M12", while flyers - around M20".
         </p>
 
         <h3 id="toughness">Toughness (T)</h3>
+
+        <p>Higher is better.</p>
+
+        <p>
+          When any{' '}
+          <Link href={`${wh40kRoute('The Battle Round')}#making-attacks`}>
+            attack is made
+          </Link>{' '}
+          against the model the{' '}
+          <strong>
+            weapon's Strength is compared to the target's Toughness during wound
+            rolls
+          </strong>
+          .
+        </p>
+
+        <Table columns={woundRollColumns} data={woundRollRows} />
 
         <p>
           The{' '}
           <strong>
             tougher a model is, the stroger the weapon must be to be more likely
-            score a wound
+            to score a wound
           </strong>
-          . Unit Toughness is directly related to the Strength of the weapon
-          that is being used against it.
+          . Weapons with equal Strength to the target's Toughness have a 50%
+          chance to wound. Weapons that have higher Strength than the target's
+          Toughness are considered effective at 2/3 chance to wound. Weapons
+          with less Strength tend to have a hard time making a dent.
+        </p>
+
+        <h3 id="save">Save (Sv) and Invulnerable Save</h3>
+
+        <p>Lower is better.</p>
+
+        <p>
+          Save or Armor Save is another check after the weapon has scored a
+          wound against the unit, if that wound actually deals damage.
         </p>
       </Section>
     </>

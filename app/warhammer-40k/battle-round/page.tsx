@@ -3,7 +3,8 @@ import { TbArrowBigDown } from 'react-icons/tb'
 import { WH40K_TITLE } from '@/app/constants'
 import { DiceRoll } from '@/app/ui/DiceRoll'
 import { Section } from '@/app/ui/Section'
-import { Table, type TableColumn } from '@/app/ui/Table'
+import { Table } from '@/app/ui/Table'
+import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 3
@@ -15,55 +16,13 @@ export const metadata = generatePageMetadata(
   'Understand the sequence of turns in Warhammer 40k.',
 )
 
-interface WoundRollRow {
-  strengthVsToughness: string
-  requiredRoll: string
-}
-
-const woundRollColumns: TableColumn<WoundRollRow>[] = [
-  {
-    id: 'strengthVsToughness',
-    header: 'Strength vs Toughness',
-    accessor: (row) => row.strengthVsToughness,
-  },
-  {
-    id: 'requiredRoll',
-    header: 'Roll Needed to Wound',
-    accessor: (row) => row.requiredRoll,
-    align: 'center',
-  },
-]
-
-const woundRollRows: WoundRollRow[] = [
-  {
-    strengthVsToughness: 'Strength is at least double Toughness (S >= 2xT)',
-    requiredRoll: '2+',
-  },
-  {
-    strengthVsToughness: 'Strength is higher than Toughness (S > T)',
-    requiredRoll: '3+',
-  },
-  {
-    strengthVsToughness: 'Strength equals Toughness (S = T)',
-    requiredRoll: '4+',
-  },
-  {
-    strengthVsToughness: 'Strength is lower than Toughness (S < T)',
-    requiredRoll: '5+',
-  },
-  {
-    strengthVsToughness: 'Strength is half or less of Toughness (S <= T/2)',
-    requiredRoll: '6+',
-  },
-]
-
 export default async function Page() {
   return (
     <>
       <h1 className="page-title">{navTitle}</h1>
 
       <Section>
-        <div className="md:flex align-start gap-4">
+        <div className="md:flex gap-4 items-start">
           <div className="box md:w-1/2 md:text-lg flex flex-col gap-2 place-items-center">
             <div>1. Command Phase</div> <TbArrowBigDown />
             <div>2. Movement Phase</div> <TbArrowBigDown />
@@ -351,11 +310,19 @@ export default async function Page() {
           effect="If result is greater than the Ballistic Skill (BS) for ranged weapons or Weapon Skill (WS) for melee, the attack connects."
         />
 
+        <p>
+          An unmodified roll of 6 is a <strong>critical hit</strong>.
+        </p>
+
         <DiceRoll
           title="Roll to wound (only if the attack hits)"
           dice="D6"
           effect="The result follows a table based on how much higher or lower the weapon's Strength (S) is compared to the target's Toughness (T)."
         />
+
+        <p>
+          An unmodified roll of 6 is a <strong>critical wound</strong>.
+        </p>
 
         <Table columns={woundRollColumns} data={woundRollRows} />
 
@@ -383,11 +350,16 @@ export default async function Page() {
         />
 
         <p>
-          After all three rolls are done, if the attack hits, wounds, and the
-          armor save fails, damage is inflicted. The target loses{' '}
+          After all 3 rolls are done, if the attack hits, wounds, and the armor
+          save fails, damage is inflicted. The target loses{' '}
           <strong>wounds equal to the Damage (D) of the weapon</strong>. If the
           attack has more D than is required to kill the target model, the
           excess is lost.
+        </p>
+
+        <p>
+          An unmodified roll of 1, for any of the 3 rolls, is always a{' '}
+          <strong>fail</strong>.
         </p>
 
         <div className="example">
