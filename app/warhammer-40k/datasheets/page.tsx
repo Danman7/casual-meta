@@ -425,6 +425,87 @@ export default async function Page() {
           </p>
         </div>
       </Section>
+
+      <Section title="Common weapon abilities" id="weapon-abilities">
+        <p>
+          Next to the names of some weapons on a datasheet you may see keywords
+          with no description like "Assault" or "Blast". These are common
+          abilities or Universal Special Rules (USRs) that are shared between
+          many weapons.
+        </p>
+
+        <p>
+          These always apply only to models that have equipped the given weapon
+          with the specific keyword.
+        </p>
+
+        <h3 id="movement-based">Movement based</h3>
+
+        <ul>
+          <li>
+            <strong>Assault</strong>: Can be fired even after Advancing.
+          </li>
+
+          <li>
+            <strong>Heavy</strong>: If the unit didn't move during Movement
+            Phase, add +1 to Hit.
+          </li>
+        </ul>
+
+        <h3 id="range-based">Range based</h3>
+
+        <ul>
+          <li>
+            <strong>Rapid Fire X</strong>: If the target is within half range,
+            add +X attacks.
+          </li>
+
+          <li>
+            <strong>Melta X</strong>: If the target is within half range, add +X
+            damage.
+          </li>
+
+          <li>
+            <strong>Pistol</strong>: Can be fired even in Engagement range.
+          </li>
+        </ul>
+
+        <h3 id="hit-roll-effects">Hit Roll Effects</h3>
+
+        <ul>
+          <li>
+            <strong>Torrent</strong>: Attacks automatically hit.
+          </li>
+
+          <li>
+            <strong>Sustained Hits X</strong>: Critical Hit (roll of 6)
+            generates X extra hits.
+          </li>
+
+          <li>
+            <strong>Lethal Hits</strong>: Critical Hit automatically wounds.
+          </li>
+        </ul>
+
+        <h3 id="hit-roll-effects">Hit Roll Effects</h3>
+
+        <ul>
+          <li>
+            <strong>Devastating Wounds</strong>: Critical Wounds deal mortal
+            wounds equal to the weapon’s damage. No saves allowed.
+          </li>
+
+          <li>
+            <strong>Twin-linked</strong>: Re-roll wound rolls.
+          </li>
+
+          <li>
+            <strong>Anti-KEYWORD X+</strong>: When rolling to wound against a
+            unit that has that keyword in their datasheet, rolls of X+ become
+            critical Wounds.
+          </li>
+        </ul>
+      </Section>
     </>
   )
 }
