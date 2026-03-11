@@ -337,6 +337,13 @@ export default async function Page() {
           target has them.
         </p>
 
+        <p>
+          <strong>
+            The owner of the target, not the attacker, allocates which models
+            take the wounds.
+          </strong>
+        </p>
+
         <DiceRoll
           title="Roll to save"
           dice="D6"

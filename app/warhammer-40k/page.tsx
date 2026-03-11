@@ -127,6 +127,16 @@ export default async function Page() {
           during movement phase), it can be written as D6", which means roll a
           six-sided dice and add the result as inches.
         </p>
+
+        <h3 id="re-rolls">Re-rolls</h3>
+
+        <p>
+          There are a great many rules that allow players to re-roll certain
+          results. When this applies, they get to{' '}
+          <strong>choose which dice to re-roll</strong>, but they can only do it{' '}
+          <strong>only once</strong>. You must re-roll all dice if several need
+          adding together (e.g. 2D6, 3D6).
+        </p>
       </Section>
     </>
   )

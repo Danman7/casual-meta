@@ -244,6 +244,27 @@ export default async function Page() {
 
         <p>Most units have either OC1 or OC2.</p>
       </Section>
+
+      <Section title="Keywords and Special Rules" id="keywords">
+        <p>
+          <strong>Keywords handle interactions.</strong> For example, some
+          abilities and weapons can target only units that have the{' '}
+          <em>Infantry</em> keyword. Some stratagems may be used only by units
+          with the <em>Grenade</em> keyword. Units from different factions with
+          the <em>Imperium</em> keyword can be mixed in the same army list. The
+          relationships are numerous and keywords simplify this.
+        </p>
+
+        <p>
+          <strong>
+            Special rules handle abilities unique for the given unit.
+          </strong>{' '}
+          For example, <em>Implacable Eradication</em> allows{' '}
+          <em>Necrons Immortals</em>, and only them, to re-roll certain wound
+          rolls under certain conditions. Many of the
+        </p>
+      </Section>
+
       <Section title="Weapon Profiles" id="weapon-profiles">
         <p>
           Every unit has several weapons available. Who and when can equip them
@@ -430,8 +451,8 @@ export default async function Page() {
         <p>
           Next to the names of some weapons on a datasheet you may see keywords
           with no description like "Assault" or "Blast". These are common
-          abilities or Universal Special Rules (USRs) that are shared between
-          many weapons.
+          abilities or <em>Universal Special Rules</em> (USRs) that are shared
+          between many weapons.
         </p>
 
         <p>
@@ -487,7 +508,7 @@ export default async function Page() {
           </li>
         </ul>
 
-        <h3 id="hit-roll-effects">Hit Roll Effects</h3>
+        <h3 id="wound-roll-effects">Wound Roll Effects</h3>
 
         <ul>
           <li>
@@ -505,6 +526,122 @@ export default async function Page() {
             critical Wounds.
           </li>
         </ul>
+
+        <h3 id="attack-generation">Attack Generation</h3>
+
+        <ul>
+          <li>
+            <strong>Blast</strong>: +1 attack per 5 models in target unit.
+            Cannot target units in Engagement Range.
+          </li>
+
+          <li>
+            <strong>Extra Attacks</strong>: Allows attacking with this weapon in
+            addition to the main melee weapon during Fight Phase.
+          </li>
+        </ul>
+
+        <h3 id="others">Others</h3>
+
+        <ul>
+          <li>
+            <strong>Precision</strong>: When attacking an Attached unit, you may
+            allocate the wound to a visible character. Normally this is done by
+            the defening player.
+          </li>
+
+          <li>
+            <strong>Hazardous</strong>: After attacking, roll 1D6 per Hazardous
+            weapon used. On 1 deal 3 mortal wounds to the bearer.
+          </li>
+        </ul>
+      </Section>
+
+      <Section title="Tactical overview" id="tactical-overview">
+        <p>
+          After knowing how the{' '}
+          <Link href={wh40kRoute('The Battle Round')}>Battle Round</Link> works,
+          combining it with the profiles can give you a bigger picture of the
+          game flow. Even with changes between editions, some core mechanics
+          remain.
+        </p>
+
+        <h3 id="attack-sequence">The attack sequence</h3>
+
+        <p>
+          Warhammer 40,000 is built on <strong>layered dice rolls</strong>. Even
+          before positioning and range, a standard attack must pass through at
+          least a{' '}
+          <strong>
+            Hit, Wound and Save roll. Each step can cause the attack to fail.
+          </strong>
+        </p>
+
+        <p>Some abilities bypass parts of the sequence:</p>
+
+        <ul>
+          <li>Torrent skips the hit roll.</li>
+
+          <li>Lethal Hits can bypass the wound roll on critical hits.</li>
+
+          <li>High AP can effectively bypass armor saves.</li>
+        </ul>
+
+        <p>
+          Even so, nothing is guaranteed. An attack hitting on 2+, wounding on
+          2+, with no save allowed, still only succeeds about two-thirds of the
+          time. That is reliable, but not certain. In competitive play,
+          consistent output is often more valuable than theoretical maximum
+          damage. That is why, as discussed, more dice throws even out the
+          variances.
+        </p>
+
+        <h3 id="sustained-vs-lethal">Sustained Hits vs. Lethal Hits</h3>
+
+        <ul>
+          <li>
+            <strong>Sustained Hits</strong> increases total hits. It is
+            strongest when you are already wounding efficiently (4+ or better)
+            and against multi-model units.
+          </li>
+
+          <li>
+            <strong>Lethal Hits</strong> bypasses the wound roll on critical
+            hits. It is stronger when wounding is difficult (5+ or worse).
+          </li>
+        </ul>
+
+        <h3 id="rerolls-and-criticals">Rerolls and criticals</h3>
+
+        <p>
+          <strong>
+            Re-rolls are stronger when the starting value is better.
+          </strong>{' '}
+          Re-rolling a 3+ is more valuable than re-rolling a 5+, because more of
+          your initial results are already successes. That also means re-rolls
+          scale extremely well when layered onto already efficient profiles.
+        </p>
+
+        <p>
+          Re-rolls{' '}
+          <strong>
+            gain additional value when paired with critical-triggered abilities
+          </strong>{' '}
+          (roll of 6) like Sustained Hits X, Lethal Hits, and Devastating
+          Wounds.
+        </p>
+
+        <p>
+          Re-rolling to hit increases the number of critical hits you generate.
+          One can try to re-roll even successful non-critical hits to convert
+          them into criticals ones. This is referred to as "fishing".
+        </p>
+
+        <p>
+          Re-rolling wound rolls increases the chance to trigger Devastating
+          Wound, making combinations like Devastating Wounds, Twin-linke rare
+          but extremely powerful.
+        </p>
       </Section>
     </>
   )
