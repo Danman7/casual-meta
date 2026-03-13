@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import guardsmen from '@/app/assets/wh40k/CadianShockTroops.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
+import rhino from '@/app/assets/wh40k/rhino.webp'
 import terminators from '@/app/assets/wh40k/terminators.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { Section } from '@/app/ui/Section'
@@ -135,19 +136,43 @@ export default async function Page() {
         <div className="box text-lg font-bold text-center">T3|Sv5+|W1</div>
 
         <p>
-          <strong>GEQ</strong> means <em>Guard Equivalent</em>, representing{' '}
-          <strong>light infantry</strong>. These are the typical Astra Militarum
-          units (e.g. Cadian Shock Troops, Catachan Jungle Fighters), Tyranid
-          battleline (Termagants, Hormagaunts and Hormagaunts), Chaos Cultists
-          and any unit where 10-20 models is the standard.
+          <strong>GEQ</strong> means <em>Guardsman Equivalent</em>, representing{' '}
+          <strong>light infantry</strong> like the Imperial Guard battleline.
+          Any unit where the default count is 10-20 models, e.g. Cadian Shock
+          Troops, Catachan Jungle Fighters, Tyranid Termagant and Hormagaunts,
+          Chaos Cultists, is usually GEQ.
         </p>
 
         <p>
-          GEQ are <strong>not durable, they are numerous</strong>. High damage,
-          high strength weapons step down in effectiveness to{' '}
-          <strong>large volumes of attacks</strong>. Bolters, lasguns, flamers,
-          and blast weapons are particularly successful against GEQ. Prefer D1
-          weapons. Extra Damage per hit is wasted.
+          Most any weapon can deal with light infantry as they're{' '}
+          <strong>not durable</strong>. That's not the point. They{' '}
+          <strong>win through numbers</strong> instead. High strength and damage
+          weapons are overkill and not necessarily effective at removing a lot
+          of models at once. Ergo, <strong>large volumes of D1 attacks</strong>{' '}
+          is superior. Bolters, lasguns, flamers, and blast weapons are
+          particularly successful against GEQ.
+        </p>
+
+        <h3 id="vehicles-and-monsters">Vehicles and Monsters</h3>
+
+        <Image
+          src={rhino}
+          alt="A Space Marine Rhino transport vehicle."
+          className="profile-img sm:max-h-76 object-[0%_0%]"
+        />
+
+        <p>
+          Non-infantry units have a{' '}
+          <strong>much higher variety in statlines</strong>, but one can still
+          identify a light, medium and heavy archetypes around the Melta and
+          Lascannon strength. These weapons have high AP to begin with, so units
+          with invulnerable saves fare better on the field.
+        </p>
+
+        <p>
+          A profile <strong>similar to T9, W10 and Sv3+</strong>, like the
+          Rhino, Storm Speeder and regular Dreadnought can be considered a{' '}
+          <strong>light vehicle</strong>.
         </p>
       </Section>
     </>
