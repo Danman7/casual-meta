@@ -116,8 +116,8 @@ export default async function Page() {
         </p>
 
         <p>
-          Terminators are <strong>anchors</strong> or a "answer me or die" unit.{' '}
-          <strong>High AP has diminishing returns</strong> because of the
+          Terminators are <strong>anchors</strong> that stop advances and draw
+          fire. <strong>High AP has diminishing returns</strong> because of the
           Invulnerable saves. AP of -1-2 is optimal.{' '}
           <strong>
             Multi-damage weapons with higher strength become more important
@@ -165,14 +165,34 @@ export default async function Page() {
           Non-infantry units have a{' '}
           <strong>much higher variety in statlines</strong>, but one can still
           identify a light, medium and heavy archetypes around the Melta and
-          Lascannon strength. These weapons have high AP to begin with, so units
-          with invulnerable saves fare better on the field.
+          Lascannon strength. These weapons have high AP to begin with, so{' '}
+          <strong>units with invulnerable saves fare better</strong> on the
+          field.
         </p>
 
         <p>
           A profile <strong>similar to T9, W10 and Sv3+</strong>, like the
-          Rhino, Storm Speeder and regular Dreadnought can be considered a{' '}
-          <strong>light vehicle</strong>.
+          Rhino, Storm Speeder, regular Dreadnought or even flyers like the
+          Stormhawk Interceptor can be considered a{' '}
+          <strong>
+            light vehicle. Melta weapons at half range and grenade/missile
+            launchers in krak mode
+          </strong>{' '}
+          (both S9) tend to deal with them quickly, depending on the dice.
+        </p>
+
+        <p>
+          A step further, <strong>T10, W12</strong> would be a{' '}
+          <strong>medium vehicle</strong>. A Redemptor Dreadnought, or a W14
+          Chaos Knight Executioner with an Invulnerable save will give the
+          Meltas a hard time. The Lascannon is right at home here.
+        </p>
+
+        <p>
+          And then there is the ultimate "answer me or die" category - the{' '}
+          <strong>heavy vehicle</strong>. Even a Lasscannon needs a good roll to
+          fight a Land Raider, at <strong>T12, W16, Sv2+</strong>. These units
+          require supported focus fire.
         </p>
       </Section>
     </>
