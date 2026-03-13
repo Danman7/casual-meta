@@ -171,6 +171,12 @@ export default async function Page() {
         </p>
 
         <p>
+          When the unit has an Invulnerable Save it will be marked like
+          SvN+/N++. For example, Sv4+/6++ means the unit has a regular Save of
+          4+ and an Invulnerable Save of 6++.
+        </p>
+
+        <p>
           Invulnerable saves exist on durable targets and come in handy against
           attacks with high AP.
         </p>
