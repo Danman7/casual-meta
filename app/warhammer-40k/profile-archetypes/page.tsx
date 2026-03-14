@@ -178,7 +178,7 @@ export default async function Page() {
             light vehicle. Melta weapons at half range and grenade/missile
             launchers in krak mode
           </strong>{' '}
-          (both S9) tend to deal with them quickly, depending on the dice.
+          (both S9) tend to deal with them qu ickly, depending on the dice.
         </p>
 
         <p>

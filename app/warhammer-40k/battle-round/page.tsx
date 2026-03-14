@@ -1,7 +1,9 @@
 import { TbArrowBigDown } from 'react-icons/tb'
 
+import battleshock from '@/app/assets/wh40k/battle-shock.webp'
 import { WH40K_TITLE } from '@/app/constants'
 import { DiceRoll } from '@/app/ui/DiceRoll'
+import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Section } from '@/app/ui/Section'
 import { Table } from '@/app/ui/Table'
 import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
@@ -22,8 +24,8 @@ export default async function Page() {
       <h1 className="page-title">{navTitle}</h1>
 
       <Section>
-        <div className="md:flex gap-4 items-start">
-          <div className="box md:w-1/2 md:text-lg flex flex-col gap-2 place-items-center">
+        <div className="sm:flex gap-4 items-start">
+          <div className="box sm:w-1/2 sm:text-lg flex flex-col gap-2 place-items-center">
             <div>1. Command Phase</div> <TbArrowBigDown />
             <div>2. Movement Phase</div> <TbArrowBigDown />
             <div>3. Shooting Phase</div> <TbArrowBigDown />
@@ -31,7 +33,7 @@ export default async function Page() {
             <div>5. Fight Phase</div>
           </div>
 
-          <div className="md:w-1/2">
+          <div className="sm:w-1/2">
             <p>
               All formats of Warhammer 40,000 are played in rounds. Once all
               pre-battle setup is resolved, the first round begins. Depending on
@@ -116,6 +118,12 @@ export default async function Page() {
             </strong>
           </li>
         </ul>
+
+        <ImageWithCaption
+          src={battleshock}
+          alt="Termagaunts fail a battle-shock test"
+          caption="Termagaunts fail a battle-shock test. They have Ld 8+, but rolled a 6 on 2D6."
+        />
 
         <p>That is why lower Ld is better.</p>
 

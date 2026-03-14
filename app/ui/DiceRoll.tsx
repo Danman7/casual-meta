@@ -6,12 +6,12 @@ export const DiceRoll: React.FC<{
   dice: string
   effect: string
 }> = ({ title, dice, effect }) => (
-  <div className="my-4">
-    <div className="flavor">{title}:</div>
+  <div className="box">
+    <div className="flavor mb-1">{title}:</div>
     <div>
-      <FaDice className="inline text-2xl mr-2" />{' '}
-      <strong className="mr-2">Roll {dice}</strong>{' '}
-      <TbArrowBigRight className="inline mr-2" /> <span>{effect}</span>
+      <FaDice className="inline text-3xl mr-4" />{' '}
+      <strong className="mr-4">Roll {dice}</strong>{' '}
+      <TbArrowBigRight className="inline mr-4" /> <span>{effect}</span>
     </div>
   </div>
 )

@@ -5,7 +5,7 @@ export const Callout: React.FC<
   }>
 > = ({ children, title, className }) => (
   <div
-    className={`bg-surface rounded overflow-hidden shadow-sm my-4 ${className}`}
+    className={`bg-surface rounded overflow-hidden shadow-sm my-6 ${className}`}
     role="note"
     aria-label={title ? title.toString() : undefined}
   >

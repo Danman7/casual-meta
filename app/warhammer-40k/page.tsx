@@ -26,8 +26,8 @@ export default async function Page() {
             Core Rulebook
           </Link>{' '}
           describes Warhammer 40,000 as a tabletop wargame in which players
-          command armies of Citadel miniatures and attempt to defeat their
-          opponents through a mixture of skill, tactics, and luck.
+          command armies of miniatures and attempt to defeat their opponents
+          through a mixture of skill, tactics, and luck.
         </p>
 
         <Image
@@ -84,37 +84,45 @@ export default async function Page() {
           Warhammer 40,000 is a complex and ever-changing game. Our goal is to
           explain the rules as briefly as reasonable, then provide meaningful
           examples and analysis of the vast variety of characters, weapons, and
-          units.
+          units. We do this by summarizing the knowledge from the sources listed
+          above.
         </p>
 
         <p>
           We have chosen to sacrifice lore and rule edge cases for clarity and
-          simplicity.
+          simplicity. Our focus is casual and competative play.
         </p>
 
         <h3 id="dice-rolls">Dice rolls</h3>
 
-        <Image
-          src={dice}
-          alt="Space Marines doing battle with Chaos Space Marines"
-          className="article-img float-left mt-0 max-w-1/2 mr-4"
-        />
+        <div className="sm:flex gap-4 items-start">
+          <Image
+            src={dice}
+            alt="Space Marines doing battle with Chaos Space Marines"
+            className="article-img mt-0 sm:w-1/2"
+          />
 
-        <p>
-          Warhammer 40,000 is a game played with dice. This brings a degree of
-          chance/randomness to the game, making each battle unique,
-          unpredictable and perhaps a bit annoying at times.
-        </p>
+          <div className="sm:w-1/2">
+            <p className="mt-0">
+              Warhammer 40,000 is a game of dice. This brings a degree of
+              chance/randomness, making each battle unique, unpredictable and
+              perhaps a bit annoying at times.
+            </p>
 
-        <p>
-          <strong>A typical six-sided dice is called a D6</strong> - a common
-          abbreviation from dice games (e.g. Dungeons and Dragons). Most throws
-          use one or multiple D6s. If it's multiple the number will be added in
-          front like 3D6. Some state that a three-sided dice (D3) must be
-          rolled. In that case, split a regular D6 into three segments: 1 or 2 =
-          1, 3 or 4 = 2, 5 or 6 = 3. Dice throws are described with a section
-          like this one:
-        </p>
+            <p>
+              <strong>A typical six-sided dice is called a D6</strong> - a
+              common abbreviation from dice games (e.g. Dungeons and Dragons).
+              Most throws use one or multiple D6s. If it's multiple the number
+              will be added in front like 3D6.
+            </p>
+            <p>
+              Some rules state that a <strong>three-sided dice (D3)</strong>{' '}
+              must be rolled. In that case, split a regular D6 into three
+              segments: <strong>1 or 2 = 1, 3 or 4 = 2, 5 or 6 = 3</strong>.
+              Dice throws are described with a section like this one:
+            </p>
+          </div>
+        </div>
 
         <DiceRoll
           title="Example dice roll"
@@ -123,9 +131,13 @@ export default async function Page() {
         />
 
         <p>
-          In the case where a dice roll adds to movement inches (e.g. advancing
-          during movement phase), it can be written as D6", which means roll a
-          six-sided dice and add the result as inches.
+          In the case where a dice roll adds to <strong>movement inches</strong>{' '}
+          (e.g. advancing during movement phase), it can be written as{' '}
+          <strong>D6"</strong>, which means roll a six-sided dice and add the
+          result as inches. Another particular case is then a dice roll
+          determines the outcome of a <strong>datasheet attribute</strong>. For
+          example <strong>A6d</strong> means roll a six-sided dice and the
+          result is how many attacks the weapon makes.
         </p>
 
         <h3 id="re-rolls">Re-rolls</h3>

@@ -75,7 +75,7 @@
   }
 
   article p {
-    @apply my-4;
+    @apply my-6 text-justify;
   }
 
   hr {
@@ -83,11 +83,11 @@
   }
 
   article ul {
-    @apply ml-4.5 list-disc [&_ul]:list-[revert] [&_ul]:ml-4.5;
+    @apply ml-4 list-disc [&_ul]:list-[revert] [&_ul]:ml-4 text-justify;
   }
 
   article ol {
-    @apply ml-4.5 list-decimal;
+    @apply ml-4 list-decimal text-justify;
   }
 
   .page-title {
@@ -96,21 +96,21 @@
   }
 
   .section-title {
-    @apply scroll-mt-8 font-bold text-3xl mt-9 mb-4 tracking-tight;
+    @apply scroll-mt-8 font-bold text-3xl mt-8 mb-4 tracking-tight;
     line-height: 1.15;
   }
 
   section h3 {
-    @apply text-2xl mt-9 mb-4 tracking-tight scroll-mt-8;
+    @apply text-2xl mt-8 mb-4 tracking-tight scroll-mt-8;
     line-height: 1.15;
   }
 
   .article-img {
-    @apply my-4 rounded shadow-md;
+    @apply my-6 rounded shadow-md;
   }
 
   .profile-img {
-    @apply my-4 sm:max-h-56 object-cover rounded shadow-md;
+    @apply my-6 sm:max-h-56 object-cover rounded shadow-md;
   }
 
   .flavor {
@@ -118,7 +118,7 @@
   }
 
   .box {
-    @apply bg-surface rounded-lg p-4 my-4 shadow-md;
+    @apply bg-surface rounded-lg p-4 my-6 shadow-md;
   }
 
   .flex-wrapper {
@@ -134,7 +134,7 @@
   }
 
   .example {
-    @apply bg-surface rounded-lg p-4 my-4 shadow-md text-sm;
+    @apply bg-surface rounded-lg p-4 my-6 shadow-md text-sm;
 
     p {
       @apply first:mt-0 last:mb-0;

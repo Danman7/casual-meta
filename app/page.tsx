@@ -47,34 +47,36 @@ export default function Page() {
         </Callout>
       </Section>
 
-      <Section className="max-w-3xl mx-auto">
-        <p>
-          The Casual Meta brings together community knowledge from YouTube,
-          Reddit, official and unofficial guides, forums and wikis. The goal is
-          to extract simple ideas from the multitude of sources out there, so
-          you can focus on improving. The articles here are designed for{' '}
-          <em>players</em> who:
-        </p>
+      <article>
+        <Section className="max-w-3xl mx-auto">
+          <p>
+            The Casual Meta brings together community knowledge from YouTube,
+            Reddit, official and unofficial guides, forums and wikis. The goal
+            is to extract simple ideas from the multitude of sources out there,
+            so you can focus on improving. The articles here are designed for{' '}
+            <em>players</em> who:
+          </p>
 
-        <ul role="list">
-          <li>Want to get into a game, but feel intimidated;</li>
-          <li>
-            Are playing a game for some time, but feel a lack of progress or
-            connection;
-          </li>
-          <li>
-            Like to explore concepts, but are overwhelmed by the amount of
-            information available.
-          </li>
-        </ul>
+          <ul role="list">
+            <li>Want to get into a game, but feel intimidated;</li>
+            <li>
+              Are playing a game for some time, but feel a lack of progress or
+              connection;
+            </li>
+            <li>
+              Like to explore concepts, but are overwhelmed by the amount of
+              information available.
+            </li>
+          </ul>
 
-        <p>
-          META means "most effective tactics available". This often refers to
-          techniques which are challenging for casual players. Hence the name
-          Casual Meta infers the pivot on consistency over the "best possible"
-          outcoume.
-        </p>
-      </Section>
+          <p>
+            META means "most effective tactics available". This often refers to
+            techniques which are challenging for casual players. Hence the name
+            Casual Meta infers the pivot on consistency over the "best possible"
+            outcoume.
+          </p>
+        </Section>
+      </article>
     </main>
   )
 }
