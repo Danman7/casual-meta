@@ -1,13 +1,23 @@
-import { TbArrowBigDown } from 'react-icons/tb'
+import Image from 'next/image'
+import Link from 'next/link'
+import { FaCrosshairs } from 'react-icons/fa'
+import { LuCrown } from 'react-icons/lu'
+import { RiSwordLine } from 'react-icons/ri'
+import { RxDoubleArrowUp } from 'react-icons/rx'
+import { TbArrowBigDown, TbArrowBigUpLines } from 'react-icons/tb'
 
-import battleshock from '@/app/assets/wh40k/battle-shock.webp'
-import { WH40K_TITLE } from '@/app/constants'
+import advance from '@/app/assets/wh40k/advance.webp'
+import halfstrength from '@/app/assets/wh40k/half-strength.webp'
+import movement from '@/app/assets/wh40k/move.webp'
+import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { DiceRoll } from '@/app/ui/DiceRoll'
+import { HorizontalRulerText } from '@/app/ui/HorizontalRulerText'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Section } from '@/app/ui/Section'
 import { Table } from '@/app/ui/Table'
 import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
+import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 3
 
@@ -18,39 +28,78 @@ export const metadata = generatePageMetadata(
   'Understand the sequence of turns in Warhammer 40k.',
 )
 
+const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
+
 export default async function Page() {
   return (
     <>
       <h1 className="page-title">{navTitle}</h1>
 
       <Section>
-        <div className="sm:flex gap-4 items-start">
-          <div className="box sm:w-1/2 sm:text-lg flex flex-col gap-2 place-items-center">
-            <div>1. Command Phase</div> <TbArrowBigDown />
-            <div>2. Movement Phase</div> <TbArrowBigDown />
-            <div>3. Shooting Phase</div> <TbArrowBigDown />
-            <div>4. Charge Phase</div> <TbArrowBigDown />
-            <div>5. Fight Phase</div>
+        <div className="sm:flex gap-6 items-start">
+          <div className="box sm:w-1/2 flex flex-col gap-2 place-items-center">
+            <div className="flex flex-col items-center">
+              <div className="flex-wrapper lead">
+                1. Command Phase <LuCrown />
+              </div>
+              <div className="flavor">Gain CP and check Leadership (Ld)</div>
+            </div>
+            <TbArrowBigDown />
+            <div className="flex flex-col items-center">
+              <div className="flex-wrapper lead">
+                2. Movement Phase <TbArrowBigUpLines />
+              </div>
+              <div className="flavor">Reposition up to Movement (M")</div>
+            </div>
+            <TbArrowBigDown />
+            <div className="flex flex-col items-center">
+              <div className="flex-wrapper lead">
+                3. Shooting Phase <FaCrosshairs />
+              </div>
+              <div className="flavor">Resolve ranged attacks</div>
+            </div>
+            <TbArrowBigDown />
+            <div className="flex flex-col items-center">
+              <div className="flex-wrapper lead">
+                4. Charge Phase <RxDoubleArrowUp />
+              </div>
+              <div className="flavor">Declare charges and move into melee</div>
+            </div>
+            <TbArrowBigDown />
+            <div className="flex flex-col items-center">
+              <div className="flex-wrapper lead">
+                5. Fight Phase <RiSwordLine />
+              </div>
+              <div className="flavor">Resolve melee attacks</div>
+            </div>
           </div>
 
           <div className="sm:w-1/2">
             <p>
-              All formats of Warhammer 40,000 are played in rounds. Once all
-              pre-battle setup is resolved, the first round begins. Depending on
-              the mission, the rounds continue until the battle ends (typically
-              after a fixed number of rounds).
+              Once you have mustered your army, selected a mission and
+              determined who goes first you are <strong>ready to play</strong> a
+              battle of Warhammer 40,000.
             </p>
 
             <p>
-              During a round, all players take a turn. Each player's turn is
-              divided into a sequence of phases. When it's your turn, you have
-              to go through all phases to pass the turn to the next player.
+              <strong>All battles are played in rounds.</strong> A typical
+              battle lasts 5 rounds, but that can vary between tournaments,
+              mission and player agreements.
             </p>
 
             <p>
-              In essence, a turn is to generate resources, test morale,
-              reposition, utilize ranged firepower, commit to melee, and
-              leverage consolidation to control space and objectives.
+              During a round, every player takes a turn.{' '}
+              <strong>A turn consists of 5 phases.</strong> The active player
+              goes through all the phases, then passes the turn to the next
+              player.{' '}
+              <strong>
+                Once all players have taken their turn, the round ends.
+              </strong>
+            </p>
+
+            <p>
+              The turn phases are key to understanding how to evaluate{' '}
+              <Link href={wh40kRoute('Datasheets')}>Datasheets</Link>.
             </p>
           </div>
         </div>
@@ -58,23 +107,26 @@ export default async function Page() {
 
       <Section title="1. Command Phase" id="command-phase">
         <p>
-          Every player's turn starts with the Command Phase. It follows this
-          sequence:
+          When it's time to begin your turn, you must first go through the
+          Command Phase. It's a sequence of just a few quick steps - usually the
+          shortest in the turn.
         </p>
 
         <ol>
           <li>
-            <strong>All players gain 1 command point (CP).</strong> CPs are a
-            resource spent on Stratagems.
+            Before everything else,{' '}
+            <strong>all players gain 1 command point (CP).</strong> CPs are a
+            resource spent to activate Stratagems.
           </li>
 
           <li>
-            Resolve any rules that occur in the Command Phase (the rule will
-            state so).
+            After gaining a CP, resolve any rules that occur in the Command
+            Phase (the rule will state so).
           </li>
 
           <li>
-            The active player takes <strong>Battle-shock</strong> tests for{' '}
+            After resolving the above, only the active player takes{' '}
+            <strong>Battle-shock</strong> tests for{' '}
             <strong>all their units below half-strength</strong>.
           </li>
         </ol>
@@ -82,52 +134,66 @@ export default async function Page() {
         <h3 id="battle-shock-tests">Battle-shock tests</h3>
 
         <p>
-          It's the end of your Command Phase. Check if you have any of the
-          following:
+          If it's the end of your Command Phase, survey if you have units that
+          are below half of their <strong>starting strength</strong>. If the
+          answer is yes, every such unit must take a battle-shock test.
         </p>
 
         <ul>
           <li>
-            A <strong>single model</strong> (e.g. a character, vehicle) that{' '}
+            If a unit consisting of a <strong>single model</strong>, like a
+            character, monster or vehicle took some damage, check that{' '}
             <strong>has less than half wounds left</strong>.
           </li>
 
           <li>
-            A <strong>multi-model unit</strong> that{' '}
-            <strong>has less than half of its starting models left</strong>,
-            including attached leaders.
+            If a <strong>multi-model unit</strong>, like a squad, has taken some
+            damage, check if it{' '}
+            <strong>has less than half of its starting models left</strong>.
           </li>
-        </ul>
 
-        <p>
-          If the answer is yes, every such unit must take a battle-shock test.
-        </p>
-
-        <DiceRoll
-          title="Battle-shock test"
-          dice="2D6"
-          effect="Compare the result to tested unit's highest Leadership (Ld)."
-        />
-
-        <ul>
-          <li>If the result is higher than the Ld, nothing happens.</li>
           <li>
+            If you are checking a{' '}
             <strong>
-              If the result is lower, the unit is shocked: its Objective Control
-              (OC) becomes 0 and it cannot be affected by Stratagems.
+              squad with an attached leader, include his model to the count
             </strong>
+            . If the squad is gone, but the leader is still alive, you again
+            check for wounds.
           </li>
         </ul>
 
         <ImageWithCaption
-          src={battleshock}
-          alt="Termagaunts fail a battle-shock test"
-          caption="Termagaunts fail a battle-shock test. They have Ld 8+, but rolled a 6 on 2D6."
+          src={halfstrength}
+          alt="How to determine if a unit is below half-strength."
+          caption="Marneus Calgar on the left starts with 6 Wounds. At 2 Wounds he's below half-strength. The 10-man Intercessor Squad on the right has 4 models left, thus is also below half-strength."
         />
 
-        <p>That is why lower Ld is better.</p>
+        <DiceRoll
+          title="Battle-shock test"
+          dice="2D6"
+          effect={
+            <>
+              Compare the result to tested{' '}
+              <strong>unit's highest Leadership (Ld)</strong>, including
+              leaders. If the result is higher than the Ld, nothing happens.{' '}
+              <strong>If the result is lower</strong>, the unit is shocked and
+              its{' '}
+              <strong>
+                Objective Control (OC) becomes 0 and it cannot be affected by
+                Stratagems
+              </strong>
+              .
+            </>
+          }
+        />
 
-        <div className="example">
+        <p>
+          Battle-shock shuts down scoring and support efficiency. One player may
+          lock down all objectives, but if their opponent trades in enough
+          models, they have a chance to swing control.
+        </p>
+
+        <div className="box example">
           <p>
             A 10-man squad of Intercessors is down to 4 marines. They take the
             test (4/10 models) and score a 5. Since Intercessors have Ld of 6+,
@@ -140,47 +206,50 @@ export default async function Page() {
             has Ld of 5+, they would pass with a roll of 5.
           </p>
         </div>
-
-        <p>
-          Battle-shock shuts down scoring and support efficiency. One player may
-          lock down all objectives, but if their opponent trades in enough
-          models, they have a chance to swing control.
-        </p>
       </Section>
 
       <Section title="2. Movement Phase" id="movement-phase">
         <p>
-          The active player goes through{' '}
-          <strong>all units outside engagement range</strong> (1" horizontal, 5"
-          vertical) of an enemy, one at a time, and chooses whether each unit
-          will do one of the following:
+          After your Command Phase is over, it's time to choose which of your
+          units <strong>outside engagement range</strong> (1" horizontal, 5"
+          vertical of an enemy) are to <strong>reposition</strong>. They can
+          either:
         </p>
 
-        <ul>
-          <li>
-            <strong>Make a normal move:</strong> Move up to its Movement (M")
-            characteristic in inches.
-          </li>
+        <p>
+          <strong>Make a normal move:</strong> Move up to the unit's Movement
+          (M") characteristic in inches.
+        </p>
 
-          <li>
-            <strong>Advance:</strong> Roll D6 and add the result as inches to
-            its M" at the cost of being unable to shoot (unless the weapon has
-            Assault) or charge this turn.
-          </li>
+        <Image src={movement} alt="Movement example" />
 
-          <li>
-            <strong>Remain stationary:</strong> Do not move this turn. Some
-            weapons benefit from this.
-          </li>
-        </ul>
+        <HorizontalRulerText>OR</HorizontalRulerText>
 
-        <div className="example">
-          <p>
-            Standard infantry usually move up to 6". If you choose them to
-            advance and roll a 4, they can now move up to 10", but can only fire
-            weapons with the <em>Assault</em> keyword in the following phase.
-          </p>
-        </div>
+        <p className="font-bold">Make an advancing move</p>
+
+        <DiceRoll
+          dice="D6"
+          title="Advance dice roll"
+          effect={
+            <>
+              <strong>Add the result as inches to the unit's M"</strong> and
+              move that distance. You get to move the unit further, but it{' '}
+              <strong>
+                can only shoot weapons with the <em>Assault</em> keyword
+              </strong>{' '}
+              in the following phase.
+            </>
+          }
+        />
+
+        <Image src={advance} alt="Advancing move example" />
+
+        <p>
+          All units that did not move during this phase count as{' '}
+          <strong>remained stationary.</strong> They may gain benefits, usually
+          related to accuracy (rolls to hit) depending on their special rules or
+          their weapons keywords.
+        </p>
 
         <p>
           <strong>

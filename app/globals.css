@@ -5,6 +5,7 @@
   --foreground: hsl(10, 20%, 20%);
   --surface: hsl(10, 20%, 94%);
   --primary: hsl(10, 80%, 45%);
+  --secondary: hsl(250, 60%, 30%);
   --success: var(--color-green-600);
   --error: var(--color-red-600);
 }
@@ -15,6 +16,7 @@
     --foreground: hsl(10, 10%, 85%);
     --surface: hsl(10, 20%, 15%);
     --primary: hsl(10, 80%, 60%);
+    --secondary: hsl(250, 60%, 60%);
     --success: var(--color-green-400);
     --error: var(--color-red-400);
   }
@@ -25,6 +27,7 @@
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
   --color-success: var(--success);
   --color-error: var(--error);
   --font-serif: var(--font-noto-serif);
@@ -83,25 +86,25 @@
   }
 
   article ul {
-    @apply ml-4 list-disc [&_ul]:list-[revert] [&_ul]:ml-4 text-justify;
+    @apply ml-6 list-disc [&_ul]:list-[revert] [&_ul]:ml-6 text-justify space-y-1;
   }
 
   article ol {
-    @apply ml-4 list-decimal text-justify;
+    @apply ml-6 list-decimal text-justify space-y-1;
   }
 
   .page-title {
-    @apply text-5xl font-bold mt-9 mb-4 tracking-tight;
+    @apply text-5xl font-bold my-18 tracking-tight text-center;
     line-height: 1.15;
   }
 
   .section-title {
-    @apply scroll-mt-8 font-bold text-3xl mt-8 mb-4 tracking-tight;
+    @apply scroll-mt-8 font-bold text-3xl tracking-tight text-center my-12;
     line-height: 1.15;
   }
 
   section h3 {
-    @apply text-2xl mt-8 mb-4 tracking-tight scroll-mt-8;
+    @apply text-2xl mt-8 mb-4 tracking-tight scroll-mt-8 text-center;
     line-height: 1.15;
   }
 
@@ -118,7 +121,15 @@
   }
 
   .box {
-    @apply bg-surface rounded-lg p-4 my-6 shadow-md;
+    @apply bg-surface rounded-lg p-4 my-6 shadow-md border-t-2 border-primary;
+
+    p {
+      @apply first:mt-0 last:mb-0;
+    }
+  }
+
+  .example {
+    @apply border-secondary text-foreground/80 text-sm;
   }
 
   .flex-wrapper {
@@ -131,13 +142,5 @@
 
   .lead {
     @apply text-lg font-bold;
-  }
-
-  .example {
-    @apply bg-surface rounded-lg p-4 my-6 shadow-md text-sm;
-
-    p {
-      @apply first:mt-0 last:mb-0;
-    }
   }
 }

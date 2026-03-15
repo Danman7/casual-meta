@@ -10,16 +10,19 @@ export const ImageWithCaption: React.FC<{
   const captionId = useId()
 
   return (
-    <figure className="text-sm text-light space-y-2 my-6">
+    <figure className="overflow-hidden rounded-xl shadow-md text-light my-6">
       <Image
         src={src}
         alt={alt}
         aria-describedby={captionId}
-        className={`article-img ${className}`}
+        className={`${className}`}
       />
 
-      <figcaption id={captionId}>
-        <div className="flavor">{caption}</div>
+      <figcaption
+        className="bg-surface px-4 py-2 border-t-2 border-primary"
+        id={captionId}
+      >
+        <p className="my-0">{caption}</p>
       </figcaption>
     </figure>
   )

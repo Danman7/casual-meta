@@ -4,10 +4,10 @@ import { TbArrowBigRight } from 'react-icons/tb'
 export const DiceRoll: React.FC<{
   title: string
   dice: string
-  effect: string
+  effect: React.ReactNode
 }> = ({ title, dice, effect }) => (
   <div className="box">
-    <div className="flavor mb-1">{title}:</div>
+    <div className="mb-2">{title}:</div>
     <div>
       <FaDice className="inline text-3xl mr-4" />{' '}
       <strong className="mr-4">Roll {dice}</strong>{' '}
