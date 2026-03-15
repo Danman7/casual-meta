@@ -9,6 +9,7 @@ import { TbArrowBigDown, TbArrowBigUpLines } from 'react-icons/tb'
 import advance from '@/app/assets/wh40k/advance.webp'
 import halfstrength from '@/app/assets/wh40k/half-strength.webp'
 import movement from '@/app/assets/wh40k/move.webp'
+import pivot from '@/app/assets/wh40k/pivot.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { DiceRoll } from '@/app/ui/DiceRoll'
 import { HorizontalRulerText } from '@/app/ui/HorizontalRulerText'
@@ -264,9 +265,7 @@ export default async function Page() {
           movement on them.
         </p>
 
-        <p>
-          Units that already were engaged can either stay put, or fall back.
-        </p>
+        <p>Units that are already engaged can only stay put, or fall back.</p>
 
         <h3 id="fall-back">Fall Back</h3>
 
@@ -280,13 +279,9 @@ export default async function Page() {
         <DiceRoll
           title="Desperate escape test"
           dice="D6"
-          effect="On a 2 or less, the model is destroyed."
+          effect="On a 2 or less, the model is destroyed. Battle-shocked units always take a desperate escape test if they fall
+          back."
         />
-
-        <p>
-          Battle-shocked units always take a desperate escape test if they fall
-          back.
-        </p>
 
         <h3 id="pivoting">Pivoting</h3>
 
@@ -294,19 +289,29 @@ export default async function Page() {
           Units don't need to move only in straight lines. They can freely pivot
           and change direction as long as the move is within their M". However,{' '}
           <strong>
-            Vehicles and Monsters without round bases or Fly keyword, must
-            reduce their move by 2" if they pivot
+            Vehicles and Monsters without round bases or the <em>Fly</em>{' '}
+            keyword, must reduce their move by 2" every time they pivot
           </strong>
           . This prevents gaining extra distance through rotation tricks.
         </p>
 
+        <Image src={pivot} alt="Pivoting example" />
+
         <h3 id="transports">Transports</h3>
 
         <p>
-          Some units allow other units to <strong>embark</strong> on them{' '}
+          Some units, like the Rhino above, allow other units to{' '}
+          <strong>embark</strong> on them{' '}
           <strong>if every model ends a move wholly within 3" of them</strong>.
           Then the embarked unit can benefit from the transport's higher
-          mobility and possibly durability.
+          mobility, durability or both.
+        </p>
+
+        <p>
+          In the particular case of the Rhino, that unit is a{' '}
+          <strong>dedicated transport</strong>. This means that it cannot be
+          deployed on the battlefield empty. There must be at least one unit
+          embarked on a dedicated transport at the start of the battle.
         </p>
 
         <ul>
@@ -334,11 +339,8 @@ export default async function Page() {
           Both players may choose{' '}
           <strong>not to deploy some of their units</strong> at the beginning of
           the battle. These go into Strategic Reserves and{' '}
-          <strong>cannot exceed 25% of the total army points</strong>.
-        </p>
-
-        <p>
-          Reserved units may{' '}
+          <strong>cannot exceed 25% of the total army points</strong>. Reserved
+          units may{' '}
           <strong>
             join the battle, only at the very end of the movement phase
           </strong>
