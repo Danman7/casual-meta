@@ -585,21 +585,21 @@ export default async function Page() {
         </p>
 
         <p>
-          Units that are better at melee. Positioning matters. You can block
-          follow-up charges with your own units, or you can overcommit a large
-          squad and bog down your attack.
+          Units that are better at melee, naturally want to engage the enemy
+          earlier. It's often better to skip advancing which might win up to 6"
+          and do regular move + charge, which might win up to 12". Watch your
+          positioning. You may find your forward troops bottlenecking follow-up
+          charges.
         </p>
       </Section>
 
       <Section title="5. Fight phase" id="fight-phase">
         <p>
-          All units that either{' '}
-          <strong>
-            made a charge this turn, or are already in Engagement range
-          </strong>{' '}
-          are eligible to fight. Units that{' '}
-          <strong>charged, gain Fights First</strong> ability. There are also
-          units that have native Fights First. In this phase the{' '}
+          At the very end of your turn, you resolve hand-to-hand attacks. All
+          units that either{' '}
+          <strong>made a charge this turn, or are already engaged</strong>{' '}
+          fight. Units that <strong>charged, gain Fights First</strong> ability.
+          There are also units that have native Fights First. In this phase the{' '}
           <strong>non-active player goes first</strong> if they have eligable
           units.
         </p>
@@ -613,10 +613,7 @@ export default async function Page() {
           <li>All other eligable active player's units.</li>
         </ol>
 
-        <p>
-          What does it mean to fight? When it's your turn to fight, the selected
-          unit:
-        </p>
+        <p>When it's your turn to fight, the selected unit:</p>
 
         <ol>
           <li>
