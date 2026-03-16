@@ -86,11 +86,11 @@
   }
 
   article ul {
-    @apply ml-6 list-disc [&_ul]:list-[revert] [&_ul]:ml-6 text-justify space-y-1;
+    @apply ml-6 list-disc [&_ul]:list-[revert] [&_ul]:ml-6 text-justify;
   }
 
   article ol {
-    @apply ml-6 list-decimal text-justify space-y-1;
+    @apply ml-6 list-decimal text-justify;
   }
 
   .page-title {
@@ -130,6 +130,10 @@
 
   .example {
     @apply border-secondary text-foreground/80 text-sm;
+
+    p {
+      @apply my-4;
+    }
   }
 
   .flex-wrapper {

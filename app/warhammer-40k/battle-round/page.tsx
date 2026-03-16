@@ -7,6 +7,7 @@ import { RxDoubleArrowUp } from 'react-icons/rx'
 import { TbArrowBigDown, TbArrowBigUpLines } from 'react-icons/tb'
 
 import advance from '@/app/assets/wh40k/advance.webp'
+import attack from '@/app/assets/wh40k/attack.webp'
 import halfstrength from '@/app/assets/wh40k/half-strength.webp'
 import movement from '@/app/assets/wh40k/move.webp'
 import pivot from '@/app/assets/wh40k/pivot.webp'
@@ -97,16 +98,11 @@ export default async function Page() {
                 Once all players have taken their turn, the round ends.
               </strong>
             </p>
-
-            <p>
-              The turn phases are key to understanding how to evaluate{' '}
-              <Link href={wh40kRoute('Datasheets')}>Datasheets</Link>.
-            </p>
           </div>
         </div>
       </Section>
 
-      <Section title="1. Command Phase" id="command-phase">
+      <Section title="1. Command phase" id="command-phase">
         <p>
           When it's time to begin your turn, you must first go through the
           Command Phase. It's a sequence of just a few quick steps - usually the
@@ -209,12 +205,13 @@ export default async function Page() {
         </div>
       </Section>
 
-      <Section title="2. Movement Phase" id="movement-phase">
+      <Section title="2. Movement phase" id="movement-phase">
         <p>
           After your Command Phase is over, it's time to choose which of your
           units <strong>outside engagement range</strong> (1" horizontal, 5"
-          vertical of an enemy) are to <strong>reposition</strong>. They can
-          either:
+          vertical of an enemy) are to <strong>reposition</strong>. You do this
+          with all units, <strong>one at a time</strong>. During the Movement
+          Phase a unit can either:
         </p>
 
         <p>
@@ -386,22 +383,28 @@ export default async function Page() {
         <DiceRoll
           title="Roll to hit"
           dice="D6"
-          effect="If result is greater than the Ballistic Skill (BS) for ranged weapons or Weapon Skill (WS) for melee, the attack connects."
+          effect={
+            <>
+              If result is greater than the Ballistic Skill (BS) for ranged
+              weapons or Weapon Skill (WS) for melee, the attack connects. An
+              unmodified roll of 6 is a <strong>critical hit</strong>.
+            </>
+          }
         />
-
-        <p>
-          An unmodified roll of 6 is a <strong>critical hit</strong>.
-        </p>
 
         <DiceRoll
           title="Roll to wound (only if the attack hits)"
           dice="D6"
-          effect="The result follows a table based on how much higher or lower the weapon's Strength (S) is compared to the target's Toughness (T)."
+          effect={
+            <>
+              The result follows a table based on how much higher or lower the
+              weapon's Strength (S) is compared to the target's Toughness (T).
+              An unmodified roll of 6 is a <strong>critical wound</strong>.
+            </>
+          }
         />
 
-        <p>
-          An unmodified roll of 6 is a <strong>critical wound</strong>.
-        </p>
+        <p></p>
 
         <Table columns={woundRollColumns} data={woundRollRows} />
 
@@ -435,27 +438,22 @@ export default async function Page() {
           effect="If the result is equal or greater to the target's Invulnerable Save (Sv) damage is not inflicted. Invulnerable saves are not affected by the weapon's AP."
         />
 
+        <Image src={attack} alt="Attack sequence example" className="my-6" />
+
         <p>
           After all 3 rolls are done, if the attack hits, wounds, and the armor
           save fails, damage is inflicted. The target loses{' '}
           <strong>wounds equal to the Damage (D) of the weapon</strong>. If the
           attack has more D than is required to kill the target model, the
-          excess is lost.
-        </p>
-
-        <p>
-          An unmodified roll of 1, for any of the 3 rolls, is always a{' '}
-          <strong>fail</strong>.
-        </p>
-
-        <p>
+          excess is lost. An unmodified{' '}
+          <strong>roll of 1, for any of the 3 rolls, is always a fail</strong>.
           This <strong>whole sequence</strong> for a given weapon is often
           called <strong>an activation</strong>. The more attacks a weapon
           makes, the more activations it has, thus better chance to score a
           wound.
         </p>
 
-        <div className="example">
+        <div className="box example">
           <p>
             Heavy Intercessors fire 5 heavy bolt rifles at a squad of Ork Boyz
             after moving. That rifle has two Attacks (A2) and BS3+, so the
@@ -483,60 +481,117 @@ export default async function Page() {
         </div>
       </Section>
 
-      <Section title="3. Shooting Phase" id="shooting-phase">
+      <Section title="3. Shooting phase" id="shooting-phase">
         <p>
-          Shooting follows the "Making attacks" rules from above. You select one
-          eligible unit at a time to shoot. Before rolling any dice:
+          After all your units are done with repositioning, it's time to resolve
+          ranged attacks. You go trough each unit that:
         </p>
 
         <ul>
-          <li>Declare all targets per weapon.</li>
-          <li>You may split fire by weapon, but not split individual shots.</li>
+          <li>Is not engaged in close combat.</li>
+          <li>Has at least one ranged weapon within range of an enemy.</li>
+          <li>And has line of sight to given enemy.</li>
         </ul>
 
         <p>
-          To fire at a target you need <strong>line of sight and range.</strong>{' '}
-          Range is checked per firing model, but if any model in the target unit
-          is within range of firing models, the entire unit counts as in range.
+          For any unit that covers the above you can declare ranged attacks.
+        </p>
+
+        <ul>
+          <li>Declare which weapon fires at which target.</li>
+          <li>You may split fire by weapon, but not split individual shots.</li>
+          <li>Units that are out of range don't shoot.</li>
+          <li>
+            But the entire targeted unit counts as within range, so wounds can
+            be allocated to any model.
+          </li>
+          <li>
+            A model can only fire either all <em>Pistols</em> or everything
+            else. Not both.
+          </li>
+
+          <li>
+            All attacks from the unit resolve simultaneously, based on board
+            state at declaration. Once declared to shoot,{' '}
+            <strong>all weapons must fire</strong>.
+          </li>
+        </ul>
+
+        <p>
+          Some terrain features provide <strong>Benefit of Cover</strong> to
+          targets against ranged attacks. If this is true for the defending
+          unit, it gains <strong>+1 to armor saves</strong>, unless it has Sv3+
+          or better and the weapon has AP0. Multiple instances of cover are not
+          cumulative.
         </p>
 
         <p>
-          A model can only fire either all weapons with the Pistol keyword or
-          all without it. Not both. All attacks from the unit resolve
-          simultaneously, based on board state at declaration. Once declared to
-          shoot, <strong>all weapons must fire</strong>.
+          All attacks are{' '}
+          <strong>resolved according to the "Making attacks"</strong> section
+          above. Go trough all shooting units, remove casulties from play and
+          move on to the next phase.
         </p>
 
         <p>
-          Some terrain features provide <em>Benefit of Cover</em> to targets
-          against ranged attacks. If this is true for the defending unit, it
-          gains +1 to armor saves, unless it has Sv3+ or better and the weapon
-          has AP0. Multiple instances of cover are not cumulative.
+          To make an educated decision on what to shoot with what you'll need to
+          have a decent understanding of{' '}
+          <Link href={wh40kRoute('Datasheets')}>Datasheets</Link>. But as a rule
+          of thumb:
         </p>
+
+        <ul>
+          <li>
+            Prioritize high-value enemies - units that can make an impact on the
+            following turn.
+          </li>
+
+          <li>
+            Shoot with units that have fewer target options first to avoid
+            wasting attacks.
+          </li>
+
+          <li>Focus fire with the aim to destroy outright, not just weaken.</li>
+
+          <li>
+            Against Infantry, resolve Blast weapons first for bonus attacks.
+          </li>
+
+          <li>
+            Use weapons against optimal targets as much as possible. Don't waste
+            Damage or AP.
+          </li>
+        </ul>
       </Section>
 
-      <Section title="4. Charge Phase" id="charge-phase">
+      <Section title="4. Charge phase" id="charge-phase">
         <p>
-          Charging is rushing a unit into melee combat. Units within 12" that
-          didn't advance this turn may declare a charge.
+          The Charge phase is where any of your units that is{' '}
+          <strong>within 12" of an enemy and didn't advance this turn</strong>{' '}
+          may declare a charge move into that enemy. If you wish for a unit to
+          charge, you do a charge roll.
         </p>
 
         <DiceRoll
           title="Charge roll"
           dice='2D6"'
           effect='If the total is
-          enough to move within 1" (Engagement range), the charge succeeds and the unit may move into position. If it fails, the unit stays put.'
+          enough to move within 1" (Engagement range) of the target, the charge succeeds and the unit may move into position. If it fails, the unit stays put.'
         />
 
         <p>
-          A unit may charge multiple targets, but you must engage every declared
-          target for the charge to succeed. Positioning matters. You can block
+          On success, the given unit, may move and engage the enemy in close
+          combat. A unit may charge multiple targets, but you must engage every
+          declared target for the charge to succeed.
+        </p>
+
+        <p>
+          Units that are better at melee. Positioning matters. You can block
           follow-up charges with your own units, or you can overcommit a large
           squad and bog down your attack.
         </p>
       </Section>
 
-      <Section title="5. Fight Phase" id="fight-phase">
+      <Section title="5. Fight phase" id="fight-phase">
         <p>
           All units that either{' '}
           <strong>
