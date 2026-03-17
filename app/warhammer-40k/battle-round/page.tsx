@@ -79,14 +79,15 @@ export default async function Page() {
           <div className="sm:w-1/2">
             <p>
               Once you have mustered your army, selected a mission and
-              determined who goes first you are <strong>ready to play</strong> a
+              determined who goes first, you are <strong>ready to play</strong>{' '}
+              a
               battle of Warhammer 40,000.
             </p>
 
             <p>
               <strong>All battles are played in rounds.</strong> A typical
               battle lasts 5 rounds, but that can vary between tournaments,
-              mission and player agreements.
+              missions, and player agreements.
             </p>
 
             <p>
@@ -131,7 +132,8 @@ export default async function Page() {
         <h3 id="battle-shock-tests">Battle-shock tests</h3>
 
         <p>
-          If it's the end of your Command Phase, survey if you have units that
+          If it's the end of your Command Phase, check whether you have units
+          that
           are below half of their <strong>starting strength</strong>. If the
           answer is yes, every such unit must take a battle-shock test.
         </p>
@@ -139,20 +141,20 @@ export default async function Page() {
         <ul>
           <li>
             If a unit consisting of a <strong>single model</strong>, like a
-            character, monster or vehicle took some damage, check that{' '}
-            <strong>has less than half wounds left</strong>.
+            character, monster, or vehicle, took some damage, check whether it{' '}
+            <strong>has less than half its wounds left</strong>.
           </li>
 
           <li>
             If a <strong>multi-model unit</strong>, like a squad, has taken some
-            damage, check if it{' '}
-            <strong>has less than half of its starting models left</strong>.
+            damage, check whether it{' '}
+            <strong>has fewer than half of its starting models left</strong>.
           </li>
 
           <li>
             If you are checking a{' '}
             <strong>
-              squad with an attached leader, include his model to the count
+              squad with an attached leader, include that model in the count
             </strong>
             . If the squad is gone, but the leader is still alive, you again
             check for wounds.
@@ -170,7 +172,7 @@ export default async function Page() {
           dice="2D6"
           effect={
             <>
-              Compare the result to tested{' '}
+              Compare the result to the tested{' '}
               <strong>unit's highest Leadership (Ld)</strong>, including
               leaders. If the result is higher than the Ld, nothing happens.{' '}
               <strong>If the result is lower</strong>, the unit is shocked and
@@ -211,7 +213,7 @@ export default async function Page() {
           units <strong>outside engagement range</strong> (1" horizontal, 5"
           vertical of an enemy) are to <strong>reposition</strong>. You do this
           with all units, <strong>one at a time</strong>. During the Movement
-          Phase a unit can either:
+          Phase, a unit can either:
         </p>
 
         <p>
@@ -244,7 +246,8 @@ export default async function Page() {
 
         <p>
           All units that did not move during this phase count as{' '}
-          <strong>remained stationary.</strong> They may gain benefits, usually
+          <strong>having remained stationary.</strong> They may gain benefits,
+          usually
           related to accuracy (rolls to hit) depending on their special rules or
           their weapons keywords.
         </p>
@@ -276,8 +279,7 @@ export default async function Page() {
         <DiceRoll
           title="Desperate escape test"
           dice="D6"
-          effect="On a 2 or less, the model is destroyed. Battle-shocked units always take a desperate escape test if they fall
-          back."
+          effect="On a 2 or less, the model is destroyed. Battle-shocked units always take a desperate escape test if they fall back."
         />
 
         <h3 id="pivoting">Pivoting</h3>
@@ -326,7 +328,7 @@ export default async function Page() {
         <DiceRoll
           title="If the transport is destroyed"
           dice="D6"
-          effect="On a 1 the model suffers a mortal wound. Then the survivors
+          effect="On a 1, the model suffers a mortal wound. Then the survivors
           disembark and become Battle-shocked and cannot charge that turn."
         />
 
@@ -404,8 +406,6 @@ export default async function Page() {
           }
         />
 
-        <p></p>
-
         <Table columns={woundRollColumns} data={woundRollRows} />
 
         <p>
@@ -449,7 +449,7 @@ export default async function Page() {
           <strong>roll of 1, for any of the 3 rolls, is always a fail</strong>.
           This <strong>whole sequence</strong> for a given weapon is often
           called <strong>an activation</strong>. The more attacks a weapon
-          makes, the more activations it has, thus better chance to score a
+          makes, the more activations it has, thus a better chance to score a
           wound.
         </p>
 
@@ -484,17 +484,18 @@ export default async function Page() {
       <Section title="3. Shooting phase" id="shooting-phase">
         <p>
           After all your units are done with repositioning, it's time to resolve
-          ranged attacks. You go trough each unit that:
+          ranged attacks. Go through each unit that:
         </p>
 
         <ul>
           <li>Is not engaged in close combat.</li>
           <li>Has at least one ranged weapon within range of an enemy.</li>
-          <li>And has line of sight to given enemy.</li>
+          <li>Has line of sight to the target enemy unit.</li>
         </ul>
 
         <p>
-          For any unit that covers the above you can declare ranged attacks.
+          For any unit that meets those criteria, you can declare ranged
+          attacks.
         </p>
 
         <ul>
@@ -528,8 +529,8 @@ export default async function Page() {
         <p>
           All attacks are{' '}
           <strong>resolved according to the "Making attacks"</strong> section
-          above. Go trough all shooting units, remove casulties from play and
-          move on to the next phase.
+          above. Go through all shooting units, remove casualties from play,
+          and move on to the next phase.
         </p>
 
         <p>
@@ -565,7 +566,7 @@ export default async function Page() {
 
       <Section title="4. Charge phase" id="charge-phase">
         <p>
-          The Charge phase is where any of your units that is{' '}
+          The Charge phase is where any of your units that are{' '}
           <strong>within 12" of an enemy and didn't advance this turn</strong>{' '}
           may declare a charge move into that enemy. If you wish for a unit to
           charge, you do a charge roll.
@@ -579,15 +580,16 @@ export default async function Page() {
         />
 
         <p>
-          On success, the given unit, may move and engage the enemy in close
+          On success, that unit may move and engage the enemy in close
           combat. A unit may charge multiple targets, but you must engage every
           declared target for the charge to succeed.
         </p>
 
         <p>
           Units that are better at melee, naturally want to engage the enemy
-          earlier. It's often better to skip advancing which might win up to 6"
-          and do regular move + charge, which might win up to 12". Watch your
+          earlier. It's often better to skip advancing, which might gain up to
+          6", and do a regular move + charge, which might gain up to 12". Watch
+          your
           positioning. You may find your forward troops bottlenecking follow-up
           charges.
         </p>
@@ -599,8 +601,8 @@ export default async function Page() {
           units that either{' '}
           <strong>made a charge this turn, or are already engaged</strong>{' '}
           fight. Units that <strong>charged, gain Fights First</strong> ability.
-          There are also units that have native Fights First. In this phase the{' '}
-          <strong>non-active player goes first</strong> if they have eligable
+          There are also units that have native Fights First. In this phase,
+          the <strong>non-active player goes first</strong> if they have eligible
           units.
         </p>
 
@@ -609,8 +611,8 @@ export default async function Page() {
         <ol>
           <li>Non-active player's units that have Fights First.</li>
           <li>Active player's units that have Fights First.</li>
-          <li>All other eligable non-active player's units.</li>
-          <li>All other eligable active player's units.</li>
+          <li>All other eligible non-active player's units.</li>
+          <li>All other eligible active player's units.</li>
         </ol>
 
         <p>When it's your turn to fight, the selected unit:</p>

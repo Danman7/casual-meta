@@ -2,7 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import datasheet from '@/app/assets/wh40k/datasheet.webp'
+import movediff from '@/app/assets/wh40k/move_diff.webp'
+import wound from '@/app/assets/wh40k/wound.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
+import { DiceRoll } from '@/app/ui/DiceRoll'
 import { Section } from '@/app/ui/Section'
 import { Table } from '@/app/ui/Table'
 import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
@@ -42,13 +45,9 @@ export default async function Page() {
         <p>
           Underneath the name of the datasheet are six characteristics. They
           form the unit's profile. This gives insight into how well the unit is
-          likely to perform during different phases of the{' '}
-          <Link href={wh40kRoute('The Battle Round')}>Battle Round</Link>.
-        </p>
-
-        <p>
-          If an attribute has a + at the end, it usually means that the dice
-          roll check has to score equal to or above that number to succeed;
+          likely to perform during different phases of a player's turn. If an
+          attribute has a + at the end, it means that it's resolved using a dice
+          roll. The roll has to score equal to or above that number to succeed;
           thus, lower is better.
         </p>
 
@@ -71,22 +70,24 @@ export default async function Page() {
           during a move. M" can never be zero.
         </p>
 
+        <Image
+          src={movediff}
+          alt="Movement difference between an Assault Intercessor and one with a jump pack."
+        />
+
         <p>
           Most infantry has M6" +/- 1. Assault troops and skirmish vehicles are
           usually around M12", while flyers are around M20".
         </p>
 
-        <div className="example">
-          <p>
-            A Move of 6" means the unit can move or fall up to 6" during the
-            movement phase. It also means it can advance up to 12" on rolling a
-            6 if it chooses to advance.
-          </p>
-        </div>
-
         <h3 id="toughness">Toughness (T)</h3>
 
         <p>Higher is better.</p>
+
+        <p>
+          1. Roll to hit &rarr; <strong>2. Roll to wound</strong> &rarr; 3. Roll
+          to save &rarr; 4. Deal damage
+        </p>
 
         <p>
           When any{' '}
@@ -99,11 +100,6 @@ export default async function Page() {
             wounds
           </strong>
           .
-        </p>
-
-        <p>
-          1. Roll to hit &rarr; <strong>2. Roll to wound</strong> &rarr; 3. Roll
-          to save &rarr; 4. Deal damage
         </p>
 
         <Table columns={woundRollColumns} data={woundRollRows} />
@@ -120,7 +116,9 @@ export default async function Page() {
           with less Strength tend to have a hard time making a dent.
         </p>
 
-        <div className="example">
+        <Image src={wound} alt="Wound roll probabilities" />
+
+        <div className="box example">
           <p>
             A Toughness of 4 (T4) means that a weapon with Strength 4 (S4) has a
             50% chance to wound, a weapon with Strength 5 (S5) has a 2/3 chance
@@ -134,25 +132,28 @@ export default async function Page() {
         <p>Lower is better.</p>
 
         <p>
-          After an attack has hit and has wounded, a <strong>Save</strong> or{' '}
-          <em>Armor Save</em> check is made to see if the target's armor can
-          avert the damage.
-        </p>
-
-        <p>
           1. Roll to hit &rarr; 2. Roll to wound &rarr;{' '}
           <strong>3. Roll to save</strong> &rarr; 4. Deal damage
         </p>
 
         <p>
-          This roll doesn't take Toughness and Strength into consideration, but
-          the weapon's{' '}
-          <strong>Armor Penetration (AP) modifies the dice result</strong>, not
-          the Sv characteristic. If the roll is higher than the Save the target
-          takes no damage.
+          After an attack has hit and has wounded, a <strong>Save</strong> or{' '}
+          <em>Armor Save</em> check is made to see if the target's armor can
+          avert the damage.
         </p>
 
-        <div className="example">
+        <DiceRoll
+          dice="D6"
+          title="Save roll"
+          effect={
+            <>
+              <strong>Substract the weapon's AP from the roll</strong>. If the
+              result is still more than the target's Save, the attack fails.
+            </>
+          }
+        />
+
+        <div className="box example">
           <p>
             The owner of a targeted unit with Sv4+ makes one saving roll per
             affected model in that unit. The attacking weapon has AP-1, so all
@@ -167,7 +168,8 @@ export default async function Page() {
           <strong>Invulnerable Save (Sv++)</strong> which is{' '}
           <strong>not affected by Armor Penetration (AP)</strong>. The defender
           can choose to use it instead of the regular Save, but they{' '}
-          <strong>can't use both saves</strong>.
+          <strong>can't use both saves</strong>. Invulnerable saves come in
+          handy against attacks with high AP.
         </p>
 
         <p>
@@ -176,27 +178,24 @@ export default async function Page() {
           4+ and an Invulnerable Save of 6++.
         </p>
 
-        <p>
-          Invulnerable saves exist on durable targets and come in handy against
-          attacks with high AP.
-        </p>
-
         <h3 id="wounds">Wounds (W)</h3>
 
         <p>Higher is better.</p>
 
         <p>
-          Wounds represent the{' '}
-          <strong>
-            amount of damage a model can take before being removed from play
-          </strong>
-          . They make more sense once weapon Damage and Attacks are discussed
-          further on.
+          1. Roll to hit &rarr; 2. Roll to wound &rarr; 3. Roll to save &rarr;{' '}
+          <strong>4. Deal damage</strong>
         </p>
 
         <p>
-          1. Roll to hit &rarr; 2. Roll to wound &rarr; 3. Roll to save &rarr;{' '}
-          <strong>4. Deal damage</strong>
+          Wounds are the{' '}
+          <strong>
+            amount of damage a model can take before being removed from play
+          </strong>
+          . When a weapon has successfully hit, wounded, and penetrated the
+          target's armor, you substract its Damage characteristic from the
+          target's Wounds. If the target has no Wounds left, it's removed from
+          play.
         </p>
 
         <h3 id="leadership">Leadership (Ld)</h3>
@@ -370,7 +369,7 @@ export default async function Page() {
           to save &rarr; 4. Deal damage
         </p>
 
-        <div className="example">
+        <div className="box example">
           A 20-man squad of Cadian Shock Troops fire 18 Lasguns (the two
           sergeants have laspistols) at a squad of Ork Boyz. The Cadians have
           BS4+, so they need to roll 4 or higher on D6 to hit. On average, they
@@ -418,7 +417,7 @@ export default async function Page() {
           </li>
         </ul>
 
-        <div className="example">
+        <div className="box example">
           <p>
             A meltagun at AP-4 into a 6+ save model wastes most of its AP value.
             You are paying for penetration that the target cannot meaningfully
@@ -444,7 +443,7 @@ export default async function Page() {
           exact.
         </p>
 
-        <div className="example">
+        <div className="box example">
           <p>
             D2 weapons are best against W2 targets. They are overkill against
             single-wound targets, and even if enough attacks activate against W3
