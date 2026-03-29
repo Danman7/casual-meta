@@ -1,11 +1,12 @@
 'use client'
 
-import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
-import { Anchor } from '@/app/ui/Anchor'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { FaAsterisk } from 'react-icons/fa'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
+
+import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
+import { Anchor } from '@/app/ui/Anchor'
 
 type HeaderProps = {
   isMobileMenuOpen: boolean
