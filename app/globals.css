@@ -5,18 +5,16 @@
   --foreground: hsl(10, 20%, 20%);
   --surface: hsl(10, 20%, 94%);
   --primary: hsl(10, 80%, 45%);
-  --secondary: hsl(250, 60%, 30%);
   --success: var(--color-green-600);
   --error: var(--color-red-600);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: hsl(10, 20%, 10%);
-    --foreground: hsl(10, 10%, 85%);
+    --background: hsl(10, 20%, 5%);
+    --foreground: hsl(10, 10%, 80%);
     --surface: hsl(10, 20%, 15%);
-    --primary: hsl(10, 80%, 60%);
-    --secondary: hsl(250, 60%, 60%);
+    --primary: hsl(10, 80%, 55%);
     --success: var(--color-green-400);
     --error: var(--color-red-400);
   }
@@ -27,7 +25,6 @@
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
   --color-success: var(--success);
   --color-error: var(--error);
   --font-serif: var(--font-noto-serif);
@@ -92,6 +89,10 @@
   @apply pl-4 border-l border-foreground/10;
 }
 
+@utility box {
+  @apply border-2 border-foreground/10 rounded p-4 shadow-md space-y-4 text-justify;
+}
+
 @layer base {
   a {
     @apply flex-center hover:text-primary active:text-primary/70 transition-colors;
@@ -117,12 +118,28 @@
 
   h2[id],
   h3[id] {
-    scroll-margin-top: 7rem;
+    scroll-margin-top: 2.5rem;
+  }
+
+  small {
+    @apply text-[0.833rem] font-light;
   }
 
   main {
     a {
       @apply underline;
+    }
+
+    section {
+      @apply space-y-4;
+    }
+
+    ul {
+      @apply ml-6 list-disc [&_ul]:list-[revert] [&_ul]:ml-6 text-justify;
+    }
+
+    ol {
+      @apply ml-6 list-decimal text-justify;
     }
   }
 
@@ -130,39 +147,11 @@
     @apply px-4 lg:px-8;
   }
 
-  .article-img {
-    @apply my-6 rounded shadow-md;
-  }
-
   .profile-img {
     @apply my-6 sm:max-h-56 object-cover rounded shadow-md;
   }
 
-  .flavor {
-    @apply opacity-80 text-sm;
-  }
-
-  .box {
-    @apply bg-surface rounded-lg p-4 my-6 shadow-md border-t-2 border-primary;
-
-    p {
-      @apply first:mt-0 last:mb-0;
-    }
-  }
-
-  .example {
-    @apply border-secondary text-foreground/80 text-sm;
-
-    p {
-      @apply my-4;
-    }
-  }
-
   .circle-icon {
     @apply inline-flex place-items-center bg-surface rounded-full w-9 h-9 p-1 border-2 border-foreground/20;
-  }
-
-  .lead {
-    @apply text-lg font-bold;
   }
 }
