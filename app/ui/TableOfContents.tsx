@@ -42,18 +42,14 @@ export const TableOfContents: React.FC = () => {
   return (
     <nav
       aria-labelledby="page-navigation"
-      className="sticky top-0 max-h-screen overflow-y-auto w-56 pt-10 pr-4"
+      className="sticky-aside w-56 max-h-[calc(100dvh-6rem)] overflow-y-auto"
     >
-      <h4
-        id="page-navigation"
-        className="font-bold mb-4 border-b border-foreground/10"
-      >
-        On This Page
-      </h4>
-
-      <ul id="toc-root" className="mt-0">
+      <ul>
         {headings.map((heading) => (
-          <li key={heading.id} className={heading.level === 3 ? 'ml-4' : ''}>
+          <li
+            key={heading.id}
+            className={`py-1 ${heading.level === 3 ? 'sub-nav-item' : ''}`}
+          >
             <a href={`#${heading.id}`} className="text-sm hover:underline">
               {heading.text}
             </a>

@@ -9,28 +9,23 @@ type Props = {
   rootUrl: string
 }
 
-function TreeNode({ item }: { item: RouteItem }) {
-  const hasChildren = !!item.children?.length
-  return (
-    <div className="flex flex-col">
-      <Anchor href={item.href}>{item.title}</Anchor>
-
-      {hasChildren && (
-        <div className="ml-4 flex flex-col">
-          {item.children!.map((child) => (
-            <TreeNode key={child.href} item={child} />
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
-
 export function SectionNav({ items }: Props) {
   return (
-    <nav aria-label="Section navigation" className="grow flex flex-col">
+    <nav aria-label="Section navigation" className="space-y-2">
       {items.map((item) => (
-        <TreeNode key={item.href} item={item} />
+        <div key={item.href}>
+          <Anchor href={item.href}>{item.title}</Anchor>
+
+          {!!item.children?.length && (
+            <div className="sub-nav-item">
+              {item.children.map((child) => (
+                <Anchor key={child.href} href={child.href}>
+                  {child.title}
+                </Anchor>
+              ))}
+            </div>
+          )}
+        </div>
       ))}
     </nav>
   )

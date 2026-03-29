@@ -7,23 +7,14 @@ import { FaAsterisk } from 'react-icons/fa'
 export const Anchor: React.FC<{
   children: React.ReactNode
   href: string
-  className?: string
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>
-}> = ({ href, children, className = '', onClick }) => {
+}> = ({ href, children }) => {
   const pathname = usePathname()
 
   const isActive = pathname.endsWith(href)
 
   return (
-    <Link
-      className={`flex gap-1 items-baseline w-full px-2 py-1 border border-transparent hover:text-primary active:text-primary/80 ${className}`}
-      href={href}
-      onClick={onClick}
-      aria-current={isActive ? 'page' : undefined}
-    >
-      {isActive && (
-        <FaAsterisk focusable="false" className="text-primary text-xs" />
-      )}
+    <Link href={href} aria-current={isActive ? 'page' : undefined}>
+      {isActive && <FaAsterisk />}
 
       {children}
     </Link>
