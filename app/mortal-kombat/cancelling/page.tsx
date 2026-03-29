@@ -19,7 +19,7 @@ const mkRoute = createRouteLookup(MK_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <h1 className="page-title">{navTitle}</h1>
+      <h1>{navTitle}</h1>
 
       <Section title="What is a cancel?" id="what-is-a-cancel">
         <p>

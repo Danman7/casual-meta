@@ -17,7 +17,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <h1 className="page-title">{WH40K_TITLE}</h1>
+      <h1>{WH40K_TITLE}</h1>
 
       <Section>
         <p>

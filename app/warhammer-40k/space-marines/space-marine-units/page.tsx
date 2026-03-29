@@ -29,7 +29,7 @@ const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <h1 className="page-title">{navTitle}</h1>
+      <h1>{navTitle}</h1>
 
       <p>
         Having the datasheets is not essential, but recommended. If you are

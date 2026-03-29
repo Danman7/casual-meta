@@ -30,7 +30,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <h1 className="page-title">{navTitle}</h1>
+      <h1>{navTitle}</h1>
 
       <Section>
         <Image

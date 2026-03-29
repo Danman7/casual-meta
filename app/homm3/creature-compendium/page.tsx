@@ -15,7 +15,7 @@ export const metadata = generatePageMetadata(
 export default function Page() {
   return (
     <>
-      <h1 className="page-title">{navTitle}</h1>
+      <h1>{navTitle}</h1>
 
       <Section>
         <p>

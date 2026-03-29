@@ -32,7 +32,7 @@ const mkRoute = createRouteLookup(MK_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <h1 className="page-title">{navTitle}</h1>
+      <h1>{navTitle}</h1>
 
       <ImageTextSection
         image={Scorpion}
@@ -276,8 +276,8 @@ export default async function Page() {
           <ul className="space-y-4">
             <li>
               <Pill>
-                21 BF1 F32 F32 J12 airDB2ex <div className="flavor">small pause</div> 111
-                airDB2
+                21 BF1 F32 F32 J12 airDB2ex{' '}
+                <div className="flavor">small pause</div> 111 airDB2
               </Pill>
               <div className="flavor mt-2">
                 One bar 377 damage. The pause delays 111 until both fighters are
@@ -286,7 +286,8 @@ export default async function Page() {
             </li>
             <li>
               <Pill>
-                F32 F32 J12 airDB2ex <div className="flavor">small pause</div> 111 BF1 33 DB2
+                F32 F32 J12 airDB2ex <div className="flavor">small pause</div>{' '}
+                111 BF1 33 DB2
               </Pill>{' '}
               <div className="flavor mt-2">
                 One bar <strong>407</strong> damage. Same pause but this time,
@@ -315,8 +316,8 @@ export default async function Page() {
           <ul className="space-y-4">
             <li>
               <Pill>
-                F32 4 4 BF1 F32 J12 airDB2ex <div className="flavor">small pause</div> J111
-                JDB2
+                F32 4 4 BF1 F32 J12 airDB2ex{' '}
+                <div className="flavor">small pause</div> J111 JDB2
               </Pill>
               <div className="flavor mt-2">
                 One bar <strong>446</strong> damage. If chaining the second{' '}
@@ -326,7 +327,8 @@ export default async function Page() {
             </li>
             <li>
               <Pill>
-                F32 4 4 BF1 F32 J12 airDB2ex <div className="flavor">small pause</div> J111{' '}
+                F32 4 4 BF1 F32 J12 airDB2ex{' '}
+                <div className="flavor">small pause</div> J111{' '}
                 <div className="flavor">land</div> B2 BF4ex
               </Pill>{' '}
               <div className="flavor mt-2">
@@ -360,7 +362,8 @@ export default async function Page() {
 
             <li>
               <Pill>
-                F32 J12 airDB3ex J13 <div className="flavor">land</div> BF1 33 DB3
+                F32 J12 airDB3ex J13 <div className="flavor">land</div> BF1 33
+                DB3
               </Pill>{' '}
               <div className="flavor mt-2">
                 One bar 334 damage. Only enhanced air port is fast enough to
@@ -380,7 +383,8 @@ export default async function Page() {
           <ul className="space-y-4">
             <li>
               <Pill>
-                airDB3ex J3 <div className="flavor">land</div> BF1 F32 F32 F34 BF2
+                airDB3ex J3 <div className="flavor">land</div> BF1 F32 F32 F34
+                BF2
               </Pill>
               <div className="flavor mt-2">
                 An easier version for one bar 308 damage.
@@ -389,7 +393,8 @@ export default async function Page() {
 
             <li>
               <Pill>
-                airDB3ex J3 DB3 <div className="flavor">land</div> F32 F32 4 BF1 33 DB2
+                airDB3ex J3 DB3 <div className="flavor">land</div> F32 F32 4 BF1
+                33 DB2
               </Pill>{' '}
               <div className="flavor mt-2">
                 A challenging double-port one bar 411 damage variant.
@@ -398,7 +403,8 @@ export default async function Page() {
 
             <li>
               <Pill>
-                airDB3ex J3 DB3 <div className="flavor">land</div> 4 BF1 F32 J12 airDB2ex
+                airDB3ex J3 DB3 <div className="flavor">land</div> 4 BF1 F32 J12
+                airDB2ex
               </Pill>{' '}
               <div className="flavor mt-2">
                 A fancy two meter <strong>449</strong> damage advanced combo.
@@ -452,7 +458,8 @@ export default async function Page() {
           <ul className="space-y-4">
             <li>
               <Pill>
-                BF2ex UK <div className="flavor">switch sides</div> dash F32 F32 4 BF1 33 DB2
+                BF2ex UK <div className="flavor">switch sides</div> dash F32 F32
+                4 BF1 33 DB2
               </Pill>
               <div className="flavor mt-2">
                 Meterless armored combo for 259 damage.
@@ -461,7 +468,8 @@ export default async function Page() {
 
             <li>
               <Pill>
-                F32 F32 J12 airDB2ex UK <div className="flavor">land</div> BF1 33 DB2
+                F32 F32 J12 airDB2ex UK <div className="flavor">land</div> BF1
+                33 DB2
               </Pill>{' '}
               <div className="flavor mt-2">
                 Same juggle-to-air extension as before, but meterless for 375
@@ -471,8 +479,8 @@ export default async function Page() {
 
             <li>
               <Pill>
-                Throw <div className="flavor">time during animation</div> K (trap) F32 F32 4
-                BF1 33 DB2
+                Throw <div className="flavor">time during animation</div> K
+                (trap) F32 F32 4 BF1 33 DB2
               </Pill>{' '}
               <div className="flavor mt-2">
                 220 damage out of a throw (normally 110).
@@ -522,8 +530,8 @@ export default async function Page() {
           <ul className="space-y-4">
             <li>
               <Pill>
-                Throw <div className="flavor">time during animation</div> K (fan toss) J2 F32
-                F32 4 BF1 33 DB2
+                Throw <div className="flavor">time during animation</div> K (fan
+                toss) J2 F32 F32 4 BF1 33 DB2
               </Pill>
               <div className="flavor mt-2">
                 Must be in Kitana Form. 219 damage throw combo.
@@ -532,7 +540,8 @@ export default async function Page() {
 
             <li>
               <Pill>
-                BF2 FK <div className="flavor">switch sides</div> BF1 F32 F32 4 BF2
+                BF2 FK <div className="flavor">switch sides</div> BF1 F32 F32 4
+                BF2
               </Pill>{' '}
               <div className="flavor mt-2">
                 Kitana form. Meterles 234 damage armored combo.

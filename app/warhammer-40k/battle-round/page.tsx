@@ -35,10 +35,34 @@ const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <h1 className="page-title">{navTitle}</h1>
+      <h1>{navTitle}</h1>
 
-      <Section>
-        <div className="sm:flex gap-6 items-start">
+      <section>
+        <div className="sm:flex items-start">
+          <div className="sm:w-1/2">
+            <p>
+              Once you have mustered your army, selected a mission and
+              determined who goes first, you are <strong>ready to play</strong>{' '}
+              a battle of Warhammer 40,000.
+            </p>
+
+            <p>
+              <strong>All battles are played in rounds.</strong> A typical
+              battle lasts 5 rounds, but that can vary between tournaments,
+              missions, and player agreements.
+            </p>
+
+            <p>
+              During a round, every player takes a turn.{' '}
+              <strong>A turn consists of 5 phases.</strong> The active player
+              goes through all the phases, then passes the turn to the next
+              player.{' '}
+              <strong>
+                Once all players have taken their turn, the round ends.
+              </strong>
+            </p>
+          </div>
+
           <div className="box sm:w-1/2 flex flex-col gap-2 place-items-center">
             <div className="flex flex-col items-center">
               <div className="flex-wrapper lead">
@@ -75,33 +99,8 @@ export default async function Page() {
               <div className="flavor">Resolve melee attacks</div>
             </div>
           </div>
-
-          <div className="sm:w-1/2">
-            <p>
-              Once you have mustered your army, selected a mission and
-              determined who goes first, you are <strong>ready to play</strong>{' '}
-              a
-              battle of Warhammer 40,000.
-            </p>
-
-            <p>
-              <strong>All battles are played in rounds.</strong> A typical
-              battle lasts 5 rounds, but that can vary between tournaments,
-              missions, and player agreements.
-            </p>
-
-            <p>
-              During a round, every player takes a turn.{' '}
-              <strong>A turn consists of 5 phases.</strong> The active player
-              goes through all the phases, then passes the turn to the next
-              player.{' '}
-              <strong>
-                Once all players have taken their turn, the round ends.
-              </strong>
-            </p>
-          </div>
         </div>
-      </Section>
+      </section>
 
       <Section title="1. Command phase" id="command-phase">
         <p>
@@ -133,9 +132,8 @@ export default async function Page() {
 
         <p>
           If it's the end of your Command Phase, check whether you have units
-          that
-          are below half of their <strong>starting strength</strong>. If the
-          answer is yes, every such unit must take a battle-shock test.
+          that are below half of their <strong>starting strength</strong>. If
+          the answer is yes, every such unit must take a battle-shock test.
         </p>
 
         <ul>
@@ -247,9 +245,8 @@ export default async function Page() {
         <p>
           All units that did not move during this phase count as{' '}
           <strong>having remained stationary.</strong> They may gain benefits,
-          usually
-          related to accuracy (rolls to hit) depending on their special rules or
-          their weapons keywords.
+          usually related to accuracy (rolls to hit) depending on their special
+          rules or their weapons keywords.
         </p>
 
         <p>
@@ -529,8 +526,8 @@ export default async function Page() {
         <p>
           All attacks are{' '}
           <strong>resolved according to the "Making attacks"</strong> section
-          above. Go through all shooting units, remove casualties from play,
-          and move on to the next phase.
+          above. Go through all shooting units, remove casualties from play, and
+          move on to the next phase.
         </p>
 
         <p>
@@ -580,18 +577,17 @@ export default async function Page() {
         />
 
         <p>
-          On success, that unit may move and engage the enemy in close
-          combat. A unit may charge multiple targets, but you must engage every
-          declared target for the charge to succeed.
+          On success, that unit may move and engage the enemy in close combat. A
+          unit may charge multiple targets, but you must engage every declared
+          target for the charge to succeed.
         </p>
 
         <p>
           Units that are better at melee, naturally want to engage the enemy
           earlier. It's often better to skip advancing, which might gain up to
           6", and do a regular move + charge, which might gain up to 12". Watch
-          your
-          positioning. You may find your forward troops bottlenecking follow-up
-          charges.
+          your positioning. You may find your forward troops bottlenecking
+          follow-up charges.
         </p>
       </Section>
 
@@ -601,8 +597,8 @@ export default async function Page() {
           units that either{' '}
           <strong>made a charge this turn, or are already engaged</strong>{' '}
           fight. Units that <strong>charged, gain Fights First</strong> ability.
-          There are also units that have native Fights First. In this phase,
-          the <strong>non-active player goes first</strong> if they have eligible
+          There are also units that have native Fights First. In this phase, the{' '}
+          <strong>non-active player goes first</strong> if they have eligible
           units.
         </p>
 

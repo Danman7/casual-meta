@@ -77,35 +77,22 @@
     @apply text-primary underline hover:text-primary/80 active:text-primary/60 transition-colors;
   }
 
-  article p {
-    @apply my-6 text-justify;
+  h1,
+  h2,
+  h3 {
+    @apply tracking-[-0.022em] font-bold leading-[1.15] mt-9 mb-4;
   }
 
-  hr {
-    @apply border-foreground/20;
+  h1 {
+    @apply text-[2.986rem];
   }
 
-  article ul {
-    @apply ml-6 list-disc [&_ul]:list-[revert] [&_ul]:ml-6 text-justify;
+  h2 {
+    @apply text-[2.488rem];
   }
 
-  article ol {
-    @apply ml-6 list-decimal text-justify;
-  }
-
-  .page-title {
-    @apply text-5xl font-bold my-18 tracking-tight text-center;
-    line-height: 1.15;
-  }
-
-  .section-title {
-    @apply scroll-mt-8 font-bold text-3xl tracking-tight text-center my-12;
-    line-height: 1.15;
-  }
-
-  section h3 {
-    @apply text-2xl mt-8 mb-4 tracking-tight scroll-mt-8 text-center;
-    line-height: 1.15;
+  h3 {
+    @apply text-[2.074rem];
   }
 
   .article-img {

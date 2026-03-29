@@ -37,7 +37,7 @@ const mkRoute = createRouteLookup(MK_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <h1 className="page-title">{MK_TITLE}</h1>
+      <h1>{MK_TITLE}</h1>
 
       <Section>
         <Image

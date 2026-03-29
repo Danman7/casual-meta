@@ -14,7 +14,7 @@ export const metadata = generatePageMetadata(
 export default async function Page() {
   return (
     <>
-      <h1 className="page-title">{navTitle}</h1>
+      <h1>{navTitle}</h1>
       <Section>
         <p>
           In 2023, NetherRealm Studios released Mortal Kombat 1 (technicaly the

@@ -3,6 +3,16 @@ import { Noto_Serif } from 'next/font/google'
 import Link from 'next/link'
 
 import '@/app/globals.css'
+import {
+  HOMM3_BASE_URL,
+  HOMM3_TITLE,
+  MK_BASE_URL,
+  MK_TITLE,
+  WH40K_BASE_URL,
+  WH40K_TITLE,
+} from '@/app/constants'
+import { NavigationProvider } from '@/app/ui/NavigationProvider'
+import { getRoutesFrom } from '@/lib/routes'
 
 const notoSerif = Noto_Serif({
   variable: '--font-noto-serif',
@@ -19,22 +29,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const sections = [
+    {
+      items: getRoutesFrom(HOMM3_BASE_URL),
+      title: HOMM3_TITLE,
+      rootUrl: HOMM3_BASE_URL,
+    },
+    {
+      items: getRoutesFrom(MK_BASE_URL),
+      title: MK_TITLE,
+      rootUrl: MK_BASE_URL,
+    },
+    {
+      items: getRoutesFrom(WH40K_BASE_URL),
+      title: WH40K_TITLE,
+      rootUrl: WH40K_BASE_URL,
+    },
+  ]
+
   return (
     <html lang="en" className="h-full bg-background text-foreground">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${notoSerif.variable} antialiased h-full flex flex-col font-serif selection:bg-primary selection:text-background`}
+        className={`${notoSerif.variable} leading-[1.6] antialiased h-full font-serif selection:bg-primary selection:text-background`}
       >
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-surface focus:text-foreground focus:px-3 focus:py-2 focus:rounded"
-        >
-          Skip to main content
-        </a>
-
-        <div className="grow">{children}</div>
+        <NavigationProvider sections={sections}>
+          <div className="grow">{children}</div>
+        </NavigationProvider>
 
         <footer className="inset-shadow-sm text-center sm:flex sm:justify-between px-6 py-4 gap-4 shadow-md bg-surface z-10">
           <div className="mb-2 md:mb-0">

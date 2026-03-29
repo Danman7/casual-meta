@@ -26,7 +26,7 @@ const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
 export default async function Page() {
   return (
     <>
-      <h1 className="page-title">{navTitle}</h1>
+      <h1>{navTitle}</h1>
       <Section>
         <p>
           A unit's datasheet is a card that describes its profile and lists
