@@ -1,20 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaCrosshairs } from 'react-icons/fa'
+import { IoDiceOutline } from 'react-icons/io5'
 import { LuCrown } from 'react-icons/lu'
-import { RiSwordLine } from 'react-icons/ri'
+import { RiInformation2Line, RiSwordLine } from 'react-icons/ri'
 import { RxDoubleArrowUp } from 'react-icons/rx'
 import { TbArrowBigUpLines } from 'react-icons/tb'
 
-import advance from '@/app/assets/wh40k/advance.webp'
 import attack from '@/app/assets/wh40k/attack.webp'
-import halfstrength from '@/app/assets/wh40k/half-strength.webp'
 import movement from '@/app/assets/wh40k/move.webp'
 import pivot from '@/app/assets/wh40k/pivot.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { DiceRoll } from '@/app/ui/DiceRoll'
-import { HorizontalRulerText } from '@/app/ui/HorizontalRulerText'
-import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Table } from '@/app/ui/Table'
 import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -55,47 +52,43 @@ export default async function Page() {
         </section>
 
         <div className="box flex flex-col">
-          <div>
-            <small>The player turn sequence</small>
+          <p className="lead flex-center">
+            <RiInformation2Line /> The player turn sequence
+          </p>
 
-            <hr />
+          <div className="flex flex-col">
+            <div className="flex-center">
+              1. Command Phase <LuCrown />
+            </div>
+            <small>Gain Command Points and check Leadership</small>
           </div>
 
-          <div className="spacey-y-2">
-            <div className="flex flex-col">
-              <div className="flex-center">
-                1. Command Phase <LuCrown />
-              </div>
-              <small>Gain Command Points and check Leadership</small>
+          <div className="flex flex-col">
+            <div className="flex-center">
+              2. Movement Phase <TbArrowBigUpLines />
             </div>
+            <small>Reposition</small>
+          </div>
 
-            <div className="flex flex-col">
-              <div className="flex-center">
-                2. Movement Phase <TbArrowBigUpLines />
-              </div>
-              <small>Reposition</small>
+          <div className="flex flex-col">
+            <div className="flex-center">
+              3. Shooting Phase <FaCrosshairs />
             </div>
+            <small>Resolve ranged attacks</small>
+          </div>
 
-            <div className="flex flex-col">
-              <div className="flex-center">
-                3. Shooting Phase <FaCrosshairs />
-              </div>
-              <small>Resolve ranged attacks</small>
+          <div className="flex flex-col">
+            <div className="flex-center">
+              4. Charge Phase <RxDoubleArrowUp />
             </div>
+            <small>Declare charges and move into melee</small>
+          </div>
 
-            <div className="flex flex-col">
-              <div className="flex-center">
-                4. Charge Phase <RxDoubleArrowUp />
-              </div>
-              <small>Declare charges and move into melee</small>
+          <div className="flex flex-col">
+            <div className="flex-center">
+              5. Fight Phase <RiSwordLine />
             </div>
-
-            <div className="flex flex-col">
-              <div className="flex-center lead">
-                5. Fight Phase <RiSwordLine />
-              </div>
-              <small>Resolve melee attacks</small>
-            </div>
+            <small>Resolve melee attacks</small>
           </div>
         </div>
       </section>
@@ -116,161 +109,180 @@ export default async function Page() {
           </li>
 
           <li>
-            Finally, the active player takes <strong>Battle-shock</strong> tests
-            for <strong>all units below half-strength</strong>.
+            Finally, the active player takes <em>Battle-shock</em> tests if any
+            are required.
           </li>
         </ol>
 
         <h3 id="battle-shock-tests">Battle-shock tests</h3>
 
         <p>
-          If it's the end of your Command Phase, check whether you have units
-          that are below half of their <strong>starting strength</strong>. If
-          the answer is yes, every such unit must take a battle-shock test.
+          At the very end of your Command Phase, check whether you have units
+          that are below half of their <em>starting</em> strength.
+        </p>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <RiInformation2Line /> Below Half-strength
+          </p>
+
+          <p>A unit is below half-strength if:</p>
+
+          <ul>
+            <li>
+              It started as a <strong>single model</strong> (e.g. a character,
+              monster, or vehicle) and it has less than half its wounds left.
+            </li>
+
+            <li>
+              Started as a <strong>multi-model</strong> unit (e.g. a squad), and
+              it has fewer than half of its models left.
+            </li>
+          </ul>
+
+          <p>
+            If a leader is attached to a squad, it counts as a single unit, and
+            you check against the total amount of starting models.
+          </p>
+        </div>
+
+        <blockquote>
+          <p>
+            If a 5-man squad of Intercessors is down to 2 models, they must take
+            a battle-shock test as they are 2/5. However, if the same squad had
+            a Chaplain attached, they would not be required to take a test as
+            they are 3/6.
+          </p>
+        </blockquote>
+
+        <p>
+          If you have units bellow half-strength, every such unit must take a
+          battle-shock test.
+        </p>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> Battle-shock test
+          </p>
+
+          <p>
+            <strong>Roll 2D6.</strong> If the result is higher than the unit's{' '}
+            <strong>highest Leadership (Ld)</strong> attribute, the test passes.
+            But, if it's lower, the test fails.
+          </p>
+        </div>
+
+        <blockquote>
+          <p>
+            A squad of Intercessors takes a battle-shock test and scores a 5.
+            Since they have Ld6+, they fail and are shocked. Yet, with a
+            Chaplain attached if they score a 5, they will pass, because the
+            Chaplain has Ld5+.
+          </p>
+        </blockquote>
+
+        <p>
+          If a unit fails the test it's Battle-shocked until the start of your
+          next Command Phase:
+        </p>
+
+        <ul>
+          <li>Its Objective Control (OC) becomes 0.</li>
+
+          <li>It cannot be affected by Stratagems.</li>
+        </ul>
+
+        <p>
+          Battle-shock is a mechanic that shuts down scoring and support
+          efficiency. In a situation where one player has locked down all
+          objectives, their opponent still has a chance if they bring down
+          enough models.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="movement-phase">2. Movement phase</h2>
+
+        <p>
+          All active player's units that wish to reposition and are{' '}
+          <strong>outside engagement range</strong> (1" of an enemy) can do so
+          one at a time. If the owner declares that a unit will move it can
+          either:
         </p>
 
         <ul>
           <li>
-            If a unit consisting of a <strong>single model</strong>, like a
-            character, monster, or vehicle, took some damage, check whether it{' '}
-            <strong>has less than half its wounds left</strong>.
+            Move normally up to its Movement (M") characteristic in inches.
           </li>
 
           <li>
-            If a <strong>multi-model unit</strong>, like a squad, has taken some
-            damage, check whether it{' '}
-            <strong>has fewer than half of its starting models left</strong>.
-          </li>
-
-          <li>
-            If you are checking a{' '}
-            <strong>
-              squad with an attached leader, include that model in the count
-            </strong>
-            . If the squad is gone, but the leader is still alive, you again
-            check for wounds.
+            Make an <em>advance</em>, moving further, giving up the ability to
+            shoot during the Shooting Phase with all weapons that don't have the{' '}
+            <em>Assault</em> keyword.
           </li>
         </ul>
 
-        <ImageWithCaption
-          src={halfstrength}
-          alt="How to determine if a unit is below half-strength."
-          caption="Marneus Calgar on the left starts with 6 Wounds. At 2 Wounds he's below half-strength. The 10-man Intercessor Squad on the right has 4 models left, thus is also below half-strength."
-        />
-
-        <DiceRoll
-          title="Battle-shock test"
-          dice="2D6"
-          effect={
-            <>
-              Compare the result to the tested{' '}
-              <strong>unit's highest Leadership (Ld)</strong>, including
-              leaders. If the result is higher than the Ld, nothing happens.{' '}
-              <strong>If the result is lower</strong>, the unit is shocked and
-              its{' '}
-              <strong>
-                Objective Control (OC) becomes 0 and it cannot be affected by
-                Stratagems
-              </strong>
-              .
-            </>
-          }
-        />
-
-        <p>
-          Battle-shock shuts down scoring and support efficiency. One player may
-          lock down all objectives, but if their opponent trades in enough
-          models, they have a chance to swing control.
-        </p>
-
-        <div className="box example">
-          <p>
-            A 10-man squad of Intercessors is down to 4 marines. They take the
-            test (4/10 models) and score a 5. Since Intercessors have Ld of 6+,
-            they fail and are shocked.
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> Advance
           </p>
 
           <p>
-            Now, we take the same squad but with a Chaplain attached. They take
-            the test (5/11 models) and again score a 5. But because the Chaplain
-            has Ld of 5+, they would pass with a roll of 5.
+            <strong>Roll a D6.</strong> Add the result as inches to the unit's
+            M" and move up to that distance.
           </p>
         </div>
-      </section>
-
-      <section title="2. Movement phase" id="movement-phase">
-        <p>
-          After your Command Phase is over, it's time to choose which of your
-          units <strong>outside engagement range</strong> (1" horizontal, 5"
-          vertical of an enemy) are to <strong>reposition</strong>. You do this
-          with all units, <strong>one at a time</strong>. During the Movement
-          Phase, a unit can either:
-        </p>
-
-        <p>
-          <strong>Make a normal move:</strong> Move up to the unit's Movement
-          (M") characteristic in inches.
-        </p>
 
         <Image src={movement} alt="Movement example" />
 
-        <HorizontalRulerText>OR</HorizontalRulerText>
-
-        <p className="font-bold">Make an advancing move</p>
-
-        <DiceRoll
-          dice="D6"
-          title="Advance dice roll"
-          effect={
-            <>
-              <strong>Add the result as inches to the unit's M"</strong> and
-              move that distance. You get to move the unit further, but it{' '}
-              <strong>
-                can only shoot weapons with the <em>Assault</em> keyword
-              </strong>{' '}
-              in the following phase.
-            </>
-          }
-        />
-
-        <Image src={advance} alt="Advancing move example" />
-
         <p>
-          All units that did not move during this phase count as{' '}
-          <strong>having remained stationary.</strong> They may gain benefits,
-          usually related to accuracy (rolls to hit) depending on their special
-          rules or their weapons keywords.
+          No unit can move through enemies or stop within engagement range of an
+          enemy. Under core rules, models also cannot end a move on top of an
+          objective. Even so, tournaments standardize them as{' '}
+          <em>40mm circular markers</em> and allow finishing a move on top.
         </p>
 
         <p>
-          <strong>
-            No units that moved can move through or end within engagement range
-            of an enemy.
-          </strong>{' '}
-          Also, models{' '}
-          <strong>cannot end a move on top of an objective marker</strong> under
-          core rules, and markers have no defined shape. However,{' '}
-          <strong>tournaments</strong> standardize objectives as{' '}
-          <strong>40mm circular markers</strong> and allow models to end their
-          movement on them.
+          A unit may also skip movement, even if eligible to move, and{' '}
+          <em>remain stationary</em>. Some weapon keywords and special rules
+          generate benefits for units that didn't move.
         </p>
 
-        <p>Units that are already engaged can only stay put, or fall back.</p>
+        <p>
+          Units that are already engaged can only stay put, or{' '}
+          <em>fall back</em>.
+        </p>
 
         <h3 id="fall-back">Fall Back</h3>
 
         <p>
-          A fall back move is a normal move (up to the unit's M"), but the unit
-          must <strong>skip shoot and charge phases this turn</strong>. Unlike
-          normal moves, units falling back may pass through enemies, but if they
-          do so, they must take <strong>Desperate Escape Tests</strong>.
+          A fall back is an optional move available to units engaged in close
+          combat that want to get out. Any such unit can fall back during the
+          Movement Phase, making a normal move away from the enemy. Units that
+          fell back:
         </p>
 
-        <DiceRoll
-          title="Desperate escape test"
-          dice="D6"
-          effect="On a 2 or less, the model is destroyed. Battle-shocked units always take a desperate escape test if they fall back."
-        />
+        <ul>
+          <li>Cannot shoot or declare a charge the same turn.</li>
+          <li>Cannot end the move within engagement range of a foe.</li>
+        </ul>
+
+        <p>
+          Unlike normal moves and advances, falling back allow passing through
+          enemies, but the unit must take a <em>Desperate Escape</em> test.
+          Units that are falling back and are also battle-shocked always take
+          the test.
+        </p>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> Desperate Escape test
+          </p>
+
+          <p>
+            <strong>Roll a D6.</strong> On a 2 or less, the model is destroyed.
+          </p>
+        </div>
 
         <h3 id="pivoting">Pivoting</h3>
 

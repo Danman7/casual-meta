@@ -90,7 +90,7 @@
 }
 
 @utility box {
-  @apply border bg-surface border-foreground/10 shadow-sm rounded p-4 space-y-4 text-justify;
+  @apply border bg-surface border-foreground/10 shadow-sm rounded p-4 space-y-4;
 }
 
 @utility picture {
@@ -99,6 +99,10 @@
 
 @utility profile-img {
   @apply max-h-56 object-cover;
+}
+
+@utility lead {
+  @apply text-lg font-bold;
 }
 
 @layer base {
@@ -137,6 +141,10 @@
     @apply text-[0.833rem] font-light;
   }
 
+  blockquote {
+    @apply border-l-4 border-foreground/10 pl-4 text-foreground/80 text-sm space-y-4;
+  }
+
   main {
     a {
       @apply inline-flex underline;
@@ -146,12 +154,17 @@
       @apply space-y-4;
     }
 
+    ul,
+    ol {
+      @apply ml-6;
+    }
+
     ul {
-      @apply ml-6 list-disc [&_ul]:list-[revert] [&_ul]:ml-6;
+      @apply list-disc [&_ul]:list-[revert] [&_ul]:ml-6;
     }
 
     ol {
-      @apply ml-6 list-decimal;
+      @apply list-decimal;
     }
   }
 
@@ -160,6 +173,6 @@
   }
 
   .circle-icon {
-    @apply inline-flex place-items-center bg-surface rounded-full w-9 h-9 p-1 border-2 border-foreground/20;
+    @apply inline-flex place-items-center bg-surface rounded-full w-9 h-9 p-1 border-2 border-foreground/10;
   }
 }
