@@ -12,10 +12,10 @@ export const SideNavigation: React.FC<{ isMobile?: boolean }> = ({
 
   return (
     <nav
-      className={`edge-padding blurred-surface w-72 divide-y divide-foreground/10 ${
+      className={`edge-padding blurred-surface divide-y divide-foreground/10 ${
         isMobile
           ? 'h-dvh overflow-y-auto pt-20'
-          : 'sticky-aside max-h-[calc(100dvh-6rem)] overflow-y-auto'
+          : 'sticky-aside max-h-[calc(100dvh-6rem)] w-72 overflow-y-auto'
       }`}
     >
       <div className="lg:hidden font-bold pb-4 mb-4 space-y-2">

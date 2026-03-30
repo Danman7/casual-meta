@@ -77,7 +77,7 @@ export const Header = ({
       </section>
 
       <nav>
-        <div className="hidden lg:flex flex-list gap-4">
+        <div className="hidden lg:flex flex-list gap-4 text-lg">
           {ROOT_NAVIGATION_ITEMS.map((item) => (
             <Anchor key={item.href} href={item.href}>
               {item.shortName}

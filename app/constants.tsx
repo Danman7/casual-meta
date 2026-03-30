@@ -2,7 +2,7 @@ export const METADATA_SUFFIX = '| Casual Meta'
 
 export const WH40K_BASE_URL = '/warhammer-40k'
 export const WH40K_TITLE = 'Warhammer 40,000'
-export const SHORT_WH40K_TITLE = 'WH 40K'
+export const SHORT_WH40K_TITLE = 'WH40K'
 
 export const MK_BASE_URL = '/mortal-kombat'
 export const MK_TITLE = 'Mortal Kombat'

@@ -33,12 +33,12 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
         onToggleMobileMenu={toggleMobileMenu}
       />
 
-      <div className="flex relative">
+      <div className="flex relative grow">
         <aside className="hidden lg:flex">
           <SideNavigation />
         </aside>
 
-        <main tabIndex={-1} className="edge-padding">
+        <main tabIndex={-1} className="edge-padding max-w-3xl mx-auto pb-12">
           {children}
         </main>
 
@@ -49,18 +49,10 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
 
       <div
         id="mobile-nav"
-        className={`fixed top-0 left-0 w-80 h-full transition z-40 lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed top-0 left-0 h-full transition z-40 lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <SideNavigation isMobile />
       </div>
-
-      {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 blurred-surface z-30 lg:hidden"
-          onClick={toggleMobileMenu}
-          aria-hidden="true"
-        />
-      )}
     </div>
   )
 }

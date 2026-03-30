@@ -93,6 +93,14 @@
   @apply border-2 border-foreground/10 rounded p-4 shadow-md space-y-4 text-justify;
 }
 
+@utility picture {
+  @apply rounded shadow-md;
+}
+
+@utility profile-img {
+  @apply max-h-56 object-cover;
+}
+
 @layer base {
   a {
     @apply flex-center hover:text-primary active:text-primary/70 transition-colors;
@@ -101,7 +109,7 @@
   h1,
   h2,
   h3 {
-    @apply tracking-[-0.022em] font-bold leading-[1.15] mt-9 mb-4;
+    @apply tracking-[-0.022em] font-bold leading-[1.15] mt-9 mb-4 text-left;
   }
 
   h1 {
@@ -127,7 +135,7 @@
 
   main {
     a {
-      @apply underline;
+      @apply inline-flex underline;
     }
 
     section {
@@ -135,20 +143,16 @@
     }
 
     ul {
-      @apply ml-6 list-disc [&_ul]:list-[revert] [&_ul]:ml-6 text-justify;
+      @apply ml-6 list-disc [&_ul]:list-[revert] [&_ul]:ml-6;
     }
 
     ol {
-      @apply ml-6 list-decimal text-justify;
+      @apply ml-6 list-decimal;
     }
   }
 
   .edge-padding {
     @apply px-4 lg:px-8;
-  }
-
-  .profile-img {
-    @apply my-6 sm:max-h-56 object-cover rounded shadow-md;
   }
 
   .circle-icon {
