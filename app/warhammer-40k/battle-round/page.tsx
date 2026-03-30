@@ -4,7 +4,7 @@ import { FaCrosshairs } from 'react-icons/fa'
 import { LuCrown } from 'react-icons/lu'
 import { RiSwordLine } from 'react-icons/ri'
 import { RxDoubleArrowUp } from 'react-icons/rx'
-import { TbArrowBigDown, TbArrowBigUpLines } from 'react-icons/tb'
+import { TbArrowBigUpLines } from 'react-icons/tb'
 
 import advance from '@/app/assets/wh40k/advance.webp'
 import attack from '@/app/assets/wh40k/attack.webp'
@@ -15,7 +15,6 @@ import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { DiceRoll } from '@/app/ui/DiceRoll'
 import { HorizontalRulerText } from '@/app/ui/HorizontalRulerText'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { Section } from '@/app/ui/Section'
 import { Table } from '@/app/ui/Table'
 import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -37,94 +36,88 @@ export default async function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <section>
-        <div className="sm:flex items-start">
-          <div className="sm:w-1/2">
-            <p>
-              Once you have mustered your army, selected a mission and
-              determined who goes first, you are <strong>ready to play</strong>{' '}
-              a battle of Warhammer 40,000.
-            </p>
+      <section className="md:flex gap-4 items-start *:md:w-1/2">
+        <section>
+          <p>
+            All formats of WH40K are played in a series of rounds. The round is
+            a cycle of player turns. All players (usually two) take a turn to
+            complete a round. A turn is a sequence of actions grouped in phases.
+            A phase dictates what actions can be executed and in what
+            arrangement.
+          </p>
 
-            <p>
-              <strong>All battles are played in rounds.</strong> A typical
-              battle lasts 5 rounds, but that can vary between tournaments,
-              missions, and player agreements.
-            </p>
+          <p>
+            On your turn, you go through each phase in order. Once you complete
+            all, the turn passes to the next player. When all players have had a
+            turn, the round ends. Many formats end after a set number of rounds
+            (usually 5).
+          </p>
+        </section>
 
-            <p>
-              During a round, every player takes a turn.{' '}
-              <strong>A turn consists of 5 phases.</strong> The active player
-              goes through all the phases, then passes the turn to the next
-              player.{' '}
-              <strong>
-                Once all players have taken their turn, the round ends.
-              </strong>
-            </p>
+        <div className="box flex flex-col">
+          <div>
+            <small>The player turn sequence</small>
+
+            <hr />
           </div>
 
-          <div className="box sm:w-1/2 flex flex-col gap-2 place-items-center">
-            <div className="flex flex-col items-center">
-              <div className="flex-wrapper lead">
+          <div className="spacey-y-2">
+            <div className="flex flex-col">
+              <div className="flex-center">
                 1. Command Phase <LuCrown />
               </div>
-              <div className="flavor">Gain CP and check Leadership (Ld)</div>
+              <small>Gain Command Points and check Leadership</small>
             </div>
-            <TbArrowBigDown />
-            <div className="flex flex-col items-center">
-              <div className="flex-wrapper lead">
+
+            <div className="flex flex-col">
+              <div className="flex-center">
                 2. Movement Phase <TbArrowBigUpLines />
               </div>
-              <div className="flavor">Reposition up to Movement (M")</div>
+              <small>Reposition</small>
             </div>
-            <TbArrowBigDown />
-            <div className="flex flex-col items-center">
-              <div className="flex-wrapper lead">
+
+            <div className="flex flex-col">
+              <div className="flex-center">
                 3. Shooting Phase <FaCrosshairs />
               </div>
-              <div className="flavor">Resolve ranged attacks</div>
+              <small>Resolve ranged attacks</small>
             </div>
-            <TbArrowBigDown />
-            <div className="flex flex-col items-center">
-              <div className="flex-wrapper lead">
+
+            <div className="flex flex-col">
+              <div className="flex-center">
                 4. Charge Phase <RxDoubleArrowUp />
               </div>
-              <div className="flavor">Declare charges and move into melee</div>
+              <small>Declare charges and move into melee</small>
             </div>
-            <TbArrowBigDown />
-            <div className="flex flex-col items-center">
-              <div className="flex-wrapper lead">
+
+            <div className="flex flex-col">
+              <div className="flex-center lead">
                 5. Fight Phase <RiSwordLine />
               </div>
-              <div className="flavor">Resolve melee attacks</div>
+              <small>Resolve melee attacks</small>
             </div>
           </div>
         </div>
       </section>
 
-      <Section title="1. Command phase" id="command-phase">
-        <p>
-          When it's time to begin your turn, you must first go through the
-          Command Phase. It's a sequence of just a few quick steps - usually the
-          shortest in the turn.
-        </p>
+      <section>
+        <h2 id="command-phase">1. Command Phase</h2>
 
         <ol>
           <li>
             Before everything else,{' '}
             <strong>all players gain 1 command point (CP).</strong> CPs are a
-            resource spent to activate Stratagems.
+            resource spent to activate <em>Stratagems</em>.
           </li>
 
           <li>
-            After gaining a CP, resolve any rules that occur in the Command
-            Phase (the rule will state so).
+            After that resolve any rules that occur in the Command Phase (the
+            rule will state so).
           </li>
 
           <li>
-            After resolving the above, only the active player takes{' '}
-            <strong>Battle-shock</strong> tests for{' '}
-            <strong>all their units below half-strength</strong>.
+            Finally, the active player takes <strong>Battle-shock</strong> tests
+            for <strong>all units below half-strength</strong>.
           </li>
         </ol>
 
@@ -203,9 +196,9 @@ export default async function Page() {
             has Ld of 5+, they would pass with a roll of 5.
           </p>
         </div>
-      </Section>
+      </section>
 
-      <Section title="2. Movement phase" id="movement-phase">
+      <section title="2. Movement phase" id="movement-phase">
         <p>
           After your Command Phase is over, it's time to choose which of your
           units <strong>outside engagement range</strong> (1" horizontal, 5"
@@ -358,9 +351,9 @@ export default async function Page() {
           Reserve play is about timing and pressure. Late arrivals can threaten
           flanks or objectives but must respect screening and positioning.
         </p>
-      </Section>
+      </section>
 
-      <Section title="Making attacks" id="making-attacks">
+      <section title="Making attacks" id="making-attacks">
         <p>
           Two of the three remaining phases involve making attacks - either
           ranged or melee. They follow the same sequence of steps:
@@ -476,9 +469,9 @@ export default async function Page() {
             excess damage is lost.
           </p>
         </div>
-      </Section>
+      </section>
 
-      <Section title="3. Shooting phase" id="shooting-phase">
+      <section title="3. Shooting phase" id="shooting-phase">
         <p>
           After all your units are done with repositioning, it's time to resolve
           ranged attacks. Go through each unit that:
@@ -559,9 +552,9 @@ export default async function Page() {
             Damage or AP.
           </li>
         </ul>
-      </Section>
+      </section>
 
-      <Section title="4. Charge phase" id="charge-phase">
+      <section title="4. Charge phase" id="charge-phase">
         <p>
           The Charge phase is where any of your units that are{' '}
           <strong>within 12" of an enemy and didn't advance this turn</strong>{' '}
@@ -589,9 +582,9 @@ export default async function Page() {
           your positioning. You may find your forward troops bottlenecking
           follow-up charges.
         </p>
-      </Section>
+      </section>
 
-      <Section title="5. Fight phase" id="fight-phase">
+      <section title="5. Fight phase" id="fight-phase">
         <p>
           At the very end of your turn, you resolve hand-to-hand attacks. All
           units that either{' '}
@@ -635,7 +628,7 @@ export default async function Page() {
           Pile-ins and consolidations are powerful for repositioning, tagging
           units, and stealing objectives.
         </p>
-      </Section>
+      </section>
     </>
   )
 }

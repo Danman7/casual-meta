@@ -3,7 +3,7 @@
 :root {
   --background: hsl(10, 10%, 98%);
   --foreground: hsl(10, 20%, 20%);
-  --surface: hsl(10, 20%, 94%);
+  --surface: hsl(10, 10%, 96%);
   --primary: hsl(10, 80%, 45%);
   --success: var(--color-green-600);
   --error: var(--color-red-600);
@@ -13,7 +13,7 @@
   :root {
     --background: hsl(10, 20%, 5%);
     --foreground: hsl(10, 10%, 80%);
-    --surface: hsl(10, 20%, 15%);
+    --surface: hsl(10, 20%, 8%);
     --primary: hsl(10, 80%, 55%);
     --success: var(--color-green-400);
     --error: var(--color-red-400);
@@ -90,11 +90,11 @@
 }
 
 @utility box {
-  @apply border-2 border-foreground/10 rounded p-4 shadow-md space-y-4 text-justify;
+  @apply border bg-surface border-foreground/10 shadow-sm rounded p-4 space-y-4 text-justify;
 }
 
 @utility picture {
-  @apply rounded shadow-md;
+  @apply rounded shadow-sm;
 }
 
 @utility profile-img {
@@ -127,6 +127,10 @@
   h2[id],
   h3[id] {
     scroll-margin-top: 2.5rem;
+  }
+
+  hr {
+    @apply border-foreground/10 w-full;
   }
 
   small {

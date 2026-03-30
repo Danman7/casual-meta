@@ -54,7 +54,7 @@ export default function Page() {
         </div>
 
         <div
-          className="box animate-fade-in-scale divide-y-2 divide-foreground/10"
+          className="box animate-fade-in-scale"
           style={{ animationDelay: '1.2s' }}
         >
           <p className="text-xl pb-4">
