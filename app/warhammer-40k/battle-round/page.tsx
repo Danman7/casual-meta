@@ -1,6 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import { FaCrosshairs } from 'react-icons/fa'
+import { FaCheck, FaCrosshairs } from 'react-icons/fa'
 import { IoDiceOutline } from 'react-icons/io5'
 import { LuCrown } from 'react-icons/lu'
 import { RiInformation2Line, RiSwordLine } from 'react-icons/ri'
@@ -10,12 +9,11 @@ import { TbArrowBigUpLines } from 'react-icons/tb'
 import attack from '@/app/assets/wh40k/attack.webp'
 import movement from '@/app/assets/wh40k/move.webp'
 import pivot from '@/app/assets/wh40k/pivot.webp'
-import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
-import { DiceRoll } from '@/app/ui/DiceRoll'
+import shooting from '@/app/assets/wh40k/shooting.webp'
+import { WH40K_TITLE } from '@/app/constants'
 import { Table } from '@/app/ui/Table'
 import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
-import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 3
 
@@ -25,8 +23,6 @@ export const metadata = generatePageMetadata(
   `${WH40K_TITLE}: ${navTitle}`,
   'Understand the sequence of turns in Warhammer 40k.',
 )
-
-const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
 
 export default async function Page() {
   return (
@@ -301,18 +297,9 @@ export default async function Page() {
         <h3 id="transports">Transports</h3>
 
         <p>
-          Some units, like the Rhino above, allow other units to{' '}
-          <strong>embark</strong> on them{' '}
-          <strong>if every model ends a move wholly within 3" of them</strong>.
-          Then the embarked unit can benefit from the transport's higher
-          mobility, durability or both.
-        </p>
-
-        <p>
-          In the particular case of the Rhino, that unit is a{' '}
-          <strong>dedicated transport</strong>. This means that it cannot be
-          deployed on the battlefield empty. There must be at least one unit
-          embarked on a dedicated transport at the start of the battle.
+          If a unit has the <em>Transport</em> keyword, they allow other units
+          to <em>embark</em> on them if every model ends a move within 3" of
+          them or deploy embarked.
         </p>
 
         <ul>
@@ -327,26 +314,30 @@ export default async function Page() {
           </li>
         </ul>
 
-        <DiceRoll
-          title="If the transport is destroyed"
-          dice="D6"
-          effect="On a 1, the model suffers a mortal wound. Then the survivors
-          disembark and become Battle-shocked and cannot charge that turn."
-        />
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> If the transport is destroyed
+          </p>
+
+          <p>
+            <strong>Roll a D6.</strong> On a 1, the model suffers a mortal
+            wound. Then the survivors disembark and become Battle-shocked and
+            cannot charge that turn.
+          </p>
+        </div>
+
+        <p>
+          Transports let you move units safely and efficiently across the board.
+          They trade points for speed, protection, and positioning control.
+        </p>
 
         <h3 id="strategic-reserves">Strategic Reserves</h3>
 
         <p>
-          Both players may choose{' '}
-          <strong>not to deploy some of their units</strong> at the beginning of
-          the battle. These go into Strategic Reserves and{' '}
-          <strong>cannot exceed 25% of the total army points</strong>. Reserved
-          units may{' '}
-          <strong>
-            join the battle, only at the very end of the movement phase
-          </strong>
-          , after all other units have moved or stayed put, following these
-          rules:
+          Players may choose not to deploy some of their units at the beginning
+          of the battle. These go into <em>Strategic Reserves</em> and cannot
+          exceed 25% of the total army points. They can join the battle later,
+          at the very end of the movement phase, following these rules:
         </p>
 
         <ul>
@@ -365,10 +356,14 @@ export default async function Page() {
         </p>
       </section>
 
-      <section title="Making attacks" id="making-attacks">
+      <section>
+        <h2 id="making-attacks">Making attacks</h2>
+
         <p>
           Two of the three remaining phases involve making attacks - either
-          ranged or melee. They follow the same sequence of steps:
+          ranged or melee. The owner of a unit can declare a target during the
+          Shooting or Fight phases. Then they resolves the attack sequence for
+          each and every weapon used:
         </p>
         <ol>
           <li>
@@ -384,110 +379,133 @@ export default async function Page() {
           <li>Inflict damage.</li>
         </ol>
 
-        <DiceRoll
-          title="Roll to hit"
-          dice="D6"
-          effect={
-            <>
-              If result is greater than the Ballistic Skill (BS) for ranged
-              weapons or Weapon Skill (WS) for melee, the attack connects. An
-              unmodified roll of 6 is a <strong>critical hit</strong>.
-            </>
-          }
-        />
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> 1. Roll to hit
+          </p>
 
-        <DiceRoll
-          title="Roll to wound (only if the attack hits)"
-          dice="D6"
-          effect={
-            <>
-              The result follows a table based on how much higher or lower the
-              weapon's Strength (S) is compared to the target's Toughness (T).
-              An unmodified roll of 6 is a <strong>critical wound</strong>.
-            </>
-          }
-        />
+          <p>
+            <strong>Roll a D6.</strong> If result is higher than the Ballistic
+            Skill (BS) for ranged weapons or Weapon Skill (WS) for melee, the
+            attack connects. An unmodified roll of 6 is a <em>critical hit</em>.
+          </p>
+        </div>
+
+        <blockquote>
+          <p>
+            A squad of Heavy Intercessors declares a ranged attack against some
+            Ork Boyz. They fire 5 heavy bolt rifles (A2, BS3+) after moving. Two
+            attacks means rolling 10D6 to hit. They must score 3+.
+          </p>
+        </blockquote>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> 2. Roll to wound (only if the attack hits)
+          </p>
+
+          <p>
+            <strong>Roll a D6.</strong> The result follows a table based on how
+            much higher or lower the weapon's Strength (S) is compared to the
+            target's Toughness (T). An unmodified roll of 6 is a{' '}
+            <em>critical wound</em>.
+          </p>
+        </div>
 
         <Table columns={woundRollColumns} data={woundRollRows} />
 
-        <p>
-          Only after the attack hits and wounds can the{' '}
-          <strong>defender allocate wounds</strong> (unless the weapon has
-          Precision). They decide which models take the hits. Models which
-          already lost wounds or had attacks allocated this phase must be
-          selected first. After wounds are allocated, the defender can make
-          saving throws:{' '}
-          <strong>either armor saves or invulnerable saves</strong> if the
-          target has them.
-        </p>
+        <blockquote>
+          <p>
+            Let's say that out of the 10 attacks from the previous example, 7
+            hit. The heavy rifle has S5 while the Boyz have T5 so a roll of 4+
+            wounds. The attacker rolls 7D6.
+          </p>
+        </blockquote>
 
         <p>
-          <strong>
-            The owner of the target, not the attacker, allocates which models
-            take the wounds.
-          </strong>
+          If the attack hits <strong>and</strong> wounds the{' '}
+          <strong>defender</strong> allocates which models take the wounds and
+          makes saving throws. Models which already lost wounds or had attacks
+          allocated this phase must be selected first. Saves represent the
+          target's armor.
         </p>
 
-        <DiceRoll
-          title="Roll to save"
-          dice="D6"
-          effect="Modify the roll by the Armor Penetration (AP) of the weapon. If the result is equal or greater to the target's Save (Sv) damage is not inflicted."
-        />
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> Roll to save
+          </p>
 
-        <DiceRoll
-          title="Roll for an invulnerable save if the target has one and chooses not to use an armor save"
-          dice="D6"
-          effect="If the result is equal or greater to the target's Invulnerable Save (Sv) damage is not inflicted. Invulnerable saves are not affected by the weapon's AP."
-        />
+          <p>
+            <strong>Roll a D6.</strong> Modify the roll by the Armor Penetration
+            (AP) of the weapon. If the result is equal or greater to the
+            target's Save (Sv) damage is not inflicted.
+          </p>
+        </div>
+
+        <p>
+          The target may also have an <em>Invulnerable Save</em> (Inv) which
+          ignores the weapon's AP. It comes in handy when facing weapons with
+          high AP. If available, the defender may choose to roll for it instead
+          of the armor save, but <strong>not both</strong>.
+        </p>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> Invulnerable save
+          </p>
+
+          <p>
+            <strong>Roll a D6.</strong> If the result is equal or greater to the
+            target's Invulnerable Save damage is not inflicted.
+          </p>
+        </div>
+
+        <blockquote>
+          <p>
+            Continuing the example, if the attacker scores 4 wounds, the
+            defender selects which Boyz take the wounds. He skips the Nob (the
+            leader) and allocates 4 wounds to the others. Boyz have Sv5+ so they
+            throw 4D6.
+          </p>
+        </blockquote>
+
+        <p>For all rolls above, an unmodified roll of 1 is always a fail.</p>
 
         <Image src={attack} alt="Attack sequence example" className="my-6" />
 
         <p>
           After all 3 rolls are done, if the attack hits, wounds, and the armor
-          save fails, damage is inflicted. The target loses{' '}
-          <strong>wounds equal to the Damage (D) of the weapon</strong>. If the
-          attack has more D than is required to kill the target model, the
-          excess is lost. An unmodified{' '}
-          <strong>roll of 1, for any of the 3 rolls, is always a fail</strong>.
-          This <strong>whole sequence</strong> for a given weapon is often
-          called <strong>an activation</strong>. The more attacks a weapon
-          makes, the more activations it has, thus a better chance to score a
-          wound.
+          save fails, damage is inflicted. The target loses wounds equal to the
+          Damage (D) of the weapon. If the attack has more D than is required to
+          kill the target model, the excess is lost.
         </p>
 
-        <div className="box example">
-          <p>
-            Heavy Intercessors fire 5 heavy bolt rifles at a squad of Ork Boyz
-            after moving. That rifle has two Attacks (A2) and BS3+, so the
-            attacker throws 10D6 to hit. 7 of them score a 3 or higher.
-          </p>
-
-          <p>
-            Now the attacker rolls to wound. The heavy rifle has S5 while the
-            Boyz have T5 so a roll of 4+ wounds. The attacker rolls 7D6 because
-            7 attacks hit. 4 of those rolls score a wound.
-          </p>
-
-          <p>
-            It's time for the defender to select which Boyz take the wounds. He
-            skips the Nob (the leader) and allocates 4 wounds to the others.
-            They then make a saving throw. Boyz have Sv5+. Out of the 4 saving
-            rolls, 2 score 5 or higher.
-          </p>
-
+        <blockquote>
           <p>
             In the end two attacks inflict damage. Since the heavy rifle has D2
             and the Ork Boy has W1, two Boyz are removed from battle and the
             excess damage is lost.
           </p>
-        </div>
+        </blockquote>
+
+        <p>
+          The whole sequence is called an <em>activation</em>. The more attacks
+          a weapon makes, the more activations it has, thus a better average
+          chance to score a wound.
+        </p>
+
+        <p>
+          You will often hear the term <em>to chip</em>, which means to deal
+          small amounts of damage. You are chipping someone / something when
+          they lose a wound or a model, but no enough to make a difference. Chip
+          damage accumulates through time.
+        </p>
       </section>
 
-      <section title="3. Shooting phase" id="shooting-phase">
-        <p>
-          After all your units are done with repositioning, it's time to resolve
-          ranged attacks. Go through each unit that:
-        </p>
+      <section title="3. Shooting phase">
+        <h2 id="shooting-phase">3. Shooting phase</h2>
+
+        <p>Go through each unit that:</p>
 
         <ul>
           <li>Is not engaged in close combat.</li>
@@ -505,109 +523,96 @@ export default async function Page() {
           <li>You may split fire by weapon, but not split individual shots.</li>
           <li>Units that are out of range don't shoot.</li>
           <li>
-            But the entire targeted unit counts as within range, so wounds can
-            be allocated to any model.
-          </li>
-          <li>
             A model can only fire either all <em>Pistols</em> or everything
             else. Not both.
           </li>
 
           <li>
-            All attacks from the unit resolve simultaneously, based on board
-            state at declaration. Once declared to shoot,{' '}
-            <strong>all weapons must fire</strong>.
+            All attacks from the unit resolve simultaneously. All weapons must
+            fire.
           </li>
         </ul>
 
         <p>
-          Some terrain features provide <strong>Benefit of Cover</strong> to
-          targets against ranged attacks. If this is true for the defending
-          unit, it gains <strong>+1 to armor saves</strong>, unless it has Sv3+
-          or better and the weapon has AP0. Multiple instances of cover are not
-          cumulative.
+          Some terrain features provide <em>Benefit of Cover</em> against ranged
+          attacks. The unit behind cover gains +1 to armor saves, unless it has
+          Sv3+ or better and the weapon has AP0.
         </p>
 
-        <p>
-          All attacks are{' '}
-          <strong>resolved according to the "Making attacks"</strong> section
-          above. Go through all shooting units, remove casualties from play, and
-          move on to the next phase.
-        </p>
+        <Image src={shooting} alt="Shooting example" />
 
-        <p>
-          To make an educated decision on what to shoot with what you'll need to
-          have a decent understanding of{' '}
-          <Link href={wh40kRoute('Datasheets')}>Datasheets</Link>. But as a rule
-          of thumb:
-        </p>
+        <div className="box">
+          <p className="lead flex-center">
+            <FaCheck /> Rules of thumb for selecting a target
+          </p>
 
-        <ul>
-          <li>
-            Prioritize high-value enemies - units that can make an impact on the
-            following turn.
-          </li>
+          <ul>
+            <li>
+              Prioritize high-value enemies - units that can make an impact on
+              the following turn.
+            </li>
 
-          <li>
-            Shoot with units that have fewer target options first to avoid
-            wasting attacks.
-          </li>
+            <li>
+              Shoot with units that have fewer target options first to avoid
+              wasting attacks.
+            </li>
 
-          <li>Focus fire with the aim to destroy outright, not just weaken.</li>
+            <li>Focus fire with the aim to destroy outright, not chip.</li>
 
-          <li>
-            Against Infantry, resolve Blast weapons first for bonus attacks.
-          </li>
+            <li>
+              Against Infantry, resolve Blast weapons first for bonus attacks.
+            </li>
 
-          <li>
-            Use weapons against optimal targets as much as possible. Don't waste
-            Damage or AP.
-          </li>
-        </ul>
+            <li>
+              Use weapons against optimal targets. Don't waste Damage or AP.
+            </li>
+          </ul>
+        </div>
       </section>
 
-      <section title="4. Charge phase" id="charge-phase">
-        <p>
-          The Charge phase is where any of your units that are{' '}
-          <strong>within 12" of an enemy and didn't advance this turn</strong>{' '}
-          may declare a charge move into that enemy. If you wish for a unit to
-          charge, you do a charge roll.
-        </p>
-
-        <DiceRoll
-          title="Charge roll"
-          dice='2D6"'
-          effect='If the total is
-          enough to move within 1" (Engagement range) of the target, the charge succeeds and the unit may move into position. If it fails, the unit stays put.'
-        />
+      <section>
+        <h2 id="charge-phase">4. Charge phase</h2>
 
         <p>
-          On success, that unit may move and engage the enemy in close combat. A
-          unit may charge multiple targets, but you must engage every declared
-          target for the charge to succeed.
+          Any unit that wishes to engage in melee, that{' '}
+          <strong>didn't advance this turn</strong>, and is within 12" of a foe
+          may declare a charge into that foe. A unit may charge multiple
+          targets, but you must successfully engage every declared target.
         </p>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> Charge roll
+          </p>
+
+          <p>
+            <strong>Roll 2D6".</strong> If the result is enough to move within
+            1" (engagement range) of the target, the charge succeeds and the
+            unit may move into position. If it fails, the unit stays put.
+          </p>
+        </div>
 
         <p>
           Units that are better at melee, naturally want to engage the enemy
           earlier. It's often better to skip advancing, which might gain up to
           6", and do a regular move + charge, which might gain up to 12". Watch
-          your positioning. You may find your forward troops bottlenecking
+          your positioning. You may find your forward troops a bottleneck for
           follow-up charges.
         </p>
       </section>
 
-      <section title="5. Fight phase" id="fight-phase">
+      <section>
+        <h2 id="fight-phase">5. Fight phase</h2>
+
         <p>
-          At the very end of your turn, you resolve hand-to-hand attacks. All
-          units that either{' '}
-          <strong>made a charge this turn, or are already engaged</strong>{' '}
-          fight. Units that <strong>charged, gain Fights First</strong> ability.
-          There are also units that have native Fights First. In this phase, the{' '}
-          <strong>non-active player goes first</strong> if they have eligible
+          It's time to resolve hand-to-hand attacks. All units that completed a
+          successful charge this turn, or were already engaged participate.
+          Units that charged, gain <em>Fights First</em> (some have it
+          natively). The non-active player goes first if they have eligible
           units.
         </p>
 
-        <p>Who fights when?</p>
+        <p className="font-bold">Who fights when?</p>
 
         <ol>
           <li>Non-active player's units that have Fights First.</li>
@@ -619,26 +624,19 @@ export default async function Page() {
         <p>When it's your turn to fight, the selected unit:</p>
 
         <ol>
-          <li>
-            <strong>Pile in - move up to 3", ending in Engagement range</strong>
-            . If base-to-base contact is possible, it must be made.
-          </li>
+          <li>Piles in - moves up to 3", ending in engagement range.</li>
+
+          <li>Executes all attacks with melee weapons.</li>
 
           <li>
-            Execute all attacks with melee weapons according to the Making
-            attacks rules.
-          </li>
-
-          <li>
-            <strong>Consolidate - move another 3"</strong> only if there are
-            models that are outside Engagement range and may move into it, or
-            within range of an objective marker.
+            Consolidates - moves another 3" if there are models outside
+            engagement or may move within range of an objective.
           </li>
         </ol>
 
         <p>
-          Pile-ins and consolidations are powerful for repositioning, tagging
-          units, and stealing objectives.
+          Pile-ins and consolidations are tools for jamming units, and stealing
+          objectives.
         </p>
       </section>
     </>

@@ -13,7 +13,7 @@
   :root {
     --background: hsl(10, 20%, 5%);
     --foreground: hsl(10, 10%, 80%);
-    --surface: hsl(10, 20%, 8%);
+    --surface: hsl(10, 20%, 10%);
     --primary: hsl(10, 80%, 55%);
     --success: var(--color-green-400);
     --error: var(--color-red-400);

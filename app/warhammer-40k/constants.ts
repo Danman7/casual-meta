@@ -21,23 +21,23 @@ export const woundRollColumns: TableColumn<WoundRollRow>[] = [
 
 export const woundRollRows: WoundRollRow[] = [
   {
-    strengthVsToughness: 'Strength is at least double Toughness (S >= 2xT)',
+    strengthVsToughness: 'Strength is at least double Toughness',
     requiredRoll: '2+',
   },
   {
-    strengthVsToughness: 'Strength is higher than Toughness (S > T)',
+    strengthVsToughness: 'Strength is higher than Toughness',
     requiredRoll: '3+',
   },
   {
-    strengthVsToughness: 'Strength equals Toughness (S = T)',
+    strengthVsToughness: 'Strength equals Toughness',
     requiredRoll: '4+',
   },
   {
-    strengthVsToughness: 'Strength is lower than Toughness (S < T)',
+    strengthVsToughness: 'Strength is lower than Toughness',
     requiredRoll: '5+',
   },
   {
-    strengthVsToughness: 'Strength is half or less of Toughness (S <= T/2)',
+    strengthVsToughness: 'Strength is half or less of Toughness',
     requiredRoll: '6+',
   },
 ]
