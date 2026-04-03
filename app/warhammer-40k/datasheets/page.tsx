@@ -6,13 +6,12 @@ import movediff from '@/app/assets/wh40k/move_diff.webp'
 import wound from '@/app/assets/wh40k/wound.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { DiceRoll } from '@/app/ui/DiceRoll'
-import { Section } from '@/app/ui/Section'
 import { Table } from '@/app/ui/Table'
 import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
 
-export const navOrder = 4
+export const navOrder = 3
 
 export const navTitle = 'Datasheets'
 
@@ -27,34 +26,27 @@ export default async function Page() {
   return (
     <>
       <h1>{navTitle}</h1>
-      <Section>
+      <section>
         <p>
           A unit's datasheet is a card that describes its profile and lists
           available loadouts, special rules, and access to support through
-          keywords. Every unit eligible to play has a datasheet.
+          keywords. Every unit has a datasheet. All characteristics deal in
+          probability. Better stats mean better consistency, not certainty.
         </p>
 
         <Image src={datasheet} alt="Space Marine Terminators Datasheet" />
+      </section>
 
-        <p className="lead">
-          All characteristics deal with probability and dice rolls. Better stats
-          mean better consistency, not certainty.
-        </p>
-      </Section>
-      <Section title="Unit Profiles" id="unit-profiles">
+      <section>
+        <h2 id="unit-profiles">Profile</h2>
         <p>
-          Underneath the name of the datasheet are six characteristics. They
-          form the unit's profile. This gives insight into how well the unit is
-          likely to perform during different phases of a player's turn. If an
-          attribute has a + at the end, it means that it's resolved using a dice
-          roll. The roll has to score equal to or above that number to succeed;
-          thus, lower is better.
+          The datasheet's name stands at the top. It's immediately followed by
+          six numbers forming the unit's profile. These characteristics give
+          insight into how likely the unit is to perform in different scenarios.
         </p>
 
         <h3 id="movement">Move (M")</h3>
-
-        <p>Higher is better.</p>
-
+        <small>Higher is better.</small>
         <p>
           Move is{' '}
           <strong>
@@ -69,26 +61,20 @@ export default async function Page() {
           . Larger models pay additionally for pivoting to change direction
           during a move. M" can never be zero.
         </p>
-
         <Image
           src={movediff}
           alt="Movement difference between an Assault Intercessor and one with a jump pack."
         />
-
         <p>
           Most infantry has M6" +/- 1. Assault troops and skirmish vehicles are
           usually around M12", while flyers are around M20".
         </p>
-
         <h3 id="toughness">Toughness (T)</h3>
-
         <p>Higher is better.</p>
-
         <p>
           1. Roll to hit &rarr; <strong>2. Roll to wound</strong> &rarr; 3. Roll
           to save &rarr; 4. Deal damage
         </p>
-
         <p>
           When any{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#making-attacks`}>
@@ -101,9 +87,7 @@ export default async function Page() {
           </strong>
           .
         </p>
-
         <Table columns={woundRollColumns} data={woundRollRows} />
-
         <p>
           The{' '}
           <strong>
@@ -115,9 +99,7 @@ export default async function Page() {
           Toughness are considered effective at 2/3 chance to wound. Weapons
           with less Strength tend to have a hard time making a dent.
         </p>
-
         <Image src={wound} alt="Wound roll probabilities" />
-
         <div className="box example">
           <p>
             A Toughness of 4 (T4) means that a weapon with Strength 4 (S4) has a
@@ -126,22 +108,17 @@ export default async function Page() {
             to wound.
           </p>
         </div>
-
         <h3 id="save">Saves (Sv) (Sv++)</h3>
-
         <p>Lower is better.</p>
-
         <p>
           1. Roll to hit &rarr; 2. Roll to wound &rarr;{' '}
           <strong>3. Roll to save</strong> &rarr; 4. Deal damage
         </p>
-
         <p>
           After an attack has hit and has wounded, a <strong>Save</strong> or{' '}
           <em>Armor Save</em> check is made to see if the target's armor can
           avert the damage.
         </p>
-
         <DiceRoll
           dice="D6"
           title="Save roll"
@@ -152,7 +129,6 @@ export default async function Page() {
             </>
           }
         />
-
         <div className="box example">
           <p>
             The owner of a targeted unit with Sv4+ makes one saving roll per
@@ -162,7 +138,6 @@ export default async function Page() {
             no damage is allocated for them.
           </p>
         </div>
-
         <p>
           Some units have an additional{' '}
           <strong>Invulnerable Save (Sv++)</strong> which is{' '}
@@ -171,22 +146,17 @@ export default async function Page() {
           <strong>can't use both saves</strong>. Invulnerable saves come in
           handy against attacks with high AP.
         </p>
-
         <p>
           When the unit has an Invulnerable Save it will be marked like
           SvN+/N++. For example, Sv4+/6++ means the unit has a regular Save of
           4+ and an Invulnerable Save of 6++.
         </p>
-
         <h3 id="wounds">Wounds (W)</h3>
-
         <p>Higher is better.</p>
-
         <p>
           1. Roll to hit &rarr; 2. Roll to wound &rarr; 3. Roll to save &rarr;{' '}
           <strong>4. Deal damage</strong>
         </p>
-
         <p>
           Wounds are the{' '}
           <strong>
@@ -197,11 +167,8 @@ export default async function Page() {
           target's Wounds. If the target has no Wounds left, it's removed from
           play.
         </p>
-
         <h3 id="leadership">Leadership (Ld)</h3>
-
         <p>Lower is better.</p>
-
         <p>
           Leadership only comes into play for{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#battle-shock-tests`}>
@@ -216,18 +183,14 @@ export default async function Page() {
           </strong>
           .
         </p>
-
         <p>
           Lower Ld means <strong>lower chance for the unit to panic</strong> and
           become battle-shocked. It can never be 4+ (or better), or 9+ (or
           worse). This means it can only go between Ld5+ (83% chance to succeed)
           and Ld8+ (42% chance to succeed).
         </p>
-
         <h3 id="objective-control">Objective Control (OC)</h3>
-
         <p>Higher is better.</p>
-
         <p>
           When a model comes within 3" horizontally and 5" vertically of that
           objective marker, it exerts control over it with its OC attribute. To
@@ -238,7 +201,6 @@ export default async function Page() {
           </strong>
           .
         </p>
-
         <p>
           <strong>
             Higher OC means the unit is more efficient at controlling
@@ -246,11 +208,11 @@ export default async function Page() {
           </strong>{' '}
           You need less models on top of the marker to score points from it.
         </p>
-
         <p>Most units have either OC1 or OC2.</p>
-      </Section>
+      </section>
 
-      <Section title="Keywords and Special Rules" id="keywords">
+      <section>
+        <h2 id="keywords-and-special-rules">Keywords and Special Rules</h2>
         <p>
           <strong>Keywords handle interactions.</strong> For example, some
           abilities and weapons can target only units that have the{' '}
@@ -268,9 +230,11 @@ export default async function Page() {
           <em>Necrons Immortals</em>, and only them, to re-roll certain wound
           rolls under certain conditions. Many of the
         </p>
-      </Section>
+      </section>
 
-      <Section title="Weapon Profiles" id="weapon-profiles">
+      <section>
+        <h2 id="weapon-profiles">Weapon Profiles</h2>
+
         <p>
           Every unit has several weapons available. Who and when can equip them
           depends on what's written on the datasheet. All weapons, however, have
@@ -450,9 +414,11 @@ export default async function Page() {
             targets, there is a higher chance of excess.
           </p>
         </div>
-      </Section>
+      </section>
 
-      <Section title="Common weapon abilities" id="weapon-abilities">
+      <section>
+        <h2 id="weapon-abilities">Common weapon abilities</h2>
+
         <p>
           Next to the names of some weapons on a datasheet you may see keywords
           with no description like "Assault" or "Blast". These are common
@@ -560,9 +526,11 @@ export default async function Page() {
             weapon used. On 1 deal 3 mortal wounds to the bearer.
           </li>
         </ul>
-      </Section>
+      </section>
 
-      <Section title="Tactical overview" id="tactical-overview">
+      <section>
+        <h2 id="tactical-overview">Tactical overview</h2>
+
         <p>
           After knowing how the{' '}
           <Link href={wh40kRoute('The Battle Round')}>Battle Round</Link> works,
@@ -647,7 +615,7 @@ export default async function Page() {
           Wound, making combinations like Devastating Wounds, Twin-linke rare
           but extremely powerful.
         </p>
-      </Section>
+      </section>
     </>
   )
 }

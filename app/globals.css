@@ -138,7 +138,7 @@
   }
 
   small {
-    @apply text-[0.833rem] font-light;
+    @apply block text-[0.833rem] font-light;
   }
 
   blockquote {

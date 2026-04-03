@@ -42,7 +42,7 @@ export const TableOfContents: React.FC = () => {
   return (
     <nav
       aria-labelledby="page-navigation"
-      className="sticky-aside w-56 max-h-[calc(100dvh-6rem)] overflow-y-auto"
+      className="sticky-aside w-56 max-h-[calc(100dvh-6rem)] pb-8 overflow-y-auto"
     >
       <ul>
         {headings.map((heading) => (

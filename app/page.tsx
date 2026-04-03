@@ -8,11 +8,7 @@ import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
 
 export default function Page() {
   return (
-    <main
-      id="main-content"
-      tabIndex={-1}
-      className="edge-padding py-12 md:py-0"
-    >
+    <main tabIndex={-1} className="edge-padding py-12 md:py-0">
       <section className="max-w-3xl mx-auto space-y-20 h-dvh flex flex-col justify-around">
         <div className="space-y-2 md:space-y-4 font-bold text-center">
           <div className="text-4xl md:text-6xl animate-slide-left">

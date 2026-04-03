@@ -15,7 +15,7 @@ import { Table } from '@/app/ui/Table'
 import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
-export const navOrder = 3
+export const navOrder = 4
 
 export const navTitle = 'The Battle Round'
 
@@ -100,7 +100,7 @@ export default async function Page() {
           </li>
 
           <li>
-            After that resolve any rules that occur in the Command Phase (the
+            After that, resolve any rules that occur in the Command Phase (the
             rule will state so).
           </li>
 
@@ -138,7 +138,7 @@ export default async function Page() {
 
           <p>
             If a leader is attached to a squad, it counts as a single unit, and
-            you check against the total amount of starting models.
+            you check against the total number of starting models.
           </p>
         </div>
 
@@ -152,7 +152,7 @@ export default async function Page() {
         </blockquote>
 
         <p>
-          If you have units bellow half-strength, every such unit must take a
+          If you have units below half-strength, every such unit must take a
           battle-shock test.
         </p>
 
@@ -164,16 +164,14 @@ export default async function Page() {
           <p>
             <strong>Roll 2D6.</strong> If the result is higher than the unit's{' '}
             <strong>highest Leadership (Ld)</strong> attribute, the test passes.
-            But, if it's lower, the test fails.
           </p>
         </div>
 
         <blockquote>
           <p>
             A squad of Intercessors takes a battle-shock test and scores a 5.
-            Since they have Ld6+, they fail and are shocked. Yet, with a
-            Chaplain attached if they score a 5, they will pass, because the
-            Chaplain has Ld5+.
+            Since they have Ld6+, they fail. Yet, with a Chaplain attached if
+            they score a 5, they will pass, because the Chaplain has Ld5+.
           </p>
         </blockquote>
 
@@ -234,8 +232,7 @@ export default async function Page() {
         <p>
           No unit can move through enemies or stop within engagement range of an
           enemy. Under core rules, models also cannot end a move on top of an
-          objective. Even so, tournaments standardize them as{' '}
-          <em>40mm circular markers</em> and allow finishing a move on top.
+          objective, but tournaments usually allow this.
         </p>
 
         <p>
@@ -264,7 +261,7 @@ export default async function Page() {
         </ul>
 
         <p>
-          Unlike normal moves and advances, falling back allow passing through
+          Unlike normal moves and advances, falling back allows passing through
           enemies, but the unit must take a <em>Desperate Escape</em> test.
           Units that are falling back and are also battle-shocked always take
           the test.
@@ -287,7 +284,7 @@ export default async function Page() {
           and change direction as long as the move is within their M". However,{' '}
           <strong>
             Vehicles and Monsters without round bases or the <em>Fly</em>{' '}
-            keyword, must reduce their move by 2" every time they pivot
+            keyword must reduce their move by 2" every time they pivot
           </strong>
           . This prevents gaining extra distance through rotation tricks.
         </p>
@@ -438,7 +435,7 @@ export default async function Page() {
           <p>
             <strong>Roll a D6.</strong> Modify the roll by the Armor Penetration
             (AP) of the weapon. If the result is equal or greater to the
-            target's Save (Sv) damage is not inflicted.
+            target's Save (Sv), damage is not inflicted.
           </p>
         </div>
 
@@ -456,7 +453,7 @@ export default async function Page() {
 
           <p>
             <strong>Roll a D6.</strong> If the result is equal or greater to the
-            target's Invulnerable Save damage is not inflicted.
+            target's Invulnerable Save, damage is not inflicted.
           </p>
         </div>
 
@@ -497,8 +494,8 @@ export default async function Page() {
         <p>
           You will often hear the term <em>to chip</em>, which means to deal
           small amounts of damage. You are chipping someone / something when
-          they lose a wound or a model, but no enough to make a difference. Chip
-          damage accumulates through time.
+          they lose a wound or a model, but not enough to make a difference.
+          Chip damage accumulates over time.
         </p>
       </section>
 
