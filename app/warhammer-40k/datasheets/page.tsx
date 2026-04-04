@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { IoDiceOutline } from 'react-icons/io5'
+import { RiInformation2Line } from 'react-icons/ri'
 
 import datasheet from '@/app/assets/wh40k/datasheet.webp'
 import movediff from '@/app/assets/wh40k/move_diff.webp'
 import wound from '@/app/assets/wh40k/wound.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
-import { DiceRoll } from '@/app/ui/DiceRoll'
 import { Table } from '@/app/ui/Table'
 import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -28,9 +29,9 @@ export default async function Page() {
       <h1>{navTitle}</h1>
       <section>
         <p>
-          A unit's datasheet is a card that describes its profile and lists
-          available loadouts, special rules, and access to support through
-          keywords. Every unit has a datasheet. All characteristics deal in
+          Every unit has a datasheet. It's a card that describes its profile,
+          lists available loadouts, special rules, composition, army limitations
+          and access to support through keywords. All characteristics deal in
           probability. Better stats mean better consistency, not certainty.
         </p>
 
@@ -39,96 +40,106 @@ export default async function Page() {
 
       <section>
         <h2 id="unit-profiles">Profile</h2>
+
         <p>
           The datasheet's name stands at the top. It's immediately followed by
           six numbers forming the unit's profile. These characteristics give
           insight into how likely the unit is to perform in different scenarios.
         </p>
 
-        <h3 id="movement">Move (M")</h3>
-        <small>Higher is better.</small>
         <p>
-          Move is{' '}
-          <strong>
-            the maximum amount of inches the unit can move, advance or fall back
-            in a single turn, without modifiers.
-          </strong>{' '}
+          Numbers with a <em>plus at the end represent dice throws</em>. If the
+          roll is higher than the number, the check passes,{' '}
+          <em>thus lower is better</em>. For the rest, <em>higher is better</em>
+          .
+        </p>
+
+        <h3 id="movement">Move (M)</h3>
+
+        <p>
+          A unit can move up to a maximum amount of inches (N"), without
+          modifiers, when give the choice to do so. It can <em>never</em> be 0.
           A higher number means more options to reposition, following the rules
           of the{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
             movement phase
           </Link>
-          . Larger models pay additionally for pivoting to change direction
-          during a move. M" can never be zero.
+          .
         </p>
+
         <Image
           src={movediff}
           alt="Movement difference between an Assault Intercessor and one with a jump pack."
         />
+
         <p>
           Most infantry has M6" +/- 1. Assault troops and skirmish vehicles are
           usually around M12", while flyers are around M20".
         </p>
+
         <h3 id="toughness">Toughness (T)</h3>
-        <p>Higher is better.</p>
+
         <p>
-          1. Roll to hit &rarr; <strong>2. Roll to wound</strong> &rarr; 3. Roll
-          to save &rarr; 4. Deal damage
-        </p>
-        <p>
-          When any{' '}
+          The tougher the model, the stronger the weapon has to be to be more
+          likely to wound. When{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#making-attacks`}>
-            attack is made
-          </Link>{' '}
-          against the model, and the attack has scored a hit, the{' '}
-          <strong>
-            weapon's Strength is compared to the target's Toughness to see if it
-            wounds
-          </strong>
-          .
+            attacked
+          </Link>
+          , and the attack hits, the weapon's <em>Strength</em> is compared to
+          the target's Toughness to see how high the attacker must roll to
+          wound, following these rules:
         </p>
+
         <Table columns={woundRollColumns} data={woundRollRows} />
+
         <p>
-          The{' '}
-          <strong>
-            tougher a model is, the stronger the weapon must be to be more
-            likely to score a wound
-          </strong>
-          . Weapons with equal Strength to the target's Toughness have a 50%
-          chance to wound. Weapons that have higher Strength than the target's
-          Toughness are considered effective at 2/3 chance to wound. Weapons
-          with less Strength tend to have a hard time making a dent.
+          This is only one stage of the whole attack sequence called an{' '}
+          <em>activation</em>.
         </p>
-        <Image src={wound} alt="Wound roll probabilities" />
-        <div className="box example">
+
+        <div className="box">
+          <p className="lead flex-center">
+            <RiInformation2Line /> Attack sequence
+          </p>
+
           <p>
-            A Toughness of 4 (T4) means that a weapon with Strength 4 (S4) has a
-            50% chance to wound, a weapon with Strength 5 (S5) has a 2/3 chance
-            to wound, while a weapon with Strength 3 (S3) has only a 1/3 chance
-            to wound.
+            1. Roll to hit &rarr; <strong>2. Roll to wound</strong> &rarr; 3.
+            Roll to save &rarr; 4. Deal damage
           </p>
         </div>
+
+        <Image src={wound} alt="Wound roll probabilities" />
+
         <h3 id="save">Saves (Sv) (Sv++)</h3>
-        <p>Lower is better.</p>
+
         <p>
-          1. Roll to hit &rarr; 2. Roll to wound &rarr;{' '}
-          <strong>3. Roll to save</strong> &rarr; 4. Deal damage
+          After an attack has hit and has wounded, an <em>Armor Save</em> roll
+          checks if the target's armor can avert the damage.
         </p>
-        <p>
-          After an attack has hit and has wounded, a <strong>Save</strong> or{' '}
-          <em>Armor Save</em> check is made to see if the target's armor can
-          avert the damage.
-        </p>
-        <DiceRoll
-          dice="D6"
-          title="Save roll"
-          effect={
-            <>
-              <strong>Substract the weapon's AP from the roll</strong>. If the
-              result is still more than the target's Save, the attack fails.
-            </>
-          }
-        />
+
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> Roll to save
+          </p>
+
+          <p>
+            <strong>Roll a D6.</strong> Modify the roll by the Armor Penetration
+            (AP) of the weapon. If the result is equal or greater to the
+            target's Save (Sv), damage is not inflicted.
+          </p>
+        </div>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <RiInformation2Line /> Attack sequence
+          </p>
+
+          <p>
+            1. Roll to hit &rarr; 2. Roll to wound &rarr;{' '}
+            <strong>3. Roll to save</strong> &rarr; 4. Deal damage
+          </p>
+        </div>
+
         <div className="box example">
           <p>
             The owner of a targeted unit with Sv4+ makes one saving roll per

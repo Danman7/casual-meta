@@ -12,7 +12,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: hsl(10, 20%, 5%);
-    --foreground: hsl(10, 10%, 80%);
+    --foreground: hsl(10, 10%, 90%);
     --surface: hsl(10, 20%, 10%);
     --primary: hsl(10, 80%, 55%);
     --success: var(--color-green-400);
@@ -70,7 +70,7 @@
 }
 
 @utility flex-center {
-  @apply flex gap-2 items-center;
+  @apply flex gap-2 items-center flex-wrap;
 }
 
 @utility flex-list {
@@ -113,19 +113,19 @@
   h1,
   h2,
   h3 {
-    @apply tracking-[-0.022em] font-bold leading-[1.15] mt-9 mb-4 text-left;
+    @apply tracking-tight leading-10 text-left mb-4;
   }
 
   h1 {
-    @apply text-[2.986rem];
+    @apply text-4xl font-bold mb-8;
   }
 
   h2 {
-    @apply text-[2.488rem];
+    @apply text-3xl mt-9 font-semibold;
   }
 
   h3 {
-    @apply text-[2.074rem];
+    @apply text-2xl mt-9;
   }
 
   h2[id],
@@ -138,7 +138,7 @@
   }
 
   small {
-    @apply block text-[0.833rem] font-light;
+    @apply block text-sm text-foreground/80;
   }
 
   blockquote {
@@ -169,7 +169,7 @@
   }
 
   .edge-padding {
-    @apply px-4 lg:px-8;
+    @apply px-6 lg:px-8;
   }
 
   .circle-icon {

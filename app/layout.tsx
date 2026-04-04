@@ -53,7 +53,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${notoSerif.variable} text-pretty leading-[1.6] font-medium antialiased h-full font-serif selection:bg-primary selection:text-background`}
+        className={`${notoSerif.variable} text-pretty leading-[1.6] font-medium antialiased h-full font-serif selection:bg-primary selection:text-background `}
       >
         <NavigationProvider sections={sections}>
           <LayoutShell>{children}</LayoutShell>

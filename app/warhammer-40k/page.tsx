@@ -27,8 +27,8 @@ export default async function Page() {
           </Link>{' '}
           describes it as a tabletop wargame in which players command armies of
           miniatures in an attempt to win through a mixture of skill, tactics,
-          and luck. It's that, but it also involves collecting and painting
-          those miniatures, and the huge amount of books and lore.
+          and luck. It also involves collecting, assembling, and painting those
+          miniatures, and the vast universe depicted in the books.
         </p>
 
         <Image
@@ -38,10 +38,12 @@ export default async function Page() {
         />
 
         <p>
-          For the purpouse of this section, we'll focus on the game itself and
-          the armies of the latest edition (10th, 11th has been announced). Each
-          edition changes a bit of the rules and units, so one should always
-          refer to the official rulebook and codexes first.
+          For the purpouse of this section, we'll focus on the rules and the
+          armies of the latest edition (10th, 11th has been announced). Each
+          edition changes the game in some way, so one should always refer to
+          the rulebook and codexes first. Here, you'll find a concice scan of
+          the more broadly used set of rules. It's accompanied by a compacted
+          community analysis of when something is more likely to perform well.
         </p>
       </section>
 

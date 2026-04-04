@@ -33,12 +33,12 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
         onToggleMobileMenu={toggleMobileMenu}
       />
 
-      <div className="flex relative grow">
+      <div className="flex relative grow py-8">
         <aside className="hidden lg:flex">
           <SideNavigation />
         </aside>
 
-        <main tabIndex={-1} className="edge-padding max-w-3xl mx-auto pb-12">
+        <main tabIndex={-1} className="edge-padding max-w-3xl mx-auto ">
           {children}
         </main>
 
