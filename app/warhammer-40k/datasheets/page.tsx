@@ -12,7 +12,7 @@ import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
 
-export const navOrder = 3
+export const navOrder = 4
 
 export const navTitle = 'Datasheets'
 
@@ -110,12 +110,34 @@ export default async function Page() {
 
         <Image src={wound} alt="Wound roll probabilities" />
 
-        <h3 id="save">Saves (Sv) (Sv++)</h3>
+        <blockquote>
+          <p>
+            The Intercessor with his T4, represents standard infantry. S3
+            weapons like the Cultist's Autopistol wound on 5+. The Ork Loota
+            with is S5 Big shoota wounds on 3+.
+          </p>
+        </blockquote>
+
+        <h3 id="save">Saves (Sv)</h3>
 
         <p>
-          After an attack has hit and has wounded, an <em>Armor Save</em> roll
-          checks if the target's armor can avert the damage.
+          If the attack hits <strong>and</strong> wounds the{' '}
+          <strong>defender</strong> allocates which models take the wounds and
+          makes saving throws. Saves represent the target's armor. They are an
+          additional gate along the activation that may prevent damage. Saves
+          can never be 1+.
         </p>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <RiInformation2Line /> Attack sequence
+          </p>
+
+          <p>
+            1. Roll to hit &rarr; 2. Roll to wound &rarr;{' '}
+            <strong>3. Roll to save</strong> &rarr; 4. Deal damage
+          </p>
+        </div>
 
         <div className="box">
           <p className="lead flex-center">
@@ -129,55 +151,61 @@ export default async function Page() {
           </p>
         </div>
 
+        <p>
+          The target may also have an <em>Invulnerable Save</em> (Inv) which
+          ignores the weapon's AP. It comes in handy when facing weapons with
+          high AP. If available, the defender may choose to roll for it instead
+          of the armor save, but <strong>not both</strong>.
+        </p>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> Invulnerable save
+          </p>
+
+          <p>
+            <strong>Roll a D6.</strong> If the result is equal or greater to the
+            target's Invulnerable Save, damage is not inflicted.
+          </p>
+        </div>
+
+        <blockquote>
+          <p>
+            The Terminator has a Sv2+. A Bolt Rifle with AP-1 will save on 3+.
+            But an AP-4 Meltagun will only save on 6. If targeted by the latter,
+            the Terminator will fare better if he uses his 4+ Invulnerable Save
+            instead.
+          </p>
+        </blockquote>
+
+        <h3 id="wounds">Wounds (W)</h3>
+
         <div className="box">
           <p className="lead flex-center">
             <RiInformation2Line /> Attack sequence
           </p>
 
           <p>
-            1. Roll to hit &rarr; 2. Roll to wound &rarr;{' '}
-            <strong>3. Roll to save</strong> &rarr; 4. Deal damage
+            1. Roll to hit &rarr; 2. Roll to wound &rarr; 3. Roll to save &rarr;{' '}
+            <strong>4. Deal damage</strong>
           </p>
         </div>
 
-        <div className="box example">
-          <p>
-            The owner of a targeted unit with Sv4+ makes one saving roll per
-            affected model in that unit. The attacking weapon has AP-1, so all
-            results are modified by -1. Thus, all rolls of 4 or less are
-            modified to 3 or less and fail. Rolls of 5 or 6 still succeed, and
-            no damage is allocated for them.
-          </p>
-        </div>
         <p>
-          Some units have an additional{' '}
-          <strong>Invulnerable Save (Sv++)</strong> which is{' '}
-          <strong>not affected by Armor Penetration (AP)</strong>. The defender
-          can choose to use it instead of the regular Save, but they{' '}
-          <strong>can't use both saves</strong>. Invulnerable saves come in
-          handy against attacks with high AP.
+          The amount of damage a model can take before being removed from play
+          is measured in <em>wounds</em>. When an attack has successfully hit
+          and wounded, and any save has failed, the target takes damage equal to
+          the weapon's Damage (D) characteristic. On reaching 0 wounds, the
+          model is dead.
         </p>
+
         <p>
-          When the unit has an Invulnerable Save it will be marked like
-          SvN+/N++. For example, Sv4+/6++ means the unit has a regular Save of
-          4+ and an Invulnerable Save of 6++.
+          <em>Excess damage is wasted.</em> If a W1 target takes 3 damage, you
+          can't assign the rest to a different model. Hence, weapons that deal
+          the exact amount of damage needed to kill the target are best against
+          that target.
         </p>
-        <h3 id="wounds">Wounds (W)</h3>
-        <p>Higher is better.</p>
-        <p>
-          1. Roll to hit &rarr; 2. Roll to wound &rarr; 3. Roll to save &rarr;{' '}
-          <strong>4. Deal damage</strong>
-        </p>
-        <p>
-          Wounds are the{' '}
-          <strong>
-            amount of damage a model can take before being removed from play
-          </strong>
-          . When a weapon has successfully hit, wounded, and penetrated the
-          target's armor, you substract its Damage characteristic from the
-          target's Wounds. If the target has no Wounds left, it's removed from
-          play.
-        </p>
+
         <h3 id="leadership">Leadership (Ld)</h3>
         <p>Lower is better.</p>
         <p>

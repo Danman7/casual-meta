@@ -106,14 +106,6 @@
 }
 
 @layer base {
-  html {
-    font-size: 17px;
-  }
-
-  body {
-    font-size: 1rem;
-  }
-
   a {
     @apply flex-center hover:text-primary active:text-primary/70 transition-colors;
   }

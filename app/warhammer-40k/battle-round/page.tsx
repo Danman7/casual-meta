@@ -15,7 +15,7 @@ import { Table } from '@/app/ui/Table'
 import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
-export const navOrder = 4
+export const navOrder = 3
 
 export const navTitle = 'The Battle Round'
 
@@ -228,6 +228,15 @@ export default async function Page() {
         </div>
 
         <Image src={movement} alt="Movement example" />
+
+        <blockquote>
+          <p>
+            Heavy Intercessors have M5". If they choose to advance during the
+            movement phase, they can move up to 11" (if D6 scores 6). By
+            comparison, Assault Intercessors with Jump Packs have M12" and
+            advance up to 18" on a perfect roll.
+          </p>
+        </blockquote>
 
         <p>
           No unit can move through enemies or stop within engagement range of an
