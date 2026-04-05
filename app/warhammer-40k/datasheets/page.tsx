@@ -30,12 +30,22 @@ export default async function Page() {
       <section>
         <p>
           Every unit has a datasheet. It's a card that describes its profile,
-          lists available loadouts, special rules, composition, army limitations
-          and access to support through keywords. All characteristics deal in
-          probability. Better stats mean better consistency, not certainty.
+          lists available loadouts, special rules, unit composition, army
+          limitations and access to support through keywords. Think of it as a
+          small rulebook for that unit.
         </p>
 
-        <Image src={datasheet} alt="Space Marine Terminators Datasheet" />
+        <Image
+          src={datasheet}
+          alt="Space Marine Terminators Datasheet"
+          loading="eager"
+        />
+
+        <p>
+          In this page, we'll go trough what all the numbers mean. All
+          characteristics deal in probability. Better stats can mean better
+          consistency, not certainty.
+        </p>
       </section>
 
       <section>
@@ -44,7 +54,9 @@ export default async function Page() {
         <p>
           The datasheet's name stands at the top. It's immediately followed by
           six numbers forming the unit's profile. These characteristics give
-          insight into how likely the unit is to perform in different scenarios.
+          insight into how the model(s) are likely to perform in different
+          scenarios. A unit may be <em>composed of multiple models</em>, each
+          with their own profiles, which will be listed on the same datasheet.
         </p>
 
         <p>
@@ -57,14 +69,14 @@ export default async function Page() {
         <h3 id="movement">Move (M)</h3>
 
         <p>
-          A unit can move up to a maximum amount of inches (N"), without
-          modifiers, when give the choice to do so. It can <em>never</em> be 0.
-          A higher number means more options to reposition, following the rules
-          of the{' '}
+          Movement in WH40K is measured in <em>inches</em>. A unit may move up
+          to a certain amount every turn, following the rules of the{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
             movement phase
           </Link>
-          .
+          . M is the maximum amount without any modifiers. Under certain
+          conditions, it can increase or decrease, but it can <em>never</em> be
+          0.
         </p>
 
         <Image
@@ -73,28 +85,21 @@ export default async function Page() {
         />
 
         <p>
-          Most infantry has M6" +/- 1. Assault troops and skirmish vehicles are
-          usually around M12", while flyers are around M20".
+          A higher number means more options to reposition. Most infantry have
+          M6" +/- 1. Assault troops and skirmish vehicles are usually around
+          M12", while flyers are around M20".
         </p>
 
         <h3 id="toughness">Toughness (T)</h3>
 
         <p>
-          The tougher the model, the stronger the weapon has to be to be more
-          likely to wound. When{' '}
+          When{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#making-attacks`}>
-            attacked
-          </Link>
-          , and the attack hits, the weapon's <em>Strength</em> is compared to
-          the target's Toughness to see how high the attacker must roll to
-          wound, following these rules:
-        </p>
-
-        <Table columns={woundRollColumns} data={woundRollRows} />
-
-        <p>
-          This is only one stage of the whole attack sequence called an{' '}
-          <em>activation</em>.
+            attacks are made
+          </Link>{' '}
+          against a model, first you roll to see how many hit their mark. Then
+          you roll to see which of those wound the target. This is only a part
+          of the whole attack sequence called an <em>activation</em>.
         </p>
 
         <div className="box">
@@ -108,6 +113,15 @@ export default async function Page() {
           </p>
         </div>
 
+        <p>
+          Tougher models need stronger weapons to have a better chance of being
+          wounded. During the roll to wound stage, the weapon's{' '}
+          <em>Strength</em> is compared to the target's Toughness to see how
+          high the attacker must roll to wound, following these rules:
+        </p>
+
+        <Table columns={woundRollColumns} data={woundRollRows} />
+
         <Image src={wound} alt="Wound roll probabilities" />
 
         <blockquote>
@@ -118,14 +132,19 @@ export default async function Page() {
           </p>
         </blockquote>
 
+        <p>
+          Toughness is a gate, determining which weapons are effective against
+          the profile. Nothing can protect from a lucky roll, but it's generally
+          accepted that a weapon needs to have at least the same Strength as the
+          target's Toughness to be reasonable against it.
+        </p>
+
         <h3 id="save">Saves (Sv)</h3>
 
         <p>
-          If the attack hits <strong>and</strong> wounds the{' '}
-          <strong>defender</strong> allocates which models take the wounds and
-          makes saving throws. Saves represent the target's armor. They are an
-          additional gate along the activation that may prevent damage. Saves
-          can never be 1+.
+          Saves protray the profile's armor. They are an extra layer after an
+          attack has hit <em>and</em> scorred a wound. They are resolved using a
+          dice roll and can never be better (lower) than 2+.
         </p>
 
         <div className="box">
@@ -171,14 +190,22 @@ export default async function Page() {
 
         <blockquote>
           <p>
-            The Terminator has a Sv2+. A Bolt Rifle with AP-1 will save on 3+.
-            But an AP-4 Meltagun will only save on 6. If targeted by the latter,
-            the Terminator will fare better if he uses his 4+ Invulnerable Save
-            instead.
+            The Terminator has a Sv2+ which is optimal to begin with. A Bolt
+            Rifle AP-1 attack will be saved on 3+. But an AP-4 Meltagun can only
+            be saved with a 6. If attacked by the latter, the Terminator will
+            fare better if he uses his 4+ Invulnerable Save instead.
           </p>
         </blockquote>
 
         <h3 id="wounds">Wounds (W)</h3>
+
+        <p>
+          The amount of damage a model can take before being removed from play
+          is measured in <em>wounds</em>. When an attack has successfully hit
+          and wounded, and any save has failed, the target takes damage equal to
+          the weapon's Damage (D) characteristic. On reaching 0 wounds, the
+          model is dead.
+        </p>
 
         <div className="box">
           <p className="lead flex-center">
@@ -192,14 +219,6 @@ export default async function Page() {
         </div>
 
         <p>
-          The amount of damage a model can take before being removed from play
-          is measured in <em>wounds</em>. When an attack has successfully hit
-          and wounded, and any save has failed, the target takes damage equal to
-          the weapon's Damage (D) characteristic. On reaching 0 wounds, the
-          model is dead.
-        </p>
-
-        <p>
           <em>Excess damage is wasted.</em> If a W1 target takes 3 damage, you
           can't assign the rest to a different model. Hence, weapons that deal
           the exact amount of damage needed to kill the target are best against
@@ -207,67 +226,94 @@ export default async function Page() {
         </p>
 
         <h3 id="leadership">Leadership (Ld)</h3>
-        <p>Lower is better.</p>
+
         <p>
           Leadership only comes into play for{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#battle-shock-tests`}>
             battle-shock tests
           </Link>{' '}
-          during the Command Phase. If a unit is below half strength during that
-          phase, it must roll (2D6) and score equal or higher than its Ld stat.
-          Otherwise it{' '}
-          <strong>
-            loses the ability to exert control over objectives or receive
-            support from stratagems
-          </strong>
-          .
+          during the Command Phase.
         </p>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> Battle-shock test
+          </p>
+
+          <p>
+            <strong>Roll 2D6.</strong> If the result is higher than the unit's{' '}
+            <strong>highest Leadership (Ld)</strong> attribute, the test passes.
+            If the test fails, the unit's Objective Control (OC) becomes 0 and
+            it cannot be supported by Stratagem abilities.
+          </p>
+        </div>
+
         <p>
-          Lower Ld means <strong>lower chance for the unit to panic</strong> and
-          become battle-shocked. It can never be 4+ (or better), or 9+ (or
-          worse). This means it can only go between Ld5+ (83% chance to succeed)
-          and Ld8+ (42% chance to succeed).
+          Better (lower) Ld means a better chance for the unit to remain
+          composed at below half-strength. Ld can never be 4+ (or better), or 9+
+          (or worse). This means it can only go between Ld5+ (83% chance to
+          succeed) and Ld8+ (42% chance to succeed).
         </p>
+
         <h3 id="objective-control">Objective Control (OC)</h3>
-        <p>Higher is better.</p>
+
         <p>
-          When a model comes within 3" horizontally and 5" vertically of that
-          objective marker, it exerts control over it with its OC attribute. To
-          measure your control of an objective, multiply all models within
-          contact by their OC. At the end of the turn,{' '}
-          <strong>
-            the player with more accumulated OC controls that objective
-          </strong>
-          .
+          Regardless of the mission you are playing, chances are there are going
+          to be objective markers on the table. Players score points by
+          controlling them.
         </p>
+
         <p>
-          <strong>
-            Higher OC means the unit is more efficient at controlling
-            objectives.
-          </strong>{' '}
-          You need less models on top of the marker to score points from it.
+          When you move a unit within 3" of a marker, it exerts control over it
+          with its OC attribute, <strong>for every model</strong> still alive.
+          At the end of the turn, the player with most accumulated control
+          (models times their OC) in range of a marker controls that objective.
         </p>
-        <p>Most units have either OC1 or OC2.</p>
+
+        <blockquote>
+          <p>
+            9 Intercessors (OC2) compete for an objective with 17 Chaos Cultists
+            (OC1). The cultists are more, but each marine has a higher OC. 9 x 2
+            &gt; 17 x 1, so the marines control the marker at the end of the
+            turn.
+          </p>
+        </blockquote>
+
+        <p>
+          Units with higher OC are more efficient at controlling objectives.
+          You'll need fewer models on top of the marker to score points from it.
+        </p>
       </section>
 
       <section>
         <h2 id="keywords-and-special-rules">Keywords and Special Rules</h2>
+
         <p>
-          <strong>Keywords handle interactions.</strong> For example, some
-          abilities and weapons can target only units that have the{' '}
-          <em>Infantry</em> keyword. Some stratagems may be used only by units
-          with the <em>Grenade</em> keyword. Units from different factions with
-          the <em>Imperium</em> keyword can be mixed in the same army list. The
-          relationships are numerous and keywords simplify this.
+          <em>Keywords handle interactions.</em> The relationships between
+          units, weapons, stratagems, factions, turn phases and army composition
+          are numerous. Both units and weapons have keywords. So verifying a
+          rule with a simple keyword simplifies the process.
+        </p>
+
+        <blockquote>
+          <p>
+            Some abilities and weapons can target only units that have the{' '}
+            <em>Infantry</em> keyword. Some stratagems may be used only by units
+            with the <em>Grenade</em> keyword. Units from different factions
+            with the <em>Imperium</em> keyword can be mixed in the same army
+            list. The examples are endless.
+          </p>
+        </blockquote>
+
+        <p>
+          A datasheet always has at least one <em>faction</em> keyword, which
+          governs army list composition, but some may have more.
         </p>
 
         <p>
-          <strong>
-            Special rules handle abilities unique for the given unit.
-          </strong>{' '}
-          For example, <em>Implacable Eradication</em> allows{' '}
-          <em>Necrons Immortals</em>, and only them, to re-roll certain wound
-          rolls under certain conditions. Many of the
+          <em>Special rules</em> handle abilities unique for the given unit. For
+          example, Implacable Eradication allows <em>Necrons Immortals</em>, and
+          only them, to re-roll certain wound rolls under certain conditions.
         </p>
       </section>
 

@@ -110,12 +110,18 @@
     @apply flex-center hover:text-primary active:text-primary/70 transition-colors;
   }
 
+  h1,
+  h2,
+  h3 {
+    @apply text-left;
+  }
+
   h1 {
-    @apply mb-6 text-3xl lg:text-4xl leading-tight font-bold;
+    @apply mb-6 text-4xl lg:text-5xl leading-tight font-bold;
   }
 
   h2 {
-    @apply pt-7 mt-5 text-2xl lg:text-3xl font-semibold;
+    @apply pt-7 mt-5 text-3xl lg:text-4xl font-semibold;
   }
 
   h3 {
