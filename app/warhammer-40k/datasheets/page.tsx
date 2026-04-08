@@ -1,14 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { IoDiceOutline } from 'react-icons/io5'
-import { RiInformation2Line } from 'react-icons/ri'
 
+import attackNumber from '@/app/assets/wh40k/attacks_number.webp'
 import datasheet from '@/app/assets/wh40k/datasheet.webp'
+import loadouts from '@/app/assets/wh40k/loadouts.webp'
 import movediff from '@/app/assets/wh40k/move_diff.webp'
+import multipleProfiles from '@/app/assets/wh40k/multiple_profiles.webp'
+import shooting from '@/app/assets/wh40k/shooting.webp'
+import weapons from '@/app/assets/wh40k/weapons.webp'
 import wound from '@/app/assets/wh40k/wound.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
-import { Table } from '@/app/ui/Table'
-import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 import { createRouteLookup } from '@/lib/routeLinks'
 
@@ -29,10 +30,10 @@ export default async function Page() {
       <h1>{navTitle}</h1>
       <section>
         <p>
-          Every unit has a datasheet. It's a card that describes its profile,
-          lists available loadouts, special rules, unit composition, army
-          limitations and access to support through keywords. Think of it as a
-          small rulebook for that unit.
+          Every unit comes with a datasheet. It's a card that describes its
+          profile, available loadouts, special rules, composition, and access to
+          support through keywords. Think of it as a small rulebook for that
+          unit.
         </p>
 
         <Image
@@ -40,43 +41,50 @@ export default async function Page() {
           alt="Space Marine Terminators Datasheet"
           loading="eager"
         />
-
-        <p>
-          In this page, we'll go trough what all the numbers mean. All
-          characteristics deal in probability. Better stats can mean better
-          consistency, not certainty.
-        </p>
       </section>
 
       <section>
         <h2 id="unit-profiles">Profile</h2>
 
         <p>
-          The datasheet's name stands at the top. It's immediately followed by
-          six numbers forming the unit's profile. These characteristics give
-          insight into how the model(s) are likely to perform in different
-          scenarios. A unit may be <em>composed of multiple models</em>, each
-          with their own profiles, which will be listed on the same datasheet.
+          At the top, below the datasheet's name, is the unit's profile: M, T,
+          Sv, W, Ld, and OC, or Move, Toughness, Save, Wounds, Leadership, and
+          Objective Control. These six numbers give insight into how the
+          model(s) in this unit are likely to perform in the different phases of
+          the{' '}
+          <Link href={`${wh40kRoute('The Battle Round')}`}>player turn</Link>.
         </p>
 
         <p>
+          A datasheet may have more than one profile listed, depending on what
+          models the unit is composed of.
+        </p>
+
+        <Image
+          src={multipleProfiles}
+          alt="Multiple profiles on an Ork Boyz datasheet"
+          className="picture"
+        />
+
+        <p>
           Numbers with a <em>plus at the end represent dice throws</em>. If the
-          roll is higher than the number, the check passes,{' '}
-          <em>thus lower is better</em>. For the rest, <em>higher is better</em>
-          .
+          roll is equal to or higher than the number, the check passes, so{' '}
+          <em>lower is better</em>. For the rest, <em>higher is better</em>. All
+          characteristics deal in probability. Better stats can mean better
+          consistency, not certainty.
         </p>
 
         <h3 id="movement">Move (M)</h3>
 
         <p>
-          Movement in WH40K is measured in <em>inches</em>. A unit may move up
-          to a certain amount every turn, following the rules of the{' '}
+          Movement in WH40K is measured in <em>inches</em>. Following the rules
+          of the{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
             movement phase
           </Link>
-          . M is the maximum amount without any modifiers. Under certain
-          conditions, it can increase or decrease, but it can <em>never</em> be
-          0.
+          , a unit may only move up to a certain amount per turn, when given the
+          opportunity to do so. M is the maximum without modifiers. It can{' '}
+          <em>never</em> be 0.
         </p>
 
         <Image
@@ -85,108 +93,64 @@ export default async function Page() {
         />
 
         <p>
-          A higher number means more options to reposition. Most infantry have
-          M6" +/- 1. Assault troops and skirmish vehicles are usually around
-          M12", while flyers are around M20".
+          A higher number means more options to reposition and a wider range of
+          engagement opportunities. For reference, most infantry have M6",
+          &#177;1. Assault troops and skirmish vehicles are usually around M12",
+          while flyers are around M20".
         </p>
 
         <h3 id="toughness">Toughness (T)</h3>
 
         <p>
-          When{' '}
-          <Link href={`${wh40kRoute('The Battle Round')}#making-attacks`}>
-            attacks are made
-          </Link>{' '}
-          against a model, first you roll to see how many hit their mark. Then
-          you roll to see which of those wound the target. This is only a part
-          of the whole attack sequence called an <em>activation</em>.
+          Toughness is one of 3 characteristics that shape the model's
+          durability. It plays a role during the <em>roll to wound</em> phase of
+          each weapon activation. The tougher the model is, the stronger the
+          attacking weapon needs to be to have a better chance of wounding.
         </p>
-
-        <div className="box">
-          <p className="lead flex-center">
-            <RiInformation2Line /> Attack sequence
-          </p>
-
-          <p>
-            1. Roll to hit &rarr; <strong>2. Roll to wound</strong> &rarr; 3.
-            Roll to save &rarr; 4. Deal damage
-          </p>
-        </div>
 
         <p>
-          Tougher models need stronger weapons to have a better chance of being
-          wounded. During the roll to wound stage, the weapon's{' '}
-          <em>Strength</em> is compared to the target's Toughness to see how
-          high the attacker must roll to wound, following these rules:
+          Refer to the{' '}
+          <Link href={`${wh40kRoute('The Battle Round')}#attack-sequence`}>
+            attack sequence
+          </Link>{' '}
+          for details.
         </p>
-
-        <Table columns={woundRollColumns} data={woundRollRows} />
 
         <Image src={wound} alt="Wound roll probabilities" />
 
         <blockquote>
           <p>
-            The Intercessor with his T4, represents standard infantry. S3
+            The Intercessor, with his T4, represents standard infantry. S3
             weapons like the Cultist's Autopistol wound on 5+. The Ork Loota
-            with is S5 Big shoota wounds on 3+.
+            with his S5 Big Shoota wounds on 3+.
           </p>
         </blockquote>
 
         <p>
-          Toughness is a gate, determining which weapons are effective against
-          the profile. Nothing can protect from a lucky roll, but it's generally
-          accepted that a weapon needs to have at least the same Strength as the
-          target's Toughness to be reasonable against it.
+          Toughness dictates which tools are effective against which profiles.
+          Weapons with lower Strength than the target's Toughness on average
+          tend to have a hard time making a dent. Still, nothing protects
+          against lucky rolls.
         </p>
 
-        <h3 id="save">Saves (Sv)</h3>
+        <h3 id="save">Save (Sv)</h3>
 
         <p>
-          Saves protray the profile's armor. They are an extra layer after an
-          attack has hit <em>and</em> scorred a wound. They are resolved using a
-          dice roll and can never be better (lower) than 2+.
+          Saves also take part in the profile's durability. They are an extra
+          gate against taking damage, after an attack has hit and wounded. All
+          datasheets have an armor save, which is affected by the attacking
+          weapon's Armor Penetration (AP). Elite, durable models can also have
+          an additional <em>Invulnerable Save</em> which ignores AP.
         </p>
-
-        <div className="box">
-          <p className="lead flex-center">
-            <RiInformation2Line /> Attack sequence
-          </p>
-
-          <p>
-            1. Roll to hit &rarr; 2. Roll to wound &rarr;{' '}
-            <strong>3. Roll to save</strong> &rarr; 4. Deal damage
-          </p>
-        </div>
-
-        <div className="box">
-          <p className="lead flex-center">
-            <IoDiceOutline /> Roll to save
-          </p>
-
-          <p>
-            <strong>Roll a D6.</strong> Modify the roll by the Armor Penetration
-            (AP) of the weapon. If the result is equal or greater to the
-            target's Save (Sv), damage is not inflicted.
-          </p>
-        </div>
 
         <p>
-          The target may also have an <em>Invulnerable Save</em> (Inv) which
-          ignores the weapon's AP. It comes in handy when facing weapons with
-          high AP. If available, the defender may choose to roll for it instead
-          of the armor save, but <strong>not both</strong>.
+          The defender can choose which one to use. If the save check passes,
+          damage is averted. Again, refer to the{' '}
+          <Link href={`${wh40kRoute('The Battle Round')}#attack-sequence`}>
+            attack sequence
+          </Link>{' '}
+          for details.
         </p>
-
-        <div className="box">
-          <p className="lead flex-center">
-            <IoDiceOutline /> Invulnerable save
-          </p>
-
-          <p>
-            <strong>Roll a D6.</strong> If the result is equal or greater to the
-            target's Invulnerable Save, damage is not inflicted.
-          </p>
-        </div>
 
         <blockquote>
           <p>
@@ -203,26 +167,21 @@ export default async function Page() {
           The amount of damage a model can take before being removed from play
           is measured in <em>wounds</em>. When an attack has successfully hit
           and wounded, and any save has failed, the target takes damage equal to
-          the weapon's Damage (D) characteristic. On reaching 0 wounds, the
-          model is dead.
+          the weapon's Damage (D) characteristic.{' '}
+          <em>On reaching 0 wounds, the model is dead</em>.
         </p>
-
-        <div className="box">
-          <p className="lead flex-center">
-            <RiInformation2Line /> Attack sequence
-          </p>
-
-          <p>
-            1. Roll to hit &rarr; 2. Roll to wound &rarr; 3. Roll to save &rarr;{' '}
-            <strong>4. Deal damage</strong>
-          </p>
-        </div>
 
         <p>
           <em>Excess damage is wasted.</em> If a W1 target takes 3 damage, you
-          can't assign the rest to a different model. Hence, weapons that deal
-          the exact amount of damage needed to kill the target are best against
-          that target.
+          can't assign the rest to another model. Hence, weapons that deal the
+          exact amount of damage needed to kill the target are best against that
+          target.
+        </p>
+
+        <p>
+          The more wounds a model has, the longer it tends to stay in the fight.
+          Durable targets with a lot of wounds and good saves require focused
+          fire from multiple attackers to be taken down.
         </p>
 
         <h3 id="leadership">Leadership (Ld)</h3>
@@ -232,27 +191,10 @@ export default async function Page() {
           <Link href={`${wh40kRoute('The Battle Round')}#battle-shock-tests`}>
             battle-shock tests
           </Link>{' '}
-          during the Command Phase.
-        </p>
-
-        <div className="box">
-          <p className="lead flex-center">
-            <IoDiceOutline /> Battle-shock test
-          </p>
-
-          <p>
-            <strong>Roll 2D6.</strong> If the result is higher than the unit's{' '}
-            <strong>highest Leadership (Ld)</strong> attribute, the test passes.
-            If the test fails, the unit's Objective Control (OC) becomes 0 and
-            it cannot be supported by Stratagem abilities.
-          </p>
-        </div>
-
-        <p>
-          Better (lower) Ld means a better chance for the unit to remain
-          composed at below half-strength. Ld can never be 4+ (or better), or 9+
-          (or worse). This means it can only go between Ld5+ (83% chance to
-          succeed) and Ld8+ (42% chance to succeed).
+          during the Command Phase. Better (lower) Ld means a better chance for
+          the unit to remain composed at below half-strength. Ld can never be 4+
+          (or better), or 9+ (or worse). This means it can only go between Ld5+
+          (83% chance to succeed) and Ld8+ (42% chance to succeed).
         </p>
 
         <h3 id="objective-control">Objective Control (OC)</h3>
@@ -286,331 +228,302 @@ export default async function Page() {
       </section>
 
       <section>
-        <h2 id="keywords-and-special-rules">Keywords and Special Rules</h2>
+        <h2 id="weapons">Weapons</h2>
+
+        <p>Weapons have separate profiles from the units that wield them.</p>
+
+        <Image
+          src={weapons}
+          alt="Datasheet weapon choices example"
+          className="picture"
+        />
 
         <p>
-          <em>Keywords handle interactions.</em> The relationships between
-          units, weapons, stratagems, factions, turn phases and army composition
-          are numerous. Both units and weapons have keywords. So verifying a
-          rule with a simple keyword simplifies the process.
-        </p>
-
-        <blockquote>
-          <p>
-            Some abilities and weapons can target only units that have the{' '}
-            <em>Infantry</em> keyword. Some stratagems may be used only by units
-            with the <em>Grenade</em> keyword. Units from different factions
-            with the <em>Imperium</em> keyword can be mixed in the same army
-            list. The examples are endless.
-          </p>
-        </blockquote>
-
-        <p>
-          A datasheet always has at least one <em>faction</em> keyword, which
-          governs army list composition, but some may have more.
+          This symbol <span className="pointer" /> indicates that a weapon has
+          multiple modes. One must be chosen prior to declaring an attack. If a
+          characteristic has a D6 in it, a dice roll is used to determine the
+          current value of the activation.
         </p>
 
         <p>
-          <em>Special rules</em> handle abilities unique for the given unit. For
-          example, Implacable Eradication allows <em>Necrons Immortals</em>, and
-          only them, to re-roll certain wound rolls under certain conditions.
+          Individual models within a unit may carry different arsenals and even
+          carry more than one weapon. The default loadouts and additional weapon
+          options are listed in the unit composition sections of the datasheet
+          (usually at the back).
         </p>
-      </section>
 
-      <section>
-        <h2 id="weapon-profiles">Weapon Profiles</h2>
-
-        <p>
-          Every unit has several weapons available. Who and when can equip them
-          depends on what's written on the datasheet. All weapons, however, have
-          six attributes of their own, different from the unit profile. Think of
-          it as "what weapon is good against which profile."
-        </p>
+        <Image
+          src={loadouts}
+          alt="Datasheet loadouts example"
+          className="picture"
+        />
 
         <h3 id="range">Range</h3>
 
-        <p>Higher is better.</p>
-
         <p>
-          Range is the <strong>reach of the weapon in inches</strong>. It's
-          written as numbers like 12", 18", etc. As per{' '}
+          Ranged weapons have a maximum range, measured in <em>inches</em>, at
+          which their owners can declare attacks. Referring to the{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#shooting-phase`}>
             shooting phase rules
-          </Link>
-          , a unit must be able to{' '}
-          <strong>see and reach the target to shoot at it</strong>. It's
-          possible that only a portion of the given unit are within range of the
-          target. Then only those models shoot.
+          </Link>{' '}
+          a model must be within range and visual contact of the target to be
+          able to shoot at it.
         </p>
 
-        <ul>
-          <li>
-            Most <strong>pistols</strong> have a range of 12".
-          </li>
-
-          <li>
-            Most <strong>rifles</strong> have a range of 24".
-          </li>
-
-          <li>
-            Most <strong>long range</strong> weapons have a range of 36".
-          </li>
-        </ul>
+        <Image src={shooting} alt="Shooting example" />
 
         <p>
-          Hand-to-hand weapons have Melee written as range in their profiles.
-          These fight according to the{' '}
-          <Link href={`${wh40kRoute('The Battle Round')}#fight-phase`}>
-            fight phase rules
-          </Link>
-          .
+          Longer range signifies priority of engagement. Far-reaching weapons
+          get to deal damage first. As a reference only, most <em>pistols</em>{' '}
+          have around 12" range, while the average <em>rifle</em> is around 24".
+          36" and above is considered long range.
         </p>
+
+        <p>Range is not a factor for melee weapons.</p>
 
         <h3 id="attacks">Attacks (A)</h3>
 
-        <p>Higher is better.</p>
-
         <p>
-          This attribute tells you <strong>how many attacks</strong> this weapon
-          makes (be it ranged or melee) every time it's used.{' '}
-          <strong>
-            More attacks mean more chances to score a wound and deal damage on a
-            larger amount of viable targets.
-          </strong>
+          This shows how many attacks the weapon makes per activation. You roll
+          as many dice per weapon as this number whenever it attacks. More
+          attacks mean more chances to hit and score a wound and more targets to
+          which wounds can be allocated.
         </p>
 
-        <p>
-          Attacks <strong>can be split between multiple models</strong> from a
-          targeted unit. So more attacks are better against hordes.
-        </p>
+        <Image
+          src={attackNumber}
+          alt="Example of difference in attacks per activation"
+        />
 
         <p>
-          The problem is variance. With only one attack, a failed hit, failed
-          wound, or successful invulnerable save can waste the entire
-          activation. Dice never guarantee outcomes, but averages are more
-          difficult to achieve in small samples. A higher number of attacks
-          smooths variance. More dice means results trend closer to statistical
-          expectation. It also increases flexibility across target types.
-        </p>
-
-        <p>
-          For some weapons, the number of attacks is determined by a dice roll
-          (e.g. 2D6).
+          The problem with activations is variance as dice never guarantee the
+          outcome. A higher number of attacks smooths variance. More dice means
+          results trend closer to expectation.
         </p>
 
         <h3 id="ballistic-skill-weapon-skill">
           Ballistic/Weapon Skill (BS/WS)
         </h3>
 
-        <p>Lower is better.</p>
-
         <p>
-          BS is used for ranged attacks, while WS is used for melee attacks. A{' '}
-          <strong>
-            lower number indicates a higher chance to hit the target
-          </strong>{' '}
-          with each attack. This is a single check gate, unaffected by the
-          profile of the target.
+          BS is for ranged weapons, while WS is for melee weapons. They mean the
+          same thing: how likely the weapon is to hit its target. The number
+          shows what must be the result of the <em>roll to hit</em> check during
+          weapon activation, for the target to be hit. A lower number means a
+          better chance to hit.
         </p>
 
-        <p>
-          <strong>1. Roll to hit</strong> &rarr; 2. Roll to wound &rarr; 3. Roll
-          to save &rarr; 4. Deal damage
-        </p>
-
-        <div className="box example">
+        <blockquote>
           A 20-man squad of Cadian Shock Troops fire 18 Lasguns (the two
           sergeants have laspistols) at a squad of Ork Boyz. The Cadians have
           BS4+, so they need to roll 4 or higher on D6 to hit. On average, they
           will hit with 3 out of 5 shots, so around 11 hits.
-        </div>
+        </blockquote>
 
         <h3 id="strength">Strength (S)</h3>
 
-        <p>Higher is better.</p>
-
         <p>
-          As discussed at length above,{' '}
-          <strong>
-            strength determines how effective a weapon is at wounding a target
-          </strong>{' '}
-          with each attack. A weapon with higher Strength than the target's
-          Toughness is more likely to wound.
+          As discussed at length above, Strength is compared to Toughness during
+          the <em>roll to wound</em> phase of each weapon activation, to see how
+          high the roll must be for the attack to wound.
         </p>
 
         <h3 id="armor-penetration">Armor Penetration (AP)</h3>
 
-        <p>Lower (negative) is better up to a point.</p>
-
         <p>
-          The AP of a weapon is subtracted from the target's armor save roll
-          (only regular saves). A weapon with{' '}
-          <strong>
-            higher AP (lower negative) is more likely to penetrate armor and
-            deal damage
-          </strong>
-          .
+          AP negates <Link href="#save">armor saves</Link>, by reducing the
+          result of the target's <em>roll to save</em>. It's powerful but capped
+          by two common ceilings. AP cannot push past invulnerable saves, and is
+          wasted on weak 5+, 6+ saves.
         </p>
 
-        <p>
-          Armor Penetration is powerful but capped in value. There are two
-          common ceilings:
-        </p>
-
-        <ul>
-          <li>
-            <strong>Invulnerable saves</strong>: AP cannot push past them.
-          </li>
-          <li>
-            <strong>Low base saves</strong>: Excess AP is wasted.
-          </li>
-        </ul>
-
-        <div className="box example">
+        <blockquote>
           <p>
             A meltagun at AP-4 into a 6+ save model wastes most of its AP value.
             You are paying for penetration that the target cannot meaningfully
             benefit from. AP is most efficient when it meaningfully shifts a
             save bracket. For example, pushing a Sv3+ to a 5+.
           </p>
-        </div>
+        </blockquote>
 
         <h3 id="damage">Damage (D)</h3>
 
-        <p>Higher is better up to a point.</p>
-
         <p>
-          Damage indicates <strong>how many Wounds</strong> the target subtracts
-          on a successful activation (after everything else has failed). If the
-          target has Wounds left after the attack, it's still in the fight. But
-          if the attack has more Damage than necessary, the excess is wasted.
+          Damage is the amount of <Link href="#wounds">wounds</Link> the weapon
+          takes away for each successful activation. Taking exactly as many
+          wounds required to finish off a target is ideal. Excess is lost.
+          Therefore, Damage is a way to determine what targets are optimal for
+          this weapon.
         </p>
 
-        <p>
-          Damage is different from Attacks. More attacks mean more chances or a
-          larger number of targets affected. Damage is most effective when it's
-          exact.
-        </p>
-
-        <div className="box example">
+        <blockquote>
           <p>
             D2 weapons are best against W2 targets. They are overkill against
             single-wound targets, and even if enough attacks activate against W3
             targets, there is a higher chance of excess.
           </p>
-        </div>
+        </blockquote>
       </section>
 
       <section>
-        <h2 id="weapon-abilities">Common weapon abilities</h2>
+        <h2 id="keywords-and-special-rules">Keywords</h2>
 
         <p>
-          Next to the names of some weapons on a datasheet you may see keywords
-          with no description like "Assault" or "Blast". These are common
-          abilities or <em>Universal Special Rules</em> (USRs) that are shared
-          between many weapons.
+          <em>Keywords handle general interactions.</em> The relationships
+          between units, weapons, stratagems, factions and turn phases are
+          numerous. So, verifying a rule with a simple keyword simplifies the
+          process.
         </p>
 
         <p>
-          These always apply only to models that have equipped the given weapon
-          with the specific keyword.
+          All units have keywords. A datasheet always has at least one{' '}
+          <em>faction</em> keyword, which governs army composition, but some may
+          have more. Weapons also may or may not have keywords listed next to
+          their names.
         </p>
 
-        <h3 id="movement-based">Movement based</h3>
+        <blockquote>
+          <p>
+            Weapons with <em>Anti-infantry X+</em> score critical wounds (always
+            wounds) if the roll to wound is X+ against units with the{' '}
+            <em>Infantry</em> keyword.
+          </p>
+
+          <p>
+            Weapons with the <em>Assault</em> keyword can be fired in the
+            shooting phase even if the unit has <em>advanced</em> this turn.
+          </p>
+
+          <p>
+            The <em>Grenades</em> stratagem can only be used by units with the{' '}
+            <em>Grenades</em> keyword.
+          </p>
+
+          <p>
+            Various <em>Imperium</em> units can be mixed in the same army list
+            even if they are from different factions.
+          </p>
+        </blockquote>
+      </section>
+
+      <section>
+        <h2 id="weapon-keywords">Common weapon keywords</h2>
+
+        <p>
+          Also called <em>Universal Special Rules</em> (USRs), some keywords are
+          shared between many of WH40K's weapons. Naturally, they only apply to
+          models that have equipped the given weapon. Here is a not-so-small
+          list of the common ones.
+        </p>
 
         <ul>
           <li>
-            <strong>Assault</strong>: Can be fired even after Advancing.
+            <strong>Assault</strong>: The weapon can be fired even after the
+            wielder <em>advanced</em> this turn (refer to{' '}
+            <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
+              movement phase
+            </Link>
+            ). Units with assault gear can run further and engage sooner.
           </li>
 
           <li>
-            <strong>Heavy</strong>: If the unit didn't move during Movement
-            Phase, add +1 to Hit.
+            <strong>Heavy</strong>: If the unit remained stationary this turn,
+            add +1 to hit roll. This rewards the opposite of assault - staying
+            put - with better accuracy.
           </li>
-        </ul>
 
-        <h3 id="range-based">Range based</h3>
-
-        <ul>
           <li>
             <strong>Rapid Fire X</strong>: If the target is within half range,
-            add +X attacks.
+            add +X attacks. This is more powerful on longer reaching guns.
           </li>
 
           <li>
             <strong>Melta X</strong>: If the target is within half range, add +X
-            damage.
+            damage. Same idea as rapid fire, but with a damage boost.
           </li>
 
           <li>
-            <strong>Pistol</strong>: Can be fired even in Engagement range.
-          </li>
-        </ul>
-
-        <h3 id="hit-roll-effects">Hit Roll Effects</h3>
-
-        <ul>
-          <li>
-            <strong>Torrent</strong>: Attacks automatically hit.
+            <strong>Pistol</strong>: Can be fired even in Engagement range. That
+            is why many dedicated close combat units also carry pistols.
           </li>
 
           <li>
-            <strong>Sustained Hits X</strong>: Critical Hit (roll of 6)
+            <strong>Torrent</strong>: Attacks automatically hit. This skips a
+            whole activation gate. Very useful against hordes of enemies.
+          </li>
+
+          <li>
+            <strong>Sustained Hits X</strong>: A critical hit (roll of 6)
             generates X extra hits.
           </li>
 
           <li>
-            <strong>Lethal Hits</strong>: Critical Hit automatically wounds.
-          </li>
-        </ul>
-
-        <h3 id="wound-roll-effects">Wound Roll Effects</h3>
-
-        <ul>
-          <li>
-            <strong>Devastating Wounds</strong>: Critical Wounds deal mortal
-            wounds equal to the weapon’s damage. No saves allowed.
+            <strong>Lethal Hits</strong>: a critical hit automatically wounds,
+            potentially bypassing another activation gate.
           </li>
 
           <li>
-            <strong>Twin-linked</strong>: Re-roll wound rolls.
+            <strong>Devastating Wounds</strong>: A critical wound (roll of 6)
+            deals a mortal wound. Mortal wounds mean no saves are allowed - the
+            target eats the damage, skipping the third activation gate.
+          </li>
+
+          <li>
+            <strong>Twin-linked</strong>: The wielder is allowed to re-roll
+            wound rolls. This is weaker than devastating wounds, but still
+            powerful.
           </li>
 
           <li>
             <strong>Anti-KEYWORD X+</strong>: When rolling to wound against a
             unit that has that keyword in their datasheet, rolls of X+ become
-            critical Wounds.
+            critical wounds. This effectively lowers the barrier for a
+            successful wound against specific targets.
+          </li>
+
+          <li>
+            <strong>Blast</strong>: +1 attack per 5 models in target unit. This
+            obviously marks anti-horde weapons.
+          </li>
+
+          <li>
+            <strong>Precision</strong>: When a hit is scored with this weapon,
+            the attacker is allowed to allocate the wounds, not the defender as
+            the default rules state. This is meant for hunting characters that
+            are attached to bodyguard squads.
+          </li>
+
+          <li>
+            <strong>Hazardous</strong>: After attacking with this weapon, roll a
+            D6 per Hazardous weapon used. On a 1, deal 3 mortal wounds to the
+            bearer. This usually accompanies very powerful guns, making them
+            dangerous to the user.
           </li>
         </ul>
+      </section>
 
-        <h3 id="attack-generation">Attack Generation</h3>
+      <section>
+        <h2 id="abilities">Abilities</h2>
 
-        <ul>
-          <li>
-            <strong>Blast</strong>: +1 attack per 5 models in target unit.
-            Cannot target units in Engagement Range.
-          </li>
+        <p>
+          <em>Special rules</em>, on the other hand, handle unit-specific
+          interactions. They usually provide favorable outcomes in one of the
+          aspects of the game, under certain conditions, for that unit only.
+          More often than not, they allow some form of re-rolls.
+        </p>
 
-          <li>
-            <strong>Extra Attacks</strong>: Allows attacking with this weapon in
-            addition to the main melee weapon during Fight Phase.
-          </li>
-        </ul>
+        <blockquote>
+          <p>
+            <em>Implacable Eradication</em> allows <em>Necrons Immortals</em>,
+            to re-roll certain wound rolls under certain conditions.
+          </p>
 
-        <h3 id="others">Others</h3>
-
-        <ul>
-          <li>
-            <strong>Precision</strong>: When attacking an Attached unit, you may
-            allocate the wound to a visible character. Normally this is done by
-            the defening player.
-          </li>
-
-          <li>
-            <strong>Hazardous</strong>: After attacking, roll 1D6 per Hazardous
-            weapon used. On 1 deal 3 mortal wounds to the bearer.
-          </li>
-        </ul>
+          <p>
+            <em>Reavers of the Void</em> allows{' '}
+            <em>Eldar Corsair Voidreavers</em> to re-roll certain hit rolls
+            under certain conditions.
+          </p>
+        </blockquote>
       </section>
 
       <section>
@@ -651,7 +564,7 @@ export default async function Page() {
           time. That is reliable, but not certain. In competitive play,
           consistent output is often more valuable than theoretical maximum
           damage. That is why, as discussed, more dice throws even out the
-          variances.
+          variance.
         </p>
 
         <h3 id="sustained-vs-lethal">Sustained Hits vs. Lethal Hits</h3>
@@ -668,8 +581,6 @@ export default async function Page() {
             hits. It is stronger when wounding is difficult (5+ or worse).
           </li>
         </ul>
-
-        <h3 id="rerolls-and-criticals">Rerolls and criticals</h3>
 
         <p>
           <strong>
@@ -692,13 +603,13 @@ export default async function Page() {
         <p>
           Re-rolling to hit increases the number of critical hits you generate.
           One can try to re-roll even successful non-critical hits to convert
-          them into criticals ones. This is referred to as "fishing".
+          them into critical ones. This is referred to as "fishing".
         </p>
 
         <p>
           Re-rolling wound rolls increases the chance to trigger Devastating
-          Wound, making combinations like Devastating Wounds, Twin-linke rare
-          but extremely powerful.
+          Wounds, making combinations like Devastating Wounds and Twin-linked
+          rare but extremely powerful.
         </p>
       </section>
     </>

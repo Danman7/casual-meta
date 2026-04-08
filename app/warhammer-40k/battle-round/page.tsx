@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { FaCheck, FaCrosshairs } from 'react-icons/fa'
 import { IoDiceOutline } from 'react-icons/io5'
 import { LuCrown } from 'react-icons/lu'
@@ -362,152 +363,6 @@ export default async function Page() {
         </p>
       </section>
 
-      <section>
-        <h2 id="making-attacks">Making attacks</h2>
-
-        <p>
-          Two of the three remaining phases involve making attacks - either
-          ranged or melee. The owner of a unit can declare a target during the
-          Shooting or Fight phases. Then they resolves the attack sequence for
-          each and every weapon used:
-        </p>
-        <ol>
-          <li>
-            <strong>Roll to hit</strong>.
-          </li>
-          <li>
-            <strong>Roll to wound</strong>.
-          </li>
-          <li>Allocate wounds.</li>
-          <li>
-            <strong>Roll to save</strong> - either armor or invulnerable.
-          </li>
-          <li>Inflict damage.</li>
-        </ol>
-
-        <div className="box">
-          <p className="lead flex-center">
-            <IoDiceOutline /> 1. Roll to hit
-          </p>
-
-          <p>
-            <strong>Roll a D6.</strong> If result is higher than the Ballistic
-            Skill (BS) for ranged weapons or Weapon Skill (WS) for melee, the
-            attack connects. An unmodified roll of 6 is a <em>critical hit</em>.
-          </p>
-        </div>
-
-        <blockquote>
-          <p>
-            A squad of Heavy Intercessors declares a ranged attack against some
-            Ork Boyz. They fire 5 heavy bolt rifles (A2, BS3+) after moving. Two
-            attacks means rolling 10D6 to hit. They must score 3+.
-          </p>
-        </blockquote>
-
-        <div className="box">
-          <p className="lead flex-center">
-            <IoDiceOutline /> 2. Roll to wound (only if the attack hits)
-          </p>
-
-          <p>
-            <strong>Roll a D6.</strong> The result follows a table based on how
-            much higher or lower the weapon's Strength (S) is compared to the
-            target's Toughness (T). An unmodified roll of 6 is a{' '}
-            <em>critical wound</em>.
-          </p>
-        </div>
-
-        <Table columns={woundRollColumns} data={woundRollRows} />
-
-        <blockquote>
-          <p>
-            Let's say that out of the 10 attacks from the previous example, 7
-            hit. The heavy rifle has S5 while the Boyz have T5 so a roll of 4+
-            wounds. The attacker rolls 7D6.
-          </p>
-        </blockquote>
-
-        <p>
-          If the attack hits <strong>and</strong> wounds the{' '}
-          <strong>defender</strong> allocates which models take the wounds and
-          makes saving throws. Models which already lost wounds or had attacks
-          allocated this phase must be selected first. Saves represent the
-          target's armor.
-        </p>
-
-        <div className="box">
-          <p className="lead flex-center">
-            <IoDiceOutline /> Roll to save
-          </p>
-
-          <p>
-            <strong>Roll a D6.</strong> Modify the roll by the Armor Penetration
-            (AP) of the weapon. If the result is equal or greater to the
-            target's Save (Sv), damage is not inflicted.
-          </p>
-        </div>
-
-        <p>
-          The target may also have an <em>Invulnerable Save</em> (Inv) which
-          ignores the weapon's AP. It comes in handy when facing weapons with
-          high AP. If available, the defender may choose to roll for it instead
-          of the armor save, but <strong>not both</strong>.
-        </p>
-
-        <div className="box">
-          <p className="lead flex-center">
-            <IoDiceOutline /> Invulnerable save
-          </p>
-
-          <p>
-            <strong>Roll a D6.</strong> If the result is equal or greater to the
-            target's Invulnerable Save, damage is not inflicted.
-          </p>
-        </div>
-
-        <blockquote>
-          <p>
-            Continuing the example, if the attacker scores 4 wounds, the
-            defender selects which Boyz take the wounds. He skips the Nob (the
-            leader) and allocates 4 wounds to the others. Boyz have Sv5+ so they
-            throw 4D6.
-          </p>
-        </blockquote>
-
-        <p>For all rolls above, an unmodified roll of 1 is always a fail.</p>
-
-        <Image src={attack} alt="Attack sequence example" className="my-6" />
-
-        <p>
-          After all 3 rolls are done, if the attack hits, wounds, and the armor
-          save fails, damage is inflicted. The target loses wounds equal to the
-          Damage (D) of the weapon. If the attack has more D than is required to
-          kill the target model, the excess is lost.
-        </p>
-
-        <blockquote>
-          <p>
-            In the end two attacks inflict damage. Since the heavy rifle has D2
-            and the Ork Boy has W1, two Boyz are removed from battle and the
-            excess damage is lost.
-          </p>
-        </blockquote>
-
-        <p>
-          The whole sequence is called an <em>activation</em>. The more attacks
-          a weapon makes, the more activations it has, thus a better average
-          chance to score a wound.
-        </p>
-
-        <p>
-          You will often hear the term <em>to chip</em>, which means to deal
-          small amounts of damage. You are chipping someone / something when
-          they lose a wound or a model, but not enough to make a difference.
-          Chip damage accumulates over time.
-        </p>
-      </section>
-
       <section title="3. Shooting phase">
         <h2 id="shooting-phase">3. Shooting phase</h2>
 
@@ -519,6 +374,8 @@ export default async function Page() {
           <li>Has line of sight to the target enemy unit.</li>
         </ul>
 
+        <Image src={shooting} alt="Shooting example" />
+
         <p>
           For any unit that meets those criteria, you can declare ranged
           attacks.
@@ -527,7 +384,6 @@ export default async function Page() {
         <ul>
           <li>Declare which weapon fires at which target.</li>
           <li>You may split fire by weapon, but not split individual shots.</li>
-          <li>Units that are out of range don't shoot.</li>
           <li>
             A model can only fire either all <em>Pistols</em> or everything
             else. Not both.
@@ -540,12 +396,15 @@ export default async function Page() {
         </ul>
 
         <p>
+          Declared attacks are resolved following the{' '}
+          <Link href="#attack-sequence">attack sequence</Link>.
+        </p>
+
+        <p>
           Some terrain features provide <em>Benefit of Cover</em> against ranged
           attacks. The unit behind cover gains +1 to armor saves, unless it has
           Sv3+ or better and the weapon has AP0.
         </p>
-
-        <Image src={shooting} alt="Shooting example" />
 
         <div className="box">
           <p className="lead flex-center">
@@ -632,7 +491,10 @@ export default async function Page() {
         <ol>
           <li>Piles in - moves up to 3", ending in engagement range.</li>
 
-          <li>Executes all attacks with melee weapons.</li>
+          <li>
+            Executes all attacks with melee weapons following the attack
+            sequence.
+          </li>
 
           <li>
             Consolidates - moves another 3" if there are models outside
@@ -643,6 +505,155 @@ export default async function Page() {
         <p>
           Pile-ins and consolidations are tools for jamming units, and stealing
           objectives.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="attack-sequence">Attack sequence (Activation)</h2>
+
+        <p>
+          Attacks can be declared during the{' '}
+          <Link href="#shooting-phase">Shooting</Link> and{' '}
+          <Link href="#fight-phase">Fight</Link> phases, following the rules of
+          those phases. They are declared by units, but executed by the weapons
+          they carry. The process of executing an attack is called an{' '}
+          <em>attack sequence</em> or an <em>activation</em> for short.
+        </p>
+
+        <p>
+          A weapon activation is a series of steps where its profile
+          (specifically Strength, Armor Penetration, and Damage) is compared to
+          the target's profile (specifically Toughness, Save, and Wounds). Both
+          ranged and melee weapons go through the same sequence:
+        </p>
+
+        <ol>
+          <li>
+            <strong>Roll to hit</strong>.
+          </li>
+          <li>
+            <strong>Roll to wound</strong>.
+          </li>
+          <li>Allocate wounds.</li>
+          <li>
+            <strong>Roll to save</strong> - either armor or invulnerable.
+          </li>
+          <li>Inflict damage.</li>
+        </ol>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> 1. Roll to hit
+          </p>
+
+          <p>
+            <strong>Roll a D6</strong> for each attack the weapon does. If
+            result is higher than the Ballistic Skill (BS) for ranged weapons or
+            Weapon Skill (WS) for melee, the attack connects. An unmodified roll
+            of 6 is a <em>critical hit</em>.
+          </p>
+        </div>
+
+        <blockquote>
+          <p>
+            A squad of Heavy Intercessors declares a ranged attack against some
+            Ork Boyz. They fire 5 heavy bolt rifles (A2, BS3+) after moving. Two
+            attacks means rolling 10D6 to hit. They must score 3+.
+          </p>
+        </blockquote>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> 2. Roll to wound (only if the attack hits)
+          </p>
+
+          <p>
+            <strong>Roll a D6.</strong> The result follows a table based on how
+            much higher or lower the weapon's Strength (S) is compared to the
+            target's Toughness (T). An unmodified roll of 6 is a{' '}
+            <em>critical wound</em>.
+          </p>
+        </div>
+
+        <Table columns={woundRollColumns} data={woundRollRows} />
+
+        <blockquote>
+          <p>
+            Let's say that out of the 10 attacks from the previous example, 7
+            hit. The heavy rifle has S5 while the Boyz have T5 so a roll of 4+
+            wounds. The attacker rolls 7D6.
+          </p>
+        </blockquote>
+
+        <p>
+          If the attack hits <strong>and</strong> wounds the{' '}
+          <strong>defender</strong> allocates which models take the wounds and
+          makes saving throws. Models which already lost wounds or had attacks
+          allocated this phase must be selected first. Saves represent the
+          target's armor.
+        </p>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> 4a. Roll to save
+          </p>
+
+          <p>
+            <strong>Roll a D6.</strong> Modify the roll by the Armor Penetration
+            (AP) of the weapon. If the result is equal or greater to the
+            target's Save (Sv), damage is not inflicted.
+          </p>
+        </div>
+
+        <p>
+          The target may also have an <em>Invulnerable Save</em> (Inv) which
+          ignores the weapon's AP. It comes in handy when facing weapons with
+          high AP. If available, the defender may choose to roll for it instead
+          of the armor save, but <strong>not both</strong>.
+        </p>
+
+        <div className="box">
+          <p className="lead flex-center">
+            <IoDiceOutline /> 4b. Invulnerable save
+          </p>
+
+          <p>
+            <strong>Roll a D6.</strong> If the result is equal or greater to the
+            target's Invulnerable Save, damage is not inflicted.
+          </p>
+        </div>
+
+        <blockquote>
+          <p>
+            Continuing the example, if the attacker scores 4 wounds, the
+            defender selects which Boyz take the wounds. He skips the Nob (the
+            leader) and allocates 4 wounds to the others. Boyz have Sv5+ so they
+            throw 4D6.
+          </p>
+        </blockquote>
+
+        <p>For all rolls above, an unmodified roll of 1 is always a fail.</p>
+
+        <Image src={attack} alt="Attack sequence example" className="my-6" />
+
+        <p>
+          After all 3 rolls are done, if the attack hits, wounds, and the armor
+          save fails, damage is inflicted. The target loses wounds equal to the
+          Damage (D) of the weapon. If the attack has more D than is required to
+          kill the target model, the excess is lost.
+        </p>
+
+        <blockquote>
+          <p>
+            In the end two attacks inflict damage. Since the heavy rifle has D2
+            and the Ork Boy has W1, two Boyz are removed from battle and the
+            excess damage is lost.
+          </p>
+        </blockquote>
+
+        <p>
+          In most cases, only one activation is allowed per model per turn, but
+          under some rules there might be more.
         </p>
       </section>
     </>

@@ -90,7 +90,7 @@
 }
 
 @utility box {
-  @apply border border-foreground/10 bg-surface py-2 px-4 rounded-xl space-y-5;
+  @apply border border-foreground/10 bg-surface py-2 px-4 rounded space-y-5 shadow-sm;
 }
 
 @utility picture {
@@ -156,7 +156,7 @@
 
     ul,
     ol {
-      @apply ml-6;
+      @apply ml-6 space-y-1;
     }
 
     ul {
@@ -174,5 +174,13 @@
 
   .circle-icon {
     @apply inline-flex place-items-center bg-surface rounded-full w-9 h-9 p-1 border-2 border-foreground/10;
+  }
+
+  .pointer {
+    @apply bg-foreground inline-block;
+
+    width: 2em;
+    height: 1em;
+    clip-path: polygon(0% 0%, 55% 0%, 100% 50%, 55% 100%, 0% 100%);
   }
 }
