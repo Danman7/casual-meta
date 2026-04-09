@@ -408,7 +408,7 @@ export default async function Page() {
 
         <div className="box">
           <p className="lead flex-center">
-            <FaCheck /> Rules of thumb for selecting a target
+            <FaCheck /> Selecting a target
           </p>
 
           <ul>
@@ -564,7 +564,7 @@ export default async function Page() {
 
         <div className="box">
           <p className="lead flex-center">
-            <IoDiceOutline /> 2. Roll to wound (only if the attack hits)
+            <IoDiceOutline /> 2. Roll to wound
           </p>
 
           <p>

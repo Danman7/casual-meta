@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Noto_Serif } from 'next/font/google'
+import { Noto_Serif, Noto_Serif_Display } from 'next/font/google'
 
 import {
   HOMM3_BASE_URL,
@@ -16,6 +16,11 @@ import { getRoutesFrom } from '@/lib/routes'
 
 const notoSerif = Noto_Serif({
   variable: '--font-noto-serif',
+  subsets: ['latin'],
+})
+
+const notoSerifDisplay = Noto_Serif_Display({
+  variable: '--font-noto-display',
   subsets: ['latin'],
 })
 
@@ -53,7 +58,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${notoSerif.variable} text-pretty font-medium antialiased h-full font-serif selection:bg-primary selection:text-background text-justify`}
+        className={`${notoSerif.variable} ${notoSerifDisplay.variable} text-pretty font-medium antialiased h-full font-serif selection:bg-primary selection:text-background text-justify`}
       >
         <NavigationProvider sections={sections}>
           <LayoutShell>{children}</LayoutShell>

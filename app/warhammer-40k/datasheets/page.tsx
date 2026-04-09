@@ -3,9 +3,11 @@ import Link from 'next/link'
 
 import attackNumber from '@/app/assets/wh40k/attacks_number.webp'
 import datasheet from '@/app/assets/wh40k/datasheet.webp'
+import durability from '@/app/assets/wh40k/durability.webp'
 import loadouts from '@/app/assets/wh40k/loadouts.webp'
 import movediff from '@/app/assets/wh40k/move_diff.webp'
 import multipleProfiles from '@/app/assets/wh40k/multiple_profiles.webp'
+import saves from '@/app/assets/wh40k/saves.webp'
 import shooting from '@/app/assets/wh40k/shooting.webp'
 import weapons from '@/app/assets/wh40k/weapons.webp'
 import wound from '@/app/assets/wh40k/wound.webp'
@@ -136,16 +138,22 @@ export default async function Page() {
         <h3 id="save">Save (Sv)</h3>
 
         <p>
-          Saves also take part in the profile's durability. They are an extra
-          gate against taking damage, after an attack has hit and wounded. All
-          datasheets have an armor save, which is affected by the attacking
-          weapon's Armor Penetration (AP). Elite, durable models can also have
-          an additional <em>Invulnerable Save</em> which ignores AP.
+          Saves are an extra gate against taking damage, after an attack has hit
+          and wounded. All datasheets have an armor save, which is affected by
+          the attacking weapon's Armor Penetration (AP). If the AP brings the
+          save above 6+, <em>no armor save</em> is allowed.
         </p>
 
+        <Image
+          src={saves}
+          alt="Example in how different AP affects armor saves"
+        />
+
         <p>
-          The defender can choose which one to use. If the save check passes,
-          damage is averted. Again, refer to the{' '}
+          Elite, durable models can also have an additional fixed{' '}
+          <em>Invulnerable Save</em> which ignores AP. The defender can choose
+          which one to use. If the save check passes, damage is averted. Again,
+          refer to the{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#attack-sequence`}>
             attack sequence
           </Link>{' '}
@@ -178,10 +186,17 @@ export default async function Page() {
           target.
         </p>
 
+        <Image
+          src={durability}
+          alt="Difference in durability between an Intercessor and a Defiler"
+        />
+
         <p>
           The more wounds a model has, the longer it tends to stay in the fight.
-          Durable targets with a lot of wounds and good saves require focused
-          fire from multiple attackers to be taken down.
+          A durable target with a lot of wounds and good saves requires focused
+          fire from multiple attackers to be taken down. It can be referred to
+          as an <em>anchor</em> or "answer me or die" unit, that ties multiple
+          attackers up until it's removed from play.
         </p>
 
         <h3 id="leadership">Leadership (Ld)</h3>

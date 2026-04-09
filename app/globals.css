@@ -28,6 +28,7 @@
   --color-success: var(--success);
   --color-error: var(--error);
   --font-serif: var(--font-noto-serif);
+  --font-display: var(--font-noto-display);
 
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out both;
 
@@ -90,7 +91,7 @@
 }
 
 @utility box {
-  @apply border border-foreground/10 bg-surface py-2 px-4 rounded space-y-5 shadow-sm;
+  @apply border border-foreground/10 bg-surface py-2 px-4 rounded space-y-2! shadow-sm;
 }
 
 @utility picture {
@@ -98,7 +99,7 @@
 }
 
 @utility profile-img {
-  @apply max-h-56 object-cover;
+  @apply md:max-h-56 object-cover;
 }
 
 @utility lead {
@@ -142,7 +143,7 @@
   }
 
   blockquote {
-    @apply border-l-4 border-foreground/10 pl-4 text-foreground/80 text-sm space-y-5;
+    @apply border-l-4 border-foreground/10 pl-4 text-foreground/80 text-sm space-y-2;
   }
 
   main {
@@ -151,12 +152,12 @@
     }
 
     section {
-      @apply space-y-5;
+      @apply space-y-4;
     }
 
     ul,
     ol {
-      @apply ml-6 space-y-1;
+      @apply ml-4 text-left;
     }
 
     ul {

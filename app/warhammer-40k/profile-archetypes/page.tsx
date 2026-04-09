@@ -39,54 +39,53 @@ export default async function Page() {
 
       <Section title="Target Profiles" id="target-profiles">
         <p>
-          Have you heard of <strong>MEQ, TEQ or GEQ</strong>? These are
-          Warhammer 40,000 shorthands that describe combinations of attributes
-          very common among infantry across many factions. So, instead of
-          analyzing every unit individually, players can ask questions like "Is
-          this weapon efficient into MEQ?".
+          Have you heard of <em>MEQ, TEQ or GEQ</em>? They are WH40K shorthands
+          that describe very common{' '}
+          <Link href={`${wh40kRoute('Datasheets')}#unit-profiles`}>
+            profiles
+          </Link>
+          . Many of the units (especially infantry) across all factions either
+          fit or come close to one of these. So, instead of analyzing every unit
+          individually, players can ask questions like "Is this weapon efficient
+          into MEQ?".
         </p>
 
         <p>
-          These are{' '}
-          <strong>
-            durability profiles of units. Strength, Saves and Wounds are
-            relevant
-          </strong>
-          . Movement, Leadership and OC are less critical.
+          Comparing profiles mostly involve the model's durability - Toughness,
+          Saves and Wounds. Movement, Leadership and OC are usually less
+          relevant when debating archetypes.
         </p>
 
         <h3 id="meq">MEQ (Marine Equivalent)</h3>
         <Image
           src={intercessors}
           alt="A squad of Space Marine Intercessors."
-          className="profile-img object-[0%_70%]"
+          className="picture profile-img object-[0%_70%]"
         />
 
         <div className="box text-lg font-bold text-center">T4|Sv3+|W2</div>
 
         <p>
-          MEQ refers to infantry with{' '}
-          <strong>resilience similar to a standard Space Marine</strong>. The
-          defining traits are{' '}
-          <strong>Toughness 4, two Wounds, and a 3+ armor save</strong>. It's a
-          very common profile and is frequently used as a benchmark.
+          MEQ refers to infantry with resilience similar to a{' '}
+          <em>standard Space Marine</em>. The defining traits are 4 toughness, 2
+          wounds, and a 3+ armor save. It's a widespread profile and is
+          frequently used as a benchmark.
         </p>
 
         <p>
-          Units with the exact same profile are <strong>strong examples</strong>{' '}
-          or <strong>pure MEQ</strong>. This goes for most of the Space Marines
-          and Chaos Space Marines infantry lines, Tau Stealth Battlesuits, Eldar
-          Shining Spears and many more. <strong>Loose examples</strong> are
-          units that are not pure MEQ but can be approximated to it. For
-          example, Necron Lychguard are MEQ with T5.
+          Units with the exact profile, like the marines battleline, Tau Stealth
+          Battlesuits and Eldar Shining, are <em>strong examples</em> or{' '}
+          <em>pure MEQ</em>. <em>Loose examples</em> are units that are not pure
+          MEQ but can be approximated to it. For example, Necron Lychguard are
+          MEQ with T5.
         </p>
 
         <p>
           Looking at the durability of the profile we can say that{' '}
-          <strong>S5, D2 weapons</strong> like the Heavy Bolter will be{' '}
-          <strong>the principal anti-MEQ gear</strong>. S4, D1 arms like the
-          regular Bolter or the Chainsword are still adequate in large enough
-          volumes (3-4 attacks per weapon).
+          <em>S5, D2 weapons</em> like the Heavy Bolter will be{' '}
+          <em>the principal anti-MEQ gear</em>. S4, D1 arms like the regular
+          Bolter or the Chainsword are still adequate in large enough volumes
+          (3-4 attacks per weapon).
         </p>
 
         <h3 id="teq">TEQ (Terminator Equivalent)</h3>
