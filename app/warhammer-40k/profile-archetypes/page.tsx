@@ -63,13 +63,13 @@ export default async function Page() {
           className="picture profile-img object-[0%_70%]"
         />
 
-        <div className="box text-lg font-bold text-center">T4|Sv3+|W2</div>
+        <div className="box lead text-center">T4|Sv3+|W2</div>
 
         <p>
-          MEQ refers to infantry with resilience similar to a{' '}
-          <em>standard Space Marine</em>. The defining traits are 4 toughness, 2
-          wounds, and a 3+ armor save. It's a widespread profile and is
-          frequently used as a benchmark.
+          MEQ, often just called marines, refers to infantry with resilience
+          similar to a <em>standard Space Marine</em>. The defining traits are 4
+          toughness, 2 wounds, and a 3+ armor save. It's a widespread profile
+          and is frequently used as a benchmark.
         </p>
 
         <p>
@@ -77,51 +77,39 @@ export default async function Page() {
           Battlesuits and Eldar Shining, are <em>strong examples</em> or{' '}
           <em>pure MEQ</em>. <em>Loose examples</em> are units that are not pure
           MEQ but can be approximated to it. For example, Necron Lychguard are
-          MEQ with T5.
+          MEQ with better T5, while Tyranid Barbgaunts are MEQ with worse Sv4+
         </p>
 
         <p>
-          Looking at the durability of the profile we can say that{' '}
-          <em>S5, D2 weapons</em> like the Heavy Bolter will be{' '}
-          <em>the principal anti-MEQ gear</em>. S4, D1 arms like the regular
-          Bolter or the Chainsword are still adequate in large enough volumes
-          (3-4 attacks per weapon).
+          Arms that deal 2 damage, with preferrably more strength than 4, are
+          ideal against MEQ. For example, the <em>Heavy bolter</em> S5, D2 is a
+          principal anti-MEQ weapon.
         </p>
 
         <h3 id="teq">TEQ (Terminator Equivalent)</h3>
         <Image
           src={terminators}
           alt="A squad of Space Marine Terminators."
-          className="profile-img object-[0%_75%]"
+          className="picture profile-img object-[0%_57%]"
         />
 
-        <div className="box text-lg font-bold text-center">T5|Sv2+/4++|W3</div>
+        <div className="box lead text-center">T5|Sv2+/Inv4+|W3</div>
 
         <p>
-          <strong>TEQ</strong> stands for <em>Terminator Equivalent</em>,
-          representing <strong>elite heavy infantry</strong>. These are tougher
-          profiles with more wounds, but the defining trait is the{' '}
-          <strong>excellent saves, often including an invulnerable save</strong>
-          . This is important, as between MEQ and TEQ there's a variety of
-          profiles that are more resilient than Marines, but not quite
-          Terminators.
+          There's a variety of tougher-than-MEQ infantry profiles. TEQ, or
+          terminators, represent <em>heavy elites</em>, that often come with
+          invulnerable saves. Because of that high AP has{' '}
+          <em>diminishing returns</em> and steps down to weapons with better
+          damage and strength. Good examples of anti-TEQ gear are the{' '}
+          <em>Autocannon</em> S9, AP-1, D3; <em>Grav-cannon</em> S6, AP-1, D3;
+          and <em>Bolt sniper rifle</em> S5, AP-2, D3.
         </p>
 
         <p>
           Strong examples are Space and Chaos Space Marine Terminators, and Grey
           Knight Paladins. Looser examples are Adeptus Custodes units like
           Wardens and Custodian Guard (TEQ with various Toughness) and Tau
-          Crisis Battlesuits (more Wounds, worse Saves, but still TEQ).
-        </p>
-
-        <p>
-          Terminators are <strong>anchors</strong> that stop advances and draw
-          fire. <strong>High AP has diminishing returns</strong> because of the
-          Invulnerable saves. AP of -1-2 is optimal.{' '}
-          <strong>
-            Multi-damage weapons with higher strength become more important
-          </strong>
-          . The Autocannon with S9, AP-1, D3 is an ample counter.
+          Crisis Battlesuits (more Wounds, worse Saves, but still heavy).
         </p>
 
         <h3 id="geq">GEQ (Guard Equivalent)</h3>
@@ -129,10 +117,10 @@ export default async function Page() {
         <Image
           src={guardsmen}
           alt="A squad of Imperial Guard Cadia Shock Troops."
-          className="profile-img object-[0%_25%]"
+          className="picture profile-img object-[0%_28%]"
         />
 
-        <div className="box text-lg font-bold text-center">T3|Sv5+|W1</div>
+        <div className="box lead text-center">T3|Sv5+|W1</div>
 
         <p>
           <strong>GEQ</strong> means <em>Guardsman Equivalent</em>, representing{' '}
