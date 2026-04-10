@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import guardsmen from '@/app/assets/wh40k/CadianShockTroops.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
+import knight from '@/app/assets/wh40k/knight_Castellan.webp'
 import rhino from '@/app/assets/wh40k/rhino.webp'
 import terminators from '@/app/assets/wh40k/terminators.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
@@ -99,10 +100,9 @@ export default async function Page() {
           There's a variety of tougher-than-MEQ infantry profiles. TEQ, or
           terminators, represent <em>heavy elites</em>, that often come with
           invulnerable saves. Because of that high AP has{' '}
-          <em>diminishing returns</em> and steps down to weapons with better
-          damage and strength. Good examples of anti-TEQ gear are the{' '}
-          <em>Autocannon</em> S9, AP-1, D3; <em>Grav-cannon</em> S6, AP-1, D3;
-          and <em>Bolt sniper rifle</em> S5, AP-2, D3.
+          <em>diminishing returns</em> againts them. Weapons with better damage
+          and strength (e.g. <em>Autocannon</em> S9, AP-1, D3 and{' '}
+          <em>Grav-cannon</em> S6, AP-1, D3) are more appropriate.
         </p>
 
         <p>
@@ -123,21 +123,18 @@ export default async function Page() {
         <div className="box lead text-center">T3|Sv5+|W1</div>
 
         <p>
-          <strong>GEQ</strong> means <em>Guardsman Equivalent</em>, representing{' '}
-          <strong>light infantry</strong> like the Imperial Guard battleline.
-          Any unit where the default count is 10-20 models, e.g. Cadian Shock
-          Troops, Catachan Jungle Fighters, Tyranid Termagant and Hormagaunts,
-          Chaos Cultists, is usually GEQ.
+          The name comes from the Imperial Guard battleline and depicts{' '}
+          <em>light infantry</em>. These are single wound fighters that usually
+          come in larger squads (up to 20 models). Examples are Cadian Shock
+          Troops, Tyranid Termagant and Hormagaunts, and Chaos Cultists.
         </p>
 
         <p>
-          Most any weapon can deal with light infantry as they're{' '}
-          <strong>not durable</strong>. That's not the point. They{' '}
-          <strong>win through numbers</strong> instead. High strength and damage
-          weapons are overkill and not necessarily effective at removing a lot
-          of models at once. Ergo, <strong>large volumes of D1 attacks</strong>{' '}
-          is superior. Bolters, lasguns, flamers, and blast weapons are
-          particularly successful against GEQ.
+          Large numbers with terrible durability, changes the approach. GEQ win
+          through volume. High damage, strength and AP become irrelevant and
+          step down to number of attacks. Weapons with the Torrent, Rapid Fire
+          or Blast keywords like the <em>Flamer</em>, <em>Storm bolter</em> and{' '}
+          <em>Missile Launcher</em> are practical.
         </p>
 
         <h3 id="vehicles-and-monsters">Vehicles and Monsters</h3>
@@ -145,41 +142,38 @@ export default async function Page() {
         <Image
           src={rhino}
           alt="A Space Marine Rhino transport vehicle."
-          className="profile-img sm:max-h-76 object-[0%_0%]"
+          className="picture profile-img sm:max-h-76 object-[0%_40%]"
         />
 
         <p>
-          Non-infantry units have a{' '}
-          <strong>much higher variety in statlines</strong>, but one can still
-          identify a light, medium and heavy archetypes around the Melta and
-          Lascannon strength. These weapons have high AP to begin with, so{' '}
-          <strong>units with invulnerable saves fare better</strong> on the
-          field.
+          Moving away from infantry, the profiles become much more varied. It's
+          difficult to pinpoint a specific statline, but one can use the{' '}
+          <em>Meltagun's</em> and <em>Lascannon's</em> strength as reference
+          points.
         </p>
 
         <p>
-          A profile <strong>similar to T9, W10 and Sv3+</strong>, like the
-          Rhino, Storm Speeder, regular Dreadnought or even flyers like the
-          Stormhawk Interceptor can be considered a{' '}
-          <strong>
-            light vehicle. Melta weapons at half range and grenade/missile
-            launchers in krak mode
-          </strong>{' '}
-          (both S9) tend to deal with them qu ickly, depending on the dice.
+          The Meltagun has S9. Vehicles at T9 and below, like the <em>Rhino</em>{' '}
+          T9, W10, Sv3+, are apt to die from 3-4 Meltagun wounds (less at half
+          range). They can be considered <em>light vehicles</em>. While anti-GEQ
+          arms will struggle hurting them, they are vulnerable to anti-TEQ and
+          even MEQ weapons.
         </p>
 
-        <p>
-          A step further, <strong>T10, W12</strong> would be a{' '}
-          <strong>medium vehicle</strong>. A Redemptor Dreadnought, or a W14
-          Chaos Knight Executioner with an Invulnerable save will give the
-          Meltas a hard time. The Lascannon is right at home here.
-        </p>
+        <h3>KEQ (Knight Equivalent)</h3>
+
+        <Image
+          src={knight}
+          alt="A Space Marine Knight Castellan."
+          className="picture profile-img sm:max-h-76 object-[0%_25%]"
+        />
 
         <p>
-          And then there is the ultimate "answer me or die" category - the{' '}
-          <strong>heavy vehicle</strong>. Even a Lasscannon needs a good roll to
-          fight a Land Raider, at <strong>T12, W16, Sv2+</strong>. These units
-          require supported focus fire.
+          KEQ is not a widely used term, but one can refer to very large, often
+          20+ wound models to as knight equivalents. Such are the Knights
+          Perceptor and Castellan, Eldar Wraithknight and Tyranid Scythed
+          Hierodule. These are welcomed in most WH40K variants, but one should
+          inform their opponent beforehand to assure they are properly prepared.
         </p>
       </Section>
     </>
