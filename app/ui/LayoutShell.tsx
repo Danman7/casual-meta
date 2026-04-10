@@ -38,7 +38,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
           <SideNavigation />
         </aside>
 
-        <main tabIndex={-1} className="edge-padding max-w-3xl mx-auto ">
+        <main tabIndex={-1} className="edge-padding max-w-3xl mx-auto">
           {children}
         </main>
 

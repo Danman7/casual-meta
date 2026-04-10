@@ -1,4 +1,8 @@
+import { WH40K_BASE_URL } from '@/app/constants'
 import { TableColumn } from '@/app/ui/Table'
+import { createRouteLookup } from '@/lib/routeLinks'
+
+export const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
 
 interface WoundRollRow {
   strengthVsToughness: string

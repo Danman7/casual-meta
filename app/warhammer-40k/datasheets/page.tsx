@@ -76,7 +76,7 @@ export default async function Page() {
           consistency, not certainty.
         </p>
 
-        <h3 id="movement">Move (M)</h3>
+        <h3 id="move">Move (M)</h3>
 
         <p>
           Movement in WH40K is measured in <em>inches</em>. Following the rules

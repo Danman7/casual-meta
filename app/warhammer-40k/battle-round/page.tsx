@@ -13,7 +13,11 @@ import pivot from '@/app/assets/wh40k/pivot.webp'
 import shooting from '@/app/assets/wh40k/shooting.webp'
 import { WH40K_TITLE } from '@/app/constants'
 import { Table } from '@/app/ui/Table'
-import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
+import {
+  wh40kRoute,
+  woundRollColumns,
+  woundRollRows,
+} from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 3
@@ -30,96 +34,52 @@ export default async function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <section className="md:flex gap-4 items-start *:md:w-1/2">
-        <section>
-          <p>
-            All formats of WH40K are played in a series of rounds. The round is
-            a cycle of player turns. All players (usually two) take a turn to
-            complete a round. A turn is a sequence of actions grouped in phases.
-            A phase dictates what actions can be executed and in what
-            arrangement.
-          </p>
+      <section>
+        <p>
+          All formats of WH40K are played in a series of rounds. All players
+          (usually two) take a turn to complete a round. A turn is a sequence of
+          actions grouped in 5 phases - each dictating what happens when. Most
+          games end after a set number of rounds (usually 5).
+        </p>
 
-          <p>
-            On your turn, you go through each phase in order. Once you complete
-            all, the turn passes to the next player. When all players have had a
-            turn, the round ends. Many formats end after a set number of rounds
-            (usually 5).
-          </p>
-        </section>
-
-        <div className="box flex flex-col">
-          <p className="lead flex-center">
-            <RiInformation2Line /> The player turn sequence
-          </p>
-
-          <div className="flex flex-col">
-            <div className="flex-center">
-              1. Command Phase <LuCrown />
-            </div>
-            <small>Gain Command Points and check Leadership</small>
-          </div>
-
-          <div className="flex flex-col">
-            <div className="flex-center">
-              2. Movement Phase <TbArrowBigUpLines />
-            </div>
-            <small>Reposition</small>
-          </div>
-
-          <div className="flex flex-col">
-            <div className="flex-center">
-              3. Shooting Phase <FaCrosshairs />
-            </div>
-            <small>Resolve ranged attacks</small>
-          </div>
-
-          <div className="flex flex-col">
-            <div className="flex-center">
-              4. Charge Phase <RxDoubleArrowUp />
-            </div>
-            <small>Declare charges and move into melee</small>
-          </div>
-
-          <div className="flex flex-col">
-            <div className="flex-center">
-              5. Fight Phase <RiSwordLine />
-            </div>
-            <small>Resolve melee attacks</small>
-          </div>
-        </div>
+        <p>
+          To complete your turn go through each of the following phases in
+          order, following the sequence of actions as described. Then you pass
+          the turn to your opponent.
+        </p>
       </section>
 
       <section>
-        <h2 id="command-phase">1. Command Phase</h2>
+        <h2 id="command-phase" className="flex-center">
+          1. Command Phase <LuCrown />
+        </h2>
 
         <ol>
           <li>
-            Before everything else,{' '}
-            <strong>all players gain 1 command point (CP).</strong> CPs are a
-            resource spent to activate <em>Stratagems</em>.
+            All players gain 1 command point (CP). CPs are a resource spent to
+            activate <em>Stratagems</em>.
           </li>
 
           <li>
-            After that, resolve any rules that occur in the Command Phase (the
-            rule will state so).
+            Resolve any rules that occur in the Command Phase but don't specify
+            a precise timing.
           </li>
 
           <li>
-            Finally, the active player takes <em>Battle-shock</em> tests if any
-            are required.
+            Settle <em>Battle-shock</em> tests if any are required.
           </li>
         </ol>
 
         <h3 id="battle-shock-tests">Battle-shock tests</h3>
 
         <p>
-          At the very end of your Command Phase, check whether you have units
-          that are below half of their <em>starting</em> strength.
+          At the end of your Command Phase, check if you have units that are{' '}
+          <em>below half-strength</em>. If the answer is yes, every such unit
+          must take a battle-shock test.
         </p>
 
         <div className="box">
-          <p className="lead flex-center">
+          <p className="font-bold flex-center">
             <RiInformation2Line /> Below Half-strength
           </p>
 
@@ -132,52 +92,48 @@ export default async function Page() {
             </li>
 
             <li>
-              Started as a <strong>multi-model</strong> unit (e.g. a squad), and
-              it has fewer than half of its models left.
+              It started as a <strong>multi-model</strong> unit (e.g. a squad),
+              and it has fewer than half of its models left.
             </li>
           </ul>
 
           <p>
-            If a leader is attached to a squad, it counts as a single unit, and
-            you check against the total number of starting models.
+            If a unit has a character attached to it, the whole thing counts as
+            a single unit, and you check against the total number of starting
+            models (squad + character).
           </p>
         </div>
 
-        <blockquote>
-          <p>
-            If a 5-man squad of Intercessors is down to 2 models, they must take
-            a battle-shock test as they are 2/5. However, if the same squad had
-            a Chaplain attached, they would not be required to take a test as
-            they are 3/6.
-          </p>
-        </blockquote>
-
-        <p>
-          If you have units below half-strength, every such unit must take a
-          battle-shock test.
-        </p>
-
         <div className="box">
-          <p className="lead flex-center">
+          <p className="font-bold flex-center">
             <IoDiceOutline /> Battle-shock test
           </p>
 
           <p>
-            <strong>Roll 2D6.</strong> If the result is higher than the unit's{' '}
-            <strong>highest Leadership (Ld)</strong> attribute, the test passes.
+            <strong>Roll 2D6.</strong> If the result is higher than the unit's
+            highest{' '}
+            <Link href={`${wh40kRoute('Datasheets')}#leadership`}>
+              Leadership (Ld)
+            </Link>{' '}
+            attribute, the test passes.
           </p>
         </div>
 
         <blockquote>
           <p>
-            A squad of Intercessors takes a battle-shock test and scores a 5.
-            Since they have Ld6+, they fail. Yet, with a Chaplain attached if
-            they score a 5, they will pass, because the Chaplain has Ld5+.
+            If a 5-man squad of Intercessors is down to 2 models (2/5), they
+            must take the test. Their Ld is 6+, so if they roll a 5 they fail.
+          </p>
+
+          <p>
+            Now, if the same squad had a Chaplain attached, they would be at 3/6
+            models and won't require a test. But if they did, rolling a 5 this
+            time will pass as the Chaplain has Ld5+.
           </p>
         </blockquote>
 
         <p>
-          If a unit fails the test it's Battle-shocked until the start of your
+          If the test fails, the unit is Battle-shocked until the start of your
           next Command Phase:
         </p>
 
@@ -196,89 +152,75 @@ export default async function Page() {
       </section>
 
       <section>
-        <h2 id="movement-phase">2. Movement phase</h2>
+        <h2 id="movement-phase" className="flex-center">
+          2. Movement phase <TbArrowBigUpLines />
+        </h2>
 
         <p>
-          All active player's units that wish to reposition and are{' '}
-          <strong>outside engagement range</strong> (1" of an enemy) can do so
-          one at a time. If the owner declares that a unit will move it can
-          either:
+          Every allied unit outside <em> engagement range</em> (1" of an enemy)
+          can either:
         </p>
 
         <ul>
           <li>
-            Move normally up to its Movement (M") characteristic in inches.
+            Move normally up to its{' '}
+            <Link href={`${wh40kRoute('Datasheets')}#move`}>Move (M)</Link>{' '}
+            characteristic in inches.
           </li>
 
           <li>
-            Make an <em>advance</em>, moving further, giving up the ability to
-            shoot during the Shooting Phase with all weapons that don't have the{' '}
-            <em>Assault</em> keyword.
+            Make an <em>advance</em>, moving further, but giving up the ability
+            to shoot and declare charges that turn.
           </li>
         </ul>
 
         <div className="box">
-          <p className="lead flex-center">
-            <IoDiceOutline /> Advance
+          <p className="font-bold flex-center">
+            <IoDiceOutline /> Advance roll
           </p>
 
           <p>
-            <strong>Roll a D6.</strong> Add the result as inches to the unit's
-            M" and move up to that distance.
+            <strong>Roll a D6.</strong> Add the result as inches to the unit's M
+            and move up to the new distance.
           </p>
         </div>
 
         <Image src={movement} alt="Movement example" />
 
-        <blockquote>
-          <p>
-            Heavy Intercessors have M5". If they choose to advance during the
-            movement phase, they can move up to 11" (if D6 scores 6). By
-            comparison, Assault Intercessors with Jump Packs have M12" and
-            advance up to 18" on a perfect roll.
-          </p>
-        </blockquote>
-
         <p>
-          No unit can move through enemies or stop within engagement range of an
-          enemy. Under core rules, models also cannot end a move on top of an
-          objective, but tournaments usually allow this.
+          Units are not allowed to move through enemies or end within engagement
+          range of an enemy. Under core rules, models also cannot end a move on
+          top of an objective, but tournaments usually allow this.
         </p>
 
         <p>
-          A unit may also skip movement, even if eligible to move, and{' '}
-          <em>remain stationary</em>. Some weapon keywords and special rules
-          generate benefits for units that didn't move.
-        </p>
-
-        <p>
-          Units that are already engaged can only stay put, or{' '}
-          <em>fall back</em>.
+          A unit is allowed to skip movement altogether. If it does it's
+          considered as <em>remained stationary</em>, generating potential
+          benefits under some rules.
         </p>
 
         <h3 id="fall-back">Fall Back</h3>
 
         <p>
-          A fall back is an optional move available to units engaged in close
-          combat that want to get out. Any such unit can fall back during the
-          Movement Phase, making a normal move away from the enemy. Units that
-          fell back:
+          During this phase, units that are already engaged in melee can either
+          stay put, or if they wish to get away from the enemy, declare a{' '}
+          <em>fall back</em> move. It's a normal move (up to M inches) with
+          these caveats:
         </p>
 
         <ul>
-          <li>Cannot shoot or declare a charge the same turn.</li>
-          <li>Cannot end the move within engagement range of a foe.</li>
+          <li>The unit cannot shoot or declare a charge the same turn.</li>
+          <li>
+            The unit cannot end the move within engagement range of a foe.
+          </li>
+          <li>
+            The unit can pass through enemies, but they must take a{' '}
+            <em>Desperate Escape</em> test.
+          </li>
         </ul>
 
-        <p>
-          Unlike normal moves and advances, falling back allows passing through
-          enemies, but the unit must take a <em>Desperate Escape</em> test.
-          Units that are falling back and are also battle-shocked always take
-          the test.
-        </p>
-
         <div className="box">
-          <p className="lead flex-center">
+          <p className="font-bold flex-center">
             <IoDiceOutline /> Desperate Escape test
           </p>
 
@@ -287,16 +229,19 @@ export default async function Page() {
           </p>
         </div>
 
+        <p>
+          Units that are falling back and are also battle-shocked always take
+          the test.
+        </p>
+
         <h3 id="pivoting">Pivoting</h3>
 
         <p>
-          Units don't need to move only in straight lines. They can freely pivot
-          and change direction as long as the move is within their M". However,{' '}
-          <strong>
-            Vehicles and Monsters without round bases or the <em>Fly</em>{' '}
-            keyword must reduce their move by 2" every time they pivot
-          </strong>
-          . This prevents gaining extra distance through rotation tricks.
+          Units are not restricted to moving only in straight lines. They can
+          freely change direction as long as the move is within their M.
+          However, Vehicles and Monsters without round bases or the <em>Fly</em>{' '}
+          keyword must <em>reduce their move by 2"</em> every time they pivot .
+          This prevents gaining extra distance through rotation tricks.
         </p>
 
         <Image src={pivot} alt="Pivoting example" />
@@ -322,14 +267,14 @@ export default async function Page() {
         </ul>
 
         <div className="box">
-          <p className="lead flex-center">
+          <p className="font-bold flex-center">
             <IoDiceOutline /> If the transport is destroyed
           </p>
 
           <p>
-            <strong>Roll a D6.</strong> On a 1, the model suffers a mortal
-            wound. Then the survivors disembark and become Battle-shocked and
-            cannot charge that turn.
+            <strong>Roll a D6</strong> per embarked model. On a 1, the model
+            suffers a mortal wound. Then the survivors disembark and become
+            Battle-shocked and cannot charge that turn.
           </p>
         </div>
 
@@ -341,9 +286,9 @@ export default async function Page() {
         <h3 id="strategic-reserves">Strategic Reserves</h3>
 
         <p>
-          Players may choose not to deploy some of their units at the beginning
-          of the battle. These go into <em>Strategic Reserves</em> and cannot
-          exceed 25% of the total army points. They can join the battle later,
+          Players are allowed to not deploy all of their units at the beginning
+          of the battle. Up to <em>25% of your total army points</em> can be
+          held as <em>strategic reserves</em>. They may join the battle later,
           at the very end of the movement phase, following these rules:
         </p>
 
@@ -358,15 +303,17 @@ export default async function Page() {
         </ul>
 
         <p>
-          Reserve play is about timing and pressure. Late arrivals can threaten
-          flanks or objectives but must respect screening and positioning.
+          Reserve play is about timing and pressure. Late arrivals threaten
+          flanks or objectives but must respect what is already on the table.
         </p>
       </section>
 
       <section title="3. Shooting phase">
-        <h2 id="shooting-phase">3. Shooting phase</h2>
+        <h2 id="shooting-phase" className="flex-center">
+          3. Shooting phase <FaCrosshairs />
+        </h2>
 
-        <p>Go through each unit that:</p>
+        <p>If a unit:</p>
 
         <ul>
           <li>Is not engaged in close combat.</li>
@@ -374,15 +321,10 @@ export default async function Page() {
           <li>Has line of sight to the target enemy unit.</li>
         </ul>
 
-        <Image src={shooting} alt="Shooting example" />
-
-        <p>
-          For any unit that meets those criteria, you can declare ranged
-          attacks.
-        </p>
+        <p>It can declare a ranged attack.</p>
 
         <ul>
-          <li>Declare which weapon fires at which target.</li>
+          <li>State which weapon fires at which target.</li>
           <li>You may split fire by weapon, but not split individual shots.</li>
           <li>
             A model can only fire either all <em>Pistols</em> or everything
@@ -394,6 +336,8 @@ export default async function Page() {
             fire.
           </li>
         </ul>
+
+        <Image src={shooting} alt="Shooting example" />
 
         <p>
           Declared attacks are resolved following the{' '}
@@ -407,7 +351,7 @@ export default async function Page() {
         </p>
 
         <div className="box">
-          <p className="lead flex-center">
+          <p className="font-bold flex-center">
             <FaCheck /> Selecting a target
           </p>
 
@@ -436,13 +380,25 @@ export default async function Page() {
       </section>
 
       <section>
-        <h2 id="charge-phase">4. Charge phase</h2>
+        <h2 id="charge-phase" className="flex-center">
+          4. Charge phase <RxDoubleArrowUp />
+        </h2>
 
         <p>
-          Any unit that wishes to engage in melee, that{' '}
-          <strong>didn't advance this turn</strong>, and is within 12" of a foe
-          may declare a charge into that foe. A unit may charge multiple
-          targets, but you must successfully engage every declared target.
+          When a unit wishes to close the distance, it can declare a charge
+          towards an enemy if:
+        </p>
+
+        <ul>
+          <li>It didn't advance this turn.</li>
+
+          <li>Is within 12" of the target.</li>
+        </ul>
+
+        <p>
+          To see if the charge is successful, a charge roll is made. It's
+          possible to charge multiple targets with a single unit, but you must
+          successfully engage every declared target.
         </p>
 
         <div className="box">
@@ -451,9 +407,9 @@ export default async function Page() {
           </p>
 
           <p>
-            <strong>Roll 2D6".</strong> If the result is enough to move within
-            1" (engagement range) of the target, the charge succeeds and the
-            unit may move into position. If it fails, the unit stays put.
+            <strong>Roll 2D6.</strong> If the result is enough in inches to move
+            within engagement range (1") of the target, the charge succeeds. If
+            not, the unit stays put.
           </p>
         </div>
 
@@ -467,7 +423,9 @@ export default async function Page() {
       </section>
 
       <section>
-        <h2 id="fight-phase">5. Fight phase</h2>
+        <h2 id="fight-phase" className="flex-center">
+          5. Fight phase <RiSwordLine />
+        </h2>
 
         <p>
           It's time to resolve hand-to-hand attacks. All units that completed a

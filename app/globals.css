@@ -12,7 +12,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: hsl(10, 20%, 5%);
-    --foreground: hsl(10, 10%, 90%);
+    --foreground: hsl(10, 10%, 95%);
     --surface: hsl(10, 20%, 10%);
     --primary: hsl(10, 80%, 55%);
     --success: var(--color-green-400);
@@ -27,8 +27,6 @@
   --color-primary: var(--primary);
   --color-success: var(--success);
   --color-error: var(--error);
-  --font-serif: var(--font-noto-serif);
-  --font-display: var(--font-noto-display);
 
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out both;
 
@@ -87,23 +85,27 @@
 }
 
 @utility sub-nav-item {
-  @apply pl-4 border-l border-foreground/10;
+  @apply pl-4 border-l-2 border-foreground/10;
 }
 
 @utility box {
-  @apply border border-foreground/10 bg-surface py-2 px-4 rounded space-y-2! shadow-sm;
+  @apply border border-foreground/10 bg-surface p-4 rounded-lg mb-6 shadow-sm space-y-4;
 }
 
 @utility picture {
-  @apply rounded shadow-sm;
+  @apply rounded-lg shadow-sm;
 }
 
 @utility profile-img {
-  @apply md:max-h-56 object-cover;
+  @apply sm:max-h-56 object-cover;
 }
 
 @utility lead {
   @apply text-lg font-bold;
+}
+
+@utility badge {
+  @apply px-1.5 py-0.5 rounded text-sm bg-surface;
 }
 
 @layer base {
@@ -118,15 +120,15 @@
   }
 
   h1 {
-    @apply mb-6 text-4xl lg:text-5xl leading-tight font-bold;
+    @apply text-3xl font-semibold leading-tight mb-6;
   }
 
   h2 {
-    @apply pt-7 mt-5 text-3xl lg:text-4xl font-semibold;
+    @apply text-2xl font-semibold leading-snug mb-4 mt-8;
   }
 
   h3 {
-    @apply text-xl lg:text-2xl font-semibold pt-3;
+    @apply text-xl font-semibold leading-snug mb-3 mt-6;
   }
 
   h2[id],
@@ -143,7 +145,7 @@
   }
 
   blockquote {
-    @apply border-l-4 border-foreground/10 pl-4 text-foreground/80 text-sm space-y-2;
+    @apply border-l-4 border-foreground/10 pl-4 font-light space-y-4;
   }
 
   main {
@@ -152,12 +154,16 @@
     }
 
     section {
-      @apply space-y-4;
+      @apply space-y-4 mt-8!;
     }
 
     ul,
     ol {
-      @apply ml-4 text-left;
+      @apply pl-5 space-y-2;
+    }
+
+    li {
+      @apply leading-7;
     }
 
     ul {
@@ -170,7 +176,7 @@
   }
 
   .edge-padding {
-    @apply px-6 lg:px-8;
+    @apply px-4 sm:px-6 lg:px-8;
   }
 
   .circle-icon {

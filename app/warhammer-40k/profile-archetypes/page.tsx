@@ -160,7 +160,7 @@ export default async function Page() {
           even MEQ weapons.
         </p>
 
-        <h3>KEQ (Knight Equivalent)</h3>
+        <h3 id="keq">KEQ (Knight Equivalent)</h3>
 
         <Image
           src={knight}
