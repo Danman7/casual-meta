@@ -13,7 +13,7 @@
   :root {
     --background: hsl(10, 20%, 5%);
     --foreground: hsl(10, 10%, 95%);
-    --surface: hsl(10, 20%, 10%);
+    --surface: hsl(10, 20%, 8%);
     --primary: hsl(10, 80%, 55%);
     --success: var(--color-green-400);
     --error: var(--color-red-400);
@@ -145,7 +145,7 @@
   }
 
   blockquote {
-    @apply border-l-4 border-foreground/10 pl-4 font-light space-y-4;
+    @apply border-l-4 border-foreground/10 pl-4 text-foreground/80 space-y-4;
   }
 
   main {
