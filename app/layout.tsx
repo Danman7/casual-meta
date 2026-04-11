@@ -46,7 +46,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className="text-base leading-7 mb-4 text-pretty font-medium antialiased h-full font-sans selection:bg-primary selection:text-background">
+      <body className="text-base leading-7 mb-4 text-pretty antialiased h-full font-sans selection:bg-primary selection:text-background">
         <NavigationProvider sections={sections}>
           <LayoutShell>{children}</LayoutShell>
         </NavigationProvider>
