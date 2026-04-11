@@ -89,7 +89,7 @@
 }
 
 @utility box {
-  @apply border border-foreground/10 bg-surface p-4 rounded-lg mb-6 shadow-sm space-y-4;
+  @apply border border-foreground/10 bg-surface p-4 rounded-lg mb-6 shadow-sm space-y-4 text-sm;
 }
 
 @utility picture {
@@ -145,7 +145,7 @@
   }
 
   blockquote {
-    @apply border-l-4 border-foreground/10 pl-4 text-foreground/80 space-y-4;
+    @apply border-l-4 border-foreground/10 pl-4 text-foreground/80 space-y-4 text-sm;
   }
 
   main {
