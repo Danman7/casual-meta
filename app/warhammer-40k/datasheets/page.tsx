@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import assault from '@/app/assets/wh40k/assault.webp'
 import attackNumber from '@/app/assets/wh40k/attacks_number.webp'
 import datasheet from '@/app/assets/wh40k/datasheet.webp'
 import durability from '@/app/assets/wh40k/durability.webp'
@@ -52,9 +53,7 @@ export default async function Page() {
           At the top, below the datasheet's name, is the unit's profile: M, T,
           Sv, W, Ld, and OC, or Move, Toughness, Save, Wounds, Leadership, and
           Objective Control. These six numbers give insight into how the
-          model(s) in this unit are likely to perform in the different phases of
-          the{' '}
-          <Link href={`${wh40kRoute('The Battle Round')}`}>player turn</Link>.
+          model(s) in this unit are likely to perform in different scenarios.
         </p>
 
         <p>
@@ -426,21 +425,24 @@ export default async function Page() {
 
         <p>
           Also called <em>Universal Special Rules</em> (USRs), some keywords are
-          shared between many of WH40K's weapons. Naturally, they only apply to
-          models that have equipped the given weapon. Here is a not-so-small
-          list of the common ones.
+          shared between many of WH40K's weapons. Here is a not-so-small list of
+          them.
         </p>
 
-        <ul>
-          <li>
-            <strong>Assault</strong>: The weapon can be fired even after the
-            wielder <em>advanced</em> this turn (refer to{' '}
-            <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
-              movement phase
-            </Link>
-            ). Units with assault gear can run further and engage sooner.
-          </li>
+        <h3 id="assault">Assault</h3>
 
+        <p>
+          The weapon can be fired even after the wielder has{' '}
+          <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
+            advanced
+          </Link>{' '}
+          this turn. Units with such arms can run further and engage sooner,
+          making them much more flexible.
+        </p>
+
+        <Image src={assault} alt="Assault keyword example" />
+
+        <ul>
           <li>
             <strong>Heavy</strong>: If the unit remained stationary this turn,
             add +1 to hit roll. This rewards the opposite of assault - staying

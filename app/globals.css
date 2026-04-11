@@ -88,10 +88,6 @@
   @apply pl-4 border-l-2 border-foreground/10;
 }
 
-@utility box {
-  @apply border border-foreground/10 bg-surface p-4 rounded-lg mb-6 shadow-sm space-y-4 text-sm;
-}
-
 @utility picture {
   @apply rounded-lg shadow-sm;
 }
@@ -108,7 +104,19 @@
   @apply px-1.5 py-0.5 rounded text-sm bg-surface;
 }
 
+@utility box {
+  @apply border border-foreground/10 bg-surface p-4 rounded-lg mb-6 shadow-sm space-y-4;
+}
+
+@utility button {
+  @apply box bg-background cursor-pointer hover:bg-primary hover:text-background transition-all text-center;
+}
+
 @layer base {
+  blockquote {
+    @apply border-l-4 border-foreground/10 pl-4 text-foreground/80 space-y-4;
+  }
+
   a {
     @apply flex-center hover:text-primary active:text-primary/70 transition-colors;
   }
@@ -133,7 +141,7 @@
 
   h2[id],
   h3[id] {
-    scroll-margin-top: 2.5rem;
+    scroll-margin-top: 3rem;
   }
 
   hr {
@@ -144,17 +152,13 @@
     @apply block text-sm text-foreground/80;
   }
 
-  blockquote {
-    @apply border-l-4 border-foreground/10 pl-4 text-foreground/80 space-y-4 text-sm;
-  }
-
   main {
     a {
       @apply inline-flex underline;
     }
 
     section {
-      @apply space-y-4 mt-8!;
+      @apply space-y-4 mt-8;
     }
 
     ul,

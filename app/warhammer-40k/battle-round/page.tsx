@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaCheck, FaCrosshairs } from 'react-icons/fa'
+import { FaAngleRight, FaCheck, FaCrosshairs } from 'react-icons/fa'
 import { IoDiceOutline } from 'react-icons/io5'
 import { LuCrown } from 'react-icons/lu'
 import { RiInformation2Line, RiSwordLine } from 'react-icons/ri'
@@ -88,7 +88,11 @@ export default async function Page() {
           <ul>
             <li>
               It started as a <strong>single model</strong> (e.g. a character,
-              monster, or vehicle) and it has less than half its wounds left.
+              monster, or vehicle) and it has less than half its{' '}
+              <Link href={`${wh40kRoute('Datasheets')}#wounds`}>
+                wounds (W)
+              </Link>{' '}
+              left.
             </li>
 
             <li>
@@ -138,7 +142,13 @@ export default async function Page() {
         </p>
 
         <ul>
-          <li>Its Objective Control (OC) becomes 0.</li>
+          <li>
+            Its{' '}
+            <Link href={`${wh40kRoute('Datasheets')}#objective-control`}>
+              Objective Control (OC)
+            </Link>{' '}
+            becomes 0.
+          </li>
 
           <li>It cannot be affected by Stratagems.</li>
         </ul>
@@ -157,8 +167,8 @@ export default async function Page() {
         </h2>
 
         <p>
-          Every allied unit outside <em> engagement range</em> (1" of an enemy)
-          can either:
+          During this phase, units may reposition. Every allied unit outside{' '}
+          <em> engagement range</em> (1" of an enemy) can either:
         </p>
 
         <ul>
@@ -250,14 +260,16 @@ export default async function Page() {
 
         <p>
           If a unit has the <em>Transport</em> keyword, they allow other units
-          to <em>embark</em> on them if every model ends a move within 3" of
-          them or deploy embarked.
+          to <em>embark</em> on them during this phase, provided every model
+          ends a move within 3" of the transport. Then the embarked unit is
+          temporarily removed from the table and the transport carries them
+          around. They can disembark again through a following movement phase.
         </p>
 
         <ul>
           <li>
-            If the embarked unit disembarks before the transport has moved that
-            turn, they can also move.
+            If disembark happens before the transport has moved that turn, they
+            can also move.
           </li>
 
           <li>
@@ -286,10 +298,10 @@ export default async function Page() {
         <h3 id="strategic-reserves">Strategic Reserves</h3>
 
         <p>
-          Players are allowed to not deploy all of their units at the beginning
-          of the battle. Up to <em>25% of your total army points</em> can be
-          held as <em>strategic reserves</em>. They may join the battle later,
-          at the very end of the movement phase, following these rules:
+          Players are may not deploy all of their units at the beginning of the
+          battle. Up to <em>25% of your total army points</em> can be held as{' '}
+          <em>strategic reserves</em>. They may join the battle later, at the
+          very end of the movement phase, following these rules:
         </p>
 
         <ul>
@@ -304,7 +316,7 @@ export default async function Page() {
 
         <p>
           Reserve play is about timing and pressure. Late arrivals threaten
-          flanks or objectives but must respect what is already on the table.
+          flanks and objectives, but must respect what is already on the table.
         </p>
       </section>
 
@@ -313,36 +325,32 @@ export default async function Page() {
           3. Shooting phase <FaCrosshairs />
         </h2>
 
-        <p>If a unit:</p>
+        <p>
+          This is the stage where ranged attacks are declared and resolved. A
+          unit may shoot if:
+        </p>
 
         <ul>
           <li>Is not engaged in close combat.</li>
-          <li>Has at least one ranged weapon within range of an enemy.</li>
+          <li>
+            Has at least one <em>ranged</em> weapon within range of an enemy.
+          </li>
           <li>Has line of sight to the target enemy unit.</li>
         </ul>
 
-        <p>It can declare a ranged attack.</p>
-
-        <ul>
-          <li>State which weapon fires at which target.</li>
-          <li>You may split fire by weapon, but not split individual shots.</li>
-          <li>
-            A model can only fire either all <em>Pistols</em> or everything
-            else. Not both.
-          </li>
-
-          <li>
-            All attacks from the unit resolve simultaneously. All weapons must
-            fire.
-          </li>
-        </ul>
-
-        <Image src={shooting} alt="Shooting example" />
+        <p>
+          You may split fire by weapon, but not by individual shots. You have to
+          state which weapon fires at which target. A model can only fire either
+          all <em>Pistols</em> or everything else. Not both. All attacks from
+          the unit resolve simultaneously. All eligible weapons must fire.
+        </p>
 
         <p>
           Declared attacks are resolved following the{' '}
           <Link href="#attack-sequence">attack sequence</Link>.
         </p>
+
+        <Image src={shooting} alt="Shooting example" />
 
         <p>
           Some terrain features provide <em>Benefit of Cover</em> against ranged
@@ -402,7 +410,7 @@ export default async function Page() {
         </p>
 
         <div className="box">
-          <p className="lead flex-center">
+          <p className="font-bold flex-center">
             <IoDiceOutline /> Charge roll
           </p>
 
@@ -470,19 +478,16 @@ export default async function Page() {
         <h2 id="attack-sequence">Attack sequence (Activation)</h2>
 
         <p>
-          Attacks can be declared during the{' '}
-          <Link href="#shooting-phase">Shooting</Link> and{' '}
-          <Link href="#fight-phase">Fight</Link> phases, following the rules of
-          those phases. They are declared by units, but executed by the weapons
-          they carry. The process of executing an attack is called an{' '}
-          <em>attack sequence</em> or an <em>activation</em> for short.
+          Attacks can be declared by units, during the Shooting and Fight
+          phases, but are executed by the weapons they carry. The process of
+          executing an attack is called an <em>attack sequence</em> or an{' '}
+          <em>activation</em> for short.
         </p>
 
         <p>
-          A weapon activation is a series of steps where its profile
-          (specifically Strength, Armor Penetration, and Damage) is compared to
-          the target's profile (specifically Toughness, Save, and Wounds). Both
-          ranged and melee weapons go through the same sequence:
+          A weapon activation is a series of steps where its profile is compared
+          to the target's profile. Both ranged and melee weapons go through the
+          same sequence:
         </p>
 
         <ol>
@@ -500,15 +505,20 @@ export default async function Page() {
         </ol>
 
         <div className="box">
-          <p className="lead flex-center">
+          <p className="font-bold flex-center">
             <IoDiceOutline /> 1. Roll to hit
           </p>
 
           <p>
             <strong>Roll a D6</strong> for each attack the weapon does. If
-            result is higher than the Ballistic Skill (BS) for ranged weapons or
-            Weapon Skill (WS) for melee, the attack connects. An unmodified roll
-            of 6 is a <em>critical hit</em>.
+            result is higher than its{' '}
+            <Link
+              href={`${wh40kRoute('Datasheets')}#ballistic-skill-weapon-skill`}
+            >
+              Weapon/Ballistic Skill (WS/BS)
+            </Link>
+            , the attack connects. An unmodified roll of 6 is a{' '}
+            <em>critical hit</em>.
           </p>
         </div>
 
@@ -521,15 +531,21 @@ export default async function Page() {
         </blockquote>
 
         <div className="box">
-          <p className="lead flex-center">
+          <p className="font-bold flex-center">
             <IoDiceOutline /> 2. Roll to wound
           </p>
 
           <p>
             <strong>Roll a D6.</strong> The result follows a table based on how
-            much higher or lower the weapon's Strength (S) is compared to the
-            target's Toughness (T). An unmodified roll of 6 is a{' '}
-            <em>critical wound</em>.
+            much higher or lower the weapon's{' '}
+            <Link href={`${wh40kRoute('Datasheets')}#strength`}>
+              Strength (S)
+            </Link>{' '}
+            is compared to the target's{' '}
+            <Link href={`${wh40kRoute('Datasheets')}#toughness`}>
+              Toughness (T)
+            </Link>
+            . An unmodified roll of 6 is a <em>critical wound</em>.
           </p>
         </div>
 
@@ -544,22 +560,25 @@ export default async function Page() {
         </blockquote>
 
         <p>
-          If the attack hits <strong>and</strong> wounds the{' '}
-          <strong>defender</strong> allocates which models take the wounds and
-          makes saving throws. Models which already lost wounds or had attacks
-          allocated this phase must be selected first. Saves represent the
-          target's armor.
+          If the attack hits and wounds the <em>defender</em> allocates which
+          models take the wounds and makes{' '}
+          <Link href={`${wh40kRoute('Datasheets')}#save`}>saving throws</Link>.
+          Models which already lost wounds or had attacks allocated this phase
+          must be selected first. Saves represent the target's armor.
         </p>
 
         <div className="box">
-          <p className="lead flex-center">
+          <p className="font-bold flex-center">
             <IoDiceOutline /> 4a. Roll to save
           </p>
 
           <p>
-            <strong>Roll a D6.</strong> Modify the roll by the Armor Penetration
-            (AP) of the weapon. If the result is equal or greater to the
-            target's Save (Sv), damage is not inflicted.
+            <strong>Roll a D6.</strong> Modify the roll by the{' '}
+            <Link href={`${wh40kRoute('Datasheets')}#armor-penetration`}>
+              Armor Penetration (AP)
+            </Link>{' '}
+            of the weapon. If the result is equal or greater to the target's
+            Save (Sv), damage is not inflicted.
           </p>
         </div>
 
@@ -571,7 +590,7 @@ export default async function Page() {
         </p>
 
         <div className="box">
-          <p className="lead flex-center">
+          <p className="font-bold flex-center">
             <IoDiceOutline /> 4b. Invulnerable save
           </p>
 
@@ -596,9 +615,10 @@ export default async function Page() {
 
         <p>
           After all 3 rolls are done, if the attack hits, wounds, and the armor
-          save fails, damage is inflicted. The target loses wounds equal to the
-          Damage (D) of the weapon. If the attack has more D than is required to
-          kill the target model, the excess is lost.
+          save fails, damage is inflicted. The target loses wounds equal to the{' '}
+          <Link href={`${wh40kRoute('Datasheets')}#damage`}>Damage (D)</Link> of
+          the weapon. If the attack has more D than is required to kill the
+          target model, the excess is lost.
         </p>
 
         <blockquote>
@@ -613,6 +633,17 @@ export default async function Page() {
           In most cases, only one activation is allowed per model per turn, but
           under some rules there might be more.
         </p>
+      </section>
+
+      <section className="flex gap-4">
+        <div className="w-1/2"></div>
+        <Link
+          href={`${wh40kRoute('Datasheets')}`}
+          className="w-1/2 button flex justify-between"
+        >
+          Next: Datasheets
+          <FaAngleRight />
+        </Link>
       </section>
     </>
   )
