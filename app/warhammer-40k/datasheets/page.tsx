@@ -401,17 +401,13 @@ export default async function Page() {
 
       <section>
         <h2 id="weapon-keywords">Common weapon keywords</h2>
-
         <p>
           Also called <em>Universal Special Rules</em> (USRs), weapon keywords
           are shared between many of WH40K's arm. Here is a not-so-small list of
           the common ones.
         </p>
-
         <h3 id="assault">Assault</h3>
-
         <small>Mobility</small>
-
         <p>
           The weapon can be fired, even after the wielder has{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
@@ -420,53 +416,38 @@ export default async function Page() {
           this turn. Arms without this keywourd cannot be used after advancing.
           Assault weapons naturally fit a more mobile, agressive play.
         </p>
-
         <Image src={assault} alt="Boltgun vs Bolt rifle with assault keyword" />
-
         <h3 id="heavy">Heavy</h3>
-
         <small>Mobility</small>
-
         <p>
           Add +1 to hit rolls if the unit remained stationary this turn. This
           rewards the opposite of assault - staying put - with better accuracy.
           The playstyle is to hold a position rather than gaining ground. Long
           range weapons pair nicely with this keyword.
         </p>
-
         <h3 id="rapid-fire">Rapid Fire X</h3>
-
         <small>Range</small>
-
         <p>
           If the target is within half of the weapon's maximum range, add +X to
           the attacks. The longer the range of the weapon, the better the
           coverage of the bonus. This supports situations where volume of fire
           is important, e.g. fighting hordes.
         </p>
-
         <Image src={rapidFire} alt="Ork Loota with a Rapid Fire 1 Deffgun" />
-
         <h3 id="melta">Melta X</h3>
-
         <small>Range</small>
-
         <p>
           If the target is within half of the weapon's maximum range, attacks
           deal +X damage on top. Melta weapons, which are high damage to begin
           with, use a dice roll to determine normal damage. This only makes them
           more powerful at close range.
         </p>
-
         <h3 id="pistol">Pistol</h3>
-
         <small>Range</small>
-
         <p>
           There are two distinct rules about pistols who start with a short
           range anyway.
         </p>
-
         <ul>
           <li>
             One can only shoot their pistols or all other weapons during the
@@ -475,11 +456,8 @@ export default async function Page() {
 
           <li>Pistols can be shot even within Engagement range.</li>
         </ul>
-
         <h3 id="torrent">Torrent</h3>
-
         <small>Hit roll</small>
-
         <p>
           Attacks with such gear automatically hit their target, effectively
           skipping one of the 3 activation gates - the roll to hit. This is
@@ -487,37 +465,53 @@ export default async function Page() {
           visible with the Pyreblaster example. Torrent improves output
           primarily against targets the given weapon already easily wounds.
         </p>
-
         <Image
           src={torrent}
           alt="Pyreblaster's fire arc with Torrent keyword"
         />
-
         <h3 id="sustained-hits">Sustained Hits X</h3>
+        <small>Hit roll</small>
+        <p>A critical hit (roll of 6 to hit) generates X extra hits.</p>
+
+        <p>
+          Purely mathematically, BS 4+ with Sustained Hits 1 matches the
+          expected hit output of BS3+, without any other modifiers. With
+          additional re-rolls and crit bonuses, they can push even beyond BS3+.
+          Nonetheless, a better BS is always more consistent, while Sustained
+          Hits tend to occasionally spike.
+        </p>
+        <p>
+          More hits are better against more targets. Again, like with Torrent,
+          Sustained Hits is better when you already have a good chance to wound
+          - wound on 4+ (equal strength to toughness) or better.
+        </p>
+
+        <p>Pairs nicely with re-roll to hit abilities.</p>
+
+        <h3 id="lethal-hits">Lethal Hits</h3>
 
         <small>Hit roll</small>
 
         <p>
-          When the weapon activates, a critical hit (roll of 6 to hit) generates
-          X extra hits. More hits are better against more targets. Again, like
-          with Torrent, Sustained Hits is better when you already have a good
-          chance to wound .
+          A critical hit (roll of 6 to hit) automatically wounds, bypassing
+          another activation gate. Compared to Sustained Hits this keyword is
+          better when wounding is more difficult - 5+ to wound or worse. Lethal
+          Hits help with hunting tougher targets.
+        </p>
+
+        <p>Pairs nicely with re-roll to hit abilities.</p>
+
+        <h3 id="devastating-wounds">Devastating Wounds</h3>
+
+        <small>Wound roll</small>
+
+        <p>
+          A critical wound (roll of 6 to wound) deals <em>mortal wounds</em>{' '}
+          equal to the weapon’s Damage, bypassing all saving throws.
         </p>
 
         <hr />
-
         <ul>
-          <li>
-            <strong>Lethal Hits</strong>: a critical hit automatically wounds,
-            potentially bypassing another activation gate.
-          </li>
-
-          <li>
-            <strong>Devastating Wounds</strong>: A critical wound (roll of 6)
-            deals a mortal wound. Mortal wounds mean no saves are allowed - the
-            target eats the damage, skipping the third activation gate.
-          </li>
-
           <li>
             <strong>Twin-linked</strong>: The wielder is allowed to re-roll
             wound rolls. This is weaker than devastating wounds, but still
