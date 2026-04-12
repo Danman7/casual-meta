@@ -148,10 +148,6 @@
     @apply border-foreground/10 w-full;
   }
 
-  small {
-    @apply block text-sm text-foreground/80;
-  }
-
   main {
     a {
       @apply inline-flex underline;

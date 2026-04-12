@@ -8,8 +8,10 @@ import durability from '@/app/assets/wh40k/durability.webp'
 import loadouts from '@/app/assets/wh40k/loadouts.webp'
 import movediff from '@/app/assets/wh40k/move_diff.webp'
 import multipleProfiles from '@/app/assets/wh40k/multiple_profiles.webp'
+import rapidFire from '@/app/assets/wh40k/rapid-fire.webp'
 import saves from '@/app/assets/wh40k/saves.webp'
 import shooting from '@/app/assets/wh40k/shooting.webp'
+import torrent from '@/app/assets/wh40k/torrent.webp'
 import weapons from '@/app/assets/wh40k/weapons.webp'
 import wound from '@/app/assets/wh40k/wound.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
@@ -395,85 +397,116 @@ export default async function Page() {
           have more. Weapons also may or may not have keywords listed next to
           their names.
         </p>
-
-        <blockquote>
-          <p>
-            Weapons with <em>Anti-infantry X+</em> score critical wounds (always
-            wounds) if the roll to wound is X+ against units with the{' '}
-            <em>Infantry</em> keyword.
-          </p>
-
-          <p>
-            Weapons with the <em>Assault</em> keyword can be fired in the
-            shooting phase even if the unit has <em>advanced</em> this turn.
-          </p>
-
-          <p>
-            The <em>Grenades</em> stratagem can only be used by units with the{' '}
-            <em>Grenades</em> keyword.
-          </p>
-
-          <p>
-            Various <em>Imperium</em> units can be mixed in the same army list
-            even if they are from different factions.
-          </p>
-        </blockquote>
       </section>
 
       <section>
         <h2 id="weapon-keywords">Common weapon keywords</h2>
 
         <p>
-          Also called <em>Universal Special Rules</em> (USRs), some keywords are
-          shared between many of WH40K's weapons. Here is a not-so-small list of
-          them.
+          Also called <em>Universal Special Rules</em> (USRs), weapon keywords
+          are shared between many of WH40K's arm. Here is a not-so-small list of
+          the common ones.
         </p>
 
         <h3 id="assault">Assault</h3>
 
+        <small>Mobility</small>
+
         <p>
-          The weapon can be fired even after the wielder has{' '}
+          The weapon can be fired, even after the wielder has{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
             advanced
           </Link>{' '}
-          this turn. Units with such arms can run further and engage sooner,
-          making them much more flexible.
+          this turn. Arms without this keywourd cannot be used after advancing.
+          Assault weapons naturally fit a more mobile, agressive play.
         </p>
 
-        <Image src={assault} alt="Assault keyword example" />
+        <Image src={assault} alt="Boltgun vs Bolt rifle with assault keyword" />
+
+        <h3 id="heavy">Heavy</h3>
+
+        <small>Mobility</small>
+
+        <p>
+          Add +1 to hit rolls if the unit remained stationary this turn. This
+          rewards the opposite of assault - staying put - with better accuracy.
+          The playstyle is to hold a position rather than gaining ground. Long
+          range weapons pair nicely with this keyword.
+        </p>
+
+        <h3 id="rapid-fire">Rapid Fire X</h3>
+
+        <small>Range</small>
+
+        <p>
+          If the target is within half of the weapon's maximum range, add +X to
+          the attacks. The longer the range of the weapon, the better the
+          coverage of the bonus. This supports situations where volume of fire
+          is important, e.g. fighting hordes.
+        </p>
+
+        <Image src={rapidFire} alt="Ork Loota with a Rapid Fire 1 Deffgun" />
+
+        <h3 id="melta">Melta X</h3>
+
+        <small>Range</small>
+
+        <p>
+          If the target is within half of the weapon's maximum range, attacks
+          deal +X damage on top. Melta weapons, which are high damage to begin
+          with, use a dice roll to determine normal damage. This only makes them
+          more powerful at close range.
+        </p>
+
+        <h3 id="pistol">Pistol</h3>
+
+        <small>Range</small>
+
+        <p>
+          There are two distinct rules about pistols who start with a short
+          range anyway.
+        </p>
 
         <ul>
           <li>
-            <strong>Heavy</strong>: If the unit remained stationary this turn,
-            add +1 to hit roll. This rewards the opposite of assault - staying
-            put - with better accuracy.
+            One can only shoot their pistols or all other weapons during the
+            Shooting Phase.
           </li>
 
-          <li>
-            <strong>Rapid Fire X</strong>: If the target is within half range,
-            add +X attacks. This is more powerful on longer reaching guns.
-          </li>
+          <li>Pistols can be shot even within Engagement range.</li>
+        </ul>
 
-          <li>
-            <strong>Melta X</strong>: If the target is within half range, add +X
-            damage. Same idea as rapid fire, but with a damage boost.
-          </li>
+        <h3 id="torrent">Torrent</h3>
 
-          <li>
-            <strong>Pistol</strong>: Can be fired even in Engagement range. That
-            is why many dedicated close combat units also carry pistols.
-          </li>
+        <small>Hit roll</small>
 
-          <li>
-            <strong>Torrent</strong>: Attacks automatically hit. This skips a
-            whole activation gate. Very useful against hordes of enemies.
-          </li>
+        <p>
+          Attacks with such gear automatically hit their target, effectively
+          skipping one of the 3 activation gates - the roll to hit. This is
+          frequently balanced with rolling a D6 for number of attacks, as is
+          visible with the Pyreblaster example. Torrent improves output
+          primarily against targets the given weapon already easily wounds.
+        </p>
 
-          <li>
-            <strong>Sustained Hits X</strong>: A critical hit (roll of 6)
-            generates X extra hits.
-          </li>
+        <Image
+          src={torrent}
+          alt="Pyreblaster's fire arc with Torrent keyword"
+        />
 
+        <h3 id="sustained-hits">Sustained Hits X</h3>
+
+        <small>Hit roll</small>
+
+        <p>
+          When the weapon activates, a critical hit (roll of 6 to hit) generates
+          X extra hits. More hits are better against more targets. Again, like
+          with Torrent, Sustained Hits is better when you already have a good
+          chance to wound .
+        </p>
+
+        <hr />
+
+        <ul>
           <li>
             <strong>Lethal Hits</strong>: a critical hit automatically wounds,
             potentially bypassing another activation gate.
