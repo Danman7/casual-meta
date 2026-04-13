@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import anti from '@/app/assets/wh40k/anti.webp'
 import assault from '@/app/assets/wh40k/assault.webp'
 import attackNumber from '@/app/assets/wh40k/attacks_number.webp'
 import datasheet from '@/app/assets/wh40k/datasheet.webp'
@@ -532,21 +533,31 @@ export default async function Page() {
 
         <p>Works really well with re-roll to wound abilities.</p>
 
+        <h3 id="twin-linked">Twin-linked</h3>
+
+        <small>Wound roll</small>
+
+        <p>
+          Operator can re-roll wound rolls. Works very well in combination with
+          Devastating Wounds and allows for fishing of crit effects.
+        </p>
+
+        <h3 id="anti-keyword">Anti-KEYWORD X+</h3>
+
+        <small>Wound roll</small>
+
+        <p>
+          Against a target with the listed keyword, a wound roll of X+ counts as
+          a <em>Critical Wound</em>. For example, Anti-Infantry 4+ means that
+          when you roll to wound against infantry, rolls of 4 and above are
+          crits. This combines exceptionally well with Devastating Wounds,
+          melting the target's saves.
+        </p>
+
+        <Image src={anti} alt="Grav-gun firing at a vehicle." />
+
         <hr />
         <ul>
-          <li>
-            <strong>Twin-linked</strong>: The wielder is allowed to re-roll
-            wound rolls. This is weaker than devastating wounds, but still
-            powerful.
-          </li>
-
-          <li>
-            <strong>Anti-KEYWORD X+</strong>: When rolling to wound against a
-            unit that has that keyword in their datasheet, rolls of X+ become
-            critical wounds. This effectively lowers the barrier for a
-            successful wound against specific targets.
-          </li>
-
           <li>
             <strong>Blast</strong>: +1 attack per 5 models in target unit. This
             obviously marks anti-horde weapons.
