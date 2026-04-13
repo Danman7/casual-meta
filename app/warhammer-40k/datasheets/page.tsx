@@ -4,6 +4,7 @@ import Link from 'next/link'
 import assault from '@/app/assets/wh40k/assault.webp'
 import attackNumber from '@/app/assets/wh40k/attacks_number.webp'
 import datasheet from '@/app/assets/wh40k/datasheet.webp'
+import devastatingWounds from '@/app/assets/wh40k/devastating-wounds.webp'
 import durability from '@/app/assets/wh40k/durability.webp'
 import loadouts from '@/app/assets/wh40k/loadouts.webp'
 import movediff from '@/app/assets/wh40k/move_diff.webp'
@@ -11,6 +12,7 @@ import multipleProfiles from '@/app/assets/wh40k/multiple_profiles.webp'
 import rapidFire from '@/app/assets/wh40k/rapid-fire.webp'
 import saves from '@/app/assets/wh40k/saves.webp'
 import shooting from '@/app/assets/wh40k/shooting.webp'
+import sustainedHits from '@/app/assets/wh40k/sustained-hits.webp'
 import torrent from '@/app/assets/wh40k/torrent.webp'
 import weapons from '@/app/assets/wh40k/weapons.webp'
 import wound from '@/app/assets/wh40k/wound.webp'
@@ -465,10 +467,12 @@ export default async function Page() {
           visible with the Pyreblaster example. Torrent improves output
           primarily against targets the given weapon already easily wounds.
         </p>
+
         <Image
           src={torrent}
           alt="Pyreblaster's fire arc with Torrent keyword"
         />
+
         <h3 id="sustained-hits">Sustained Hits X</h3>
         <small>Hit roll</small>
         <p>A critical hit (roll of 6 to hit) generates X extra hits.</p>
@@ -480,13 +484,22 @@ export default async function Page() {
           Nonetheless, a better BS is always more consistent, while Sustained
           Hits tend to occasionally spike.
         </p>
+
+        <Image
+          src={sustainedHits}
+          alt="A Heavy bolter with Sustained Hits 1 scores a 6"
+        />
+
         <p>
           More hits are better against more targets. Again, like with Torrent,
           Sustained Hits is better when you already have a good chance to wound
           - wound on 4+ (equal strength to toughness) or better.
         </p>
 
-        <p>Pairs nicely with re-roll to hit abilities.</p>
+        <p>
+          Pairs nicely with re-roll to hit abilities, allowing to <em>fish</em>{' '}
+          for crits.
+        </p>
 
         <h3 id="lethal-hits">Lethal Hits</h3>
 
@@ -499,7 +512,7 @@ export default async function Page() {
           Hits help with hunting tougher targets.
         </p>
 
-        <p>Pairs nicely with re-roll to hit abilities.</p>
+        <p>Again, pairs nicely with re-roll to hit abilities.</p>
 
         <h3 id="devastating-wounds">Devastating Wounds</h3>
 
@@ -507,8 +520,17 @@ export default async function Page() {
 
         <p>
           A critical wound (roll of 6 to wound) deals <em>mortal wounds</em>{' '}
-          equal to the weapon’s Damage, bypassing all saving throws.
+          equal to the weapon’s Damage. Mortal wounds bypass all saving throws,
+          including invulnerable, giving better chances to fight target with
+          good saves.
         </p>
+
+        <Image
+          src={devastatingWounds}
+          alt="Eliminator's special rule Mark the Target gives Devastating Wounds"
+        />
+
+        <p>Works really well with re-roll to wound abilities.</p>
 
         <hr />
         <ul>
