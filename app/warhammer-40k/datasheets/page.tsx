@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
 import anti from '@/app/assets/wh40k/anti.webp'
 import assault from '@/app/assets/wh40k/assault.webp'
@@ -17,9 +18,9 @@ import sustainedHits from '@/app/assets/wh40k/sustained-hits.webp'
 import torrent from '@/app/assets/wh40k/torrent.webp'
 import weapons from '@/app/assets/wh40k/weapons.webp'
 import wound from '@/app/assets/wh40k/wound.webp'
-import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
+import { WH40K_TITLE } from '@/app/constants'
+import { wh40kRoute } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
-import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 4
 
@@ -29,8 +30,6 @@ export const metadata = generatePageMetadata(
   `${WH40K_TITLE}: ${navTitle}`,
   'How to read datasheets in Warhammer 40k, including unit profiles and weapon stats.',
 )
-
-const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
 
 export default async function Page() {
   return (
@@ -143,9 +142,10 @@ export default async function Page() {
 
         <p>
           Saves are an extra gate against taking damage, after an attack has hit
-          and wounded. All datasheets have an armor save, which is affected by
-          the attacking weapon's Armor Penetration (AP). If the AP brings the
-          save above 6+, <em>no armor save</em> is allowed.
+          and wounded. All datasheets have at least an armor save, which is
+          affected by the attacking weapon's Armor Penetration (AP). If the AP
+          brings the save above 6+, <em>no armor save</em> is allowed. A save
+          can never be better than 2+.
         </p>
 
         <Image
@@ -406,8 +406,9 @@ export default async function Page() {
         <h2 id="weapon-keywords">Common weapon keywords</h2>
         <p>
           Also called <em>Universal Special Rules</em> (USRs), weapon keywords
-          are shared between many of WH40K's arm. Here is a not-so-small list of
-          the common ones.
+          are shared between many of WH40K's arm. They work best when layerd
+          with other faction or unit abilities that enhance them further or fill
+          the gaps. Here is a not-so-small list of the common ones.
         </p>
         <h3 id="assault">Assault</h3>
         <small>Mobility</small>
@@ -556,27 +557,40 @@ export default async function Page() {
 
         <Image src={anti} alt="Grav-gun firing at a vehicle." />
 
-        <hr />
-        <ul>
-          <li>
-            <strong>Blast</strong>: +1 attack per 5 models in target unit. This
-            obviously marks anti-horde weapons.
-          </li>
+        <h3 id="blast">Blast</h3>
 
-          <li>
-            <strong>Precision</strong>: When a hit is scored with this weapon,
-            the attacker is allowed to allocate the wounds, not the defender as
-            the default rules state. This is meant for hunting characters that
-            are attached to bodyguard squads.
-          </li>
+        <small>Target interaction</small>
 
-          <li>
-            <strong>Hazardous</strong>: After attacking with this weapon, roll a
-            D6 per Hazardous weapon used. On a 1, deal 3 mortal wounds to the
-            bearer. This usually accompanies very powerful guns, making them
-            dangerous to the user.
-          </li>
-        </ul>
+        <p>
+          Blast weapons gain +1 attack for every 5 models in the target unit,
+          provided <em>no friendly units are within engagement range</em> of the
+          target. This is clearly an anti-horde ability. Be mindful of limiting
+          allies with blast weapons by charging into hordes.
+        </p>
+
+        <h3 id="precision">Precision</h3>
+
+        <small>Target interaction</small>
+
+        <p>
+          The attacker can choose to allocate wounds from a successful attack
+          against a unit with an attached character to that character (if
+          visible to the shooter). The normal activation rules state that the
+          defender allocates ther wounds. Thus attaching a high-value leader to
+          a squad (a.k.a. bodyguards) prtotects them from heavy fire. Precision
+          weapons negate that.
+        </p>
+
+        <h3 id="hazardous">Hazardous</h3>
+
+        <small>Operational risk</small>
+
+        <p>
+          After attacking, roll a D6 per hazardous weapon used (not per attack).
+          Each roll of 1 causes 3 mortal wounds. They are allocated to any model
+          from that squad equipped with a hazardous weapon. This is frequently
+          used to balance powerful guns.
+        </p>
       </section>
 
       <section>
@@ -688,6 +702,24 @@ export default async function Page() {
           Wounds, making combinations like Devastating Wounds and Twin-linked
           rare but extremely powerful.
         </p>
+      </section>
+
+      <section className="flex gap-4">
+        <Link
+          href={`${wh40kRoute('The Battle Round')}`}
+          className="w-1/2 button flex justify-between"
+        >
+          <FaAngleLeft />
+          Prev: The Battle Round
+        </Link>
+
+        <Link
+          href={`${wh40kRoute('Profile Archetypes')}`}
+          className="w-1/2 button flex justify-between"
+        >
+          Next: Profile Archetypes
+          <FaAngleRight />
+        </Link>
       </section>
     </>
   )

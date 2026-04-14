@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaAngleLeft } from 'react-icons/fa'
 
 import guardsmen from '@/app/assets/wh40k/CadianShockTroops.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import knight from '@/app/assets/wh40k/knight_Castellan.webp'
 import rhino from '@/app/assets/wh40k/rhino.webp'
 import terminators from '@/app/assets/wh40k/terminators.webp'
+import wound from '@/app/assets/wh40k/wound.webp'
 import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -29,32 +31,34 @@ export default async function Page() {
 
       <Section>
         <p>
-          With hundreds of{' '}
-          <Link href={wh40kRoute('Datasheets')}>datasheets</Link> available,
-          each with several loadouts, there are thousands of possible
-          interactions between a weapon and a target. Are we to analyze each
-          individually? Of course not. To simplify discussions around damage and
+          With hundreds of datasheets available per edition, each with several
+          loadouts, there are thousands of possible interactions between a
+          weapon and a target. To simplify discussions around list choices and
           balance, the community uses standardized profiles.
         </p>
       </Section>
 
       <Section title="Target Profiles" id="target-profiles">
         <p>
-          Have you heard of <em>MEQ, TEQ or GEQ</em>? They are WH40K shorthands
-          that describe very common{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#unit-profiles`}>
-            profiles
+          When it comes to{' '}
+          <Link href={`${wh40kRoute('The Battle Round')}#attack-sequence`}>
+            weapon activations
           </Link>
-          . Many of the units (especially infantry) across all factions either
-          fit or come close to one of these. So, instead of analyzing every unit
-          individually, players can ask questions like "Is this weapon efficient
-          into MEQ?".
+          , the durability of the given{' '}
+          <Link href={`${wh40kRoute('Datasheets')}#unit-profiles`}>
+            target profile
+          </Link>{' '}
+          is imperative. To simplify the conversation even further, we can take
+          Move, Leadership and OC aside for a moment. This leaves only
+          Toughness, Saves and Wounds to work with.
         </p>
 
         <p>
-          Comparing profiles mostly involve the model's durability - Toughness,
-          Saves and Wounds. Movement, Leadership and OC are usually less
-          relevant when debating archetypes.
+          The following are WH40K shorthands that describe profiles with very
+          common combinations of durability characteristics. Many units across
+          multiple factions either fit or come close to one of these. So,
+          instead of analyzing every unit individually, players can ask
+          questions like "Is this weapon efficient into marines (MEQ)?".
         </p>
 
         <h3 id="meq">MEQ (Marine Equivalent)</h3>
@@ -64,27 +68,27 @@ export default async function Page() {
           className="picture profile-img object-[0%_70%]"
         />
 
-        <div className="box lead text-center">T4|Sv3+|W2</div>
+        <div className="box font-bold text-center">
+          Toughness 4 | Save 3+ | Wounds 2
+        </div>
 
         <p>
-          MEQ, often just called marines, refers to infantry with resilience
-          similar to a <em>standard Space Marine</em>. The defining traits are 4
-          toughness, 2 wounds, and a 3+ armor save. It's a widespread profile
-          and is frequently used as a benchmark.
+          MEQ, or marines, refers to infantry with resilience similar to a{' '}
+          <em>standard Space Marine</em>. It's a very widespread profile,
+          frequently used as a benchmark. <em>Strong examples</em> or{' '}
+          <em>pure MEQ</em> are units like the marines battleline, Tau Stealth
+          Battlesuits and Eldar Shining Spears. There are a lot of{' '}
+          <em>looser examples</em>, like Necron Lychguard are MEQ with T5, while
+          Tyranid Barbgaunts are MEQ with Sv4+.
         </p>
 
-        <p>
-          Units with the exact profile, like the marines battleline, Tau Stealth
-          Battlesuits and Eldar Shining, are <em>strong examples</em> or{' '}
-          <em>pure MEQ</em>. <em>Loose examples</em> are units that are not pure
-          MEQ but can be approximated to it. For example, Necron Lychguard are
-          MEQ with better T5, while Tyranid Barbgaunts are MEQ with worse Sv4+
-        </p>
+        <Image src={wound} alt="Wound roll probabilities" />
 
         <p>
-          Arms that deal 2 damage, with preferrably more strength than 4, are
-          ideal against MEQ. For example, the <em>Heavy bolter</em> S5, D2 is a
-          principal anti-MEQ weapon.
+          Arms that deal 2 damage per successful activation are effective
+          against MEQ. Also, having above 4 strength is ideal. For example, the{' '}
+          <em>Heavy bolter</em> <small>(S5|D2)</small> is a principal anti-MEQ
+          weapon.
         </p>
 
         <h3 id="teq">TEQ (Terminator Equivalent)</h3>
@@ -94,12 +98,14 @@ export default async function Page() {
           className="picture profile-img object-[0%_57%]"
         />
 
-        <div className="box lead text-center">T5|Sv2+/Inv4+|W3</div>
+        <div className="box font-bold text-center">
+          Toughness 5 | Save 2+ | Invulnerable 4+ | Wounds 3
+        </div>
 
         <p>
-          There's a variety of tougher-than-MEQ infantry profiles. TEQ, or
-          terminators, represent <em>heavy elites</em>, that often come with
-          invulnerable saves. Because of that high AP has{' '}
+          TEQ, or terminators, represent <em>heavy elites</em>, that come with
+          ideal 2+ armor saves and often an invulnerable save in addition.
+          Because of that, weapons with high AP have{' '}
           <em>diminishing returns</em> againts them. Weapons with better damage
           and strength (e.g. <em>Autocannon</em> S9, AP-1, D3 and{' '}
           <em>Grav-cannon</em> S6, AP-1, D3) are more appropriate.
@@ -176,6 +182,18 @@ export default async function Page() {
           inform their opponent beforehand to assure they are properly prepared.
         </p>
       </Section>
+
+      <section className="flex gap-4">
+        <Link
+          href={`${wh40kRoute('Datasheets')}`}
+          className="w-1/2 button flex justify-between"
+        >
+          <FaAngleLeft />
+          Prev: Datasheets
+        </Link>
+
+        <div className="w-1/2" />
+      </section>
     </>
   )
 }
