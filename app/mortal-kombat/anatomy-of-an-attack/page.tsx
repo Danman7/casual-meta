@@ -25,13 +25,13 @@ import trade2 from '@/app/assets/mk/trade2.webp'
 import liMeiAdvancedView from '@/app/assets/mk1/advanced_view.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
+import { mkRoute } from '@/app/mortal-kombat/constants'
 import { Callout } from '@/app/ui/Callout'
 import { Diagram } from '@/app/ui/Diagram'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
-import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 3
 
@@ -41,8 +41,6 @@ export const metadata = generatePageMetadata(
   `${MK_TITLE}: ${navTitle}`,
   'How moves work in Mortal Kombat.',
 )
-
-const mkRoute = createRouteLookup(MK_BASE_URL)
 
 export default async function Page() {
   return (

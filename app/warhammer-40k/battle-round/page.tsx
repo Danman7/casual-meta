@@ -630,8 +630,11 @@ export default async function Page() {
         </blockquote>
 
         <p>
-          In most cases, only one activation is allowed per model per turn, but
-          under some rules there might be more.
+          The attack sequence is a series of independent probability gates. Each
+          roll is a chance for the whole attack to fail, so even a theoretically
+          perfect attack (2+ to hit, 2+ to wound, no save) only lands roughly
+          69% of the time. The system is designed so that no single attack is
+          ever guaranteed.
         </p>
       </section>
 

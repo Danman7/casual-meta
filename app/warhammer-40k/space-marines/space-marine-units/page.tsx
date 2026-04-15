@@ -9,11 +9,11 @@ import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import eliminators from '@/app/assets/wh40k/eliminators.webp'
 import heavyIntercessors from '@/app/assets/wh40k/heavyintercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
-import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
+import { WH40K_TITLE } from '@/app/constants'
 import { Section } from '@/app/ui/Section'
 import { WarhammerProfile } from '@/app/ui/WarhammerProfile'
+import { wh40kRoute } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
-import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 11
 
@@ -23,8 +23,6 @@ export const metadata = generatePageMetadata(
   `${WH40K_TITLE}: ${navTitle}`,
   'An overview of the Space Marines units.',
 )
-
-const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
 
 export default async function Page() {
   return (

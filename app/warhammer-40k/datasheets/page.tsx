@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
+import { LuDices } from 'react-icons/lu'
 
 import anti from '@/app/assets/wh40k/anti.webp'
 import assault from '@/app/assets/wh40k/assault.webp'
@@ -316,8 +317,9 @@ export default async function Page() {
 
         <p>
           The problem with activations is variance as dice never guarantee the
-          outcome. A higher number of attacks smooths variance. More dice means
-          results trend closer to expectation.
+          outcome. High power single shots can delete a target, but they may
+          also do nothing. A higher number of attacks smooths variance. More
+          dice means results trend closer to expectation.
         </p>
 
         <h3 id="ballistic-skill-weapon-skill">
@@ -388,11 +390,23 @@ export default async function Page() {
         <h2 id="keywords-and-special-rules">Keywords</h2>
 
         <p>
-          <em>Keywords handle general interactions.</em> The relationships
+          Keywords are <em>tags</em> attached to either a datasheet, or a
+          weapon. They don't do anything on their own, but{' '}
+          <em>handle interactions</em> with other rules. The relationships
           between units, weapons, stratagems, factions and turn phases are
           numerous. So, verifying a rule with a simple keyword simplifies the
           process.
         </p>
+
+        <blockquote>
+          <p>
+            Certain rules apply only to <em>Infantry</em> units, others only to{' '}
+            <em>Vehicles</em>. Models with the <em>Fly</em> keyword can be moved
+            over obstacles and other units. Some units with the{' '}
+            <em>Imperium</em> keyword can be mixed together in an army, even if
+            they belong to different factions.
+          </p>
+        </blockquote>
 
         <p>
           All units have keywords. A datasheet always has at least one{' '}
@@ -540,7 +554,8 @@ export default async function Page() {
 
         <p>
           Operator can re-roll wound rolls. Works very well in combination with
-          Devastating Wounds and allows for fishing of crit effects.
+          Devastating Wounds and allows for{' '}
+          <Link href="#crit-fishing">crit fishing</Link>.
         </p>
 
         <h3 id="anti-keyword">Anti-KEYWORD X+</h3>
@@ -597,110 +612,77 @@ export default async function Page() {
         <h2 id="abilities">Abilities</h2>
 
         <p>
-          <em>Special rules</em>, on the other hand, handle unit-specific
-          interactions. They usually provide favorable outcomes in one of the
-          aspects of the game, under certain conditions, for that unit only.
-          More often than not, they allow some form of re-rolls.
+          <em>Keywords</em> are labels that describe what a unit is and require
+          a rule to interact with them. <em>Abilities</em> (a.k.a. special
+          rules) on the other hand, explain what a unit can do in addition to
+          the general rules of the player turn. They are usually listed to the
+          side of the available loadouts.
+        </p>
+
+        <p>
+          Some abilities are always active (passive), some are triggered by
+          conditions, and some are activated deliberately. Some are core
+          abilities, common among many datasheets, dictating how deployment or
+          some of the phases differe for the given unit. Faction abilities are
+          shared between members of the same faction. Anything listed bellow
+          these is specific only to that datasheet.
         </p>
 
         <blockquote>
           <p>
-            <em>Implacable Eradication</em> allows <em>Necrons Immortals</em>,
-            to re-roll certain wound rolls under certain conditions.
+            <em>Infiltrators</em> is a core deployment ability that allows the
+            unit to begin the battle closer to the enemy than normal.
           </p>
 
           <p>
-            <em>Reavers of the Void</em> allows{' '}
-            <em>Eldar Corsair Voidreavers</em> to re-roll certain hit rolls
-            under certain conditions.
+            <em>Waaagh!</em> is a faction ability, available to all Orks, that
+            buffs their melee weapons and allows them to charge even after
+            advancing.
+          </p>
+
+          <p>
+            <em>Implacable Eradication</em> is unique to{' '}
+            <em>Necrons Immortals</em>, allowing them to re-roll certain wound
+            rolls under certain conditions.
           </p>
         </blockquote>
       </section>
 
       <section>
-        <h2 id="tactical-overview">Tactical overview</h2>
-
+        <h2 id="re-rolls" className="flex-center">
+          Re-rolls <LuDices />
+        </h2>
         <p>
-          After knowing how the{' '}
-          <Link href={wh40kRoute('The Battle Round')}>Battle Round</Link> works,
-          combining it with the profiles can give you a bigger picture of the
-          game flow. Even with changes between editions, some core mechanics
-          remain.
-        </p>
-
-        <h3 id="attack-sequence">The attack sequence</h3>
-
-        <p>
-          Warhammer 40,000 is built on <strong>layered dice rolls</strong>. Even
-          before positioning and range, a standard attack must pass through at
-          least a{' '}
-          <strong>
-            Hit, Wound and Save roll. Each step can cause the attack to fail.
-          </strong>
-        </p>
-
-        <p>Some abilities bypass parts of the sequence:</p>
-
-        <ul>
-          <li>Torrent skips the hit roll.</li>
-
-          <li>Lethal Hits can bypass the wound roll on critical hits.</li>
-
-          <li>High AP can effectively bypass armor saves.</li>
-        </ul>
-
-        <p>
-          Even so, nothing is guaranteed. An attack hitting on 2+, wounding on
-          2+, with no save allowed, still only succeeds about two-thirds of the
-          time. That is reliable, but not certain. In competitive play,
-          consistent output is often more valuable than theoretical maximum
-          damage. That is why, as discussed, more dice throws even out the
-          variance.
-        </p>
-
-        <h3 id="sustained-vs-lethal">Sustained Hits vs. Lethal Hits</h3>
-
-        <ul>
-          <li>
-            <strong>Sustained Hits</strong> increases total hits. It is
-            strongest when you are already wounding efficiently (4+ or better)
-            and against multi-model units.
-          </li>
-
-          <li>
-            <strong>Lethal Hits</strong> bypasses the wound roll on critical
-            hits. It is stronger when wounding is difficult (5+ or worse).
-          </li>
-        </ul>
-
-        <p>
-          <strong>
-            Re-rolls are stronger when the starting value is better.
-          </strong>{' '}
-          Re-rolling a 3+ is more valuable than re-rolling a 5+, because more of
-          your initial results are already successes. That also means re-rolls
-          scale extremely well when layered onto already efficient profiles.
+          To re-roll a check means to pick up the required number of dice and
+          roll them again, potentially improving the outcome. This happens
+          strictly once per check. If the check said roll 2D6 (e.g. charge
+          roll), you re-roll 2 dice once.
         </p>
 
         <p>
-          Re-rolls{' '}
-          <strong>
-            gain additional value when paired with critical-triggered abilities
-          </strong>{' '}
-          (roll of 6) like Sustained Hits X, Lethal Hits, and Devastating
-          Wounds.
+          But if you are rolling many dice for the attack sequence of a whole
+          squad, you can choose which of them to re-roll as they are separate
+          checks. You can leave the good rolls and re-roll only the bad ones,
+          but only once.
         </p>
 
         <p>
-          Re-rolling to hit increases the number of critical hits you generate.
-          One can try to re-roll even successful non-critical hits to convert
-          them into critical ones. This is referred to as "fishing".
+          Both keywords and abilities use re-rolls as a way to buff the units or
+          weapon in some situations. Re-rolls are{' '}
+          <em>better when the base chance to succeed is better</em>. Rolling
+          again on a poor characteristic has disappointing results more often
+          than not.
         </p>
 
+        <h3 id="crit-fishing">Crit fishing</h3>
+
         <p>
-          Re-rolling wound rolls increases the chance to trigger Devastating
-          Wounds, making combinations like Devastating Wounds and Twin-linked
-          rare but extremely powerful.
+          Re-rolls integrate marvelously with keywords and abilities that
+          benefit from critical rolls (roll of 6): Sustained Hits, Lethal Hits,
+          Devastating Wounds or Anti-KEYWORD. One can re-roll even successful
+          rolls in an attempt to get a 6. This is called <em>crit fishing</em>{' '}
+          and can be stacked from separate activation gates (to hit, to wound)
+          to create powerful spikes.
         </p>
       </section>
 

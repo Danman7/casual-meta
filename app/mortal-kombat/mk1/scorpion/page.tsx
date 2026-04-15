@@ -9,14 +9,14 @@ import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
-import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
+import { MK_TITLE } from '@/app/constants'
+import { mkRoute } from '@/app/mortal-kombat/constants'
 import { Callout } from '@/app/ui/Callout'
 import { ImageTextSection } from '@/app/ui/ImageTextSection'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
-import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 8
 
@@ -26,8 +26,6 @@ export const metadata = generatePageMetadata(
   `${MK_TITLE}: ${navTitle}`,
   'A breakdown of Scorpion in Mortal Kombat 1.',
 )
-
-const mkRoute = createRouteLookup(MK_BASE_URL)
 
 export default async function Page() {
   return (

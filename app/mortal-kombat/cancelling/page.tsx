@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
+import { MK_TITLE } from '@/app/constants'
+import { mkRoute } from '@/app/mortal-kombat/constants'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
-import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 4
 
@@ -13,8 +13,6 @@ export const metadata = generatePageMetadata(
   `${MK_TITLE}: ${navTitle}`,
   'How chaining moves into strings works.',
 )
-
-const mkRoute = createRouteLookup(MK_BASE_URL)
 
 export default async function Page() {
   return (

@@ -1,10 +1,10 @@
 import Link from 'next/link'
 
-import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
+import { MK_TITLE } from '@/app/constants'
+import { mkRoute } from '@/app/mortal-kombat/constants'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
-import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 6
 
@@ -14,8 +14,6 @@ export const metadata = generatePageMetadata(
   `${MK_TITLE}: ${navTitle}`,
   'Mind games and conditioning in Mortal Kombat.',
 )
-
-const mkRoute = createRouteLookup(MK_BASE_URL)
 
 export default async function Page() {
   return (

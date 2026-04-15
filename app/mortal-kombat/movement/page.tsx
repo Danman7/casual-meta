@@ -11,19 +11,17 @@ import jump from '@/app/assets/mk/jump.webp'
 import knockdown from '@/app/assets/mk/knockdown.webp'
 import stand from '@/app/assets/mk/stand.webp'
 import standBlock from '@/app/assets/mk/standblock.webp'
-import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
+import { MK_TITLE } from '@/app/constants'
+import { mkRoute } from '@/app/mortal-kombat/constants'
 import { Diagram } from '@/app/ui/Diagram'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
-import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 1
 
 export const navTitle = 'Movement'
-
-const mkRoute = createRouteLookup(MK_BASE_URL)
 
 export const metadata = generatePageMetadata(
   `${MK_TITLE}: ${navTitle}`,

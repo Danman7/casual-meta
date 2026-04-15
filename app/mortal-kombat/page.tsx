@@ -18,21 +18,19 @@ import {
 import attackPhases from '@/app/assets/mk/attack_phases.webp'
 import mkLogo from '@/app/assets/mk/mk_logo.webp'
 import duelStart from '@/app/assets/mk1/duel_start.webp'
-import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
+import { MK_TITLE } from '@/app/constants'
+import { mkRoute } from '@/app/mortal-kombat/constants'
 import { Diagram } from '@/app/ui/Diagram'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
 import { Section } from '@/app/ui/Section'
 import { SourceLink } from '@/app/ui/SourceLink'
 import { generatePageMetadata } from '@/lib/metadata'
-import { createRouteLookup } from '@/lib/routeLinks'
 
 export const metadata = generatePageMetadata(
   MK_TITLE,
   'Mortal Kombat 1 (MK1) is the latest chapter in the long-running, celebrated fighting game series.',
 )
-
-const mkRoute = createRouteLookup(MK_BASE_URL)
 
 export default async function Page() {
   return (

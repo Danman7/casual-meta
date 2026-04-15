@@ -8,10 +8,10 @@ import knight from '@/app/assets/wh40k/knight_Castellan.webp'
 import rhino from '@/app/assets/wh40k/rhino.webp'
 import terminators from '@/app/assets/wh40k/terminators.webp'
 import wound from '@/app/assets/wh40k/wound.webp'
-import { WH40K_BASE_URL, WH40K_TITLE } from '@/app/constants'
+import { WH40K_TITLE } from '@/app/constants'
 import { Section } from '@/app/ui/Section'
+import { wh40kRoute } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
-import { createRouteLookup } from '@/lib/routeLinks'
 
 export const navOrder = 5
 
@@ -21,8 +21,6 @@ export const metadata = generatePageMetadata(
   `${WH40K_TITLE}: ${navTitle}`,
   'Common profile archetypes in Warhammer 40k to help understand unit roles.',
 )
-
-const wh40kRoute = createRouteLookup(WH40K_BASE_URL)
 
 export default async function Page() {
   return (
@@ -87,8 +85,8 @@ export default async function Page() {
         <p>
           Arms that deal 2 damage per successful activation are effective
           against MEQ. Also, having above 4 strength is ideal. For example, the{' '}
-          <em>Heavy bolter</em> <small>(S5|D2)</small> is a principal anti-MEQ
-          weapon.
+          <em>Heavy bolter</em> <small>(S5|AP-1|D2)</small> is a principal
+          anti-MEQ weapon, that wounds on 3+, and degrades the save to 4+.
         </p>
 
         <h3 id="teq">TEQ (Terminator Equivalent)</h3>
@@ -104,18 +102,21 @@ export default async function Page() {
 
         <p>
           TEQ, or terminators, represent <em>heavy elites</em>, that come with
-          ideal 2+ armor saves and often an invulnerable save in addition.
+          ideal 2+ armor saves, and often an invulnerable save in addition.
           Because of that, weapons with high AP have{' '}
-          <em>diminishing returns</em> againts them. Weapons with better damage
-          and strength (e.g. <em>Autocannon</em> S9, AP-1, D3 and{' '}
-          <em>Grav-cannon</em> S6, AP-1, D3) are more appropriate.
+          <em>diminishing returns</em> againts them. What you're looking for
+          instead is high strength, just enough damage and a little bit of AP.
+          The <em>Autocannon</em> <small>(S9|AP-1|D3)</small> and{' '}
+          <em>Grav-cannon</em> <small>(S6|AP-1|D3)</small> are good examples,
+          but even the <em>Plasma gun in standard mode</em>{' '}
+          <small>(S7|AP-2|D1)</small> can be effective.
         </p>
 
         <p>
-          Strong examples are Space and Chaos Space Marine Terminators, and Grey
-          Knight Paladins. Looser examples are Adeptus Custodes units like
+          Strong TEQ examples are Space and Chaos Space Marine Terminators, and
+          Grey Knight Paladins. Looser examples are Adeptus Custodes units like
           Wardens and Custodian Guard (TEQ with various Toughness) and Tau
-          Crisis Battlesuits (more Wounds, worse Saves, but still heavy).
+          Crisis Battlesuits (more Wounds, worse Saves).
         </p>
 
         <h3 id="geq">GEQ (Guard Equivalent)</h3>
@@ -126,13 +127,16 @@ export default async function Page() {
           className="picture profile-img object-[0%_28%]"
         />
 
-        <div className="box lead text-center">T3|Sv5+|W1</div>
+        <div className="box font-bold text-center">
+          Toughness 3 | Save 5+ | Wounds 1
+        </div>
 
         <p>
-          The name comes from the Imperial Guard battleline and depicts{' '}
-          <em>light infantry</em>. These are single wound fighters that usually
-          come in larger squads (up to 20 models). Examples are Cadian Shock
-          Troops, Tyranid Termagant and Hormagaunts, and Chaos Cultists.
+          The name comes from the <em>Imperial Guard battleline</em> and depicts{' '}
+          <em>light infantry</em>. These are fragile single wound fighters,
+          usually organized in <em>larger squads</em> (up to 20 models).
+          Examples are Cadian Shock Troops, Tyranid Termagant and Hormagaunts,
+          and Chaos Cultists.
         </p>
 
         <p>
@@ -140,7 +144,7 @@ export default async function Page() {
           through volume. High damage, strength and AP become irrelevant and
           step down to number of attacks. Weapons with the Torrent, Rapid Fire
           or Blast keywords like the <em>Flamer</em>, <em>Storm bolter</em> and{' '}
-          <em>Missile Launcher</em> are practical.
+          <em>Missile Launcher</em> are very practical.
         </p>
 
         <h3 id="vehicles-and-monsters">Vehicles and Monsters</h3>
@@ -154,16 +158,15 @@ export default async function Page() {
         <p>
           Moving away from infantry, the profiles become much more varied. It's
           difficult to pinpoint a specific statline, but one can use the{' '}
-          <em>Meltagun's</em> and <em>Lascannon's</em> strength as reference
-          points.
+          <em>Meltagun's</em> <small>(S9|Dd6)</small> and <em>Lascannon's</em>{' '}
+          <small>(S12|Dd6+1)</small> strength as reference points.
         </p>
 
         <p>
-          The Meltagun has S9. Vehicles at T9 and below, like the <em>Rhino</em>{' '}
-          T9, W10, Sv3+, are apt to die from 3-4 Meltagun wounds (less at half
-          range). They can be considered <em>light vehicles</em>. While anti-GEQ
-          arms will struggle hurting them, they are vulnerable to anti-TEQ and
-          even MEQ weapons.
+          Models at T9 and below, like the <em>Rhino</em>{' '}
+          <small>(T9|W10|Sv3+)</small>, are apt to die from 3-4 Meltagun wounds
+          (less at half range because of melta keyword). These can be our{' '}
+          <em>light vehicles</em>.
         </p>
 
         <h3 id="keq">KEQ (Knight Equivalent)</h3>

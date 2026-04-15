@@ -109,7 +109,7 @@
 }
 
 @utility button {
-  @apply box bg-background cursor-pointer hover:bg-primary hover:text-background transition-all text-center;
+  @apply box bg-background cursor-pointer hover:text-primary hover:shadow-md hover:border-primary transition-all text-center;
 }
 
 @layer base {
