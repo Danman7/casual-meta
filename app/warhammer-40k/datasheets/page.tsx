@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 import { LuDices } from 'react-icons/lu'
 
 import anti from '@/app/assets/wh40k/anti.webp'
@@ -684,24 +683,6 @@ export default async function Page() {
           and can be stacked from separate activation gates (to hit, to wound)
           to create powerful spikes.
         </p>
-      </section>
-
-      <section className="flex gap-4">
-        <Link
-          href={`${wh40kRoute('The Battle Round')}`}
-          className="w-1/2 button flex justify-between"
-        >
-          <FaAngleLeft />
-          Prev: The Battle Round
-        </Link>
-
-        <Link
-          href={`${wh40kRoute('Profile Archetypes')}`}
-          className="w-1/2 button flex justify-between"
-        >
-          Next: Profile Archetypes
-          <FaAngleRight />
-        </Link>
       </section>
     </>
   )

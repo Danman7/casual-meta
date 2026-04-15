@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaAngleRight, FaCheck, FaCrosshairs } from 'react-icons/fa'
+import { FaCheck, FaCrosshairs } from 'react-icons/fa'
 import { IoDiceOutline } from 'react-icons/io5'
 import { LuCrown } from 'react-icons/lu'
 import { RiInformation2Line, RiSwordLine } from 'react-icons/ri'
@@ -636,17 +636,6 @@ export default async function Page() {
           69% of the time. The system is designed so that no single attack is
           ever guaranteed.
         </p>
-      </section>
-
-      <section className="flex gap-4">
-        <div className="w-1/2"></div>
-        <Link
-          href={`${wh40kRoute('Datasheets')}`}
-          className="w-1/2 button flex justify-between"
-        >
-          Next: Datasheets
-          <FaAngleRight />
-        </Link>
       </section>
     </>
   )

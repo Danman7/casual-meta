@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { MdChevronRight } from 'react-icons/md'
 
 import attackPhases from '@/app/assets/mk/attack_phases.webp'
 import blockHigh from '@/app/assets/mk/block_high.webp'
@@ -616,10 +615,6 @@ export default async function Page() {
           essential in case of a whiff.
         </p>
       </Section>
-
-      <Link className="flex gap-2 items-center" href={mkRoute('Cancelling')}>
-        <MdChevronRight /> Next: Cancelling
-      </Link>
     </>
   )
 }

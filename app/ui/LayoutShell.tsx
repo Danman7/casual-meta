@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
+import { AutoPageNav } from '@/app/ui/AutoPageNav'
 import { Header } from '@/app/ui/Header'
 import { SideNavigation } from '@/app/ui/SideNavigation'
 import { TableOfContents } from '@/app/ui/TableOfContents'
@@ -40,6 +41,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
 
         <main tabIndex={-1} className="edge-padding max-w-3xl mx-auto">
           {children}
+          <AutoPageNav />
         </main>
 
         <aside className="edge-padding hidden xl:flex">

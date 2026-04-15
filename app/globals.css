@@ -3,7 +3,7 @@
 :root {
   --background: hsl(10, 10%, 98%);
   --foreground: hsl(10, 20%, 20%);
-  --surface: hsl(10, 10%, 96%);
+  --surface: hsl(10, 10%, 97%);
   --primary: hsl(10, 80%, 45%);
   --success: var(--color-green-600);
   --error: var(--color-red-600);
@@ -13,7 +13,7 @@
   :root {
     --background: hsl(10, 20%, 5%);
     --foreground: hsl(10, 10%, 95%);
-    --surface: hsl(10, 20%, 8%);
+    --surface: hsl(10, 20%, 7%);
     --primary: hsl(10, 80%, 55%);
     --success: var(--color-green-400);
     --error: var(--color-red-400);
@@ -109,7 +109,7 @@
 }
 
 @utility button {
-  @apply box bg-background cursor-pointer hover:text-primary hover:shadow-md hover:border-primary transition-all text-center;
+  @apply box space-y-0! cursor-pointer hover:text-primary hover:shadow-md hover:border-primary transition-all text-center;
 }
 
 @layer base {

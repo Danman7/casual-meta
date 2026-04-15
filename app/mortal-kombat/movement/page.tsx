@@ -1,6 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import { MdChevronRight } from 'react-icons/md'
 
 import arena from '@/app/assets/mk/arena.webp'
 import backward from '@/app/assets/mk/backward.webp'
@@ -12,7 +10,6 @@ import knockdown from '@/app/assets/mk/knockdown.webp'
 import stand from '@/app/assets/mk/stand.webp'
 import standBlock from '@/app/assets/mk/standblock.webp'
 import { MK_TITLE } from '@/app/constants'
-import { mkRoute } from '@/app/mortal-kombat/constants'
 import { Diagram } from '@/app/ui/Diagram'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
@@ -290,13 +287,6 @@ export default async function Page() {
           </li>
         </ul>
       </Section>
-
-      <Link
-        className="flex gap-2 items-center"
-        href={mkRoute('Anatomy of attacks')}
-      >
-        <MdChevronRight /> Next: Anatomy of attacks
-      </Link>
     </>
   )
 }

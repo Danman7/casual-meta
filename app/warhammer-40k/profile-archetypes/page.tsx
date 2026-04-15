@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaAngleLeft } from 'react-icons/fa'
 
 import guardsmen from '@/app/assets/wh40k/CadianShockTroops.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
@@ -185,18 +184,6 @@ export default async function Page() {
           inform their opponent beforehand to assure they are properly prepared.
         </p>
       </Section>
-
-      <section className="flex gap-4">
-        <Link
-          href={`${wh40kRoute('Datasheets')}`}
-          className="w-1/2 button flex justify-between"
-        >
-          <FaAngleLeft />
-          Prev: Datasheets
-        </Link>
-
-        <div className="w-1/2" />
-      </section>
     </>
   )
 }
