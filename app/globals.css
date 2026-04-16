@@ -3,20 +3,16 @@
 :root {
   --background: hsl(10, 10%, 98%);
   --foreground: hsl(10, 20%, 20%);
-  --surface: hsl(10, 10%, 97%);
+  --surface: hsl(10, 10%, 96%);
   --primary: hsl(10, 80%, 45%);
-  --success: var(--color-green-600);
-  --error: var(--color-red-600);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: hsl(10, 20%, 5%);
     --foreground: hsl(10, 10%, 95%);
-    --surface: hsl(10, 20%, 7%);
+    --surface: hsl(10, 20%, 8%);
     --primary: hsl(10, 80%, 55%);
-    --success: var(--color-green-400);
-    --error: var(--color-red-400);
   }
 }
 
@@ -25,8 +21,6 @@
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   --color-primary: var(--primary);
-  --color-success: var(--success);
-  --color-error: var(--error);
 
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out both;
 
@@ -109,12 +103,12 @@
 }
 
 @utility button {
-  @apply box space-y-0! cursor-pointer hover:text-primary hover:shadow-md hover:border-primary transition-all text-center;
+  @apply box space-y-0! cursor-pointer hover:text-primary hover:shadow-md hover:border-primary transition-all text-center no-underline flex-center;
 }
 
 @layer base {
   blockquote {
-    @apply border-l-4 border-foreground/10 pl-4 text-foreground/80 space-y-4;
+    @apply border-l-3 border-foreground/10 pl-3 text-foreground/80 space-y-3 text-sm leading-6;
   }
 
   a {

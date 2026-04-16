@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
 import { useSectionNav } from '@/app/ui/NavigationProvider'
 
@@ -55,11 +54,8 @@ export function AutoPageNav() {
   return (
     <nav aria-label="Page navigation" className="mt-8 flex gap-4">
       {prev ? (
-        <Link
-          href={prev.href}
-          className="w-1/2 button flex-center justify-between"
-        >
-          <FaAngleLeft />
+        <Link href={prev.href} className="w-1/2 button justify-between">
+          &larr;
           <div>Prev: {prev.title}</div>
         </Link>
       ) : (
@@ -72,7 +68,7 @@ export function AutoPageNav() {
           className="w-1/2 button flex-center justify-between"
         >
           <div>Next: {next.title}</div>
-          <FaAngleRight />
+          &rarr;
         </Link>
       ) : (
         <div className="w-1/2" />

@@ -41,64 +41,61 @@ export default async function Page() {
           restrictions on how many of the same type can be in an army list.
         </p>
 
-        <h3 id="intercessors" className="flex-wrapper">
-          Intercessors{' '}
-          <span className="circle-icon">
-            <FaCrosshairs />
-          </span>
+        <h3 id="intercessors" className="flex-center">
+          Intercessors <FaCrosshairs />
         </h3>
 
         <Image
           src={intercessors}
           alt="A squad of Space Marine Intercessors."
-          className="profile-img object-[0%_70%]"
+          className="picture profile-img object-[0%_70%]"
         />
 
-        <WarhammerProfile
-          profile={
-            <>
-              <div>
-                <strong>Marine equivalent</strong> with{' '}
-                <strong>OC2&uarr;</strong> in Tacticus Armor
-              </div>
-              <div>
-                <strong>Bolt Rifles</strong>{' '}
-                <span className="flavor">
-                  Assault, Heavy, 24", A2, BS3+, S4, AP-1, D1
-                </span>
-              </div>
-            </>
-          }
-          cost="80/5 160/10"
-        />
+        <div className="box">
+          <div className="flex-list justify-between">
+            <div>
+              <strong>MEQ</strong> with <strong>OC2&uarr;</strong> in Tacticus
+              Armor
+            </div>
 
-        <p>
-          Intercessors are a <strong>high-utility, flexible ranged unit</strong>
-          , compatible with most army lists. A squad is{' '}
-          <strong>never a waste</strong> if you need stability around objectives
-          or are unsure how to fill your troop slots.
-        </p>
-
-        <p>
-          Normally, only units within 3" of an objective exert control with
-          their OC stats. <strong>Objective Secured (sticky objectives)</strong>{' '}
-          says that{' '}
-          <strong>
-            if an intercessor squad holds a marker, it remains yours even after
-            they move away
-          </strong>
-          . This frees up control resources, because Intercessors can tag and
-          walk. Now, the opponent can't just shoot your units off an objective.
-          They must physically contest it.
-        </p>
-
-        <div className="box text-sm">
-          <div>
-            On the board, it's common for Intercessors to quickly capture the
-            home objective and pivot to contribute in the middle. They can also
-            rush midfield, then step back to defend from a distance.
+            <div>
+              <strong>Cost:</strong> 80/5 160/10
+            </div>
           </div>
+
+          <p>
+            <strong>Objective Secured:</strong> If the squad holds an objective,
+            it remains yours even after it moves away.
+          </p>
+
+          <p>
+            <strong>Target Elimination:</strong> Bolt rifles get + 2 attacks if
+            the whole squad shoots at a single target.
+          </p>
         </div>
+
+        <p>
+          Intercessors are the backbone of the Space Marines. They are a{' '}
+          <em>flexible utility</em> unit, that fits a wide range of playstyles,
+          yet holds their own in combat. If you are unsure of how to fill your
+          troop slots, a squad of these is generally never a bad choice.
+        </p>
+
+        <p>
+          The sticky objectives ability frees up control resources, as
+          Intercessors can tag and walk. You can quickly capture home and pivot
+          to contribute in the middle. Or rush middle and step back to defend
+          from a distance. Now, the opponent can't just shoot you off a marker -
+          they must physically contest it.
+        </p>
+
+        <p>
+          The <em>Bolt Rifle</em> <small>(24", A2, S4, AP-1, D1)</small> is in
+          principle an anti-GEQ weapon. But the double-shots rule makes it
+          consistent even against other MEQs. Naturally, this promotes 5-man
+          squads as they can focus fire different targets with less risk of
+          overkill.
+        </p>
 
         <p>
           While they are <strong>not primary damage dealers</strong>, their

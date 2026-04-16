@@ -82,11 +82,16 @@ export default async function Page() {
         <Image src={wound} alt="Wound roll probabilities" />
 
         <p>
-          Arms that deal 2 damage per successful activation are effective
-          against MEQ. Also, having above 4 strength is ideal. For example, the{' '}
-          <em>Heavy bolter</em> <small>(S5|AP-1|D2)</small> is a principal
-          anti-MEQ weapon, that wounds on 3+, and degrades the save to 4+.
+          Against T4, Sv3+, W2, you want S4 and above, D2 weapons with some AP.
         </p>
+
+        <blockquote>
+          <p>
+            The <em>Heavy bolter</em> (S5, AP-1, D2) is a principal anti-MEQ
+            weapon, that deals the right amount of damage, wounds on 3+ (66%
+            chance), and degrades the save to 4+ (50% chance).
+          </p>
+        </blockquote>
 
         <h3 id="teq">TEQ (Terminator Equivalent)</h3>
         <Image
@@ -105,11 +110,20 @@ export default async function Page() {
           Because of that, weapons with high AP have{' '}
           <em>diminishing returns</em> againts them. What you're looking for
           instead is high strength, just enough damage and a little bit of AP.
-          The <em>Autocannon</em> <small>(S9|AP-1|D3)</small> and{' '}
-          <em>Grav-cannon</em> <small>(S6|AP-1|D3)</small> are good examples,
-          but even the <em>Plasma gun in standard mode</em>{' '}
-          <small>(S7|AP-2|D1)</small> can be effective.
         </p>
+
+        <blockquote>
+          <p>
+            Both the <em>Autocannon</em> (S9, AP-1, D3) and <em>Grav-cannon</em>{' '}
+            (S6, same) deal the correct damage, wound on 3+ (66% chance), and
+            degrade the save to 3+ (66% chance).
+          </p>
+
+          <p>
+            Eventhough the <em>Plasma gun in standard mode</em> (Rapid Fire 1,
+            S7, AP-2, D1) deals only 1 damage, it can be effective.
+          </p>
+        </blockquote>
 
         <p>
           Strong TEQ examples are Space and Chaos Space Marine Terminators, and
@@ -141,10 +155,26 @@ export default async function Page() {
         <p>
           Large numbers with terrible durability, changes the approach. GEQ win
           through volume. High damage, strength and AP become irrelevant and
-          step down to number of attacks. Weapons with the Torrent, Rapid Fire
-          or Blast keywords like the <em>Flamer</em>, <em>Storm bolter</em> and{' '}
-          <em>Missile Launcher</em> are very practical.
+          step down to number of attacks.
         </p>
+
+        <blockquote>
+          <p>
+            The <em>Flamer</em> (Torrent, Ad6, S4, D1) auto-hits, and has a 66%
+            chance to wound and delete up to 6 guard equivalents.
+          </p>
+
+          <p>
+            The <em>Storm Bolter</em> (Rapid Fire 2, A2, S4, D1) does 4 attacks
+            at half range per activation.
+          </p>
+
+          <p>
+            Any grenade or missile launcher with{' '}
+            <Link href={`${wh40kRoute('Datasheets')}#blast`}>Blast</Link> deals
+            extra attacks against more targets.
+          </p>
+        </blockquote>
 
         <h3 id="vehicles-and-monsters">Vehicles and Monsters</h3>
 
@@ -163,9 +193,13 @@ export default async function Page() {
 
         <p>
           Models at T9 and below, like the <em>Rhino</em>{' '}
-          <small>(T9|W10|Sv3+)</small>, are apt to die from 3-4 Meltagun wounds
+          <small>(T9|Sv3+|W10)</small>, are apt to die from 3-4 Meltagun wounds
           (less at half range because of melta keyword). These can be our{' '}
-          <em>light vehicles</em>.
+          <em>light vehicles</em>. Above that, a <em>Redemptor Dreadnought</em>{' '}
+          <small>(T10|Sv2+|W12)</small> gives the Meltagun a hard time, but the
+          Lascannon is still capable to deal with it. Yet, against the heavy{' '}
+          <em>Land Raider</em> <small>(T12|Sv2+|W16)</small> even the Lascannon
+          struggles.
         </p>
 
         <h3 id="keq">KEQ (Knight Equivalent)</h3>
