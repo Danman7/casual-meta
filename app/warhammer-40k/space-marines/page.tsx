@@ -150,7 +150,11 @@ export default async function Page() {
         </p>
 
         <ul>
-          <li>All your models re-roll hit rolls against that target.</li>
+          <li>
+            All your models{' '}
+            <Link href={`${wh40kRoute('Datasheets')}#re-rolls`}>re-roll</Link>{' '}
+            hit rolls against that target.
+          </li>
 
           <li>
             If using a Codex Space Marines detachment and excluding divergent
@@ -162,8 +166,9 @@ export default async function Page() {
         <p>
           Oath of Moment is avaliable to all Space Marine units and shapes a lot
           of the faction's playstyle. It encourages players to identify{' '}
-          <em>priority units</em> and concentrate on them, one at a time. In
-          turn, the opponent must be careful how they expose key assets.
+          <em>priority units</em> and concentrate on them, one at a time, giving
+          weaker weapons a chance to deal with tougher targets. In turn, the
+          opponent must be careful how they expose key assets.
         </p>
       </section>
     </>
