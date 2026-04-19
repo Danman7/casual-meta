@@ -52,26 +52,29 @@ export function AutoPageNav() {
   if (!prev && !next) return null
 
   return (
-    <nav aria-label="Page navigation" className="mt-8 flex gap-4">
+    <nav aria-label="Page navigation" className="mt-8 md:flex gap-4">
       {prev ? (
-        <Link href={prev.href} className="w-1/2 button justify-between">
+        <Link
+          href={prev.href}
+          className="w-full md:w-1/2 button justify-between"
+        >
           &larr;
           <div>Prev: {prev.title}</div>
         </Link>
       ) : (
-        <div className="w-1/2" />
+        <div className="w-full md:w-1/2" />
       )}
 
       {next ? (
         <Link
           href={next.href}
-          className="w-1/2 button flex-center justify-between"
+          className="w-full md:w-1/2 button flex-center justify-between"
         >
           <div>Next: {next.title}</div>
           &rarr;
         </Link>
       ) : (
-        <div className="w-1/2" />
+        <div className="w-full md:w-1/2" />
       )}
     </nav>
   )

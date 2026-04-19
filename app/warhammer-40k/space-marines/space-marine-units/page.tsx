@@ -5,6 +5,7 @@ import { FaCrosshairs } from 'react-icons/fa'
 import { FaShield } from 'react-icons/fa6'
 import { IoIosMan } from 'react-icons/io'
 import { LuSword } from 'react-icons/lu'
+import { TbRulerMeasure } from 'react-icons/tb'
 
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import eliminators from '@/app/assets/wh40k/eliminators.webp'
@@ -314,69 +315,76 @@ export default async function Page() {
       <Section title="Specialists" id="specialists">
         <h3 id="eliminators">Eliminators</h3>
 
-        <div className="flex-center">
-          <div className="badge">
-            <BsShadows /> Covert
+        <div className="relative">
+          <div className="absolute top-4 left-4 right-4 flex-center">
+            <div className="badge">
+              <BsShadows /> Covert
+            </div>
+
+            <div className="badge">
+              <TbRulerMeasure /> Long-ranged
+            </div>
+
+            <div className="badge">
+              <IoIosMan /> Infantry
+            </div>
+
+            <div className="badge">Phobos Armor</div>
           </div>
 
-          <div className="badge">
-            <FaCrosshairs /> Ranged
+          <div className="badge absolute bottom-4 left-4 font-bold">MEQ</div>
+
+          <div className="badge absolute bottom-4 right-4">
+            <strong>Cost:</strong> 85/3
           </div>
 
-          <div className="badge">
-            <IoIosMan /> Infantry
-          </div>
-
-          <div className="badge">Phobos Armor</div>
+          <Image
+            src={eliminators}
+            alt="A squad of eliminators."
+            className="picture profile-img object-[0%_33%]"
+          />
         </div>
 
-        <Image
-          src={eliminators}
-          alt="A squad of eliminators."
-          className="picture profile-img object-[0%_33%]"
-        />
-
         <div className="box">
-          <div className="flex-list justify-between">
-            <div>
-              <strong>MEQ</strong> armed with single-shot, long-range gear
-            </div>
-
-            <div>
-              <strong>Cost:</strong> 85/5
-            </div>
-          </div>
-
           <p>
-            <strong>Mark the Target:</strong> If squad didn't move, they get{' '}
+            <strong>Mark the Target:</strong> Get{' '}
             <Link href={`${wh40kRoute('Datasheets')}#devastating-wounds`}>
               devastating wounds
-            </Link>
-            .
+            </Link>{' '}
+            when shooting, if squad remained stationary durig movement phase
+            this turn.
           </p>
 
           <p>
-            <strong>Reposition Under Covering Fire:</strong> Can make a normal
-            move after shooting, if the sergeant is alive and has an Instigator
-            Bolt Carbine.
+            <strong>Reposition Under Covering Fire:</strong> Get an additional,
+            optional, normal move after shooting, if the sergeant is alive and
+            has an Instigator Bolt Carbine.
           </p>
         </div>
 
         <p>
-          Eliminators are a small, stealthy, long-ranged squad, specialized in
-          harassing high-value units. It's rare for them to straight one-shot
-          durable targets, but their presence impels the opponent to respect the
-          threat when making positioning decisions.
+          Eliminators are a stealthy micro-squad, that carries an array of
+          high-strength, far-reaching, single-shot weapons. They get to deploy
+          closer to the enemy, with reduced incomming accuracy from ranged
+          attacks, and some movement tricks.
         </p>
 
         <p>
-          Each of the loadouts supports a different playstyle.{' '}
+          Each of their loadouts supports a slightly different playstyle, but
+          they all are designed for harassing high-value targets at some
+          distance. It's rare for them to straight one-shot durable models, yet
+          their presence impels the opponent to respect the threat when making
+          decisions.
+        </p>
+
+        <p>
           <em>Las Fusils</em> <small>(36", S9, AP-3, Dd6)</small> are the
-          consistent choice, winning over raw damage against elite infantry and
-          even light vehicles. <em>Bolt Sniper Rifles</em>{' '}
-          <small>(36", S5, AP-2, D3)</small> lack the strength and AP, but have{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#precision`}>precision</Link>.
-          This makes them natural character hunters, but still situational.
+          default choice against elite infantry and light vehicles, winning
+          trough consistency in raw power. <em>Bolt Sniper Rifles</em>{' '}
+          <small>(36", S5, AP-2, D3)</small> lack the strength and penetration
+          of the fusils, but have{' '}
+          <Link href={`${wh40kRoute('Datasheets')}#precision`}>precision</Link>,
+          making them natural, albeit situational, character hunters.
         </p>
 
         <p>

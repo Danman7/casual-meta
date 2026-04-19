@@ -95,7 +95,7 @@
 }
 
 @utility badge {
-  @apply px-1.5 py-0.5 rounded text-sm bg-surface border border-foreground/10 inline-flex gap-1 items-center;
+  @apply px-1.5 py-0.5 rounded text-sm bg-surface border border-foreground/10 inline-flex gap-1 items-center shadow-sm;
 }
 
 @utility box {
