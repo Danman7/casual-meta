@@ -44,36 +44,33 @@ export default async function Page() {
 
         <h3 id="intercessors">Intercessors</h3>
 
-        <div className="flex-center">
-          <div className="badge">
-            <FaCrosshairs /> Ranged
+        <div className="relative">
+          <div className="absolute top-2 left-2 right-2 flex-center">
+            <div className="badge">
+              <FaCrosshairs /> Ranged
+            </div>
+
+            <div className="badge">
+              <IoIosMan /> Infantry
+            </div>
           </div>
 
-          <div className="badge">
-            <IoIosMan /> Infantry
+          <div className="badge absolute bottom-2 left-2">
+            <strong>MEQ</strong> with OC2&uarr;
           </div>
 
-          <div className="badge">Tacticus Armor</div>
+          <div className="badge absolute bottom-2 right-2">
+            <strong>Cost:</strong> 80/5; 160/10
+          </div>
+
+          <Image
+            src={intercessors}
+            alt="A squad of Space Marine Intercessors."
+            className="picture profile-img object-[0%_70%]"
+          />
         </div>
 
-        <Image
-          src={intercessors}
-          alt="A squad of Space Marine Intercessors."
-          className="picture profile-img object-[0%_70%]"
-        />
-
         <div className="box">
-          <div className="flex-list justify-between">
-            <div>
-              <strong>MEQ</strong> with <em>OC2&uarr;</em> armed with Bolt
-              Rifles
-            </div>
-
-            <div>
-              <strong>Cost:</strong> 80/5 160/10
-            </div>
-          </div>
-
           <p>
             <strong>Objective Secured:</strong> If the squad holds an objective,
             it remains yours even after it moves away.
@@ -117,7 +114,7 @@ export default async function Page() {
 
         <p>
           The whole package supports whatever you need - mobile agressivness,
-          static defense (if they skip moving, they hit on 2+.), anti-swarm -
+          static defense (if they skip moving, they hit on 2+), or anti-swarm,
           but avoid using them in melee apart from clean up. Intercessors are
           good as they are and support for them should be kept cheap.
         </p>
@@ -135,36 +132,33 @@ export default async function Page() {
 
         <h3 id="assault-intercessors">Assault Intercessors</h3>
 
-        <div className="flex-center">
-          <div className="badge">
-            <LuSword /> Melee
+        <div className="relative">
+          <div className="absolute top-2 left-2 right-2 flex-center">
+            <div className="badge">
+              <LuSword /> Melee
+            </div>
+
+            <div className="badge">
+              <IoIosMan /> Infantry
+            </div>
           </div>
 
-          <div className="badge">
-            <IoIosMan /> Infantry
+          <div className="badge absolute bottom-2 left-2">
+            <strong>MEQ</strong> with OC2&uarr;
           </div>
 
-          <div className="badge">Tacticus Armor</div>
+          <div className="badge absolute bottom-2 right-2">
+            <strong>Cost:</strong> 75/5; 150/10
+          </div>
+
+          <Image
+            src={assaultIntercessors}
+            alt="A squad of Assault Intercessors."
+            className="picture profile-img object-[0%_75%]"
+          />
         </div>
 
-        <Image
-          src={assaultIntercessors}
-          alt="A squad of Assault Intercessors."
-          className="picture profile-img object-[0%_75%]"
-        />
-
         <div className="box">
-          <div className="flex-list justify-between">
-            <div>
-              <strong>MEQ</strong> with <em>OC2&uarr;</em> armed with Astartes
-              chainswords
-            </div>
-
-            <div>
-              <strong>Cost:</strong> 75/5 150/10
-            </div>
-          </div>
-
           <p>
             <strong>Shock Assault:</strong> Re-roll melee wound rolls of 1
             anywhere. Re-roll all melee wound rolls when on an objective.{' '}
@@ -173,36 +167,35 @@ export default async function Page() {
         </div>
 
         <p>
-          A note on names: adding the assault in front of squads signifies a
-          focus on melee combat. And this is the package you acquire: a cheaper,
-          hand-to-hand version of regular intercessors. This is the closest to
-          an expendable unit you'll get with the Space Marines - a natural fit
-          for melee-heavy detachments.
+          Adding "assault" in front of the name signifies a focus on
+          hand-to-hand combat. And the package you get is a cheaper, melee
+          version of regular intercessors. This is the closest to an expendable
+          unit you'll get with the Space Marines - a natural fit for melee-heavy
+          detachments.
         </p>
 
         <blockquote>
           <p>
-            Blood Angels elevate Assault Intercessors to a proper threat. As
-            part of a Liberator Assault Group detachment they gain +2 Strength
-            (to S6) and +1 Attack (5 attacks each).
+            The <em>Blood Angels</em> chapter elevate Assault Intercessors to a
+            proper threat. As part of a <em>Liberator Assault Group</em>{' '}
+            detachment they gain +2S (to S6) and +1A (A5 for each chainsword),
+            scaling both horizontally and vertically.
           </p>
         </blockquote>
 
         <p>
-          Lots of attacks on the chainsword's anti-GEQ profile{' '}
-          <small>(S4, AP-1, D1)</small> implicates good results against swarms.
-          Because of the re-rolls, these marines want to fight on top of
-          objectives, but are slow at getting there. If your plan is to trade
-          agressively at the middle, think about a transport (an Impulsor is
-          often ideal).
+          Assault Intercessors have two good fits. First, at 15 points per
+          model, 4 attacks (unmodified) per Astartes chainsword{' '}
+          <small>(S4, AP-1, D1)</small>, and the Shock Assault ability, they are
+          good at trades against light infantry on top of objectives.
         </p>
 
         <p>
-          Speaking of which, Assault intercessors scale with difficulty unless
-          properly supported. But, because of the fact that the re-rolls ability
-          also applies to attached leaders, they don't necessarily need to
-          scale. They fill the role of cheap character escors well enough to
-          consider some options.
+          Secondly, since the wound re-rolls also apply to any attached leader,
+          they are also cost efficient bodyguards. And because the squad's
+          performance is more dependent on the support they get, it's often a
+          good idea to have someone appropriate in the list that they can
+          escort.
         </p>
 
         <blockquote>
@@ -221,42 +214,46 @@ export default async function Page() {
           </p>
         </blockquote>
 
+        <p>
+          Speaking of support, Assault Intercessors are slow at getting to the
+          front where they might engage the enemy. If your plan is to trade
+          agressively at the middle, think about a transport (an Impulsor is
+          often ideal).
+        </p>
+
         <h3 id="heavy-intercessors">Heavy Intercessors</h3>
 
-        <div className="flex-center">
-          <div className="badge">
-            <FaShield /> Durable
+        <div className="relative">
+          <div className="absolute top-2 left-2 right-2 flex-center">
+            <div className="badge">
+              <FaShield /> Durable
+            </div>
+
+            <div className="badge">
+              <FaCrosshairs /> Ranged
+            </div>
+
+            <div className="badge">
+              <IoIosMan /> Infantry
+            </div>
           </div>
 
-          <div className="badge">
-            <FaCrosshairs /> Ranged
+          <div className="badge absolute bottom-2 left-2">
+            <strong>Gravis</strong> (M5, T6, Sv3+, W3)
           </div>
 
-          <div className="badge">
-            <IoIosMan /> Infantry
+          <div className="badge absolute bottom-2 right-2">
+            <strong>Cost:</strong> 100/5; 200/10
           </div>
 
-          <div className="badge">Gravis Armor</div>
+          <Image
+            src={heavyIntercessors}
+            alt="A squad of Heavy Intercessors."
+            className="picture profile-img object-[0%_56%]"
+          />
         </div>
 
-        <Image
-          src={heavyIntercessors}
-          alt="A squad of Heavy Intercessors."
-          className="picture profile-img object-[0%_56%]"
-        />
-
         <div className="box">
-          <div className="flex-list justify-between">
-            <div>
-              <strong>Gravis</strong> <small>(M5, T6, Sv3+, W3)</small> armed
-              with heavy bolt rifles
-            </div>
-
-            <div>
-              <strong>Cost:</strong> 100/5 200/10
-            </div>
-          </div>
-
           <p>
             <strong>Unyielding in the Face of the Foe:</strong> +1 to Save
             against D1 attacks while on an objective.
@@ -264,43 +261,34 @@ export default async function Page() {
         </div>
 
         <p>
-          Heavy Intercessors are the cheapest anchors available to the Space
-          Marines. They're designed to sit on objectives and absorb fire.
-          Durable but slow, and not quite TEQ without the exceptional saves,
-          they struggle finding a dedicated role in most lists.
+          Heavy Intercessors are the cheapest <em>anchors</em> available to the
+          Space Marines. At 20 points per model, the Gravis armor will
+          consistently survive anti-MEQ attacks, but is not quite TEQ
+          (suboptimal saves). With the unique ability, plus sluggish movement,
+          they're designed to sit on objectives and absorb fire, until the enemy
+          dedicates proper resources.
         </p>
 
         <p>
-          At 20 points per model, you get a squad that will consistently survive
-          most anti-MEQ gear, with a special rule the discourages D1 attacks.
-          Their goal is to get to a marker and stay there until the enemy
-          dedicates proper resources. But don't expect great feats when they get
-          into melee.
+          They come with <em>Heavy bolt rifles</em>{' '}
+          <small>(A2, S5, AP-1, D2)</small>, and one-in-five marines can (and
+          should) field with a <em>Heavy bolter</em>{' '}
+          <small>(same profile +1 attacks and +1 hits on a crit)</small>. Both
+          weapons hit on 2+ if stationary (Heavy keyword) and are effective into
+          anything up to MEQ.
         </p>
 
         <p>
-          The <em>Heavy bolt rifle</em>{' '}
-          <small>(Assault, Heavy, 30", A2, S5, AP-1, D2)</small> is a proper
-          all-around anti-MEQ weapon, proided they're not in cover. The{' '}
-          <em>Heavy bolter</em> available to 1-in-5 marines, is essentially the
-          same weapon with +1 attacks and +1 hits on a crit. In practice, the
-          squad is strongest into standard Marines and other two-wound bodies,
-          but struggles to threaten tougher targets.
-        </p>
-
-        <p>
-          The issue with heavies is that they face stern competition from
-          cheaper, more flexible units. Regular Intercessors are more consistent
-          in range, better in melee, and bring objectives control utility. If
-          you want to try them out, think about support that improves their
-          coherency.
+          Heavies face stern competition from cheaper, more flexible units.
+          Regular Intercessors are more consistent in range, better in melee,
+          and bring objectives control utility. If you want to find a fit for
+          them, think about support that improves their coherency.
         </p>
 
         <blockquote>
           <p>
             The <em>Anvil Siege Force</em> detachment with its stratagems around
-            remaining stationary, supports static play with the Heavy keyword
-            (hit on 2+ if they stay put).
+            remaining stationary, supports static play with the Heavy keyword.
           </p>
 
           <p>
@@ -316,7 +304,7 @@ export default async function Page() {
         <h3 id="eliminators">Eliminators</h3>
 
         <div className="relative">
-          <div className="absolute top-4 left-4 right-4 flex-center">
+          <div className="absolute top-2 left-2 right-2 flex-center">
             <div className="badge">
               <BsShadows /> Covert
             </div>
@@ -328,13 +316,11 @@ export default async function Page() {
             <div className="badge">
               <IoIosMan /> Infantry
             </div>
-
-            <div className="badge">Phobos Armor</div>
           </div>
 
-          <div className="badge absolute bottom-4 left-4 font-bold">MEQ</div>
+          <div className="badge absolute bottom-2 left-2 font-bold">MEQ</div>
 
-          <div className="badge absolute bottom-4 right-4">
+          <div className="badge absolute bottom-2 right-2">
             <strong>Cost:</strong> 85/3
           </div>
 
@@ -364,8 +350,8 @@ export default async function Page() {
 
         <p>
           Eliminators are a stealthy micro-squad, that carries an array of
-          high-strength, far-reaching, single-shot weapons. They get to deploy
-          closer to the enemy, with reduced incomming accuracy from ranged
+          high-strength, far-reaching (36"), single-shot weapons. They get to
+          deploy closer to the enemy, with reduced accuracy from incoming ranged
           attacks, and some movement tricks.
         </p>
 
@@ -373,25 +359,20 @@ export default async function Page() {
           Each of their loadouts supports a slightly different playstyle, but
           they all are designed for harassing high-value targets at some
           distance. It's rare for them to straight one-shot durable models, yet
-          their presence impels the opponent to respect the threat when making
-          decisions.
+          their presence impels the opponent to respect the threat when
+          positioning.
         </p>
 
         <p>
-          <em>Las Fusils</em> <small>(36", S9, AP-3, Dd6)</small> are the
-          default choice against elite infantry and light vehicles, winning
-          trough consistency in raw power. <em>Bolt Sniper Rifles</em>{' '}
-          <small>(36", S5, AP-2, D3)</small> lack the strength and penetration
-          of the fusils, but have{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#precision`}>precision</Link>,
-          making them natural, albeit situational, character hunters.
-        </p>
-
-        <p>
-          Both weapon choices have the{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#heavy`}>heavy</Link> keyword,
-          hitting on 2+ and gaining mortal wounds on crits, ignoring the
-          target's saves, if they remain stationary.
+          <em>Las Fusils</em> <small>(S9, AP-3, Dd6)</small> are the consistent
+          choice against elite infantry and light vehicles, winning trough raw
+          power. <em>Bolt Sniper Rifles</em> <small>(S5, AP-2, D3)</small> lack
+          the strength and penetration of fusils, but have{' '}
+          <Link href={`${wh40kRoute('Datasheets')}#precision`}>Precision</Link>,
+          making them natural, albeit situational, character hunters. If the
+          squad skips movement, both weapons hit on 2+ (
+          <Link href={`${wh40kRoute('Datasheets')}#heavy`}>Heavy</Link> keyword)
+          and gain mortal wounds on crits (Mark the Target).
         </p>
       </Section>
     </>

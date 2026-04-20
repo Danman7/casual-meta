@@ -31,11 +31,11 @@ export default async function Page() {
         />
 
         <p>
-          Space Marines are engineered superhuman soldiers - the{' '}
-          <em>elite of mankind's Imperium</em>. They take a central position in
-          the fictional universe of WH40k. Whether on the cover of a novel, a
-          magazine, or somewhere online, chances are a Space Marine was the
-          first thing many fans saw related to the hobby.
+          Space Marines are engineered superhuman soldiers - the <em>elite</em>{' '}
+          of mankind's Imperium. They take a central position in the fictional
+          universe of WH40k. Whether on the cover of a novel, a magazine, or
+          somewhere online, chances are a Space Marine was the first thing many
+          fans saw related to the hobby.
         </p>
       </section>
 
