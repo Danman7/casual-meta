@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { LuDices } from 'react-icons/lu'
+import { PiDiceSix } from 'react-icons/pi'
+import { TbArrowBigUpLines, TbRulerMeasure } from 'react-icons/tb'
 
 import anti from '@/app/assets/wh40k/anti.webp'
 import assault from '@/app/assets/wh40k/assault.webp'
@@ -8,9 +10,11 @@ import attackNumber from '@/app/assets/wh40k/attacks_number.webp'
 import datasheet from '@/app/assets/wh40k/datasheet.webp'
 import devastatingWounds from '@/app/assets/wh40k/devastating-wounds.webp'
 import durability from '@/app/assets/wh40k/durability.webp'
+import keywords from '@/app/assets/wh40k/keywords.webp'
 import loadouts from '@/app/assets/wh40k/loadouts.webp'
 import movediff from '@/app/assets/wh40k/move_diff.webp'
 import multipleProfiles from '@/app/assets/wh40k/multiple_profiles.webp'
+import precision from '@/app/assets/wh40k/precision.webp'
 import rapidFire from '@/app/assets/wh40k/rapid-fire.webp'
 import saves from '@/app/assets/wh40k/saves.webp'
 import shooting from '@/app/assets/wh40k/shooting.webp'
@@ -35,6 +39,7 @@ export default async function Page() {
   return (
     <>
       <h1>{navTitle}</h1>
+
       <section>
         <p>
           Every unit comes with a datasheet. It's a card that describes its
@@ -56,13 +61,9 @@ export default async function Page() {
         <p>
           At the top, below the datasheet's name, is the unit's profile: M, T,
           Sv, W, Ld, and OC, or Move, Toughness, Save, Wounds, Leadership, and
-          Objective Control. These six numbers give insight into how the
-          model(s) in this unit are likely to perform in different scenarios.
-        </p>
-
-        <p>
-          A datasheet may have more than one profile listed, depending on what
-          models the unit is composed of.
+          Objective Control. These six numbers give insight into its probable
+          perfomance in different scenarios. A datasheet may have more than one
+          profile listed, depending on what models the unit is composed of.
         </p>
 
         <Image
@@ -108,17 +109,13 @@ export default async function Page() {
 
         <p>
           Toughness is one of 3 characteristics that shape the model's
-          durability. It plays a role during the <em>roll to wound</em> phase of
-          each weapon activation. The tougher the model is, the stronger the
-          attacking weapon needs to be to have a better chance of wounding.
-        </p>
-
-        <p>
-          Refer to the{' '}
+          durability. It plays a role during the <em>roll to wound</em> part of
+          each{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#attack-sequence`}>
-            attack sequence
-          </Link>{' '}
-          for details.
+            weapon activation
+          </Link>
+          . The tougher the model is, the stronger the attacking weapon needs to
+          be to have a better chance of wounding.
         </p>
 
         <Image src={wound} alt="Wound roll probabilities" />
@@ -156,12 +153,7 @@ export default async function Page() {
         <p>
           Elite, durable models can also have an additional fixed{' '}
           <em>Invulnerable Save</em> which ignores AP. The defender can choose
-          which one to use. If the save check passes, damage is averted. Again,
-          refer to the{' '}
-          <Link href={`${wh40kRoute('The Battle Round')}#attack-sequence`}>
-            attack sequence
-          </Link>{' '}
-          for details.
+          which one to use. If the save check passes, damage is averted.
         </p>
 
         <blockquote>
@@ -199,8 +191,7 @@ export default async function Page() {
           The more wounds a model has, the longer it tends to stay in the fight.
           A durable target with a lot of wounds and good saves requires focused
           fire from multiple attackers to be taken down. It can be referred to
-          as an <em>anchor</em> or "answer me or die" unit, that ties multiple
-          attackers up until it's removed from play.
+          as an <em>anchor</em> or "answer me or die" unit.
         </p>
 
         <h3 id="leadership">Leadership (Ld)</h3>
@@ -298,15 +289,13 @@ export default async function Page() {
           36" and above is considered long range.
         </p>
 
-        <p>Range is not a factor for melee weapons.</p>
-
         <h3 id="attacks">Attacks (A)</h3>
 
         <p>
           This shows how many attacks the weapon makes per activation. You roll
-          as many dice per weapon as this number whenever it attacks. More
-          attacks mean more chances to hit and score a wound and more targets to
-          which wounds can be allocated.
+          this many dice per weapon per attack. More attacks mean more chances
+          to hit and score a wound. Unlike damage, wounds from multiple attacks
+          can be allocated to different models.
         </p>
 
         <Image
@@ -329,7 +318,7 @@ export default async function Page() {
           BS is for ranged weapons, while WS is for melee weapons. They mean the
           same thing: how likely the weapon is to hit its target. The number
           shows what must be the result of the <em>roll to hit</em> check during
-          weapon activation, for the target to be hit. A lower number means a
+          weapon activations, for the target to be hit. A lower number means a
           better chance to hit.
         </p>
 
@@ -351,10 +340,10 @@ export default async function Page() {
         <h3 id="armor-penetration">Armor Penetration (AP)</h3>
 
         <p>
-          AP negates <Link href="#save">armor saves</Link>, by reducing the
-          result of the target's <em>roll to save</em>. It's powerful but capped
-          by two common ceilings. AP cannot push past invulnerable saves, and is
-          wasted on weak 5+, 6+ saves.
+          AP negates <em>armor saves</em>, by reducing the result of the
+          target's <em>roll to save</em>. It's powerful but capped by two common
+          ceilings. AP cannot push past invulnerable saves, and is wasted on
+          weak 5+, 6+ saves.
         </p>
 
         <blockquote>
@@ -369,11 +358,10 @@ export default async function Page() {
         <h3 id="damage">Damage (D)</h3>
 
         <p>
-          Damage is the amount of <Link href="#wounds">wounds</Link> the weapon
-          takes away for each successful activation. Taking exactly as many
-          wounds required to finish off a target is ideal. Excess is lost.
-          Therefore, Damage is a way to determine what targets are optimal for
-          this weapon.
+          Damage is the amount of <em>wounds</em> the weapon takes away for each
+          successful activation. Taking exactly as many wounds required to
+          finish off a target is ideal. Excess is lost. Therefore, Damage is a
+          way to determine what targets are optimal for the given weapon.
         </p>
 
         <blockquote>
@@ -397,6 +385,11 @@ export default async function Page() {
           process.
         </p>
 
+        <Image
+          src={keywords}
+          alt="Example of keywords listed on a datasheet."
+        />
+
         <blockquote>
           <p>
             Certain rules apply only to <em>Infantry</em> units, others only to{' '}
@@ -408,23 +401,27 @@ export default async function Page() {
         </blockquote>
 
         <p>
-          All units have keywords. A datasheet always has at least one{' '}
-          <em>faction</em> keyword, which governs army composition, but some may
-          have more. Weapons also may or may not have keywords listed next to
-          their names.
+          A datasheet always has at least one <em>faction</em> keyword, which
+          governs army composition, but some may have more.
         </p>
       </section>
 
       <section>
         <h2 id="weapon-keywords">Common weapon keywords</h2>
+
         <p>
           Also called <em>Universal Special Rules</em> (USRs), weapon keywords
           are shared between many of WH40K's arm. They work best when layerd
           with other faction or unit abilities that enhance them further or fill
           the gaps. Here is a not-so-small list of the common ones.
         </p>
+
         <h3 id="assault">Assault</h3>
-        <small>Mobility</small>
+
+        <div className="badge">
+          <TbArrowBigUpLines /> Mobility
+        </div>
+
         <p>
           The weapon can be fired, even after the wielder has{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
@@ -433,38 +430,62 @@ export default async function Page() {
           this turn. Arms without this keywourd cannot be used after advancing.
           Assault weapons naturally fit a more mobile, agressive play.
         </p>
+
         <Image src={assault} alt="Boltgun vs Bolt rifle with assault keyword" />
+
         <h3 id="heavy">Heavy</h3>
-        <small>Mobility</small>
+
+        <div className="badge">
+          {' '}
+          <TbArrowBigUpLines /> Mobility
+        </div>
+
         <p>
           Add +1 to hit rolls if the unit remained stationary this turn. This
           rewards the opposite of assault - staying put - with better accuracy.
           The playstyle is to hold a position rather than gaining ground. Long
           range weapons pair nicely with this keyword.
         </p>
+
         <h3 id="rapid-fire">Rapid Fire X</h3>
-        <small>Range</small>
+
+        <div className="badge">
+          <TbRulerMeasure /> Range
+        </div>
+
         <p>
           If the target is within half of the weapon's maximum range, add +X to
           the attacks. The longer the range of the weapon, the better the
           coverage of the bonus. This supports situations where volume of fire
           is important, e.g. fighting hordes.
         </p>
+
         <Image src={rapidFire} alt="Ork Loota with a Rapid Fire 1 Deffgun" />
+
         <h3 id="melta">Melta X</h3>
-        <small>Range</small>
+
+        <div className="badge">
+          <TbRulerMeasure /> Range
+        </div>
+
         <p>
           If the target is within half of the weapon's maximum range, attacks
           deal +X damage on top. Melta weapons, which are high damage to begin
           with, use a dice roll to determine normal damage. This only makes them
           more powerful at close range.
         </p>
+
         <h3 id="pistol">Pistol</h3>
-        <small>Range</small>
+
+        <div className="badge">
+          <TbRulerMeasure /> Range
+        </div>
+
         <p>
           There are two distinct rules about pistols who start with a short
           range anyway.
         </p>
+
         <ul>
           <li>
             One can only shoot their pistols or all other weapons during the
@@ -473,8 +494,11 @@ export default async function Page() {
 
           <li>Pistols can be shot even within Engagement range.</li>
         </ul>
+
         <h3 id="torrent">Torrent</h3>
-        <small>Hit roll</small>
+
+        <div className="badge">Hit roll</div>
+
         <p>
           Attacks with such gear automatically hit their target, effectively
           skipping one of the 3 activation gates - the roll to hit. This is
@@ -489,7 +513,15 @@ export default async function Page() {
         />
 
         <h3 id="sustained-hits">Sustained Hits X</h3>
-        <small>Hit roll</small>
+
+        <div className="flex-center">
+          <div className="badge">Hit roll</div>
+
+          <div className="badge">
+            <PiDiceSix /> Critical effect
+          </div>
+        </div>
+
         <p>A critical hit (roll of 6 to hit) generates X extra hits.</p>
 
         <p>
@@ -518,7 +550,13 @@ export default async function Page() {
 
         <h3 id="lethal-hits">Lethal Hits</h3>
 
-        <small>Hit roll</small>
+        <div className="flex-center">
+          <div className="badge">Hit roll</div>
+
+          <div className="badge">
+            <PiDiceSix /> Critical effect
+          </div>
+        </div>
 
         <p>
           A critical hit (roll of 6 to hit) automatically wounds, bypassing
@@ -531,7 +569,13 @@ export default async function Page() {
 
         <h3 id="devastating-wounds">Devastating Wounds</h3>
 
-        <small>Wound roll</small>
+        <div className="flex-center">
+          <div className="badge">Wound roll</div>
+
+          <div className="badge">
+            <PiDiceSix /> Critical effect
+          </div>
+        </div>
 
         <p>
           A critical wound (roll of 6 to wound) deals <em>mortal wounds</em>{' '}
@@ -547,19 +591,15 @@ export default async function Page() {
 
         <p>Works really well with re-roll to wound abilities.</p>
 
-        <h3 id="twin-linked">Twin-linked</h3>
-
-        <small>Wound roll</small>
-
-        <p>
-          Operator can re-roll wound rolls. Works very well in combination with
-          Devastating Wounds and allows for{' '}
-          <Link href="#crit-fishing">crit fishing</Link>.
-        </p>
-
         <h3 id="anti-keyword">Anti-KEYWORD X+</h3>
 
-        <small>Wound roll</small>
+        <div className="flex-center">
+          <div className="badge">Wound roll</div>
+
+          <div className="badge">
+            <PiDiceSix /> Critical effect
+          </div>
+        </div>
 
         <p>
           Against a target with the listed keyword, a wound roll of X+ counts as
@@ -571,9 +611,19 @@ export default async function Page() {
 
         <Image src={anti} alt="Grav-gun firing at a vehicle." />
 
+        <h3 id="twin-linked">Twin-linked</h3>
+
+        <div className="badge">Wound roll</div>
+
+        <p>
+          Operator can re-roll wound rolls. Works very well in combination with
+          Devastating Wounds and allows for{' '}
+          <Link href="#crit-fishing">crit fishing</Link>.
+        </p>
+
         <h3 id="blast">Blast</h3>
 
-        <small>Target interaction</small>
+        <div className="badge">Target interaction</div>
 
         <p>
           Blast weapons gain +1 attack for every 5 models in the target unit,
@@ -584,7 +634,7 @@ export default async function Page() {
 
         <h3 id="precision">Precision</h3>
 
-        <small>Target interaction</small>
+        <div className="badge">Target interaction</div>
 
         <p>
           The attacker can choose to allocate wounds from a successful attack
@@ -595,9 +645,14 @@ export default async function Page() {
           weapons negate that.
         </p>
 
+        <Image
+          src={precision}
+          alt="Bolt sniper rifle hitting precice target."
+        />
+
         <h3 id="hazardous">Hazardous</h3>
 
-        <small>Operational risk</small>
+        <div className="badge">Operational risk</div>
 
         <p>
           After attacking, roll a D6 per hazardous weapon used (not per attack).
@@ -651,6 +706,7 @@ export default async function Page() {
         <h2 id="re-rolls" className="flex-center">
           Re-rolls <LuDices />
         </h2>
+
         <p>
           To re-roll a check means to pick up the required number of dice and
           roll them again, potentially improving the outcome. This happens
