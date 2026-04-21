@@ -98,6 +98,10 @@
   @apply px-1.5 py-0.5 rounded text-sm bg-surface border border-foreground/10 inline-flex gap-1 items-center shadow-sm;
 }
 
+@utility input {
+  @apply badge font-bold;
+}
+
 @utility box {
   @apply border border-foreground/10 bg-surface p-4 rounded-lg mb-6 shadow-sm space-y-4;
 }

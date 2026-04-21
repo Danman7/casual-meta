@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import arena from '@/app/assets/mk/arena.webp'
 import backward from '@/app/assets/mk/backward.webp'
@@ -10,10 +11,8 @@ import knockdown from '@/app/assets/mk/knockdown.webp'
 import stand from '@/app/assets/mk/stand.webp'
 import standBlock from '@/app/assets/mk/standblock.webp'
 import { MK_TITLE } from '@/app/constants'
-import { Diagram } from '@/app/ui/Diagram'
+import { mkRoute } from '@/app/mortal-kombat/constants'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { Pill } from '@/app/ui/Pill'
-import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 1
@@ -30,137 +29,135 @@ export default async function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <Section title="Forward and backward" id="forward-and-backward">
+      <section>
+        <h2 id="horizontal">Horizontal</h2>
+
         <p>
           Pressing left or right always moves your character in that direction
-          on the screen. Move notation, however, is relative to your opponent.
+          on the screen. Move notation, however, is relative to your opponent.{' '}
+          <em>Forward</em> is towards the opponent. <em>Backward</em> is away
+          from the opponent.
         </p>
 
-        <ul role="list">
-          <li>
-            <strong>Forward</strong>: Toward the opponent.
-          </li>
-          <li>
-            <strong>Backward</strong>: Away from the opponent.
-          </li>
-        </ul>
-
-        <Diagram description="If you are left of your opponent, forward is right. If you are right of your opponent, forward is left.">
-          <div className="flex flex-col gap-2 font-semibold items-center">
+        <div className="flex-list font-bold justify-center">
+          <div className="flex-center flex-col w-full md:w-auto">
             <div>Forward</div>
             <Image src={forward} alt="Character stepping forward." />
           </div>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
+          <div className="flex-center flex-col w-full md:w-auto">
             <div>Backward</div>
             <Image src={backward} alt="Character stepping backward." />
           </div>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Forward</div>
-            <Image
-              src={forward}
-              alt="Character stepping forward (mirrored)."
-              className="transform-[scale(-1,1)]"
-            />
-          </div>
+          <div className="flex-list font-bold">
+            <div className="flex-center flex-col w-full md:w-auto">
+              <div>Forward</div>
+              <Image
+                src={forward}
+                alt="Character stepping forward."
+                className="transform-[scale(-1,1)]"
+              />
+            </div>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Backward</div>
-            <Image
-              src={backward}
-              alt="Character stepping backward (mirrored)."
-              className="transform-[scale(-1,1)]"
-            />
+            <div className="flex-center flex-col w-full md:w-auto">
+              <div>Backward</div>
+              <Image
+                src={backward}
+                alt="Character stepping backward."
+                className="transform-[scale(-1,1)]"
+              />
+            </div>
           </div>
-        </Diagram>
+        </div>
 
         <p>
-          In-game move lists auto-adjust. External guides do not. For example:
+          In-game move lists auto-adjust, but external guides do not. For
+          example:
         </p>
 
         <ul role="list">
           <li>
-            <Pill>F3</Pill>: Toward the opponent, then press 3.
+            <span className="input">F3</span> means press toward the opponent,
+            then press 3.
           </li>
           <li>
-            <Pill>B2</Pill>: Away from the opponent, then press 2.
+            <span className="input">B2</span> means press away from the
+            opponent, then press 2.
           </li>
         </ul>
 
         <h3 id="dashing">Dashing</h3>
 
         <p>
-          Hold left or right to <em>walk</em> forward or backward. Double-tap
-          left or right to <em>dash</em> forward or backward.
+          Holding left or right is called <em>walking</em> or to walk up to or
+          away from the opponent. Double-tap left or right to <em>dash</em>{' '}
+          forward or backward. Dashes quickly close the distance or create space
+          when time is of the essence.
         </p>
+      </section>
 
-        <ul role="list">
-          <li>
-            Walking moves your character cautiously toward or away from the
-            opponent.
-          </li>
-          <li>Dashes quickly close distance or create space.</li>
-        </ul>
-      </Section>
+      <section>
+        <h2 id="stances">Stances (Vertical)</h2>
 
-      <Section title="Stances" id="stances">
-        <p>
-          <em>Stances</em> describe vertical behavior.
-        </p>
-
-        <Diagram>
-          <div className="flex flex-col gap-2 font-semibold items-center">
+        <div className="flex-list font-bold justify-center">
+          <div className="flex-center flex-col w-full md:w-auto">
             <div>Standing</div>
-            <Image src={stand} alt="Character standing in a neutral stance." />
+            <div className="md:h-46 flex items-end">
+              <Image
+                src={stand}
+                alt="Characters standing in a neutral stance."
+              />
+            </div>
           </div>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
+          <div className="flex-center flex-col w-full md:w-auto">
             <div>Crouching</div>
-            <Image src={crouch} alt="Character crouching low." />
+            <div className="md:h-46 flex items-end">
+              <Image
+                src={crouch}
+                alt="One character standing, one crouching low."
+              />
+            </div>
           </div>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
+          <div className="flex-center flex-col w-full md:w-auto">
             <div>Jumping</div>
-            <Image src={jump} alt="Character jumping upward." />
+            <div className="md:h-46 flex items-end">
+              <Image src={jump} alt="Character jumping upward." />
+            </div>
           </div>
-        </Diagram>
+        </div>
 
         <h3 id="standing">Standing</h3>
 
         <p>
-          The default state at round start is <em>Standing</em>.
+          <em>Standing</em> is the default stance when no direction is pressed.
+          All characters start the round standing. This is the most{' '}
+          <em>mobile</em> of the stance, as the player can move, block, attack,
+          jump, or crouch freely.
         </p>
 
-        <ul role="list">
-          <li>Standing is the most mobile stance.</li>
-          <li>You can move, block, attack, jump, or crouch.</li>
-        </ul>
-
         <p>
-          Inputs without directions (e.g. <Pill>1</Pill>, <Pill>21</Pill>) are
-          performed standing. In some guides, simple annotations like{' '}
-          <Pill>1</Pill>( or any other button) are replaces with{' '}
-          <Pill>Standing 1</Pill> which means the same.
+          Inputs without directions (e.g. <span className="input">1</span>,{' '}
+          <span className="input">21</span>) are performed standing. Some
+          sources add <em>Standing</em> in front of the input for clarity (
+          <span className="input">Standing 1</span> ={' '}
+          <span className="input">1</span>).
         </p>
 
         <h3 id="crouching">Crouching / Ducking</h3>
 
         <p>
-          Hold down to enter <em>crouching</em> or <em>ducking</em> stance.
-        </p>
-
-        <ul role="list">
-          <li>While crouching you have a smaller hitbox.</li>
-          <li>You can block and attack.</li>
-          <li>
-            But you <strong>cannot move</strong>.
-          </li>
-        </ul>
-
-        <p>
-          Croushing attacks are described with D for Down in front (.e.g.{' '}
-          <Pill>D2</Pill>,<Pill>D4</Pill>).
+          Hold down to duck and enter <em>crouching</em> stance. This reduces
+          your character's hitbox, making{' '}
+          <Link href={`${mkRoute('Anatomy of attacks')}#high`}>
+            high attacks
+          </Link>{' '}
+          miss, but <strong>prevents movement</strong>. Blocking and attacking
+          works as expected. Croushing attacks are described with D for Down in
+          front (.e.g. <span className="input">D2</span>,
+          <span className="input">D4</span>).
         </p>
 
         <h3 id="jumping">Jumping</h3>
@@ -193,28 +190,30 @@ export default async function Page() {
           air attacks and landing recovery. Ground moves designed to stop jumps
           are called <em>anti-airs</em>.
         </p>
-      </Section>
+      </section>
 
-      <Section title="States" id="states">
-        <Diagram>
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Stand block</div>
+      <section>
+        <h2 id="states">States</h2>
+
+        <div className="flex-list font-bold justify-center">
+          <div className="flex-center flex-col w-full md:w-auto">
+            <div>High block</div>
             <Image src={standBlock} alt="Character blocking high." />
           </div>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Crouch block</div>
+          <div className="flex-center flex-col w-full md:w-auto">
+            <div>Low block</div>
             <Image src={crouchBlock} alt="Character blocking low." />
           </div>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
+          <div className="flex-center flex-col w-full md:w-auto">
             <div>Knockdown</div>
             <Image
               src={knockdown}
               alt="Character knocked down on the ground."
             />
           </div>
-        </Diagram>
+        </div>
 
         <h3 id="blocking">Blocking</h3>
 
@@ -247,9 +246,9 @@ export default async function Page() {
             (pressure) and attack on their terms (setup).
           </li>
         </ul>
-      </Section>
+      </section>
 
-      <Section title="Arena limitations" id="arena-limitations">
+      <section title="Arena limitations" id="arena-limitations">
         <p>All fights occur in a single-level arena.</p>
 
         <ul role="list">
@@ -286,7 +285,7 @@ export default async function Page() {
             Must jump over the opponent or use a side-switching move to escape.
           </li>
         </ul>
-      </Section>
+      </section>
     </>
   )
 }

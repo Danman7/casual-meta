@@ -188,10 +188,10 @@ export default async function Page() {
         </p>
 
         <p>
-          So if you see <div className="badge">1</div> that means press Front
+          So if you see <span className="input">1</span> that means press Front
           Punch / X / Square button without any direction. If you see{' '}
-          <div className="badge">F3</div> that means press Forward and Front
-          Kick / A / Cross. <div className="badge">DB2</div> means press Down
+          <span className="input">F3</span> that means press Forward and Front
+          Kick / A / Cross. <span className="input">DB2</span> means press Down
           then Back then Rear Punch / Y / Triangle.
         </p>
 
