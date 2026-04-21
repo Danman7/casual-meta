@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 import chameleon from '@/app/assets/mk1/chameleon.webp'
 import ferra from '@/app/assets/mk1/ferra.webp'
@@ -10,11 +9,10 @@ import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK_TITLE } from '@/app/constants'
-import { mkRoute } from '@/app/mortal-kombat/constants'
 import { Callout } from '@/app/ui/Callout'
-import { ImageTextSection } from '@/app/ui/ImageTextSection'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
+import { PlayOrSkip } from '@/app/ui/PlayOrSkip'
 import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -32,187 +30,169 @@ export default async function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <ImageTextSection
-        image={Scorpion}
-        imageAlt="Scorpion in Mortal Kombat 1"
-        text="Scorpion in Mortal Kombat 1 is beginner-friendly and frequently played at all levels. His major strength is interrupting unsafe actions from anywhere on the screen, converting them into simple adaptable combos. His toolbox includes both close and long-range options but lacks efficient offense. For that, he needs a proper Kameo. New players will find him easier when reacting rather than initiating pressure."
+      <section className="md:flex-center md:flex-nowrap">
+        <Image
+          className="max-h-72 object-cover object-[0%_0%] md:w-1/2 md:max-h-full"
+          src={Scorpion}
+          alt="Scorpion in Mortal Kombat 1"
+          loading="eager"
+        />
+
+        <section className="md:w-1/2">
+          <p>
+            MK1's Scorpion excels at controlling space and punishing mistakes.
+            His disjointed normals with good reach, combined with multiple
+            full-screen options respect the oponent into minding their step.
+          </p>
+
+          <p>
+            Lacking a standing low or overhead attack, or good plus frames, on
+            his own, he's rather suited for a counter-attacking style.
+            Fortunately, his toolbox is modular enough to work with different
+            Kameos to fill the gaps in his offense.
+          </p>
+        </section>
+      </section>
+
+      <PlayOrSkip
+        pros={
+          <>
+            <div>
+              <div className="font-bold">Rewards good fundamentals</div>
+              <div className="text-sm">
+                He has no forms to manage. No complex gimicks. He's a natural
+                fit, if you're a beginner, or enjoy a straightforward game.
+              </div>
+            </div>
+
+            <div>
+              <div className="font-bold">Reactive play</div>
+              <div className="text-sm">
+                Numerous options for converting carelessness into solid damage
+                at any distance.
+              </div>
+            </div>
+
+            <div>
+              <div className="font-bold">Flexible kit</div>
+              <div className="text-sm">
+                Works with many Kameos, some allowing for throw and armor
+                combos.
+              </div>
+            </div>
+
+            <div>
+              <div className="font-bold">Simple combos</div>
+              <div className="text-sm">
+                His combo structure is easy to learn and reliable, without the
+                need for tight execution to get strong damage.
+              </div>
+            </div>
+          </>
+        }
+        cons={
+          <>
+            <div>
+              <div className="font-bold">Kameo-dependent offense</div>
+              <div className="text-sm">
+                On his own, he lacks true mix-ups, or 50/50s, and may feel
+                limited. He depends on staggers, conditioning and baiting, all
+                requiring patience.
+              </div>
+            </div>
+          </>
+        }
       />
 
-      <Section title="Scouting the opponent" id="neutral">
-        <div className="flavor">
-          This section covers key moves and methods, helpful in{' '}
-          <Link href={mkRoute('Neutral')}>Neutral</Link>.
-        </div>
+      <section>
+        <h2 id="key-strings">Key strings</h2>
 
-        <p className="font-bold">
-          Scorpion lacks mix-ups or frame advantage. He relies on
-          straightforward moves for each distance and scenario.
-        </p>
-
-        <h3 id="standing-2">Mid-screen</h3>
+        <h3 id="normals">Normals</h3>
 
         <p>
-          Learn how far <Pill>Standing 2</Pill> stretches. This is{' '}
-          <em>your primary poke</em> - safe, fast, disjointed high punch with
-          good range. Aim to hit approaching foes at its maximum range. Once
-          comfortable, start confirming hits with <Pill>21</Pill>. If they
-          block: stop. On hit: continue into Spear - <Pill>21 BF1</Pill>
+          <span className="input">2</span> - a safe, fast, disjointed high punch
+          with good range - is a good starting point. It's your{' '}
+          <em>primary poke</em>. Memo it's reach and you'll often surprise
+          approaching foes.
         </p>
 
-        <ImageWithCaption
+        <p>
+          <span className="input">21</span> is your main <em>hit confirm</em>{' '}
+          out of <span className="input">2</span>. If they fail to block
+          continue into Spear: <span className="input">21 BF1</span> - the
+          easiest way to start a punish. The full string{' '}
+          <span className="input">214</span> can be cut short into a stagger{' '}
+          <span className="input">21 Throw</span>
+        </p>
+
+        <Image
           src={scorp2}
           alt="Scorpion's Standing 2 attack."
-          caption="Scorpion's Standing 2 reaches far for a regular punch. Half of its hitbox is disjointed, making it safe to most quick counter-pokes."
+          className="picture profile-img object-[0%_18%]"
         />
 
         <p>
-          If Standing 2 doesn't reach go for the <em>The Spear</em>{' '}
-          <Pill>BF1</Pill>. It is Scorpion's signature space control high
-          projectile - unsafe, somewhat slow, with infinite active frames.
-          Although expected, it often interrupts opponents' dashes, catches them
-          at jump ends, or during projectile casts.
-        </p>
-
-        <ImageWithCaption
-          src={spear}
-          alt="Scorpion's spear move."
-          caption="The Spear can catch a foe at full screen distance. It will stun and bring him next to Scorpion for a free combo."
-        />
-
-        <p>
-          They will block, jump, or teleport around your Spear. Because it's a{' '}
-          <em>high</em> attack, some players will duck under it. If you spot
-          this pattern, use <Pill>BF1ex</Pill> Enhanced Spear, which hits{' '}
-          <em>mid</em>.
+          <span className="input">12</span> at 7 frames is your <em>fastest</em>{' '}
+          hit confirm, for when they get straight in your face and it's too late
+          for <span className="input">21</span>. It can be continued in the same
+          fashion into a Spear.
         </p>
 
         <p>
-          <Pill>Back 2</Pill> is your best anti-air. It can be{' '}
-          <em>shortcut cancelled</em> into any back-forward move.{' '}
-          <Pill>B2 F1</Pill> cancels into Spear without pressing back twice.
-          Learn this early to control air pressure.
-        </p>
-
-        <h3 id="up-close">Up close</h3>
-
-        <p>
-          <Pill>Forward 32</Pill> is your{' '}
-          <em>optimal launcher and combo starter</em>. It can be{' '}
-          <em>chained up to three times</em>, with multiple extensions. The
-          first hit is an advancing <em>mid</em> and a decent check for
-          crouching opponents. Start pressure with this string when{' '}
-          <Pill>21</Pill> doesn't feel right.
+          <span className="input">F3</span> is a useful advancing mid check for
+          opponents that like to crouch near you. It unfolds into
+          <span className="input">F32</span> - your principal <em>launcher</em>{' '}
+          and optimal <em>combo starter</em>. It can be chained up to three
+          times in a row. Starting with it allows you to use the Spear later on
+          for better extensions.
         </p>
 
         <p>
-          If you're touching and their pressure is too much, use <Pill>12</Pill>
-          . It's your fastest hit confirm but has shorter reach, lower damage,
-          and limited extensions.
+          <span className="input">B2</span> is your chief <em>anti-air</em> -
+          fast, safe and shortcut cancellable into any forward special (e.g.{' '}
+          <span className="input">B3 F1</span> cancels into Spear). You can get
+          a full combo out of a poorly judged jump-in.
         </p>
 
         <p>
-          Blocking is always an option, but expect to get knocked down. If they
-          sustain pressure on your wakeup, use{' '}
-          <em>Armored Enhanced Blazing Charge</em> <Pill>BF2ex</Pill>. Unless
-          they block, it suspends their offense and can be comboed out of with
-          the right Kameos. The Charge is quicker than the Spear, but fails at
-          controlling space due to short active frames.
+          <span className="input">B3</span> is a very singular move. It controls
+          space via a very far reaching, disjointed, slow, unsafe, two hit
+          mid-low attack. The first mid is cancellable into any special, and can
+          be also shortcut cancelled into forward specials. Used correctly, it
+          can condition opponents to anticipate the far low and keep
+          pre-blocking low or pre-jumping (into your{' '}
+          <span className="input">B2</span>)
         </p>
 
-        <h3 id="far-away">Far away</h3>
-
-        <p>
-          The Charge won't reach and the Spear is too slow at full screen. For
-          this distance, use <em>Flame Port</em> <Pill>DB3</Pill>. Scorpion
-          dashes away from his foe, loops through the screen, and throws a punch
-          from the other side. It's a multi-purpose teleport.
-        </p>
-
-        <p>
-          You can interrupt heavy zoners. Record a dummy spamming projectiles
-          (e.g., Liu Kang's BF1) and practice timing the Port with the spell. A
-          few successful hits will discourage zoning.
-        </p>
-
-        <p>
-          Experienced players can bait a projectile throw and block your Port,
-          which is unsafe. Occasionally vary with the enhanced version{' '}
-          <Pill>DB3ex</Pill>. It lands Scorpion on the other side, skipping the
-          attack. Enhanced Port into Throw is the simplest route to disrupt
-          their defense. You can also practice Enhanced Port into{' '}
-          <Pill>Down 1</Pill> or micro-duck then <Pill>Standing 1</Pill>.
-        </p>
-
-        <p>
-          <em>Devouring Flame</em> <Pill>DB4</Pill> works against players who
-          stay away and block. It's a <em>low</em>-hitting special that spawns
-          under the target's feet at any distance. The enhanced version does
-          guaranteed damage over time if it connects. Keep in mind it's slow and
-          unsafe and can be punished by mobile foes.
-        </p>
-
-        <h3 id="conditioning">Conditioning</h3>
-
-        <p>
-          Scorpion's <Pill>Back 3</Pill> is unique. He launches his Kunai for a
-          disjointed two-hit mid-low attack. It's slow and unsafe but reaches
-          far. The threat of a low hit at this distance conditions opponents to
-          block low or jump forward. Don't forget your <Pill>B2</Pill>.
-        </p>
-
-        <ImageWithCaption
+        <Image
           src={scorpb3}
           alt="Scorpion's back 3 attack."
-          className="max-h-80 object-cover object-[0%_50%]"
-          caption="Back 3 reaches far but not full-screen. Can be punished with a well-timed projectile or jump attack."
+          className="picture profile-img max-h-68"
         />
 
-        <Callout title="Back 3 Cancels">
-          <div className="flavor">
-            The first mid hit of <Pill>B3</Pill> can be cancelled into any
-            special or Kameo move.
-          </div>
-
-          <p>
-            <strong>B3 F1</strong> cancels into Spear. <strong>B3 F2</strong>{' '}
-            cancels into Dash.
-          </p>
-
-          <p>
-            <strong>B3 F4ex</strong> cancels into enhanced Devouring Flame -
-            good chip damage but unsafe.
-          </p>
-
-          <p>
-            <strong>B3 DB3ex</strong> cancels into Enhanced Teleport. Forces
-            them to block, giving your teleport more freedom.
-          </p>
-        </Callout>
+        <h3 id="specials">Specials</h3>
 
         <p>
-          If neither commits to attacking, promptly tap <Pill>1</Pill> (quickest
-          recovery) into <Pill>BF1</Pill>. Seeing a whiff may motivate opponents
-          to dash forward or do an unsafe move. If this happens, the Spear
-          connects. This is cheap but legit tech.
+          <span className="input">BF1</span> - Scorpion's signature move - the
+          Spear, is a space controlling high projectile. On hit it stuns, drags
+          and restands the opponent next to you for the easiest combo extension
+          ever. Hitting with a Spear a second time during the same combo will
+          drop them. Be mindful at which point in a combo it's used.
         </p>
 
         <p>
-          Another approach is <em>derailing</em> your strings. <Pill>122</Pill>{' '}
-          has a punishable gap between the second and third hit and is
-          vulnerable to up block. Cut it short - <Pill>12</Pill> into throw. If
-          your foe expects the full string, they get thrown.
+          Even as predictable as it is, the Spear catches players dashing,
+          miss-jumping and attempting slow casts much more often than they
+          expect. The enhanced version hits mid, surprising those cheeky foes
+          that like to duck under it.
         </p>
 
-        <p>
-          Same with any Forward 3 string - <Pill>F32</Pill> or <Pill>F34</Pill>.
-          If they predict the full string, do only <Pill>F3</Pill> into throw.{' '}
-          <Pill>F3</Pill> is also a good <em>shimmy</em>. If you delay Forward 3
-          while walking up, they may duck expecting a throw. The mid hits them
-          instead.
-        </p>
-      </Section>
+        <Image src={spear} alt="Scorpion's spear move." />
+      </section>
 
-      <Section title="Converting into damage" id="damage">
+      <section>
+        <h2 id="combos">Combos</h2>
+
         <div className="flavor">
           This section covers how you can continue after landing a hit.
         </div>
@@ -410,7 +390,7 @@ export default async function Page() {
             </li>
           </ul>
         </Callout>
-      </Section>
+      </section>
 
       <Section title="Kameos" id="kameos">
         <div className="flavor">

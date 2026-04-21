@@ -44,7 +44,7 @@ export default async function Page() {
           <>
             <div>
               <div className="font-bold">Beginner-friendly</div>
-              <div className="flavor">
+              <div className="text-sm">
                 Models are easy to find and paint. Clear rules. Start small,
                 expand gradually, and remain competitive without complex
                 mechanics.
@@ -53,7 +53,7 @@ export default async function Page() {
 
             <div>
               <div className="font-bold">Jacks-of-all-trades</div>
-              <div className="flavor">
+              <div className="text-sm">
                 Flexible detachments and leaders. Unit choices cover shooting,
                 melee, durability, mobility, and support.
               </div>
@@ -61,7 +61,7 @@ export default async function Page() {
 
             <div>
               <div className="font-bold">Widely played</div>
-              <div className="flavor">
+              <div className="text-sm">
                 Early adoption in new codexes. A lot of competative army list
                 examples.
               </div>
@@ -72,14 +72,14 @@ export default async function Page() {
           <>
             <div>
               <div className="font-bold">Roster bloat</div>
-              <div className="flavor">
+              <div className="text-sm">
                 Many units overlap, where some struggle to find a role.
               </div>
             </div>
 
             <div>
               <div className="font-bold">Frequent changes</div>
-              <div className="flavor">
+              <div className="text-sm">
                 They get many releases, which means many updates. Strong
                 combinations get nerfed quickly.
               </div>
@@ -87,7 +87,7 @@ export default async function Page() {
 
             <div>
               <div className="font-bold">Low specialization</div>
-              <div className="flavor">
+              <div className="text-sm">
                 Marines win through combined arms and focus fire (Oath of
                 Moment), not dominating a certain phase or aspect of the game.
               </div>
