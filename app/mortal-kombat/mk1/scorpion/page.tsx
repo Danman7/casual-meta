@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import chameleon from '@/app/assets/mk1/chameleon.webp'
 import ferra from '@/app/assets/mk1/ferra.webp'
@@ -9,8 +10,8 @@ import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK_TITLE } from '@/app/constants'
+import { mkRoute } from '@/app/mortal-kombat/constants'
 import { Callout } from '@/app/ui/Callout'
-import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
 import { PlayOrSkip } from '@/app/ui/PlayOrSkip'
 import { Section } from '@/app/ui/Section'
@@ -48,8 +49,7 @@ export default async function Page() {
           <p>
             Lacking a standing low or overhead attack, or good plus frames, on
             his own, he's rather suited for a counter-attacking style.
-            Fortunately, his toolbox is modular enough to work with different
-            Kameos to fill the gaps in his offense.
+            Fortunately, he pairs nicely with many Kameos to fill the gaps.
           </p>
         </section>
       </section>
@@ -77,7 +77,7 @@ export default async function Page() {
               <div className="font-bold">Flexible kit</div>
               <div className="text-sm">
                 Works with many Kameos, some allowing for throw and armor
-                combos.
+                combos, others for mix-ups.
               </div>
             </div>
 
@@ -93,11 +93,11 @@ export default async function Page() {
         cons={
           <>
             <div>
-              <div className="font-bold">Kameo-dependent offense</div>
+              <div className="font-bold">Kameo-dependent</div>
               <div className="text-sm">
-                On his own, he lacks true mix-ups, or 50/50s, and may feel
-                limited. He depends on staggers, conditioning and baiting, all
-                requiring patience.
+                On his own, he lacks true mix-ups, or 50/50s, an invincible
+                wake-up, and may feel limited. He depends on staggers,
+                conditioning and baiting, all requiring patience.
               </div>
             </div>
           </>
@@ -121,7 +121,8 @@ export default async function Page() {
           out of <span className="input">2</span>. If they fail to block
           continue into Spear: <span className="input">21 BF1</span> - the
           easiest way to start a punish. The full string{' '}
-          <span className="input">214</span> can be cut short into a stagger{' '}
+          <span className="input">214</span> can be cut short into a{' '}
+          <Link href={`${mkRoute('Pressure')}#stagger`}>stagger</Link>{' '}
           <span className="input">21 Throw</span>
         </p>
 
@@ -135,16 +136,19 @@ export default async function Page() {
           <span className="input">12</span> at 7 frames is your <em>fastest</em>{' '}
           hit confirm, for when they get straight in your face and it's too late
           for <span className="input">21</span>. It can be continued in the same
-          fashion into a Spear.
+          fashion into a Spear. The full string{' '}
+          <span className="input">122</span> can also be staggered as{' '}
+          <span className="input">12 Throw</span>. It's even better as the last
+          hit is an overhead, and foes may go for an <em>up block</em>.
         </p>
 
         <p>
           <span className="input">F3</span> is a useful advancing mid check for
           opponents that like to crouch near you. It unfolds into
           <span className="input">F32</span> - your principal <em>launcher</em>{' '}
-          and optimal <em>combo starter</em>. It can be chained up to three
-          times in a row. Starting with it allows you to use the Spear later on
-          for better extensions.
+          (F4 is not worth it) and optimal <em>combo starter</em>. It can be
+          chained up to three times in a row. Starting with it allows you to use
+          the Spear later on for better extensions.
         </p>
 
         <p>
@@ -173,12 +177,15 @@ export default async function Page() {
         <h3 id="specials">Specials</h3>
 
         <p>
-          <span className="input">BF1</span> - Scorpion's signature move - the
-          Spear, is a space controlling high projectile. On hit it stuns, drags
-          and restands the opponent next to you for the easiest combo extension
-          ever. Hitting with a Spear a second time during the same combo will
-          drop them. Be mindful at which point in a combo it's used.
+          <span className="input">BF1</span> - Scorpion's signature move - the{' '}
+          <em>Spear</em>, is a space controlling high projectile. On hit it
+          stuns, drags and restands the opponent next to you for the easiest
+          combo extension ever. Hitting with a Spear a second time during the
+          same combo will drop them. Be mindful at which point in a combo it's
+          used.
         </p>
+
+        <Image src={spear} alt="Scorpion's spear move." className="picture" />
 
         <p>
           Even as predictable as it is, the Spear catches players dashing,
@@ -187,107 +194,141 @@ export default async function Page() {
           that like to duck under it.
         </p>
 
-        <Image src={spear} alt="Scorpion's spear move." />
+        <p>
+          <span className="input">DB3</span> - the other signature move - the{' '}
+          <em>Flameport</em>, tracks to the other side of the opponent, hitting
+          them on arival. On the surface, it's an anti-zoning tool, but the
+          enhanced version starts up in a flash and skips the hit, making it
+          safe. Enhanced air port is also a combo extender.
+        </p>
+
+        <p>
+          Conditioning the opponent into blocking your Flameports can open them
+          up for an EX port into a throw. If they tend to respond to ports with
+          a counter-attack , try ducking, or a micro-duc into a chainable
+          attack.
+        </p>
+
+        <p>
+          <span className="input">DB2</span> <em>Twisted Kyo</em> is an unsafe,
+          multi-hit combo ender, with strong chip damage, that knocks the
+          opponent down. It works with standing foes, thus best placed after a
+          Spear.
+        </p>
+
+        <p>
+          Enhanced <span className="input">BF4</span> <em>Devouring Flame</em>{' '}
+          is an unblockable, low, damage-over-time special that tracks the
+          opponent. It's reasonable for waking up players that like to stay away
+          and block, yet can be used as an ender to chip post-combo.
+        </p>
+
+        <p>
+          <em>Blazing Charge</em> <span className="input">BF2</span>, or simply
+          the Charge, is a very quick (for a special) advancing interruption
+          that covers good distance and knocks down the opponent. A quirk it has
+          is the short active frames. You might end up pressing against them if
+          you don't polish the move.
+        </p>
+
+        <p>
+          More popular, is the Enhanced Charge, that adds armor. It's a useful
+          getup breaker and armor combo starter, but only with a Kameo.
+        </p>
       </section>
 
       <section>
-        <h2 id="combos">Combos</h2>
-
-        <div className="flavor">
-          This section covers how you can continue after landing a hit.
-        </div>
-
-        <p className="font-bold">
-          When playing online, consistent execution outweighs maximum damage.
-        </p>
-
-        <h3 id="bread-n-butter">Bread and butter combos</h3>
+        <h2 id="combos">Solo combos</h2>
 
         <p>
-          Follow up on what you know. Open with <Pill>12/21/B2</Pill> into
-          Spear. The optimal ender is <Pill>33 DB2</Pill>. This maximizes damage
-          but isn't always available.
+          Scorpion’s combo structure is relatively simple. Common building
+          blocks, both on the ground and in the air, are easily extended via
+          gradual meter usage. It's approachable for beginners while still
+          allowing harder optimal routes for advanced players.
         </p>
 
-        <Callout>
-          <div>
-            <Pill>21 BF1 33 DB2</Pill>
-          </div>
-          <div className="flavor mt-2">
-            Basic 210 damage starter. Use this for your first online matches.
-            Once consistent, move on.
-          </div>
-        </Callout>
+        <h3 id="core">Core</h3>
 
         <p>
-          To maximize damage, learn to juggle opponents with <Pill>F32</Pill>.
+          Scorpion does enough damage. Don't go for <em>training mode max</em>{' '}
+          damage. Go for <em>match-ready consistent</em> damage.
         </p>
-
-        <Callout>
-          <Pill>21 BF1 F32 F32 F32 F34 BF2</Pill>
-          <div className="flavor mt-2">
-            Meterless 342 damage. The height after the third F32 is low.
-            Connecting F34 into Charge can be tight.
-          </div>
-        </Callout>
 
         <p>
-          Starting with <Pill>F32</Pill> and delaying the Spear lets you use the
-          better ender for better results.
+          Only as a building block, practice Spear into Twisted Kyo ender -{' '}
+          <span className="input">BF1 33 DB2</span>, then{' '}
+          <span className="input">21 BF1 33 DB2</span> (<em>210 damage</em>,
+          consistent basic). Also, refine connecting 3{' '}
+          <span className="input">F32</span>s in a row, but if you can't, 2 in a
+          row are good enough for new players.
         </p>
-
-        <Callout>
-          <Pill>F32 F32 F32 4 BF1 33 DB2</Pill>
-          <div className="flavor mt-2">
-            Meterless 365 damage. Connecting Standing 4 after the last F32 is
-            the trickiest part.
-          </div>
-        </Callout>
 
         <p>
-          The last two can be your bread and butter combos. You can spend meter
-          to enhance damage, but it requires <em>enhanced air Kyo Snag</em>.
-          This is a Spear-like special used mid-air to grab opponents.
+          It's simplest to start on the ground and best to reserve the spear for
+          later on. Let's try to bridge our building blocks together.
         </p>
 
-        <Callout>
-          <ul className="space-y-4">
-            <li>
-              <Pill>
-                21 BF1 F32 F32 J12 airDB2ex{' '}
-                <div className="flavor">small pause</div> 111 airDB2
-              </Pill>
-              <div className="flavor mt-2">
-                One bar 377 damage. The pause delays 111 until both fighters are
-                lower to the ground, making the final airDB2 connect.
-              </div>
-            </li>
-            <li>
-              <Pill>
-                F32 F32 J12 airDB2ex <div className="flavor">small pause</div>{' '}
-                111 BF1 33 DB2
-              </Pill>{' '}
-              <div className="flavor mt-2">
-                One bar <strong>407</strong> damage. Same pause but this time,
-                because you delayed the Spear, you can connect into the familiar
-                ender.
-              </div>
-            </li>
-          </ul>
-        </Callout>
+        <p>
+          <span className="input">F32 F32 F32 4 BF1 33 DB2</span> -{' '}
+          <em>365 damage</em>. This is peak bread-and-butter, meterless,
+          consistent, ground-only damage. If the{' '}
+          <span className="input">4</span> before the Spear gives you trouble,
+          reduce the juggles to 2.
+        </p>
 
-        <ImageWithCaption
+        <p>
+          While the above is optimal, connecting with{' '}
+          <span className="input">F32</span> might be trickier than with{' '}
+          <span className="input">12/21</span>. If you adapt your ender you can
+          start with Spear, after which still chain the launcher.
+        </p>
+
+        <p>
+          <span className="input">21 BF1 F32 F32 F32 F34 BF2</span> -{' '}
+          <em>342 damage, 0 bars</em>. Less damage and the height after the
+          third <span className="input">F32</span> will be low, so connecting
+          the <span className="input">F34</span> into the Charge should be
+          practiced.
+        </p>
+
+        <p>
+          If you're willing to spend a bar of meter and go airborne, both of the
+          above can be extended using the air <em>Kyo Snag</em> and reducing the
+          juggles to 2. Practice <span className="input">F32 jump 12 xDB2</span>
+          .
+        </p>
+
+        <p>
+          <span className="input">
+            21 BF1 F32 F32 jump 12 xDB2 pause 111 DB2 land
+          </span>{' '}
+          - <em>377 damage, 1 bar</em>. This is out of the Spear, where the
+          delayed <span className="input">111</span> gets the fighters closer to
+          the ground, so the final non-enhanced{' '}
+          <span className="input">DB2</span> can connect.
+        </p>
+
+        <p>
+          <span className="input">
+            F32 F32 jump 12 xDB2 pause 111 land BF1 33 DB2
+          </span>{' '}
+          - <em>407 damage, 1 bar</em>. Same idea, but out of the juggle first
+          route. This is peak, consistent, one bar damage you can pull off in a
+          match.
+        </p>
+
+        <Image
           src={scorpAirDB2}
           alt="Scorpion's air down back 2 special."
-          caption="Scorpion's enhanced air Down Back 2 can be chained multiple times in a row, but costs meter each time and has diminishing returns compared to continuing with 111."
+          className="picture profile-img object-[0%_10%]"
         />
 
-        <h3 id="in-the-corner">In the corner</h3>
+        <h3 id="corner">Corner</h3>
 
         <p>
-          <Pill>Standing 4</Pill> keeps most of its damage through combo
-          scaling. In the corner, knockback isn't a factor and you can chain two
-          in a row to spike damage.
+          <span className="input">Standing 4</span> keeps most of its damage
+          through combo scaling. In the corner, knockback isn't a factor and you
+          can chain two in a row to spike damage.
         </p>
 
         <Callout>

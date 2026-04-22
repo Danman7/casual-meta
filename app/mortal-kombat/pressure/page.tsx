@@ -139,7 +139,7 @@ export default async function Page() {
 
         <p className="font-bold">Varying your attacks is important.</p>
 
-        <h3 id="string-derail">String derail</h3>
+        <h3 id="stagger">Stagger (String derail)</h3>
 
         <p>
           One approach is to cut one of your strings short. Say your character
