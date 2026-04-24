@@ -11,13 +11,13 @@ export const PlayOrSkip: React.FC<{
     <div className="flex-list md:flex-nowrap items-start">
       <div className="md:w-1/2">
         <h3 className="lead flex-center">
-          Yes <IoThumbsUp />
+          If you like <IoThumbsUp />
         </h3>
         <div className="divide-y divide-foreground/20 *:py-2">{pros}</div>
       </div>
       <div className="md:w-1/2">
         <h3 className="lead flex-center">
-          Maybe <FaBalanceScale />
+          If you don't mind <FaBalanceScale />
         </h3>
         <div className="divide-y divide-foreground/20 *:py-2">{cons}</div>
       </div>
