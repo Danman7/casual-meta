@@ -30,8 +30,8 @@ export default async function Page() {
           <div>
             <div className="font-bold">Own the space.</div>
             <div>
-              His rockets can travel in many patterns, staying on the screen for
-              a long time, allowing him to pressure or zone when necessary. He
+              Her rockets can travel in many patterns, staying on the screen for
+              a long time, allowing her to pressure or zone when necessary. She
               also has multiple good advancing normals.
             </div>
           </div>
@@ -40,7 +40,7 @@ export default async function Page() {
             <div className="font-bold">Accessible versatile combos.</div>
             <div>
               Once you understand the main pattern of launching into teleport,
-              from his air ground bounce, you can go for damage, screen carry,
+              from her air ground bounce, you can go for damage, screen carry,
               knockdown, or a safe jump.
             </div>
           </div>
@@ -48,7 +48,7 @@ export default async function Page() {
           <div>
             <div className="font-bold">Unsafe mixup.</div>
             <div>
-              He has cancellable standing overhead and low options, but unsafe
+              She has cancellable standing overhead and low options, but unsafe
               without Kameo support.
             </div>
           </div>
