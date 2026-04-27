@@ -120,7 +120,7 @@ export default async function Page() {
           </p>
 
           <p>
-            Eventhough the <em>Plasma gun in standard mode</em> (Rapid Fire 1,
+            Even though the <em>Plasma gun in standard mode</em> (Rapid Fire 1,
             S7, AP-2, D1) deals only 1 damage, it can be effective.
           </p>
         </blockquote>
@@ -217,7 +217,7 @@ export default async function Page() {
 
         <blockquote>
           <p>
-            Knights are welcomed in most WH40K variants, but one should inform
+            Knights are welcome in most WH40K variants, but one should inform
             their opponent beforehand to assure they are properly prepared.
           </p>
         </blockquote>

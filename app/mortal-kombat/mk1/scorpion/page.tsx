@@ -9,9 +9,6 @@ import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK_TITLE } from '@/app/constants'
-import { Callout } from '@/app/ui/Callout'
-import { Pill } from '@/app/ui/Pill'
-import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 8
@@ -40,8 +37,8 @@ export default async function Page() {
           <div>
             <div className="font-bold">Rewards good fundamentals.</div>
             <div>
-              He has no forms to manage. No complex gimicks. He's a natural fit,
-              if you're a beginner, or enjoy a more direct playstyle.
+              He has no forms to manage. No complex gimmicks. He's a natural
+              fit, if you're a beginner, or enjoy a more direct playstyle.
             </div>
           </div>
 
@@ -160,16 +157,16 @@ export default async function Page() {
 
         <p>
           <span className="input">DB3</span> is the <em>Flameport</em>. It
-          tracks to the other side of the opponent, hitting them on arival. On
+          tracks to the other side of the opponent, hitting them on arrival. On
           the surface, it's an anti-zoning tool, but the enhanced version starts
           up in a flash and skips the hit, making it safe.
         </p>
 
         <p>
-          <span className="input">xDB3</span> laucnhes much faster and skips the
+          <span className="input">xDB3</span> launches much faster and skips the
           hit, making it safe. Conditioning the opponent into blocking your
           Flameports can open them up for a surprise throw. If they tend to
-          respond to ports with a counter-attack , try ducking, or a micro-duc
+          respond to ports with a counter-attack, try ducking, or a micro-duck
           into a chainable attack.
         </p>
 
@@ -364,103 +361,51 @@ export default async function Page() {
           <em>Trap Drop</em> <span className="input">K</span> throws a stun bomb
           next to the opponent that detonates after a second. If you time it
           when Scorpion jumps off his foe during a throw, you can combo out of
-          it -{' '}
-          <span className="input">Throw timely K F32 F32 4 BF1 33 DB2</span> -{' '}
-          <em>220 damage out of a throw (normally 110)</em>.
+          it - <span className="input">Grab timely K F32 F32 4 BF1 33 DB2</span>{' '}
+          - <em>220 damage out of a throw (normally 110)</em>.
         </p>
 
         <h3 id="ferra">Ferra </h3>
 
         <Image
-          className="max-w-24 float-left mb-0 mr-2"
+          className="max-w-24 float-left mr-4"
           src={ferra}
           alt="A portrait of Ferra."
         />
 
         <p>
           Ferra on the other hand, helps mostly with the mix-up, but is slightly
-          more technical than Mavado.
-        </p>
-
-        <p>
-          On pressing <Pill>K</Pill>, she goes into an "attached to your back"
-          stance. From there, pressing a face button performs different attacks.
-          Pressing <Pill>2</Pill> does an overhead, while <Pill>3</Pill> does a
-          low. This works well with Scorpion's <Pill>B3</Pill> -{' '}
-          <Pill>B3 K 2</Pill> or <Pill>B3 K 3</Pill>.
+          more technical than Mavado with her "latched" mode.
         </p>
 
         <h3 id="chameleon">Chameleon</h3>
 
         <Image
-          className="max-w-24 float-left mb-0 mr-2"
+          className="max-w-24 float-left mr-4"
           src={chameleon}
           alt="A portrait of Chameleon."
         />
 
         <p>
-          Chameleon is an advanced Kameo. Managing her <em>stances</em> (Jade,
-          Kitana, Mileena) is problematic for beginners, but she offers great
-          utility. Jade's Glow gives projectile immunity, which helps with
-          zoners and Spears in mirror matches. Like mavado, she enables armored
-          and throw combos.
+          Chameleon is very fun, but more advanced. She allows for strong
+          resets, good extensions, and lots of tricks, but her phase management
+          makes her less consistent, even for experienced players.
         </p>
 
-        <Callout>
-          <ul className="space-y-4">
-            <li>
-              <Pill>
-                Throw <div className="flavor">time during animation</div> K (fan
-                toss) J2 F32 F32 4 BF1 33 DB2
-              </Pill>
-              <div className="flavor mt-2">
-                Must be in Kitana Form. 219 damage throw combo.
-              </div>
-            </li>
-
-            <li>
-              <Pill>
-                BF2 FK <div className="flavor">switch sides</div> BF1 F32 F32 4
-                BF2
-              </Pill>{' '}
-              <div className="flavor mt-2">
-                Kitana form. Meterles 234 damage armored combo.
-              </div>
-            </li>
-          </ul>
-        </Callout>
+        <p>
+          Kitana Form -{' '}
+          <span className="input">
+            Grab time K (fan toss) J2 F32 F32 4 BF1 33 DB2
+          </span>{' '}
+          - <em>219 damage</em> out of a throw.
+        </p>
 
         <p>
-          Chameleon's fan toss enables resets where two otherwise non-chainable
-          moves link into a combo.
+          Kitana Form -{' '}
+          <span className="input">BF2 FK switch sides BF1 F32 F32 4 BF2</span> -{' '}
+          <em>234 damage</em> armored combo.
         </p>
       </section>
-
-      <Section title="Advanced tech" id="advanced-tech">
-        <div className="flavor mb-5">
-          This section describes niche techniques that require more practice.
-        </div>
-
-        <h3 id="enhanced-flame-port-jail">Enhanced Flame-Port jail</h3>
-
-        <p>
-          Ending a corner combo with enhanced air teleport into kick jails your
-          opponent. If they press any button other than block during getup, they
-          get hit. Do it correctly, and they spin around to face you as you come
-          from the corner. You get a free hit and can break armor, though it's
-          inconsistent.
-        </p>
-
-        <h3 id="air-kyo-snag-bait">Air Kyo Snag bait</h3>
-
-        <p>
-          Air DB2 has instant recovery - even the regular version. If you jump
-          over your adversary, you can throw this move into empty air, and it
-          stops and drops you down. They must be ready for a timely anti-air,
-          otherwise you're safe. The idea is to bait a high attack while
-          throwing a low Kameo move or mavado's Trap Drop. It's a niche tactic.
-        </p>
-      </Section>
     </>
   )
 }

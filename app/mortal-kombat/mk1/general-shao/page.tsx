@@ -1,13 +1,7 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 import Shao from '@/app/assets/mk1/shao.webp'
-import shao2 from '@/app/assets/mk1/shao_2.webp'
 import { MK_TITLE } from '@/app/constants'
-import { mkRoute } from '@/app/mortal-kombat/constants'
-import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { Pill } from '@/app/ui/Pill'
-import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -24,47 +18,67 @@ export default async function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <Section className="md:flex items-center gap-4">
+      <section>
         <Image
-          className="max-h-72 object-cover object-[0%_0%]  md:w-1/2 md:max-h-full"
+          className="mx-auto h-96 w-auto md:h-full md:max-w-1/2 md:float-right"
           src={Shao}
           alt="General Shao in Mortal Kombat 1"
+          loading="eager"
         />
 
-        <p className="md:w-1/2">
-          General Shao is a <em>stance</em> based bruiser that excels at
-          scouting and bullying his opponents in{' '}
-          <Link href={mkRoute('Neutral')}>Neutral</Link>. His axe controls space
-          with far-reaching disjointed normals, while the unarmed stance gives
-          him faster and safer mix-ups with plus frames. At the same time he
-          lacks good full screen moves and has punishable gaps in his offense.
-          Both issues can be addressed with the right Kameo partner.
-        </p>
-      </Section>
+        <section>
+          <div>
+            <div className="font-bold">Two stances around the Axe.</div>
+            <p>
+              While armed, Shao has superior reach, controlling space other
+              characters would dream of. Then, he can plant the Axe, becoming
+              faster and scarier up close.
+            </p>
+          </div>
 
-      <Section title="Axe stance" id="axe-stance">
-        <div className="flavor">Simple tactics for Axe stance.</div>
+          <div>
+            <div className="font-bold">Big boy.</div>
+            <div>
+              At 1100 HP, he's tied with Havik and Conan as the toughest
+              characters in the game. He's tall too, making even his regular
+              normals into anti-airs with some timing.
+            </div>
+          </div>
 
-        <p className="font-bold">
-          The Axe is your primary Neutral tool. Shao's pressure peaks in Unarmed
-          stance, but he looses his reach. How you transitions between the two
-          can make or break a round.
-        </p>
+          <div>
+            <div className="font-bold">Neutral beast.</div>
+            <div>
+              He's quite mobile for his size, having a good mix-up in both
+              stances, and some of the best disjointed pokes in Axe stance.
+            </div>
+          </div>
 
-        <p>
-          <Pill>Standing 2</Pill> is one of the best standing normals in the
-          game. It is a fast, safe, disjointed high attack with excellent reach.
-          Begin by practicing with a CPU to stay a few steps away from them and
-          poke at its maximum reach.
-        </p>
+          <div>
+            <div className="font-bold">Gaps in the stances.</div>
+            <div>
+              While armed, the safer on block options have gaps, while the
+              gapless ones are often unsafe. Also the Axe is weaker defensively
+              at close pressure. And unarmed can feel awkward when played at the
+              wrong range.
+            </div>
+          </div>
 
-        <ImageWithCaption
-          className="max-h-96 object-cover object-[0%_50%]"
-          src={shao2}
-          alt="General Shao doing standing 2 attack."
-          caption="Shao's Standing 2 controls a big chunk of space in front of him. No opponent can comfortably approach without respecting it."
-        />
-      </Section>
+          <div>
+            <div className="font-bold">Fighting zoners can get tricky.</div>
+            <div>
+              Shao does not have a fast, reliable solo anti-zoning tool. His
+              only full-screen special, <span className="input">DB4</span>, is
+              slow. He often needs Kameo support.
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <h2 id="key-strings">Key strings</h2>
+
+        <h3 id="normals">Normals</h3>
+      </section>
     </>
   )
 }
