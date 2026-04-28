@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { GiKnightBanner } from 'react-icons/gi'
 
 import chapters from '@/app/assets/wh40k/space-marine-chapter-banners.webp'
+import marine from '@/app/assets/wh40k/space-marine.webp'
 import wh40kTitle from '@/app/assets/wh40k/Ultramarines.webp'
 import { WH40K_TITLE } from '@/app/constants'
-import { PlayOrSkip } from '@/app/ui/PlayOrSkip'
 import { wh40kRoute } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -25,6 +25,65 @@ export default async function Page() {
 
       <section>
         <Image
+          className="mx-auto ml-4! md:h-full md:max-w-1/2 md:float-right"
+          src={marine}
+          alt="A Space Marine, from the Ultramarines chapter."
+          loading="eager"
+        />
+
+        <section>
+          <div>
+            <div className="font-bold">Beginner-friendly</div>
+            <div className="text-sm">
+              Models are easy to find and paint. Clear rules. Start small,
+              expand gradually, and remain competitive without complex
+              mechanics.
+            </div>
+          </div>
+
+          <div>
+            <div className="font-bold">Jacks-of-all-trades</div>
+            <div className="text-sm">
+              Flexible detachments and leaders. Unit choices cover shooting,
+              melee, durability, mobility, and support.
+            </div>
+          </div>
+
+          <div>
+            <div className="font-bold">Widely played</div>
+            <div className="text-sm">
+              Early adoption in new codexes. A lot of competative army list
+              examples.
+            </div>
+          </div>
+
+          <div>
+            <div className="font-bold">Roster bloat</div>
+            <div className="text-sm">
+              Many units overlap, where some struggle to find a role.
+            </div>
+          </div>
+
+          <div>
+            <div className="font-bold">Frequent changes</div>
+            <div className="text-sm">
+              They get many releases, which means many updates. Strong
+              combinations get nerfed quickly.
+            </div>
+          </div>
+
+          <div>
+            <div className="font-bold">Low specialization</div>
+            <div className="text-sm">
+              Marines win through combined arms and focus fire (Oath of Moment),
+              not dominating a certain phase or aspect of the game.
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <Image
           src={wh40kTitle}
           alt="A small detachment of Space Marines"
           className="picture"
@@ -38,63 +97,6 @@ export default async function Page() {
           fans saw related to the hobby.
         </p>
       </section>
-
-      <PlayOrSkip
-        pros={
-          <>
-            <div>
-              <div className="font-bold">Beginner-friendly</div>
-              <div className="text-sm">
-                Models are easy to find and paint. Clear rules. Start small,
-                expand gradually, and remain competitive without complex
-                mechanics.
-              </div>
-            </div>
-
-            <div>
-              <div className="font-bold">Jacks-of-all-trades</div>
-              <div className="text-sm">
-                Flexible detachments and leaders. Unit choices cover shooting,
-                melee, durability, mobility, and support.
-              </div>
-            </div>
-
-            <div>
-              <div className="font-bold">Widely played</div>
-              <div className="text-sm">
-                Early adoption in new codexes. A lot of competative army list
-                examples.
-              </div>
-            </div>
-          </>
-        }
-        cons={
-          <>
-            <div>
-              <div className="font-bold">Roster bloat</div>
-              <div className="text-sm">
-                Many units overlap, where some struggle to find a role.
-              </div>
-            </div>
-
-            <div>
-              <div className="font-bold">Frequent changes</div>
-              <div className="text-sm">
-                They get many releases, which means many updates. Strong
-                combinations get nerfed quickly.
-              </div>
-            </div>
-
-            <div>
-              <div className="font-bold">Low specialization</div>
-              <div className="text-sm">
-                Marines win through combined arms and focus fire (Oath of
-                Moment), not dominating a certain phase or aspect of the game.
-              </div>
-            </div>
-          </>
-        }
-      />
 
       <section>
         <h2 id="chapters" className="flex-center">

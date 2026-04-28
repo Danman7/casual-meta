@@ -12,7 +12,6 @@ import stand from '@/app/assets/mk/stand.webp'
 import standBlock from '@/app/assets/mk/standblock.webp'
 import { MK_TITLE } from '@/app/constants'
 import { mkRoute } from '@/app/mortal-kombat/constants'
-import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 1
@@ -164,16 +163,12 @@ export default async function Page() {
 
         <p>
           Pressing up, without holding Block, makes the character <em>jump</em>.
+          Jumping straight up is a <em>neutral jump</em>. Pressing up and
+          forward or backward makes it a <em>forward jump</em> or{' '}
+          <em>backward jump</em>.
         </p>
 
         <ul role="list">
-          <li>
-            Jumping straight up is a <em>neutral jump</em>.
-          </li>
-          <li>
-            Pressing up and forward or backward makes it a <em>forward jump</em>{' '}
-            or <em>backward jump</em>.
-          </li>
           <li>Jumps follow a fixed arc.</li>
           <li>You can attack in the air.</li>
           <li>
@@ -182,13 +177,10 @@ export default async function Page() {
         </ul>
 
         <p>
-          Attacking during a forward jump is a <em>jump-in</em>.
-        </p>
-
-        <p>
-          Jumping avoids many ground attacks but is risky. You are vulnerable to
-          air attacks and landing recovery. Ground moves designed to stop jumps
-          are called <em>anti-airs</em>.
+          Attacking during a forward jump is a <em>jump-in</em>. Jumping avoids
+          many ground attacks but is risky. You are vulnerable to air attacks
+          and landing recovery. Ground moves designed to stop jumps are called{' '}
+          <em>anti-airs</em>.
         </p>
       </section>
 
@@ -217,9 +209,12 @@ export default async function Page() {
 
         <h3 id="blocking">Blocking</h3>
 
-        <p>Hold the Block button to block.</p>
+        <p>
+          While holding the block button, incoming attacks that connect with
+          your hitbox have reduced damage. But they do still deal damage, called{' '}
+          <em>chip damage</em>.
+        </p>
         <ul role="list">
-          <li>Blocking reduces damage from enemy attacks.</li>
           <li>Can block standing or crouching.</li>
           <li>Cannot block while jumping.</li>
           <li>Cannot move while blocking.</li>
@@ -241,50 +236,38 @@ export default async function Page() {
             Your opponent's attacks <strong>cannot hit you</strong> until you
             recover.
           </li>
-          <li>
-            However, your immobility allows them to close the distance
-            (pressure) and attack on their terms (setup).
-          </li>
         </ul>
+
+        <p>
+          Knocking the opponent down is about gaining tempo. Their immobility
+          allows you to close the distance (pressure) and attack on your terms
+          (setup).
+        </p>
       </section>
 
-      <section title="Arena limitations" id="arena-limitations">
-        <p>All fights occur in a single-level arena.</p>
+      <section>
+        <h2 id="arena-limitations">Arena Limitations</h2>
 
-        <ul role="list">
-          <li>Horizontal space with invisible side boundaries.</li>
+        <p>
+          All fights occur in a single-level arena - a horizontal space with
+          invisible side boundaries. Arena size varies within a small range, but
+          none are multi-tier like older MK.
+        </p>
 
-          <li>Arena size varies within a small range.</li>
-
-          <li>No multi-tier stages like older MK.</li>
-        </ul>
-
-        <ImageWithCaption
+        <Image
           src={arena}
           alt="Goro's Lair in Mortal Kombat 11."
-          caption="An artist's depiction of Goro's Lair in Mortal Kombat 11."
+          className="picture"
         />
 
-        <p>A character at the edge of the arena:</p>
-
-        <ul role="list">
-          <li>Cannot move farther.</li>
-          <li>Cannot be knocked back in that direction.</li>
-        </ul>
-
-        <p>Being in the corner is a disadvantage.</p>
-
-        <ul role="list">
-          <li>No room to retreat.</li>
-          <li>The opponent dictates the space between the fighters.</li>
-          <li>
-            Because no knockback in the corner, the opponent gains access to
-            high damage corner combos.
-          </li>
-          <li>
-            Must jump over the opponent or use a side-switching move to escape.
-          </li>
-        </ul>
+        <p>
+          When a character moves too far left or right, they hit the arena edge.
+          They cannot move or be knocked back further in that direction. Being
+          in the corner is a disadvantage since there is no room to retreat, and
+          the opponent can control the space between the fighters. And because
+          there is no knockback, the opponent also gains access to high damage
+          corner combos.
+        </p>
       </section>
     </>
   )

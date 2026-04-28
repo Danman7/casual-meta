@@ -29,7 +29,6 @@ import { Callout } from '@/app/ui/Callout'
 import { Diagram } from '@/app/ui/Diagram'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
-import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 3
@@ -46,109 +45,107 @@ export default async function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <Section>
+      <section>
         <p>
-          Modern Mortal Kombat games expose frame data for each move. MKX, MK11
-          and MK1 include this feature. It shows how a move behaves in detail.
-          First, we cover the basics.
+          Modern MK expose frame data for each move, which shows how it behaves
+          in details. MKX, MK11 and MK1 include this feature. This information
+          is critical to understanding how attacks work, but first, let's cover
+          the basics.
         </p>
-      </Section>
+      </section>
 
-      <Section title="Hit vs block vs miss" id="hit-vs-block-vs-miss">
+      <section>
+        <h2 id="hit-vs-block-vs-miss">Hit vs Block vs Miss</h2>
+
         <p>
           Pressing any{' '}
-          <Link href={`${MK_BASE_URL}#move-annotations`}>face button</Link>{' '}
-          (with or without a direction) or the Throw button, results in an
-          attack. Inputs like <Pill>4</Pill>, <Pill>2</Pill>, <Pill>F3</Pill>,{' '}
-          <Pill>Throw</Pill>, <Pill>B2</Pill> and
-          <Pill>BF1</Pill> are all attacks.
-        </p>
-
-        <p>
-          The player that initiates the attack is the <em>attacker</em>. The
-          other one is the <em>defender</em> or the <em>target</em>. Once an
-          attack starts, the attacker cannot act until it ends. One of three
-          outcomes can occurs:
+          <Link href={`${MK_BASE_URL}#move-annotations`}>face</Link> or the
+          throw button, results in an attack. The player that initiates the
+          attack is the <em>attacker</em>, while the other one is the{' '}
+          <em>defender</em> or the <em>target</em>. Once an attack starts, the
+          attacker cannot act until it ends. One of three outcomes can occurs:
         </p>
 
         <ul className="space-y-2">
           <li>
             <strong>Hit:</strong> The defender is within range of the attack and
-            not blocking.
-            <ul>
-              <li>The defender takes full damage and hit stun.</li>
-              <li>The attacker usually recovers first.</li>
-            </ul>
+            not blocking. Then the defender takes damage and hit stun, while the
+            attacker usually recovers first.
           </li>
 
           <li>
             <strong>Block:</strong> The defender is within range of the attack
-            and blocking.
-            <ul>
-              <li>
-                The defender takes reduced damage known as <em>block</em> or{' '}
-                <em>chip</em> damage and reduced hit stun.
-              </li>
-              <li>Who recovers first depends on frame data.</li>
-            </ul>
+            and blocking. Then the defender takes reduced damage and block stun.
+            Who recovers first depends on frame data.
           </li>
 
           <li>
             <strong>Miss aka. Whiff:</strong> The defender is not within range
-            of the attack.
-            <ul>
-              <li>The defender takes no damage or stun.</li>
-              <li>The attacker must still recover.</li>
-              <li>
-                Forcing whiffs is central to mind games as it gives the biggest
-                advantage for the defender.
-              </li>
-            </ul>
+            of the attack. The defender takes no damage or stun, but the
+            attacker must still recover.
           </li>
         </ul>
 
-        <Diagram>
-          <div className="flex flex-col gap-2 font-semibold items-center">
+        <p>
+          Forcing whiffs is central to mind games as it gives the biggest
+          advantage for the defender.
+        </p>
+
+        <div className="flex-list font-bold justify-center">
+          <div className="flex-center flex-col w-full md:w-auto">
             <div>Hit</div>
-            <Image
-              src={standingHit}
-              alt="A high punch hitting a standing opponent."
-            />
+            <div className="md:h-46 flex items-end">
+              <Image
+                src={standingHit}
+                alt="A high punch hitting a standing opponent."
+              />
+            </div>
           </div>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
+          <div className="flex-center flex-col w-full md:w-auto">
             <div>Block</div>
-            <Image src={blockHigh} alt="A high punch being blocked." />
+            <div className="md:h-46 flex items-end">
+              <Image src={blockHigh} alt="A high punch being blocked." />
+            </div>
           </div>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
+          <div className="flex-center flex-col w-full md:w-auto">
             <div>Miss</div>
-            <Image src={duckUnderHigh} alt="A high punch being ducked under." />
+            <div className="md:h-46 flex items-end">
+              <Image
+                src={duckUnderHigh}
+                alt="A high punch being ducked under."
+              />
+            </div>
           </div>
-        </Diagram>
+        </div>
 
         <p>
-          Both players can hit each other at the same time. This is called a{' '}
+          Players can also hit each other at the same time. This is called a{' '}
           <em>trade</em>.
         </p>
 
-        <Diagram>
-          <div className="flex flex-col gap-2 font-semibold items-center">
+        <div className="flex-list font-bold justify-center">
+          <div className="flex-center flex-col w-full md:w-auto">
             <div>Punching at the same time</div>
-            <Image
-              src={trade1}
-              alt="A high punch hitting a standing opponent."
-            />
+            <div className="md:h-46 flex items-end">
+              <Image
+                src={trade1}
+                alt="A high punch hitting a standing opponent."
+              />
+            </div>
           </div>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
+          <div className="flex-center flex-col w-full md:w-auto">
             <div>...results in a trade</div>
-            <Image src={trade2} alt="A high punch being ducked under." />
+            <div className="md:h-46 flex items-end">
+              <Image src={trade2} alt="A high punch being ducked under." />
+            </div>
           </div>
-        </Diagram>
-      </Section>
+        </div>
+      </section>
 
-      <Section title="Block type" id="block-type">
+      <section title="Block type" id="block-type">
         <p>
           Each move has a block type that determines how it must be defended.
           It's a rock-paper-scissors game based on{' '}
@@ -368,9 +365,9 @@ export default async function Page() {
           <li>Overheads mess up opponents that keep blocking low.</li>
           <li>Throws mess up opponents that keep guessing correctly.</li>
         </ul>
-      </Section>
+      </section>
 
-      <Section title="Frame data" id="frame-data">
+      <section title="Frame data" id="frame-data">
         <ImageWithCaption
           src={liMeiAdvancedView}
           alt="Li Mei's move list showing frame data."
@@ -520,9 +517,9 @@ export default async function Page() {
           projectiles. They force opponents to respect their extended presence
           by blocking, ducking, or hesitating. Jumping or dashing becomes risky.
         </p>
-      </Section>
+      </section>
 
-      <Section title="Beyond the move list" id="beyond-the-move-list">
+      <section title="Beyond the move list" id="beyond-the-move-list">
         <p>Some traits are not listed and must be learned through play.</p>
 
         <h3 id="reach">Reach</h3>
@@ -603,9 +600,9 @@ export default async function Page() {
             />
           </div>
         </Diagram>
-      </Section>
+      </section>
 
-      <Section title="Other terms" id="other-terms">
+      <section title="Other terms" id="other-terms">
         <h3 id="pokes">Pokes</h3>
 
         <p>
@@ -614,7 +611,7 @@ export default async function Page() {
           pokes as they grab space and check crouch blocking. Quick recovery is
           essential in case of a whiff.
         </p>
-      </Section>
+      </section>
     </>
   )
 }
