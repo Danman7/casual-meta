@@ -126,7 +126,7 @@
   }
 
   h1 {
-    @apply text-3xl font-semibold leading-tight mb-6;
+    @apply text-4xl font-semibold leading-tight mb-6 text-shadow-md;
   }
 
   h2 {

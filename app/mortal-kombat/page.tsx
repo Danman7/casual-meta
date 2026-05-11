@@ -63,6 +63,11 @@ export default async function Page() {
           />
 
           <SourceLink
+            href="https://glossary.infil.net/index.html"
+            text="The Fighting Game Glossary by Infil"
+          />
+
+          <SourceLink
             href="https://www.youtube.com/@PNDKM"
             text="PNDK&M"
             type="youtube"

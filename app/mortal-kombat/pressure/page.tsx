@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { MK_TITLE } from '@/app/constants'
 import { mkRoute } from '@/app/mortal-kombat/constants'
 import { Pill } from '@/app/ui/Pill'
-import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 6
@@ -20,7 +19,7 @@ export default async function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <Section>
+      <section>
         <div className="flavor">
           This page explains the many mind games and frame traps that go into
           converting a good <Link href={mkRoute('Neutral')}>Neutral</Link>{' '}
@@ -47,9 +46,10 @@ export default async function Page() {
           according to how they predict their opponent will react. Here we will
           mention some approaches to throwing your opponent’s flow off balance.
         </p>
-      </Section>
+      </section>
 
-      <Section title="Mix-ups" id="mix-ups">
+      <section>
+        <h2 id="mix-up">Mix-up</h2>
         <p>
           As you know, the standing position gives fighters the best mobility.
           That is why most of the time blocking high and staying on the move is
@@ -105,9 +105,10 @@ export default async function Page() {
           get punched and backing away from a ducking opponent will not gain
           progress. It is more of a mind game.
         </p>
-      </Section>
+      </section>
 
-      <Section title="Conditioning" id="conditioning">
+      <section>
+        <h2 id="conditioning">Conditioning</h2>
         <p>
           How can I make my opponent expect a certain action from me? Can I
           condition them into predicting my behavior incorrectly? Certainly!
@@ -150,12 +151,25 @@ export default async function Page() {
           short and do a throw instead - 12 (or whatever) into a throw? This is
           a string derail and is a way to keep them guessing.
         </p>
-      </Section>
+      </section>
 
-      <Section
-        title="Countering pressure and resetting"
-        id="countering-pressure"
-      >
+      <section>
+        <h2 id="oki">Wake-up pressure (Okizeme)</h2>
+
+        <p>
+          When a character is knocked down, their defensive options are limited.
+          The attacker can choose what attacks or mind games to use.
+        </p>
+
+        <p>
+          Since wake-up pressure is too long, it's often replaced by the common
+          fighting games term <em>Okizeme</em> (oki for short), meaning "wake up
+          offense" in Japanese.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="countering-pressure">Countering pressure and resetting</h2>
         <h3 id="the-down-1">The low jab</h3>
 
         <p>
@@ -171,7 +185,7 @@ export default async function Page() {
         </ul>
 
         <p>The best counter is usually a low punch of your own.</p>
-      </Section>
+      </section>
     </>
   )
 }
