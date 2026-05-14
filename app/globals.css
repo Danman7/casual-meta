@@ -83,7 +83,7 @@
 }
 
 @utility picture {
-  @apply rounded-lg shadow-sm;
+  @apply rounded-lg shadow-md;
 }
 
 @utility profile-img {
@@ -95,7 +95,7 @@
 }
 
 @utility badge {
-  @apply px-1.5 py-0.5 rounded text-sm bg-surface border border-foreground/10 inline-flex gap-1 items-center shadow-sm;
+  @apply px-1.5 py-0.5 rounded text-sm bg-surface border border-foreground/30 inline-flex gap-1 items-center shadow-sm;
 }
 
 @utility input {
@@ -143,7 +143,7 @@
   }
 
   hr {
-    @apply border-foreground/10 w-full;
+    @apply border-foreground/30 w-full;
   }
 
   main {

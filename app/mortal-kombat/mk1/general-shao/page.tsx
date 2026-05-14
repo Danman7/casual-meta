@@ -1,7 +1,9 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import Shao from '@/app/assets/mk1/shao.webp'
 import { MK_TITLE } from '@/app/constants'
+import { mkRoute } from '@/app/mortal-kombat/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -27,14 +29,20 @@ export default async function Page() {
         />
 
         <section>
-          <div>
-            <div className="font-bold">Two stances around the Axe.</div>
-            <p>
-              While armed, Shao has superior reach, controlling space other
-              characters would dream of. Then, he can plant the Axe, becoming
-              faster and scarier up close.
-            </p>
-          </div>
+          <p>
+            General Shao is a <em>stance-based</em>, mid-range bruiser built
+            around <strong>superb normals, oppressive pressure</strong>, and
+            terrifying <strong>punish potential</strong>.
+          </p>
+
+          <p>
+            The central idea of his fighting style are the{' '}
+            <strong>two stances</strong> revolving around his axe. While armed
+            (default stance), he is a{' '}
+            <Link href={mkRoute('Neutral')}>neutral</Link> bully with reach that
+            most characters can envy. Losing the axe alters his moveset, making
+            him faster, with more aggressive rushdown.
+          </p>
 
           <div>
             <div className="font-bold">Big boy.</div>

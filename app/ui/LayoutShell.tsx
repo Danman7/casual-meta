@@ -22,7 +22,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
   }
 
   if (pathname === '/') {
-    return <div className="grow">{children}</div>
+    return <div>{children}</div>
   }
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev)

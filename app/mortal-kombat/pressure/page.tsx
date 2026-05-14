@@ -154,21 +154,6 @@ export default async function Page() {
       </section>
 
       <section>
-        <h2 id="oki">Wake-up pressure (Okizeme)</h2>
-
-        <p>
-          When a character is knocked down, their defensive options are limited.
-          The attacker can choose what attacks or mind games to use.
-        </p>
-
-        <p>
-          Since wake-up pressure is too long, it's often replaced by the common
-          fighting games term <em>Okizeme</em> (oki for short), meaning "wake up
-          offense" in Japanese.
-        </p>
-      </section>
-
-      <section>
         <h2 id="countering-pressure">Countering pressure and resetting</h2>
         <h3 id="the-down-1">The low jab</h3>
 

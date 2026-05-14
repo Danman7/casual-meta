@@ -4,6 +4,7 @@ import Link from 'next/link'
 import attackPhases from '@/app/assets/mk/attack_phases.webp'
 import blockHigh from '@/app/assets/mk/block_high.webp'
 import blockHighLow from '@/app/assets/mk/block_high_low.webp'
+import disjointed from '@/app/assets/mk/disjointed.webp'
 import duckUnderHigh from '@/app/assets/mk/duck_under_high.webp'
 import duckUnderThrow from '@/app/assets/mk/duck_under_throw.webp'
 import jumpHitLow from '@/app/assets/mk/jump_hit_low.webp'
@@ -16,6 +17,7 @@ import midHitLow from '@/app/assets/mk/mid_hit_low.webp'
 import midHitStanding from '@/app/assets/mk/mid_hit_standing.webp'
 import overheadBlock from '@/app/assets/mk/overhead_block.webp'
 import overheadHit from '@/app/assets/mk/overhead_hit_low.webp'
+import projectile from '@/app/assets/mk/projectile.webp'
 import standingHit from '@/app/assets/mk/stand_hit.webp'
 import throwGrab from '@/app/assets/mk/throw.webp'
 import throwTech from '@/app/assets/mk/throw_tech.webp'
@@ -519,8 +521,13 @@ export default async function Page() {
         </p>
       </section>
 
-      <section title="Beyond the move list" id="beyond-the-move-list">
-        <p>Some traits are not listed and must be learned through play.</p>
+      <section>
+        <h2 id="beyond-the-move-list">Beyond the move list</h2>
+
+        <p>
+          Some move traits are not listed and must be learned through
+          experience.
+        </p>
 
         <h3 id="reach">Reach</h3>
 
@@ -553,7 +560,40 @@ export default async function Page() {
           </li>
         </ul>
 
-        <h3 id="advancing-attack">Advancing attack</h3>
+        <h3 id="disjointed">Disjointed</h3>
+
+        <p>
+          A <em>disjointed</em> attack is a move whose hitbox extends more than
+          the character's hurtbox, without risk of the defender hitting the
+          attacker back (at least close to max range). Such are attacks with
+          some form of weapons, where the weapon reaches futher than the
+          bearer's arms. These are space controlling moves that are difficult to
+          challenge directly.
+        </p>
+
+        <Image
+          src={disjointed}
+          alt="A disjointed attack with an axe."
+          className="mx-auto"
+        />
+
+        <h3 id="projectile">Projectile</h3>
+
+        <p>
+          A <em>projectile</em> is an attack that creates a traveling hitbox
+          separate from the character's body, like a fireball, a bullet, or a
+          thrown weapon. Depending on the projectile, it may or may not cover
+          the whole screen. Regardless, it's the ultimate space controlling
+          move.
+        </p>
+
+        <Image
+          src={projectile}
+          alt="Sub-zero's ice ball."
+          className="mx-auto"
+        />
+
+        <h3 id="advancing">Advancing</h3>
 
         <p>
           Some attacks recover to the same spot they were executed in. Others
@@ -602,7 +642,8 @@ export default async function Page() {
         </Diagram>
       </section>
 
-      <section title="Other terms" id="other-terms">
+      <section>
+        <h2 id="other-terms">Other terms</h2>
         <h3 id="pokes">Pokes</h3>
 
         <p>

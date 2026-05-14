@@ -1,14 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { TbInnerShadowTopLeftFilled } from 'react-icons/tb'
 
-import chameleon from '@/app/assets/mk1/chameleon.webp'
 import ferra from '@/app/assets/mk1/ferra.webp'
 import mavado from '@/app/assets/mk1/mavado.webp'
 import scorpAirDB2 from '@/app/assets/mk1/scorp_air_db2.webp'
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import spear from '@/app/assets/mk1/scorp_spear.webp'
-import scorp2 from '@/app/assets/mk1/scorpion_2.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
 import { MK_TITLE } from '@/app/constants'
 import { mkRoute } from '@/app/mortal-kombat/constants'
@@ -29,81 +26,61 @@ export default async function Page() {
       <h1>{navTitle}</h1>
 
       <section>
-        <div className="relative h-96 w-auto md:h-full md:max-w-1/2 md:float-right">
-          <Image
-            src={Scorpion}
-            alt="Scorpion in Mortal Kombat 1"
-            loading="eager"
-            className="h-96 w-auto md:h-full mx-auto "
-          />
-
-          <div className="absolute bottom-2 left-2 right-2 flex-center">
-            <div className="badge">
-              {' '}
-              <TbInnerShadowTopLeftFilled className="text-green-500" /> Low risk
-            </div>
-
-            <div className="badge">
-              <TbInnerShadowTopLeftFilled className="text-green-500" /> Strong
-              neutral
-            </div>
-
-            <div className="badge">
-              <TbInnerShadowTopLeftFilled className="text-yellow-500" /> Average
-              speed
-            </div>
-
-            <div className="badge">
-              <TbInnerShadowTopLeftFilled className="text-red-500" /> No mix-up
-            </div>
-          </div>
-        </div>
+        <Image
+          src={Scorpion}
+          alt="Scorpion in Mortal Kombat 1"
+          loading="eager"
+          className="relative h-96 w-auto md:h-full md:max-w-1/2 md:float-right"
+        />
 
         <section>
           <p>
-            MK1's Scorpion, like in previous titles, is{' '}
+            MK1's Scorpion is a{' '}
+            <Link href={`${mkRoute('Anatomy of attacks')}#safe-vs-unsafe`}>
+              safe
+            </Link>{' '}
+            mid-range fighter with strong{' '}
+            <Link href={`${mkRoute('Neutral')}#whiff-punish`}>
+              whiff punishment
+            </Link>{' '}
+            and <Link href={`${mkRoute('Pressure')}#stagger`}>stagger</Link>{' '}
+            offense. Like in previous titles, he is{' '}
             <strong>built around fundamentals</strong>. He has no forms, or
-            complex gimmicks to manage. His flexible toolkit works with most
-            Kameos, including ones that enable throw or armored combos. All of
-            this makes him <strong>approachable for new players</strong>.
+            complex gimmicks to manage, making him{' '}
+            <strong>approachable for new players</strong>.
           </p>
 
           <p>
-            <strong>
-              Most of his normals are{' '}
-              <Link href={`${mkRoute('Anatomy of attacks')}#safe-vs-unsafe`}>
-                safe
-              </Link>
-            </strong>
-            , and many strings can be{' '}
-            <Link href={`${mkRoute('Pressure')}#stagger`}>staggered</Link>.
-            However, without chainable{' '}
-            <Link href={`${mkRoute('Anatomy of attacks')}#overhead`}>
-              overheads
-            </Link>{' '}
-            or <Link href={`${mkRoute('Anatomy of attacks')}#low`}>lows</Link>,{' '}
-            <strong>his offense stays linear and honest</strong>. He can end
-            pressure safely, but opening opponents up proactively usually
-            depends on strike/throw mind games and Kameo support.
+            Lacking any real{' '}
+            <Link href={`${mkRoute('Pressure')}#mix-up`}>mix-up</Link>, on his
+            own, <strong>his offense stays linear and honest</strong>.
+            Fortunately, his moves are modular enough to{' '}
+            <strong>work well with many Kameos</strong>, which can fill the gaps
+            for him.
           </p>
 
           <p>
             Scorpion’s strengths show more clearly in{' '}
-            <strong>reactive play</strong>. His disjointed pokes and
+            <strong>reactive play</strong>. His{' '}
+            <Link href={`${mkRoute('Anatomy of attacks')}#disjointed`}>
+              disjointed
+            </Link>{' '}
+            pokes and
             <Link href={`${mkRoute('Anatomy of attacks')}#space-control`}>
               space-controlling
             </Link>{' '}
             specials let him <strong>catch mistakes at all ranges</strong>. This
-            plays well with his simple, consistent combo system. Keep in mind,
-            his specials are very well-known and predictable, so restraint is
-            important.
+            plays well with his simple, consistent combo system, converting
+            whiffs into solid damage relatively easily.
           </p>
 
           <p>
-            Scorpion shares similarities with Sub-Zero and Reptile in terms of
-            spacing and whiff punish, yet they both have better{' '}
-            <Link href={`${mkRoute('Pressure')}#mix-up`}>mix-up</Link>. His
-            stagger mind games are similar to Johnny's, but less oppressive.
+            On the <em>spectrums of archetypes</em>, he lies in the middle of
+            most. Not a full rushdown, not a full scrambler, not exceptional at
+            defense, far from a zoner. He probably sits between Johnny (stagger
+            and mind games, but less oppressive) and Sub-Zero (space control and
+            whiff punish, but no mix-up), sharing some traits with Reptile
+            (mid-range interrupts, but less complex and again no mix-up).
           </p>
         </section>
       </section>
@@ -114,53 +91,81 @@ export default async function Page() {
         <h3 id="normals">Normals</h3>
 
         <p>
-          <span className="input">1</span> is your <em>fastest</em> (7 frames),
-          safe, <Link href={`${mkRoute('Anatomy of attacks')}#high`}>high</Link>{' '}
-          jab. It extens into <span className="input">12</span> - a safe
-          hit-confirm, combo-starter that can be cancelled into any special. The
-          full string, <span className="input">122</span>, ends in an overhead,
-          but is best staggered into a throw.
+          <span className="input">1</span> is a fast (7 frames), safe and short{' '}
+          <Link href={`${mkRoute('Anatomy of attacks')}#high`}>high</Link> jab -
+          your <em>fastest</em> standing attack.
         </p>
 
         <p>
-          <span className="input">2</span> your <em>primary poke</em>. It's
-          slower than <span className="input">1</span> (10 frames), but is
-          disjointed, deals better damage, and is reachy enough to often
-          surprise approaching foes. It rolls into{' '}
-          <span className="input">21</span> - your main{' '}
-          <Link href={`${mkRoute('Neutral')}#footsies`}>footsie</Link>{' '}
-          <em>hit confirm</em>. The full string,{' '}
-          <span className="input">214</span>, is also a stagger tool.
+          <span className="input">12</span> is a fast and safe high-high string
+          that can be cancelled into any special - your{' '}
+          <em>fastest hit-confirm and combo-starter</em>.
         </p>
 
-        <Image
-          src={scorp2}
-          alt="Scorpion's Standing 2 attack."
-          className="picture profile-img object-[0%_18%]"
-        />
+        <p>
+          <span className="input">122</span> is a safe, high-high-overhead
+          string - part of your stagger arsenal -{' '}
+          <span className="input">12 Throw</span>.
+        </p>
+
+        <hr />
 
         <p>
-          <span className="input">F3</span> is a key advancing{' '}
-          <Link href={`${mkRoute('Anatomy of attacks')}#mid`}>mid</Link> check -
-          useful on it's own againts ducking foes. It evolves into{' '}
+          <span className="input">2</span> is a safe, a bit slower (10 frames),
+          high, disjointed punch with very decent reach and better damage than{' '}
+          <span className="input">1</span>. It's your{' '}
+          <em>
+            primary{' '}
+            <Link href={`${mkRoute('Anatomy of attacks')}#pokes`}>poke</Link>
+          </em>
+          .
+        </p>
+
+        <p>
+          <span className="input">21</span> is a safe, more damaging, high-
+          <Link href={`${mkRoute('Anatomy of attacks')}#mid`}>mid</Link> string
+          - better hit-confirm for when the space allows it, plus a duck check.
+        </p>
+
+        <p>
+          <span className="input">214</span> is another stagger tool - a barely
+          safe, high-mid-mid sequence.
+        </p>
+
+        <hr />
+
+        <p>
+          <span className="input">F3</span> is a slower (12 frames), safe,{' '}
+          <Link href={`${mkRoute('Anatomy of attacks')}#advancing`}>
+            advancing
+          </Link>{' '}
+          mid kick - a good check against crouching foes.
+        </p>
+
+        <p>
           <span className="input">F32</span>, your optimal <em>launcher</em> (
           <span className="input">F4</span> is not worth it) and{' '}
           <em>combo starter</em>. It can be chained up to three times in a row.
         </p>
 
+        <hr />
+
         <p>
-          <span className="input">B2</span> is a good <em>anti-air</em> options
-          that can be shortcut cancelled into any forward special. For example{' '}
-          <span className="input">B3 F1</span> cancels into Spear for a full
-          combo out of a poorly timed jump.
+          <span className="input">B2</span> is similar to, even faster and more
+          damaging than <span className="input">2</span>, but its hitbox is
+          geared towards an <em>anti-air</em> attack. It can be shortcut
+          cancelled into any forward special (e.g.{' '}
+          <span className="input">B3 F1</span> cancels into Spear) for a full
+          combo.
         </p>
 
         <p>
           <span className="input">B3</span> is Scorpion's most unique normal. He
-          launches his Kunai, for a very far reaching, disjointed attack that
-          hits twice - mid-low. The first mid hit can be cancelled into any
-          special. It's respecting and space-controlling, but slow (21 frames)
-          and unsafe (-19 on block).
+          launches his Kunai, for a very far reaching, slow (21 frames), unsafe
+          (-19 on block), disjointed attack that hits twice - mid-
+          <Link href={`${mkRoute('Anatomy of attacks')}#low`}>low</Link>. The
+          first mid hit can be cancelled into any special. It's a respecting and
+          space-controlling move.
         </p>
 
         <Image
@@ -172,50 +177,49 @@ export default async function Page() {
         <h3 id="specials">Specials</h3>
 
         <p>
-          <span className="input">BF1</span>, the signature <em>Spear</em>, is a{' '}
-          full-screen, space-controlling, high projectile. It stuns on hit,
-          drags and restands the opponent next to you. This makes it{' '}
-          <strong>
-            one of the best whiff punishes and combo starter/extender
-          </strong>{' '}
-          in the game, albeit predictable. The <em>enhanced</em> version hits
-          mid, mixing it up for foes that like to duck under it.
+          The signature <em>Spear</em> <span className="input">BF1</span> is a{' '}
+          full-screen, space-controlling, high{' '}
+          <Link href={`${mkRoute('Anatomy of attacks')}#projectile`}>
+            projectile
+          </Link>
+          , that stuns on hit, drags and restands the opponent next to you. It's
+          one of the best whiff punishes and combo starters/extenders in the
+          game. The <em>enhanced</em> version hits mid, mixing it up for foes
+          that like to duck under it.
         </p>
 
         <Image src={spear} alt="Scorpion's spear move." className="picture" />
 
         <p>
-          <span className="input">DB3</span>, the <em>Flameport</em>, tracks to
-          the other side of the opponent, hitting them on arrival. It makes
-          zoning unsafe, but should be used with caution as it's not safe itself
-          (-21 on block). The <em>enhanced</em> version however, launches much
-          faster and skips the hit, making it safe. This enables strike/throw
-          mind games. You can surprise with a throw, or a micro-duck into a
-          punch.
+          <em>Flameport</em> <span className="input">DB3</span> is a teleport
+          that tracks to the other side of the opponent, hitting them on arrival
+          (unsafe; -21 on block) - an anti-zoning tool by design. The{' '}
+          <em>enhanced</em> version launches much faster and skips the hit,
+          making it safe. This enables strike/throw mind games and combo
+          extension.
         </p>
 
         <p>
           <em>Blazing Charge</em> <span className="input">BF2</span> is a very
-          quick (for a special, 13 frames) advancing dash attack that covers
+          quick (for a special; 13 frames) advancing dash attack that covers
           good distance, switches sides and knocks down the opponent. It's a
-          great interruption, but it's short active frames mean you might end up
-          giving them a free hit if you don't time it well. The{' '}
-          <em>enhanced</em> version is <em>armored</em>, being a proper getup
-          breaker and armor combo starter.
+          great interruption, but has short active frames and should be timed
+          well. The <em>enhanced</em> version is <em>armored</em>, being a
+          proper getup breaker and armor combo starter.
         </p>
 
         <p>
           <em>Twisted Kyo</em> <span className="input">DB2</span> is an unsafe,
           multi-hit combo ender, with strong chip damage, that knocks the
-          opponent down. It's advantage over knockback enders is that it keeps
-          you opponent next to you.
+          opponent down. Its advantage over knockback enders is that it keeps
+          your opponent next to you.
         </p>
 
         <p>
-          <span className="input">xBF4</span> <em>Enhanced Devouring Flame</em>{' '}
+          <em>Enhanced Devouring Flame</em> <span className="input">xBF4</span>{' '}
           is an unblockable, low, damage-over-time special that tracks the
           opponent. It's both a anti-zoning and an{' '}
-          <Link href={`${mkRoute('Pressure')}#oki`}>oki</Link> option.
+          <Link href={`${mkRoute('Momentum')}#oki`}>oki</Link> option.
         </p>
       </section>
 
@@ -249,8 +253,8 @@ export default async function Page() {
             </li>
 
             <li>
-              <span className="input">F32</span> - launcher / only for juggle or
-              air combos.
+              <span className="input">F32</span> - launcher / only for juggle
+              combos.
             </li>
           </ul>
 
@@ -281,42 +285,60 @@ export default async function Page() {
         </p>
 
         <p>
-          <span className="input">12 BF1 333 BF2</span> simple <em>217 DMG</em>{' '}
-          <span className="font-bold">&rarr;</span>{' '}
-          <span className="input">12 BF1 F32 F32 F32 4 BF2</span>{' '}
-          <em>318 DMG</em>, incorporates juggles and the trailing{' '}
-          <span className="input">4</span> into a special ender{' '}
-          <span className="font-bold">&rarr;</span>{' '}
-          <span className="input">21 BF1 F32 F32 F32 F34 BF2</span>{' '}
-          <em>342 DMG</em>, adds better starter and ender, a very consistent,
-          close to optimal meterless <em>bread-and-butter</em> (B&B) route.
+          <span className="input">12 BF1 333 BF2</span> basic <em>217 DMG</em>
         </p>
 
         <p>
-          As you feel more confident, you can delay the spear and go directly
-          for a juggle. <span className="input">F32 F32 F32 4 BF1 33 DB2</span>{' '}
-          <em>365 DMG, 0 BAR</em> is already optimal for meterless. From here
-          you can either extend via Kameos, add damage by enhancing the
-          specials, or go for air extensions.
+          <span className="input">12 BF1 F32 F32 F32 4 BF2</span>{' '}
+          <em>318 DMG</em> - adds the juggles. If the trailing{' '}
+          <span className="input">4</span> into a Charge is difficult, reduce
+          juggles to two.
         </p>
+
+        <p>
+          <span className="input">21 BF1 F32 F32 F32 F34 BF2</span>{' '}
+          <em>342 DMG</em> - swaps in a better starter and ender. It's a very
+          consistent, close to optimal, meterless <em>bread-and-butter</em>{' '}
+          (B&B) route.
+        </p>
+
+        <p>From here you can use air extension and/or meter to upgrade.</p>
 
         <p>
           <span className="input">
             21 BF1 F32 F32 [jump] 12 xDB2 [111/4 BF2]
           </span>{' '}
-          <em>~330-350 DMB, 1 BAR</em>, very sub-optimal, but good starting
-          point <span className="font-bold">&rarr;</span>{' '}
+          <em>~330-350 DMB, 1 BAR</em> - a very sub-optimal route, but good
+          starting point for air extensioon.
+        </p>
+
+        <p>
           <span className="input">
             21 BF1 F32 F32 [jump] 12 xDB2 [delay] 111 DB2 [land]
           </span>{' '}
-          <em>377 DMG, 1 BAR</em>, much better, but bit tricky beginners. Delay
-          the <span className="input">111</span> until you almost touch the
-          ground, so it can be followed by specials{' '}
-          <span className="font-bold">&rarr;</span>{' '}
+          <em>377 DMG, 1 BAR</em> is an optimal route out of the Spear, but a
+          bit tricky for beginners. Delay the <span className="input">111</span>{' '}
+          until you're almost touching the ground.
+        </p>
+
+        <hr />
+
+        <p>
+          Delaying the Spear and going directly for a juggle is better, but may
+          be trickier to initiate.
+        </p>
+
+        <p>
+          <span className="input">F32 F32 F32 4 BF1 33 DB2</span>{' '}
+          <em>365 DMG</em>
+        </p>
+
+        <p>
           <span className="input">
             F32 F32 [jump] 12 xDB2 [delay] 111 [land] BF1 33 DB2
           </span>{' '}
-          <em>407 DMG, 1 BAR</em>, optimal B&B for online consistency.
+          <strong>407 DMG</strong>, <em>1 BAR</em>, optimal B&B for online
+          consistency.
         </p>
 
         <Image
@@ -328,16 +350,37 @@ export default async function Page() {
         <h3 id="corner">Corner</h3>
 
         <p>
-          <span className="input">4</span> keeps most of its damage through
-          damage scaling. In the corner, knockback isn't a factor, so you can
-          use it to spike your combos.
+          You can keep it simple in the corner, much like you can in the middle.
+          But if you wish to spike and are willing to train some timings, you
+          can chain two <span className="input">4</span> in a row, which keep
+          most of their damage through scaling.
+        </p>
+
+        <p>
+          <span className="input">F32 F32 J13 4 BF1 33 DB2</span>{' '}
+          <em>369 DMG</em>
         </p>
 
         <p>
           <span className="input">
             F32 4 4 BF1 F32 [jump] 12 xDB2 [pause] 111 DB2
           </span>{' '}
-          <strong>446 DMG</strong>, <em>1 BAR</em>.
+          <strong>446 DMG</strong>, <em>1 BAR</em> - very tight timing on the
+          two <span className="input">4</span> but even with one you can do over
+          400.
+        </p>
+
+        <h3 id="other-routes">Other routes</h3>
+
+        <p>
+          If they jump in: <span className="input">B2 F1 333 BF2</span>{' '}
+          <em>210 DMG</em> is a basic anti-air punish.
+        </p>
+
+        <p>
+          Or if you know they will jump in:{' '}
+          <span className="input">[jump] 111 BF1 [land] F32 4 BF2</span>{' '}
+          <em>291 DMG</em> is a decent air-to-air interrupt.
         </p>
 
         <h3 id="maximalist">Maximalist</h3>
@@ -351,9 +394,9 @@ export default async function Page() {
           <span className="input">
             21 BF1 F32 F32 [jump] 12 xDB2 4 xDB2 4 xDB2 4 BF2
           </span>{' '}
-          - <strong>417 DMG</strong>, <em>3 BAR</em>. This squeezes the max out
-          of air extensions, but requires very tight timing and there are easier
-          routes to 400.
+          - <em>417 DMG, 3 BAR</em>. This squeezes the max out of air
+          extensions, but requires very tight timing and there are easier routes
+          to 400.
         </p>
 
         <p>
@@ -379,55 +422,40 @@ export default async function Page() {
         />
 
         <p>
-          Mavado is a top pick for both beginners and advanced players. He gives
-          Scorpion a little bit of everything - armored and throw combos,
-          meterless air extension, and wakeup pressure - but lacks mix-up.
+          Mavado is an all-around safe pick for Scorpion. He teaches proper
+          Kameo play (not single button spams) and gives a little bit of
+          everything, primarily armored and throw combos, and preserving meter.
         </p>
 
         <p>
-          Knockback strings like <span className="input">214</span> and{' '}
+          <span className="input">Throw [delay] K F32 F32 4 BF1 33 DB2</span> -{' '}
+          <em>220 DMG</em> out of a throw (normally 110).
+        </p>
+
+        <p>
+          <span className="input">F34 FK F32 4 BF1 33 DB2</span>{' '}
+          <em>332 DMG</em> - knockback strings like{' '}
+          <span className="input">214</span> and{' '}
           <span className="input">F34</span> become combo starters with{' '}
-          <span className="input">FK</span> -{' '}
-          <span className="input">F34 FK F32 4 BF1 33 DB2</span>. It triggers
-          only in the correct state, so no precise timing is required.
+          <span className="input">FK</span>.
         </p>
 
         <p>
-          <em>Nindrop</em> <span className="input">UK</span> can armor combo out
-          of the Charge and keep air extended combo meterless:
-        </p>
-
-        <ul>
-          <li>
-            <span className="input">
-              xBF2 UK - switch sides - dash F32 F32 4 BF1 33 DB2
-            </span>{' '}
-            - <em>259 damage, 0 bars</em>.
-          </li>
-
-          <li>
-            <span className="input">
-              F32 F32 jump 12 xDB2 UK land BF1 33 DB2
-            </span>{' '}
-            - <em>375 damage, 0 bars</em>, almost the same damage as spending a
-            bar.
-          </li>
-        </ul>
-
-        <p>
-          After knocking the opponent down, jump and do{' '}
-          <span className="input">Down K</span> at the same time as a Jump Kick.
-          Mavado will slide on them if they are still down. They must block the
-          low, allowing the overhead to connect, though timing requires
-          practice.
+          <span className="input">
+            xBF2 UK - switch sides - dash F32 F32 4 BF1 33 DB2
+          </span>{' '}
+          - <em>259 DMG</em> armored combo using Movado's <em>Nindrop</em>.
         </p>
 
         <p>
-          <em>Trap Drop</em> <span className="input">K</span> throws a stun bomb
-          next to the opponent that detonates after a second. If you time it
-          when Scorpion jumps off his foe during a throw, you can combo out of
-          it - <span className="input">Grab timely K F32 F32 4 BF1 33 DB2</span>{' '}
-          - <em>220 damage out of a throw (normally 110)</em>.
+          <span className="input">F32 F32 jump 12 xDB2 UK land BF1 33 DB2</span>{' '}
+          <em>375 DMG</em> - out of juggles using Movado deals almost the same
+          damage as spending a bar.
+        </p>
+
+        <p>
+          <span className="input">Down K</span> give you some oki on a knocked
+          back opponent if combined with a jump-in.
         </p>
 
         <h3 id="ferra">Ferra </h3>
@@ -439,36 +467,61 @@ export default async function Page() {
         />
 
         <p>
-          Ferra on the other hand, helps mostly with the mix-up, but is slightly
-          more technical than Mavado with her "latched" mode.
-        </p>
-
-        <h3 id="chameleon">Chameleon</h3>
-
-        <Image
-          className="max-w-24 float-left mr-4"
-          src={chameleon}
-          alt="A portrait of Chameleon."
-        />
-
-        <p>
-          Chameleon is very fun, but more advanced. She allows for strong
-          resets, good extensions, and lots of tricks, but her phase management
-          makes her less consistent, even for experienced players.
+          Ferra gives Scorpion mix-up and{' '}
+          <Link href={`${mkRoute('Momentum')}#vortex`}>vortex</Link> options,
+          and a{' '}
+          <Link href={`${mkRoute('Anatomy of attacks')}#command-grabs`}>
+            command grab
+          </Link>
+          , so your offence can become more proactive.
         </p>
 
         <p>
-          Kitana Form -{' '}
+          On hit confirming that they block you can go for{' '}
+          <span className="input">[12/21] K Throw</span> <em>100 DMG</em> -
+          doesn't lead to anything, but many foes eat the damage up.
+        </p>
+
+        <p>
+          Your <span className="input">B3</span> canceled plays very well with
+          her overhead <span className="input">K 2</span> and low{' '}
+          <span className="input">K 3</span>. Since{' '}
+          <span className="input">B3</span> is mid-low, usually the overhead
+          catches them more often so you can do{' '}
+          <span className="input">B3 K [2/3] F32 4 BF1 333 BF2</span>{' '}
+          <em>352 DMG</em>.
+        </p>
+
+        <p>
           <span className="input">
-            Grab time K (fan toss) J2 F32 F32 4 BF1 33 DB2
+            B3 K [2/3] 1 4 BF1 F32 [jump] 12 xDB2 [delay] 111 DB2
           </span>{' '}
-          - <em>219 damage</em> out of a throw.
+          <em>424 DMG, 1 BAR</em> is a more complex alternative of the above.
         </p>
 
         <p>
-          Kitana Form -{' '}
-          <span className="input">BF2 FK switch sides BF1 F32 F32 4 BF2</span> -{' '}
-          <em>234 damage</em> armored combo.
+          <span className="input">
+            Throw [time it] UK 2 F32 F32 4 BF1 F32 4 BF2
+          </span>{' '}
+          <em>264 DMG</em> - one of Scorpion's highest damage throw combos.
+        </p>
+
+        <p>
+          Ending a combo with <span className="input">33 K</span> is a vortex
+          opportunity. It drops the combo, but forces the opponent to guess
+          overhead/low again. It will not work if you press the next button
+          again immediately. You need to time a micro forward button press to
+          make sure scaling is reset.
+        </p>
+
+        <h3 id="chameleon">Other considerations</h3>
+
+        <p>
+          <em>Chamelion</em> is very fun and comprehensive, but more advanced
+          and perhaps less consistent. She extends and combos out of throw and
+          armor, but what is probably more interesing are her resets.{' '}
+          <span className="input">21 BF4</span> is a sort-of low mix-up, which
+          doesn't combo. But with Kitana form's <em>Fan Lift</em> it does.
         </p>
       </section>
     </>

@@ -1,7 +1,9 @@
+import Link from 'next/link'
+
 import duelStart from '@/app/assets/mk1/duel_start.webp'
 import { MK_TITLE } from '@/app/constants'
+import { mkRoute } from '@/app/mortal-kombat/constants'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 5
@@ -18,7 +20,7 @@ export default async function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <Section>
+      <section>
         <div className="flavor">
           This page aims to describe the somewhat hazy concept of Neutral in
           fighting games in general, and in Mortal Kobat in particular.
@@ -32,9 +34,11 @@ export default async function Page() {
           <em>Punish</em>. If neither apply, probably you are in the state of{' '}
           <em>Neutral.</em>
         </p>
-      </Section>
+      </section>
 
-      <Section title="What is Neutral?" id="what-is-neutral">
+      <section>
+        <h2 id="what-is-neutral">What is Neutral?</h2>
+
         <p className="font-bold">
           Neutral refers to any state of the round where neither fighter has a
           clear advantage over the other - both are free to move, attack or
@@ -67,9 +71,10 @@ export default async function Page() {
           The goal of Neutral is to create advantage where both players have
           equal opportunity.
         </p>
-      </Section>
+      </section>
 
-      <Section title="Footsies" id="footsies">
+      <section>
+        <h2 id="footsies">Footsies</h2>
         <p>
           <strong>Footsie</strong> or <strong>Footsies</strong> describe the
           contest for controlling space and tempo in Neutral. Both players move
@@ -78,11 +83,38 @@ export default async function Page() {
           is usually on mobility, hence the name. It’s as much a timing as it is
           a mind game.
         </p>
-      </Section>
+      </section>
 
-      <Section title="Resetting" id="resetting">
+      <section>
+        <h2 id="whiff-punish">Whiff punish</h2>
+
+        <p>
+          We know that a{' '}
+          <Link href={`${mkRoute('Anatomy of attacks')}#hit-vs-block-vs-miss`}>
+            whiff
+          </Link>{' '}
+          is when an attack misses completely. A <em>whiff punish</em> is
+          hitting the attacker during the missed attack's{' '}
+          <Link href={`${mkRoute('Anatomy of attacks')}#move-phases`}>
+            recovery
+          </Link>
+          , before they can block again. It's a core layer of neutral and sits
+          between pure spacing and direct pressure.
+        </p>
+
+        <h3>Baiting</h3>
+
+        <p>
+          <em>Baiting</em> is intentionally presenting an opening in a
+          predictable manner, to provoke a response from the opponent.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="resetting">Resetting</h2>
         <p className="font-bold">
-          A Reset is any return to Neutral state after Pressure or Punish.
+          A <em>Reset</em> is any return to Neutral state after Pressure or
+          Punish.
         </p>
 
         <p>It can favor both the agressor and the defender.</p>
@@ -93,7 +125,7 @@ export default async function Page() {
         </p>
 
         <p>Same goes for a throw that is not interrupted by a Kameo move.</p>
-      </Section>
+      </section>
     </>
   )
 }
