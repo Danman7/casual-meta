@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import ferra from '@/app/assets/mk1/ferra.webp'
 import mavado from '@/app/assets/mk1/mavado.webp'
+import motaro from '@/app/assets/mk1/motaro.webp'
 import scorpAirDB2 from '@/app/assets/mk1/scorp_air_db2.webp'
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import spear from '@/app/assets/mk1/scorp_spear.webp'
@@ -458,6 +459,11 @@ export default async function Page() {
           back opponent if combined with a jump-in.
         </p>
 
+        <p>
+          You can chip with <span className="input">[12/21] BK</span>. If it
+          hits, you gain plus frames.
+        </p>
+
         <h3 id="ferra">Ferra </h3>
 
         <Image
@@ -500,6 +506,11 @@ export default async function Page() {
         </p>
 
         <p>
+          Trying to do this up close <span className="input">12 K 2</span> will
+          work most of the time, but it's jab punnishable.
+        </p>
+
+        <p>
           <span className="input">
             Throw [time it] UK 2 F32 F32 4 BF1 F32 4 BF2
           </span>{' '}
@@ -514,14 +525,75 @@ export default async function Page() {
           make sure scaling is reset.
         </p>
 
+        <h3 id="motaro">Motaro</h3>
+
+        <Image
+          className="max-w-24 float-left mr-4"
+          src={motaro}
+          alt="A portrait of Motaro."
+        />
+
+        <p>Motaro gives resets, plus frames, and some hit-confirm safety.</p>
+
+        <p>
+          <span className="input">[any string] BF4</span> is a sort-of low
+          mix-up. The opponent has to guess to block low, but even if you hit
+          you can't combo out of it. You can do something like{' '}
+          <span className="input">
+            B3 F4 K [switch sides] F32 F32 4 BF1 33 DB3
+          </span>{' '}
+          <em>361 DMG</em>. You can end any combo with{' '}
+          <span className="input">BF4</span> and if the didn't guess low, you
+          can do another one. Or if they did you can hold back post swithing
+          sides to end far away (MK11 style Scorpion teleport).
+        </p>
+
+        <p>
+          <em>Tail Shot</em> <span className="input">FK</span> is a +13 on block
+          low attack that allows you to steal your turn back{' '}
+          <span className="input">
+            12 [failed hit confirm] FK 12 [your turn again]
+          </span>
+          . Also you can dom some mix-up with it{' '}
+          <span className="input">21 FK [low] 122 [overhead]</span>.
+        </p>
+
         <h3 id="chameleon">Other considerations</h3>
 
         <p>
-          <em>Chamelion</em> is very fun and comprehensive, but more advanced
+          <em>Khameleon</em> is very fun and comprehensive, but more advanced
           and perhaps less consistent. She extends and combos out of throw and
-          armor, but what is probably more interesing are her resets.{' '}
-          <span className="input">21 BF4</span> is a sort-of low mix-up, which
-          doesn't combo. But with Kitana form's <em>Fan Lift</em> it does.
+          armor, but what is probably more interesing are her resets. Just like
+          with Motaro, Kitana form's <em>Fan Lift</em>{' '}
+          <span className="input">FK</span> bridges{' '}
+          <span className="input">21 BF4</span> into a new combo. And to give
+          you some idea of corner damage you can do{' '}
+          <span className="input">
+            F32 4 4 K [Kitana, hold to switch] [jump] 12 xDB2 3 [land] BF1 F32
+            FK [Mileeena] 4 BF2
+          </span>{' '}
+          <strong>458 DMG</strong> <em>1 BAR</em>, 2 Kameo uses. She expands
+          routes in too many ways to list here.
+        </p>
+
+        <p>
+          <em>Janet's</em> key positive is great combos with exceptional
+          resource efficiencey. But similar to Khameleon she's more difficult.
+          This time it's not managig stances as much as tigh timings -{' '}
+          <span className="input">
+            F32 F32 [jump] 12 DB2 FK [3 times] 4 BF1 33 DB2
+          </span>{' '}
+          <em>386 DMG</em> meterless.
+        </p>
+
+        <p>
+          <em>Jax</em> gives corner and armor routes -{' '}
+          <span className="input">
+            xBF2 [switch sides] FK BF1 F32 F32 F34 BF2
+          </span>{' '}
+          <em>252 DMG, 1 BAR</em>. His <em>Ground Pound</em>{' '}
+          <span className="input">K</span> provides some oki. Otherwise, he's a
+          bit awkward.
         </p>
       </section>
     </>
