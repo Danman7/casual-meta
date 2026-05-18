@@ -475,7 +475,7 @@ export default async function Page() {
       </section>
 
       <section>
-        <h2 id="attack-sequence">Attack sequence (Activation)</h2>
+        <h2 id="attack-sequence">Attack sequence (Weapon Activation)</h2>
 
         <p>
           Attacks can be declared by units, during the Shooting and Fight
@@ -491,53 +491,44 @@ export default async function Page() {
         </p>
 
         <ol>
-          <li>
-            <strong>Roll to hit</strong>.
-          </li>
-          <li>
-            <strong>Roll to wound</strong>.
-          </li>
+          <li>Roll to hit.</li>
+          <li>Roll to wound.</li>
           <li>Allocate wounds.</li>
-          <li>
-            <strong>Roll to save</strong> - either armor or invulnerable.
-          </li>
+          <li>Roll to save - either armor or invulnerable.</li>
           <li>Inflict damage.</li>
         </ol>
 
-        <div className="box">
-          <p className="font-bold flex-center">
-            <IoDiceOutline /> 1. Roll to hit
-          </p>
+        <h3 id="hit-roll">1. Roll to hit</h3>
 
+        <blockquote>
           <p>
-            <strong>Roll a D6</strong> for each attack the weapon does. If
-            result is higher than its{' '}
+            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong> for
+            each attack a weapon does to a target. If result is higher than its{' '}
             <Link
               href={`${wh40kRoute('Datasheets')}#ballistic-skill-weapon-skill`}
             >
               Weapon/Ballistic Skill (WS/BS)
             </Link>
-            , the attack connects. An unmodified roll of 6 is a{' '}
-            <em>critical hit</em>.
-          </p>
-        </div>
-
-        <blockquote>
-          <p>
-            A squad of Heavy Intercessors declares a ranged attack against some
-            Ork Boyz. They fire 5 heavy bolt rifles (A2, BS3+) after moving. Two
-            attacks means rolling 10D6 to hit. They must score 3+.
+            , the particular attack connects.
           </p>
         </blockquote>
 
-        <div className="box">
-          <p className="font-bold flex-center">
-            <IoDiceOutline /> 2. Roll to wound
-          </p>
+        <p>
+          An <em>unmodified roll of 6</em> is a <strong>critical hit</strong>.
+          This plays a role with{' '}
+          <Link href={`${wh40kRoute('Datasheets')}#weapon-keywords`}>
+            weapon keywords
+          </Link>
+          .
+        </p>
 
+        <h3 id="wound-roll">2. Roll to wound</h3>
+
+        <blockquote>
           <p>
-            <strong>Roll a D6.</strong> The result follows a table based on how
-            much higher or lower the weapon's{' '}
+            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong>. The
+            result follows a table based on how much higher or lower the
+            weapon's{' '}
             <Link href={`${wh40kRoute('Datasheets')}#strength`}>
               Strength (S)
             </Link>{' '}
@@ -545,42 +536,40 @@ export default async function Page() {
             <Link href={`${wh40kRoute('Datasheets')}#toughness`}>
               Toughness (T)
             </Link>
-            . An unmodified roll of 6 is a <em>critical wound</em>.
-          </p>
-        </div>
-
-        <Table columns={woundRollColumns} data={woundRollRows} />
-
-        <blockquote>
-          <p>
-            Let's say that out of the 10 attacks from the previous example, 7
-            hit. The heavy rifle has S5 while the Boyz have T5 so a roll of 4+
-            wounds. The attacker rolls 7D6.
+            .
           </p>
         </blockquote>
 
         <p>
-          If the attack hits and wounds the <em>defender</em> allocates which
-          models take the wounds and makes{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#save`}>saving throws</Link>.
-          Models which already lost wounds or had attacks allocated this phase
-          must be selected first. Saves represent the target's armor.
+          An unmodified roll of 6 is a <strong>critical wound</strong>.
         </p>
 
-        <div className="box">
-          <p className="font-bold flex-center">
-            <IoDiceOutline /> 4a. Roll to save
-          </p>
+        <Table columns={woundRollColumns} data={woundRollRows} />
 
+        <h3 id="allocate-wounds">3. Allocate wounds</h3>
+
+        <p>
+          If the attack hits and wounds, the{' '}
+          <strong>defender allocates which models take the wounds</strong>{' '}
+          (unless attacking weapon has{' '}
+          <Link href={`${wh40kRoute('Datasheets')}#precision`}>precision</Link>
+          ). Models which already lost wounds or had attacks allocated this
+          phase must be selected first. Saves represent the target's armor.
+        </p>
+
+        <h3 id="save-roll">4. Roll to save</h3>
+
+        <blockquote>
           <p>
-            <strong>Roll a D6.</strong> Modify the roll by the{' '}
+            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong>.
+            Modify the roll by the{' '}
             <Link href={`${wh40kRoute('Datasheets')}#armor-penetration`}>
               Armor Penetration (AP)
             </Link>{' '}
             of the weapon. If the result is equal or greater to the target's
             Save (Sv), damage is not inflicted.
           </p>
-        </div>
+        </blockquote>
 
         <p>
           The target may also have an <em>Invulnerable Save</em> (Inv) which
@@ -589,45 +578,27 @@ export default async function Page() {
           of the armor save, but <strong>not both</strong>.
         </p>
 
-        <div className="box">
-          <p className="font-bold flex-center">
-            <IoDiceOutline /> 4b. Invulnerable save
-          </p>
-
-          <p>
-            <strong>Roll a D6.</strong> If the result is equal or greater to the
-            target's Invulnerable Save, damage is not inflicted.
-          </p>
-        </div>
-
         <blockquote>
+          <p className="font-bold">Invulnerable save</p>
           <p>
-            Continuing the example, if the attacker scores 4 wounds, the
-            defender selects which Boyz take the wounds. He skips the Nob (the
-            leader) and allocates 4 wounds to the others. Boyz have Sv5+ so they
-            throw 4D6.
+            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong>. If
+            the result is equal or greater to the target's Invulnerable Save,
+            damage is not inflicted, but you loose the ability to roll for a
+            regular save.
           </p>
         </blockquote>
 
-        <p>For all rolls above, an unmodified roll of 1 is always a fail.</p>
-
-        <Image src={attack} alt="Attack sequence example" className="my-6" />
+        <h3 id="damage">Inflict damage</h3>
 
         <p>
           After all 3 rolls are done, if the attack hits, wounds, and the armor
           save fails, damage is inflicted. The target loses wounds equal to the{' '}
           <Link href={`${wh40kRoute('Datasheets')}#damage`}>Damage (D)</Link> of
-          the weapon. If the attack has more D than is required to kill the
-          target model, the excess is lost.
+          the weapon. If that damage is more than is required to kill the target
+          model, the excess cannot be allocated to other targets and is lost.
         </p>
 
-        <blockquote>
-          <p>
-            In the end two attacks inflict damage. Since the heavy rifle has D2
-            and the Ork Boy has W1, two Boyz are removed from battle and the
-            excess damage is lost.
-          </p>
-        </blockquote>
+        <Image src={attack} alt="Attack sequence example" className="my-6" />
 
         <p>
           The attack sequence is a series of independent probability gates. Each

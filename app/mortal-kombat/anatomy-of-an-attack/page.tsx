@@ -27,7 +27,6 @@ import liMeiAdvancedView from '@/app/assets/mk1/advanced_view.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { mkRoute } from '@/app/mortal-kombat/constants'
-import { Callout } from '@/app/ui/Callout'
 import { Diagram } from '@/app/ui/Diagram'
 import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { Pill } from '@/app/ui/Pill'
@@ -469,7 +468,7 @@ export default async function Page() {
           </li>
         </ul>
 
-        <Callout title="Deep dive: actual disadvantage on block">
+        <div title="Deep dive: actual disadvantage on block">
           <p>
             Player X throws a -10 on block attack which player Y blocks. Player
             X will recover on the 11th frame when he will be able to block. Can
@@ -500,7 +499,7 @@ export default async function Page() {
             Range also plays a role. A 7-frame start-up projectile might not
             reach the opponent within the 10 frames to hit them.
           </p>
-        </Callout>
+        </div>
         <h3 id="punish">Punish and counter</h3>
         <ul>
           <li>

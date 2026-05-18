@@ -83,7 +83,7 @@
 }
 
 @utility picture {
-  @apply rounded-lg shadow-md;
+  @apply rounded shadow-md;
 }
 
 @utility profile-img {
@@ -103,7 +103,7 @@
 }
 
 @utility box {
-  @apply border border-foreground/10 bg-surface p-4 rounded-lg mb-6 shadow-sm space-y-4;
+  @apply border border-foreground/10 bg-surface p-4 rounded mb-6 shadow-sm space-y-4;
 }
 
 @utility button {
@@ -111,8 +111,17 @@
 }
 
 @layer base {
+  blockquote,
+  section {
+    @apply space-y-4;
+  }
+
+  section {
+    @apply mt-8;
+  }
+
   blockquote {
-    @apply border-l-3 border-foreground/10 pl-3 text-foreground/80 space-y-3 text-sm leading-6;
+    @apply border-l-4! rounded border-primary pl-4!;
   }
 
   a {
@@ -151,10 +160,6 @@
       @apply inline-flex underline;
     }
 
-    section {
-      @apply space-y-4 mt-8;
-    }
-
     ul,
     ol {
       @apply pl-5 space-y-2;
@@ -177,11 +182,7 @@
     @apply px-4 sm:px-6 lg:px-8;
   }
 
-  .circle-icon {
-    @apply inline-flex place-items-center bg-surface rounded-full w-9 h-9 p-1 border-2 border-foreground/10;
-  }
-
-  .pointer {
+  .wh-pointer {
     @apply bg-foreground inline-block;
 
     width: 2em;

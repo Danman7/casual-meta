@@ -249,10 +249,10 @@ export default async function Page() {
         />
 
         <p>
-          This symbol <span className="pointer" /> indicates that a weapon has
-          multiple modes. One must be chosen prior to declaring an attack. If a
-          characteristic has a D6 in it, a dice roll is used to determine the
-          current value of the activation.
+          This symbol <span className="wh-pointer" /> indicates that a weapon
+          has multiple modes. One must be chosen prior to declaring an attack.
+          If a characteristic has a D6 in it, a dice roll is used to determine
+          the current value of the activation.
         </p>
 
         <p>

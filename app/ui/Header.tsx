@@ -53,7 +53,7 @@ export const Header = ({
     <header
       className={`blurred-surface edge-padding flex-center z-50 py-3 sticky top-0  border-b border-foreground/10 font-bold transition-transform duration-300 justify-between ${isHeaderVisible ? 'translate-y-0' : '-translate-y-full'}`}
     >
-      <section className="flex-list text-2xl">
+      <div className="flex-list text-2xl">
         <button
           className="lg:hidden cursor-pointer hover:text-primary transition-all"
           onClick={onToggleMobileMenu}
@@ -74,7 +74,7 @@ export const Header = ({
           <FaAsterisk className="text-primary" />
           <span>Casual Meta</span>
         </Link>
-      </section>
+      </div>
 
       <nav>
         <div className="hidden lg:flex flex-list gap-4 text-lg">
