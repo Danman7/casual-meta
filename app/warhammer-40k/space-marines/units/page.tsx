@@ -16,13 +16,13 @@ import { Section } from '@/app/ui/Section'
 import { wh40kRoute } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
-export const navOrder = 11
+export const navOrder = 12
 
-export const navTitle = 'Space Marine Units'
+export const navTitle = 'Core Space Marine units'
 
 export const metadata = generatePageMetadata(
   `${WH40K_TITLE}: ${navTitle}`,
-  'An overview of the Space Marines units.',
+  'An overview of the Core Space Marines units.',
 )
 
 export default async function Page() {

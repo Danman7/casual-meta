@@ -83,7 +83,7 @@
 }
 
 @utility picture {
-  @apply rounded shadow-md;
+  @apply rounded shadow-sm;
 }
 
 @utility profile-img {
@@ -107,7 +107,7 @@
 }
 
 @utility button {
-  @apply box space-y-0! cursor-pointer hover:text-primary hover:shadow-md hover:border-primary transition-all text-center no-underline flex-center;
+  @apply box space-y-0! cursor-pointer hover:text-primary hover:shadow-sm hover:border-primary transition-all text-center no-underline flex-center;
 }
 
 @layer base {
@@ -121,7 +121,11 @@
   }
 
   blockquote {
-    @apply border-l-4! rounded border-primary pl-4!;
+    @apply border-l-4 rounded border-primary pl-4;
+  }
+
+  .example {
+    @apply border-foreground/50 pl-3 italic text-sm!;
   }
 
   a {
@@ -135,7 +139,7 @@
   }
 
   h1 {
-    @apply text-4xl font-semibold leading-tight mb-6 text-shadow-md;
+    @apply text-4xl font-semibold leading-tight mb-6 text-shadow-sm;
   }
 
   h2 {
