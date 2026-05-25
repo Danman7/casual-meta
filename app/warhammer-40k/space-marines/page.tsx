@@ -23,6 +23,12 @@ export default async function Page() {
       <h1>{navTitle}</h1>
 
       <section>
+        <p>
+          Space Marines are genetically engineered superhuman warriors - the
+          best of mankind's Imperium. Fanatically loyal to the Emperor, they're
+          given tasks which other human forces fall short of.
+        </p>
+
         <Image
           className="picture profile-img"
           src={marines}
@@ -31,24 +37,19 @@ export default async function Page() {
         />
 
         <p>
-          Space Marines are genetically engineered superhuman warriors - the
-          best of mankind's Imperium. Fanatically loyal to the Emperor, they're
-          given tasks which other human forces fall short of.
+          Being a <em>key cornerstone</em> of the WH40k universe, they're{' '}
+          <strong>widely supported</strong> in starter boxes, standalone kits,
+          used markets, and usually the first to be adopted in new editions.
+          Models and spare parts are easy to find and paint, and you can get a
+          lot of advice on how to list and play them.
         </p>
 
         <p>
-          You can think of them as the <strong>"default faction"</strong>.
-        </p>
-
-        <p>
-          Games Workshop treats them as a <em>key cornerstone</em> of the WH40k
-          universe. As a result, they're <strong>widely supported</strong> in
-          starter boxes, used markets, and usually the first to be adopted in
-          new editions. Models are easy to find, easy to paint, and you can get
-          a lot of advice on how to list and play them. Plus, they are around
-          the middle of the factions ecosystem - more elite than horde armies
-          like Guards or Orks, less specialized than T'au or World Eaters. All
-          of this makes them <strong>approachable for new players</strong>.
+          You can think of them as the <strong>"default faction"</strong> - the
+          one that teaches the game. They are around the middle of the ecosystem
+          - more elite than horde armies like Guards or Orks, less specialized
+          than T'au or World Eaters. All of this makes them{' '}
+          <strong>approachable for new players</strong>.
         </p>
 
         <p>
@@ -123,58 +124,35 @@ export default async function Page() {
 
       <section>
         <h2 id="army">A tool for every job</h2>
-
         <Image
-          className="float-right ml-4"
+          className="float-right ml-4 max-w-1/2"
           src={marine}
           alt="A Space Marine."
         />
-
         <p>
-          In a sentence, Space Marines are{' '}
+          On the table, Space Marines are{' '}
           <strong>all-around reliable professionals</strong> - not the fastest
-          or toughest, but rather the most flexible. Your goal is to identify
-          the most important enemy piece, declare Oath on it, and use infantry,
-          characters and vehicles together to bring it down. They teach the
-          whole game rather than one gimmick.
+          or toughest, but rather the most flexible.
         </p>
 
         <p>
-          Space Marines have the largest amount of{' '}
-          <Link href={`${wh40kRoute('Datasheets')}`}>datasheets</Link> of any
-          faction . They have an answer in almost every battlefield category:
-          infantry trading, elite infantry, jump units, bikes, transports,
-          tanks, walkers, aircraft, super-heavies, and heroes. There is a{' '}
-          <strong>tool for every job</strong>, but that comes with some
-          downsides.
+          There are more Astartes{' '}
+          <Link href={`${wh40kRoute('Datasheets')}`}>datasheets</Link> than any
+          other faction, with a <em>broad distribution of roles</em>: objective
+          pressure, jump infantry, elites, bikes, transports, walkers, aircraft
+          etc. Be that as it may, there is a heavy{' '}
+          <strong>emphasis on characters</strong> - roughtly 40% of the core
+          list. This promotes layered buffs of taskforces that work together -
+          <em>troops + leader + Oath + stratagem</em>.
         </p>
 
         <p>
-          For one, many units <strong>overlap in roles</strong>, which is roster
-          bloat. In turn this leads to choice overload. Also, this premium
-          versatility frequently loses to specialist units dedicated to specific
-          jobs. For example, the average ranged Marine shoots well, but not
-          quite as the T'au.
-        </p>
-
-        <p>
-          The role distribution in the army is very character-heavy which
-          indicates <strong>leader-driven specialization</strong>. Marines are
-          less about standalone profiles and more about packages (character +
-          bodyguards + support). Units that are merely solid on their own become
-          dangerous whith the right leader.
-        </p>
-
-        <p>
-          Space Marines have <strong>excellent baseline durability</strong>.
-          Nearly all models sit at T4, Sv3+ or better. This bestows a more
-          forgiving experience, furthering the beginner-friendly aspect of the
-          faction.
-        </p>
-
-        <p>
-          The Astartes arsenal consists of{' '}
-          <strong>primarily D1-D2 weapons</strong> with very{' '}
+          Space Marines have <strong>good baseline durability</strong>. Almost
+          all models are{' '}
+          <Link href={`${wh40kRoute('Profile Archetypes')}#meq`}>MEQ</Link>{' '}
+          <span className="badge">T4, Sv3+</span> or better, which bestows a
+          more forgiving experience. About 70% of the arsenal is ranged, mostly
+          D1-D2 weapons within 24" range, with{' '}
           <strong>
             strong{' '}
             <Link href={`${wh40kRoute('Datasheets')}#weapon-keywords`}>
@@ -182,7 +160,20 @@ export default async function Page() {
             </Link>{' '}
             diversity
           </strong>
-          . Over two-thirds of the weapons are ranged, mostly within 24" range.
+          .
+        </p>
+
+        <p>
+          On the flip side, the abundancy of Astartes options fosters{' '}
+          <strong>choice overload</strong>. In addition, there is a notable{' '}
+          <strong>roster bloat</strong> where multiple units and weapons overlap
+          in role.
+        </p>
+
+        <p>
+          When you are good at everything, you get outmatched by specialized
+          forces at their games. Orks and Tyranids may swarm you, World Eaters
+          may slaugher you in melee, T'au may outshoot you, and so on.
         </p>
       </section>
 
@@ -190,42 +181,60 @@ export default async function Page() {
         <h2 id="chapters" className="flex-center">
           Chapters <GiKnightBanner />
         </h2>
+        <p>
+          Space Marines are segmented into <em>Chapters</em> - independent
+          forces of roughly 1,000 Marines with their own traditions and tactics.
+          They play a role in both the lore and the game.
+        </p>
+        <p>
+          Datasheets that have only the <em>Adeptus Astartes</em> faction are{' '}
+          <em>core units</em>. Datasheets that have a second faction keyword are{' '}
+          <em>chapter units</em>.
+        </p>
+        <blockquote className="example">
+          For example, Marneus Calgar has both Adeptus Astartes and
+          Ultramarines, so he is part of the Ultramarines. Intercessors only
+          have the Adeptus Astartes keyword, so they can be part of any force.
+        </blockquote>
 
         <p>
-          Space Marine forces are segmented into <em>Chapters</em>. All core
-          units have the <em>Adeptus Astartes</em> faction keyword on their{' '}
-          datasheets, but some may also have a second faction keyword. These are
-          chapter specific units. Part of the faction's profile breadth comes
-          from these.
+          A chapter says who the given Space Marines are. A detachment specifies
+          how the army fights.
         </p>
 
-        <ul>
-          <li>
-            An army list can include core units and units from one chapter.
-          </li>
+        <blockquote>
+          <p className="font-bold">Chapter roster rules</p>
 
-          <li>
-            <strong>Units from different chapters cannot mix together.</strong>
-          </li>
+          <ul>
+            <li>
+              An army list can include core units and units from one chapter.
+            </li>
 
-          <li>
-            Black Templars, Space Wolves and Deathwatch have limitations on what
-            core units they can field.
-          </li>
-        </ul>
+            <li>
+              <strong>
+                Units from different chapters cannot mix together.
+              </strong>
+            </li>
+
+            <li>
+              Including a datasheet with a second faction keyword locks your
+              army into that chapter.
+            </li>
+
+            <li>
+              Some detachments are locked into a specific chapter, but don't
+              force you to include chapter units.
+            </li>
+
+            <li>
+              Black Templars, Space Wolves and Deathwatch have additional
+              limitations on what core units they can field.
+            </li>
+          </ul>
+        </blockquote>
 
         <p>
-          Chapters push the generalistic Adeptus Astartes into sharper
-          identities. Selecting a single unit with a second faction keyword,
-          locks your army into that chapter.
-        </p>
-
-        <p>
-          You can read more on chapters on the{' '}
-          <Link href={wh40kRoute('Space Marine forces')}>
-            Space Marine forces
-          </Link>{' '}
-          page. The game also allows players to create and paint their own{' '}
+          The game also allows players to create and paint their own{' '}
           <em>cosmetic chapters</em>, as long as they follow the rules of the
           models included. The paint does not force the rules. The datasheets
           and keywords do.
