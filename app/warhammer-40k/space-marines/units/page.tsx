@@ -18,7 +18,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 12
 
-export const navTitle = 'Core Space Marine units'
+export const navTitle = 'Core Astartes units'
 
 export const metadata = generatePageMetadata(
   `${WH40K_TITLE}: ${navTitle}`,

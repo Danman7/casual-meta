@@ -23,18 +23,17 @@ export default async function Page() {
       <h1>{navTitle}</h1>
 
       <section>
+        <Image
+          className="float-right ml-4 max-w-1/2"
+          src={marine}
+          alt="A Space Marine from the Ultramarines chapter."
+        />
+
         <p>
           Space Marines are genetically engineered superhuman warriors - the
           best of mankind's Imperium. Fanatically loyal to the Emperor, they're
           given tasks which other human forces fall short of.
         </p>
-
-        <Image
-          className="picture profile-img"
-          src={marines}
-          alt="An Ultramarines detachment."
-          loading="eager"
-        />
 
         <p>
           Being a <em>key cornerstone</em> of the WH40k universe, they're{' '}
@@ -92,9 +91,9 @@ export default async function Page() {
             </li>
 
             <li>
-              If using a Codex Space Marines detachment and excluding divergent
-              chapters (Black Templars, Blood Angels, Dark Angels, Deathwatch,
-              Space Wolves), you also gain +1 to{' '}
+              If using a codex-compliant detachment (excluding divergent
+              chapters like Black Templars, Blood Angels, etc.; explained
+              below), you also gain +1 to{' '}
               <Link href={`${wh40kRoute('The Battle Round')}#wound-roll`}>
                 wound rolls
               </Link>{' '}
@@ -124,11 +123,7 @@ export default async function Page() {
 
       <section>
         <h2 id="army">A tool for every job</h2>
-        <Image
-          className="float-right ml-4 max-w-1/2"
-          src={marine}
-          alt="A Space Marine."
-        />
+
         <p>
           On the table, Space Marines are{' '}
           <strong>all-around reliable professionals</strong> - not the fastest
@@ -184,9 +179,6 @@ export default async function Page() {
         <p>
           Space Marines are segmented into <em>Chapters</em> - independent
           forces of roughly 1,000 Marines with their own traditions and tactics.
-          They play a role in both the lore and the game.
-        </p>
-        <p>
           Datasheets that have only the <em>Adeptus Astartes</em> faction are{' '}
           <em>core units</em>. Datasheets that have a second faction keyword are{' '}
           <em>chapter units</em>.
@@ -234,11 +226,33 @@ export default async function Page() {
         </blockquote>
 
         <p>
-          The game also allows players to create and paint their own{' '}
-          <em>cosmetic chapters</em>, as long as they follow the rules of the
-          models included. The paint does not force the rules. The datasheets
-          and keywords do.
+          The most visible trait of a chapter is its color scheme, but what
+          defines it on the table are its{' '}
+          <Link href={`${wh40kRoute('Astartes chapter units')}`}>
+            custom units
+          </Link>{' '}
+          and{' '}
+          <Link href={`${wh40kRoute('Astartes detachments')}`}>
+            detachments
+          </Link>
+          . Let's go briefly trough the official chapters to get a feeling of
+          their flavor and support.
         </p>
+
+        <p>
+          There are two types of chapter support: lightly supported chapters
+          (codex compliant, few unique units) and divergent chapters (lots of
+          unique datasheets and rules).
+        </p>
+
+        <h3 id="ultramarines">Ultramarines</h3>
+
+        <Image
+          className="picture profile-img"
+          src={marines}
+          alt="An Ultramarines detachment."
+          loading="eager"
+        />
       </section>
     </>
   )
