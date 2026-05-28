@@ -46,14 +46,14 @@ export default async function Page() {
             </Link>{' '}
             and <Link href={`${mkRoute('Pressure')}#stagger`}>stagger</Link>{' '}
             offense. Like in previous titles, he is{' '}
-            <strong>built around fundamentals</strong>. He has no forms, or
+            <strong>built around fundamentals</strong>. He has no forms or
             complex gimmicks to manage, making him{' '}
             <strong>approachable for new players</strong>.
           </p>
 
           <p>
             Lacking any real{' '}
-            <Link href={`${mkRoute('Pressure')}#mix-up`}>mix-up</Link>, on his
+            <Link href={`${mkRoute('Pressure')}#mix-up`}>mix-up</Link> on his
             own, <strong>his offense stays linear and honest</strong>.
             Fortunately, his moves are modular enough to{' '}
             <strong>work well with many Kameos</strong>, which can fill the gaps
@@ -66,7 +66,7 @@ export default async function Page() {
             <Link href={`${mkRoute('Anatomy of attacks')}#disjointed`}>
               disjointed
             </Link>{' '}
-            pokes and
+            pokes and{' '}
             <Link href={`${mkRoute('Anatomy of attacks')}#space-control`}>
               space-controlling
             </Link>{' '}
@@ -154,7 +154,7 @@ export default async function Page() {
         <p>
           <span className="input">B2</span> is similar to, even faster and more
           damaging than <span className="input">2</span>, but its hitbox is
-          geared towards an <em>anti-air</em> attack. It can be shortcut
+          geared towards an <em>anti-air</em> attack. It can be shortcut-
           cancelled into any forward special (e.g.{' '}
           <span className="input">B3 F1</span> cancels into Spear) for a full
           combo.
@@ -162,11 +162,11 @@ export default async function Page() {
 
         <p>
           <span className="input">B3</span> is Scorpion's most unique normal. He
-          launches his Kunai, for a very far reaching, slow (21 frames), unsafe
+          launches his kunai for a very far-reaching, slow (21 frames), unsafe
           (-19 on block), disjointed attack that hits twice - mid-
           <Link href={`${mkRoute('Anatomy of attacks')}#low`}>low</Link>. The
-          first mid hit can be cancelled into any special. It's a respecting and
-          space-controlling move.
+          first mid hit can be cancelled into any special. It's a
+          space-controlling move the opponent has to respect.
         </p>
 
         <Image
@@ -182,8 +182,8 @@ export default async function Page() {
           full-screen, space-controlling, high{' '}
           <Link href={`${mkRoute('Anatomy of attacks')}#projectile`}>
             projectile
-          </Link>
-          , that stuns on hit, drags and restands the opponent next to you. It's
+          </Link>{' '}
+          that stuns on hit, drags and restands the opponent next to you. It's
           one of the best whiff punishes and combo starters/extenders in the
           game. The <em>enhanced</em> version hits mid, mixing it up for foes
           that like to duck under it.
@@ -219,7 +219,7 @@ export default async function Page() {
         <p>
           <em>Enhanced Devouring Flame</em> <span className="input">xBF4</span>{' '}
           is an unblockable, low, damage-over-time special that tracks the
-          opponent. It's both a anti-zoning and an{' '}
+          opponent. It's both an anti-zoning and an{' '}
           <Link href={`${mkRoute('Momentum')}#oki`}>oki</Link> option.
         </p>
       </section>
@@ -309,8 +309,8 @@ export default async function Page() {
           <span className="input">
             21 BF1 F32 F32 [jump] 12 xDB2 [111/4 BF2]
           </span>{' '}
-          <em>~330-350 DMB, 1 BAR</em> - a very sub-optimal route, but good
-          starting point for air extensioon.
+          <em>~330-350 DMG, 1 BAR</em> - a very suboptimal route, but a good
+          starting point for air extension.
         </p>
 
         <p>
@@ -353,7 +353,7 @@ export default async function Page() {
         <p>
           You can keep it simple in the corner, much like you can in the middle.
           But if you wish to spike and are willing to train some timings, you
-          can chain two <span className="input">4</span> in a row, which keep
+          can chain two <span className="input">4</span> in a row, which keeps
           most of their damage through scaling.
         </p>
 
@@ -424,7 +424,7 @@ export default async function Page() {
 
         <p>
           Mavado is an all-around safe pick for Scorpion. He teaches proper
-          Kameo play (not single button spams) and gives a little bit of
+          Kameo play (not single-button spam) and gives a little bit of
           everything, primarily armored and throw combos, and preserving meter.
         </p>
 
@@ -445,17 +445,17 @@ export default async function Page() {
           <span className="input">
             xBF2 UK - switch sides - dash F32 F32 4 BF1 33 DB2
           </span>{' '}
-          - <em>259 DMG</em> armored combo using Movado's <em>Nindrop</em>.
+          - <em>259 DMG</em> armored combo using Mavado's <em>Nindrop</em>.
         </p>
 
         <p>
           <span className="input">F32 F32 jump 12 xDB2 UK land BF1 33 DB2</span>{' '}
-          <em>375 DMG</em> - out of juggles using Movado deals almost the same
+          <em>375 DMG</em> - using Mavado out of juggles deals almost the same
           damage as spending a bar.
         </p>
 
         <p>
-          <span className="input">Down K</span> give you some oki on a knocked
+          <span className="input">Down K</span> gives you some oki on a knocked
           back opponent if combined with a jump-in.
         </p>
 
@@ -464,7 +464,7 @@ export default async function Page() {
           hits, you gain plus frames.
         </p>
 
-        <h3 id="ferra">Ferra </h3>
+        <h3 id="ferra">Ferra</h3>
 
         <Image
           className="max-w-24 float-left mr-4"
@@ -479,13 +479,13 @@ export default async function Page() {
           <Link href={`${mkRoute('Anatomy of attacks')}#command-grabs`}>
             command grab
           </Link>
-          , so your offence can become more proactive.
+          , so your offense can become more proactive.
         </p>
 
         <p>
-          On hit confirming that they block you can go for{' '}
+          On confirming that they block, you can go for{' '}
           <span className="input">[12/21] K Throw</span> <em>100 DMG</em> -
-          doesn't lead to anything, but many foes eat the damage up.
+          doesn't lead to anything, but many foes eat the damage.
         </p>
 
         <p>
@@ -506,8 +506,8 @@ export default async function Page() {
         </p>
 
         <p>
-          Trying to do this up close <span className="input">12 K 2</span> will
-          work most of the time, but it's jab punnishable.
+          Trying to do this up close with <span className="input">12 K 2</span>{' '}
+          will work most of the time, but it's jab punishable.
         </p>
 
         <p>
@@ -543,9 +543,9 @@ export default async function Page() {
             B3 F4 K [switch sides] F32 F32 4 BF1 33 DB3
           </span>{' '}
           <em>361 DMG</em>. You can end any combo with{' '}
-          <span className="input">BF4</span> and if the didn't guess low, you
-          can do another one. Or if they did you can hold back post swithing
-          sides to end far away (MK11 style Scorpion teleport).
+          <span className="input">BF4</span> and if they didn't guess low, you
+          can do another one. Or if they did, you can hold back after switching
+          sides to end far away (MK11-style Scorpion teleport).
         </p>
 
         <p>
@@ -554,7 +554,7 @@ export default async function Page() {
           <span className="input">
             12 [failed hit confirm] FK 12 [your turn again]
           </span>
-          . Also you can dom some mix-up with it{' '}
+          . You can also do some mix-up with it{' '}
           <span className="input">21 FK [low] 122 [overhead]</span>.
         </p>
 
@@ -563,14 +563,14 @@ export default async function Page() {
         <p>
           <em>Khameleon</em> is very fun and comprehensive, but more advanced
           and perhaps less consistent. She extends and combos out of throw and
-          armor, but what is probably more interesing are her resets. Just like
+          armor, but what is probably more interesting are her resets. Just like
           with Motaro, Kitana form's <em>Fan Lift</em>{' '}
           <span className="input">FK</span> bridges{' '}
           <span className="input">21 BF4</span> into a new combo. And to give
           you some idea of corner damage you can do{' '}
           <span className="input">
             F32 4 4 K [Kitana, hold to switch] [jump] 12 xDB2 3 [land] BF1 F32
-            FK [Mileeena] 4 BF2
+            FK [Mileena] 4 BF2
           </span>{' '}
           <strong>458 DMG</strong> <em>1 BAR</em>, 2 Kameo uses. She expands
           routes in too many ways to list here.
@@ -578,8 +578,8 @@ export default async function Page() {
 
         <p>
           <em>Janet's</em> key positive is great combos with exceptional
-          resource efficiencey. But similar to Khameleon she's more difficult.
-          This time it's not managig stances as much as tigh timings -{' '}
+          resource efficiency. But similar to Khameleon she's more difficult.
+          This time it's not managing stances as much as tight timings -{' '}
           <span className="input">
             F32 F32 [jump] 12 DB2 FK [3 times] 4 BF1 33 DB2
           </span>{' '}

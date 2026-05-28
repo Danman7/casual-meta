@@ -23,7 +23,7 @@ export default async function Page() {
       <section>
         <div className="flavor">
           This page aims to describe the somewhat hazy concept of Neutral in
-          fighting games in general, and in Mortal Kobat in particular.
+          fighting games in general, and in Mortal Kombat in particular.
         </div>
 
         <p>
@@ -31,7 +31,7 @@ export default async function Page() {
           game works beyond solid concepts like frame data and hit-boxes. One
           such area is the division of a round into micro-states. The fight can
           be in a state of <em>Pressure</em> and that can evolve into a state of{' '}
-          <em>Punish</em>. If neither apply, probably you are in the state of{' '}
+          <em>Punish</em>. If neither applies, you are probably in the state of{' '}
           <em>Neutral.</em>
         </p>
       </section>
@@ -62,7 +62,7 @@ export default async function Page() {
 
         <p>
           Neutral is a time where play can unfold in any direction. Players can
-          back away, rush closer, jump around or over each other or probe with
+          back away, rush closer, jump around or over each other, or probe with
           safe attacks. This can continue for as short or as long as necessary,
           until someone gains a lead.
         </p>
@@ -80,8 +80,8 @@ export default async function Page() {
           contest for controlling space and tempo in Neutral. Both players move
           in and out of each other’s reach, using safe attacks to test reactions
           and provoke mistakes. The term is often used broadly, but the emphasis
-          is usually on mobility, hence the name. It’s as much a timing as it is
-          a mind game.
+          is usually on mobility, hence the name. It’s as much a timing game as
+          it is a mind game.
         </p>
       </section>
 
@@ -117,7 +117,7 @@ export default async function Page() {
           Punish.
         </p>
 
-        <p>It can favor both the agressor and the defender.</p>
+        <p>It can favor both the aggressor and the defender.</p>
 
         <p>
           A combo ending in knockback can create enough distance between the

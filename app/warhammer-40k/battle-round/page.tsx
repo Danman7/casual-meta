@@ -43,7 +43,7 @@ export default async function Page() {
         </p>
 
         <p>
-          To complete your turn go through each of the following phases in
+          To complete your turn, go through each of the following phases in
           order, following the sequence of actions as described. Then you pass
           the turn to your opponent.
         </p>
@@ -131,8 +131,8 @@ export default async function Page() {
 
           <p>
             Now, if the same squad had a Chaplain attached, they would be at 3/6
-            models and won't require a test. But if they did, rolling a 5 this
-            time will pass as the Chaplain has Ld5+.
+            models and wouldn't require a test. But if they did, rolling a 5
+            this time would pass, as the Chaplain has Ld5+.
           </p>
         </blockquote>
 
@@ -168,7 +168,7 @@ export default async function Page() {
 
         <p>
           During this phase, units may reposition. Every allied unit outside{' '}
-          <em> engagement range</em> (1" of an enemy) can either:
+          <em>engagement range</em> (1" of an enemy) can either:
         </p>
 
         <ul>
@@ -204,8 +204,8 @@ export default async function Page() {
         </p>
 
         <p>
-          A unit is allowed to skip movement altogether. If it does it's
-          considered as <em>remained stationary</em>, generating potential
+          A unit is allowed to skip movement altogether. If it does, it is
+          considered to have <em>remained stationary</em>, generating potential
           benefits under some rules.
         </p>
 
@@ -250,7 +250,7 @@ export default async function Page() {
           Units are not restricted to moving only in straight lines. They can
           freely change direction as long as the move is within their M.
           However, Vehicles and Monsters without round bases or the <em>Fly</em>{' '}
-          keyword must <em>reduce their move by 2"</em> every time they pivot .
+          keyword must <em>reduce their move by 2"</em> every time they pivot.
           This prevents gaining extra distance through rotation tricks.
         </p>
 
@@ -259,11 +259,11 @@ export default async function Page() {
         <h3 id="transports">Transports</h3>
 
         <p>
-          If a unit has the <em>Transport</em> keyword, they allow other units
-          to <em>embark</em> on them during this phase, provided every model
-          ends a move within 3" of the transport. Then the embarked unit is
-          temporarily removed from the table and the transport carries them
-          around. They can disembark again through a following movement phase.
+          If a unit has the <em>Transport</em> keyword, it allows other units to{' '}
+          <em>embark</em> in it during this phase, provided every model ends a
+          move within 3" of the transport. Then the embarked unit is temporarily
+          removed from the table and the transport carries them around. They can
+          disembark again during a following Movement phase.
         </p>
 
         <ul>
@@ -298,10 +298,10 @@ export default async function Page() {
         <h3 id="strategic-reserves">Strategic Reserves</h3>
 
         <p>
-          Players are may not deploy all of their units at the beginning of the
-          battle. Up to <em>25% of your total army points</em> can be held as{' '}
-          <em>strategic reserves</em>. They may join the battle later, at the
-          very end of the movement phase, following these rules:
+          Players may choose not to deploy all of their units at the beginning
+          of the battle. Up to <em>25% of your total army points</em> can be
+          held as <em>strategic reserves</em>. They may join the battle later,
+          at the very end of the movement phase, following these rules:
         </p>
 
         <ul>
@@ -320,7 +320,7 @@ export default async function Page() {
         </p>
       </section>
 
-      <section title="3. Shooting phase">
+      <section>
         <h2 id="shooting-phase" className="flex-center">
           3. Shooting phase <FaCrosshairs />
         </h2>
@@ -331,7 +331,7 @@ export default async function Page() {
         </p>
 
         <ul>
-          <li>Is not engaged in close combat.</li>
+          <li>It is not engaged in close combat.</li>
           <li>
             Has at least one <em>ranged</em> weapon within range of an enemy.
           </li>
@@ -374,7 +374,9 @@ export default async function Page() {
               wasting attacks.
             </li>
 
-            <li>Focus fire with the aim to destroy outright, not chip.</li>
+            <li>
+              Focus fire with the aim of destroying outright, not chipping.
+            </li>
 
             <li>
               Against Infantry, resolve Blast weapons first for bonus attacks.
@@ -398,9 +400,9 @@ export default async function Page() {
         </p>
 
         <ul>
-          <li>It didn't advance this turn.</li>
+          <li>It did not advance this turn.</li>
 
-          <li>Is within 12" of the target.</li>
+          <li>It is within 12" of the target.</li>
         </ul>
 
         <p>
@@ -422,11 +424,11 @@ export default async function Page() {
         </div>
 
         <p>
-          Units that are better at melee, naturally want to engage the enemy
+          Units that are better at melee naturally want to engage the enemy
           earlier. It's often better to skip advancing, which might gain up to
           6", and do a regular move + charge, which might gain up to 12". Watch
-          your positioning. You may find your forward troops a bottleneck for
-          follow-up charges.
+          your positioning. You may find your forward troops are a bottleneck
+          for follow-up charges.
         </p>
       </section>
 
@@ -437,10 +439,9 @@ export default async function Page() {
 
         <p>
           It's time to resolve hand-to-hand attacks. All units that completed a
-          successful charge this turn, or were already engaged participate.
-          Units that charged, gain <em>Fights First</em> (some have it
-          natively). The non-active player goes first if they have eligible
-          units.
+          successful charge this turn, or were already engaged, participate.
+          Units that charged gain <em>Fights First</em> (some have it natively).
+          The non-active player goes first if they have eligible units.
         </p>
 
         <p className="font-bold">Who fights when?</p>
@@ -469,7 +470,7 @@ export default async function Page() {
         </ol>
 
         <p>
-          Pile-ins and consolidations are tools for jamming units, and stealing
+          Pile-ins and consolidations are tools for jamming units and stealing
           objectives.
         </p>
       </section>
@@ -478,9 +479,9 @@ export default async function Page() {
         <h2 id="attack-sequence">Attack sequence (Weapon Activation)</h2>
 
         <p>
-          Attacks can be declared by units, during the Shooting and Fight
-          phases, but are executed by the weapons they carry. The process of
-          executing an attack is called an <em>attack sequence</em> or an{' '}
+          Attacks can be declared by units during the Shooting and Fight phases,
+          but are executed by the weapons they carry. The process of executing
+          an attack is called an <em>attack sequence</em> or an{' '}
           <em>activation</em> for short.
         </p>
 
@@ -503,7 +504,8 @@ export default async function Page() {
         <blockquote>
           <p>
             <IoDiceOutline className="inline" /> Roll a <strong>D6</strong> for
-            each attack a weapon does to a target. If result is higher than its{' '}
+            each attack a weapon does to a target. If the result is higher than
+            its{' '}
             <Link
               href={`${wh40kRoute('Datasheets')}#ballistic-skill-weapon-skill`}
             >
@@ -551,10 +553,10 @@ export default async function Page() {
         <p>
           If the attack hits and wounds, the{' '}
           <strong>defender allocates which models take the wounds</strong>{' '}
-          (unless attacking weapon has{' '}
+          (unless the attacking weapon has{' '}
           <Link href={`${wh40kRoute('Datasheets')}#precision`}>precision</Link>
-          ). Models which already lost wounds or had attacks allocated this
-          phase must be selected first. Saves represent the target's armor.
+          ). Models that already lost wounds or had attacks allocated this phase
+          must be selected first. Saves represent the target's armor.
         </p>
 
         <h3 id="save-roll">4. Roll to save</h3>
@@ -566,8 +568,8 @@ export default async function Page() {
             <Link href={`${wh40kRoute('Datasheets')}#armor-penetration`}>
               Armor Penetration (AP)
             </Link>{' '}
-            of the weapon. If the result is equal or greater to the target's
-            Save (Sv), damage is not inflicted.
+            of the weapon. If the result is equal to or greater than the
+            target's Save (Sv), damage is not inflicted.
           </p>
         </blockquote>
 
@@ -582,17 +584,18 @@ export default async function Page() {
           <p className="font-bold">Invulnerable save</p>
           <p>
             <IoDiceOutline className="inline" /> Roll a <strong>D6</strong>. If
-            the result is equal or greater to the target's Invulnerable Save,
-            damage is not inflicted, but you loose the ability to roll for a
-            regular save.
+            the result is equal to or greater than the target's Invulnerable
+            Save, damage is not inflicted, but you lose the ability to roll for
+            a regular save.
           </p>
         </blockquote>
 
         <h3 id="damage">Inflict damage</h3>
 
         <p>
-          After all 3 rolls are done, if the attack hits, wounds, and the armor
-          save fails, damage is inflicted. The target loses wounds equal to the{' '}
+          After all three rolls are done, if the attack hits, wounds, and the
+          armor save fails, damage is inflicted. The target loses wounds equal
+          to the{' '}
           <Link href={`${wh40kRoute('Datasheets')}#damage`}>Damage (D)</Link> of
           the weapon. If that damage is more than is required to kill the target
           model, the excess cannot be allocated to other targets and is lost.

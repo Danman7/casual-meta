@@ -12,7 +12,6 @@ import eliminators from '@/app/assets/wh40k/eliminators.webp'
 import heavyIntercessors from '@/app/assets/wh40k/heavyintercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_TITLE } from '@/app/constants'
-import { Section } from '@/app/ui/Section'
 import { wh40kRoute } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -36,7 +35,9 @@ export default async function Page() {
         <Link href={wh40kRoute('Profile Archetypes')}>Profile Archetypes</Link>.
       </p>
 
-      <Section title="Battleline" id="battleline">
+      <section>
+        <h2 id="battleline">Battleline</h2>
+
         <p>
           Troops with the battleline keyword on their sheets have relaxed
           restrictions on how many of the same type can be in an army list.
@@ -77,15 +78,15 @@ export default async function Page() {
           </p>
 
           <p>
-            <strong>Target Elimination:</strong> Bolt Rifles get + 2 attacks if
+            <strong>Target Elimination:</strong> Bolt Rifles get +2 attacks if
             the whole squad shoots at a single target.
           </p>
         </div>
 
         <p>
           Intercessors are the backbone of the Space Marines. They are a{' '}
-          <em>flexible utility</em> unit, that fits a wide range of playstyles,
-          yet holds their own in combat. If you are unsure of how to fill your
+          <em>flexible utility</em> unit that fits a wide range of playstyles,
+          yet holds their own in combat. If you are unsure how to fill your
           troop slots, a squad of these is generally never a bad choice.
         </p>
 
@@ -100,7 +101,7 @@ export default async function Page() {
         <p>
           The versatile <em>Bolt Rifle</em>{' '}
           <small>(Assault, Heavy, 24", A2, S4, AP-1, D1)</small> deals quickly
-          with light infantry, and is viable against MEQ when the double-shots
+          with light infantry, and is viable against MEQ when the double-shot
           rule activates. Naturally, this promotes 5-man squads over 10-man as
           they can focus fire different targets with less risk of overkill.
         </p>
@@ -108,12 +109,12 @@ export default async function Page() {
         <p>
           One-in-five rifles can attach a grenade launcher, which more often
           helps than not (frag grenades against hordes, krak against high
-          toughness). So does equiping the sergeant with a Power fist{' '}
+          toughness). So does equipping the sergeant with a Power fist{' '}
           <small>(Melee, S8, AP-2, D2)</small>.
         </p>
 
         <p>
-          The whole package supports whatever you need - mobile agressivness,
+          The whole package supports whatever you need - mobile aggression,
           static defense (if they skip moving, they hit on 2+), or anti-swarm,
           but avoid using them in melee apart from clean up. Intercessors are
           good as they are and support for them should be kept cheap.
@@ -176,9 +177,9 @@ export default async function Page() {
 
         <blockquote>
           <p>
-            The <em>Blood Angels</em> chapter elevate Assault Intercessors to a
+            The <em>Blood Angels</em> chapter elevates Assault Intercessors to a
             proper threat. As part of a <em>Liberator Assault Group</em>{' '}
-            detachment they gain +2S (to S6) and +1A (A5 for each chainsword),
+            detachment, they gain +2S (to S6) and +1A (A5 for each chainsword),
             scaling both horizontally and vertically.
           </p>
         </blockquote>
@@ -205,11 +206,11 @@ export default async function Page() {
             <Link href={`${wh40kRoute('Datasheets')}#sustained-hits`}>
               Sustained Hits
             </Link>
-            , benefit from the re-rolls alot.
+            , benefit from the re-rolls a lot.
           </p>
 
           <p>
-            Good melee profile like the <em>Captain</em>, or{' '}
+            Good melee profiles like the <em>Captain</em>, or{' '}
             <em>Ragnar Blackmane</em> (Space Wolves) are an exceptional fit.
           </p>
         </blockquote>
@@ -217,7 +218,7 @@ export default async function Page() {
         <p>
           Speaking of support, Assault Intercessors are slow at getting to the
           front where they might engage the enemy. If your plan is to trade
-          agressively at the middle, think about a transport (an Impulsor is
+          aggressively at the middle, think about a transport (an Impulsor is
           often ideal).
         </p>
 
@@ -272,7 +273,7 @@ export default async function Page() {
         <p>
           They come with <em>Heavy bolt rifles</em>{' '}
           <small>(A2, S5, AP-1, D2)</small>, and one-in-five marines can (and
-          should) field with a <em>Heavy bolter</em>{' '}
+          should) field a <em>Heavy bolter</em>{' '}
           <small>(same profile +1 attacks and +1 hits on a crit)</small>. Both
           weapons hit on 2+ if stationary (Heavy keyword) and are effective into
           anything up to MEQ.
@@ -281,14 +282,14 @@ export default async function Page() {
         <p>
           Heavies face stern competition from cheaper, more flexible units.
           Regular Intercessors are more consistent in range, better in melee,
-          and bring objectives control utility. If you want to find a fit for
+          and bring objective-control utility. If you want to find a fit for
           them, think about support that improves their coherency.
         </p>
 
         <blockquote>
           <p>
             The <em>Anvil Siege Force</em> detachment with its stratagems around
-            remaining stationary, supports static play with the Heavy keyword.
+            remaining stationary supports static play with the Heavy keyword.
           </p>
 
           <p>
@@ -298,9 +299,11 @@ export default async function Page() {
             makes charges against them daunting.
           </p>
         </blockquote>
-      </Section>
+      </section>
 
-      <Section title="Specialists" id="specialists">
+      <section>
+        <h2 id="specialists">Specialists</h2>
+
         <h3 id="eliminators">Eliminators</h3>
 
         <div className="relative">
@@ -337,8 +340,8 @@ export default async function Page() {
             <Link href={`${wh40kRoute('Datasheets')}#devastating-wounds`}>
               devastating wounds
             </Link>{' '}
-            when shooting, if squad remained stationary durig movement phase
-            this turn.
+            when shooting, if the squad remained stationary during the movement
+            phase this turn.
           </p>
 
           <p>
@@ -349,7 +352,7 @@ export default async function Page() {
         </div>
 
         <p>
-          Eliminators are a stealthy micro-squad, that carries an array of
+          Eliminators are a stealthy micro-squad that carries an array of
           high-strength, far-reaching (36"), single-shot weapons. They get to
           deploy closer to the enemy, with reduced accuracy from incoming ranged
           attacks, and some movement tricks.
@@ -357,7 +360,7 @@ export default async function Page() {
 
         <p>
           Each of their loadouts supports a slightly different playstyle, but
-          they all are designed for harassing high-value targets at some
+          they are all designed for harassing high-value targets at some
           distance. It's rare for them to straight one-shot durable models, yet
           their presence impels the opponent to respect the threat when
           positioning.
@@ -365,7 +368,7 @@ export default async function Page() {
 
         <p>
           <em>Las Fusils</em> <small>(S9, AP-3, Dd6)</small> are the consistent
-          choice against elite infantry and light vehicles, winning trough raw
+          choice against elite infantry and light vehicles, winning through raw
           power. <em>Bolt Sniper Rifles</em> <small>(S5, AP-2, D3)</small> lack
           the strength and penetration of fusils, but have{' '}
           <Link href={`${wh40kRoute('Datasheets')}#precision`}>Precision</Link>,
@@ -374,7 +377,7 @@ export default async function Page() {
           <Link href={`${wh40kRoute('Datasheets')}#heavy`}>Heavy</Link> keyword)
           and gain mortal wounds on crits (Mark the Target).
         </p>
-      </Section>
+      </section>
     </>
   )
 }

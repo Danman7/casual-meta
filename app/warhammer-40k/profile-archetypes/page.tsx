@@ -8,7 +8,6 @@ import rhino from '@/app/assets/wh40k/rhino.webp'
 import terminators from '@/app/assets/wh40k/terminators.webp'
 import wound from '@/app/assets/wh40k/wound.webp'
 import { WH40K_TITLE } from '@/app/constants'
-import { Section } from '@/app/ui/Section'
 import { wh40kRoute } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -26,16 +25,18 @@ export default async function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <Section>
+      <section>
         <p>
-          With so many datasheets available, with several loadouts each, there
+          With so many datasheets available, each with several loadouts, there
           are hundreds of possible interactions between a weapon and a target.
           To make the discussion around list choices and balance easier, the
           community uses standardized profiles.
         </p>
-      </Section>
+      </section>
 
-      <Section title="Target Profiles" id="target-profiles">
+      <section>
+        <h2 id="target-profiles">Target Profiles</h2>
+
         <p>
           What is imperative when it comes to{' '}
           <Link href={`${wh40kRoute('The Battle Round')}#attack-sequence`}>
@@ -45,7 +46,7 @@ export default async function Page() {
           <Link href={`${wh40kRoute('Datasheets')}#unit-profiles`}>
             target profile
           </Link>
-          . We can take Move, Leadership and OC aside for a moment. This leaves
+          . We can set Move, Leadership, and OC aside for a moment. This leaves
           only Toughness, Saves and Wounds to work with.
         </p>
 
@@ -54,7 +55,7 @@ export default async function Page() {
           common combinations of durability characteristics. Many units across
           multiple factions either fit or come close to one of these. So,
           instead of analyzing every unit individually, players can ask
-          questions like "Is this weapon efficient into marines (MEQ)?".
+          questions like "Is this weapon efficient into Marines (MEQ)?".
         </p>
 
         <h3 id="meq">MEQ (Marine Equivalent)</h3>
@@ -74,8 +75,8 @@ export default async function Page() {
           frequently used as a benchmark. <em>Strong examples</em> are marines
           in Tacticus and Phobos armor, Tau Stealth Battlesuits and Eldar
           Shining Spears. There are a lot of <em>looser examples</em>, like
-          Necron Lychguard are MEQ with T5, while Tyranid Barbgaunts are MEQ
-          with Sv4+.
+          Necron Lychguard as MEQ with T5, while Tyranid Barbgaunts are MEQ with
+          Sv4+.
         </p>
 
         <Image src={wound} alt="Wound roll probabilities" />
@@ -88,7 +89,7 @@ export default async function Page() {
         <blockquote>
           <p>
             The <em>Heavy bolter</em> (S5, AP-1, D2) is a principal anti-MEQ
-            weapon, that deals the right amount of damage, wounds on 3+ (66%
+            weapon that deals the right amount of damage, wounds on 3+ (66%
             chance), and degrades the save to 4+ (50% chance).
           </p>
         </blockquote>
@@ -105,10 +106,10 @@ export default async function Page() {
         </div>
 
         <p>
-          TEQ, or terminators, represent <em>heavy elites</em>, that come with
+          TEQ, or terminators, represent <em>heavy elites</em> that come with
           ideal 2+ armor saves, and often an invulnerable save. Because of that,
           weapons with high penetration have <em>diminishing returns</em>. What
-          you're looking for instead is more strength and damage, better with a
+          you're looking for instead is more strength and damage, ideally with a
           crit effect.
         </p>
 
@@ -148,7 +149,7 @@ export default async function Page() {
           The name comes from the <em>Imperial Guard battleline</em> and depicts{' '}
           <em>light infantry</em>. These are fragile single wound fighters,
           usually organized in <em>larger squads</em> (up to 20 models).
-          Examples are Cadian Shock Troops, Tyranid Termagant and Hormagaunts,
+          Examples are Cadian Shock Troops, Tyranid Termagants and Hormagaunts,
           and Chaos Cultists.
         </p>
 
@@ -160,7 +161,7 @@ export default async function Page() {
 
         <blockquote>
           <p>
-            The <em>Flamer</em> (Torrent, Ad6, S4, D1) auto-hits, and has a 66%
+            The <em>Flamer</em> (Torrent, A D6, S4, D1) auto-hits and has a 66%
             chance to wound and delete up to 6 guard equivalents.
           </p>
 
@@ -210,7 +211,7 @@ export default async function Page() {
 
         <p>
           KEQ is not a widely used term, but one can refer to very large, often
-          20+ wound models to as knight equivalents. Such are the Knights
+          20+ wound models as knight equivalents. Examples include the Knights
           Perceptor and Castellan, Eldar Wraithknight and Tyranid Scythed
           Hierodule.
         </p>
@@ -218,10 +219,10 @@ export default async function Page() {
         <blockquote>
           <p>
             Knights are welcome in most WH40K variants, but one should inform
-            their opponent beforehand to assure they are properly prepared.
+            their opponent beforehand to ensure they are properly prepared.
           </p>
         </blockquote>
-      </Section>
+      </section>
     </>
   )
 }

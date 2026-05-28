@@ -48,10 +48,10 @@ export default async function Page() {
 
       <section>
         <p>
-          Modern MK expose frame data for each move, which shows how it behaves
-          in details. MKX, MK11 and MK1 include this feature. This information
-          is critical to understanding how attacks work, but first, let's cover
-          the basics.
+          Modern MK games expose frame data for each move, which shows how it
+          behaves in detail. MKX, MK11, and MK1 include this feature. This
+          information is critical to understanding how attacks work, but first,
+          let's cover the basics.
         </p>
       </section>
 
@@ -61,10 +61,10 @@ export default async function Page() {
         <p>
           Pressing any{' '}
           <Link href={`${MK_BASE_URL}#move-annotations`}>face</Link> or the
-          throw button, results in an attack. The player that initiates the
+          throw button results in an attack. The player that initiates the
           attack is the <em>attacker</em>, while the other one is the{' '}
           <em>defender</em> or the <em>target</em>. Once an attack starts, the
-          attacker cannot act until it ends. One of three outcomes can occurs:
+          attacker cannot act until it ends. One of three outcomes can occur:
         </p>
 
         <ul className="space-y-2">
@@ -81,15 +81,15 @@ export default async function Page() {
           </li>
 
           <li>
-            <strong>Miss aka. Whiff:</strong> The defender is not within range
-            of the attack. The defender takes no damage or stun, but the
+            <strong>Miss (a.k.a. whiff):</strong> The defender is not within
+            range of the attack. The defender takes no damage or stun, but the
             attacker must still recover.
           </li>
         </ul>
 
         <p>
           Forcing whiffs is central to mind games as it gives the biggest
-          advantage for the defender.
+          advantage to the defender.
         </p>
 
         <div className="flex-list font-bold justify-center">
@@ -146,18 +146,20 @@ export default async function Page() {
         </div>
       </section>
 
-      <section title="Block type" id="block-type">
+      <section>
+        <h2 id="block-type">Block type</h2>
+
         <p>
           Each move has a block type that determines how it must be defended.
           It's a rock-paper-scissors game based on{' '}
           <Link href={`${mkRoute('Movement')}#stances`}>stances</Link>. A move
-          can both be a normal attack or a special.
+          can be either a normal attack or a special.
         </p>
 
         <ImageWithCaption
           src={raidenMoveList}
           alt="Raiden's MK1 move list in basic view."
-          caption="In Mortal Kombat 1, the basic move list of a character shows each move's damage and block type. This is Xbox annotations."
+          caption="In Mortal Kombat 1, the basic move list of a character shows each move's damage and block type. These are Xbox annotations."
           className="max-h-96 object-cover"
         />
 
@@ -201,7 +203,7 @@ export default async function Page() {
         <ul>
           <li>Mid attacks hit both standing and crouching defenders.</li>
           <li>
-            If defender is within reach, they must block a mid regardless of
+            If a defender is within reach, they must block a mid regardless of
             stance.
           </li>
         </ul>
@@ -288,13 +290,13 @@ export default async function Page() {
 
         <p>
           A throw is a unique attack where if the defender is grabbed, a short
-          animation plays, then they are thrown either forward or backwards. A
+          animation plays, then they are thrown either forward or backward. A
           back throw switches sides.
         </p>
 
         <ul>
           <li>Throws grab standing defenders, regardless of block.</li>
-          <li>They grab crouch blocking defenders, same as High attacks.</li>
+          <li>They grab crouch-blocking defenders, same as High attacks.</li>
           <li>
             They miss crouching defenders that aren't blocking, same as High
             attacks.
@@ -303,12 +305,12 @@ export default async function Page() {
 
         <p>
           Even if the throw grabs the defender, the latter still has a second to
-          reach and break the throw. Pressing <Pill>1</Pill> or <Pill>3</Pill>{' '}
-          for forward or <Pill>2</Pill> or <Pill>4</Pill> for back throws casues
-          them to fail. This is called to <em>tech</em> a throw.
+          react and break the throw. Pressing <Pill>1</Pill> or <Pill>3</Pill>{' '}
+          for forward or <Pill>2</Pill> or <Pill>4</Pill> for back throws causes
+          them to fail. This is called <em>teching</em> a throw.
         </p>
 
-        <Diagram description="Throws are design for punishing players who are holding block.">
+        <Diagram description="Throws are designed for punishing players who are holding block.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Throw</div>
             <Image src={throwGrab} alt="Throw grabbing an opponent." />
@@ -368,11 +370,13 @@ export default async function Page() {
         </ul>
       </section>
 
-      <section title="Frame data" id="frame-data">
+      <section>
+        <h2 id="frame-data">Frame data</h2>
+
         <ImageWithCaption
           src={liMeiAdvancedView}
           alt="Li Mei's move list showing frame data."
-          caption="The move list's advanced view shows frame data and notes for each move. This is PC annotations."
+          caption="The move list's advanced view shows frame data and notes for each move. These are PC annotations."
         />
         <p>
           Frame data measures how long a move takes to execute and recover in
@@ -385,7 +389,7 @@ export default async function Page() {
         <ul>
           <li>
             <strong>Start-up:</strong> Time from pressing the attack button
-            utnil the attack becomes active.
+            until the attack becomes active.
           </li>
           <li>
             <strong>Active:</strong> Time the attack can hit.
@@ -410,8 +414,8 @@ export default async function Page() {
 
         <p>
           Speed is defined by start-up frames. Standing punches are usually the
-          fastest moves at 7–9 frames start-up. What is fast is very subjective.
-          But in general:
+          fastest moves at 7–9 frames start-up. What counts as fast is very
+          subjective, but in general:
         </p>
 
         <ul>
@@ -470,16 +474,16 @@ export default async function Page() {
 
         <div title="Deep dive: actual disadvantage on block">
           <p>
-            Player X throws a -10 on block attack which player Y blocks. Player
-            X will recover on the 11th frame when he will be able to block. Can
-            Y react in time:
+            Player X throws a -10 on block attack that player Y blocks. Player X
+            will recover on the 11th frame and will be able to block. Can Y
+            react in time?
           </p>
 
           <ul>
             <li>
               A 7-frame start-up attack will hit with 3 frames to spare: -10 + 7
               = -3. This means Y has to react within 3 frames of him recovering
-              to punish X. If Y reacts on the 4th frame his attack will become
+              to punish X. If Y reacts on the 4th frame, his attack will become
               active on the 11th frame so X will be able to block.
             </li>
 
@@ -489,9 +493,9 @@ export default async function Page() {
             </li>
 
             <li>
-              A 10 or above start-up attack will not work: -10 + 10 = 0. Both
-              attack and block become active on the 11th frame. That is if X
-              blocks immediately after recovery.
+              An attack with 10 or more start-up frames will not work: -10 + 10
+              = 0. Both attack and block become active on the 11th frame. That
+              is if X blocks immediately after recovery.
             </li>
           </ul>
 
@@ -503,7 +507,7 @@ export default async function Page() {
         <h3 id="punish">Punish and counter</h3>
         <ul>
           <li>
-            <strong>Punish: </strong> Hitting an opponent during recovery or to
+            <strong>Punish: </strong> Hitting an opponent during recovery to
             punish an unsafe move or a whiff.
           </li>
           <li>
@@ -532,30 +536,30 @@ export default async function Page() {
 
         <p>
           An attack's reach is probably its most important trait that is not
-          listed in the frame data. Every attack has its effective range. There
+          listed in the frame data. Every attack has an effective range. There
           is no measurement unit. Visual terms are used instead:
         </p>
 
         <ul>
           <li>
-            Touching: Opponent are zero steps away from each other. Here speed
+            Touching: Opponents are zero steps away from each other. Here speed
             wins over reach.
           </li>
           <li>
             Short: Most basic attacks cover a few steps away. How many separates
-            good from great attacks.
+            good attacks from great attacks.
           </li>
           <li>
-            Default a.k.a jump distance: This is the space characters are apart
-            at duel start. A forward jump just about covers it.
+            Default, a.k.a. jump distance: This is the space characters are
+            apart at duel start. A forward jump just about covers it.
           </li>
           <li>
             Long: Reaches more than a jump distance, but not the entire screen.
           </li>
 
           <li>
-            Fullscreen: Covers the entire screen. Usually projectiles, teleports
-            and other specials.
+            Fullscreen: Covers the entire screen. Usually projectiles,
+            teleports, and other specials.
           </li>
         </ul>
 
@@ -565,8 +569,8 @@ export default async function Page() {
           A <em>disjointed</em> attack is a move whose hitbox extends more than
           the character's hurtbox, without risk of the defender hitting the
           attacker back (at least close to max range). Such are attacks with
-          some form of weapons, where the weapon reaches futher than the
-          bearer's arms. These are space controlling moves that are difficult to
+          some form of weapons, where the weapon reaches farther than the
+          bearer's arms. These are space-controlling moves that are difficult to
           challenge directly.
         </p>
 
@@ -582,13 +586,13 @@ export default async function Page() {
           A <em>projectile</em> is an attack that creates a traveling hitbox
           separate from the character's body, like a fireball, a bullet, or a
           thrown weapon. Depending on the projectile, it may or may not cover
-          the whole screen. Regardless, it's the ultimate space controlling
+          the whole screen. Regardless, it's the ultimate space-controlling
           move.
         </p>
 
         <Image
           src={projectile}
-          alt="Sub-zero's ice ball."
+          alt="Sub-Zero's ice ball."
           className="mx-auto"
         />
 
@@ -596,7 +600,7 @@ export default async function Page() {
 
         <p>
           Some attacks recover to the same spot they were executed in. Others
-          move the character forward, grabing space. The range of advancing
+          move the character forward, grabbing space. The range of advancing
           attacks is more difficult to judge.
         </p>
 
@@ -607,7 +611,7 @@ export default async function Page() {
           pushes the opponent away, creating space.
         </p>
 
-        <Diagram description="Knocking the opponent down near you is preferrable. Knocking them back limits the ability to follow up with more attacks.">
+        <Diagram description="Knocking the opponent down near you is preferable. Knocking them back limits the ability to follow up with more attacks.">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>Knockdown</div>
             <Image
@@ -624,7 +628,7 @@ export default async function Page() {
         <h3 id="launch">Launch</h3>
 
         <p>
-          A launching attack a.k.a. a <em>launcher</em> sends the opponent
+          A launching attack, a.k.a. a <em>launcher</em>, sends the opponent
           airborne. Many launchers allow for extended combos.
         </p>
 

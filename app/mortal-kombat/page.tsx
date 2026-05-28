@@ -40,7 +40,7 @@ export default async function Page() {
         <p>
           The dragon logo marks a duel of skill that often ends in virtual
           death, ever since the first Mortal Kombat (MK) was released by Midway
-          Games in 1992. Thenceforth, the series has expanded in characters,
+          Games in 1992. Since then, the series has expanded in characters,
           timelines, mechanics, and popularity.
         </p>
 
@@ -110,7 +110,7 @@ export default async function Page() {
 
         <p>
           MK is primarily played with a gamepad or controller. Because the games
-          run on multiple platforms, using different controllers, the community
+          run on multiple platforms with different controllers, the community
           has agreed on a simplified notation using numbers instead. It is
           imperative to be able to read these to understand the moves.
         </p>
@@ -189,15 +189,15 @@ export default async function Page() {
 
         <p>
           And finally we have whatever special commands are assigned to the
-          rear/paddle buttons like block, grab, etc. described as they are.
+          rear/paddle buttons, like block and grab, described as they are.
         </p>
 
         <p>
           So if you see <span className="input">1</span> that means press Front
           Punch / X / Square button without any direction. If you see{' '}
           <span className="input">F3</span> that means press Forward and Front
-          Kick / A / Cross. <span className="input">DB2</span> means press Down
-          then Back then Rear Punch / Y / Triangle.
+          Kick / A / Cross. <span className="input">DB2</span> means press Down,
+          then Back, then Back Punch / Y / Triangle.
         </p>
 
         <p>

@@ -34,7 +34,7 @@ export default async function Page() {
         <p>
           Pressing left or right always moves your character in that direction
           on the screen. Move notation, however, is relative to your opponent.{' '}
-          <em>Forward</em> is towards the opponent. <em>Backward</em> is away
+          <em>Forward</em> is toward the opponent. <em>Backward</em> is away
           from the opponent.
         </p>
 
@@ -133,7 +133,7 @@ export default async function Page() {
         <p>
           <em>Standing</em> is the default stance when no direction is pressed.
           All characters start the round standing. This is the most{' '}
-          <em>mobile</em> of the stance, as the player can move, block, attack,
+          <em>mobile</em> of the stances, as the player can move, block, attack,
           jump, or crouch freely.
         </p>
 
@@ -154,8 +154,8 @@ export default async function Page() {
             high attacks
           </Link>{' '}
           miss, but <strong>prevents movement</strong>. Blocking and attacking
-          works as expected. Croushing attacks are described with D for Down in
-          front (.e.g. <span className="input">D2</span>,
+          work as expected. Crouching attacks are described with D for Down in
+          front (e.g., <span className="input">D2</span>,
           <span className="input">D4</span>).
         </p>
 
@@ -228,7 +228,7 @@ export default async function Page() {
         </p>
 
         <ul role="list">
-          <li>You cannot move, block or attack.</li>
+          <li>You cannot move, block, or attack.</li>
           <li>
             You can only <em>recover</em> (stand up).
           </li>
@@ -265,7 +265,7 @@ export default async function Page() {
           They cannot move or be knocked back further in that direction. Being
           in the corner is a disadvantage since there is no room to retreat, and
           the opponent can control the space between the fighters. And because
-          there is no knockback, the opponent also gains access to high damage
+          there is no knockback, the opponent also gains access to high-damage
           corner combos.
         </p>
       </section>

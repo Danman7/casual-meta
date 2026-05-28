@@ -2,7 +2,6 @@ import Image from 'next/image'
 
 import title from '@/app/assets/homm3/title.webp'
 import { HOMM3_TITLE } from '@/app/constants'
-import { Section } from '@/app/ui/Section'
 import { SourceLink } from '@/app/ui/SourceLink'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -16,7 +15,7 @@ export default async function Page() {
     <>
       <h1>{HOMM3_TITLE}</h1>
 
-      <Section>
+      <section>
         <Image
           src={title}
           alt="Box art of Heroes of Might and Magic 3"
@@ -62,9 +61,11 @@ export default async function Page() {
         </p>
 
         <p>Mostly, it is because players continue to play it.</p>
-      </Section>
+      </section>
 
-      <Section title="Our sources" id="our-sources">
+      <section>
+        <h2 id="our-sources">Our sources</h2>
+
         <div className="flex-wrapper">
           <SourceLink
             href="http://heroescommunity.com/forumdisplay.php3?FID=6"
@@ -99,9 +100,11 @@ export default async function Page() {
             type="reddit"
           />
         </div>
-      </Section>
+      </section>
 
-      <Section title="About this documentation" id="our-focus">
+      <section>
+        <h2 id="our-focus">About this documentation</h2>
+
         <p>
           In sync with Casual Meta practices, we will focus on the gameplay,
           skipping almost all of the lore. Our interest lies mostly in Player vs
@@ -144,7 +147,7 @@ export default async function Page() {
           </strong>{' '}
           and so on.
         </p>
-      </Section>
+      </section>
     </>
   )
 }

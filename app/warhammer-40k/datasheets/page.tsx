@@ -62,7 +62,7 @@ export default async function Page() {
           At the top, below the datasheet's name, is the unit's profile: M, T,
           Sv, W, Ld, and OC, or Move, Toughness, Save, Wounds, Leadership, and
           Objective Control. These six numbers give insight into its probable
-          perfomance in different scenarios. A datasheet may have more than one
+          performance in different scenarios. A datasheet may have more than one
           profile listed, depending on what models the unit is composed of.
         </p>
 
@@ -304,7 +304,7 @@ export default async function Page() {
         />
 
         <p>
-          The problem with activations is variance as dice never guarantee the
+          The problem with activations is variance, as dice never guarantee the
           outcome. High power single shots can delete a target, but they may
           also do nothing. A higher number of attacks smooths variance. More
           dice means results trend closer to expectation.
@@ -317,9 +317,9 @@ export default async function Page() {
         <p>
           BS is for ranged weapons, while WS is for melee weapons. They mean the
           same thing: how likely the weapon is to hit its target. The number
-          shows what must be the result of the <em>roll to hit</em> check during
-          weapon activations, for the target to be hit. A lower number means a
-          better chance to hit.
+          shows what the result must be for the <em>roll to hit</em> check
+          during weapon activations, for the target to be hit. A lower number
+          means a better chance to hit.
         </p>
 
         <blockquote>
@@ -340,8 +340,8 @@ export default async function Page() {
         <h3 id="armor-penetration">Armor Penetration (AP)</h3>
 
         <p>
-          AP negates <em>armor saves</em>, by reducing the result of the
-          target's <em>roll to save</em>. It's powerful but capped by two common
+          AP negates <em>armor saves</em> by reducing the result of the target's{' '}
+          <em>roll to save</em>. It's powerful but capped by two common
           ceilings. AP cannot push past invulnerable saves, and is wasted on
           weak 5+, 6+ saves.
         </p>
@@ -359,7 +359,7 @@ export default async function Page() {
 
         <p>
           Damage is the amount of <em>wounds</em> the weapon takes away for each
-          successful activation. Taking exactly as many wounds required to
+          successful activation. Taking exactly as many wounds as required to
           finish off a target is ideal. Excess is lost. Therefore, Damage is a
           way to determine what targets are optimal for the given weapon.
         </p>
@@ -377,12 +377,11 @@ export default async function Page() {
         <h2 id="keywords-and-special-rules">Keywords</h2>
 
         <p>
-          Keywords are <em>tags</em> attached to either a datasheet, or a
-          weapon. They don't do anything on their own, but{' '}
-          <em>handle interactions</em> with other rules. The relationships
-          between units, weapons, stratagems, factions and turn phases are
-          numerous. So, verifying a rule with a simple keyword simplifies the
-          process.
+          Keywords are <em>tags</em> attached to either a datasheet or a weapon.
+          They don't do anything on their own, but <em>handle interactions</em>{' '}
+          with other rules. The relationships between units, weapons,
+          stratagems, factions and turn phases are numerous. So, verifying a
+          rule with a simple keyword simplifies the process.
         </p>
 
         <Image
@@ -411,9 +410,9 @@ export default async function Page() {
 
         <p>
           Also called <em>Universal Special Rules</em> (USRs), weapon keywords
-          are shared between many of WH40K's arm. They work best when layerd
-          with other faction or unit abilities that enhance them further or fill
-          the gaps. Here is a not-so-small list of the common ones.
+          are shared between many of WH40K's weapons. They work best when
+          layered with other faction or unit abilities that enhance them further
+          or fill the gaps. Here is a not-so-small list of the common ones.
         </p>
 
         <h3 id="assault">Assault</h3>
@@ -427,8 +426,8 @@ export default async function Page() {
           <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
             advanced
           </Link>{' '}
-          this turn. Arms without this keywourd cannot be used after advancing.
-          Assault weapons naturally fit a more mobile, agressive play.
+          this turn. Arms without this keyword cannot be used after advancing.
+          Assault weapons naturally fit a more mobile, aggressive play.
         </p>
 
         <Image src={assault} alt="Boltgun vs Bolt rifle with assault keyword" />
@@ -482,7 +481,7 @@ export default async function Page() {
         </div>
 
         <p>
-          There are two distinct rules about pistols who start with a short
+          There are two distinct rules about pistols that start with a short
           range anyway.
         </p>
 
@@ -580,7 +579,7 @@ export default async function Page() {
         <p>
           A critical wound (roll of 6 to wound) deals <em>mortal wounds</em>{' '}
           equal to the weapon’s Damage. Mortal wounds bypass all saving throws,
-          including invulnerable, giving better chances to fight target with
+          including invulnerable, giving better chances against targets with
           good saves.
         </p>
 
@@ -616,8 +615,8 @@ export default async function Page() {
         <div className="badge">Wound roll</div>
 
         <p>
-          Operator can re-roll wound rolls. Works very well in combination with
-          Devastating Wounds and allows for{' '}
+          The operator can re-roll wound rolls. This works very well in
+          combination with Devastating Wounds and allows for{' '}
           <Link href="#crit-fishing">crit fishing</Link>.
         </p>
 
@@ -640,14 +639,14 @@ export default async function Page() {
           The attacker can choose to allocate wounds from a successful attack
           against a unit with an attached character to that character (if
           visible to the shooter). The normal activation rules state that the
-          defender allocates ther wounds. Thus attaching a high-value leader to
-          a squad (a.k.a. bodyguards) prtotects them from heavy fire. Precision
+          defender allocates their wounds. Thus attaching a high-value leader to
+          a squad (a.k.a. bodyguards) protects them from heavy fire. Precision
           weapons negate that.
         </p>
 
         <Image
           src={precision}
-          alt="Bolt sniper rifle hitting precice target."
+          alt="Bolt sniper rifle hitting precise target."
         />
 
         <h3 id="hazardous">Hazardous</h3>
@@ -677,8 +676,8 @@ export default async function Page() {
           Some abilities are always active (passive), some are triggered by
           conditions, and some are activated deliberately. Some are core
           abilities, common among many datasheets, dictating how deployment or
-          some of the phases differe for the given unit. Faction abilities are
-          shared between members of the same faction. Anything listed bellow
+          some of the phases differ for the given unit. Faction abilities are
+          shared between members of the same faction. Anything listed below
           these is specific only to that datasheet.
         </p>
 

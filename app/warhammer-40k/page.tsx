@@ -38,11 +38,11 @@ export default async function Page() {
         />
 
         <p>
-          For the purpouse of this section, we'll focus on the rules and the
+          For the purpose of this section, we'll focus on the rules and the
           armies of the latest edition (10th, 11th has been announced). Each
           edition changes the game in some way, so one should always refer to
-          the rulebook and codexes first. Here, you'll find a concice scan of
-          the more broadly used set of rules. It's accompanied by a compacted
+          the rulebook and codexes first. Here, you'll find a concise scan of
+          the more broadly used set of rules. It's accompanied by a compact
           community analysis of when something is more likely to perform well.
         </p>
       </section>

@@ -1,6 +1,5 @@
 import { HOMM3_TITLE } from '@/app/constants'
 import { CreatureTable } from '@/app/homm3/creature-compendium/CreatureTable'
-import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 50
@@ -17,12 +16,12 @@ export default function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <Section>
+      <section>
         <p>
           This table lists all HoMM3 creatures (factions and neutrals), along
           with their stats. Filter and sort to compare them.
         </p>
-      </Section>
+      </section>
 
       <CreatureTable />
     </>

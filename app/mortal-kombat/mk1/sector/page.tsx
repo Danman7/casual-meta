@@ -1,16 +1,16 @@
 import Image from 'next/image'
 
-import Sector from '@/app/assets/mk1/sector.webp'
+import Sektor from '@/app/assets/mk1/sector.webp'
 import { MK_TITLE } from '@/app/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
 
-export const navTitle = 'Sector'
+export const navTitle = 'Sektor'
 
 export const metadata = generatePageMetadata(
   `${MK_TITLE}: ${navTitle}`,
-  'A breakdown of Sector in Mortal Kombat 1.',
+  'A breakdown of Sektor in Mortal Kombat 1.',
 )
 
 export default async function Page() {
@@ -21,8 +21,8 @@ export default async function Page() {
       <section>
         <Image
           className="mx-auto h-96 w-auto md:h-full md:max-w-1/2 md:float-right"
-          src={Sector}
-          alt="Sector in Mortal Kombat 1"
+          src={Sektor}
+          alt="Sektor in Mortal Kombat 1"
           loading="eager"
         />
 
@@ -37,7 +37,7 @@ export default async function Page() {
           </div>
 
           <div>
-            <div className="font-bold">Accessible versatile combos.</div>
+            <div className="font-bold">Accessible, versatile combos.</div>
             <div>
               Once you understand the main pattern of launching into teleport,
               from her air ground bounce, you can go for damage, screen carry,
@@ -46,7 +46,7 @@ export default async function Page() {
           </div>
 
           <div>
-            <div className="font-bold">Unsafe mixup.</div>
+            <div className="font-bold">Unsafe mix-up.</div>
             <div>
               She has cancellable standing overhead and low options, but unsafe
               without Kameo support.
@@ -79,8 +79,8 @@ export default async function Page() {
         <p>
           <span className="input">42</span> is a slower, safe (0 on block),
           <em>higher reward punish</em>, for when you know you have enough time.
-          Not terrible in pressure either, because Sektor can follow up with
-          down poke or fast jab. Can be cancelled into teleport, or you can
+          Not terrible in pressure either, because Sektor can follow up with a
+          down poke or a fast jab. Can be cancelled into teleport, or you can
           buffer a Kameo attack from <span className="input">42 Grab</span>.
         </p>
 
@@ -88,9 +88,9 @@ export default async function Page() {
           <span className="input">F2</span> is a key <em>advancing mid</em>,
           controlling space, and checking crouchers. It leads into the
           hit-confirmable <span className="input">F21</span> that is safer to
-          check before a full string, EX teleport (normal won't work) or Kameo.{' '}
-          <span className="input">F212</span> puts Sector airborne, and can be
-          followed by air specials, but is unsafe.
+          check before a full string, an EX teleport (the normal one won't
+          work), or Kameo. <span className="input">F212</span> puts Sektor
+          airborne and can be followed by air specials, but is unsafe.
         </p>
 
         <p>

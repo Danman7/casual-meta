@@ -41,8 +41,9 @@ export default async function Page() {
             <Link href={`${mkRoute('Anatomy of attacks')}#disjointed`}>
               disjointed
             </Link>{' '}
-            normals. His reach and speed helps bait whiffs, while his height
-            helps with anti-air. The tradeoff is that
+            normals. His reach and speed help bait whiffs, while his height
+            helps with anti-air. The tradeoff is that he relies on commitment to
+            get his best pressure started.
           </p>
         </section>
       </section>

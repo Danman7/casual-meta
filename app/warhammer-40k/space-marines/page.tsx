@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { GiKnightBanner } from 'react-icons/gi'
 
+import banners from '@/app/assets/wh40k/chapter_banners.webp'
 import marine from '@/app/assets/wh40k/space-marine.webp'
 import marines from '@/app/assets/wh40k/Ultramarines.webp'
 import { WH40K_TITLE } from '@/app/constants'
@@ -32,15 +33,15 @@ export default async function Page() {
         <p>
           Space Marines are genetically engineered superhuman warriors - the
           best of mankind's Imperium. Fanatically loyal to the Emperor, they're
-          given tasks which other human forces fall short of.
+          given tasks that other human forces fall short of.
         </p>
 
         <p>
-          Being a <em>key cornerstone</em> of the WH40k universe, they're{' '}
+          Being a <em>cornerstone</em> of the WH40K universe, they're{' '}
           <strong>widely supported</strong> in starter boxes, standalone kits,
-          used markets, and usually the first to be adopted in new editions.
-          Models and spare parts are easy to find and paint, and you can get a
-          lot of advice on how to list and play them.
+          used-market listings, and usually the first to be adopted in new
+          editions. Models and spare parts are easy to find and paint, and you
+          can get a lot of advice on how to list and play them.
         </p>
 
         <p>
@@ -66,7 +67,7 @@ export default async function Page() {
 
         <p>
           Before getting into the data, the faction rule alone gives us good
-          insight on their playstyle.
+          insight into their playstyle.
         </p>
 
         <blockquote>
@@ -115,7 +116,7 @@ export default async function Page() {
           </Link>
           ) and{' '}
           <Link href={`${wh40kRoute('Datasheets')}#re-rolls`}>
-            reroll access
+            re-roll access
           </Link>
           .
         </p>
@@ -137,7 +138,7 @@ export default async function Page() {
           pressure, jump infantry, elites, bikes, transports, walkers, aircraft
           etc. Be that as it may, there is a heavy{' '}
           <strong>emphasis on characters</strong> - roughtly 40% of the core
-          list. This promotes layered buffs of taskforces that work together -
+          list. This promotes layered buffs of task forces that work together -
           <em>troops + leader + Oath + stratagem</em>.
         </p>
 
@@ -168,7 +169,7 @@ export default async function Page() {
         <p>
           When you are good at everything, you get outmatched by specialized
           forces at their games. Orks and Tyranids may swarm you, World Eaters
-          may slaugher you in melee, T'au may outshoot you, and so on.
+          may slaughter you in melee, T'au may outshoot you, and so on.
         </p>
       </section>
 
@@ -176,6 +177,9 @@ export default async function Page() {
         <h2 id="chapters" className="flex-center">
           Chapters <GiKnightBanner />
         </h2>
+
+        <Image src={banners} alt="Space Marine Banners" />
+
         <p>
           Space Marines are segmented into <em>Chapters</em> - independent
           forces of roughly 1,000 Marines with their own traditions and tactics.
@@ -235,13 +239,13 @@ export default async function Page() {
           <Link href={`${wh40kRoute('Astartes detachments')}`}>
             detachments
           </Link>
-          . Let's go briefly trough the official chapters to get a feeling of
+          . Let's go briefly through the official chapters to get a feeling of
           their flavor and support.
         </p>
 
         <p>
           There are two types of chapter support: lightly supported chapters
-          (codex compliant, few unique units) and divergent chapters (lots of
+          (codex-compliant, few unique units) and divergent chapters (lots of
           unique datasheets and rules).
         </p>
 

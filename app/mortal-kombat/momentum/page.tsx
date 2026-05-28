@@ -27,9 +27,9 @@ export default async function Page() {
         </p>
 
         <p>
-          Since wake-up pressure is too long, it's often replaced by the common
-          fighting games term <em>Okizeme</em> (oki for short), meaning "wake up
-          offense" in Japanese.
+          Since wake-up pressure is a long term, it's often replaced by the
+          common fighting game term <em>Okizeme</em> (oki for short), meaning
+          "wake-up offense" in Japanese.
         </p>
       </section>
 
@@ -37,11 +37,11 @@ export default async function Page() {
         <h2 id="vortex">Vortex</h2>
 
         <p>
-          A <em>vortex</em> is a looping situation where, the attacker ends a
+          A <em>vortex</em> is a looping situation where the attacker ends a
           combo in a way that forces the defender into{' '}
           <Link href={`${mkRoute('Pressure')}#50/50s`}>guessing</Link>{' '}
           situation. They intentionally drop a combo early when they have a
-          comming overhead/low mix. It's called vorgex because if the defender
+          coming overhead/low mix-up. It's called vortex because if the defender
           guesses wrong, they get punished all over again.
         </p>
       </section>

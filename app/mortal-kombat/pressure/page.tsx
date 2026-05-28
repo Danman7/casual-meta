@@ -31,7 +31,7 @@ export default async function Page() {
           game works beyond solid concepts like frame data and hit-boxes. One
           such area is the division of a round into micro-states. The fight can
           be in a state of <em>Pressure</em> and that can evolve into a state of{' '}
-          <em>Punish</em>. If neither apply, probably you are in the state of{' '}
+          <em>Punish</em>. If neither applies, you are probably in the state of{' '}
           <em>Neutral.</em>
         </p>
 
@@ -41,10 +41,10 @@ export default async function Page() {
         </p>
 
         <p>
-          Mortal Kombat is about reading intentions. To manage with the fast
-          pace of the game, players enter a state of flow. They scout and act
-          according to how they predict their opponent will react. Here we will
-          mention some approaches to throwing your opponent’s flow off balance.
+          Mortal Kombat is about reading intentions. To manage the fast pace of
+          the game, players enter a state of flow. They scout and act according
+          to how they predict their opponent will react. Here we will mention
+          some approaches to throwing your opponent’s flow off balance.
         </p>
       </section>
 
@@ -60,18 +60,18 @@ export default async function Page() {
           This is done by throwing low attacks into the mix of your offense. It
           will either catch them off-guard or force them to keep blocking low,
           which in turn limits their mobility. Then you add an overhead to your
-          moves which force them to block high again. And to top it off, combine
+          moves that force them to block high again. And to top it off, combine
           your lows and overheads with the occasional throw. If you vary the
-          block types of your attacks your foe will have to spend more effort to
-          defend properly.
+          block types of your attacks, your foe will have to spend more effort
+          to defend properly.
         </p>
 
         <p>
           With this in mind, there are characters that are more effective at
           mix-ups than others. These are the ones with standing lows and
           overheads as they won’t require a jump-in or a duck. This limits their
-          mobility less thus producing better pressure. There are characters
-          that have not such moves and struggle more with optimal offense.
+          mobility less, thus producing better pressure. There are characters
+          that have no such moves and struggle more with optimal offense.
         </p>
 
         <h3 id="50/50s">50/50s</h3>
@@ -87,11 +87,11 @@ export default async function Page() {
           the other.
         </p>
 
-        <h3 id="shimmys">Shimmys</h3>
+        <h3 id="shimmys">Shimmies</h3>
 
         <p>
-          A Shimmy is a 50/50 that involves throws. Pressing up against a
-          knocked down opponent can indicate an attempt to grab them. They can
+          A shimmy is a 50/50 that involves throws. Pressing up against a
+          knocked-down opponent can indicate an attempt to grab them. They can
           react either by attempting to tech the throw with a button press or
           crouching without blocking to make it miss. If you predict them to
           duck under it, doing a mid will catch them off-guard. If you expect a
@@ -100,10 +100,10 @@ export default async function Page() {
         </p>
 
         <p>
-          This is not a true 50/50 as it requires the attacker to also guess the
-          defenders’ intentions. If you throw a mid into them teching you might
-          get punched and backing away from a ducking opponent will not gain
-          progress. It is more of a mind game.
+          This is not a true 50/50, as it requires the attacker to also guess
+          the defender’s intentions. If you throw a mid into them teching, you
+          might get punched, and backing away from a ducking opponent will not
+          gain progress. It is more of a mind game.
         </p>
       </section>
 
@@ -117,14 +117,14 @@ export default async function Page() {
         </p>
 
         <p>
-          Every one of us has their own conduct when it comes to fighting games.
-          Because of the speed of the game, both players try to constantly read
-          each other’s intentions.
+          Everyone has their own habits when it comes to fighting games. Because
+          of the speed of the game, both players try to constantly read each
+          other’s intentions.
         </p>
 
         <p>
           When one of them spots the same behavior in the other party in the
-          same situations they make a mental note. Are they always starting a
+          same situations, they make a mental note. Are they always starting a
           round with a jump-in? Are they constantly blocking when I dash forward
           even when I’m some distance away? Are they punishing my slow
           projectile spam? How should I modify my attacks?
@@ -132,10 +132,10 @@ export default async function Page() {
 
         <p>
           Usually, you provoke these thoughts in your opponent with your natural
-          habits. But a skilled player can provoke them on purpose. Provided you
-          are knocked down, and you try an armored get-up twice you can
-          condition your opponent to predict you will try the same a third time
-          and block. But this time you throw them instead.
+          habits. But a skilled player can provoke them on purpose. If you are
+          knocked down and try an armored get-up twice, you can condition your
+          opponent to predict you will try the same thing a third time and
+          block. But this time you throw them instead.
         </p>
 
         <p className="font-bold">Varying your attacks is important.</p>
@@ -146,7 +146,7 @@ export default async function Page() {
           One approach is to cut one of your strings short. Say your character
           has a standing 122 that ends with a slow punch or a 124 that goes into
           a prolonged kick. If you do these often enough when you approach your
-          foe, they will get used to them. The best counter measure is to block
+          foe, they will get used to them. The best countermeasure is to block
           through the last hit and counterattack. But what if you cut the string
           short and do a throw instead - 12 (or whatever) into a throw? This is
           a string derail and is a way to keep them guessing.
@@ -158,8 +158,8 @@ export default async function Page() {
         <h3 id="the-down-1">The low jab</h3>
 
         <p>
-          Every character has access to a quick <Pill>Down 1</Pill> low risk
-          attack. Is is very fast and difficult to be countered by a fast high
+          Every character has access to a quick, low-risk <Pill>Down 1</Pill>{' '}
+          attack. It is very fast and difficult to counter with a fast high
           punch. This infamous move can:
         </p>
 

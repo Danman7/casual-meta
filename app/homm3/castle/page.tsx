@@ -15,7 +15,6 @@ import royal_griffin from '@/app/assets/homm3/royal_griffin.webp'
 import stables from '@/app/assets/homm3/stables.webp'
 import { HOMM3_TITLE } from '@/app/constants'
 import { PlayOrSkip } from '@/app/ui/PlayOrSkip'
-import { Section } from '@/app/ui/Section'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -32,7 +31,7 @@ export default async function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <Section>
+      <section>
         <Image
           src={castle}
           alt="A fully built Castle town."
@@ -49,7 +48,7 @@ export default async function Page() {
           The trade-off is their <strong>high cost</strong> and{' '}
           <strong>unimpressive heroes and magic</strong>.
         </p>
-      </Section>
+      </section>
 
       <PlayOrSkip
         pros={
@@ -105,7 +104,9 @@ export default async function Page() {
         }
       />
 
-      <Section title="Buildings" id="buildings">
+      <section>
+        <h2 id="buildings">Buildings</h2>
+
         <div className="md:float-left flex gap-4 mr-4">
           <Image
             src={bastion}
@@ -130,14 +131,16 @@ export default async function Page() {
         </p>
 
         <p>
-          <strong>Stables</strong> is your only "should have" bonus building in
+          <strong>Stables</strong> is your only "should-have" bonus building in
           most cases. It's a <strong>mobility lever</strong>, adding a big
           weekly movement boost, improving both main hero reach and scout
           efficiency.
         </p>
-      </Section>
+      </section>
 
-      <Section title="Creatures" id="creatures">
+      <section>
+        <h2 id="creatures">Creatures</h2>
+
         <h3 id="pikeman-halberdier" className="flex-wrapper">
           Tier 1: Pikeman/Halberdier{' '}
           <span className="circle-icon">
@@ -206,8 +209,8 @@ export default async function Page() {
 
         <p>
           Griffins are <strong>fast, tough and plentiful</strong>. At 10/week,
-          in 2 weeks you get almost 3 weeks worth of the population you would
-          get with Elves, Orcs or Beholders. They also gain a bonus retaliation
+          in 2 weeks you get almost 3 weeks' worth of the population you would
+          get with Elves, Orcs, or Beholders. They also gain a bonus retaliation
           - helpful in tougher early fights where you need to push forward to
           keep the foe away from your Marksmen.
         </p>
@@ -219,7 +222,8 @@ export default async function Page() {
           tier 3 creature after Dragon Flies) and gain{' '}
           <strong>endless retaliations</strong>. Now,{' '}
           <strong>
-            attacking stronger, even ranged stacks on the map becomes viable
+            attacking stronger stacks, even ranged ones on the map, becomes
+            viable
           </strong>
           . Especially if you have the Haste spell, Griffins (who often play
           before most low-tier shooters) can reach the other side of the
@@ -234,9 +238,11 @@ export default async function Page() {
           Pikemen and regular Griffins can't cope with guarding your Archers
           without losing too many creatures.
         </p>
-      </Section>
+      </section>
 
-      <Section title="Game plan" id="game-plan">
+      <section>
+        <h2 id="game-plan">Game plan</h2>
+
         <p>
           Castle leans on its <strong>ranged superiority</strong> at the very
           beginning of the game. Once you clear the immediate surroundings of
@@ -268,7 +274,7 @@ export default async function Page() {
         <p>
           Castle players can also go for a <strong>slower map play</strong>.
           Because of <strong>Griffin Conservatories</strong> (not Towers or
-          Bastions), <strong>late game Angel numbers can explode</strong>. You
+          Bastions), <strong>late-game Angel numbers can explode</strong>. You
           can sacrifice some early tempo and creatures to gather up resources
           and dwellings closer to you. The idea is to get Angels as early as
           possible and lean on them to clear the map later.
@@ -285,7 +291,7 @@ export default async function Page() {
         <h3 id="battles">Neutral battles</h3>
 
         <p>
-          Marksmen and Zealots deal the damage while Halberdiers and Crusader
+          Marksmen and Zealots deal the damage while Halberdiers and Crusaders
           soak up hits and keep threats off them. Champions and the flyers look
           for opportunities to strike. Wear down neutrals with your shooters,
           tie up any of theirs with Griffins and Angels.
@@ -304,7 +310,7 @@ export default async function Page() {
           <strong>Don't take Marksmen into banks and utopias.</strong> They will
           get targeted and destroyed by the CPU.
         </p>
-      </Section>
+      </section>
     </>
   )
 }
