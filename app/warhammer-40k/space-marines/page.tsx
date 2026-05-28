@@ -138,7 +138,7 @@ export default async function Page() {
           pressure, jump infantry, elites, bikes, transports, walkers, aircraft
           etc. Be that as it may, there is a heavy{' '}
           <strong>emphasis on characters</strong> - roughtly 40% of the core
-          list. This promotes layered buffs of task forces that work together -
+          list. This promotes layered buffs of task forces that work together -{' '}
           <em>troops + leader + Oath + stratagem</em>.
         </p>
 

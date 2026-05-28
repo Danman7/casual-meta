@@ -6,7 +6,7 @@ import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
 export default function Page() {
   return (
     <main tabIndex={-1} className="edge-padding">
-      <section className="max-w-3xl mx-auto space-y-20 h-dvh flex flex-col justify-around">
+      <section className="max-w-3xl mx-auto space-y-20 min-h-dvh mt-0! flex flex-col justify-around">
         <div className="space-y-2 md:space-y-4 font-bold text-center text-shadow-md">
           <div className="text-4xl md:text-7xl animate-slide-left">
             The <span className="text-primary">Casual Meta</span>

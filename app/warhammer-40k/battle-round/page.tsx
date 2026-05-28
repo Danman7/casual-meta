@@ -528,9 +528,9 @@ export default async function Page() {
 
         <blockquote>
           <p>
-            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong>. The
-            result follows a table based on how much higher or lower the
-            weapon's{' '}
+            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong> only
+            for the attacks that did connect. The result follows a table based
+            on how much higher or lower the weapon's{' '}
             <Link href={`${wh40kRoute('Datasheets')}#strength`}>
               Strength (S)
             </Link>{' '}
@@ -562,9 +562,11 @@ export default async function Page() {
         <h3 id="save-roll">4. Roll to save</h3>
 
         <blockquote>
+          <p className="font-bold">Armor save</p>
+
           <p>
-            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong>.
-            Modify the roll by the{' '}
+            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong> for
+            each allocated wound. Modify the roll by the{' '}
             <Link href={`${wh40kRoute('Datasheets')}#armor-penetration`}>
               Armor Penetration (AP)
             </Link>{' '}
@@ -573,22 +575,19 @@ export default async function Page() {
           </p>
         </blockquote>
 
-        <p>
-          The target may also have an <em>Invulnerable Save</em> (Inv) which
-          ignores the weapon's AP. It comes in handy when facing weapons with
-          high AP. If available, the defender may choose to roll for it instead
-          of the armor save, but <strong>not both</strong>.
-        </p>
+        <p>OR</p>
 
         <blockquote>
           <p className="font-bold">Invulnerable save</p>
           <p>
-            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong>. If
-            the result is equal to or greater than the target's Invulnerable
-            Save, damage is not inflicted, but you lose the ability to roll for
-            a regular save.
+            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong> for
+            each allocated wound. If the result is equal to or greater than the
+            target's Invulnerable Save, damage is not inflicted, but you lose
+            the ability to roll for a regular save.
           </p>
         </blockquote>
+
+        <p>If you are the defender</p>
 
         <h3 id="damage">Inflict damage</h3>
 
