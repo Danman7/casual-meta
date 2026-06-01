@@ -14,7 +14,6 @@ import pikeman from '@/app/assets/homm3/pikeman.webp'
 import royal_griffin from '@/app/assets/homm3/royal_griffin.webp'
 import stables from '@/app/assets/homm3/stables.webp'
 import { HOMM3_TITLE } from '@/app/constants'
-import { PlayOrSkip } from '@/app/ui/PlayOrSkip'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 10
@@ -49,60 +48,6 @@ export default async function Page() {
           <strong>unimpressive heroes and magic</strong>.
         </p>
       </section>
-
-      <PlayOrSkip
-        pros={
-          <>
-            <div>
-              <div className="font-bold">Beginner-friendly</div>
-              <div className="flavor">
-                You will have the right creatures for both early and late game
-                along with naturally high morale for extra turns. Special
-                buildings are not great for tournaments, but they provide the
-                basics for most game scenarios.
-              </div>
-            </div>
-
-            <div>
-              <div className="font-bold">Strong balanced army</div>
-              <div className="flavor">
-                2 ranged shooters, 2 flying units, and 3 melee units. Every
-                unit, except Monks (level 5), is at least good for its tier.
-              </div>
-            </div>
-
-            <div>
-              <div className="font-bold">Top-tier creature</div>
-              <div className="flavor">
-                The Archangel has great attack, defense, fixed damage, a
-                resurrect ability, and is second fastest after the Phoenix, so
-                you will often act first in combat.
-              </div>
-            </div>
-          </>
-        }
-        cons={
-          <>
-            <div>
-              <div className="font-bold">Very expensive</div>
-              <div className="flavor">
-                Second only to Tower in overall cost, primarily gold and gems.
-                Needs at least a moderate amount of everything except ore.
-              </div>
-            </div>
-
-            <div>
-              <div className="font-bold">Mediocre heroes and magic</div>
-              <div className="flavor">
-                Castle hero classes aren't bad, but there are much better
-                options in other factions. Magic Guild goes up only to level 4.
-                In both cases, you will need to reach for another town for
-                optimal development.
-              </div>
-            </div>
-          </>
-        }
-      />
 
       <section>
         <h2 id="buildings">Buildings</h2>

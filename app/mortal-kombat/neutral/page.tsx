@@ -1,9 +1,9 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import duelStart from '@/app/assets/mk1/duel_start.webp'
 import { MK_TITLE } from '@/app/constants'
 import { mkRoute } from '@/app/mortal-kombat/constants'
-import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 5
@@ -45,10 +45,10 @@ export default async function Page() {
           block as they please.
         </p>
 
-        <ImageWithCaption
+        <Image
           src={duelStart}
           alt="A neutral position at the start of a duel between Liu Kang and Raiden."
-          caption="The beginning of the first round is a perfect example of Neutral."
+          className="picture my-6"
         />
 
         <p className="font-bold">All rounds start in Neutral.</p>

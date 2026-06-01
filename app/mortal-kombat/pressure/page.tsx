@@ -2,7 +2,6 @@ import Link from 'next/link'
 
 import { MK_TITLE } from '@/app/constants'
 import { mkRoute } from '@/app/mortal-kombat/constants'
-import { Pill } from '@/app/ui/Pill'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 6
@@ -158,9 +157,9 @@ export default async function Page() {
         <h3 id="the-down-1">The low jab</h3>
 
         <p>
-          Every character has access to a quick, low-risk <Pill>Down 1</Pill>{' '}
-          attack. It is very fast and difficult to counter with a fast high
-          punch. This infamous move can:
+          Every character has access to a quick, low-risk{' '}
+          <span className="badge">Down 1</span> attack. It is very fast and
+          difficult to counter with a fast high punch. This infamous move can:
         </p>
 
         <ul>

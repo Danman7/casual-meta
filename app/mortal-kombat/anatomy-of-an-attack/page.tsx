@@ -28,8 +28,6 @@ import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
 import { mkRoute } from '@/app/mortal-kombat/constants'
 import { Diagram } from '@/app/ui/Diagram'
-import { ImageWithCaption } from '@/app/ui/ImageWithCaption'
-import { Pill } from '@/app/ui/Pill'
 import { generatePageMetadata } from '@/lib/metadata'
 
 export const navOrder = 3
@@ -156,11 +154,10 @@ export default async function Page() {
           can be either a normal attack or a special.
         </p>
 
-        <ImageWithCaption
+        <Image
           src={raidenMoveList}
           alt="Raiden's MK1 move list in basic view."
-          caption="In Mortal Kombat 1, the basic move list of a character shows each move's damage and block type. These are Xbox annotations."
-          className="max-h-96 object-cover"
+          className="picture my-6 max-h-96 object-cover"
         />
 
         <h3 id="high">High</h3>
@@ -305,9 +302,11 @@ export default async function Page() {
 
         <p>
           Even if the throw grabs the defender, the latter still has a second to
-          react and break the throw. Pressing <Pill>1</Pill> or <Pill>3</Pill>{' '}
-          for forward or <Pill>2</Pill> or <Pill>4</Pill> for back throws causes
-          them to fail. This is called <em>teching</em> a throw.
+          react and break the throw. Pressing <span className="badge">1</span>{' '}
+          or <span className="badge">3</span> for forward or{' '}
+          <span className="badge">2</span> or <span className="badge">4</span>{' '}
+          for back throws causes them to fail. This is called{' '}
+          <em>teching</em> a throw.
         </p>
 
         <Diagram description="Throws are designed for punishing players who are holding block.">
@@ -373,10 +372,10 @@ export default async function Page() {
       <section>
         <h2 id="frame-data">Frame data</h2>
 
-        <ImageWithCaption
+        <Image
           src={liMeiAdvancedView}
           alt="Li Mei's move list showing frame data."
-          caption="The move list's advanced view shows frame data and notes for each move. These are PC annotations."
+          className="picture my-6"
         />
         <p>
           Frame data measures how long a move takes to execute and recover in
@@ -635,7 +634,7 @@ export default async function Page() {
         <Diagram description="">
           <div className="flex flex-col gap-2 font-semibold items-center">
             <div>
-              <Pill>D2</Pill> launches the opponent
+              <span className="badge">D2</span> launches the opponent
             </div>
             <Image
               src={launch}
