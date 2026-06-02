@@ -1,20 +1,14 @@
-import { HOMM3_TITLE } from '@/app/constants'
 import { CreatureTable } from '@/app/homm3/creature-compendium/CreatureTable'
-import { generatePageMetadata } from '@/lib/metadata'
+import { homm3Metadata, homm3Page } from '@/app/siteMap'
 
-export const navOrder = 50
+const page = homm3Page('creatureCompendium')
 
-export const navTitle = 'Creature Compendium'
-
-export const metadata = generatePageMetadata(
-  `${HOMM3_TITLE}: ${navTitle}`,
-  'A repository of guides for Heroes of Might and Magic 3 and its expansions.',
-)
+export const metadata = homm3Metadata('creatureCompendium')
 
 export default function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <p>

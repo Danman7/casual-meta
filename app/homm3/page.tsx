@@ -1,19 +1,15 @@
 import Image from 'next/image'
 
 import title from '@/app/assets/homm3/title.webp'
-import { HOMM3_TITLE } from '@/app/constants'
+import { homm3Metadata, homm3Section } from '@/app/siteMap'
 import { SourceLink } from '@/app/ui/SourceLink'
-import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata = generatePageMetadata(
-  HOMM3_TITLE,
-  'A repository of guides for Heroes of Might and Magic 3 and its expansions.',
-)
+export const metadata = homm3Metadata()
 
 export default async function Page() {
   return (
     <>
-      <h1>{HOMM3_TITLE}</h1>
+      <h1>{homm3Section.title}</h1>
 
       <section>
         <Image

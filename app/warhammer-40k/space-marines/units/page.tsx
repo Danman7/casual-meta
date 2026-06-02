@@ -8,26 +8,17 @@ import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import eliminators from '@/app/assets/wh40k/eliminators.webp'
 import heavyIntercessors from '@/app/assets/wh40k/heavyintercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
-import { WH40K_TITLE } from '@/app/constants'
+import { wh40kHref, wh40kMetadata, wh40kPage } from '@/app/siteMap'
 import { Paper } from '@/app/ui/Paper'
-import { wh40kRoute } from '@/app/warhammer-40k/constants'
-import { generatePageMetadata } from '@/lib/metadata'
 
-export const navOrder = 11
+const page = wh40kPage('coreSpaceMarineUnits')
 
-export const navTitle = 'Core Space Marine units'
-
-export const shortTitle = 'Core units'
-
-export const metadata = generatePageMetadata(
-  `${WH40K_TITLE}: ${navTitle}`,
-  'An overview of the Core Space Marine units.',
-)
+export const metadata = wh40kMetadata('coreSpaceMarineUnits')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <p>
@@ -39,7 +30,7 @@ export default async function Page() {
           <p>
             Having the datasheets is not essential, but recommended. If you are
             unfamiliar with profile abbreviations, check out{' '}
-            <Link href={wh40kRoute('Profile Archetypes')}>
+            <Link href={wh40kHref('profileArchetypes')}>
               Profile Archetypes
             </Link>
             .
@@ -116,7 +107,7 @@ export default async function Page() {
           <p>
             <em>Armor of Contempt</em> comes in handy for surviving a critical
             turn on an objective. A <em>lieutenant</em> with{' '}
-            <Link href={`${wh40kRoute('Datasheets')}#lethal-hits`}>
+            <Link href={wh40kHref('datasheets', 'lethal-hits')}>
               Lethal Hits
             </Link>{' '}
             can make a 10-man squad more viable.
@@ -175,7 +166,7 @@ export default async function Page() {
           <p>
             Characters with crit abilities, like the <em>Lieutenant's</em>{' '}
             Lethal Hits, and <em>Azrael</em> (Dark Angels){' '}
-            <Link href={`${wh40kRoute('Datasheets')}#sustained-hits`}>
+            <Link href={wh40kHref('datasheets', 'sustained-hits')}>
               Sustained Hits
             </Link>
             , benefit from the re-rolls a lot.
@@ -287,7 +278,7 @@ export default async function Page() {
         <div className="box">
           <p>
             <strong>Mark the Target:</strong> Get{' '}
-            <Link href={`${wh40kRoute('Datasheets')}#devastating-wounds`}>
+            <Link href={wh40kHref('datasheets', 'devastating-wounds')}>
               devastating wounds
             </Link>{' '}
             when shooting, if the squad remained stationary during the movement
@@ -321,10 +312,10 @@ export default async function Page() {
           choice against elite infantry and light vehicles, winning through raw
           power. <em>Bolt Sniper Rifles</em> <small>(S5, AP-2, D3)</small> lack
           the strength and penetration of fusils, but have{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#precision`}>Precision</Link>,
+          <Link href={wh40kHref('datasheets', 'precision')}>Precision</Link>,
           making them natural, albeit situational, character hunters. If the
           squad skips movement, both weapons hit on 2+ (
-          <Link href={`${wh40kRoute('Datasheets')}#heavy`}>Heavy</Link> keyword)
+          <Link href={wh40kHref('datasheets', 'heavy')}>Heavy</Link> keyword)
           and gain mortal wounds on crits (Mark the Target).
         </p>
       </section>

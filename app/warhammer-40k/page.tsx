@@ -2,40 +2,38 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import wh40kTitle from '@/app/assets/wh40k/wh40k-battle.webp'
-import { WH40K_TITLE } from '@/app/constants'
+import { wh40kMetadata, wh40kSection } from '@/app/siteMap'
 import { SourceLink } from '@/app/ui/SourceLink'
-import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata = generatePageMetadata(
-  WH40K_TITLE,
-  'In the grim darkness of the far future, there is only war.',
-)
+export const metadata = wh40kMetadata()
 
 export default async function Page() {
   return (
     <>
-      <h1>{WH40K_TITLE}</h1>
+      <h1>{wh40kSection.title}</h1>
 
       <section>
+        <Image
+          src={wh40kTitle}
+          alt="Space Marines doing battle with Chaos Space Marines"
+          className="picture profile-img object-[0%_10%]"
+        />
+
         <p>
-          Warhammer 40,000 (WH40K) is more of a hobby, involving a game. The{' '}
+          The{' '}
           <Link
             href="https://assets.warhammer-community.com/warhammer40000_core&key_corerules_eng_24.09-5xfayxjekm.pdf"
             target="_blank"
           >
             Core Rulebook
           </Link>{' '}
-          describes it as a tabletop wargame in which players command armies of
-          miniatures in an attempt to win through a mixture of skill, tactics,
-          and luck. It also involves collecting, assembling, and painting those
-          miniatures, and the vast universe depicted in the books.
+          describes Warhammer 40,000 (WH40k) as a{' '}
+          <em>
+            tabletop wargame in which players command armies of miniatures in an
+            attempt to win through a mixture of skill, tactics, and luck
+          </em>
+          . This sums up the game pretty well, but it doesn't capture the hobby.
         </p>
-
-        <Image
-          src={wh40kTitle}
-          alt="Space Marines doing battle with Chaos Space Marines"
-          className="picture profile-img object-[0%_10%]"
-        />
 
         <p>
           For the purpose of this section, we'll focus on the rules and the

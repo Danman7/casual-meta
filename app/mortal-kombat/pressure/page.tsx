@@ -1,27 +1,20 @@
 import Link from 'next/link'
 
-import { MK_TITLE } from '@/app/constants'
-import { mkRoute } from '@/app/mortal-kombat/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { mkHref, mkMetadata, mkPage } from '@/app/siteMap'
 
-export const navOrder = 6
+const page = mkPage('pressure')
 
-export const navTitle = 'Pressure'
-
-export const metadata = generatePageMetadata(
-  `${MK_TITLE}: ${navTitle}`,
-  'Mind games and conditioning in Mortal Kombat.',
-)
+export const metadata = mkMetadata('pressure')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <div className="flavor">
           This page explains the many mind games and frame traps that go into
-          converting a good <Link href={mkRoute('Neutral')}>Neutral</Link>{' '}
+          converting a good <Link href={mkHref('neutral')}>Neutral</Link>{' '}
           position into actual damage.
         </div>
 

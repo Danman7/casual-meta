@@ -1,21 +1,13 @@
-import { WH40K_TITLE } from '@/app/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { wh40kMetadata, wh40kPage } from '@/app/siteMap'
 
-export const navOrder = 12
+const page = wh40kPage('spaceMarineChapterUnits')
 
-export const navTitle = 'Space Marine chapter units'
-
-export const shortTitle = 'Chapter units'
-
-export const metadata = generatePageMetadata(
-  `${WH40K_TITLE}: ${navTitle}`,
-  'An overview of the Space Marine chapter units.',
-)
+export const metadata = wh40kMetadata('spaceMarineChapterUnits')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <p>text</p>
     </>

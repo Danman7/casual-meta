@@ -3,21 +3,15 @@
 import { usePathname } from 'next/navigation'
 import { createContext, useContext } from 'react'
 
-import type { RouteItem } from '@/lib/routes'
+import type { SectionNavData } from '@/app/siteMap'
 
-export type SectionNavData = {
-  items: RouteItem[]
-  title: string
-  rootUrl: string
-}
-
-const NavigationContext = createContext<SectionNavData[]>([])
+const NavigationContext = createContext<readonly SectionNavData[]>([])
 
 export function NavigationProvider({
   sections,
   children,
 }: {
-  sections: SectionNavData[]
+  sections: readonly SectionNavData[]
   children: React.ReactNode
 }) {
   return (

@@ -1,17 +1,9 @@
 import type { Metadata } from 'next'
 
-import {
-  HOMM3_BASE_URL,
-  HOMM3_TITLE,
-  MK_BASE_URL,
-  MK_TITLE,
-  WH40K_BASE_URL,
-  WH40K_TITLE,
-} from '@/app/constants'
 import '@/app/globals.css'
+import { siteSections } from '@/app/siteMap'
 import { LayoutShell } from '@/app/ui/LayoutShell'
 import { NavigationProvider } from '@/app/ui/NavigationProvider'
-import { getRoutesFrom } from '@/lib/routes'
 
 export const metadata: Metadata = {
   title: 'Casual Meta',
@@ -23,31 +15,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const sections = [
-    {
-      items: getRoutesFrom(HOMM3_BASE_URL),
-      title: HOMM3_TITLE,
-      rootUrl: HOMM3_BASE_URL,
-    },
-    {
-      items: getRoutesFrom(MK_BASE_URL),
-      title: MK_TITLE,
-      rootUrl: MK_BASE_URL,
-    },
-    {
-      items: getRoutesFrom(WH40K_BASE_URL),
-      title: WH40K_TITLE,
-      rootUrl: WH40K_BASE_URL,
-    },
-  ]
-
   return (
     <html lang="en" className="h-full bg-background text-foreground">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="text-base leading-7 antialiased h-full font-sans selection:bg-primary selection:text-background">
-        <NavigationProvider sections={sections}>
+        <NavigationProvider sections={siteSections}>
           <LayoutShell>{children}</LayoutShell>
         </NavigationProvider>
       </body>

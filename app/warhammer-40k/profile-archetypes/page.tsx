@@ -7,23 +7,16 @@ import knight from '@/app/assets/wh40k/knight_Castellan.webp'
 import rhino from '@/app/assets/wh40k/rhino.webp'
 import terminators from '@/app/assets/wh40k/terminators.webp'
 import wound from '@/app/assets/wh40k/wound.webp'
-import { WH40K_TITLE } from '@/app/constants'
-import { wh40kRoute } from '@/app/warhammer-40k/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { wh40kHref, wh40kMetadata, wh40kPage } from '@/app/siteMap'
 
-export const navOrder = 5
+const page = wh40kPage('profileArchetypes')
 
-export const navTitle = 'Profile Archetypes'
-
-export const metadata = generatePageMetadata(
-  `${WH40K_TITLE}: ${navTitle}`,
-  'Common profile archetypes in Warhammer 40k to help understand unit roles.',
-)
+export const metadata = wh40kMetadata('profileArchetypes')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <p>
@@ -39,11 +32,11 @@ export default async function Page() {
 
         <p>
           What is imperative when it comes to{' '}
-          <Link href={`${wh40kRoute('The Battle Round')}#attack-sequence`}>
+          <Link href={wh40kHref('battleRound', 'attack-sequence')}>
             making attacks
           </Link>{' '}
           is the durability of the given{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#unit-profiles`}>
+          <Link href={wh40kHref('datasheets', 'unit-profiles')}>
             target profile
           </Link>
           . We can set Move, Leadership, and OC aside for a moment. This leaves
@@ -172,7 +165,7 @@ export default async function Page() {
 
           <p>
             Any grenade or missile launcher with{' '}
-            <Link href={`${wh40kRoute('Datasheets')}#blast`}>Blast</Link> deals
+            <Link href={wh40kHref('datasheets', 'blast')}>Blast</Link> deals
             extra attacks against more targets.
           </p>
         </blockquote>
@@ -194,11 +187,11 @@ export default async function Page() {
         <p>
           Models at T9 and below, like the <em>Rhino</em>, are apt to die from
           3-4 Meltagun wounds (less at half range because of{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#melta`}>Melta</Link>). These
-          can be our <em>light vehicles</em>. A T10{' '}
-          <em>Redemptor Dreadnought</em> gives the Meltagun a hard time. The
-          Lascannon will do better. Yet, against the heavy <em>Land Raider</em>{' '}
-          <small>(T12|Sv2+|W16)</small> even the Lascannon struggles.
+          <Link href={wh40kHref('datasheets', 'melta')}>Melta</Link>). These can
+          be our <em>light vehicles</em>. A T10 <em>Redemptor Dreadnought</em>{' '}
+          gives the Meltagun a hard time. The Lascannon will do better. Yet,
+          against the heavy <em>Land Raider</em> <small>(T12|Sv2+|W16)</small>{' '}
+          even the Lascannon struggles.
         </p>
 
         <h3 id="keq">KEQ (Knight Equivalent)</h3>

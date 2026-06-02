@@ -8,23 +8,16 @@ import scorpAirDB2 from '@/app/assets/mk1/scorp_air_db2.webp'
 import Scorpion from '@/app/assets/mk1/scorp_mk1.webp'
 import spear from '@/app/assets/mk1/scorp_spear.webp'
 import scorpb3 from '@/app/assets/mk1/scorpion_b3.webp'
-import { MK_TITLE } from '@/app/constants'
-import { mkRoute } from '@/app/mortal-kombat/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { mkHref, mkMetadata, mkPage } from '@/app/siteMap'
 
-export const navOrder = 8
+const page = mkPage('scorpion')
 
-export const navTitle = 'Scorpion'
-
-export const metadata = generatePageMetadata(
-  `${MK_TITLE}: ${navTitle}`,
-  'A breakdown of Scorpion in Mortal Kombat 1.',
-)
+export const metadata = mkMetadata('scorpion')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <Image
@@ -37,14 +30,14 @@ export default async function Page() {
         <section>
           <p>
             MK1's Scorpion is a{' '}
-            <Link href={`${mkRoute('Anatomy of attacks')}#safe-vs-unsafe`}>
+            <Link href={mkHref('anatomyOfAttacks', 'safe-vs-unsafe')}>
               safe
             </Link>{' '}
             mid-range fighter with strong{' '}
-            <Link href={`${mkRoute('Neutral')}#whiff-punish`}>
+            <Link href={mkHref('neutral', 'whiff-punish')}>
               whiff punishment
             </Link>{' '}
-            and <Link href={`${mkRoute('Pressure')}#stagger`}>stagger</Link>{' '}
+            and <Link href={mkHref('pressure', 'stagger')}>stagger</Link>{' '}
             offense. Like in previous titles, he is{' '}
             <strong>built around fundamentals</strong>. He has no forms or
             complex gimmicks to manage, making him{' '}
@@ -53,9 +46,9 @@ export default async function Page() {
 
           <p>
             Lacking any real{' '}
-            <Link href={`${mkRoute('Pressure')}#mix-up`}>mix-up</Link> on his
-            own, <strong>his offense stays linear and honest</strong>.
-            Fortunately, his moves are modular enough to{' '}
+            <Link href={mkHref('pressure', 'mix-up')}>mix-up</Link> on his own,{' '}
+            <strong>his offense stays linear and honest</strong>. Fortunately,
+            his moves are modular enough to{' '}
             <strong>work well with many Kameos</strong>, which can fill the gaps
             for him.
           </p>
@@ -63,11 +56,11 @@ export default async function Page() {
           <p>
             Scorpion’s strengths show more clearly in{' '}
             <strong>reactive play</strong>. His{' '}
-            <Link href={`${mkRoute('Anatomy of attacks')}#disjointed`}>
+            <Link href={mkHref('anatomyOfAttacks', 'disjointed')}>
               disjointed
             </Link>{' '}
             pokes and{' '}
-            <Link href={`${mkRoute('Anatomy of attacks')}#space-control`}>
+            <Link href={mkHref('anatomyOfAttacks', 'space-control')}>
               space-controlling
             </Link>{' '}
             specials let him <strong>catch mistakes at all ranges</strong>. This
@@ -93,8 +86,8 @@ export default async function Page() {
 
         <p>
           <span className="input">1</span> is a fast (7 frames), safe and short{' '}
-          <Link href={`${mkRoute('Anatomy of attacks')}#high`}>high</Link> jab -
-          your <em>fastest</em> standing attack.
+          <Link href={mkHref('anatomyOfAttacks', 'high')}>high</Link> jab - your{' '}
+          <em>fastest</em> standing attack.
         </p>
 
         <p>
@@ -116,16 +109,15 @@ export default async function Page() {
           high, disjointed punch with very decent reach and better damage than{' '}
           <span className="input">1</span>. It's your{' '}
           <em>
-            primary{' '}
-            <Link href={`${mkRoute('Anatomy of attacks')}#pokes`}>poke</Link>
+            primary <Link href={mkHref('anatomyOfAttacks', 'pokes')}>poke</Link>
           </em>
           .
         </p>
 
         <p>
           <span className="input">21</span> is a safe, more damaging, high-
-          <Link href={`${mkRoute('Anatomy of attacks')}#mid`}>mid</Link> string
-          - better hit-confirm for when the space allows it, plus a duck check.
+          <Link href={mkHref('anatomyOfAttacks', 'mid')}>mid</Link> string -
+          better hit-confirm for when the space allows it, plus a duck check.
         </p>
 
         <p>
@@ -137,9 +129,7 @@ export default async function Page() {
 
         <p>
           <span className="input">F3</span> is a slower (12 frames), safe,{' '}
-          <Link href={`${mkRoute('Anatomy of attacks')}#advancing`}>
-            advancing
-          </Link>{' '}
+          <Link href={mkHref('anatomyOfAttacks', 'advancing')}>advancing</Link>{' '}
           mid kick - a good check against crouching foes.
         </p>
 
@@ -164,9 +154,9 @@ export default async function Page() {
           <span className="input">B3</span> is Scorpion's most unique normal. He
           launches his kunai for a very far-reaching, slow (21 frames), unsafe
           (-19 on block), disjointed attack that hits twice - mid-
-          <Link href={`${mkRoute('Anatomy of attacks')}#low`}>low</Link>. The
-          first mid hit can be cancelled into any special. It's a
-          space-controlling move the opponent has to respect.
+          <Link href={mkHref('anatomyOfAttacks', 'low')}>low</Link>. The first
+          mid hit can be cancelled into any special. It's a space-controlling
+          move the opponent has to respect.
         </p>
 
         <Image
@@ -180,7 +170,7 @@ export default async function Page() {
         <p>
           The signature <em>Spear</em> <span className="input">BF1</span> is a{' '}
           full-screen, space-controlling, high{' '}
-          <Link href={`${mkRoute('Anatomy of attacks')}#projectile`}>
+          <Link href={mkHref('anatomyOfAttacks', 'projectile')}>
             projectile
           </Link>{' '}
           that stuns on hit, drags and restands the opponent next to you. It's
@@ -220,7 +210,7 @@ export default async function Page() {
           <em>Enhanced Devouring Flame</em> <span className="input">xBF4</span>{' '}
           is an unblockable, low, damage-over-time special that tracks the
           opponent. It's both an anti-zoning and an{' '}
-          <Link href={`${mkRoute('Momentum')}#oki`}>oki</Link> option.
+          <Link href={mkHref('momentum', 'oki')}>oki</Link> option.
         </p>
       </section>
 
@@ -474,9 +464,8 @@ export default async function Page() {
 
         <p>
           Ferra gives Scorpion mix-up and{' '}
-          <Link href={`${mkRoute('Momentum')}#vortex`}>vortex</Link> options,
-          and a{' '}
-          <Link href={`${mkRoute('Anatomy of attacks')}#command-grabs`}>
+          <Link href={mkHref('momentum', 'vortex')}>vortex</Link> options, and a{' '}
+          <Link href={mkHref('anatomyOfAttacks', 'command-grabs')}>
             command grab
           </Link>
           , so your offense can become more proactive.

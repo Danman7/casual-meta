@@ -10,23 +10,16 @@ import jump from '@/app/assets/mk/jump.webp'
 import knockdown from '@/app/assets/mk/knockdown.webp'
 import stand from '@/app/assets/mk/stand.webp'
 import standBlock from '@/app/assets/mk/standblock.webp'
-import { MK_TITLE } from '@/app/constants'
-import { mkRoute } from '@/app/mortal-kombat/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { mkHref, mkMetadata, mkPage } from '@/app/siteMap'
 
-export const navOrder = 1
+const page = mkPage('movement')
 
-export const navTitle = 'Movement'
-
-export const metadata = generatePageMetadata(
-  `${MK_TITLE}: ${navTitle}`,
-  'How to move around the arenas in Mortal Kombat.',
-)
+export const metadata = mkMetadata('movement')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <h2 id="horizontal">Horizontal</h2>
@@ -150,9 +143,7 @@ export default async function Page() {
         <p>
           Hold down to duck and enter <em>crouching</em> stance. This reduces
           your character's hitbox, making{' '}
-          <Link href={`${mkRoute('Anatomy of attacks')}#high`}>
-            high attacks
-          </Link>{' '}
+          <Link href={mkHref('anatomyOfAttacks', 'high')}>high attacks</Link>{' '}
           miss, but <strong>prevents movement</strong>. Blocking and attacking
           work as expected. Crouching attacks are described with D for Down in
           front (e.g., <span className="input">D2</span>,

@@ -25,24 +25,17 @@ import trade1 from '@/app/assets/mk/trade1.webp'
 import trade2 from '@/app/assets/mk/trade2.webp'
 import liMeiAdvancedView from '@/app/assets/mk1/advanced_view.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
-import { MK_BASE_URL, MK_TITLE } from '@/app/constants'
-import { mkRoute } from '@/app/mortal-kombat/constants'
+import { mkHref, mkMetadata, mkPage, mkSection } from '@/app/siteMap'
 import { Diagram } from '@/app/ui/Diagram'
-import { generatePageMetadata } from '@/lib/metadata'
 
-export const navOrder = 3
+const page = mkPage('anatomyOfAttacks')
 
-export const navTitle = 'Anatomy of attacks'
-
-export const metadata = generatePageMetadata(
-  `${MK_TITLE}: ${navTitle}`,
-  'How moves work in Mortal Kombat.',
-)
+export const metadata = mkMetadata('anatomyOfAttacks')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <p>
@@ -58,8 +51,8 @@ export default async function Page() {
 
         <p>
           Pressing any{' '}
-          <Link href={`${MK_BASE_URL}#move-annotations`}>face</Link> or the
-          throw button results in an attack. The player that initiates the
+          <Link href={`${mkSection.rootUrl}#move-annotations`}>face</Link> or
+          the throw button results in an attack. The player that initiates the
           attack is the <em>attacker</em>, while the other one is the{' '}
           <em>defender</em> or the <em>target</em>. Once an attack starts, the
           attacker cannot act until it ends. One of three outcomes can occur:
@@ -150,8 +143,8 @@ export default async function Page() {
         <p>
           Each move has a block type that determines how it must be defended.
           It's a rock-paper-scissors game based on{' '}
-          <Link href={`${mkRoute('Movement')}#stances`}>stances</Link>. A move
-          can be either a normal attack or a special.
+          <Link href={mkHref('movement', 'stances')}>stances</Link>. A move can
+          be either a normal attack or a special.
         </p>
 
         <Image
@@ -305,8 +298,8 @@ export default async function Page() {
           react and break the throw. Pressing <span className="badge">1</span>{' '}
           or <span className="badge">3</span> for forward or{' '}
           <span className="badge">2</span> or <span className="badge">4</span>{' '}
-          for back throws causes them to fail. This is called{' '}
-          <em>teching</em> a throw.
+          for back throws causes them to fail. This is called <em>teching</em> a
+          throw.
         </p>
 
         <Diagram description="Throws are designed for punishing players who are holding block.">

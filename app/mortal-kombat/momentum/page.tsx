@@ -1,22 +1,15 @@
 import Link from 'next/link'
 
-import { MK_TITLE } from '@/app/constants'
-import { mkRoute } from '@/app/mortal-kombat/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { mkHref, mkMetadata, mkPage } from '@/app/siteMap'
 
-export const navOrder = 4
+const page = mkPage('momentum')
 
-export const navTitle = 'Momentum'
-
-export const metadata = generatePageMetadata(
-  `${MK_TITLE}: ${navTitle}`,
-  'How momentum and okizeme work in MK.',
-)
+export const metadata = mkMetadata('momentum')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <h2 id="oki">Wake-up pressure (Okizeme)</h2>
@@ -39,9 +32,9 @@ export default async function Page() {
         <p>
           A <em>vortex</em> is a looping situation where the attacker ends a
           combo in a way that forces the defender into{' '}
-          <Link href={`${mkRoute('Pressure')}#50/50s`}>guessing</Link>{' '}
-          situation. They intentionally drop a combo early when they have a
-          coming overhead/low mix-up. It's called vortex because if the defender
+          <Link href={mkHref('pressure', '50/50s')}>guessing</Link> situation.
+          They intentionally drop a combo early when they have a coming
+          overhead/low mix-up. It's called vortex because if the defender
           guesses wrong, they get punished all over again.
         </p>
       </section>

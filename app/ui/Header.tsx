@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import { FaAsterisk } from 'react-icons/fa'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
 
-import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
+import { rootNavigationItems } from '@/app/siteMap'
 import { Anchor } from '@/app/ui/Anchor'
 
 type HeaderProps = {
@@ -78,7 +78,7 @@ export const Header = ({
 
       <nav>
         <div className="hidden lg:flex flex-list gap-4 text-lg">
-          {ROOT_NAVIGATION_ITEMS.map((item) => (
+          {rootNavigationItems.map((item) => (
             <Anchor key={item.href} href={item.href}>
               {item.shortName}
             </Anchor>

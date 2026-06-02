@@ -16,19 +16,15 @@ import {
 
 import mkLogo from '@/app/assets/mk/mk_logo.webp'
 import monk from '@/app/assets/mk/monk.webp'
-import { MK_TITLE } from '@/app/constants'
+import { mkMetadata, mkSection } from '@/app/siteMap'
 import { SourceLink } from '@/app/ui/SourceLink'
-import { generatePageMetadata } from '@/lib/metadata'
 
-export const metadata = generatePageMetadata(
-  MK_TITLE,
-  'Mortal Kombat 1 (MK1) is the latest chapter in the long-running, celebrated fighting game series.',
-)
+export const metadata = mkMetadata()
 
 export default async function Page() {
   return (
     <>
-      <h1>{MK_TITLE}</h1>
+      <h1>{mkSection.title}</h1>
 
       <section>
         <Image

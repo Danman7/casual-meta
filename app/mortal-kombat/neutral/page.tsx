@@ -2,23 +2,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import duelStart from '@/app/assets/mk1/duel_start.webp'
-import { MK_TITLE } from '@/app/constants'
-import { mkRoute } from '@/app/mortal-kombat/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { mkHref, mkMetadata, mkPage } from '@/app/siteMap'
 
-export const navOrder = 5
+const page = mkPage('neutral')
 
-export const navTitle = 'Neutral'
-
-export const metadata = generatePageMetadata(
-  `${MK_TITLE}: ${navTitle}`,
-  'Understanding the Neutral state in Mortal Kombat 1 and its significance in gameplay.',
-)
+export const metadata = mkMetadata('neutral')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <div className="flavor">
@@ -90,14 +83,12 @@ export default async function Page() {
 
         <p>
           We know that a{' '}
-          <Link href={`${mkRoute('Anatomy of attacks')}#hit-vs-block-vs-miss`}>
+          <Link href={mkHref('anatomyOfAttacks', 'hit-vs-block-vs-miss')}>
             whiff
           </Link>{' '}
           is when an attack misses completely. A <em>whiff punish</em> is
           hitting the attacker during the missed attack's{' '}
-          <Link href={`${mkRoute('Anatomy of attacks')}#move-phases`}>
-            recovery
-          </Link>
+          <Link href={mkHref('anatomyOfAttacks', 'move-phases')}>recovery</Link>
           , before they can block again. It's a core layer of neutral and sits
           between pure spacing and direct pressure.
         </p>

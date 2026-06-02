@@ -1,19 +1,16 @@
 import Image from 'next/image'
 
 import mk1Title from '@/app/assets/mk1/mk1-title.webp'
-import { generatePageMetadata } from '@/lib/metadata'
+import { mkMetadata, mkPage } from '@/app/siteMap'
 
-export const navTitle = 'Mortal Kombat 1'
+const page = mkPage('mk1')
 
-export const metadata = generatePageMetadata(
-  navTitle,
-  'Mortal Kombat 1 or MK1 is the latest chapter in the long-running, celebrated fighting game series.',
-)
+export const metadata = mkMetadata('mk1')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
       <section>
         <p>
           In 2023, NetherRealm Studios released Mortal Kombat 1 (technically the

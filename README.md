@@ -67,28 +67,16 @@ casual-meta/
 
 ## ✨ Key Features
 
-### Automatic Navigation Generation
+### Static Navigation Registry
 
-Navigation is **auto-generated** from the file system. To add a new page:
+Navigation is defined in `app/siteMap.ts`. To add a new page:
 
-1. Create `page.tsx` in the appropriate `app/` subdirectory
-2. Export navigation metadata:
-   ```typescript
-   export const navTitle = 'My Page Title'
-   export const navOrder = 10 // Lower numbers appear first
-   ```
-3. Export page metadata:
-
-   ```typescript
-   import { generatePageMetadata } from '@/lib/metadata'
-
-   export const metadata = generatePageMetadata(
-     'Page Title',
-     'Page description',
-   )
-   ```
-
-Navigation hierarchy mirrors your folder structure—no manual configuration needed.
+1. Create `page.tsx` in the appropriate `app/` subdirectory.
+2. Add the page to the relevant section in `app/siteMap.ts`; array position
+   controls navigation order.
+3. Use `homm3Metadata`, `mkMetadata`, or `wh40kMetadata` for page metadata.
+4. Use `homm3Href`, `mkHref`, or `wh40kHref` for internal links. Page ids are
+   typed; heading hashes stay manual.
 
 ### Table of Contents
 
@@ -154,7 +142,7 @@ export default function Page() {
 
 1. Follow the existing patterns in `app/ui/` for components
 2. Use the ESLint import ordering rules (automatically enforced)
-3. Export `navTitle` and `navOrder` for all new pages
+3. Add new pages to `app/siteMap.ts`
 4. Wrap article content in `<article>` tags
 5. Run `npm run lint` before committing
 

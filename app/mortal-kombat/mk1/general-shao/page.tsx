@@ -2,23 +2,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import Shao from '@/app/assets/mk1/shao.webp'
-import { MK_TITLE } from '@/app/constants'
-import { mkRoute } from '@/app/mortal-kombat/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { mkHref, mkMetadata, mkPage } from '@/app/siteMap'
 
-export const navOrder = 10
+const page = mkPage('generalShao')
 
-export const navTitle = 'General Shao'
-
-export const metadata = generatePageMetadata(
-  `${MK_TITLE}: ${navTitle}`,
-  'A breakdown of General Shao in Mortal Kombat 1.',
-)
+export const metadata = mkMetadata('generalShao')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <Image
@@ -37,8 +30,8 @@ export default async function Page() {
 
           <p>
             Armed with his axe, he plays a strong{' '}
-            <Link href={mkRoute('Neutral')}>neutral</Link> game around his long{' '}
-            <Link href={`${mkRoute('Anatomy of attacks')}#disjointed`}>
+            <Link href={mkHref('neutral')}>neutral</Link> game around his long{' '}
+            <Link href={mkHref('anatomyOfAttacks', 'disjointed')}>
               disjointed
             </Link>{' '}
             normals. His reach and speed help bait whiffs, while his height

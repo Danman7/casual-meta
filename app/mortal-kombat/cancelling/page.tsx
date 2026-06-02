@@ -1,31 +1,22 @@
 import Link from 'next/link'
 
-import { MK_TITLE } from '@/app/constants'
-import { mkRoute } from '@/app/mortal-kombat/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { mkHref, mkMetadata, mkPage } from '@/app/siteMap'
 
-export const navOrder = 4
+const page = mkPage('cancelling')
 
-export const navTitle = 'Cancelling'
-
-export const metadata = generatePageMetadata(
-  `${MK_TITLE}: ${navTitle}`,
-  'How chaining moves into strings works.',
-)
+export const metadata = mkMetadata('cancelling')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <h2 id="what-is-a-cancel">What is a cancel?</h2>
 
         <p>
           Every action has a recovery{' '}
-          <Link href={`${mkRoute('Anatomy of attacks')}#move-phases`}>
-            phase
-          </Link>{' '}
+          <Link href={mkHref('anatomyOfAttacks', 'move-phases')}>phase</Link>{' '}
           after execution, where the character returns to a neutral state.
           During the recovery they are unable to act.
         </p>

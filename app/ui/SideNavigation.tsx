@@ -1,6 +1,6 @@
 'use client'
 
-import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
+import { rootNavigationItems } from '@/app/siteMap'
 import { Anchor } from '@/app/ui/Anchor'
 import { useSectionNav } from '@/app/ui/NavigationProvider'
 import { SectionNav } from '@/app/ui/SectionNav'
@@ -19,7 +19,7 @@ export const SideNavigation: React.FC<{ isMobile?: boolean }> = ({
       }`}
     >
       <div className="lg:hidden font-bold pb-4 mb-4 space-y-2">
-        {ROOT_NAVIGATION_ITEMS.map((item) => (
+        {rootNavigationItems.map((item) => (
           <Anchor key={item.href} href={item.href}>
             {' '}
             {item.name}

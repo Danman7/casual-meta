@@ -13,22 +13,16 @@ import marksman from '@/app/assets/homm3/marksman.webp'
 import pikeman from '@/app/assets/homm3/pikeman.webp'
 import royal_griffin from '@/app/assets/homm3/royal_griffin.webp'
 import stables from '@/app/assets/homm3/stables.webp'
-import { HOMM3_TITLE } from '@/app/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { homm3Metadata, homm3Page } from '@/app/siteMap'
 
-export const navOrder = 10
+const page = homm3Page('castle')
 
-export const navTitle = 'Castle'
-
-export const metadata = generatePageMetadata(
-  `${HOMM3_TITLE}: ${navTitle}`,
-  'An overview of the Castle faction in Heroes of Might and Magic 3.',
-)
+export const metadata = homm3Metadata('castle')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <Image

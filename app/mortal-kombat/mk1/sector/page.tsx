@@ -1,22 +1,16 @@
 import Image from 'next/image'
 
 import Sektor from '@/app/assets/mk1/sector.webp'
-import { MK_TITLE } from '@/app/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { mkMetadata, mkPage } from '@/app/siteMap'
 
-export const navOrder = 10
+const page = mkPage('sektor')
 
-export const navTitle = 'Sektor'
-
-export const metadata = generatePageMetadata(
-  `${MK_TITLE}: ${navTitle}`,
-  'A breakdown of Sektor in Mortal Kombat 1.',
-)
+export const metadata = mkMetadata('sektor')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <Image

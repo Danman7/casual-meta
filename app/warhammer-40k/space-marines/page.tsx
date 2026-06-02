@@ -5,24 +5,17 @@ import { GiKnightBanner, GiMagnifyingGlass, GiOpenBook } from 'react-icons/gi'
 import banners from '@/app/assets/wh40k/chapter_banners.webp'
 import marine from '@/app/assets/wh40k/space-marine.webp'
 import marines from '@/app/assets/wh40k/Ultramarines.webp'
-import { WH40K_TITLE } from '@/app/constants'
+import { wh40kHref, wh40kMetadata, wh40kPage } from '@/app/siteMap'
 import { Paper } from '@/app/ui/Paper'
-import { wh40kRoute } from '@/app/warhammer-40k/constants'
-import { generatePageMetadata } from '@/lib/metadata'
 
-export const navOrder = 10
+const page = wh40kPage('spaceMarines')
 
-export const navTitle = 'Space Marines'
-
-export const metadata = generatePageMetadata(
-  `${WH40K_TITLE}: ${navTitle}`,
-  'An overview of the Space Marines faction in Warhammer 40k.',
-)
+export const metadata = wh40kMetadata('spaceMarines')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <Image
@@ -76,7 +69,7 @@ export default async function Page() {
 
           <p>
             At the start of your{' '}
-            <Link href={`${wh40kRoute('The Battle Round')}#command-phase`}>
+            <Link href={wh40kHref('battleRound', 'command-phase')}>
               command phase
             </Link>
             , select one enemy unit. Until your next command phase:
@@ -85,10 +78,8 @@ export default async function Page() {
           <ul>
             <li>
               All your models{' '}
-              <Link href={`${wh40kRoute('Datasheets')}#re-rolls`}>re-roll</Link>{' '}
-              <Link href={`${wh40kRoute('The Battle Round')}#hit-roll`}>
-                hit rolls
-              </Link>{' '}
+              <Link href={wh40kHref('datasheets', 're-rolls')}>re-roll</Link>{' '}
+              <Link href={wh40kHref('battleRound', 'hit-roll')}>hit rolls</Link>{' '}
               against that target.
             </li>
 
@@ -96,7 +87,7 @@ export default async function Page() {
               If using a codex-compliant detachment (excluding divergent
               chapters like Black Templars, Blood Angels, etc.; explained
               below), you also gain +1 to{' '}
-              <Link href={`${wh40kRoute('The Battle Round')}#wound-roll`}>
+              <Link href={wh40kHref('battleRound', 'wound-roll')}>
                 wound rolls
               </Link>{' '}
               against that target.
@@ -108,17 +99,13 @@ export default async function Page() {
           This shapes Space Marines into a <strong>combined-arms force</strong>{' '}
           where multiple units <em>focus fire</em> priority targets, one at a
           time. This pairs well with weapon keywords related to crits (e.g.{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#devastating-wounds`}>
+          <Link href={wh40kHref('datasheets', 'devastating-wounds')}>
             Devastating Wounds
           </Link>
           ,{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#lethal-hits`}>
-            Lethal Hits
-          </Link>
+          <Link href={wh40kHref('datasheets', 'lethal-hits')}>Lethal Hits</Link>
           ) and{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#re-rolls`}>
-            re-roll access
-          </Link>
+          <Link href={wh40kHref('datasheets', 're-rolls')}>re-roll access</Link>
           .
         </p>
       </section>
@@ -134,8 +121,8 @@ export default async function Page() {
 
         <p>
           There are more Astartes{' '}
-          <Link href={`${wh40kRoute('Datasheets')}`}>datasheets</Link> than any
-          other faction, with a <em>broad distribution of roles</em>: objective
+          <Link href={wh40kHref('datasheets')}>datasheets</Link> than any other
+          faction, with a <em>broad distribution of roles</em>: objective
           pressure, jump infantry, elites, bikes, transports, walkers, aircraft
           etc. Be that as it may, there is a heavy{' '}
           <strong>emphasis on characters</strong> - roughtly 40% of the core
@@ -146,13 +133,13 @@ export default async function Page() {
         <p>
           Space Marines have <strong>good baseline durability</strong>. Almost
           all models are{' '}
-          <Link href={`${wh40kRoute('Profile Archetypes')}#meq`}>MEQ</Link>{' '}
+          <Link href={wh40kHref('profileArchetypes', 'meq')}>MEQ</Link>{' '}
           <span className="badge">T4, Sv3+</span> or better, which bestows a
           more forgiving experience. About 70% of the arsenal is ranged, mostly
           D1-D2 weapons within 24" range, with{' '}
           <strong>
             strong{' '}
-            <Link href={`${wh40kRoute('Datasheets')}#weapon-keywords`}>
+            <Link href={wh40kHref('datasheets', 'weapon-keywords')}>
               keyword
             </Link>{' '}
             diversity
@@ -236,14 +223,10 @@ export default async function Page() {
         <p>
           The most visible trait of a chapter is its color scheme, but what
           defines it on the table are its{' '}
-          <Link href={`${wh40kRoute('Space Marine chapter units')}`}>
-            custom units
-          </Link>{' '}
+          <Link href={wh40kHref('spaceMarineChapterUnits')}>custom units</Link>{' '}
           and{' '}
-          <Link href={`${wh40kRoute('Space Marine detachments')}`}>
-            detachments
-          </Link>
-          . Let's go briefly through the official chapters to get a feeling of
+          <Link href={wh40kHref('spaceMarineDetachments')}>detachments</Link>.
+          Let's go briefly through the official chapters to get a feeling of
           their flavor and support.
         </p>
 

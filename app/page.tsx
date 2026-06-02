@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { FaAsterisk } from 'react-icons/fa'
 
-import { ROOT_NAVIGATION_ITEMS } from '@/app/constants'
+import { rootNavigationItems } from '@/app/siteMap'
 
 export default function Page() {
   return (
@@ -33,7 +33,7 @@ export default function Page() {
           </div>
 
           <div className="flex-list text-lg justify-center">
-            {ROOT_NAVIGATION_ITEMS.map((item, index) => (
+            {rootNavigationItems.map((item, index) => (
               <Link
                 key={item.href}
                 href={item.href}

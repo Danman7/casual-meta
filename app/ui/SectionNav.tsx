@@ -1,10 +1,10 @@
 'use client'
 
+import type { NavItem } from '@/app/siteMap'
 import { Anchor } from '@/app/ui/Anchor'
-import type { RouteItem } from '@/lib/routes'
 
 type Props = {
-  items: RouteItem[]
+  items: readonly NavItem[]
   title: string
   rootUrl: string
 }

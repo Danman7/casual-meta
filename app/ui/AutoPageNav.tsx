@@ -8,13 +8,12 @@ import { useSectionNav } from '@/app/ui/NavigationProvider'
 type FlatRoute = {
   title: string
   href: string
-  order?: number
-  children?: FlatRoute[]
+  children?: readonly FlatRoute[]
 }
 
-const flattenRoutes = (items: FlatRoute[]): FlatRoute[] => {
+const flattenRoutes = (items: readonly FlatRoute[]): FlatRoute[] => {
   return items.flatMap((item) => [
-    { title: item.title, href: item.href, order: item.order },
+    { title: item.title, href: item.href },
     ...(item.children ? flattenRoutes(item.children) : []),
   ])
 }
@@ -33,9 +32,7 @@ export function AutoPageNav() {
 
   if (!section) return null
 
-  const orderedRoutes = flattenRoutes(section.items).filter(
-    (item) => item.order != null,
-  )
+  const orderedRoutes = flattenRoutes(section.items)
 
   const currentIndex = orderedRoutes.findIndex(
     (item) => normalizePath(item.href) === pathname,

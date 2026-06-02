@@ -11,28 +11,18 @@ import attack from '@/app/assets/wh40k/attack.webp'
 import movement from '@/app/assets/wh40k/move.webp'
 import pivot from '@/app/assets/wh40k/pivot.webp'
 import shooting from '@/app/assets/wh40k/shooting.webp'
-import { WH40K_TITLE } from '@/app/constants'
+import { wh40kHref, wh40kMetadata, wh40kPage } from '@/app/siteMap'
 import { Table } from '@/app/ui/Table'
-import {
-  wh40kRoute,
-  woundRollColumns,
-  woundRollRows,
-} from '@/app/warhammer-40k/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 
-export const navOrder = 3
+const page = wh40kPage('battleRound')
 
-export const navTitle = 'The Battle Round'
-
-export const metadata = generatePageMetadata(
-  `${WH40K_TITLE}: ${navTitle}`,
-  'Understand the sequence of turns in Warhammer 40k.',
-)
+export const metadata = wh40kMetadata('battleRound')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <p>
@@ -89,9 +79,7 @@ export default async function Page() {
             <li>
               It started as a <strong>single model</strong> (e.g. a character,
               monster, or vehicle) and it has less than half its{' '}
-              <Link href={`${wh40kRoute('Datasheets')}#wounds`}>
-                wounds (W)
-              </Link>{' '}
+              <Link href={wh40kHref('datasheets', 'wounds')}>wounds (W)</Link>{' '}
               left.
             </li>
 
@@ -116,7 +104,7 @@ export default async function Page() {
           <p>
             <strong>Roll 2D6.</strong> If the result is higher than the unit's
             highest{' '}
-            <Link href={`${wh40kRoute('Datasheets')}#leadership`}>
+            <Link href={wh40kHref('datasheets', 'leadership')}>
               Leadership (Ld)
             </Link>{' '}
             attribute, the test passes.
@@ -144,7 +132,7 @@ export default async function Page() {
         <ul>
           <li>
             Its{' '}
-            <Link href={`${wh40kRoute('Datasheets')}#objective-control`}>
+            <Link href={wh40kHref('datasheets', 'objective-control')}>
               Objective Control (OC)
             </Link>{' '}
             becomes 0.
@@ -174,7 +162,7 @@ export default async function Page() {
         <ul>
           <li>
             Move normally up to its{' '}
-            <Link href={`${wh40kRoute('Datasheets')}#move`}>Move (M)</Link>{' '}
+            <Link href={wh40kHref('datasheets', 'move')}>Move (M)</Link>{' '}
             characteristic in inches.
           </li>
 
@@ -507,7 +495,7 @@ export default async function Page() {
             each attack a weapon does to a target. If the result is higher than
             its{' '}
             <Link
-              href={`${wh40kRoute('Datasheets')}#ballistic-skill-weapon-skill`}
+              href={wh40kHref('datasheets', 'ballistic-skill-weapon-skill')}
             >
               Weapon/Ballistic Skill (WS/BS)
             </Link>
@@ -518,7 +506,7 @@ export default async function Page() {
         <p>
           An <em>unmodified roll of 6</em> is a <strong>critical hit</strong>.
           This plays a role with{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#weapon-keywords`}>
+          <Link href={wh40kHref('datasheets', 'weapon-keywords')}>
             weapon keywords
           </Link>
           .
@@ -531,11 +519,9 @@ export default async function Page() {
             <IoDiceOutline className="inline" /> Roll a <strong>D6</strong> only
             for the attacks that did connect. The result follows a table based
             on how much higher or lower the weapon's{' '}
-            <Link href={`${wh40kRoute('Datasheets')}#strength`}>
-              Strength (S)
-            </Link>{' '}
+            <Link href={wh40kHref('datasheets', 'strength')}>Strength (S)</Link>{' '}
             is compared to the target's{' '}
-            <Link href={`${wh40kRoute('Datasheets')}#toughness`}>
+            <Link href={wh40kHref('datasheets', 'toughness')}>
               Toughness (T)
             </Link>
             .
@@ -554,7 +540,7 @@ export default async function Page() {
           If the attack hits and wounds, the{' '}
           <strong>defender allocates which models take the wounds</strong>{' '}
           (unless the attacking weapon has{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#precision`}>precision</Link>
+          <Link href={wh40kHref('datasheets', 'precision')}>precision</Link>
           ). Models that already lost wounds or had attacks allocated this phase
           must be selected first. Saves represent the target's armor.
         </p>
@@ -567,7 +553,7 @@ export default async function Page() {
           <p>
             <IoDiceOutline className="inline" /> Roll a <strong>D6</strong> for
             each allocated wound. Modify the roll by the{' '}
-            <Link href={`${wh40kRoute('Datasheets')}#armor-penetration`}>
+            <Link href={wh40kHref('datasheets', 'armor-penetration')}>
               Armor Penetration (AP)
             </Link>{' '}
             of the weapon. If the result is equal to or greater than the
@@ -595,7 +581,7 @@ export default async function Page() {
           After all three rolls are done, if the attack hits, wounds, and the
           armor save fails, damage is inflicted. The target loses wounds equal
           to the{' '}
-          <Link href={`${wh40kRoute('Datasheets')}#damage`}>Damage (D)</Link> of
+          <Link href={wh40kHref('datasheets', 'damage')}>Damage (D)</Link> of
           the weapon. If that damage is more than is required to kill the target
           model, the excess cannot be allocated to other targets and is lost.
         </p>

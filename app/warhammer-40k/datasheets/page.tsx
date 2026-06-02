@@ -22,23 +22,16 @@ import sustainedHits from '@/app/assets/wh40k/sustained-hits.webp'
 import torrent from '@/app/assets/wh40k/torrent.webp'
 import weapons from '@/app/assets/wh40k/weapons.webp'
 import wound from '@/app/assets/wh40k/wound.webp'
-import { WH40K_TITLE } from '@/app/constants'
-import { wh40kRoute } from '@/app/warhammer-40k/constants'
-import { generatePageMetadata } from '@/lib/metadata'
+import { wh40kHref, wh40kMetadata, wh40kPage } from '@/app/siteMap'
 
-export const navOrder = 4
+const page = wh40kPage('datasheets')
 
-export const navTitle = 'Datasheets'
-
-export const metadata = generatePageMetadata(
-  `${WH40K_TITLE}: ${navTitle}`,
-  'How to read datasheets in Warhammer 40k, including unit profiles and weapon stats.',
-)
+export const metadata = wh40kMetadata('datasheets')
 
 export default async function Page() {
   return (
     <>
-      <h1>{navTitle}</h1>
+      <h1>{page.title}</h1>
 
       <section>
         <p>
@@ -85,7 +78,7 @@ export default async function Page() {
         <p>
           Movement in WH40K is measured in <em>inches</em>. Following the rules
           of the{' '}
-          <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
+          <Link href={wh40kHref('battleRound', 'movement-phase')}>
             movement phase
           </Link>
           , a unit may only move up to a certain amount per turn, when given the
@@ -111,7 +104,7 @@ export default async function Page() {
           Toughness is one of 3 characteristics that shape the model's
           durability. It plays a role during the <em>roll to wound</em> part of
           each{' '}
-          <Link href={`${wh40kRoute('The Battle Round')}#attack-sequence`}>
+          <Link href={wh40kHref('battleRound', 'attack-sequence')}>
             weapon activation
           </Link>
           . The tougher the model is, the stronger the attacking weapon needs to
@@ -198,7 +191,7 @@ export default async function Page() {
 
         <p>
           Leadership only comes into play for{' '}
-          <Link href={`${wh40kRoute('The Battle Round')}#battle-shock-tests`}>
+          <Link href={wh40kHref('battleRound', 'battle-shock-tests')}>
             battle-shock tests
           </Link>{' '}
           during the Command Phase. Better (lower) Ld means a better chance for
@@ -273,7 +266,7 @@ export default async function Page() {
         <p>
           Ranged weapons have a maximum range, measured in <em>inches</em>, at
           which their owners can declare attacks. Referring to the{' '}
-          <Link href={`${wh40kRoute('The Battle Round')}#shooting-phase`}>
+          <Link href={wh40kHref('battleRound', 'shooting-phase')}>
             shooting phase rules
           </Link>{' '}
           a model must be within range and visual contact of the target to be
@@ -423,7 +416,7 @@ export default async function Page() {
 
         <p>
           The weapon can be fired, even after the wielder has{' '}
-          <Link href={`${wh40kRoute('The Battle Round')}#movement-phase`}>
+          <Link href={wh40kHref('battleRound', 'movement-phase')}>
             advanced
           </Link>{' '}
           this turn. Arms without this keyword cannot be used after advancing.
