@@ -94,6 +94,23 @@ Specifically, do not reintroduce `navTitle`, `navOrder`,
 - Prefer shared UI from `app/ui/` before adding page-local components.
 - Preserve unrelated user edits in the working tree.
 
+## Dependency Updates
+
+When asked to update project dependencies, use this shortcut workflow:
+
+```bash
+ncu
+ncu -u
+npm update --save
+npm run lint
+npm run build
+```
+
+If `npm update --save` fails because `eslint` or `@eslint/js` moved to a new
+major, check the peer ranges for the ESLint plugins before forcing the install.
+In particular, keep `eslint` and `@eslint/js` on the same major, and do not
+accept ESLint 10 until `eslint-plugin-import` supports it.
+
 ## Validation
 
 Run checks after navigation, metadata, or shared component changes:
