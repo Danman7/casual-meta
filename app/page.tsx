@@ -47,7 +47,7 @@ export default function Page() {
         </div>
 
         <div
-          className="box animate-fade-in-scale"
+          className="paper p-4 animate-fade-in-scale"
           style={{ animationDelay: '1.2s' }}
         >
           <div className="text-xl">

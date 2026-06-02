@@ -1,9 +1,11 @@
 import { WH40K_TITLE } from '@/app/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
-export const navOrder = 13
+export const navOrder = 12
 
-export const navTitle = 'Astartes chapter units'
+export const navTitle = 'Space Marine chapter units'
+
+export const shortTitle = 'Chapter units'
 
 export const metadata = generatePageMetadata(
   `${WH40K_TITLE}: ${navTitle}`,

@@ -3,23 +3,19 @@
 :root {
   --background: hsl(10, 10%, 98%);
   --foreground: hsl(10, 20%, 20%);
-  --surface: hsl(10, 10%, 96%);
-  --primary: hsl(10, 80%, 45%);
+  --primary: hsl(10, 80%, 50%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: hsl(10, 20%, 5%);
-    --foreground: hsl(10, 10%, 95%);
-    --surface: hsl(10, 20%, 8%);
-    --primary: hsl(10, 80%, 55%);
+    --background: hsl(10, 20%, 6%);
+    --foreground: hsl(10, 10%, 98%);
   }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
   --color-primary: var(--primary);
 
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out both;
@@ -95,7 +91,7 @@
 }
 
 @utility badge {
-  @apply px-1.5 py-0.5 rounded text-sm bg-surface border border-foreground/30 inline-flex gap-1 items-center shadow-sm;
+  @apply px-1.5 py-0.5 rounded text-sm border border-foreground/30 inline-flex gap-1 items-center shadow-sm;
 }
 
 @utility input {
@@ -103,7 +99,11 @@
 }
 
 @utility box {
-  @apply border border-foreground/10 bg-surface p-4 rounded mb-6 shadow-sm space-y-4;
+  @apply border border-foreground/10 p-4 rounded shadow-sm space-y-4;
+}
+
+@utility paper {
+  @apply overflow-hidden rounded shadow-sm border border-foreground/10!;
 }
 
 @utility button {
@@ -111,21 +111,12 @@
 }
 
 @layer base {
-  blockquote,
   section {
     @apply space-y-4;
   }
 
   section {
     @apply mt-8;
-  }
-
-  blockquote {
-    @apply border-l-4 rounded border-primary pl-4;
-  }
-
-  .example {
-    @apply border-foreground/50 pl-3 italic text-sm!;
   }
 
   a {
@@ -166,7 +157,7 @@
 
     ul,
     ol {
-      @apply pl-5 space-y-2;
+      @apply pl-5;
     }
 
     li {

@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { GiKnightBanner } from 'react-icons/gi'
+import { GiKnightBanner, GiMagnifyingGlass, GiOpenBook } from 'react-icons/gi'
 
 import banners from '@/app/assets/wh40k/chapter_banners.webp'
 import marine from '@/app/assets/wh40k/space-marine.webp'
 import marines from '@/app/assets/wh40k/Ultramarines.webp'
 import { WH40K_TITLE } from '@/app/constants'
+import { Paper } from '@/app/ui/Paper'
 import { wh40kRoute } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
@@ -63,14 +64,14 @@ export default async function Page() {
       </section>
 
       <section>
-        <h2 id="oath-of-moment">Oath of Moment</h2>
+        <h2 id="faction-rule">Faction rule</h2>
 
         <p>
-          Before getting into the data, the faction rule alone gives us good
-          insight into their playstyle.
+          Even before getting into the data, the faction rule alone gives us
+          good insight into the Space Marines playstyle.
         </p>
 
-        <blockquote>
+        <Paper icon={GiOpenBook} isPrimary>
           <p className="font-bold">Oath of Moment (Oath)</p>
 
           <p>
@@ -101,7 +102,7 @@ export default async function Page() {
               against that target.
             </li>
           </ul>
-        </blockquote>
+        </Paper>
 
         <p>
           This shapes Space Marines into a <strong>combined-arms force</strong>{' '}
@@ -187,18 +188,21 @@ export default async function Page() {
           <em>core units</em>. Datasheets that have a second faction keyword are{' '}
           <em>chapter units</em>.
         </p>
-        <blockquote className="example">
-          For example, Marneus Calgar has both Adeptus Astartes and
-          Ultramarines, so he is part of the Ultramarines. Intercessors only
-          have the Adeptus Astartes keyword, so they can be part of any force.
-        </blockquote>
+        <Paper icon={GiMagnifyingGlass}>
+          <p className="text-sm">
+            For example, Marneus Calgar has both{' '}
+            <strong>Adeptus Astartes</strong> and <strong>Ultramarines</strong>,
+            so he is part of the Ultramarines. Intercessors only have the
+            Adeptus Astartes keyword, so they can be part of any force.
+          </p>
+        </Paper>
 
         <p>
           A chapter says who the given Space Marines are. A detachment specifies
           how the army fights.
         </p>
 
-        <blockquote>
+        <Paper icon={GiOpenBook} isPrimary>
           <p className="font-bold">Chapter roster rules</p>
 
           <ul>
@@ -227,16 +231,16 @@ export default async function Page() {
               limitations on what core units they can field.
             </li>
           </ul>
-        </blockquote>
+        </Paper>
 
         <p>
           The most visible trait of a chapter is its color scheme, but what
           defines it on the table are its{' '}
-          <Link href={`${wh40kRoute('Astartes chapter units')}`}>
+          <Link href={`${wh40kRoute('Space Marine chapter units')}`}>
             custom units
           </Link>{' '}
           and{' '}
-          <Link href={`${wh40kRoute('Astartes detachments')}`}>
+          <Link href={`${wh40kRoute('Space Marine detachments')}`}>
             detachments
           </Link>
           . Let's go briefly through the official chapters to get a feeling of

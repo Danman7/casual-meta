@@ -1,27 +1,27 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { BsShadows } from 'react-icons/bs'
-import { FaCrosshairs } from 'react-icons/fa'
+import { FaCrosshairs, FaInfo } from 'react-icons/fa'
 import { FaShield } from 'react-icons/fa6'
 import { IoIosMan } from 'react-icons/io'
-import { LuSword } from 'react-icons/lu'
-import { TbRulerMeasure } from 'react-icons/tb'
 
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import eliminators from '@/app/assets/wh40k/eliminators.webp'
 import heavyIntercessors from '@/app/assets/wh40k/heavyintercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { WH40K_TITLE } from '@/app/constants'
+import { Paper } from '@/app/ui/Paper'
 import { wh40kRoute } from '@/app/warhammer-40k/constants'
 import { generatePageMetadata } from '@/lib/metadata'
 
-export const navOrder = 12
+export const navOrder = 11
 
-export const navTitle = 'Core Astartes units'
+export const navTitle = 'Core Space Marine units'
+
+export const shortTitle = 'Core units'
 
 export const metadata = generatePageMetadata(
   `${WH40K_TITLE}: ${navTitle}`,
-  'An overview of the Core Space Marines units.',
+  'An overview of the Core Space Marine units.',
 )
 
 export default async function Page() {
@@ -29,11 +29,23 @@ export default async function Page() {
     <>
       <h1>{navTitle}</h1>
 
-      <p>
-        Having the datasheets is not essential, but recommended. If you are
-        unfamiliar with profile abbreviations, check out{' '}
-        <Link href={wh40kRoute('Profile Archetypes')}>Profile Archetypes</Link>.
-      </p>
+      <section>
+        <p>
+          On this page, we list and give a brief breakdown of all Core Space
+          Marine units, available to all detachments.
+        </p>
+
+        <Paper icon={FaInfo}>
+          <p>
+            Having the datasheets is not essential, but recommended. If you are
+            unfamiliar with profile abbreviations, check out{' '}
+            <Link href={wh40kRoute('Profile Archetypes')}>
+              Profile Archetypes
+            </Link>
+            .
+          </p>
+        </Paper>
+      </section>
 
       <section>
         <h2 id="battleline">Battleline</h2>
@@ -45,31 +57,11 @@ export default async function Page() {
 
         <h3 id="intercessors">Intercessors</h3>
 
-        <div className="relative">
-          <div className="absolute top-2 left-2 right-2 flex-center">
-            <div className="badge">
-              <FaCrosshairs /> Ranged
-            </div>
-
-            <div className="badge">
-              <IoIosMan /> Infantry
-            </div>
-          </div>
-
-          <div className="badge absolute bottom-2 left-2">
-            <strong>MEQ</strong> with OC2&uarr;
-          </div>
-
-          <div className="badge absolute bottom-2 right-2">
-            <strong>Cost:</strong> 80/5; 160/10
-          </div>
-
-          <Image
-            src={intercessors}
-            alt="A squad of Space Marine Intercessors."
-            className="picture profile-img object-[0%_70%]"
-          />
-        </div>
+        <Image
+          src={intercessors}
+          alt="A squad of Space Marine Intercessors."
+          className="picture profile-img object-[0%_70%]"
+        />
 
         <div className="box">
           <p>
@@ -133,31 +125,11 @@ export default async function Page() {
 
         <h3 id="assault-intercessors">Assault Intercessors</h3>
 
-        <div className="relative">
-          <div className="absolute top-2 left-2 right-2 flex-center">
-            <div className="badge">
-              <LuSword /> Melee
-            </div>
-
-            <div className="badge">
-              <IoIosMan /> Infantry
-            </div>
-          </div>
-
-          <div className="badge absolute bottom-2 left-2">
-            <strong>MEQ</strong> with OC2&uarr;
-          </div>
-
-          <div className="badge absolute bottom-2 right-2">
-            <strong>Cost:</strong> 75/5; 150/10
-          </div>
-
-          <Image
-            src={assaultIntercessors}
-            alt="A squad of Assault Intercessors."
-            className="picture profile-img object-[0%_75%]"
-          />
-        </div>
+        <Image
+          src={assaultIntercessors}
+          alt="A squad of Assault Intercessors."
+          className="picture profile-img object-[0%_75%]"
+        />
 
         <div className="box">
           <p>
@@ -306,33 +278,11 @@ export default async function Page() {
 
         <h3 id="eliminators">Eliminators</h3>
 
-        <div className="relative">
-          <div className="absolute top-2 left-2 right-2 flex-center">
-            <div className="badge">
-              <BsShadows /> Covert
-            </div>
-
-            <div className="badge">
-              <TbRulerMeasure /> Long-ranged
-            </div>
-
-            <div className="badge">
-              <IoIosMan /> Infantry
-            </div>
-          </div>
-
-          <div className="badge absolute bottom-2 left-2 font-bold">MEQ</div>
-
-          <div className="badge absolute bottom-2 right-2">
-            <strong>Cost:</strong> 85/3
-          </div>
-
-          <Image
-            src={eliminators}
-            alt="A squad of eliminators."
-            className="picture profile-img object-[0%_33%]"
-          />
-        </div>
+        <Image
+          src={eliminators}
+          alt="A squad of eliminators."
+          className="picture profile-img object-[0%_33%]"
+        />
 
         <div className="box">
           <p>

@@ -4,6 +4,7 @@ import path from 'node:path'
 
 export type RouteItem = {
   title: string
+  shortTitle?: string
   href: string
   children?: RouteItem[]
   order?: number
@@ -75,7 +76,10 @@ const readMetadataTitle = (absDir: string): string | null => {
   return null
 }
 
-const readNavTitle = (absDir: string): string | null => {
+const readStringExport = (
+  absDir: string,
+  exportName: string,
+): string | null => {
   const candidates = ['page.tsx', 'page.jsx', 'page.mdx']
   for (const file of candidates) {
     const p = path.join(absDir, file)
@@ -83,12 +87,22 @@ const readNavTitle = (absDir: string): string | null => {
     try {
       const src = fs.readFileSync(p, 'utf8')
       const m = src.match(
-        /export\s+const\s+(navTitle|shortTitle)\s*=\s*(["'`])([\s\S]*?)\2/,
+        new RegExp(
+          `export\\s+const\\s+${exportName}\\s*=\\s*(["'\`])([\\s\\S]*?)\\1`,
+        ),
       )
-      if (m) return m[3].trim()
+      if (m) return m[2].trim()
     } catch {}
   }
   return null
+}
+
+const readNavTitle = (absDir: string): string | null => {
+  return readStringExport(absDir, 'navTitle')
+}
+
+const readShortTitle = (absDir: string): string | null => {
+  return readStringExport(absDir, 'shortTitle')
 }
 
 const shortenTitle = (title: string): string => {
@@ -165,6 +179,7 @@ export function getRoutesFrom(
 
       const href = path.posix.join(routePrefix, e.name).replace(/\\/g, '/')
       const navT = preferNav ? readNavTitle(childAbs) : null
+      const shortTitle = preferNav ? readShortTitle(childAbs) : null
       const metaT = preferTitle ? readMetadataTitle(childAbs) : null
       const title =
         navT ?? (metaT ? shortenTitle(metaT) : null) ?? toTitle(e.name)
@@ -181,6 +196,7 @@ export function getRoutesFrom(
       if (includeSelf || hasChildPage) {
         children.push({
           title,
+          shortTitle: shortTitle ?? undefined,
           href,
           order,
           children: grandchildren.length ? grandchildren : undefined,
@@ -199,7 +215,11 @@ export function flattenRoutes(items: RouteItem[]): RouteItem[] {
   const out: RouteItem[] = []
   const dfs = (arr: RouteItem[]) => {
     for (const item of arr) {
-      out.push({ title: item.title, href: item.href })
+      out.push({
+        title: item.title,
+        shortTitle: item.shortTitle,
+        href: item.href,
+      })
       if (item.children) dfs(item.children)
     }
   }

@@ -379,7 +379,7 @@ export function CreatureTable() {
                   // Keep the Name column sticky on horizontal scroll.
                   <th
                     key={header.id}
-                    className={`px-4 py-3 text-left text-sm font-semibold bg-surface cursor-pointer hover:bg-light/10 ${
+                    className={`px-4 py-3 text-left text-sm font-semibold  cursor-pointer hover:bg-light/10 ${
                       header.column.id === 'name'
                         ? 'sticky left-0 z-30 border-r border-light'
                         : ''
@@ -405,7 +405,7 @@ export function CreatureTable() {
             {table.getRowModel().rows.map((row) => (
               <tr
                 key={row.id}
-                className="group border-b border-light hover:bg-surface transition-colors"
+                className="group border-b border-light transition-colors"
               >
                 {row.getVisibleCells().map((cell) =>
                   (() => {
@@ -419,7 +419,7 @@ export function CreatureTable() {
                         key={cell.id}
                         className={`px-4 py-2 text-sm ${performanceClass} ${
                           cell.column.id === 'name'
-                            ? 'sticky left-0 z-20 bg-background group-hover:bg-surface border-r border-light'
+                            ? 'sticky left-0 z-20 bg-background border-r border-light'
                             : ''
                         }`}
                       >
@@ -435,8 +435,8 @@ export function CreatureTable() {
             ))}
           </tbody>
           <tfoot>
-            <tr className="border-t border-light bg-surface/50 font-semibold">
-              <td className="px-4 py-2 text-sm sticky left-0 z-20 border-r border-light bg-surface/50">
+            <tr className="border-t border-light font-semibold">
+              <td className="px-4 py-2 text-sm sticky left-0 z-20 border-r border-light">
                 Average
               </td>
               <td className="px-4 py-2 text-sm">-</td>
@@ -469,8 +469,8 @@ export function CreatureTable() {
               <td className="px-4 py-2 text-sm">-</td>
               <td className="px-4 py-2 text-sm">-</td>
             </tr>
-            <tr className="border-t border-light bg-surface font-semibold">
-              <td className="px-4 py-2 text-sm sticky left-0 z-20 border-r border-light bg-surface">
+            <tr className="border-t border-light font-semibold">
+              <td className="px-4 py-2 text-sm sticky left-0 z-20 border-r border-light">
                 Total
               </td>
               <td className="px-4 py-2 text-sm">-</td>

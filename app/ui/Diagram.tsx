@@ -3,7 +3,7 @@ export const Diagram: React.FC<
 > = ({ children, className, description }) => (
   <div role="group">
     <div
-      className={`flex-wrapper p-4 justify-around bg-surface shadow-sm rounded ${className}`}
+      className={`flex-wrapper p-4 justify-around shadow-sm rounded ${className}`}
     >
       {children}
     </div>
