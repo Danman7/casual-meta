@@ -32,16 +32,15 @@ export default async function Page() {
             tabletop wargame in which players command armies of miniatures in an
             attempt to win through a mixture of skill, tactics, and luck
           </em>
-          . This sums up the game pretty well, but it doesn't capture the hobby.
+          . This sums up the game, but it doesn't capture the wider hobby -
+          collecting and painting the models, and the extensive lore depicted in
+          the books and media.
         </p>
 
         <p>
-          For the purpose of this section, we'll focus on the rules and the
-          armies of the latest edition (10th, 11th has been announced). Each
-          edition changes the game in some way, so one should always refer to
-          the rulebook and codexes first. Here, you'll find a concise scan of
-          the more broadly used set of rules. It's accompanied by a compact
-          community analysis of when something is more likely to perform well.
+          Here, however, we'll keep it simple and focus on the rules and armies
+          of the latest edition. WH40k changes somewhat with each installment,
+          so always refer to the official codexes when playing.
         </p>
       </section>
 
@@ -49,6 +48,8 @@ export default async function Page() {
         <h2 id="our-sources">Our sources</h2>
 
         <div className="flex-list">
+          <SourceLink href="https://wahapedia.ru/" text="Wahapedia" />
+
           <SourceLink
             href="https://www.warhammer.com/"
             text="Warhammer Official"
@@ -58,8 +59,6 @@ export default async function Page() {
             href="https://1d6chan.miraheze.org/wiki/Category:Warhammer_40,000"
             text="1d6chan"
           />
-
-          <SourceLink href="https://wahapedia.ru/" text="Wahapedia" />
 
           <SourceLink
             href="https://www.youtube.com/@auspextactics"

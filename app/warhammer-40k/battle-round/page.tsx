@@ -1,9 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaCheck, FaCrosshairs } from 'react-icons/fa'
+import { FaCrosshairs, FaInfo } from 'react-icons/fa'
+import { FaCheck } from 'react-icons/fa6'
+import {
+  GiMagnifyingGlass,
+  GiOpenBook,
+  GiPerspectiveDiceSixFacesFive,
+} from 'react-icons/gi'
 import { IoDiceOutline } from 'react-icons/io5'
 import { LuCrown } from 'react-icons/lu'
-import { RiInformation2Line, RiSwordLine } from 'react-icons/ri'
+import { RiSwordLine } from 'react-icons/ri'
 import { RxDoubleArrowUp } from 'react-icons/rx'
 import { TbArrowBigUpLines } from 'react-icons/tb'
 
@@ -12,6 +18,9 @@ import movement from '@/app/assets/wh40k/move.webp'
 import pivot from '@/app/assets/wh40k/pivot.webp'
 import shooting from '@/app/assets/wh40k/shooting.webp'
 import { wh40kHref, wh40kMetadata, wh40kPage } from '@/app/siteMap'
+import { OrDivider } from '@/app/ui/OrDivider'
+import { Paper } from '@/app/ui/Paper'
+import { Strip } from '@/app/ui/Strip'
 import { Table } from '@/app/ui/Table'
 import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 
@@ -37,6 +46,21 @@ export default async function Page() {
           order, following the sequence of actions as described. Then you pass
           the turn to your opponent.
         </p>
+
+        <Paper icon={FaInfo}>
+          <p className="font-bold uppercase">Phase sequence</p>
+          <p>
+            1. Command Phase &rarr; 2. Movement Phase &rarr; 3. Shooting Phase
+            &rarr; 4. Charge Phase &rarr; 5. Fight Phase
+          </p>
+
+          <OrDivider />
+
+          <p>
+            1. Gain resource and check morale &rarr; 2. Reposition &rarr; 3.
+            Shoot &rarr; 4. Charge &rarr; 5. Melee combat
+          </p>
+        </Paper>
       </section>
 
       <section>
@@ -63,89 +87,118 @@ export default async function Page() {
         <h3 id="battle-shock-tests">Battle-shock tests</h3>
 
         <p>
-          At the end of your Command Phase, check if you have units that are{' '}
-          <em>below half-strength</em>. If the answer is yes, every such unit
-          must take a battle-shock test.
+          At the end of your Command Phase, if you lost models during your last
+          turn, check if you have <strong>units below half-strength</strong>.
+          These <strong>must take a battle-shock test</strong>.
         </p>
 
-        <div className="box">
-          <p className="font-bold flex-center">
-            <RiInformation2Line /> Below Half-strength
-          </p>
+        <Paper icon={GiOpenBook} isPrimary>
+          <p className="font-bold uppercase">Below Half-strength</p>
 
           <p>A unit is below half-strength if:</p>
 
           <ul>
             <li>
-              It started as a <strong>single model</strong> (e.g. a character,
-              monster, or vehicle) and it has less than half its{' '}
-              <Link href={wh40kHref('datasheets', 'wounds')}>wounds (W)</Link>{' '}
-              left.
+              It's a <strong>single model</strong> (e.g. a character, monster,
+              or vehicle) and
+              <strong>
+                has less than half its{' '}
+                <Link href={wh40kHref('datasheets', 'wounds')}>wounds (W)</Link>{' '}
+                left
+              </strong>
+              .
             </li>
 
             <li>
-              It started as a <strong>multi-model</strong> unit (e.g. a squad),
-              and it has fewer than half of its models left.
+              It's a <strong>squad</strong> unit and{' '}
+              <strong>has fewer than half of its models left</strong>.
             </li>
           </ul>
 
           <p>
-            If a unit has a character attached to it, the whole thing counts as
-            a single unit, and you check against the total number of starting
-            models (squad + character).
+            If a character attaches to a squad, the check is made against total
+            number of models. If the escorting squad dies, checks are made
+            against wounds again.
           </p>
-        </div>
+        </Paper>
 
-        <div className="box">
-          <p className="font-bold flex-center">
-            <IoDiceOutline /> Battle-shock test
-          </p>
+        <Paper isPrimary icon={IoDiceOutline}>
+          <p className="font-bold uppercase">Battle-shock test</p>
 
+          <Strip
+            items={[
+              {
+                label: 'Roll',
+                value: (
+                  <>
+                    <p>
+                      2D6{' '}
+                      <GiPerspectiveDiceSixFacesFive className="inline text-2xl" />{' '}
+                      <GiPerspectiveDiceSixFacesFive className="inline text-2xl" />
+                    </p>
+                  </>
+                ),
+              },
+              {
+                label: 'Check',
+                value: (
+                  <p>
+                    Result is higher than the unit's highest{' '}
+                    <Link href={wh40kHref('datasheets', 'leadership')}>
+                      Leadership (Ld)
+                    </Link>
+                    .
+                  </p>
+                ),
+              },
+              {
+                label: 'On fail',
+                value: (
+                  <>
+                    <p>
+                      Unit is <strong>Battle-shocked</strong> until the start of
+                      your next Command Phase:
+                    </p>
+
+                    <ul>
+                      <li>
+                        <Link
+                          href={wh40kHref('datasheets', 'objective-control')}
+                        >
+                          Objective Control (OC)
+                        </Link>{' '}
+                        becomes 0.
+                      </li>
+
+                      <li>Cannot be affected by Stratagems.</li>
+                    </ul>
+                  </>
+                ),
+              },
+            ]}
+          />
+        </Paper>
+
+        <Paper icon={GiMagnifyingGlass} isExample>
           <p>
-            <strong>Roll 2D6.</strong> If the result is higher than the unit's
-            highest{' '}
-            <Link href={wh40kHref('datasheets', 'leadership')}>
-              Leadership (Ld)
-            </Link>{' '}
-            attribute, the test passes.
-          </p>
-        </div>
-
-        <blockquote>
-          <p>
-            If a 5-man squad of Intercessors is down to 2 models (2/5), they
-            must take the test. Their Ld is 6+, so if they roll a 5 they fail.
+            For example, if a 5-man squad of Intercessors is down to 2 models
+            (2/5), they must take the test. Their Ld is 6+, so if they roll a 5
+            they fail.
           </p>
 
           <p>
             Now, if the same squad had a Chaplain attached, they would be at 3/6
             models and wouldn't require a test. But if they did, rolling a 5
-            this time would pass, as the Chaplain has Ld5+.
+            this time would pass, as the Chaplain has Ld5+. Leaders play a big
+            role on morale.
           </p>
-        </blockquote>
+        </Paper>
 
         <p>
-          If the test fails, the unit is Battle-shocked until the start of your
-          next Command Phase:
-        </p>
-
-        <ul>
-          <li>
-            Its{' '}
-            <Link href={wh40kHref('datasheets', 'objective-control')}>
-              Objective Control (OC)
-            </Link>{' '}
-            becomes 0.
-          </li>
-
-          <li>It cannot be affected by Stratagems.</li>
-        </ul>
-
-        <p>
-          Battle-shock is a mechanic that shuts down scoring and support
-          efficiency. In a situation where one player has locked down all
-          objectives, their opponent still has a chance if they bring down
-          enough models.
+          Battle-shock is a mechanic that shuts down scoring and support for
+          units that have sustained enough losses. Even if one player has locked
+          down all objectives, their opponent has a chance at reverting the
+          game, if they bring down sufficient models.
         </p>
       </section>
 
@@ -155,33 +208,51 @@ export default async function Page() {
         </h2>
 
         <p>
-          During this phase, units may reposition. Every allied unit outside{' '}
-          <em>engagement range</em> (1" of an enemy) can either:
+          Your real turn starts with repositioning. Every unit outside of melee
+          (a.k.a <em>engagement range</em>: 1" of an enemy) can either:
         </p>
 
         <ul>
           <li>
-            Move normally up to its{' '}
+            Declare a <strong>normal move</strong> and go any distance up to its{' '}
             <Link href={wh40kHref('datasheets', 'move')}>Move (M)</Link>{' '}
             characteristic in inches.
           </li>
 
           <li>
-            Make an <em>advance</em>, moving further, but giving up the ability
-            to shoot and declare charges that turn.
+            Declare an <strong>advance</strong>, roll a dice, move further, but
+            become <em>unable to shoot and charge this turn</em>.
           </li>
         </ul>
 
-        <div className="box">
-          <p className="font-bold flex-center">
-            <IoDiceOutline /> Advance roll
-          </p>
+        <Paper isPrimary icon={IoDiceOutline}>
+          <p className="font-bold uppercase">Advance roll</p>
 
-          <p>
-            <strong>Roll a D6.</strong> Add the result as inches to the unit's M
-            and move up to the new distance.
-          </p>
-        </div>
+          <Strip
+            items={[
+              {
+                label: 'Roll',
+                value: (
+                  <>
+                    <p>
+                      D6{' '}
+                      <GiPerspectiveDiceSixFacesFive className="inline text-2xl" />
+                    </p>
+                  </>
+                ),
+              },
+              {
+                label: 'Effect',
+                value: (
+                  <p>
+                    Add the result to the unit's M and move that distance
+                    instead.
+                  </p>
+                ),
+              },
+            ]}
+          />
+        </Paper>
 
         <Image src={movement} alt="Movement example" />
 
@@ -561,7 +632,7 @@ export default async function Page() {
           </p>
         </blockquote>
 
-        <p>OR</p>
+        <OrDivider />
 
         <blockquote>
           <p className="font-bold">Invulnerable save</p>

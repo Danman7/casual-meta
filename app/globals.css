@@ -103,7 +103,7 @@
 }
 
 @utility paper {
-  @apply overflow-hidden rounded shadow-sm border border-foreground/10!;
+  @apply overflow-hidden rounded shadow-sm border border-foreground/1 dark:border-foreground/20;
 }
 
 @utility button {
@@ -157,11 +157,7 @@
 
     ul,
     ol {
-      @apply pl-5;
-    }
-
-    li {
-      @apply leading-7;
+      @apply pl-4;
     }
 
     ul {
