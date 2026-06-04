@@ -2,11 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaCrosshairs, FaInfo } from 'react-icons/fa'
 import { FaCheck } from 'react-icons/fa6'
-import {
-  GiMagnifyingGlass,
-  GiOpenBook,
-  GiPerspectiveDiceSixFacesFive,
-} from 'react-icons/gi'
+import { GiOpenBook, GiPerspectiveDiceSixFacesFive } from 'react-icons/gi'
 import { IoDiceOutline } from 'react-icons/io5'
 import { LuCrown } from 'react-icons/lu'
 import { RiSwordLine } from 'react-icons/ri'
@@ -35,16 +31,17 @@ export default async function Page() {
 
       <section>
         <p>
-          All formats of WH40K are played in a series of rounds. All players
-          (usually two) take a turn to complete a round. A turn is a sequence of
-          actions grouped in 5 phases - each dictating what happens when. Most
-          games end after a set number of rounds (usually 5).
+          WH40K is played in a series of rounds. All players (usually two) take
+          a turn to complete a round. A turn is a sequence of actions grouped in
+          5 phases - each dictating what happens when. Most games end after a
+          set number of rounds (usually 5).
         </p>
 
         <p>
           To complete your turn, go through each of the following phases in
           order, following the sequence of actions as described. Then you pass
-          the turn to your opponent.
+          the turn to your opponent. Understand the sequence to understand the
+          flow of the game.
         </p>
 
         <Paper icon={FaInfo}>
@@ -87,9 +84,10 @@ export default async function Page() {
         <h3 id="battle-shock-tests">Battle-shock tests</h3>
 
         <p>
-          At the end of your Command Phase, if you lost models during your last
-          turn, check if you have <strong>units below half-strength</strong>.
-          These <strong>must take a battle-shock test</strong>.
+          At the end of your Command Phase, if you sustained casulties during
+          the previous turns, check if you have{' '}
+          <strong>units below half-strength</strong>. These{' '}
+          <strong>must take a battle-shock test</strong>.
         </p>
 
         <Paper icon={GiOpenBook} isPrimary>
@@ -100,7 +98,7 @@ export default async function Page() {
           <ul>
             <li>
               It's a <strong>single model</strong> (e.g. a character, monster,
-              or vehicle) and
+              or vehicle) and{' '}
               <strong>
                 has less than half its{' '}
                 <Link href={wh40kHref('datasheets', 'wounds')}>wounds (W)</Link>{' '}
@@ -179,7 +177,7 @@ export default async function Page() {
           />
         </Paper>
 
-        <Paper icon={GiMagnifyingGlass} isExample>
+        <Paper isExample>
           <p>
             For example, if a 5-man squad of Intercessors is down to 2 models
             (2/5), they must take the test. Their Ld is 6+, so if they roll a 5
@@ -220,8 +218,12 @@ export default async function Page() {
           </li>
 
           <li>
-            Declare an <strong>advance</strong>, roll a dice, move further, but
-            become <em>unable to shoot and charge this turn</em>.
+            Declare an <strong>advance</strong>, roll a die, and move further.
+            The unit then becomes{' '}
+            <strong>unable to charge and shoot this turn</strong> unless with
+            weapons that have the{' '}
+            <Link href={wh40kHref('datasheets', 'assault')}>Assault</Link>{' '}
+            keyword.
           </li>
         </ul>
 
@@ -256,25 +258,43 @@ export default async function Page() {
 
         <Image src={movement} alt="Movement example" />
 
-        <p>
-          Units are not allowed to move through enemies or end within engagement
-          range of an enemy. Under core rules, models also cannot end a move on
-          top of an objective, but tournaments usually allow this.
-        </p>
+        <Paper isExample>
+          <p>
+            The bulky Heavy Intercessors squad can make a normal move up to 5".
+            But if they declare an advance and roll a 6, they can{' '}
+            <strong>move up to 11"</strong> instead. And because the{' '}
+            <strong>Heavy bolt rifles have Assault</strong>, they may also shoot
+            that turn.
+          </p>
+        </Paper>
+
+        <p>Units are not allowed to:</p>
+
+        <ul>
+          <li>Move through enemies.</li>
+          <li>End a move within engagement range of an enemy</li>
+          <li>
+            End a move on top of an objective under core rules,{' '}
+            <em>but tournaments usually allow this</em>.
+          </li>
+        </ul>
 
         <p>
-          A unit is allowed to skip movement altogether. If it does, it is
-          considered to have <em>remained stationary</em>, generating potential
-          benefits under some rules.
+          If a unit skips movement altogether, it's considered to have{' '}
+          <strong>remained stationary</strong>. Some rules, like the{' '}
+          <Link href={wh40kHref('datasheets', 'heavy')}>Heavy</Link> keyword,
+          interact with units that remained stationary.
         </p>
 
         <h3 id="fall-back">Fall Back</h3>
 
         <p>
-          During this phase, units that are already engaged in melee can either
-          stay put, or if they wish to get away from the enemy, declare a{' '}
-          <em>fall back</em> move. It's a normal move (up to M inches) with
-          these caveats:
+          What about units that are already engaged in melee prior the Movement
+          Phase? They can only{' '}
+          <strong>
+            either stay put, or declare a <em>fall back</em>
+          </strong>{' '}
+          move. It's a normal move (up to M inches) with these caveats:
         </p>
 
         <ul>
