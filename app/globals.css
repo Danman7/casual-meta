@@ -103,7 +103,7 @@
 }
 
 @utility paper {
-  @apply overflow-hidden rounded shadow-sm border border-foreground/1 dark:border-foreground/20;
+  @apply overflow-hidden rounded shadow-sm dark:border dark:border-foreground/20;
 }
 
 @utility button {
@@ -112,11 +112,7 @@
 
 @layer base {
   section {
-    @apply space-y-4;
-  }
-
-  section {
-    @apply mt-8;
+    @apply space-y-4 mt-8;
   }
 
   a {
@@ -157,7 +153,7 @@
 
     ul,
     ol {
-      @apply pl-4;
+      @apply pl-5 space-y-1;
     }
 
     ul {
@@ -166,6 +162,10 @@
 
     ol {
       @apply list-decimal;
+    }
+
+    li {
+      @apply leading-relaxed;
     }
   }
 

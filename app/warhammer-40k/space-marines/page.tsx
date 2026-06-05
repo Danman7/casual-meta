@@ -64,7 +64,7 @@ export default async function Page() {
           good insight into the Space Marines playstyle.
         </p>
 
-        <Paper icon={GiOpenBook} isPrimary>
+        <Paper icon={GiOpenBook}>
           <p className="font-bold">Oath of Moment (Oath)</p>
 
           <p>
@@ -189,7 +189,7 @@ export default async function Page() {
           how the army fights.
         </p>
 
-        <Paper icon={GiOpenBook} isPrimary>
+        <Paper icon={GiOpenBook}>
           <p className="font-bold">Chapter roster rules</p>
 
           <ul>

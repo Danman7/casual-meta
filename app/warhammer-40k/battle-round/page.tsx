@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaCrosshairs, FaInfo } from 'react-icons/fa'
+import { FaCrosshairs } from 'react-icons/fa'
 import { FaCheck } from 'react-icons/fa6'
-import { GiOpenBook, GiPerspectiveDiceSixFacesFive } from 'react-icons/gi'
+import { GiPerspectiveDiceSixFacesFive } from 'react-icons/gi'
 import { IoDiceOutline } from 'react-icons/io5'
 import { LuCrown } from 'react-icons/lu'
-import { RiSwordLine } from 'react-icons/ri'
+import { RiFlowChart, RiSwordLine } from 'react-icons/ri'
 import { RxDoubleArrowUp } from 'react-icons/rx'
 import { TbArrowBigUpLines } from 'react-icons/tb'
 
@@ -34,17 +34,11 @@ export default async function Page() {
           WH40K is played in a series of rounds. All players (usually two) take
           a turn to complete a round. A turn is a sequence of actions grouped in
           5 phases - each dictating what happens when. Most games end after a
-          set number of rounds (usually 5).
+          set number of rounds (usually 5). These are the rules that dictate how
+          the game is actually played.
         </p>
 
-        <p>
-          To complete your turn, go through each of the following phases in
-          order, following the sequence of actions as described. Then you pass
-          the turn to your opponent. Understand the sequence to understand the
-          flow of the game.
-        </p>
-
-        <Paper icon={FaInfo}>
+        <Paper icon={RiFlowChart}>
           <p className="font-bold uppercase">Phase sequence</p>
           <p>
             1. Command Phase &rarr; 2. Movement Phase &rarr; 3. Shooting Phase
@@ -64,6 +58,8 @@ export default async function Page() {
         <h2 id="command-phase" className="flex-center">
           1. Command Phase <LuCrown />
         </h2>
+
+        <p>Your turn always starts with the following sequence:</p>
 
         <ol>
           <li>
@@ -87,40 +83,35 @@ export default async function Page() {
           At the end of your Command Phase, if you sustained casulties during
           the previous turns, check if you have{' '}
           <strong>units below half-strength</strong>. These{' '}
-          <strong>must take a battle-shock test</strong>.
+          <strong>must take a battle-shock test</strong>. Below Half-strength
+          means:
         </p>
 
-        <Paper icon={GiOpenBook} isPrimary>
-          <p className="font-bold uppercase">Below Half-strength</p>
+        <ul>
+          <li>
+            It's a <strong>single model</strong> (e.g. a character, monster, or
+            vehicle) and{' '}
+            <strong>
+              has less than half its{' '}
+              <Link href={wh40kHref('datasheets', 'wounds')}>wounds (W)</Link>{' '}
+              left
+            </strong>
+            .
+          </li>
 
-          <p>A unit is below half-strength if:</p>
+          <li>
+            It's a <strong>squad</strong> and{' '}
+            <strong>has fewer than half of its models left</strong>.
+          </li>
+        </ul>
 
-          <ul>
-            <li>
-              It's a <strong>single model</strong> (e.g. a character, monster,
-              or vehicle) and{' '}
-              <strong>
-                has less than half its{' '}
-                <Link href={wh40kHref('datasheets', 'wounds')}>wounds (W)</Link>{' '}
-                left
-              </strong>
-              .
-            </li>
+        <p>
+          If a character is attached to a squad, the check is made against total
+          number of models. If the escorting squad dies, checks are made against
+          wounds again.
+        </p>
 
-            <li>
-              It's a <strong>squad</strong> unit and{' '}
-              <strong>has fewer than half of its models left</strong>.
-            </li>
-          </ul>
-
-          <p>
-            If a character attaches to a squad, the check is made against total
-            number of models. If the escorting squad dies, checks are made
-            against wounds again.
-          </p>
-        </Paper>
-
-        <Paper isPrimary icon={IoDiceOutline}>
+        <Paper icon={IoDiceOutline}>
           <p className="font-bold uppercase">Battle-shock test</p>
 
           <Strip
@@ -138,7 +129,7 @@ export default async function Page() {
                 ),
               },
               {
-                label: 'Check',
+                label: 'Check if',
                 value: (
                   <p>
                     Result is higher than the unit's highest{' '}
@@ -227,7 +218,7 @@ export default async function Page() {
           </li>
         </ul>
 
-        <Paper isPrimary icon={IoDiceOutline}>
+        <Paper icon={IoDiceOutline}>
           <p className="font-bold uppercase">Advance roll</p>
 
           <Strip
@@ -260,15 +251,15 @@ export default async function Page() {
 
         <Paper isExample>
           <p>
-            The bulky Heavy Intercessors squad can make a normal move up to 5".
-            But if they declare an advance and roll a 6, they can{' '}
+            The bulky Heavy Intercessors can make a normal move up to 5". But if
+            they declare an advance and roll a 6, they can{' '}
             <strong>move up to 11"</strong> instead. And because the{' '}
             <strong>Heavy bolt rifles have Assault</strong>, they may also shoot
             that turn.
           </p>
         </Paper>
 
-        <p>Units are not allowed to:</p>
+        <p>During the Movement Phase units are not allowed to:</p>
 
         <ul>
           <li>Move through enemies.</li>
@@ -294,43 +285,66 @@ export default async function Page() {
           <strong>
             either stay put, or declare a <em>fall back</em>
           </strong>{' '}
-          move. It's a normal move (up to M inches) with these caveats:
+          move. It's the same as a normal move with these caveats:
         </p>
 
         <ul>
-          <li>The unit cannot shoot or declare a charge the same turn.</li>
           <li>
-            The unit cannot end the move within engagement range of a foe.
+            The unit cannot shoot or declare a charge the same turn (same as if
+            it advanced).
           </li>
+
           <li>
-            The unit can pass through enemies, but they must take a{' '}
-            <em>Desperate Escape</em> test.
+            The unit <strong> can pass through enemies</strong> unlike a normal
+            move or advance, but they must take a <em>Desperate Escape</em>{' '}
+            test.
+          </li>
+
+          <li>
+            Units that are falling back and are <em>also battle-shocked</em>{' '}
+            always take a Desperate Escape test, even when not passing through
+            enemies.
           </li>
         </ul>
 
-        <div className="box">
-          <p className="font-bold flex-center">
-            <IoDiceOutline /> Desperate Escape test
-          </p>
+        <Paper icon={IoDiceOutline}>
+          <p className="font-bold uppercase">Desperate Escape test</p>
 
-          <p>
-            <strong>Roll a D6.</strong> On a 2 or less, the model is destroyed.
-          </p>
-        </div>
-
-        <p>
-          Units that are falling back and are also battle-shocked always take
-          the test.
-        </p>
+          <Strip
+            items={[
+              {
+                label: 'Roll',
+                value: (
+                  <div>
+                    <p>
+                      D6{' '}
+                      <GiPerspectiveDiceSixFacesFive className="inline text-2xl" />{' '}
+                      per model in unit falling back.
+                    </p>
+                  </div>
+                ),
+              },
+              {
+                label: 'Passes if',
+                value: 'Result is 3 or above.',
+              },
+              {
+                label: 'On fail',
+                value: 'The model is destroyed.',
+              },
+            ]}
+          />
+        </Paper>
 
         <h3 id="pivoting">Pivoting</h3>
 
         <p>
           Units are not restricted to moving only in straight lines. They can
-          freely change direction as long as the move is within their M.
-          However, Vehicles and Monsters without round bases or the <em>Fly</em>{' '}
-          keyword must <em>reduce their move by 2"</em> every time they pivot.
-          This prevents gaining extra distance through rotation tricks.
+          change direction as long as they don't go over the allowed inches.{' '}
+          <strong>Vehicles and Monsters</strong> without round bases or the{' '}
+          <em>Fly</em> keyword, however, must{' '}
+          <strong>reduce their move by 2"</strong> every time they pivot, to
+          prevent gaining extra distance through rotation tricks.
         </p>
 
         <Image src={pivot} alt="Pivoting example" />
@@ -338,11 +352,13 @@ export default async function Page() {
         <h3 id="transports">Transports</h3>
 
         <p>
-          If a unit has the <em>Transport</em> keyword, it allows other units to{' '}
-          <em>embark</em> in it during this phase, provided every model ends a
-          move within 3" of the transport. Then the embarked unit is temporarily
-          removed from the table and the transport carries them around. They can
-          disembark again during a following Movement phase.
+          Infantry units and characters may{' '}
+          <strong>
+            embark onto units with the <em>Transport</em> keyword
+          </strong>{' '}
+          during the Movement Phase. Doing so benefits the embarked unit with
+          the transport's speed and protection. Disembarking happes during one
+          of the following Movement phases.
         </p>
 
         <ul>
@@ -357,22 +373,37 @@ export default async function Page() {
           </li>
         </ul>
 
-        <div className="box">
-          <p className="font-bold flex-center">
-            <IoDiceOutline /> If the transport is destroyed
+        <Paper icon={IoDiceOutline}>
+          <p className="font-bold uppercase">
+            If the transport is destroyed while holding a unit
           </p>
 
-          <p>
-            <strong>Roll a D6</strong> per embarked model. On a 1, the model
-            suffers a mortal wound. Then the survivors disembark and become
-            Battle-shocked and cannot charge that turn.
-          </p>
-        </div>
-
-        <p>
-          Transports let you move units safely and efficiently across the board.
-          They trade points for speed, protection, and positioning control.
-        </p>
+          <Strip
+            items={[
+              {
+                label: 'Roll',
+                value: (
+                  <div>
+                    <p>
+                      D6{' '}
+                      <GiPerspectiveDiceSixFacesFive className="inline text-2xl" />{' '}
+                      per embarked model.
+                    </p>
+                  </div>
+                ),
+              },
+              {
+                label: 'Passes if',
+                value: 'Result is 2 or above.',
+              },
+              {
+                label: 'On fail',
+                value:
+                  'The model suffers a mortal wound. Then the survivors disembark and become Battle-shocked and cannot charge that turn.',
+              },
+            ]}
+          />
+        </Paper>
 
         <h3 id="strategic-reserves">Strategic Reserves</h3>
 
