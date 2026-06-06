@@ -1,24 +1,21 @@
 import React from 'react'
 import { IconType } from 'react-icons'
-import { GiMagnifyingGlass } from 'react-icons/gi'
 
 export const Paper: React.FC<
   React.PropsWithChildren<{
+    title?: string
     icon?: IconType
-    isExample?: boolean
   }>
-> = ({ children, icon, isExample }) => {
-  const paperIcon = icon ?? (isExample ? GiMagnifyingGlass : undefined)
+> = ({ children, title, icon }) => (
+  <div className="paper my-5 text-sm">
+    {icon &&
+      React.createElement(icon, {
+        className:
+          'text-9xl absolute text-foreground/6 top-0 right-0 -z-1 rotate-20',
+      })}
 
-  return (
-    <div
-      className={`paper flex ${isExample ? ' italic text-foreground/80 text-sm gap-2 p-2' : 'gap-2 p-3'}`}
-    >
-      {paperIcon && (
-        <div className="text-xl mt-1">{React.createElement(paperIcon)}</div>
-      )}
+    {title && <p className="font-bold uppercase">{title}</p>}
 
-      <div className="space-y-2">{children}</div>
-    </div>
-  )
-}
+    {children}
+  </div>
+)

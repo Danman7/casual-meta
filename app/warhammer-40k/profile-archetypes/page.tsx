@@ -32,10 +32,8 @@ export default async function Page() {
 
         <p>
           What is imperative when it comes to{' '}
-          <Link href={wh40kHref('battleRound', 'attack-sequence')}>
-            making attacks
-          </Link>{' '}
-          is the durability of the given{' '}
+          <Link href={wh40kHref('attackSequence')}>making attacks</Link> is the
+          durability of the given{' '}
           <Link href={wh40kHref('datasheets', 'unit-profiles')}>
             target profile
           </Link>
@@ -58,7 +56,7 @@ export default async function Page() {
           className="picture profile-img object-[0%_70%]"
         />
 
-        <div className="box font-bold text-center">
+        <div className="paper font-bold text-center">
           Toughness 4 | Save 3+ | Wounds 2
         </div>
 
@@ -94,7 +92,7 @@ export default async function Page() {
           className="picture profile-img object-[0%_57%]"
         />
 
-        <div className="box font-bold text-center">
+        <div className="paper font-bold text-center">
           Toughness 5 | Save 2+ | Invulnerable 4+ | Wounds 3
         </div>
 
@@ -134,7 +132,7 @@ export default async function Page() {
           className="picture profile-img object-[0%_28%]"
         />
 
-        <div className="box font-bold text-center">
+        <div className="paper font-bold text-center">
           Toughness 3 | Save 5+ | Wounds 1
         </div>
 

@@ -1,15 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaCrosshairs } from 'react-icons/fa'
-import { FaCheck } from 'react-icons/fa6'
-import { GiPerspectiveDiceSixFacesFive } from 'react-icons/gi'
-import { IoDiceOutline } from 'react-icons/io5'
-import { LuCrown } from 'react-icons/lu'
-import { RiFlowChart, RiSwordLine } from 'react-icons/ri'
+import {
+  GiBookCover,
+  GiMagnifyingGlass,
+  GiPerspectiveDiceSixFacesFive,
+} from 'react-icons/gi'
+import { HiOutlineAcademicCap } from 'react-icons/hi2'
+import { LuCrown, LuDices } from 'react-icons/lu'
+import { RiSwordLine } from 'react-icons/ri'
 import { RxDoubleArrowUp } from 'react-icons/rx'
 import { TbArrowBigUpLines } from 'react-icons/tb'
 
-import attack from '@/app/assets/wh40k/attack.webp'
 import movement from '@/app/assets/wh40k/move.webp'
 import pivot from '@/app/assets/wh40k/pivot.webp'
 import shooting from '@/app/assets/wh40k/shooting.webp'
@@ -17,8 +19,6 @@ import { wh40kHref, wh40kMetadata, wh40kPage } from '@/app/siteMap'
 import { OrDivider } from '@/app/ui/OrDivider'
 import { Paper } from '@/app/ui/Paper'
 import { Strip } from '@/app/ui/Strip'
-import { Table } from '@/app/ui/Table'
-import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 
 const page = wh40kPage('battleRound')
 
@@ -38,8 +38,7 @@ export default async function Page() {
           the game is actually played.
         </p>
 
-        <Paper icon={RiFlowChart}>
-          <p className="font-bold uppercase">Phase sequence</p>
+        <Paper icon={GiBookCover} title="Phase sequence">
           <p>
             1. Command Phase &rarr; 2. Movement Phase &rarr; 3. Shooting Phase
             &rarr; 4. Charge Phase &rarr; 5. Fight Phase
@@ -111,9 +110,7 @@ export default async function Page() {
           wounds again.
         </p>
 
-        <Paper icon={IoDiceOutline}>
-          <p className="font-bold uppercase">Battle-shock test</p>
-
+        <Paper icon={LuDices} title="Battle-shock test">
           <Strip
             items={[
               {
@@ -143,32 +140,24 @@ export default async function Page() {
               {
                 label: 'On fail',
                 value: (
-                  <>
-                    <p>
-                      Unit is <strong>Battle-shocked</strong> until the start of
-                      your next Command Phase:
-                    </p>
-
-                    <ul>
-                      <li>
-                        <Link
-                          href={wh40kHref('datasheets', 'objective-control')}
-                        >
-                          Objective Control (OC)
-                        </Link>{' '}
-                        becomes 0.
-                      </li>
-
-                      <li>Cannot be affected by Stratagems.</li>
-                    </ul>
-                  </>
+                  <p>
+                    Unit is <strong>Battle-shocked</strong> until the start of
+                    your next Command Phase:{' '}
+                    <strong>
+                      <Link href={wh40kHref('datasheets', 'objective-control')}>
+                        Objective Control (OC)
+                      </Link>{' '}
+                      becomes 0 and cannot be affected by Stratagems
+                    </strong>
+                    .
+                  </p>
                 ),
               },
             ]}
           />
         </Paper>
 
-        <Paper isExample>
+        <Paper icon={GiMagnifyingGlass}>
           <p>
             For example, if a 5-man squad of Intercessors is down to 2 models
             (2/5), they must take the test. Their Ld is 6+, so if they roll a 5
@@ -180,6 +169,11 @@ export default async function Page() {
             models and wouldn't require a test. But if they did, rolling a 5
             this time would pass, as the Chaplain has Ld5+. Leaders play a big
             role on morale.
+          </p>
+
+          <p>
+            If the Chaplain is alone, they take the test only after dropping to
+            1 wound, since they start with 4.
           </p>
         </Paper>
 
@@ -197,8 +191,9 @@ export default async function Page() {
         </h2>
 
         <p>
-          Your real turn starts with repositioning. Every unit outside of melee
-          (a.k.a <em>engagement range</em>: 1" of an enemy) can either:
+          Your real turn starts with repositioning. It's pehaps the phase with
+          the most nuisances. Every unit outside of melee (a.k.a{' '}
+          <em>engagement range</em>: 1" of an enemy) can either:
         </p>
 
         <ul>
@@ -218,9 +213,7 @@ export default async function Page() {
           </li>
         </ul>
 
-        <Paper icon={IoDiceOutline}>
-          <p className="font-bold uppercase">Advance roll</p>
-
+        <Paper icon={LuDices} title="Advance roll">
           <Strip
             items={[
               {
@@ -249,10 +242,10 @@ export default async function Page() {
 
         <Image src={movement} alt="Movement example" />
 
-        <Paper isExample>
+        <Paper icon={GiMagnifyingGlass}>
           <p>
-            The bulky Heavy Intercessors can make a normal move up to 5". But if
-            they declare an advance and roll a 6, they can{' '}
+            For example, the bulky Heavy Intercessors can make a normal move up
+            to 5". But if they declare an advance and roll a 6, they can{' '}
             <strong>move up to 11"</strong> instead. And because the{' '}
             <strong>Heavy bolt rifles have Assault</strong>, they may also shoot
             that turn.
@@ -307,9 +300,7 @@ export default async function Page() {
           </li>
         </ul>
 
-        <Paper icon={IoDiceOutline}>
-          <p className="font-bold uppercase">Desperate Escape test</p>
-
+        <Paper icon={LuDices} title="Desperate Escape test">
           <Strip
             items={[
               {
@@ -373,11 +364,10 @@ export default async function Page() {
           </li>
         </ul>
 
-        <Paper icon={IoDiceOutline}>
-          <p className="font-bold uppercase">
-            If the transport is destroyed while holding a unit
-          </p>
-
+        <Paper
+          icon={LuDices}
+          title="If the transport is destroyed while holding a unit"
+        >
           <Strip
             items={[
               {
@@ -436,67 +426,62 @@ export default async function Page() {
         </h2>
 
         <p>
-          This is the stage where ranged attacks are declared and resolved. A
-          unit may shoot if:
+          After everybody moves, it's time to shoot. A unit may declare ranged
+          attacks if:
         </p>
 
         <ul>
-          <li>It is not engaged in close combat.</li>
+          <li>It is not engaged in melee.</li>
           <li>
-            Has at least one <em>ranged</em> weapon within range of an enemy.
+            Has at least one <em>ranged</em> weapon within range and in sight of
+            an enemy.
           </li>
-          <li>Has line of sight to the target enemy unit.</li>
         </ul>
 
         <p>
-          You may split fire by weapon, but not by individual shots. You have to
-          state which weapon fires at which target. A model can only fire either
-          all <em>Pistols</em> or everything else. Not both. All attacks from
-          the unit resolve simultaneously. All eligible weapons must fire.
+          First, you state which weapon fires at which target. You may split
+          fire by weapon, but not by individual shots. A model can only fire
+          either all <em>Pistols</em> or everything else. Not both. All attacks
+          from the unit resolve simultaneously. All eligible weapons must fire.
         </p>
 
         <p>
-          Declared attacks are resolved following the{' '}
-          <Link href="#attack-sequence">attack sequence</Link>.
+          Then, attacks are resolved following the{' '}
+          <Link href={wh40kHref('attackSequence')}>attack sequence</Link>.
         </p>
 
         <Image src={shooting} alt="Shooting example" />
 
-        <p>
-          Some terrain features provide <em>Benefit of Cover</em> against ranged
-          attacks. The unit behind cover gains +1 to armor saves, unless it has
-          Sv3+ or better and the weapon has AP0.
-        </p>
-
-        <div className="box">
-          <p className="font-bold flex-center">
-            <FaCheck /> Selecting a target
-          </p>
-
+        <Paper
+          icon={HiOutlineAcademicCap}
+          title="Is this your first shooting phase?"
+        >
           <ul>
             <li>
-              Prioritize high-value enemies - units that can make an impact on
-              the following turn.
+              First, shoot with units that have fewer target options. It'll be
+              easier to choose a target and to avoid wasting attacks.
             </li>
 
             <li>
-              Shoot with units that have fewer target options first to avoid
-              wasting attacks.
+              Is there an enemy within reach of multiple of your units? You can
+              try to focus fire and remove them from play, which will simplify
+              you target selection in the future.
             </li>
 
             <li>
-              Focus fire with the aim of destroying outright, not chipping.
+              Do you have Blast weapons? They are best used against large groups
+              of infantry. Hit with Blast first for the maximum amount of
+              attacks, then shoot the survivors down.
             </li>
 
             <li>
-              Against Infantry, resolve Blast weapons first for bonus attacks.
-            </li>
-
-            <li>
-              Use weapons against optimal targets. Don't waste Damage or AP.
+              Which weapons' Damage and AP hit which targets best? If you can,
+              use D1 weapons against single-wound targets, D2 against W2 targets
+              ect. Don't waste high AP on targets with poor saves or
+              invulnerable saves.
             </li>
           </ul>
-        </div>
+        </Paper>
       </section>
 
       <section>
@@ -505,40 +490,53 @@ export default async function Page() {
         </h2>
 
         <p>
-          When a unit wishes to close the distance, it can declare a charge
-          towards an enemy if:
+          After shooting, it's time to rush into melee. This is perhaps the
+          simplest phase. All units that didn't advance this turn and are{' '}
+          <strong>
+            within 12" of an enemy, may declare a charge against that enemy
+          </strong>
+          . To see if the charge succeeds, you make a roll.
         </p>
 
-        <ul>
-          <li>It did not advance this turn.</li>
-
-          <li>It is within 12" of the target.</li>
-        </ul>
-
-        <p>
-          To see if the charge is successful, a charge roll is made. It's
-          possible to charge multiple targets with a single unit, but you must
-          successfully engage every declared target.
-        </p>
-
-        <div className="box">
-          <p className="font-bold flex-center">
-            <IoDiceOutline /> Charge roll
-          </p>
-
-          <p>
-            <strong>Roll 2D6.</strong> If the result is enough in inches to move
-            within engagement range (1") of the target, the charge succeeds. If
-            not, the unit stays put.
-          </p>
-        </div>
+        <Paper icon={LuDices} title="Charge roll">
+          <Strip
+            items={[
+              {
+                label: 'Roll',
+                value: (
+                  <div>
+                    <p>
+                      2D6{' '}
+                      <GiPerspectiveDiceSixFacesFive className="inline text-2xl" />{' '}
+                      <GiPerspectiveDiceSixFacesFive className="inline text-2xl" />{' '}
+                    </p>
+                  </div>
+                ),
+              },
+              {
+                label: 'Check if',
+                flexBasis: '34rem',
+                maxWidth: '38rem',
+                value:
+                  'Result is enough in inches to move within engagement range (1") of the target.',
+              },
+              {
+                label: 'On Success',
+                value: 'Move your unit within range of its target.',
+              },
+              {
+                label: 'On Fail',
+                value: 'Nothing happens.',
+              },
+            ]}
+          />
+        </Paper>
 
         <p>
           Units that are better at melee naturally want to engage the enemy
           earlier. It's often better to skip advancing, which might gain up to
-          6", and do a regular move + charge, which might gain up to 12". Watch
-          your positioning. You may find your forward troops are a bottleneck
-          for follow-up charges.
+          6", and do a regular move + charge, which might gain up to 12". Don't
+          turn your forward troops into a bottleneck for the rest of your army.
         </p>
       </section>
 
@@ -548,10 +546,13 @@ export default async function Page() {
         </h2>
 
         <p>
-          It's time to resolve hand-to-hand attacks. All units that completed a
-          successful charge this turn, or were already engaged, participate.
-          Units that charged gain <em>Fights First</em> (some have it natively).
-          The non-active player goes first if they have eligible units.
+          Hand-to-hand attacks are resolved at the very end of your turn. All
+          engaged units participate.{' '}
+          <strong>
+            Units that charged this turn gain <em>Fights First</em>
+          </strong>{' '}
+          (some have it natively). This is one phase where the non-active player
+          goes first .
         </p>
 
         <p className="font-bold">Who fights when?</p>
@@ -569,8 +570,8 @@ export default async function Page() {
           <li>Piles in - moves up to 3", ending in engagement range.</li>
 
           <li>
-            Executes all attacks with melee weapons following the attack
-            sequence.
+            Executes all attacks with melee weapons following the{' '}
+            <Link href={wh40kHref('attackSequence')}>attack sequence</Link>.
           </li>
 
           <li>
@@ -583,140 +584,8 @@ export default async function Page() {
           Pile-ins and consolidations are tools for jamming units and stealing
           objectives.
         </p>
-      </section>
 
-      <section>
-        <h2 id="attack-sequence">Attack sequence (Weapon Activation)</h2>
-
-        <p>
-          Attacks can be declared by units during the Shooting and Fight phases,
-          but are executed by the weapons they carry. The process of executing
-          an attack is called an <em>attack sequence</em> or an{' '}
-          <em>activation</em> for short.
-        </p>
-
-        <p>
-          A weapon activation is a series of steps where its profile is compared
-          to the target's profile. Both ranged and melee weapons go through the
-          same sequence:
-        </p>
-
-        <ol>
-          <li>Roll to hit.</li>
-          <li>Roll to wound.</li>
-          <li>Allocate wounds.</li>
-          <li>Roll to save - either armor or invulnerable.</li>
-          <li>Inflict damage.</li>
-        </ol>
-
-        <h3 id="hit-roll">1. Roll to hit</h3>
-
-        <blockquote>
-          <p>
-            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong> for
-            each attack a weapon does to a target. If the result is higher than
-            its{' '}
-            <Link
-              href={wh40kHref('datasheets', 'ballistic-skill-weapon-skill')}
-            >
-              Weapon/Ballistic Skill (WS/BS)
-            </Link>
-            , the particular attack connects.
-          </p>
-        </blockquote>
-
-        <p>
-          An <em>unmodified roll of 6</em> is a <strong>critical hit</strong>.
-          This plays a role with{' '}
-          <Link href={wh40kHref('datasheets', 'weapon-keywords')}>
-            weapon keywords
-          </Link>
-          .
-        </p>
-
-        <h3 id="wound-roll">2. Roll to wound</h3>
-
-        <blockquote>
-          <p>
-            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong> only
-            for the attacks that did connect. The result follows a table based
-            on how much higher or lower the weapon's{' '}
-            <Link href={wh40kHref('datasheets', 'strength')}>Strength (S)</Link>{' '}
-            is compared to the target's{' '}
-            <Link href={wh40kHref('datasheets', 'toughness')}>
-              Toughness (T)
-            </Link>
-            .
-          </p>
-        </blockquote>
-
-        <p>
-          An unmodified roll of 6 is a <strong>critical wound</strong>.
-        </p>
-
-        <Table columns={woundRollColumns} data={woundRollRows} />
-
-        <h3 id="allocate-wounds">3. Allocate wounds</h3>
-
-        <p>
-          If the attack hits and wounds, the{' '}
-          <strong>defender allocates which models take the wounds</strong>{' '}
-          (unless the attacking weapon has{' '}
-          <Link href={wh40kHref('datasheets', 'precision')}>precision</Link>
-          ). Models that already lost wounds or had attacks allocated this phase
-          must be selected first. Saves represent the target's armor.
-        </p>
-
-        <h3 id="save-roll">4. Roll to save</h3>
-
-        <blockquote>
-          <p className="font-bold">Armor save</p>
-
-          <p>
-            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong> for
-            each allocated wound. Modify the roll by the{' '}
-            <Link href={wh40kHref('datasheets', 'armor-penetration')}>
-              Armor Penetration (AP)
-            </Link>{' '}
-            of the weapon. If the result is equal to or greater than the
-            target's Save (Sv), damage is not inflicted.
-          </p>
-        </blockquote>
-
-        <OrDivider />
-
-        <blockquote>
-          <p className="font-bold">Invulnerable save</p>
-          <p>
-            <IoDiceOutline className="inline" /> Roll a <strong>D6</strong> for
-            each allocated wound. If the result is equal to or greater than the
-            target's Invulnerable Save, damage is not inflicted, but you lose
-            the ability to roll for a regular save.
-          </p>
-        </blockquote>
-
-        <p>If you are the defender</p>
-
-        <h3 id="damage">Inflict damage</h3>
-
-        <p>
-          After all three rolls are done, if the attack hits, wounds, and the
-          armor save fails, damage is inflicted. The target loses wounds equal
-          to the{' '}
-          <Link href={wh40kHref('datasheets', 'damage')}>Damage (D)</Link> of
-          the weapon. If that damage is more than is required to kill the target
-          model, the excess cannot be allocated to other targets and is lost.
-        </p>
-
-        <Image src={attack} alt="Attack sequence example" className="my-6" />
-
-        <p>
-          The attack sequence is a series of independent probability gates. Each
-          roll is a chance for the whole attack to fail, so even a theoretically
-          perfect attack (2+ to hit, 2+ to wound, no save) only lands roughly
-          69% of the time. The system is designed so that no single attack is
-          ever guaranteed.
-        </p>
+        <p>After this ordeal is done, pass the turn to your opponent.</p>
       </section>
     </>
   )

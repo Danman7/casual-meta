@@ -98,16 +98,12 @@
   @apply badge font-bold;
 }
 
-@utility box {
-  @apply border border-foreground/10 p-4 rounded shadow-sm space-y-4;
-}
-
 @utility paper {
-  @apply overflow-hidden rounded shadow-sm dark:border dark:border-foreground/20;
+  @apply relative overflow-hidden rounded shadow-sm dark:border-foreground/20 gap-2 p-3 space-y-2;
 }
 
 @utility button {
-  @apply box space-y-0! cursor-pointer hover:text-primary hover:shadow-sm hover:border-primary transition-all text-center no-underline flex-center;
+  @apply paper space-y-0 cursor-pointer border border-transparent hover:border-primary hover:text-primary hover:shadow-md transition-all text-center no-underline flex items-center gap-3 flex-nowrap;
 }
 
 @layer base {
@@ -147,6 +143,10 @@
   }
 
   main {
+    img {
+      @apply my-5;
+    }
+
     a {
       @apply inline-flex underline;
     }

@@ -79,7 +79,9 @@ export default async function Page() {
             <li>
               All your models{' '}
               <Link href={wh40kHref('datasheets', 're-rolls')}>re-roll</Link>{' '}
-              <Link href={wh40kHref('battleRound', 'hit-roll')}>hit rolls</Link>{' '}
+              <Link href={wh40kHref('attackSequence', 'hit-roll')}>
+                hit rolls
+              </Link>{' '}
               against that target.
             </li>
 
@@ -87,7 +89,7 @@ export default async function Page() {
               If using a codex-compliant detachment (excluding divergent
               chapters like Black Templars, Blood Angels, etc.; explained
               below), you also gain +1 to{' '}
-              <Link href={wh40kHref('battleRound', 'wound-roll')}>
+              <Link href={wh40kHref('attackSequence', 'wound-roll')}>
                 wound rolls
               </Link>{' '}
               against that target.

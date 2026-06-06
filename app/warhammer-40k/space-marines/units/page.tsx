@@ -54,7 +54,7 @@ export default async function Page() {
           className="picture profile-img object-[0%_70%]"
         />
 
-        <div className="box">
+        <div className="paper">
           <p>
             <strong>Objective Secured:</strong> If the squad holds an objective,
             it remains yours even after it moves away.
@@ -122,7 +122,7 @@ export default async function Page() {
           className="picture profile-img object-[0%_75%]"
         />
 
-        <div className="box">
+        <div className="paper">
           <p>
             <strong>Shock Assault:</strong> Re-roll melee wound rolls of 1
             anywhere. Re-roll all melee wound rolls when on an objective.{' '}
@@ -217,7 +217,7 @@ export default async function Page() {
           />
         </div>
 
-        <div className="box">
+        <div className="paper">
           <p>
             <strong>Unyielding in the Face of the Foe:</strong> +1 to Save
             against D1 attacks while on an objective.
@@ -275,7 +275,7 @@ export default async function Page() {
           className="picture profile-img object-[0%_33%]"
         />
 
-        <div className="box">
+        <div className="paper">
           <p>
             <strong>Mark the Target:</strong> Get{' '}
             <Link href={wh40kHref('datasheets', 'devastating-wounds')}>

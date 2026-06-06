@@ -188,6 +188,14 @@ export const wh40kSection = defineSection({
       description: 'Understand the sequence of turns in Warhammer 40k.',
     },
     {
+      id: 'attackSequence',
+      title: 'Attack sequence (Weapon Activation)',
+      shortTitle: 'Attack sequence',
+      href: `${WH40K_BASE_URL}/attack-sequence`,
+      description:
+        'Understand hit rolls, wound rolls, saves, and damage in Warhammer 40k.',
+    },
+    {
       id: 'datasheets',
       title: 'Datasheets',
       href: `${WH40K_BASE_URL}/datasheets`,

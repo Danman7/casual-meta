@@ -225,7 +225,7 @@ export default async function Page() {
 
         <h3 id="core">Core</h3>
 
-        <div className="box">
+        <div className="paper">
           <p className="font-bold">Starters</p>
 
           <ul>

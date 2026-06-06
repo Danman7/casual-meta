@@ -103,10 +103,7 @@ export default async function Page() {
         <p>
           Toughness is one of 3 characteristics that shape the model's
           durability. It plays a role during the <em>roll to wound</em> part of
-          each{' '}
-          <Link href={wh40kHref('battleRound', 'attack-sequence')}>
-            weapon activation
-          </Link>
+          each <Link href={wh40kHref('attackSequence')}>weapon activation</Link>
           . The tougher the model is, the stronger the attacking weapon needs to
           be to have a better chance of wounding.
         </p>

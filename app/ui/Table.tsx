@@ -34,7 +34,7 @@ export const Table = <T,>({
             return (
               <th
                 key={column.id}
-                className={`px-3 py-3 md:px-4 font-semibold border-b border-light whitespace-normal wrap-break-word ${alignmentClassName[align]}`}
+                className={`px-3 py-3 md:px-4 font-bold uppercase border-b border-light whitespace-normal wrap-break-word ${alignmentClassName[align]}`}
               >
                 {column.header}
               </th>

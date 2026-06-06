@@ -49,29 +49,40 @@ export function AutoPageNav() {
   if (!prev && !next) return null
 
   return (
-    <nav aria-label="Page navigation" className="mt-8 md:flex gap-4">
+    <nav
+      aria-label="Page navigation"
+      className="mt-8 grid gap-4 md:grid-cols-2"
+    >
       {prev ? (
-        <Link
-          href={prev.href}
-          className="w-full md:w-1/2 button justify-between"
-        >
-          &larr;
-          <div>Prev: {prev.title}</div>
+        <Link href={prev.href} className="button justify-start text-left!">
+          <span aria-hidden="true" className="shrink-0 leading-none">
+            &larr;
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block font-bold uppercase">Prev</span>
+            <span className="block leading-snug wrap-break-word">
+              {prev.title}
+            </span>
+          </span>
         </Link>
       ) : (
-        <div className="w-full md:w-1/2" />
+        <div className="hidden md:block" />
       )}
 
       {next ? (
-        <Link
-          href={next.href}
-          className="w-full md:w-1/2 button flex-center justify-between"
-        >
-          <div>Next: {next.title}</div>
-          &rarr;
+        <Link href={next.href} className="button justify-end text-right!">
+          <span className="min-w-0 flex-1">
+            <span className="block font-bold uppercase">Next</span>
+            <span className="block leading-snug wrap-break-word">
+              {next.title}
+            </span>
+          </span>
+          <span aria-hidden="true" className="shrink-0 leading-none">
+            &rarr;
+          </span>
         </Link>
       ) : (
-        <div className="w-full md:w-1/2" />
+        <div className="hidden md:block" />
       )}
     </nav>
   )
