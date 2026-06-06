@@ -99,16 +99,20 @@
 }
 
 @utility paper {
-  @apply relative overflow-hidden rounded shadow-sm dark:border-foreground/20 gap-2 p-3 space-y-2;
+  @apply relative overflow-hidden rounded shadow-sm dark:border dark:border-foreground/20 gap-2 p-3 space-y-2;
+}
+
+@utility example {
+  @apply text-sm italic text-foreground/80;
 }
 
 @utility button {
-  @apply paper space-y-0 cursor-pointer border border-transparent hover:border-primary hover:text-primary hover:shadow-md transition-all text-center no-underline flex items-center gap-3 flex-nowrap;
+  @apply paper space-y-0 cursor-pointer border border-transparent dark:border-foreground/20 hover:border-primary hover:text-primary hover:shadow-md transition-all text-center no-underline flex items-center gap-3 flex-nowrap;
 }
 
 @layer base {
   section {
-    @apply space-y-4 mt-8;
+    @apply space-y-4 mt-9;
   }
 
   a {
