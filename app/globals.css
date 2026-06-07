@@ -87,7 +87,7 @@
 }
 
 @utility lead {
-  @apply text-lg font-bold;
+  @apply font-bold uppercase;
 }
 
 @utility badge {

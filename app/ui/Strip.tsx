@@ -15,7 +15,7 @@ export const Strip: React.FC<{ items: StripItem[] }> = ({ items }) => (
         className="min-w-0 border-l-4 border-foreground/10 pl-4"
         style={{ flexBasis: item.flexBasis, maxWidth: item.maxWidth }}
       >
-        <dt className="uppercase font-bold">{item.label}</dt>
+        <dt className="lead">{item.label}</dt>
         <dd>{item.value}</dd>
       </div>
     ))}

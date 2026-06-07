@@ -189,7 +189,7 @@ export const wh40kSection = defineSection({
     },
     {
       id: 'attackSequence',
-      title: 'Attack sequence (Weapon Activation)',
+      title: 'Attack sequence (Activation)',
       shortTitle: 'Attack sequence',
       href: `${WH40K_BASE_URL}/attack-sequence`,
       description:

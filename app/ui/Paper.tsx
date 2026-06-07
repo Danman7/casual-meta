@@ -14,7 +14,7 @@ export const Paper: React.FC<
           'text-9xl absolute text-foreground/6 top-0 right-0 -z-1 rotate-20 ',
       })}
 
-    {title && <p className="font-bold uppercase">{title}</p>}
+    {title && <p className="lead">{title}</p>}
 
     {children}
   </div>

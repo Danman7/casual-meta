@@ -8,6 +8,7 @@ import { Strip } from '@/app/ui/Strip'
 import { Table } from '@/app/ui/Table'
 import { woundRollColumns, woundRollRows } from '@/app/warhammer-40k/constants'
 import { GiPerspectiveDiceSixFacesFive } from 'react-icons/gi'
+import { BsFillDice5Fill } from 'react-icons/bs'
 
 const page = wh40kPage('attackSequence')
 
@@ -20,24 +21,57 @@ export default async function Page() {
 
       <section>
         <p>
-          Attacks can be made during the{' '}
+          We know how to declare ranges attacks during the{' '}
           <Link href={wh40kHref('battleRound', 'shooting-phase')}>
-            Shooting
+            Shooting Phase
           </Link>{' '}
-          and <Link href={wh40kHref('battleRound', 'fight-phase')}>Fight</Link>{' '}
-          phases, following a process called an <em>attack sequence</em> or an{' '}
-          <strong>activation</strong> for short. Attacks are declared by units,
-          but executed by the weapons they carry. Thus, an activation is a
-          series of steps where the{' '}
-          <strong>weapon's profile is compared to the target's profile</strong>.
+          or melee attacks during the{' '}
+          <Link href={wh40kHref('battleRound', 'fight-phase')}>
+            Fight Phase
+          </Link>{' '}
+          against eligible targets. Attacks are declared by units, but executed
+          by weapons. Each weapon has an{' '}
+          <Link href={wh40kHref('datasheets', 'attacks')}>Attacks (A)</Link>{' '}
+          attribute, dictating how many times it activates during an attack.
         </p>
 
-        <div className="flex-center">
+        <p>
+          Players go through a <strong>5-step</strong> <em>attack sequence</em>{' '}
+          called an <strong>activation</strong> for short, for each attack the
+          weapon does to a target to deremine the outcome. It's the same for
+          both melee and ranged.
+        </p>
+
+        <ol>
+          <li>Roll to hit.</li>
+          <li>Roll to wound.</li>
+          <li>Allocate wounds.</li>
+          <li>Roll to save - either armor or invulnerable.</li>
+          <li>Inflict damage.</li>
+        </ol>
+
+        <p>
+          It's basically{' '}
+          <strong>comparing the weapon's and target's profiles</strong> to
+          determine the outcome.
+        </p>
+
+        <div className="flex-list">
           <div>
-            <div className="font-bold uppercase">Weapon</div>
-            <div>Strength (S)</div>
-            <div>Armor Penetration (AP)</div>
-            <div>Damage (D)</div>
+            <div className="lead">Weapon</div>
+            <div>
+              <Link href={wh40kHref('datasheets', 'strength')}>
+                Strength (S)
+              </Link>
+            </div>
+            <div>
+              <Link href={wh40kHref('datasheets', 'armor-penetration')}>
+                Armor Penetration (AP)
+              </Link>
+            </div>
+            <div>
+              <Link href={wh40kHref('datasheets', 'damage')}>Damage (D)</Link>
+            </div>
           </div>
 
           <div>
@@ -48,29 +82,26 @@ export default async function Page() {
           </div>
 
           <div>
-            <div className="font-bold uppercase">Target</div>
-            <div>Toughness (T)</div>
-            <div>Saves (Sv)</div>
-            <div>Wounds (W)</div>
+            <div className="lead">Target</div>
+            <div>
+              <Link href={wh40kHref('datasheets', 'toughness')}>
+                Toughness (T)
+              </Link>
+            </div>
+            <div>
+              <Link href={wh40kHref('datasheets', 'save')}>Saves (Sv)</Link>
+            </div>
+            <div>
+              <Link href={wh40kHref('datasheets', 'wounds')}>Wounds (W)</Link>
+            </div>
           </div>
         </div>
 
         <p>
-          Attacks are the most <em>"dice-intense"</em> moments in the game. Your
-          unit <strong>has to be in range of the target</strong> to declare an
-          attack - engagement (1") if melee, or within the Range attribute of
-          the weapon if ranged. Then the attacking weapon does{' '}
-          <strong>as many activations as it's Attacks (A) atrribute</strong>{' '}
-          states. Both ranged and melee weapons go through the same sequence:
+          Three of the steps are dice rolls. To speed up this "dice-intense"
+          process you are allowed (even encouraged) to roll the dice for the
+          same weapons against the same targets all at once.
         </p>
-
-        <ol>
-          <li>Roll to hit.</li>
-          <li>Roll to wound.</li>
-          <li>Allocate wounds.</li>
-          <li>Roll to save - either armor or invulnerable.</li>
-          <li>Inflict damage.</li>
-        </ol>
       </section>
 
       <section>
@@ -82,7 +113,10 @@ export default async function Page() {
               label: 'Roll',
               value: (
                 <>
-                  <p>D6 for each activation each weapon does</p>
+                  <p>
+                    D6 <BsFillDice5Fill className="inline" /> for each
+                    activation each weapon does.
+                  </p>
                 </>
               ),
             },
@@ -97,7 +131,7 @@ export default async function Page() {
                       'ballistic-skill-weapon-skill',
                     )}
                   >
-                    WS/BS
+                    BS/WS
                   </Link>
                   .
                 </p>
@@ -105,11 +139,11 @@ export default async function Page() {
             },
             {
               label: 'On success',
-              value: <p>The attack hits its target.</p>,
+              value: <p>The attack hits the target.</p>,
             },
             {
               label: 'On fail',
-              value: <p>The attack misses its target.</p>,
+              value: <p>The attack misses and goes no further.</p>,
             },
           ]}
         />
@@ -136,7 +170,10 @@ export default async function Page() {
               label: 'Roll',
               value: (
                 <>
-                  <p>D6 for each attack that hit.</p>
+                  <p>
+                    D6 <BsFillDice5Fill className="inline" /> for each attack
+                    that hit during the previous step.
+                  </p>
                 </>
               ),
             },
@@ -151,11 +188,11 @@ export default async function Page() {
             },
             {
               label: 'On success',
-              value: <p>The attack wounds its target.</p>,
+              value: <p>The attack wounds the target.</p>,
             },
             {
               label: 'On fail',
-              value: <p>The attack fails to deal damage.</p>,
+              value: <p>The attack fails and goes no further.</p>,
             },
           ]}
         />
@@ -174,12 +211,11 @@ export default async function Page() {
         <h2 id="allocate-wounds">3. Allocate wounds</h2>
 
         <p>
-          If the attack hits and wounds, the{' '}
-          <strong>defender allocates which models take the wounds</strong>{' '}
-          (unless the attacking weapon has{' '}
-          <Link href={wh40kHref('datasheets', 'precision')}>Precision</Link>
-          ). Models that already lost wounds or had attacks allocated this phase
-          must be selected first.
+          The <strong>defender allocates which models</strong> take the attacks
+          that both hit and wounded (unless the attacking weapon has the{' '}
+          <Link href={wh40kHref('datasheets', 'precision')}>Precision</Link>{' '}
+          keyword). They must first select models that already lost wounds or
+          had attacks allocated this phase.
         </p>
       </section>
 
@@ -194,7 +230,7 @@ export default async function Page() {
           for. They can't roll for both.
         </p>
 
-        <p className="font-bold uppercase">Armor save (Sv)</p>
+        <p className="lead">Armor save (Sv)</p>
 
         <Strip
           items={[
@@ -237,7 +273,7 @@ export default async function Page() {
 
         <OrDivider />
 
-        <p className="font-bold uppercase">Invulnerable save (Inv)</p>
+        <p className="lead">Invulnerable save (Inv)</p>
 
         <Strip
           items={[

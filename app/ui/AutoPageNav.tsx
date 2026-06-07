@@ -59,7 +59,7 @@ export function AutoPageNav() {
             &larr;
           </span>
           <span className="min-w-0 flex-1">
-            <span className="block font-bold uppercase">Prev</span>
+            <span className="block lead">Prev</span>
             <span className="block leading-snug wrap-break-word">
               {prev.title}
             </span>
@@ -72,7 +72,7 @@ export function AutoPageNav() {
       {next ? (
         <Link href={next.href} className="button justify-end text-right!">
           <span className="min-w-0 flex-1">
-            <span className="block font-bold uppercase">Next</span>
+            <span className="block lead">Next</span>
             <span className="block leading-snug wrap-break-word">
               {next.title}
             </span>
