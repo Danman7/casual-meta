@@ -283,7 +283,7 @@ export default async function Page() {
 
         <p>
           A very small number of units have an additional, uncommon damage
-          prevention ability called Feel No Pain x+. It's usually activated
+          prevention ability called Feel No Pain X+. It's usually activated
           conditionally.
         </p>
 
@@ -299,7 +299,7 @@ export default async function Page() {
             },
             {
               label: 'Check if',
-              value: "Result is equal to or greater than the FNP's x+.",
+              value: "Result is equal to or greater than the FNP's X+.",
             },
             {
               label: 'On success',
@@ -366,7 +366,7 @@ export default async function Page() {
 
         <p>
           <strong>Volume flattens variance.</strong> A single high-damage
-          "all-or-nothing" attack can threaten durable elite targets, but it is
+          "all-or-nothing" attack can threaten durable elite targets, but is
           inconsistent. More dice make activations more reliable.
         </p>
 
@@ -391,15 +391,33 @@ export default async function Page() {
           <Link href={wh40kHref('datasheets', 'devastating-wounds')}>
             Devastating Wounds
           </Link>
-          , wielded by units with re-roll rules, become primary damage dealers.
-          If a regular roll has a 16.7% chance to crit, the re-roll makes it
-          30.6%. This becomes explosive with{' '}
+          , wielded by units with re-roll access, become primary damage dealers.
+          Even better with{' '}
           <Link href={wh40kHref('datasheets', 'anti-keyword')}>
             Anti-KEYWORD X+
-          </Link>
-          . An Anti-Infantry 5+ weapon has a 33.3% chance to crit. With
-          re-rolls, it becomes 55.6%. This is known as{' '}
+          </Link>{' '}
+          reducing the roll needed for a critical. This is known as{' '}
           <strong>crit fishing</strong>.
+        </p>
+
+        <p className="example">
+          For example, a regular roll has a 16.7% chance to crit. Af re-roll
+          makes it 30.6%. An Anti-Infantry 5+ weapon attacking infantry has a
+          33.3% chance to crit. With re-rolls, it becomes 55.6%.
+        </p>
+
+        <ul>
+          <li>Sustained Hits are better when you wound well (4+ or better).</li>
+
+          <li>Lethal Hits are better when you wound badly (5+ or worse).</li>
+        </ul>
+
+        <p>
+          <strong>
+            <Link href={wh40kHref('datasheets', 'torrent')}>Torrent</Link>,
+            Lethal Hits and Devastating Wounds skip certain gates
+          </strong>{' '}
+          increaseing success chance.
         </p>
       </section>
     </>
