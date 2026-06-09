@@ -182,6 +182,13 @@ export const wh40kSection = defineSection({
   description: 'In the grim darkness of the far future, there is only war.',
   items: [
     {
+      id: 'datasheets',
+      title: 'Datasheets',
+      href: `${WH40K_BASE_URL}/datasheets`,
+      description:
+        'How to read datasheets in Warhammer 40k, including unit profiles and weapon stats.',
+    },
+    {
       id: 'battleRound',
       title: 'The Battle Round',
       href: `${WH40K_BASE_URL}/battle-round`,
@@ -194,13 +201,6 @@ export const wh40kSection = defineSection({
       href: `${WH40K_BASE_URL}/attack-sequence`,
       description:
         'Understand hit rolls, wound rolls, saves, and damage in Warhammer 40k.',
-    },
-    {
-      id: 'datasheets',
-      title: 'Datasheets',
-      href: `${WH40K_BASE_URL}/datasheets`,
-      description:
-        'How to read datasheets in Warhammer 40k, including unit profiles and weapon stats.',
     },
     {
       id: 'profileArchetypes',

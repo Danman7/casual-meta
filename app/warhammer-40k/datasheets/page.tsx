@@ -23,6 +23,7 @@ import torrent from '@/app/assets/wh40k/torrent.webp'
 import weapons from '@/app/assets/wh40k/weapons.webp'
 import wound from '@/app/assets/wh40k/wound.webp'
 import { wh40kHref, wh40kMetadata, wh40kPage } from '@/app/siteMap'
+import { Strip } from '@/app/ui/Strip'
 
 const page = wh40kPage('datasheets')
 
@@ -35,10 +36,9 @@ export default async function Page() {
 
       <section>
         <p>
-          Every unit comes with a datasheet. It's a card that describes its
-          profile, available loadouts, special rules, composition, and access to
-          support through keywords. Think of it as a small rulebook for that
-          unit.
+          Every WH40k unit comes with a datasheet. It's a card that describes
+          its profile, composition, loadouts, special rules, and keywords. Think
+          of it as a small rulebook just for that unit.
         </p>
 
         <Image
@@ -52,11 +52,37 @@ export default async function Page() {
         <h2 id="unit-profiles">Profile</h2>
 
         <p>
-          At the top, below the datasheet's name, is the unit's profile: M, T,
-          Sv, W, Ld, and OC, or Move, Toughness, Save, Wounds, Leadership, and
-          Objective Control. These six numbers give insight into its probable
-          performance in different scenarios. A datasheet may have more than one
-          profile listed, depending on what models the unit is composed of.
+          At the top, below the datasheet's name, is the unit's profile - six
+          attributes that form its performance in different scenarios.
+        </p>
+
+        <Strip
+          items={[
+            {
+              label: 'Durability',
+              value: 'Toguhness (T), Save (Sv), Wounds (W)',
+            },
+            {
+              label: 'Utility',
+              value: 'Move (M), Objectives Control (OC)',
+            },
+            {
+              label: 'Morale',
+              value: 'Leadership (Ld)',
+            },
+          ]}
+        />
+
+        <p>
+          Numbers with <strong>a plus at the end</strong> (Sv, Ld) are{' '}
+          <strong>dice throws - lower is better</strong>. For the rest,{' '}
+          <em>higher is better</em>. All characteristics deal in probability.
+          Better stats can mean better consistency, not certainty.
+        </p>
+
+        <p>
+          A datasheet may have more than one profiles if it's composed of
+          multipe types of models.
         </p>
 
         <Image
@@ -65,25 +91,16 @@ export default async function Page() {
           className="picture"
         />
 
-        <p>
-          Numbers with a <em>plus at the end represent dice throws</em>. If the
-          roll is equal to or higher than the number, the check passes, so{' '}
-          <em>lower is better</em>. For the rest, <em>higher is better</em>. All
-          characteristics deal in probability. Better stats can mean better
-          consistency, not certainty.
-        </p>
-
         <h3 id="move">Move (M)</h3>
 
         <p>
-          Movement in WH40K is measured in <em>inches</em>. Following the rules
-          of the{' '}
+          Or <strong>how fast</strong> the unit is. Movement in WH40k is
+          measured in <em>inches</em>. A higher number means more opportunities
+          to reposition and engage. This comes into play primarily during the{' '}
           <Link href={wh40kHref('battleRound', 'movement-phase')}>
-            movement phase
+            Movement Phase
           </Link>
-          , a unit may only move up to a certain amount per turn, when given the
-          opportunity to do so. M is the maximum without modifiers. It can{' '}
-          <em>never</em> be 0.
+          . <strong>M can never be 0</strong>.
         </p>
 
         <Image
@@ -91,48 +108,52 @@ export default async function Page() {
           alt="Movement difference between an Assault Intercessor and one with a jump pack."
         />
 
-        <p>
-          A higher number means more options to reposition and a wider range of
-          engagement opportunities. For reference, most infantry have M6",
-          &#177;1. Assault troops and skirmish vehicles are usually around M12",
-          while flyers are around M20".
+        <p className="example">
+          For reference, most infantry have M6", &#177;1 (5 is considered slow).
+          Assault troops and skirmish vehicles are usually around M12", while
+          flyers are around M20".
         </p>
 
         <h3 id="toughness">Toughness (T)</h3>
 
         <p>
-          Toughness is one of 3 characteristics that shape the model's
-          durability. It plays a role during the <em>roll to wound</em> part of
-          each <Link href={wh40kHref('attackSequence')}>weapon activation</Link>
-          . The tougher the model is, the stronger the attacking weapon needs to
-          be to have a better chance of wounding.
+          Or{' '}
+          <strong>
+            how strong a weapon must be, to be more likely to wound
+          </strong>{' '}
+          the unit when it's time to{' '}
+          <Link href={wh40kHref('attackSequence', 'wound-roll')}>
+            roll to wound
+          </Link>
+          . Even the weakest weapon has a 1/6 chance to wound the toughest foe,
+          but tougher models require the proper tools to dispatch efficiently.
         </p>
 
         <Image src={wound} alt="Wound roll probabilities" />
 
-        <blockquote>
-          <p>
-            The Intercessor, with his T4, represents standard infantry. S3
-            weapons like the Cultist's Autopistol wound on 5+. The Ork Loota
-            with his S5 Big Shoota wounds on 3+.
-          </p>
-        </blockquote>
-
-        <p>
-          Toughness dictates which tools are effective against which profiles.
-          Weapons with lower Strength than the target's Toughness on average
-          tend to have a hard time making a dent. Still, nothing protects
-          against lucky rolls.
+        <p className="example">
+          For reference, T4 is considerend standard infantry. T3 is light, T5 is
+          heavy infantry. Light vehicles tend to be around T7-9. T12 and above
+          are heavy vehicles.
         </p>
 
         <h3 id="save">Save (Sv)</h3>
 
         <p>
-          Saves are an extra gate against taking damage, after an attack has hit
-          and wounded. All datasheets have at least an armor save, which is
-          affected by the attacking weapon's Armor Penetration (AP). If the AP
-          brings the save above 6+, <em>no armor save</em> is allowed. A save
-          can never be better than 2+.
+          Or{' '}
+          <strong>
+            how likely is the model's armor to save it after the attack has
+            wounded
+          </strong>{' '}
+          when it's time to{' '}
+          <Link href={wh40kHref('attackSequence', 'save-roll')}>
+            roll to save
+          </Link>
+          . All datasheets have at least an <strong>Armor Save (Sv)</strong>,
+          which is{' '}
+          <strong>affected by the weapon's Armor Penetration (AP)</strong>. If
+          AP brings the save <strong>above 6+, no armor save</strong> is
+          allowed. <strong>Sv can't be better than 2+.</strong>
         </p>
 
         <Image
@@ -141,35 +162,22 @@ export default async function Page() {
         />
 
         <p>
-          Elite, durable models can also have an additional fixed{' '}
-          <em>Invulnerable Save</em> which ignores AP. The defender can choose
-          which one to use. If the save check passes, damage is averted.
+          Some models have an additional{' '}
+          <strong>Invulnerable Save (Inv)</strong> which{' '}
+          <strong>ignores AP</strong>. These are better against high-AP attacks.
+          The defender can only use either Sv or Inv against a single attack.
         </p>
-
-        <blockquote>
-          <p>
-            The Terminator has a Sv2+ which is optimal to begin with. A Bolt
-            Rifle AP-1 attack will be saved on 3+. But an AP-4 Meltagun can only
-            be saved with a 6. If attacked by the latter, the Terminator will
-            fare better if he uses his 4+ Invulnerable Save instead.
-          </p>
-        </blockquote>
 
         <h3 id="wounds">Wounds (W)</h3>
 
         <p>
-          The amount of damage a model can take before being removed from play
-          is measured in <em>wounds</em>. When an attack has successfully hit
-          and wounded, and any save has failed, the target takes damage equal to
-          the weapon's Damage (D) characteristic.{' '}
-          <em>On reaching 0 wounds, the model is dead</em>.
-        </p>
-
-        <p>
-          <em>Excess damage is wasted.</em> If a W1 target takes 3 damage, you
-          can't assign the rest to another model. Hence, weapons that deal the
-          exact amount of damage needed to kill the target are best against that
-          target.
+          Or{' '}
+          <strong>
+            how much damage can the model take before being removed from play
+          </strong>
+          . A model starts with X Wounds. On reaching 0, it is destroyed. A
+          model with a lot of Wounds will require combined effort to remove no
+          matter the S or AP of the weapons.
         </p>
 
         <Image
@@ -177,24 +185,26 @@ export default async function Page() {
           alt="Difference in durability between an Intercessor and a Defiler"
         />
 
-        <p>
-          The more wounds a model has, the longer it tends to stay in the fight.
-          A durable target with a lot of wounds and good saves requires focused
-          fire from multiple attackers to be taken down. It can be referred to
-          as an <em>anchor</em> or "answer me or die" unit.
+        <p className="example">
+          For reference, most infantry are W1-3, elites and characters - W4-6,
+          light vehicles - W7-9. A W14 and above model is a centerpiece.
         </p>
 
         <h3 id="leadership">Leadership (Ld)</h3>
 
         <p>
-          Leadership only comes into play for{' '}
+          Or{' '}
+          <strong>
+            how likely is for the whole unit to route when less than half
+            strenght
+          </strong>{' '}
+          following the Leadership only comes into play for{' '}
           <Link href={wh40kHref('battleRound', 'battle-shock-tests')}>
             battle-shock tests
           </Link>{' '}
-          during the Command Phase. Better (lower) Ld means a better chance for
-          the unit to remain composed at below half-strength. Ld can never be 4+
-          (or better), or 9+ (or worse). This means it can only go between Ld5+
-          (83% chance to succeed) and Ld8+ (42% chance to succeed).
+          rules. Ld can never be 4+ (or better), or 9+ (or worse). This means it
+          can only go between Ld5+ (83% chance to succeed) and Ld8+ (42% chance
+          to succeed).
         </p>
 
         <h3 id="objective-control">Objective Control (OC)</h3>

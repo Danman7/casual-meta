@@ -54,6 +54,7 @@ export default async function Page() {
           src={intercessors}
           alt="A squad of Space Marine Intercessors."
           className="picture profile-img object-[0%_70%]"
+          loading="eager"
         />
 
         <div className="paper font-bold text-center">

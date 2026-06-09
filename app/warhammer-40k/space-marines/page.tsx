@@ -22,6 +22,7 @@ export default async function Page() {
           className="float-right ml-4 max-w-1/2"
           src={marine}
           alt="A Space Marine from the Ultramarines chapter."
+          loading="eager"
         />
 
         <p>
