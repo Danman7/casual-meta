@@ -195,10 +195,10 @@ export default async function Page() {
         <p>
           Or{' '}
           <strong>
-            how likely is for the whole unit to route when less than half
+            how likely is for the whole unit to route when at less than half
             strenght
           </strong>{' '}
-          following the Leadership only comes into play for{' '}
+          following the{' '}
           <Link href={wh40kHref('battleRound', 'battle-shock-tests')}>
             battle-shock tests
           </Link>{' '}
