@@ -150,7 +150,7 @@ export default async function Page() {
             unmodified roll of 6 is a <em>critical hit</em>.
           </strong>{' '}
           This plays a role in{' '}
-          <Link href={wh40kHref('datasheets', 'weapon-keywords')}>
+          <Link href={wh40kHref('keywords', 'weapon-keywords')}>
             weapon keywords
           </Link>
           .
@@ -205,7 +205,7 @@ export default async function Page() {
             defender allocates which target models will receive the attacks
           </strong>{' '}
           that have both hit and wounded the target (unless the weapons have{' '}
-          <Link href={wh40kHref('datasheets', 'precision')}>Precision</Link>).
+          <Link href={wh40kHref('keywords', 'precision')}>Precision</Link>).
           They <em>must</em> first select models that have already lost wounds.
         </p>
       </section>
@@ -382,18 +382,17 @@ export default async function Page() {
         <p>
           <strong>Re-rolls + critical effects = big damage</strong>. Weapons
           with{' '}
-          <Link href={wh40kHref('datasheets', 'sustained-hits')}>
+          <Link href={wh40kHref('keywords', 'sustained-hits')}>
             Sustained Hits
           </Link>
-          ,{' '}
-          <Link href={wh40kHref('datasheets', 'lethal-hits')}>Lethal Hits</Link>
+          , <Link href={wh40kHref('keywords', 'lethal-hits')}>Lethal Hits</Link>
           , or{' '}
-          <Link href={wh40kHref('datasheets', 'devastating-wounds')}>
+          <Link href={wh40kHref('keywords', 'devastating-wounds')}>
             Devastating Wounds
           </Link>
           , wielded by units with re-roll access, become primary damage dealers.
           Even better with{' '}
-          <Link href={wh40kHref('datasheets', 'anti-keyword')}>
+          <Link href={wh40kHref('keywords', 'anti-keyword')}>
             Anti-KEYWORD X+
           </Link>{' '}
           reducing the roll needed for a critical. This is known as{' '}
@@ -414,8 +413,8 @@ export default async function Page() {
 
         <p>
           <strong>
-            <Link href={wh40kHref('datasheets', 'torrent')}>Torrent</Link>,
-            Lethal Hits and Devastating Wounds skip certain gates
+            <Link href={wh40kHref('keywords', 'torrent')}>Torrent</Link>, Lethal
+            Hits and Devastating Wounds skip certain gates
           </strong>{' '}
           increaseing success chance.
         </p>

@@ -189,6 +189,13 @@ export const wh40kSection = defineSection({
         'How to read datasheets in Warhammer 40k, including unit profiles and weapon stats.',
     },
     {
+      id: 'keywords',
+      title: 'Keywords',
+      href: `${WH40K_BASE_URL}/keywords`,
+      description:
+        'How keywords and common weapon keywords work in Warhammer 40k.',
+    },
+    {
       id: 'battleRound',
       title: 'The Battle Round',
       href: `${WH40K_BASE_URL}/battle-round`,

@@ -193,7 +193,7 @@ export default async function Page() {
             Declare an <strong>advance</strong>, roll a die, and move further.
             The unit then becomes <strong>unable to charge this turn</strong>{' '}
             and can shoot only with weapons that have the{' '}
-            <Link href={wh40kHref('datasheets', 'assault')}>Assault</Link>{' '}
+            <Link href={wh40kHref('keywords', 'assault')}>Assault</Link>{' '}
             keyword.
           </li>
         </ul>
@@ -246,7 +246,7 @@ export default async function Page() {
         <p>
           If a unit <strong>skips movement</strong>, it's considered to have{' '}
           <strong>remained stationary</strong>. Some rules, like the{' '}
-          <Link href={wh40kHref('datasheets', 'heavy')}>Heavy</Link> keyword,
+          <Link href={wh40kHref('keywords', 'heavy')}>Heavy</Link> keyword,
           interact with units that remained stationary.
         </p>
 
@@ -455,10 +455,10 @@ export default async function Page() {
           </li>
 
           <li>
-            Do you have{' '}
-            <Link href={wh40kHref('datasheets', 'blast')}>Blast</Link> weapons?
-            They are best against large groups of infantry. Hit with Blast first
-            for the maximum number of attacks, then shoot the survivors down.
+            Do you have <Link href={wh40kHref('keywords', 'blast')}>Blast</Link>{' '}
+            weapons? They are best against large groups of infantry. Hit with
+            Blast first for the maximum number of attacks, then shoot the
+            survivors down.
           </li>
 
           <li>

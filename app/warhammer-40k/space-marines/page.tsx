@@ -102,11 +102,10 @@ export default async function Page() {
           This shapes Space Marines into a <strong>combined-arms force</strong>{' '}
           where multiple units <em>focus fire</em> priority targets, one at a
           time. This pairs well with weapon keywords related to crits (e.g.{' '}
-          <Link href={wh40kHref('datasheets', 'devastating-wounds')}>
+          <Link href={wh40kHref('keywords', 'devastating-wounds')}>
             Devastating Wounds
           </Link>
-          ,{' '}
-          <Link href={wh40kHref('datasheets', 'lethal-hits')}>Lethal Hits</Link>
+          , <Link href={wh40kHref('keywords', 'lethal-hits')}>Lethal Hits</Link>
           ) and{' '}
           <Link href={wh40kHref('datasheets', 're-rolls')}>re-roll access</Link>
           .
@@ -142,9 +141,7 @@ export default async function Page() {
           D1-D2 weapons within 24" range, with{' '}
           <strong>
             strong{' '}
-            <Link href={wh40kHref('datasheets', 'weapon-keywords')}>
-              keyword
-            </Link>{' '}
+            <Link href={wh40kHref('keywords', 'weapon-keywords')}>keyword</Link>{' '}
             diversity
           </strong>
           .

@@ -107,9 +107,7 @@ export default async function Page() {
           <p>
             <em>Armor of Contempt</em> comes in handy for surviving a critical
             turn on an objective. A <em>lieutenant</em> with{' '}
-            <Link href={wh40kHref('datasheets', 'lethal-hits')}>
-              Lethal Hits
-            </Link>{' '}
+            <Link href={wh40kHref('keywords', 'lethal-hits')}>Lethal Hits</Link>{' '}
             can make a 10-man squad more viable.
           </p>
         </blockquote>
@@ -166,7 +164,7 @@ export default async function Page() {
           <p>
             Characters with crit abilities, like the <em>Lieutenant's</em>{' '}
             Lethal Hits, and <em>Azrael</em> (Dark Angels){' '}
-            <Link href={wh40kHref('datasheets', 'sustained-hits')}>
+            <Link href={wh40kHref('keywords', 'sustained-hits')}>
               Sustained Hits
             </Link>
             , benefit from the re-rolls a lot.
@@ -278,7 +276,7 @@ export default async function Page() {
         <div className="paper">
           <p>
             <strong>Mark the Target:</strong> Get{' '}
-            <Link href={wh40kHref('datasheets', 'devastating-wounds')}>
+            <Link href={wh40kHref('keywords', 'devastating-wounds')}>
               devastating wounds
             </Link>{' '}
             when shooting, if the squad remained stationary during the movement
@@ -312,11 +310,11 @@ export default async function Page() {
           choice against elite infantry and light vehicles, winning through raw
           power. <em>Bolt Sniper Rifles</em> <small>(S5, AP-2, D3)</small> lack
           the strength and penetration of fusils, but have{' '}
-          <Link href={wh40kHref('datasheets', 'precision')}>Precision</Link>,
+          <Link href={wh40kHref('keywords', 'precision')}>Precision</Link>,
           making them natural, albeit situational, character hunters. If the
           squad skips movement, both weapons hit on 2+ (
-          <Link href={wh40kHref('datasheets', 'heavy')}>Heavy</Link> keyword)
-          and gain mortal wounds on crits (Mark the Target).
+          <Link href={wh40kHref('keywords', 'heavy')}>Heavy</Link> keyword) and
+          gain mortal wounds on crits (Mark the Target).
         </p>
       </section>
     </>
