@@ -47,7 +47,7 @@ export const Table = <T,>({
         {data.length === 0 ? (
           <tr className="border-b border-light">
             <td
-              className="px-3 py-2 md:px-4 whitespace-normal wrap-break-word"
+              className="p-2 md:px-4 whitespace-normal wrap-break-word"
               colSpan={columns.length}
             >
               {emptyMessage}

@@ -245,7 +245,7 @@ export default async function Page() {
 
         <OrDivider />
 
-        <p className="lead">Invulnerable save (Inv) if target has one</p>
+        <p className="lead">Invulnerable save (Inv/++) if target has one</p>
 
         <Strip
           items={[

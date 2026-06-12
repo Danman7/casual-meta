@@ -166,7 +166,7 @@ export default async function Page() {
 
         <p>
           Some models have an additional{' '}
-          <strong>Invulnerable Save (Inv)</strong> which{' '}
+          <strong>Invulnerable Save (Inv/++)</strong> which{' '}
           <strong>ignores AP</strong>. These are better against high-AP attacks.
           The defender can only use either Sv or Inv against a single attack.
         </p>
@@ -237,21 +237,43 @@ export default async function Page() {
           For reference, most have OC1. Many battleline infantry have OC2.
           Larger models may have more.
         </p>
+
+        <h3 id="read-profiles">How to read unit profiles</h3>
+
+        <p>
+          Let's take a look at the Cadian Shock Troops datasheet. It says Move
+          6" | Toghness 3 | Save 5+ | Wounds 1 | Leadership 7+ | Objective
+          Control 2. That's too long. Instead, we can have it{' '}
+          <span className="badge">M6" T3 Sv5+ W1 Ld7+ OC2</span>. If we agree
+          that the first number is always the Move as it's the only one in
+          inches we can shorten it a bit more to{' '}
+          <span className="badge">6" T3 Sv5+ W1 Ld7+ OC2</span>.
+        </p>
+
+        <p>
+          If you understand the above, I can describe a Terminator for you with{' '}
+          <span className="badge">5" T5 Sv2+/4++ W3 Ld6+ OC1</span>. But what's
+          all that next to it's Sv? Well, we know Terminators have a 4+
+          Invulnerable save. So <span className="badge">SvX+/Y++</span> is X
+          armor save and Y Inv save.
+        </p>
+
+        <p>
+          Most of the time, not all of the stats are important for context. So
+          if we only discuss the durability of Terminators we can say{' '}
+          <span className="badge">T5 Sv2+/4++ W3</span>. This can be shortened
+          even further once we get to{' '}
+          <Link href={wh40kHref('profileArchetypes')}>archetypes</Link>.
+        </p>
       </section>
 
       <section>
         <h2 id="weapons">Weapons</h2>
 
         <p>
-          Weapons have separate performance profiles with six different metrics.
+          Weapons have separate performance profiles with six different metrics
+          - Range, Ballistic/Weapon Skill ,Attacks, Strength, AP, Damage.
         </p>
-
-        <Strip
-          items={[
-            { label: 'Output', value: 'Attacks, Strength, AP, Damage' },
-            { label: 'Reach', value: 'Range, Ballistic/Weapon Skill' },
-          ]}
-        />
 
         <p>
           This symbol <span className="wh-pointer" /> indicates the weapon has
@@ -319,6 +341,11 @@ export default async function Page() {
           weapons have 3-6 attacks.
         </p>
 
+        <p>
+          A weapon having <strong>more attacks means horizontal reach</strong>,
+          or being able to hit more targets.
+        </p>
+
         <h3 id="ballistic-skill-weapon-skill">
           Ballistic/Weapon Skill (BS/WS)
         </h3>
@@ -346,6 +373,11 @@ export default async function Page() {
           Or <strong>how tough a target can this weapon easily wound</strong>{' '}
           when it's time to roll to wound. As described above, this attribute is
           tightly related to the Toughness of the target.
+        </p>
+
+        <p>
+          A weapon having <strong>more strength means vertical reach</strong>,
+          or being able to wound more durable targets.
         </p>
 
         <h3 id="armor-penetration">Armor Penetration (AP)</h3>
@@ -384,6 +416,30 @@ export default async function Page() {
         <p className="example">
           For example, D2 weapons are best against W2 targets. A D1 weapon needs
           two failed saves, while a D3+ weapon is wasteful.
+        </p>
+
+        <h3 id="read-weapons">How to read weapon profiles</h3>
+
+        <p>
+          Because of keywords, writing weapon profiles without a shortform is
+          even longer than unit profiles. The Bolt rifle would be Assault Heavy
+          Range 24" Attacks 2 Ballistic Skill 3+ Strength 4 Armor Penetration -1
+          Damage 1, compared to{' '}
+          <span className="badge">Assault Heavy 24" A2 BS3+ S4 AP-1 D1</span>.
+        </p>
+
+        <p>
+          The Meltagun's profile is{' '}
+          <span className="badge">Melta 2 12" A1 BS3+ S9 AP-4 DD6</span> meaning
+          it has the Melta keyword with 2 as a modifier, and roll a D6 to
+          determine Damage.
+        </p>
+
+        <p>
+          The Flamer is{' '}
+          <span className="badge">Ignore Cover Torrent 12" AD6 S4 AP0 D1</span>,
+          which means throw a D6 for number of attacks. It also lacks Ballistic
+          Skill as the Torrent keyword means it hits autoimatically.
         </p>
       </section>
 
