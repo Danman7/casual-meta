@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { LuDices } from 'react-icons/lu'
 
 import attackNumber from '@/app/assets/wh40k/attacks_number.webp'
 import datasheet from '@/app/assets/wh40k/datasheet.webp'
@@ -425,100 +424,21 @@ export default async function Page() {
           even longer than unit profiles. The Bolt rifle would be Assault Heavy
           Range 24" Attacks 2 Ballistic Skill 3+ Strength 4 Armor Penetration -1
           Damage 1, compared to{' '}
-          <span className="badge">Assault Heavy 24" A2 BS3+ S4 AP-1 D1</span>.
+          <span className="badge">24" A2 BS3+ S4 AP-1 D1 Assault Heavy </span>.
         </p>
 
         <p>
           The Meltagun's profile is{' '}
-          <span className="badge">Melta 2 12" A1 BS3+ S9 AP-4 DD6</span> meaning
+          <span className="badge">12" A1 BS3+ S9 AP-4 DD6 Melta 2</span> meaning
           it has the Melta keyword with 2 as a modifier, and roll a D6 to
           determine Damage.
         </p>
 
         <p>
           The Flamer is{' '}
-          <span className="badge">Ignore Cover Torrent 12" AD6 S4 AP0 D1</span>,
+          <span className="badge">12" AD6 S4 AP0 D1 Ignore Cover Torrent</span>,
           which means throw a D6 for number of attacks. It also lacks Ballistic
           Skill as the Torrent keyword means it hits autoimatically.
-        </p>
-      </section>
-
-      <section>
-        <h2 id="abilities">Abilities</h2>
-
-        <p>
-          <em>Keywords</em> are labels that describe what a unit is and require
-          a rule to interact with them. <em>Abilities</em> (a.k.a. special
-          rules) on the other hand, explain what a unit can do in addition to
-          the general rules of the player turn. They are usually listed to the
-          side of the available loadouts.
-        </p>
-
-        <p>
-          Some abilities are always active (passive), some are triggered by
-          conditions, and some are activated deliberately. Some are core
-          abilities, common among many datasheets, dictating how deployment or
-          some of the phases differ for the given unit. Faction abilities are
-          shared between members of the same faction. Anything listed below
-          these is specific only to that datasheet.
-        </p>
-
-        <blockquote>
-          <p>
-            <em>Infiltrators</em> is a core deployment ability that allows the
-            unit to begin the battle closer to the enemy than normal.
-          </p>
-
-          <p>
-            <em>Waaagh!</em> is a faction ability, available to all Orks, that
-            buffs their melee weapons and allows them to charge even after
-            advancing.
-          </p>
-
-          <p>
-            <em>Implacable Eradication</em> is unique to{' '}
-            <em>Necrons Immortals</em>, allowing them to re-roll certain wound
-            rolls under certain conditions.
-          </p>
-        </blockquote>
-      </section>
-
-      <section>
-        <h2 id="re-rolls" className="flex-center">
-          Re-rolls <LuDices />
-        </h2>
-
-        <p>
-          To re-roll a check means to pick up the required number of dice and
-          roll them again, potentially improving the outcome. This happens
-          strictly once per check. If the check said roll 2D6 (e.g. charge
-          roll), you re-roll 2 dice once.
-        </p>
-
-        <p>
-          But if you are rolling many dice for the attack sequence of a whole
-          squad, you can choose which of them to re-roll as they are separate
-          checks. You can leave the good rolls and re-roll only the bad ones,
-          but only once.
-        </p>
-
-        <p>
-          Both keywords and abilities use re-rolls as a way to buff the units or
-          weapon in some situations. Re-rolls are{' '}
-          <em>better when the base chance to succeed is better</em>. Rolling
-          again on a poor characteristic has disappointing results more often
-          than not.
-        </p>
-
-        <h3 id="crit-fishing">Crit fishing</h3>
-
-        <p>
-          Re-rolls integrate marvelously with keywords and abilities that
-          benefit from critical rolls (roll of 6): Sustained Hits, Lethal Hits,
-          Devastating Wounds or Anti-KEYWORD. One can re-roll even successful
-          rolls in an attempt to get a 6. This is called <em>crit fishing</em>{' '}
-          and can be stacked from separate activation gates (to hit, to wound)
-          to create powerful spikes.
         </p>
       </section>
     </>
