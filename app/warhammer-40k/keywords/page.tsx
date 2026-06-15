@@ -6,7 +6,6 @@ import { TbArrowBigUpLines, TbRulerMeasure } from 'react-icons/tb'
 import anti from '@/app/assets/wh40k/anti.webp'
 import assault from '@/app/assets/wh40k/assault.webp'
 import devastatingWounds from '@/app/assets/wh40k/devastating-wounds.webp'
-import keywords from '@/app/assets/wh40k/keywords.webp'
 import precision from '@/app/assets/wh40k/precision.webp'
 import rapidFire from '@/app/assets/wh40k/rapid-fire.webp'
 import sustainedHits from '@/app/assets/wh40k/sustained-hits.webp'
@@ -23,46 +22,33 @@ export default async function Page() {
       <h1>{page.title}</h1>
 
       <section>
-        <h2 id="keywords-and-special-rules">Keywords</h2>
-
         <p>
-          Keywords are <em>tags</em> attached to either a datasheet or a weapon.
-          They don't do anything on their own, but <em>handle interactions</em>{' '}
-          with other rules. The relationships between units, weapons,
-          stratagems, factions and turn phases are numerous. So, verifying a
-          rule with a simple keyword simplifies the process.
+          <em>Keywords</em> are tags attached to profiles or weapons, that{' '}
+          <strong>handle common open interactions</strong>. A datasheet has at
+          least one <em>faction</em> keyword (sometimes more), and several
+          others. They may govern army composition, or what rules and stratagems
+          affect the unit. Weapon keywords specify additional traits and ways to
+          break the rules.
         </p>
 
-        <Image
-          src={keywords}
-          alt="Example of keywords listed on a datasheet."
-        />
-
-        <blockquote>
-          <p>
-            Certain rules apply only to <em>Infantry</em> units, others only to{' '}
-            <em>Vehicles</em>. Models with the <em>Fly</em> keyword can be moved
-            over obstacles and other units. Some units with the{' '}
-            <em>Imperium</em> keyword can be mixed together in an army, even if
-            they belong to different factions.
-          </p>
-        </blockquote>
+        <p className="example">
+          For example, a squad being <strong>Infantry</strong> means it can move
+          faster trough certain battlefield elements, is more vulnerable to
+          ANTI-INFANTRY X+ weapons, is buffed by a nearby Dreadnought if Space
+          Marines, can be supported by Resurrection Orb if Necron, and can get
+          additional defensive traits from Go to Ground stratagem. And many
+          more, all of which just from having this single keyword.
+        </p>
 
         <p>
-          A datasheet always has at least one <em>faction</em> keyword, which
-          governs army composition, but some may have more.
+          Because one keyword can affect in the same way units from different
+          factions, you may encounter the term <em>Universal Special Rules</em>{' '}
+          (USRs).
         </p>
       </section>
 
       <section>
         <h2 id="weapon-keywords">Common weapon keywords</h2>
-
-        <p>
-          Also called <em>Universal Special Rules</em> (USRs), weapon keywords
-          are shared between many of WH40K's weapons. They work best when
-          layered with other faction or unit abilities that enhance them further
-          or fill the gaps. Here is a not-so-small list of the common ones.
-        </p>
 
         <h3 id="assault">Assault</h3>
 
@@ -71,12 +57,14 @@ export default async function Page() {
         </div>
 
         <p>
-          The weapon can be fired, even after the wielder has{' '}
-          <Link href={wh40kHref('battleRound', 'movement-phase')}>
-            advanced
-          </Link>{' '}
-          this turn. Arms without this keyword cannot be used after advancing.
-          Assault weapons naturally fit a more mobile, aggressive play.
+          <strong>
+            The weapon can be fired, even after the wielder has{' '}
+            <Link href={wh40kHref('battleRound', 'movement-phase')}>
+              advanced
+            </Link>{' '}
+            this turn.
+          </strong>{' '}
+          Assault weapons promote mobile, aggressive play.
         </p>
 
         <Image src={assault} alt="Boltgun vs Bolt rifle with assault keyword" />
@@ -89,10 +77,15 @@ export default async function Page() {
         </div>
 
         <p>
-          Add +1 to hit rolls if the unit remained stationary this turn. This
-          rewards the opposite of assault - staying put - with better accuracy.
-          The playstyle is to hold a position rather than gaining ground. Long
-          range weapons pair nicely with this keyword.
+          <strong>
+            The weapon gets +1 to{' '}
+            <Link href={wh40kHref('attackSequence', 'hit-roll')}>
+              hit rolls
+            </Link>{' '}
+            if the unit <em>remained stationary</em> this turn.
+          </strong>{' '}
+          This rewards skipping a move with better accuracy, thus promotes
+          defensive play.
         </p>
 
         <h3 id="rapid-fire">Rapid Fire X</h3>
@@ -102,10 +95,8 @@ export default async function Page() {
         </div>
 
         <p>
-          If the target is within half of the weapon's maximum range, add +X to
-          the attacks. The longer the range of the weapon, the better the
-          coverage of the bonus. This supports situations where volume of fire
-          is important, e.g. fighting hordes.
+          <strong>Weapon gets +X attacks if target is within half-range</strong>{' '}
+          (of the weapon's maximum range). Trade some safety for volume.
         </p>
 
         <Image src={rapidFire} alt="Ork Loota with a Rapid Fire 1 Deffgun" />
