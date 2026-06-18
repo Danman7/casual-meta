@@ -187,6 +187,34 @@ export default async function Page() {
           alt="Pyreblaster's fire arc with Torrent keyword"
         />
 
+        <h3 id="anti-keyword">Anti-KEYWORD X+</h3>
+
+        <div className="flex-center">
+          <div className="badge">
+            <BsFillDice5Fill /> Wound roll
+          </div>
+
+          <div className="badge">
+            <GiInvertedDice6 /> Critical effect
+          </div>
+        </div>
+
+        <p>
+          <strong>
+            Any wound roll of X+ against unit with KEYWORD counts as a Critical
+            Wound
+          </strong>
+          . This effectively bypasses normal Strength vs Toughness math.
+        </p>
+
+        <Image src={anti} alt="Grav-gun firing at a vehicle." />
+
+        <p className="example">
+          For example, a <strong>Grav-gun</strong>{' '}
+          <span className="badge">ANTI-VEHICLE 2+</span> makes any roll above 1
+          a critical wound.
+        </p>
+
         <h3 id="devastating-wounds">Devastating Wounds</h3>
 
         <div className="flex-center">
@@ -277,26 +305,6 @@ export default async function Page() {
           src={sustainedHits}
           alt="A Heavy bolter with Sustained Hits 1 scores a 6"
         />
-
-        <h3 id="anti-keyword">Anti-KEYWORD X+</h3>
-
-        <div className="flex-center">
-          <div className="badge">Wound roll</div>
-
-          <div className="badge">
-            <GiInvertedDice6 /> Critical effect
-          </div>
-        </div>
-
-        <p>
-          Against a target with the listed keyword, a wound roll of X+ counts as
-          a <em>Critical Wound</em>. For example, Anti-Infantry 4+ means that
-          when you roll to wound against infantry, rolls of 4 and above are
-          crits. This combines exceptionally well with Devastating Wounds,
-          melting the target's saves.
-        </p>
-
-        <Image src={anti} alt="Grav-gun firing at a vehicle." />
 
         <h3 id="twin-linked">Twin-linked</h3>
 
