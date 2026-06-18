@@ -124,7 +124,10 @@ export default async function Page() {
           have good volume. <strong>Supercharged Plasma</strong> weapons have
           high S but may have lower D. The same goes for{' '}
           <strong>Thunder Hammers</strong> and <strong>Power Fists</strong> in
-          melee.
+          melee. The <strong>Combi-weapon</strong>{' '}
+          <span className="badge">ANTI-INFANTRY 4+ DEVASTATING WOUNDS</span>{' '}
+          makes every 4+ wound roll into infantry, guaranteed damage, but it
+          deals only D1.
         </p>
 
         <h3 id="geq">GEQ (Guard Equivalent)</h3>

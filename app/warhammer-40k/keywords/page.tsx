@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { PiDiceSix } from 'react-icons/pi'
 import { TbArrowBigUpLines, TbRulerMeasure } from 'react-icons/tb'
 
 import anti from '@/app/assets/wh40k/anti.webp'
@@ -11,6 +10,9 @@ import rapidFire from '@/app/assets/wh40k/rapid-fire.webp'
 import sustainedHits from '@/app/assets/wh40k/sustained-hits.webp'
 import torrent from '@/app/assets/wh40k/torrent.webp'
 import { wh40kHref, wh40kMetadata, wh40kPage } from '@/app/siteMap'
+import { BsFillDice5Fill } from 'react-icons/bs'
+import { GiInvertedDice6 } from 'react-icons/gi'
+import { IoIosSkipForward } from 'react-icons/io'
 
 const page = wh40kPage('keywords')
 
@@ -23,12 +25,10 @@ export default async function Page() {
 
       <section>
         <p>
-          <em>Keywords</em> are tags attached to profiles or weapons, that{' '}
-          <strong>handle common open interactions</strong>. A datasheet has at
-          least one <em>faction</em> keyword (sometimes more), and several
-          others. They may govern army composition, or what rules and stratagems
-          affect the unit. Weapon keywords specify additional traits and ways to
-          break the rules.
+          <em>Keywords</em> are tags attached to datasheets or separate weapons,
+          that <strong>handle common open interactions</strong>. They may govern
+          army composition, what stratagems affect the unit, or what rules can
+          be broken.
         </p>
 
         <p className="example">
@@ -41,14 +41,14 @@ export default async function Page() {
         </p>
 
         <p>
-          Because one keyword can affect in the same way units from different
-          factions, you may encounter the term <em>Universal Special Rules</em>{' '}
+          Because one keyword can affect units from different factions in the
+          same way, you may encounter the term <em>Universal Special Rules</em>{' '}
           (USRs).
         </p>
       </section>
 
       <section>
-        <h2 id="weapon-keywords">Common weapon keywords</h2>
+        <h2 id="weapon-keywords">Weapon keywords</h2>
 
         <h3 id="assault">Assault</h3>
 
@@ -64,16 +64,23 @@ export default async function Page() {
             </Link>{' '}
             this turn.
           </strong>{' '}
-          Assault weapons promote mobile, aggressive play.
+          This promotes mobile, aggressive play, as you do not have to choose
+          between speed and shooting. Useful on short-to-mid ranged weapons that
+          need movement to be in range, used by skirmish or high OC squads.
         </p>
 
         <Image src={assault} alt="Boltgun vs Bolt rifle with assault keyword" />
 
         <h3 id="heavy">Heavy</h3>
 
-        <div className="badge">
-          {' '}
-          <TbArrowBigUpLines /> Mobility
+        <div className="flex-center">
+          <div className="badge">
+            <TbArrowBigUpLines /> Mobility
+          </div>
+
+          <div className="badge">
+            <BsFillDice5Fill /> Hit roll
+          </div>
         </div>
 
         <p>
@@ -84,34 +91,55 @@ export default async function Page() {
             </Link>{' '}
             if the unit <em>remained stationary</em> this turn.
           </strong>{' '}
-          This rewards skipping a move with better accuracy, thus promotes
+          Skipping a move is rewarded with better accuracy. Naturally fits (but
+          not limited to) long-ranged heavy weapons that promote more static,
           defensive play.
+        </p>
+
+        <p className="example">
+          For example, the Space Marine Bolt sniper rifle is{' '}
+          <span className="badge">BS3+ HEAVY</span>, which means it hits on 2+
+          if the unit remained stationary.
         </p>
 
         <h3 id="rapid-fire">Rapid Fire X</h3>
 
-        <div className="badge">
-          <TbRulerMeasure /> Range
+        <div className="flex-center">
+          <div className="badge">
+            <TbRulerMeasure /> Range
+          </div>
+
+          <div className="badge">+ Attacks</div>
         </div>
 
         <p>
           <strong>Weapon gets +X attacks if target is within half-range</strong>{' '}
-          (of the weapon's maximum range). Trade some safety for volume.
+          (of the weapon's maximum range). Trade safety for volume. It's one of
+          the most common weapon keywords.
         </p>
 
         <Image src={rapidFire} alt="Ork Loota with a Rapid Fire 1 Deffgun" />
 
+        <p className="example">
+          For example, the Ork Deffgun is{' '}
+          <span className="badge">48" RAPID FIRE 1</span> which means it gets 1
+          extra attack within 24".
+        </p>
+
         <h3 id="melta">Melta X</h3>
 
-        <div className="badge">
-          <TbRulerMeasure /> Range
+        <div className="flex-center">
+          <div className="badge">
+            <TbRulerMeasure /> Range
+          </div>
+
+          <div className="badge">+ Damage</div>
         </div>
 
         <p>
-          If the target is within half of the weapon's maximum range, attacks
-          deal +X damage on top. Melta weapons, which are high damage to begin
-          with, use a dice roll to determine normal damage. This only makes them
-          more powerful at close range.
+          <strong>Weapon deals +X damage if target is within half-range</strong>{' '}
+          (of the weapon's maximum range). Trade safety for more damage. It's
+          better against tougher targets than Rapid Fire (and rarer).
         </p>
 
         <h3 id="pistol">Pistol</h3>
@@ -120,30 +148,38 @@ export default async function Page() {
           <TbRulerMeasure /> Range
         </div>
 
-        <p>
-          There are two distinct rules about pistols that start with a short
-          range anyway.
-        </p>
+        <p>Pistols are low-reach weapons with two distinct rules:</p>
 
         <ul>
-          <li>
-            One can only shoot their pistols or all other weapons during the
-            Shooting Phase.
-          </li>
+          <li>Can be shot even within Engagement range.</li>
 
-          <li>Pistols can be shot even within Engagement range.</li>
+          <li>One can only shoot their pistols or all other weapons.</li>
         </ul>
+
+        <p>
+          They are not a primary damage dealer, but are appropriate for good
+          melee units that chip their enemies before charging in. It's the most
+          common weapon keyword in WH40k.
+        </p>
 
         <h3 id="torrent">Torrent</h3>
 
-        <div className="badge">Hit roll</div>
+        <div className="flex-center">
+          <div className="badge">
+            <BsFillDice5Fill /> Hit roll
+          </div>
+
+          <div className="badge">
+            <IoIosSkipForward /> Skip roll
+          </div>
+        </div>
 
         <p>
-          Attacks with such gear automatically hit their target, effectively
-          skipping one of the 3 activation gates - the roll to hit. This is
-          frequently balanced with rolling a D6 for number of attacks, as is
-          visible with the Pyreblaster example. Torrent improves output
-          primarily against targets the given weapon already easily wounds.
+          <strong>Valid attacks from this weapon automatically hit</strong>,
+          skipping the{' '}
+          <Link href={wh40kHref('attackSequence', 'hit-roll')}>hit roll</Link>.
+          This is not only anti-horde, but with the core Overwatch stratagem
+          also works well against fast melee threats.
         </p>
 
         <Image
@@ -151,76 +187,35 @@ export default async function Page() {
           alt="Pyreblaster's fire arc with Torrent keyword"
         />
 
-        <h3 id="sustained-hits">Sustained Hits X</h3>
-
-        <div className="flex-center">
-          <div className="badge">Hit roll</div>
-
-          <div className="badge">
-            <PiDiceSix /> Critical effect
-          </div>
-        </div>
-
-        <p>A critical hit (roll of 6 to hit) generates X extra hits.</p>
-
-        <p>
-          Purely mathematically, BS 4+ with Sustained Hits 1 matches the
-          expected hit output of BS3+, without any other modifiers. With
-          additional re-rolls and crit bonuses, they can push even beyond BS3+.
-          Nonetheless, a better BS is always more consistent, while Sustained
-          Hits tend to occasionally spike.
-        </p>
-
-        <Image
-          src={sustainedHits}
-          alt="A Heavy bolter with Sustained Hits 1 scores a 6"
-        />
-
-        <p>
-          More hits are better against more targets. Again, like with Torrent,
-          Sustained Hits is better when you already have a good chance to wound
-          - wound on 4+ (equal strength to toughness) or better.
-        </p>
-
-        <p>
-          Pairs nicely with re-roll to hit abilities, allowing to <em>fish</em>{' '}
-          for crits.
-        </p>
-
-        <h3 id="lethal-hits">Lethal Hits</h3>
-
-        <div className="flex-center">
-          <div className="badge">Hit roll</div>
-
-          <div className="badge">
-            <PiDiceSix /> Critical effect
-          </div>
-        </div>
-
-        <p>
-          A critical hit (roll of 6 to hit) automatically wounds, bypassing
-          another activation gate. Compared to Sustained Hits this keyword is
-          better when wounding is more difficult - 5+ to wound or worse. Lethal
-          Hits help with hunting tougher targets.
-        </p>
-
-        <p>Again, pairs nicely with re-roll to hit abilities.</p>
-
         <h3 id="devastating-wounds">Devastating Wounds</h3>
 
         <div className="flex-center">
-          <div className="badge">Wound roll</div>
+          <div className="badge">
+            <BsFillDice5Fill /> Wound roll
+          </div>
 
           <div className="badge">
-            <PiDiceSix /> Critical effect
+            <GiInvertedDice6 /> Critical effect
+          </div>
+
+          <div className="badge">
+            <IoIosSkipForward /> Skip roll
           </div>
         </div>
 
         <p>
-          A critical wound (roll of 6 to wound) deals <em>mortal wounds</em>{' '}
-          equal to the weapon's Damage. Mortal wounds bypass all saving throws,
-          including invulnerable, giving better chances against targets with
-          good saves.
+          <strong>
+            A critical wound (roll of 6) deals <em>mortal wounds</em>
+          </strong>
+          , bypassing all saving throws, (including invulnerable). This is how
+          you crack elite armor on durable targets. Works really good with
+          re-roll access. Even better wtih Anti-KEYWORD X+.
+        </p>
+
+        <p className="example">
+          For example, a <strong>Combi-weapon</strong>{' '}
+          <span className="badge">ANTI-INFANTRY 4+ DEVASTATING WOUNDS</span>{' '}
+          makes every 4+ wound roll into infantry, guaranteed damage.
         </p>
 
         <Image
@@ -228,7 +223,60 @@ export default async function Page() {
           alt="Eliminator's special rule Mark the Target gives Devastating Wounds"
         />
 
-        <p>Works really well with re-roll to wound abilities.</p>
+        <h3 id="lethal-hits">Lethal Hits</h3>
+
+        <div className="flex-center">
+          <div className="badge">
+            <BsFillDice5Fill /> Hit roll
+          </div>
+
+          <div className="badge">
+            <GiInvertedDice6 /> Critical effect
+          </div>
+
+          <div className="badge">
+            <IoIosSkipForward /> Skip roll
+          </div>
+        </div>
+
+        <p>
+          <strong>A critical hit (roll of 6) automatically wounds.</strong> This
+          skips the hardest part of damaging more durable targes. Therefore,
+          Lethal Hits work better when you wound badly: usually 5+ or worse.
+          It's a rare keyword that pairs nicely with re-roll access.
+        </p>
+
+        <p>
+          Note, this does not count as a critical wound, so it doesn't trigger
+          Devastating Wounds.
+        </p>
+
+        <h3 id="sustained-hits">Sustained Hits X</h3>
+
+        <div className="flex-center">
+          <div className="badge">
+            <BsFillDice5Fill /> Hit roll
+          </div>
+
+          <div className="badge">
+            <GiInvertedDice6 /> Critical effect
+          </div>
+
+          <div className="badge">+ Hits</div>
+        </div>
+
+        <p>
+          <strong>A critical hit (roll of 6) generates X extra hits.</strong>{' '}
+          While Lethal Hits skip the hit gate, Sustained Hits don't. So
+          Sustained Hits work better when you already wound well: usually 4+ or
+          better. A much more common keyword than Lethal Hits, that also pairs
+          nicely with re-roll access.
+        </p>
+
+        <Image
+          src={sustainedHits}
+          alt="A Heavy bolter with Sustained Hits 1 scores a 6"
+        />
 
         <h3 id="anti-keyword">Anti-KEYWORD X+</h3>
 
@@ -236,7 +284,7 @@ export default async function Page() {
           <div className="badge">Wound roll</div>
 
           <div className="badge">
-            <PiDiceSix /> Critical effect
+            <GiInvertedDice6 /> Critical effect
           </div>
         </div>
 
@@ -265,13 +313,21 @@ export default async function Page() {
 
         <h3 id="blast">Blast</h3>
 
-        <div className="badge">Target interaction</div>
+        <div className="flex-center">
+          <div className="badge">Target interaction</div>
+
+          <div className="badge">+ Attacks</div>
+        </div>
 
         <p>
-          Blast weapons gain +1 attack for every 5 models in the target unit,
-          provided <em>no friendly units are within engagement range</em> of the
-          target. This is clearly an anti-horde ability. Be mindful of limiting
-          allies with blast weapons by charging into hordes.
+          <strong>
+            The weapon gains +1 attack for every 5 models in the target unit
+          </strong>
+          . This means +1 attack against a 5-man squad, and +4 attacks against a
+          20-man squad. Consequently, Blast weapons are anti-horde tools. They
+          cannot be fired if <em>friendly units are within engagement range</em>{' '}
+          of the target, however. Be mindful of this when charging your own
+          units into the enemy.
         </p>
 
         <h3 id="precision">Precision</h3>
