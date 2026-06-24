@@ -11,6 +11,7 @@ import knockdown from '@/app/assets/mk/knockdown.webp'
 import stand from '@/app/assets/mk/stand.webp'
 import standBlock from '@/app/assets/mk/standblock.webp'
 import { mkHref, mkMetadata, mkPage } from '@/app/siteMap'
+import { ImageList } from '@/app/ui/ImageList'
 
 const page = mkPage('movement')
 
@@ -31,37 +32,22 @@ export default async function Page() {
           from the opponent.
         </p>
 
-        <div className="flex-list font-bold justify-center">
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>Forward</div>
-            <Image src={forward} alt="Character stepping forward." />
-          </div>
-
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>Backward</div>
-            <Image src={backward} alt="Character stepping backward." />
-          </div>
-
-          <div className="flex-list font-bold">
-            <div className="flex-center flex-col w-full md:w-auto">
-              <div>Forward</div>
-              <Image
-                src={forward}
-                alt="Character stepping forward."
-                className="transform-[scale(-1,1)]"
-              />
-            </div>
-
-            <div className="flex-center flex-col w-full md:w-auto">
-              <div>Backward</div>
-              <Image
-                src={backward}
-                alt="Character stepping backward."
-                className="transform-[scale(-1,1)]"
-              />
-            </div>
-          </div>
-        </div>
+        <ImageList
+          items={[
+            { title: 'Forward', image: forward },
+            { title: 'Backward', image: backward },
+            {
+              title: 'Forward',
+              image: forward,
+              imageClassName: 'transform-[scale(-1,1)]',
+            },
+            {
+              title: 'Backward',
+              image: backward,
+              imageClassName: 'transform-[scale(-1,1)]',
+            },
+          ]}
+        />
 
         <p>
           In-game move lists auto-adjust, but external guides do not. For
@@ -91,34 +77,13 @@ export default async function Page() {
       <section>
         <h2 id="stances">Stances (Vertical)</h2>
 
-        <div className="flex-list font-bold justify-center">
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>Standing</div>
-            <div className="md:h-46 flex items-end">
-              <Image
-                src={stand}
-                alt="Characters standing in a neutral stance."
-              />
-            </div>
-          </div>
-
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>Crouching</div>
-            <div className="md:h-46 flex items-end">
-              <Image
-                src={crouch}
-                alt="One character standing, one crouching low."
-              />
-            </div>
-          </div>
-
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>Jumping</div>
-            <div className="md:h-46 flex items-end">
-              <Image src={jump} alt="Character jumping upward." />
-            </div>
-          </div>
-        </div>
+        <ImageList
+          items={[
+            { title: 'Standing', image: stand },
+            { title: 'Crouching', image: crouch },
+            { title: 'Jumping', image: jump },
+          ]}
+        />
 
         <h3 id="standing">Standing</h3>
 
@@ -144,7 +109,7 @@ export default async function Page() {
           <Link href={mkHref('anatomyOfAttacks', 'high')}>high attacks</Link>{' '}
           miss, but <strong>prevents movement</strong>. Blocking and attacking
           work as expected. Crouching attacks are described with D for Down in
-          front (e.g., <strong>D2</strong>,<strong>D4</strong>).
+          front (e.g., <strong>D2</strong>, <strong>D4</strong>).
         </p>
 
         <h3 id="jumping">Jumping</h3>
@@ -175,25 +140,13 @@ export default async function Page() {
       <section>
         <h2 id="states">States</h2>
 
-        <div className="flex-list font-bold justify-center">
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>High block</div>
-            <Image src={standBlock} alt="Character blocking high." />
-          </div>
-
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>Low block</div>
-            <Image src={crouchBlock} alt="Character blocking low." />
-          </div>
-
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>Knockdown</div>
-            <Image
-              src={knockdown}
-              alt="Character knocked down on the ground."
-            />
-          </div>
-        </div>
+        <ImageList
+          items={[
+            { title: 'High block', image: standBlock },
+            { title: 'Low block', image: crouchBlock },
+            { title: 'Knockdown', image: knockdown },
+          ]}
+        />
 
         <h3 id="blocking">Blocking</h3>
 

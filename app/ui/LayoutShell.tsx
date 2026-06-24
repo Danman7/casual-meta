@@ -42,7 +42,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
         />
 
         <div className="reading-shell">
-          <aside className="hidden min-w-0 lg:block">
+          <aside className="hidden w-64 min-w-0 justify-self-start lg:block 2xl:w-68">
             <SideNavigation />
           </aside>
 
@@ -51,7 +51,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
             <AutoPageNav />
           </main>
 
-          <aside className="hidden min-w-0 xl:block">
+          <aside className="hidden w-56 min-w-0 justify-self-end xl:block 2xl:w-60">
             <TableOfContents />
           </aside>
         </div>

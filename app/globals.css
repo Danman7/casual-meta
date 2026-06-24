@@ -83,7 +83,7 @@
 }
 
 @utility reading-shell {
-  @apply mx-auto grid w-full max-w-[92rem] grow gap-x-8 gap-y-8 px-4 py-8 sm:px-6 lg:grid-cols-[16rem_minmax(0,68ch)] lg:px-8 xl:grid-cols-[16rem_minmax(0,68ch)_14rem] 2xl:grid-cols-[17rem_minmax(0,70ch)_15rem];
+  @apply grid w-full grow gap-x-8 gap-y-8 px-4 py-8 sm:px-6 lg:grid-cols-[16rem_minmax(0,68ch)] lg:px-8 xl:grid-cols-[minmax(16rem,1fr)_minmax(0,68ch)_minmax(14rem,1fr)] 2xl:grid-cols-[minmax(17rem,1fr)_minmax(0,70ch)_minmax(15rem,1fr)];
 }
 
 @utility reading-main {

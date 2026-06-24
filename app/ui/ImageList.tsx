@@ -5,6 +5,7 @@ type ImageListItem = {
   title: ReactNode
   image: StaticImageData
   alt?: string
+  imageClassName?: string
 }
 
 export function ImageList({ items }: { items: readonly ImageListItem[] }) {
@@ -16,6 +17,7 @@ export function ImageList({ items }: { items: readonly ImageListItem[] }) {
           <div className="md:h-46 flex items-end">
             <Image
               src={item.image}
+              className={item.imageClassName}
               alt={
                 item.alt ?? (typeof item.title === 'string' ? item.title : '')
               }
