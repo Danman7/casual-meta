@@ -18,31 +18,30 @@ export default async function Page() {
 
       <section>
         <p>
-          With so many <Link href={wh40kHref('datasheets')}>datasheets</Link>{' '}
-          available, each with several loadouts, there are thousands of possible
-          interactions between a weapon and a target. To make discussions around
-          list choices and balance easier, the community uses standardized
-          profiles.
+          There are hundreds of{' '}
+          <Link href={wh40kHref('datasheets')}>datasheets</Link> in WH40k, each
+          with several loadouts. The community uses standardized profiles to
+          simplify discussions around the thousands of possible interactions
+          between a weapon and a target,
         </p>
       </section>
 
       <section>
         <h2 id="target-profiles">Target Profiles</h2>
+
         <p>
-          We know that when{' '}
-          <Link href={wh40kHref('attackSequence')}>making attacks</Link>, the
-          key target attribute is its durability, formed by its{' '}
+          There are{' '}
           <strong>
+            common{' '}
             <Link href={wh40kHref('datasheets', 'toughness')}>Toughness</Link>,{' '}
             <Link href={wh40kHref('datasheets', 'save')}>Save</Link> and{' '}
-            <Link href={wh40kHref('datasheets', 'wounds')}>Wounds</Link>
-          </strong>
-          {'. '}
-          There are <strong>very common combinations of these</strong> across
-          all factions that many units either fit (<em>strong examples</em>) or
-          come close to (<em>loose examples</em>). This is especially true for
-          infantry.
+            <Link href={wh40kHref('datasheets', 'wounds')}>Wounds</Link>{' '}
+            attributes
+          </strong>{' '}
+          . Many units across all factions either fit (<em>strong examples</em>)
+          or come close to these (<em>loose examples</em>).
         </p>
+
         <h3 id="meq">MEQ (Marine Equivalent)</h3>
         <Image
           src={intercessors}
@@ -50,39 +49,35 @@ export default async function Page() {
           className="picture profile-img object-[0%_70%]"
           loading="eager"
         />
+
         <p className="lead text-center">Toughness 4 | Save 3+ | Wounds 2</p>
+
         <p>
-          MEQ, or Marines, refers to infantry with the resilience of a{' '}
-          <strong>regular Space Marine</strong>. Consider it the{' '}
-          <strong>baseline infantry</strong> statline: not heavy, not light.
-          It's the profile with the most strong examples compared to loose
-          examples.
+          MEQ, or Marines, are units with the resilience of a{' '}
+          <strong>regular Space Marine</strong>. It's the{' '}
+          <strong>baseline infantry</strong> profile - an archetype with lots of
+          strong examples.
         </p>
+
         <p className="example">
-          For example, most of the Space Marine and Chaos Space Marine infantry
-          lines are pure MEQ. So are Tau Stealth Battlesuits, Aeldari Shining
-          Spears, and some Adeptus Mechanicus units, though they also have
-          invulnerable saves. Loose examples can be Ork Nobz (MEQ with better
-          T5), Tyranid Barbgaunts (MEQ with worse Sv4+), and Necron Immortals
-          (MEQ with worse W1).
+          For example, the Space Marine Intercessors are pure MEQ. So are Tau
+          Stealth Battlesuits and Aeldari Shining Spears. Ork Nobz are MEQ with
+          better T5, while Tyranid Barbgaunts are MEQ with worse Sv4+.
         </p>
 
         <p>
-          MEQ matters, because it being so common, makes{' '}
+          Because it's so common, MEQ makes{' '}
           <strong>
-            D2 a benchmark for{' '}
-            <Link href={wh40kHref('datasheets', 'damage')}>Damage</Link>
+            <Link href={wh40kHref('datasheets', 'damage')}>Damage</Link> 2
+            weapons a benchmark
           </strong>
-          {'. '}
-          D1 is inefficient (needs two failed saves), while D3+ is wasteful. So,
-          to kill Marines, you want D2, a little bit of AP, and volume.
+          . D1 needs two failed saves to dispatch Marines, while D3+ is
+          wasteful.
         </p>
 
         <p className="example">
-          For example, the <strong>Heavy Bolter</strong> (S5, AP-1, D2) is a
-          principal anti-MEQ weapon: it wounds on 3+ (66%) and degrades the save
-          to 4+ (50%). A Lascannon is too much overkill and not enough attacks.
-          Bolters and Lasguns have a difficult time dispatching MEQ.
+          For example, the <strong>Heavy Bolter</strong> (S5 AP-1 D2) is the
+          principal anti-MEQ weapon: wounds on 3+ and degrades the save to 4+.
         </p>
 
         <h3 id="teq">TEQ (Terminator Equivalent)</h3>
@@ -92,42 +87,44 @@ export default async function Page() {
           alt="A squad of Space Marine Terminators."
           className="picture profile-img object-[0%_57%]"
         />
+
         <p className="lead text-center">
           Toughness 5 | Save 2+ / 4++ | Wounds 3
         </p>
 
         <p>
-          TEQ, or Terminators, represent <strong>heavy elite infantry</strong>{' '}
-          that come with ideal armor and often invulnerable saves. Here, strong
-          examples are much fewer than loose examples.
+          TEQ, or Terminators, represent <strong>heavy infantry</strong>. They
+          come with higher{' '}
+          <Link href={wh40kHref('datasheets', 'toughness')}>Toughness</Link> and
+          more <Link href={wh40kHref('datasheets', 'wounds')}>Wounds</Link>, but
+          most importantly superb{' '}
+          <Link href={wh40kHref('datasheets', 'save')}>Saves</Link>. Strong TEQ
+          examples are less than looser ones.
         </p>
 
         <p className="example">
-          For example, pure TEQ is mostly anything that wears the Terminator
-          armor: Deathwing Terminator Squad, Chaos Terminator Squad, Relic
-          Terminator Squad, etc. Loose examples can be Ork Meganobz and Marine
-          Gravis profiles (better T, no Inv), Aeldari Wraithguard (even better
-          T), and Bladeguard Veterans (TEQ with worse T and Sv).
+          For example, the Chaos Terminator Squad is pure TEQ. Ork Meganobz and
+          Space Marine units with Gravis armor are heavy infantry with better
+          Toughness but no Invulnerable Save.
         </p>
 
         <p>
-          TEQ matters because it shows <strong>the limitations of AP</strong>.
-          The Sv2+ can only be reduced to 4+ because of the Inv. Hence, only
-          AP-1 and AP-2 do anything. Good weapons have more Strength, with just
-          a bit of AP. D3 is perfect, but may be rare. This is called{' '}
-          <strong>vertical reach</strong>, or being able to hurt durable
-          targets.
+          TEQ shows <strong>the limitations of AP</strong>. Because of the
+          Invulnerable, the 2+ Save can only be reduced to 4+. Hence, only AP-1
+          and AP-2 do anything. Terminators demand apt attention: weapons with
+          high <Link href={wh40kHref('datasheets', 'strength')}>Strength</Link>,
+          Damage and possibly critical-related keywords, especially{' '}
+          <Link href={wh40kHref('keywords', 'devastating-wounds')}>
+            Devastating Wounds
+          </Link>
+          .
         </p>
 
         <p className="example">
-          For example, <strong>Autocannons</strong> (often S7–9, AP-1/-2, D2/3)
-          have good volume. <strong>Supercharged Plasma</strong> weapons have
-          high S but may have lower D. The same goes for{' '}
-          <strong>Thunder Hammers</strong> and <strong>Power Fists</strong> in
-          melee. The <strong>Combi-weapon</strong>{' '}
-          <span className="badge">ANTI-INFANTRY 4+ DEVASTATING WOUNDS</span>{' '}
-          makes every 4+ wound roll into infantry, guaranteed damage, but it
-          deals only D1.
+          For example, the <strong>Autocannon</strong> (A2 S9 AP-1 D3) wounds on
+          3+ and degrades the Save to 3+. The <strong>Combi-weapon</strong>{' '}
+          (Anti-Infantry 4+ Devastating Wounds) turns every 4+ wound roll into
+          guaranteed damage.
         </p>
 
         <h3 id="geq">GEQ (Guard Equivalent)</h3>
