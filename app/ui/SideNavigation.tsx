@@ -9,23 +9,27 @@ export const SideNavigation: React.FC<{ isMobile?: boolean }> = ({
   isMobile,
 }) => {
   const sectionNav = useSectionNav()
+  const rootItems = isMobile
+    ? rootNavigationItems.filter((item) => item.href !== sectionNav?.rootUrl)
+    : rootNavigationItems
 
   return (
     <nav
-      className={`edge-padding blurred-surface divide-y divide-foreground/10 ${
+      className={`book-sidebar ${
         isMobile
-          ? 'h-dvh overflow-y-auto pt-20'
-          : 'sticky-aside max-h-[calc(100dvh-6rem)] w-72 overflow-y-auto'
+          ? 'edge-padding blurred-surface h-dvh w-80 max-w-[85vw] overflow-y-auto pt-20'
+          : 'sticky-aside max-h-[calc(100dvh-6rem)] w-full overflow-y-auto pr-3'
       }`}
     >
-      <div className="lg:hidden font-bold pb-4 mb-4 space-y-2">
-        {rootNavigationItems.map((item) => (
-          <Anchor key={item.href} href={item.href}>
-            {' '}
-            {item.name}
-          </Anchor>
-        ))}
-      </div>
+      {rootItems.length > 0 && (
+        <div className="mb-6 space-y-2 border-b border-foreground/10 pb-5 font-bold lg:hidden">
+          {rootItems.map((item) => (
+            <Anchor key={item.href} href={item.href}>
+              {item.name}
+            </Anchor>
+          ))}
+        </div>
+      )}
 
       {sectionNav ? (
         <SectionNav

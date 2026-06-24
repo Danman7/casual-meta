@@ -22,7 +22,7 @@ export default async function Page() {
           <Link href={wh40kHref('datasheets')}>datasheets</Link> in WH40k, each
           with several loadouts. The community uses standardized profiles to
           simplify discussions around the thousands of possible interactions
-          between a weapon and a target,
+          between a weapon and a target.
         </p>
       </section>
 

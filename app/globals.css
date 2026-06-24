@@ -1,15 +1,21 @@
 @import 'tailwindcss';
 
 :root {
-  --background: hsl(10, 10%, 98%);
-  --foreground: hsl(10, 20%, 20%);
-  --primary: hsl(10, 80%, 50%);
+  --background: hsl(34, 22%, 97%);
+  --foreground: hsl(24, 18%, 17%);
+  --primary: hsl(352, 68%, 42%);
+  --font-reading:
+    Charter, 'Bitstream Charter', 'Sitka Text', Cambria, Georgia, serif;
+  --font-ui:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: hsl(10, 20%, 6%);
-    --foreground: hsl(10, 10%, 98%);
+    --background: hsl(24, 17%, 8%);
+    --foreground: hsl(34, 20%, 93%);
+    --primary: hsl(352, 70%, 62%);
   }
 }
 
@@ -17,6 +23,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --font-sans: var(--font-ui);
+  --font-serif: var(--font-reading);
 
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out both;
 
@@ -74,6 +82,53 @@
   @apply sticky top-24 max-h-screen overflow-y-auto;
 }
 
+@utility reading-shell {
+  @apply mx-auto grid w-full max-w-[92rem] grow gap-x-8 gap-y-8 px-4 py-8 sm:px-6 lg:grid-cols-[16rem_minmax(0,68ch)] lg:px-8 xl:grid-cols-[16rem_minmax(0,68ch)_14rem] 2xl:grid-cols-[17rem_minmax(0,70ch)_15rem];
+}
+
+@utility reading-main {
+  @apply min-w-0 w-full;
+  font-family: var(--font-reading);
+  font-size: 1.125rem;
+  line-height: 1.78;
+  letter-spacing: 0;
+}
+
+@utility book-sidebar {
+  @apply text-sm leading-snug;
+  font-family: var(--font-ui);
+  letter-spacing: 0;
+}
+
+@utility chapter-root {
+  @apply block rounded-sm border-b border-foreground/15 pb-3 text-sm font-semibold text-foreground no-underline hover:text-primary;
+}
+
+@utility chapter-root-active {
+  @apply text-primary;
+}
+
+@utility chapter-link {
+  @apply grid grid-cols-[2.25rem_minmax(0,1fr)] items-baseline gap-2 rounded-sm px-2 py-1.5 text-sm text-foreground/70 no-underline transition-colors hover:bg-foreground/5 hover:text-primary;
+}
+
+@utility chapter-link-active {
+  @apply bg-primary/10 text-primary;
+}
+
+@utility chapter-number {
+  @apply text-xs text-foreground/40;
+  font-variant-numeric: tabular-nums;
+}
+
+@utility toc-link {
+  @apply block border-l border-foreground/15 py-1.5 pl-3 text-sm leading-snug text-foreground/60 no-underline transition-colors hover:border-primary hover:text-primary;
+}
+
+@utility toc-link-active {
+  @apply border-primary bg-primary/5 text-primary;
+}
+
 @utility sub-nav-item {
   @apply pl-4 border-l-2 border-foreground/10;
 }
@@ -88,10 +143,17 @@
 
 @utility lead {
   @apply font-bold uppercase;
+  font-family: var(--font-ui);
+  letter-spacing: 0.03em;
 }
 
 @utility badge {
-  @apply px-1.5 py-0.5 rounded text-sm border border-foreground/30 inline-flex gap-1 items-center shadow-sm;
+  @apply px-1.5 py-0.5 rounded text-sm border border-foreground/20 inline shadow-xs;
+  font-family: var(--font-ui);
+
+  > svg {
+    @apply inline align-text-bottom;
+  }
 }
 
 @utility input {
@@ -100,10 +162,11 @@
 
 @utility paper {
   @apply relative overflow-hidden rounded shadow-sm dark:border dark:border-foreground/20 gap-2 p-3 space-y-2;
+  font-family: var(--font-ui);
 }
 
 @utility example {
-  @apply text-sm italic text-foreground/80;
+  @apply text-[1rem] italic text-foreground/75;
 }
 
 @utility button {
@@ -111,8 +174,13 @@
 }
 
 @layer base {
+  body {
+    font-family: var(--font-ui);
+    letter-spacing: 0;
+  }
+
   section {
-    @apply space-y-4 mt-9;
+    @apply space-y-5 mt-10;
   }
 
   a {
@@ -123,18 +191,20 @@
   h2,
   h3 {
     @apply text-left;
+    font-family: var(--font-reading);
+    letter-spacing: 0;
   }
 
   h1 {
-    @apply text-4xl font-semibold leading-tight mb-6 text-shadow-sm;
+    @apply text-5xl font-semibold leading-tight mb-8 text-shadow-sm;
   }
 
   h2 {
-    @apply text-2xl font-semibold leading-snug mb-4 mt-8;
+    @apply text-3xl font-semibold leading-snug mb-5 mt-12;
   }
 
   h3 {
-    @apply text-xl font-semibold leading-snug mb-3 mt-6;
+    @apply text-2xl font-semibold leading-snug mb-4 mt-8;
   }
 
   h2[id],
@@ -147,17 +217,23 @@
   }
 
   main {
+    text-wrap: pretty;
+
     img {
-      @apply my-5;
+      @apply my-6 h-auto max-w-full rounded-sm;
     }
 
     a {
       @apply inline-flex underline;
     }
 
+    p {
+      @apply my-5;
+    }
+
     ul,
     ol {
-      @apply pl-5 space-y-1;
+      @apply pl-5 space-y-2;
     }
 
     ul {
@@ -169,7 +245,14 @@
     }
 
     li {
-      @apply leading-relaxed;
+      @apply leading-[1.75];
+    }
+
+    table,
+    nav {
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      line-height: 1.5;
     }
   }
 
