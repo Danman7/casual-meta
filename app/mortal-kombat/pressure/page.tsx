@@ -151,8 +151,8 @@ export default async function Page() {
 
         <p>
           Every character has access to a quick, low-risk{' '}
-          <span className="badge">Down 1</span> attack. It is very fast and
-          difficult to counter with a fast high punch. This infamous move can:
+          <strong>Down 1</strong> attack. It is very fast and difficult to
+          counter with a fast high punch. This infamous move can:
         </p>
 
         <ul>

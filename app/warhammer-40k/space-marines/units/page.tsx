@@ -1,15 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaCrosshairs, FaInfo } from 'react-icons/fa'
-import { FaShield } from 'react-icons/fa6'
-import { IoIosMan } from 'react-icons/io'
 
 import assaultIntercessors from '@/app/assets/wh40k/AssaultIntercessors.webp'
 import eliminators from '@/app/assets/wh40k/eliminators.webp'
 import heavyIntercessors from '@/app/assets/wh40k/heavyintercessors.webp'
 import intercessors from '@/app/assets/wh40k/interfcessors.webp'
 import { wh40kHref, wh40kMetadata, wh40kPage } from '@/app/siteMap'
-import { Paper } from '@/app/ui/Paper'
 
 const page = wh40kPage('coreSpaceMarineUnits')
 
@@ -26,16 +22,11 @@ export default async function Page() {
           Marine units, available to all detachments.
         </p>
 
-        <Paper icon={FaInfo}>
-          <p>
-            Having the datasheets is not essential, but recommended. If you are
-            unfamiliar with profile abbreviations, check out{' '}
-            <Link href={wh40kHref('profileArchetypes')}>
-              Profile Archetypes
-            </Link>
-            .
-          </p>
-        </Paper>
+        <p>
+          Having the datasheets is not essential, but recommended. If you are
+          unfamiliar with profile abbreviations, check out{' '}
+          <Link href={wh40kHref('profileArchetypes')}>Profile Archetypes</Link>.
+        </p>
       </section>
 
       <section>
@@ -54,17 +45,15 @@ export default async function Page() {
           className="picture profile-img object-[0%_70%]"
         />
 
-        <div className="paper">
-          <p>
-            <strong>Objective Secured:</strong> If the squad holds an objective,
-            it remains yours even after it moves away.
-          </p>
+        <p>
+          <strong>Objective Secured:</strong> If the squad holds an objective,
+          it remains yours even after it moves away.
+        </p>
 
-          <p>
-            <strong>Target Elimination:</strong> Bolt Rifles get +2 attacks if
-            the whole squad shoots at a single target.
-          </p>
-        </div>
+        <p>
+          <strong>Target Elimination:</strong> Bolt Rifles get +2 attacks if the
+          whole squad shoots at a single target.
+        </p>
 
         <p>
           Intercessors are the backbone of the Space Marines. They are a{' '}
@@ -83,17 +72,17 @@ export default async function Page() {
 
         <p>
           The versatile <em>Bolt Rifle</em>{' '}
-          <small>(Assault, Heavy, 24", A2, S4, AP-1, D1)</small> deals quickly
-          with light infantry, and is viable against MEQ when the double-shot
-          rule activates. Naturally, this promotes 5-man squads over 10-man as
-          they can focus fire different targets with less risk of overkill.
+          <small>(Assault Heavy 24" A2 S4 AP-1 D1)</small> deals quickly with
+          light infantry, and is viable against MEQ when the double-shot rule
+          activates. Naturally, this promotes 5-man squads over 10-man as they
+          can focus fire different targets with less risk of overkill.
         </p>
 
         <p>
           One-in-five rifles can attach a grenade launcher, which more often
           helps than not (frag grenades against hordes, krak against high
           toughness). So does equipping the sergeant with a Power fist{' '}
-          <small>(Melee, S8, AP-2, D2)</small>.
+          <small>(Melee S8 AP-2 D2)</small>.
         </p>
 
         <p>
@@ -120,13 +109,11 @@ export default async function Page() {
           className="picture profile-img object-[0%_75%]"
         />
 
-        <div className="paper">
-          <p>
-            <strong>Shock Assault:</strong> Re-roll melee wound rolls of 1
-            anywhere. Re-roll all melee wound rolls when on an objective.{' '}
-            <em>This applies to any character attached to the squad.</em>
-          </p>
-        </div>
+        <p>
+          <strong>Shock Assault:</strong> Re-roll melee wound rolls of 1
+          anywhere. Re-roll all melee wound rolls when on an objective.{' '}
+          <em>This applies to any character attached to the squad.</em>
+        </p>
 
         <p>
           Adding "assault" in front of the name signifies a focus on
@@ -148,7 +135,7 @@ export default async function Page() {
         <p>
           Assault Intercessors have two good fits. First, at 15 points per
           model, 4 attacks (unmodified) per Astartes chainsword{' '}
-          <small>(S4, AP-1, D1)</small>, and the Shock Assault ability, they are
+          <small>(S4 AP-1 D1)</small>, and the Shock Assault ability, they are
           good at trades against light infantry on top of objectives.
         </p>
 
@@ -185,42 +172,16 @@ export default async function Page() {
 
         <h3 id="heavy-intercessors">Heavy Intercessors</h3>
 
-        <div className="relative">
-          <div className="absolute top-2 left-2 right-2 flex-center">
-            <div className="badge">
-              <FaShield /> Durable
-            </div>
+        <Image
+          src={heavyIntercessors}
+          alt="A squad of Heavy Intercessors."
+          className="picture profile-img object-[0%_56%]"
+        />
 
-            <div className="badge">
-              <FaCrosshairs /> Ranged
-            </div>
-
-            <div className="badge">
-              <IoIosMan /> Infantry
-            </div>
-          </div>
-
-          <div className="badge absolute bottom-2 left-2">
-            <strong>Gravis</strong> (M5, T6, Sv3+, W3)
-          </div>
-
-          <div className="badge absolute bottom-2 right-2">
-            <strong>Cost:</strong> 100/5; 200/10
-          </div>
-
-          <Image
-            src={heavyIntercessors}
-            alt="A squad of Heavy Intercessors."
-            className="picture profile-img object-[0%_56%]"
-          />
-        </div>
-
-        <div className="paper">
-          <p>
-            <strong>Unyielding in the Face of the Foe:</strong> +1 to Save
-            against D1 attacks while on an objective.
-          </p>
-        </div>
+        <p>
+          <strong>Unyielding in the Face of the Foe:</strong> +1 to Save against
+          D1 attacks while on an objective.
+        </p>
 
         <p>
           Heavy Intercessors are the cheapest <em>anchors</em> available to the
@@ -233,7 +194,7 @@ export default async function Page() {
 
         <p>
           They come with <em>Heavy bolt rifles</em>{' '}
-          <small>(A2, S5, AP-1, D2)</small>, and one-in-five marines can (and
+          <small>(A2 S5 AP-1 D2)</small>, and one-in-five marines can (and
           should) field a <em>Heavy bolter</em>{' '}
           <small>(same profile +1 attacks and +1 hits on a crit)</small>. Both
           weapons hit on 2+ if stationary (Heavy keyword) and are effective into
@@ -273,22 +234,20 @@ export default async function Page() {
           className="picture profile-img object-[0%_33%]"
         />
 
-        <div className="paper">
-          <p>
-            <strong>Mark the Target:</strong> Get{' '}
-            <Link href={wh40kHref('keywords', 'devastating-wounds')}>
-              devastating wounds
-            </Link>{' '}
-            when shooting, if the squad remained stationary during the movement
-            phase this turn.
-          </p>
+        <p>
+          <strong>Mark the Target:</strong> Get{' '}
+          <Link href={wh40kHref('keywords', 'devastating-wounds')}>
+            devastating wounds
+          </Link>{' '}
+          when shooting, if the squad remained stationary during the movement
+          phase this turn.
+        </p>
 
-          <p>
-            <strong>Reposition Under Covering Fire:</strong> Get an additional,
-            optional, normal move after shooting, if the sergeant is alive and
-            has an Instigator Bolt Carbine.
-          </p>
-        </div>
+        <p>
+          <strong>Reposition Under Covering Fire:</strong> Get an additional,
+          optional, normal move after shooting, if the sergeant is alive and has
+          an Instigator Bolt Carbine.
+        </p>
 
         <p>
           Eliminators are a stealthy micro-squad that carries an array of
@@ -306,9 +265,9 @@ export default async function Page() {
         </p>
 
         <p>
-          <em>Las Fusils</em> <small>(S9, AP-3, Dd6)</small> are the consistent
+          <em>Las Fusils</em> <small>(S9 AP-3 Dd6)</small> are the consistent
           choice against elite infantry and light vehicles, winning through raw
-          power. <em>Bolt Sniper Rifles</em> <small>(S5, AP-2, D3)</small> lack
+          power. <em>Bolt Sniper Rifles</em> <small>(S5 AP-2 D3)</small> lack
           the strength and penetration of fusils, but have{' '}
           <Link href={wh40kHref('keywords', 'precision')}>Precision</Link>,
           making them natural, albeit situational, character hunters. If the

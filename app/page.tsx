@@ -46,18 +46,16 @@ export default function Page() {
           </div>
         </div>
 
-        <div
-          className="paper p-4 animate-fade-in-scale"
+        <p
+          className="animate-fade-in-scale text-xl"
           style={{ animationDelay: '1.2s' }}
         >
-          <div className="text-xl">
-            <sup className="text-xs">
-              <FaAsterisk className="inline text-primary mr-2" />
-            </sup>
-            Games can be <em>fun</em>. They can be <em>hard</em>. They can be{' '}
-            <strong>both</strong> as well.
-          </div>
-        </div>
+          <sup className="text-xs">
+            <FaAsterisk className="inline text-primary mr-2" />
+          </sup>
+          Games can be <em>fun</em>. They can be <em>hard</em>. They can be{' '}
+          <strong>both</strong> as well.
+        </p>
       </section>
     </main>
   )

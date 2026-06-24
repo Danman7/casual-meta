@@ -26,7 +26,7 @@ import trade2 from '@/app/assets/mk/trade2.webp'
 import liMeiAdvancedView from '@/app/assets/mk1/advanced_view.webp'
 import raidenMoveList from '@/app/assets/mk1/raiden_movelist.webp'
 import { mkHref, mkMetadata, mkPage, mkSection } from '@/app/siteMap'
-import { Diagram } from '@/app/ui/Diagram'
+import { ImageList } from '@/app/ui/ImageList'
 
 const page = mkPage('anatomyOfAttacks')
 
@@ -83,58 +83,25 @@ export default async function Page() {
           advantage to the defender.
         </p>
 
-        <div className="flex-list font-bold justify-center">
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>Hit</div>
-            <div className="md:h-46 flex items-end">
-              <Image
-                src={standingHit}
-                alt="A high punch hitting a standing opponent."
-              />
-            </div>
-          </div>
-
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>Block</div>
-            <div className="md:h-46 flex items-end">
-              <Image src={blockHigh} alt="A high punch being blocked." />
-            </div>
-          </div>
-
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>Miss</div>
-            <div className="md:h-46 flex items-end">
-              <Image
-                src={duckUnderHigh}
-                alt="A high punch being ducked under."
-              />
-            </div>
-          </div>
-        </div>
+        <ImageList
+          items={[
+            { title: 'Hit', image: standingHit },
+            { title: 'Block', image: blockHigh },
+            { title: 'Miss', image: duckUnderHigh },
+          ]}
+        />
 
         <p>
           Players can also hit each other at the same time. This is called a{' '}
           <em>trade</em>.
         </p>
 
-        <div className="flex-list font-bold justify-center">
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>Punching at the same time</div>
-            <div className="md:h-46 flex items-end">
-              <Image
-                src={trade1}
-                alt="A high punch hitting a standing opponent."
-              />
-            </div>
-          </div>
-
-          <div className="flex-center flex-col w-full md:w-auto">
-            <div>...results in a trade</div>
-            <div className="md:h-46 flex items-end">
-              <Image src={trade2} alt="A high punch being ducked under." />
-            </div>
-          </div>
-        </div>
+        <ImageList
+          items={[
+            { title: 'Punching at the same time', image: trade1 },
+            { title: '...results in a trade', image: trade2 },
+          ]}
+        />
       </section>
 
       <section>
@@ -161,33 +128,19 @@ export default async function Page() {
           <li>Miss a crouching defender if they are not blocking.</li>
         </ul>
 
-        <Diagram
-          description="High attacks are fairly common. They are usually performed standing,
-          offering the best mobility for the attacker."
-        >
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Hit</div>
-            <Image
-              src={standingHit}
-              alt="A high punch hitting a standing opponent."
-            />
-          </div>
+        <p className="example">
+          High attacks are fairly common. They are usually performed standing,
+          offering the best mobility for the attacker.
+        </p>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Block</div>
-            <Image src={blockHigh} alt="A high punch being blocked." />
-          </div>
-
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Block</div>
-            <Image src={blockHighLow} alt="A high kick being low blocked." />
-          </div>
-
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Miss</div>
-            <Image src={duckUnderHigh} alt="A high punch being ducked under." />
-          </div>
-        </Diagram>
+        <ImageList
+          items={[
+            { title: 'Hit', image: standingHit },
+            { title: 'Block', image: blockHigh },
+            { title: 'Block', image: blockHighLow },
+            { title: 'Miss', image: duckUnderHigh },
+          ]}
+        />
 
         <h3 id="mid">Mid</h3>
         <ul>
@@ -198,28 +151,18 @@ export default async function Page() {
           </li>
         </ul>
 
-        <Diagram description="Mids are also very common and also mostly performed standing. They make ducking under a high attack risky.">
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Hit</div>
-            <Image
-              src={midHitStanding}
-              alt="A mid kick hitting a standing opponent."
-            />
-          </div>
+        <p className="example">
+          Mids are also very common and also mostly performed standing. They
+          make ducking under a high attack risky.
+        </p>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Hit</div>
-            <Image
-              src={midHitLow}
-              alt="A mid kick hitting a crouching opponent."
-            />
-          </div>
-
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Block</div>
-            <Image src={midBlockLow} alt="A mid kick being low blocked." />
-          </div>
-        </Diagram>
+        <ImageList
+          items={[
+            { title: 'Hit', image: midHitStanding },
+            { title: 'Hit', image: midHitLow },
+            { title: 'Block', image: midBlockLow },
+          ]}
+        />
 
         <h3 id="low">Low</h3>
         <ul>
@@ -228,20 +171,18 @@ export default async function Page() {
           <li>Often knock down the opponent.</li>
         </ul>
 
-        <Diagram description="Most low attacks are performed while crouching. Low attacks are less common. Standing lows - even more so. Still, every character has at least a few crouching low attacks.">
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Hit</div>
-            <Image
-              src={lowHit}
-              alt="A low kick hitting a crouching opponent."
-            />
-          </div>
+        <p className="example">
+          Most low attacks are performed while crouching. Low attacks are less
+          common. Standing lows - even more so. Still, every character has at
+          least a few crouching low attacks.
+        </p>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Block</div>
-            <Image src={lowBlock} alt="A low kick being low blocked." />
-          </div>
-        </Diagram>
+        <ImageList
+          items={[
+            { title: 'Hit', image: lowHit },
+            { title: 'Block', image: lowBlock },
+          ]}
+        />
 
         <h3 id="overhead">Overhead</h3>
         <ul>
@@ -250,31 +191,18 @@ export default async function Page() {
           <li>All jump-ins are overhead.</li>
         </ul>
 
-        <Diagram description="Standing overheads are rare. They make holding low block for extended periods dangerous.">
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Hit</div>
-            <Image
-              src={jumpHitLow}
-              alt="A jump kick hitting a crouching opponent."
-            />
-          </div>
+        <p className="example">
+          Standing overheads are rare. They make holding low block for extended
+          periods dangerous.
+        </p>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Hit</div>
-            <Image
-              src={overheadHit}
-              alt="An overhead attack hitting a crouching opponent."
-            />
-          </div>
-
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Block</div>
-            <Image
-              src={overheadBlock}
-              alt="An overhead attack being blocked."
-            />
-          </div>
-        </Diagram>
+        <ImageList
+          items={[
+            { title: 'Hit', image: jumpHitLow },
+            { title: 'Hit', image: overheadHit },
+            { title: 'Block', image: overheadBlock },
+          ]}
+        />
 
         <h3 id="throws">Throw</h3>
 
@@ -295,32 +223,23 @@ export default async function Page() {
 
         <p>
           Even if the throw grabs the defender, the latter still has a second to
-          react and break the throw. Pressing <span className="badge">1</span>{' '}
-          or <span className="badge">3</span> for forward or{' '}
-          <span className="badge">2</span> or <span className="badge">4</span>{' '}
-          for back throws causes them to fail. This is called <em>teching</em> a
-          throw.
+          react and break the throw. Pressing <strong>1</strong> or{' '}
+          <strong>3</strong> for forward or <strong>2</strong> or{' '}
+          <strong>4</strong> for back throws causes them to fail. This is called{' '}
+          <em>teching</em> a throw.
         </p>
 
-        <Diagram description="Throws are designed for punishing players who are holding block.">
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Throw</div>
-            <Image src={throwGrab} alt="Throw grabbing an opponent." />
-          </div>
+        <p className="example">
+          Throws are designed for punishing players who are holding block.
+        </p>
 
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Tech</div>
-            <Image
-              src={throwTech}
-              alt="A throw being teched by the opponent."
-            />
-          </div>
-
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Miss</div>
-            <Image src={duckUnderThrow} alt="A throw being ducked under." />
-          </div>
-        </Diagram>
+        <ImageList
+          items={[
+            { title: 'Throw', image: throwGrab },
+            { title: 'Tech', image: throwTech },
+            { title: 'Miss', image: duckUnderThrow },
+          ]}
+        />
 
         <h3 id="command-grabs">Command grabs</h3>
 
@@ -391,16 +310,14 @@ export default async function Page() {
           </li>
         </ul>
 
-        <Diagram description="Start-up in blue, active in red, and recovery in green.">
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Start-up &rarr; Active &rarr; Recovery</div>
-
-            <Image
-              src={attackPhases}
-              alt="The three phases of the basic punch."
-            />
-          </div>
-        </Diagram>
+        <ImageList
+          items={[
+            {
+              title: 'Start-up → Active → Recovery',
+              image: attackPhases,
+            },
+          ]}
+        />
 
         <h3 id="fast-vs-slow">Fast vs slow</h3>
 
@@ -603,19 +520,17 @@ export default async function Page() {
           pushes the opponent away, creating space.
         </p>
 
-        <Diagram description="Knocking the opponent down near you is preferable. Knocking them back limits the ability to follow up with more attacks.">
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Knockdown</div>
-            <Image
-              src={lowHit}
-              alt="A low kick hitting a crouching opponent."
-            />
-          </div>
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>Knockback</div>
-            <Image src={knockback} alt="A high kick knocking opponent back." />
-          </div>
-        </Diagram>
+        <p className="example">
+          Knocking the opponent down near you is preferable. Knocking them back
+          limits the ability to follow up with more attacks.
+        </p>
+
+        <ImageList
+          items={[
+            { title: 'Knockdown', image: lowHit },
+            { title: 'Knockback', image: knockback },
+          ]}
+        />
 
         <h3 id="launch">Launch</h3>
 
@@ -624,17 +539,9 @@ export default async function Page() {
           airborne. Many launchers allow for extended combos.
         </p>
 
-        <Diagram description="">
-          <div className="flex flex-col gap-2 font-semibold items-center">
-            <div>
-              <span className="badge">D2</span> launches the opponent
-            </div>
-            <Image
-              src={launch}
-              alt="A down 2 attack launching the opponent into the air."
-            />
-          </div>
-        </Diagram>
+        <ImageList
+          items={[{ title: 'D2 launches the opponent', image: launch }]}
+        />
       </section>
 
       <section>

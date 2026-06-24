@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { TbArrowBigUpLines, TbRulerMeasure } from 'react-icons/tb'
 
 import anti from '@/app/assets/wh40k/anti.webp'
 import assault from '@/app/assets/wh40k/assault.webp'
@@ -10,9 +9,6 @@ import rapidFire from '@/app/assets/wh40k/rapid-fire.webp'
 import sustainedHits from '@/app/assets/wh40k/sustained-hits.webp'
 import torrent from '@/app/assets/wh40k/torrent.webp'
 import { wh40kHref, wh40kMetadata, wh40kPage } from '@/app/siteMap'
-import { BsFillDice5Fill } from 'react-icons/bs'
-import { GiInvertedDice6 } from 'react-icons/gi'
-import { IoIosSkipForward } from 'react-icons/io'
 
 const page = wh40kPage('keywords')
 
@@ -52,10 +48,6 @@ export default async function Page() {
 
         <h3 id="assault">Assault</h3>
 
-        <div className="badge">
-          <TbArrowBigUpLines /> Mobility
-        </div>
-
         <p>
           <strong>
             The weapon can be fired, even after the wielder has{' '}
@@ -73,16 +65,6 @@ export default async function Page() {
 
         <h3 id="heavy">Heavy</h3>
 
-        <div className="flex-center">
-          <div className="badge">
-            <TbArrowBigUpLines /> Mobility
-          </div>
-
-          <div className="badge">
-            <BsFillDice5Fill /> Hit roll
-          </div>
-        </div>
-
         <p>
           <strong>
             The weapon gets +1 to{' '}
@@ -97,20 +79,11 @@ export default async function Page() {
         </p>
 
         <p className="example">
-          For example, the Space Marine Bolt sniper rifle is{' '}
-          <span className="badge">BS3+ HEAVY</span>, which means it hits on 2+
-          if the unit remained stationary.
+          For example, the Space Marine Bolt sniper rifle is BS3+ HEAVY, which
+          means it hits on 2+ if the unit remained stationary.
         </p>
 
         <h3 id="rapid-fire">Rapid Fire X</h3>
-
-        <div className="flex-center">
-          <div className="badge">
-            <TbRulerMeasure /> Range
-          </div>
-
-          <div className="badge">+ Attacks</div>
-        </div>
 
         <p>
           <strong>Weapon gets +X attacks if target is within half-range</strong>{' '}
@@ -121,20 +94,11 @@ export default async function Page() {
         <Image src={rapidFire} alt="Ork Loota with a Rapid Fire 1 Deffgun" />
 
         <p className="example">
-          For example, the Ork Deffgun is{' '}
-          <span className="badge">48" RAPID FIRE 1</span> which means it gets 1
+          For example, the Ork Deffgun is 48" RAPID FIRE 1 which means it gets 1
           extra attack within 24".
         </p>
 
         <h3 id="melta">Melta X</h3>
-
-        <div className="flex-center">
-          <div className="badge">
-            <TbRulerMeasure /> Range
-          </div>
-
-          <div className="badge">+ Damage</div>
-        </div>
 
         <p>
           <strong>Weapon deals +X damage if target is within half-range</strong>{' '}
@@ -143,10 +107,6 @@ export default async function Page() {
         </p>
 
         <h3 id="pistol">Pistol</h3>
-
-        <div className="badge">
-          <TbRulerMeasure /> Range
-        </div>
 
         <p>Pistols are low-reach weapons with two distinct rules:</p>
 
@@ -164,16 +124,6 @@ export default async function Page() {
 
         <h3 id="torrent">Torrent</h3>
 
-        <div className="flex-center">
-          <div className="badge">
-            <BsFillDice5Fill /> Hit roll
-          </div>
-
-          <div className="badge">
-            <IoIosSkipForward /> Skip roll
-          </div>
-        </div>
-
         <p>
           <strong>Valid attacks from this weapon automatically hit</strong>,
           skipping the{' '}
@@ -189,16 +139,6 @@ export default async function Page() {
 
         <h3 id="anti-keyword">Anti-KEYWORD X+</h3>
 
-        <div className="flex-center">
-          <div className="badge">
-            <BsFillDice5Fill /> Wound roll
-          </div>
-
-          <div className="badge">
-            <GiInvertedDice6 /> Critical effect
-          </div>
-        </div>
-
         <p>
           <strong>
             Any wound roll of X+ against unit with KEYWORD counts as a Critical
@@ -210,26 +150,11 @@ export default async function Page() {
         <Image src={anti} alt="Grav-gun firing at a vehicle." />
 
         <p className="example">
-          For example, a <strong>Grav-gun</strong>{' '}
-          <span className="badge">ANTI-VEHICLE 2+</span> makes any roll above 1
-          a critical wound.
+          For example, a <strong>Grav-gun</strong> ANTI-VEHICLE 2+ makes any
+          roll above 1 a critical wound.
         </p>
 
         <h3 id="devastating-wounds">Devastating Wounds</h3>
-
-        <div className="flex-center">
-          <div className="badge">
-            <BsFillDice5Fill /> Wound roll
-          </div>
-
-          <div className="badge">
-            <GiInvertedDice6 /> Critical effect
-          </div>
-
-          <div className="badge">
-            <IoIosSkipForward /> Skip roll
-          </div>
-        </div>
 
         <p>
           <strong>
@@ -241,9 +166,9 @@ export default async function Page() {
         </p>
 
         <p className="example">
-          For example, a <strong>Combi-weapon</strong>{' '}
-          <span className="badge">ANTI-INFANTRY 4+ DEVASTATING WOUNDS</span>{' '}
-          makes every 4+ wound roll into infantry, guaranteed damage.
+          For example, a <strong>Combi-weapon</strong> ANTI-INFANTRY 4+
+          DEVASTATING WOUNDS makes every 4+ wound roll into infantry, guaranteed
+          damage.
         </p>
 
         <Image
@@ -252,20 +177,6 @@ export default async function Page() {
         />
 
         <h3 id="lethal-hits">Lethal Hits</h3>
-
-        <div className="flex-center">
-          <div className="badge">
-            <BsFillDice5Fill /> Hit roll
-          </div>
-
-          <div className="badge">
-            <GiInvertedDice6 /> Critical effect
-          </div>
-
-          <div className="badge">
-            <IoIosSkipForward /> Skip roll
-          </div>
-        </div>
 
         <p>
           <strong>A critical hit (roll of 6) automatically wounds.</strong> This
@@ -280,18 +191,6 @@ export default async function Page() {
         </p>
 
         <h3 id="sustained-hits">Sustained Hits X</h3>
-
-        <div className="flex-center">
-          <div className="badge">
-            <BsFillDice5Fill /> Hit roll
-          </div>
-
-          <div className="badge">
-            <GiInvertedDice6 /> Critical effect
-          </div>
-
-          <div className="badge">+ Hits</div>
-        </div>
 
         <p>
           <strong>A critical hit (roll of 6) generates X extra hits.</strong>{' '}
@@ -308,8 +207,6 @@ export default async function Page() {
 
         <h3 id="twin-linked">Twin-linked</h3>
 
-        <div className="badge">Wound roll</div>
-
         <p>
           The operator can re-roll wound rolls. This works very well in
           combination with Devastating Wounds. This is part of{' '}
@@ -320,12 +217,6 @@ export default async function Page() {
         </p>
 
         <h3 id="blast">Blast</h3>
-
-        <div className="flex-center">
-          <div className="badge">Target interaction</div>
-
-          <div className="badge">+ Attacks</div>
-        </div>
 
         <p>
           <strong>
@@ -339,8 +230,6 @@ export default async function Page() {
         </p>
 
         <h3 id="precision">Precision</h3>
-
-        <div className="badge">Target interaction</div>
 
         <p>
           The attacker can choose to allocate wounds from a successful attack
@@ -357,8 +246,6 @@ export default async function Page() {
         />
 
         <h3 id="hazardous">Hazardous</h3>
-
-        <div className="badge">Operational risk</div>
 
         <p>
           After attacking, roll a D6 per hazardous weapon used (not per attack).

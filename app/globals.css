@@ -129,10 +129,6 @@
   @apply border-primary bg-primary/5 text-primary;
 }
 
-@utility sub-nav-item {
-  @apply pl-4 border-l-2 border-foreground/10;
-}
-
 @utility picture {
   @apply rounded shadow-sm;
 }
@@ -147,30 +143,13 @@
   letter-spacing: 0.03em;
 }
 
-@utility badge {
-  @apply px-1.5 py-0.5 rounded text-sm border border-foreground/20 inline shadow-xs;
-  font-family: var(--font-ui);
-
-  > svg {
-    @apply inline align-text-bottom;
-  }
-}
-
-@utility input {
-  @apply badge font-bold;
-}
-
-@utility paper {
-  @apply relative overflow-hidden rounded shadow-sm dark:border dark:border-foreground/20 gap-2 p-3 space-y-2;
-  font-family: var(--font-ui);
-}
-
 @utility example {
   @apply text-[1rem] italic text-foreground/75;
 }
 
 @utility button {
-  @apply paper space-y-0 cursor-pointer border border-transparent dark:border-foreground/20 hover:border-primary hover:text-primary hover:shadow-md transition-all text-center no-underline flex items-center gap-3 flex-nowrap;
+  @apply relative flex cursor-pointer flex-nowrap items-center gap-3 overflow-hidden rounded border border-transparent p-3 text-center no-underline shadow-sm transition-all hover:border-primary hover:text-primary hover:shadow-md dark:border-foreground/20;
+  font-family: var(--font-ui);
 }
 
 @layer base {

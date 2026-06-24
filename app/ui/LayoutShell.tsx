@@ -28,30 +28,40 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev)
 
   return (
-    <div className="flex flex-col min-h-full">
-      <Header
-        isMobileMenuOpen={isMobileMenuOpen}
-        onToggleMobileMenu={toggleMobileMenu}
-      />
+    <div className="min-h-full overflow-x-hidden [--mobile-sidebar-width:min(20rem,85vw)]">
+      <div
+        className={`flex min-h-full flex-col transition-transform duration-300 ease-out lg:translate-x-0 ${
+          isMobileMenuOpen
+            ? 'translate-x-[var(--mobile-sidebar-width)]'
+            : 'translate-x-0'
+        }`}
+      >
+        <Header
+          isMobileMenuOpen={isMobileMenuOpen}
+          onToggleMobileMenu={toggleMobileMenu}
+        />
 
-      <div className="reading-shell">
-        <aside className="hidden min-w-0 lg:block">
-          <SideNavigation />
-        </aside>
+        <div className="reading-shell">
+          <aside className="hidden min-w-0 lg:block">
+            <SideNavigation />
+          </aside>
 
-        <main tabIndex={-1} className="reading-main mx-auto">
-          {children}
-          <AutoPageNav />
-        </main>
+          <main tabIndex={-1} className="reading-main mx-auto">
+            {children}
+            <AutoPageNav />
+          </main>
 
-        <aside className="hidden min-w-0 xl:block">
-          <TableOfContents />
-        </aside>
+          <aside className="hidden min-w-0 xl:block">
+            <TableOfContents />
+          </aside>
+        </div>
       </div>
 
       <div
         id="mobile-nav"
-        className={`fixed top-0 left-0 h-full transition z-40 lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed top-0 left-0 z-40 h-full w-[var(--mobile-sidebar-width)] transition-transform duration-300 ease-out lg:hidden ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
       >
         <SideNavigation isMobile />
       </div>

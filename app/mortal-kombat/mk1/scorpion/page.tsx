@@ -85,29 +85,28 @@ export default async function Page() {
         <h3 id="normals">Normals</h3>
 
         <p>
-          <span className="input">1</span> is a fast (7 frames), safe and short{' '}
+          <strong>1</strong> is a fast (7 frames), safe and short{' '}
           <Link href={mkHref('anatomyOfAttacks', 'high')}>high</Link> jab - your{' '}
           <em>fastest</em> standing attack.
         </p>
 
         <p>
-          <span className="input">12</span> is a fast and safe high-high string
-          that can be cancelled into any special - your{' '}
+          <strong>12</strong> is a fast and safe high-high string that can be
+          cancelled into any special - your{' '}
           <em>fastest hit-confirm and combo-starter</em>.
         </p>
 
         <p>
-          <span className="input">122</span> is a safe, high-high-overhead
-          string - part of your stagger arsenal -{' '}
-          <span className="input">12 Throw</span>.
+          <strong>122</strong> is a safe, high-high-overhead string - part of
+          your stagger arsenal - <strong>12 Throw</strong>.
         </p>
 
         <hr />
 
         <p>
-          <span className="input">2</span> is a safe, a bit slower (10 frames),
-          high, disjointed punch with very decent reach and better damage than{' '}
-          <span className="input">1</span>. It's your{' '}
+          <strong>2</strong> is a safe, a bit slower (10 frames), high,
+          disjointed punch with very decent reach and better damage than{' '}
+          <strong>1</strong>. It's your{' '}
           <em>
             primary <Link href={mkHref('anatomyOfAttacks', 'pokes')}>poke</Link>
           </em>
@@ -115,45 +114,44 @@ export default async function Page() {
         </p>
 
         <p>
-          <span className="input">21</span> is a safe, more damaging, high-
+          <strong>21</strong> is a safe, more damaging, high-
           <Link href={mkHref('anatomyOfAttacks', 'mid')}>mid</Link> string -
           better hit-confirm for when the space allows it, plus a duck check.
         </p>
 
         <p>
-          <span className="input">214</span> is another stagger tool - a barely
-          safe, high-mid-mid sequence.
+          <strong>214</strong> is another stagger tool - a barely safe,
+          high-mid-mid sequence.
         </p>
 
         <hr />
 
         <p>
-          <span className="input">F3</span> is a slower (12 frames), safe,{' '}
+          <strong>F3</strong> is a slower (12 frames), safe,{' '}
           <Link href={mkHref('anatomyOfAttacks', 'advancing')}>advancing</Link>{' '}
           mid kick - a good check against crouching foes.
         </p>
 
         <p>
-          <span className="input">F32</span>, your optimal <em>launcher</em> (
-          <span className="input">F4</span> is not worth it) and{' '}
-          <em>combo starter</em>. It can be chained up to three times in a row.
+          <strong>F32</strong>, your optimal <em>launcher</em> (
+          <strong>F4</strong> is not worth it) and <em>combo starter</em>. It
+          can be chained up to three times in a row.
         </p>
 
         <hr />
 
         <p>
-          <span className="input">B2</span> is similar to, even faster and more
-          damaging than <span className="input">2</span>, but its hitbox is
-          geared towards an <em>anti-air</em> attack. It can be shortcut-
-          cancelled into any forward special (e.g.{' '}
-          <span className="input">B3 F1</span> cancels into Spear) for a full
-          combo.
+          <strong>B2</strong> is similar to, even faster and more damaging than{' '}
+          <strong>2</strong>, but its hitbox is geared towards an{' '}
+          <em>anti-air</em> attack. It can be shortcut- cancelled into any
+          forward special (e.g. <strong>B3 F1</strong> cancels into Spear) for a
+          full combo.
         </p>
 
         <p>
-          <span className="input">B3</span> is Scorpion's most unique normal. He
-          launches his kunai for a very far-reaching, slow (21 frames), unsafe
-          (-19 on block), disjointed attack that hits twice - mid-
+          <strong>B3</strong> is Scorpion's most unique normal. He launches his
+          kunai for a very far-reaching, slow (21 frames), unsafe (-19 on
+          block), disjointed attack that hits twice - mid-
           <Link href={mkHref('anatomyOfAttacks', 'low')}>low</Link>. The first
           mid hit can be cancelled into any special. It's a space-controlling
           move the opponent has to respect.
@@ -168,8 +166,8 @@ export default async function Page() {
         <h3 id="specials">Specials</h3>
 
         <p>
-          The signature <em>Spear</em> <span className="input">BF1</span> is a{' '}
-          full-screen, space-controlling, high{' '}
+          The signature <em>Spear</em> <strong>BF1</strong> is a full-screen,
+          space-controlling, high{' '}
           <Link href={mkHref('anatomyOfAttacks', 'projectile')}>
             projectile
           </Link>{' '}
@@ -182,34 +180,33 @@ export default async function Page() {
         <Image src={spear} alt="Scorpion's spear move." className="picture" />
 
         <p>
-          <em>Flameport</em> <span className="input">DB3</span> is a teleport
-          that tracks to the other side of the opponent, hitting them on arrival
-          (unsafe; -21 on block) - an anti-zoning tool by design. The{' '}
-          <em>enhanced</em> version launches much faster and skips the hit,
-          making it safe. This enables strike/throw mind games and combo
-          extension.
+          <em>Flameport</em> <strong>DB3</strong> is a teleport that tracks to
+          the other side of the opponent, hitting them on arrival (unsafe; -21
+          on block) - an anti-zoning tool by design. The <em>enhanced</em>{' '}
+          version launches much faster and skips the hit, making it safe. This
+          enables strike/throw mind games and combo extension.
         </p>
 
         <p>
-          <em>Blazing Charge</em> <span className="input">BF2</span> is a very
-          quick (for a special; 13 frames) advancing dash attack that covers
-          good distance, switches sides and knocks down the opponent. It's a
-          great interruption, but has short active frames and should be timed
-          well. The <em>enhanced</em> version is <em>armored</em>, being a
-          proper getup breaker and armor combo starter.
+          <em>Blazing Charge</em> <strong>BF2</strong> is a very quick (for a
+          special; 13 frames) advancing dash attack that covers good distance,
+          switches sides and knocks down the opponent. It's a great
+          interruption, but has short active frames and should be timed well.
+          The <em>enhanced</em> version is <em>armored</em>, being a proper
+          getup breaker and armor combo starter.
         </p>
 
         <p>
-          <em>Twisted Kyo</em> <span className="input">DB2</span> is an unsafe,
-          multi-hit combo ender, with strong chip damage, that knocks the
-          opponent down. Its advantage over knockback enders is that it keeps
-          your opponent next to you.
+          <em>Twisted Kyo</em> <strong>DB2</strong> is an unsafe, multi-hit
+          combo ender, with strong chip damage, that knocks the opponent down.
+          Its advantage over knockback enders is that it keeps your opponent
+          next to you.
         </p>
 
         <p>
-          <em>Enhanced Devouring Flame</em> <span className="input">xBF4</span>{' '}
-          is an unblockable, low, damage-over-time special that tracks the
-          opponent. It's both an anti-zoning and an{' '}
+          <em>Enhanced Devouring Flame</em> <strong>xBF4</strong> is an
+          unblockable, low, damage-over-time special that tracks the opponent.
+          It's both an anti-zoning and an{' '}
           <Link href={mkHref('momentum', 'oki')}>oki</Link> option.
         </p>
       </section>
@@ -225,49 +222,44 @@ export default async function Page() {
 
         <h3 id="core">Core</h3>
 
-        <div className="paper">
-          <p className="font-bold">Starters</p>
+        <p className="font-bold">Starters</p>
 
-          <ul>
-            <li>
-              <span className="input">12</span> - fastest / swappable.
-            </li>
+        <ul>
+          <li>
+            <strong>12</strong> - fastest / swappable.
+          </li>
 
-            <li>
-              <span className="input">21</span> - reachy / a bit slower / more
-              damage / swappable.
-            </li>
+          <li>
+            <strong>21</strong> - reachy / a bit slower / more damage /
+            swappable.
+          </li>
 
-            <li>
-              <span className="input">33</span> - even slower / even more damage
-              / swappable.
-            </li>
+          <li>
+            <strong>33</strong> - even slower / even more damage / swappable.
+          </li>
 
-            <li>
-              <span className="input">F32</span> - launcher / only for juggle
-              combos.
-            </li>
-          </ul>
+          <li>
+            <strong>F32</strong> - launcher / only for juggle combos.
+          </li>
+        </ul>
 
-          <p className="font-bold">Building blocks</p>
+        <p className="font-bold">Building blocks</p>
 
-          <p>Almost any Scorpion combo includes a form of these.</p>
+        <p>Almost any Scorpion combo includes a form of these.</p>
 
-          <ul>
-            <li>
-              <span className="input">[starter] BF1 [33 DB2/ 333 BF2]</span> -
-              Spear into one of the enders - <em>~210-220 damage</em>.
-            </li>
-            <li>
-              Three <span className="input">F32</span> in a row repeated juggle.
-              If you can't pull it off, two are good enough for now.
-            </li>
-            <li>
-              <span className="input">F32 jump 12 xDB2</span> is your air
-              extension.
-            </li>
-          </ul>
-        </div>
+        <ul>
+          <li>
+            <strong>[starter] BF1 [33 DB2/ 333 BF2]</strong> - Spear into one of
+            the enders - <em>~210-220 damage</em>.
+          </li>
+          <li>
+            Three <strong>F32</strong> in a row repeated juggle. If you can't
+            pull it off, two are good enough for now.
+          </li>
+          <li>
+            <strong>F32 jump 12 xDB2</strong> is your air extension.
+          </li>
+        </ul>
 
         <p>
           Let's start simple and <em>meterless</em>. Keep it on the ground and
@@ -276,40 +268,34 @@ export default async function Page() {
         </p>
 
         <p>
-          <span className="input">12 BF1 333 BF2</span> basic <em>217 DMG</em>
+          <strong>12 BF1 333 BF2</strong> basic <em>217 DMG</em>
         </p>
 
         <p>
-          <span className="input">12 BF1 F32 F32 F32 4 BF2</span>{' '}
-          <em>318 DMG</em> - adds the juggles. If the trailing{' '}
-          <span className="input">4</span> into a Charge is difficult, reduce
-          juggles to two.
+          <strong>12 BF1 F32 F32 F32 4 BF2</strong> <em>318 DMG</em> - adds the
+          juggles. If the trailing <strong>4</strong> into a Charge is
+          difficult, reduce juggles to two.
         </p>
 
         <p>
-          <span className="input">21 BF1 F32 F32 F32 F34 BF2</span>{' '}
-          <em>342 DMG</em> - swaps in a better starter and ender. It's a very
-          consistent, close to optimal, meterless <em>bread-and-butter</em>{' '}
-          (B&B) route.
+          <strong>21 BF1 F32 F32 F32 F34 BF2</strong> <em>342 DMG</em> - swaps
+          in a better starter and ender. It's a very consistent, close to
+          optimal, meterless <em>bread-and-butter</em> (B&B) route.
         </p>
 
         <p>From here you can use air extension and/or meter to upgrade.</p>
 
         <p>
-          <span className="input">
-            21 BF1 F32 F32 [jump] 12 xDB2 [111/4 BF2]
-          </span>{' '}
+          <strong>21 BF1 F32 F32 [jump] 12 xDB2 [111/4 BF2]</strong>{' '}
           <em>~330-350 DMG, 1 BAR</em> - a very suboptimal route, but a good
           starting point for air extension.
         </p>
 
         <p>
-          <span className="input">
-            21 BF1 F32 F32 [jump] 12 xDB2 [delay] 111 DB2 [land]
-          </span>{' '}
+          <strong>21 BF1 F32 F32 [jump] 12 xDB2 [delay] 111 DB2 [land]</strong>{' '}
           <em>377 DMG, 1 BAR</em> is an optimal route out of the Spear, but a
-          bit tricky for beginners. Delay the <span className="input">111</span>{' '}
-          until you're almost touching the ground.
+          bit tricky for beginners. Delay the <strong>111</strong> until you're
+          almost touching the ground.
         </p>
 
         <hr />
@@ -320,14 +306,11 @@ export default async function Page() {
         </p>
 
         <p>
-          <span className="input">F32 F32 F32 4 BF1 33 DB2</span>{' '}
-          <em>365 DMG</em>
+          <strong>F32 F32 F32 4 BF1 33 DB2</strong> <em>365 DMG</em>
         </p>
 
         <p>
-          <span className="input">
-            F32 F32 [jump] 12 xDB2 [delay] 111 [land] BF1 33 DB2
-          </span>{' '}
+          <strong>F32 F32 [jump] 12 xDB2 [delay] 111 [land] BF1 33 DB2</strong>{' '}
           <strong>407 DMG</strong>, <em>1 BAR</em>, optimal B&B for online
           consistency.
         </p>
@@ -343,35 +326,31 @@ export default async function Page() {
         <p>
           You can keep it simple in the corner, much like you can in the middle.
           But if you wish to spike and are willing to train some timings, you
-          can chain two <span className="input">4</span> in a row, which keeps
-          most of their damage through scaling.
+          can chain two <strong>4</strong> in a row, which keeps most of their
+          damage through scaling.
         </p>
 
         <p>
-          <span className="input">F32 F32 J13 4 BF1 33 DB2</span>{' '}
-          <em>369 DMG</em>
+          <strong>F32 F32 J13 4 BF1 33 DB2</strong> <em>369 DMG</em>
         </p>
 
         <p>
-          <span className="input">
-            F32 4 4 BF1 F32 [jump] 12 xDB2 [pause] 111 DB2
-          </span>{' '}
+          <strong>F32 4 4 BF1 F32 [jump] 12 xDB2 [pause] 111 DB2</strong>{' '}
           <strong>446 DMG</strong>, <em>1 BAR</em> - very tight timing on the
-          two <span className="input">4</span> but even with one you can do over
-          400.
+          two <strong>4</strong> but even with one you can do over 400.
         </p>
 
         <h3 id="other-routes">Other routes</h3>
 
         <p>
-          If they jump in: <span className="input">B2 F1 333 BF2</span>{' '}
-          <em>210 DMG</em> is a basic anti-air punish.
+          If they jump in: <strong>B2 F1 333 BF2</strong> <em>210 DMG</em> is a
+          basic anti-air punish.
         </p>
 
         <p>
           Or if you know they will jump in:{' '}
-          <span className="input">[jump] 111 BF1 [land] F32 4 BF2</span>{' '}
-          <em>291 DMG</em> is a decent air-to-air interrupt.
+          <strong>[jump] 111 BF1 [land] F32 4 BF2</strong> <em>291 DMG</em> is a
+          decent air-to-air interrupt.
         </p>
 
         <h3 id="maximalist">Maximalist</h3>
@@ -382,22 +361,19 @@ export default async function Page() {
         </p>
 
         <p>
-          <span className="input">
-            21 BF1 F32 F32 [jump] 12 xDB2 4 xDB2 4 xDB2 4 BF2
-          </span>{' '}
-          - <em>417 DMG, 3 BAR</em>. This squeezes the max out of air
-          extensions, but requires very tight timing and there are easier routes
-          to 400.
+          <strong>21 BF1 F32 F32 [jump] 12 xDB2 4 xDB2 4 xDB2 4 BF2</strong> -{' '}
+          <em>417 DMG, 3 BAR</em>. This squeezes the max out of air extensions,
+          but requires very tight timing and there are easier routes to 400.
         </p>
 
         <p>
-          <span className="input">
+          <strong>
             F32 4 4 BF1 F32 [jump] 12 xDB2 [delay] 111 [land] B2 xBF4
-          </span>{' '}
+          </strong>{' '}
           - <strong>502 DMG</strong>, <em>2 BAR</em>. Attempt only if you're
-          about to win the round. The <span className="input">xBF4</span> is
-          guaranteed damage, but you can't recover in time to block. If they
-          survive, they get a free wakeup punish.
+          about to win the round. The <strong>xBF4</strong> is guaranteed
+          damage, but you can't recover in time to block. If they survive, they
+          get a free wakeup punish.
         </p>
       </section>
 
@@ -419,39 +395,35 @@ export default async function Page() {
         </p>
 
         <p>
-          <span className="input">Throw [delay] K F32 F32 4 BF1 33 DB2</span> -{' '}
+          <strong>Throw [delay] K F32 F32 4 BF1 33 DB2</strong> -{' '}
           <em>220 DMG</em> out of a throw (normally 110).
         </p>
 
         <p>
-          <span className="input">F34 FK F32 4 BF1 33 DB2</span>{' '}
-          <em>332 DMG</em> - knockback strings like{' '}
-          <span className="input">214</span> and{' '}
-          <span className="input">F34</span> become combo starters with{' '}
-          <span className="input">FK</span>.
+          <strong>F34 FK F32 4 BF1 33 DB2</strong> <em>332 DMG</em> - knockback
+          strings like <strong>214</strong> and <strong>F34</strong> become
+          combo starters with <strong>FK</strong>.
         </p>
 
         <p>
-          <span className="input">
-            xBF2 UK - switch sides - dash F32 F32 4 BF1 33 DB2
-          </span>{' '}
-          - <em>259 DMG</em> armored combo using Mavado's <em>Nindrop</em>.
+          <strong>xBF2 UK - switch sides - dash F32 F32 4 BF1 33 DB2</strong> -{' '}
+          <em>259 DMG</em> armored combo using Mavado's <em>Nindrop</em>.
         </p>
 
         <p>
-          <span className="input">F32 F32 jump 12 xDB2 UK land BF1 33 DB2</span>{' '}
+          <strong>F32 F32 jump 12 xDB2 UK land BF1 33 DB2</strong>{' '}
           <em>375 DMG</em> - using Mavado out of juggles deals almost the same
           damage as spending a bar.
         </p>
 
         <p>
-          <span className="input">Down K</span> gives you some oki on a knocked
-          back opponent if combined with a jump-in.
+          <strong>Down K</strong> gives you some oki on a knocked back opponent
+          if combined with a jump-in.
         </p>
 
         <p>
-          You can chip with <span className="input">[12/21] BK</span>. If it
-          hits, you gain plus frames.
+          You can chip with <strong>[12/21] BK</strong>. If it hits, you gain
+          plus frames.
         </p>
 
         <h3 id="ferra">Ferra</h3>
@@ -473,45 +445,39 @@ export default async function Page() {
 
         <p>
           On confirming that they block, you can go for{' '}
-          <span className="input">[12/21] K Throw</span> <em>100 DMG</em> -
-          doesn't lead to anything, but many foes eat the damage.
+          <strong>[12/21] K Throw</strong> <em>100 DMG</em> - doesn't lead to
+          anything, but many foes eat the damage.
         </p>
 
         <p>
-          Your <span className="input">B3</span> canceled plays very well with
-          her overhead <span className="input">K 2</span> and low{' '}
-          <span className="input">K 3</span>. Since{' '}
-          <span className="input">B3</span> is mid-low, usually the overhead
-          catches them more often so you can do{' '}
-          <span className="input">B3 K [2/3] F32 4 BF1 333 BF2</span>{' '}
+          Your <strong>B3</strong> canceled plays very well with her overhead{' '}
+          <strong>K 2</strong> and low <strong>K 3</strong>. Since{' '}
+          <strong>B3</strong> is mid-low, usually the overhead catches them more
+          often so you can do <strong>B3 K [2/3] F32 4 BF1 333 BF2</strong>{' '}
           <em>352 DMG</em>.
         </p>
 
         <p>
-          <span className="input">
-            B3 K [2/3] 1 4 BF1 F32 [jump] 12 xDB2 [delay] 111 DB2
-          </span>{' '}
+          <strong>B3 K [2/3] 1 4 BF1 F32 [jump] 12 xDB2 [delay] 111 DB2</strong>{' '}
           <em>424 DMG, 1 BAR</em> is a more complex alternative of the above.
         </p>
 
         <p>
-          Trying to do this up close with <span className="input">12 K 2</span>{' '}
-          will work most of the time, but it's jab punishable.
+          Trying to do this up close with <strong>12 K 2</strong> will work most
+          of the time, but it's jab punishable.
         </p>
 
         <p>
-          <span className="input">
-            Throw [time it] UK 2 F32 F32 4 BF1 F32 4 BF2
-          </span>{' '}
+          <strong>Throw [time it] UK 2 F32 F32 4 BF1 F32 4 BF2</strong>{' '}
           <em>264 DMG</em> - one of Scorpion's highest damage throw combos.
         </p>
 
         <p>
-          Ending a combo with <span className="input">33 K</span> is a vortex
-          opportunity. It drops the combo, but forces the opponent to guess
-          overhead/low again. It will not work if you press the next button
-          again immediately. You need to time a micro forward button press to
-          make sure scaling is reset.
+          Ending a combo with <strong>33 K</strong> is a vortex opportunity. It
+          drops the combo, but forces the opponent to guess overhead/low again.
+          It will not work if you press the next button again immediately. You
+          need to time a micro forward button press to make sure scaling is
+          reset.
         </p>
 
         <h3 id="motaro">Motaro</h3>
@@ -525,26 +491,22 @@ export default async function Page() {
         <p>Motaro gives resets, plus frames, and some hit-confirm safety.</p>
 
         <p>
-          <span className="input">[any string] BF4</span> is a sort-of low
-          mix-up. The opponent has to guess to block low, but even if you hit
-          you can't combo out of it. You can do something like{' '}
-          <span className="input">
-            B3 F4 K [switch sides] F32 F32 4 BF1 33 DB3
-          </span>{' '}
-          <em>361 DMG</em>. You can end any combo with{' '}
-          <span className="input">BF4</span> and if they didn't guess low, you
-          can do another one. Or if they did, you can hold back after switching
-          sides to end far away (MK11-style Scorpion teleport).
+          <strong>[any string] BF4</strong> is a sort-of low mix-up. The
+          opponent has to guess to block low, but even if you hit you can't
+          combo out of it. You can do something like{' '}
+          <strong>B3 F4 K [switch sides] F32 F32 4 BF1 33 DB3</strong>{' '}
+          <em>361 DMG</em>. You can end any combo with <strong>BF4</strong> and
+          if they didn't guess low, you can do another one. Or if they did, you
+          can hold back after switching sides to end far away (MK11-style
+          Scorpion teleport).
         </p>
 
         <p>
-          <em>Tail Shot</em> <span className="input">FK</span> is a +13 on block
-          low attack that allows you to steal your turn back{' '}
-          <span className="input">
-            12 [failed hit confirm] FK 12 [your turn again]
-          </span>
-          . You can also do some mix-up with it{' '}
-          <span className="input">21 FK [low] 122 [overhead]</span>.
+          <em>Tail Shot</em> <strong>FK</strong> is a +13 on block low attack
+          that allows you to steal your turn back{' '}
+          <strong>12 [failed hit confirm] FK 12 [your turn again]</strong>. You
+          can also do some mix-up with it{' '}
+          <strong>21 FK [low] 122 [overhead]</strong>.
         </p>
 
         <h3 id="chameleon">Other considerations</h3>
@@ -553,14 +515,13 @@ export default async function Page() {
           <em>Khameleon</em> is very fun and comprehensive, but more advanced
           and perhaps less consistent. She extends and combos out of throw and
           armor, but what is probably more interesting are her resets. Just like
-          with Motaro, Kitana form's <em>Fan Lift</em>{' '}
-          <span className="input">FK</span> bridges{' '}
-          <span className="input">21 BF4</span> into a new combo. And to give
-          you some idea of corner damage you can do{' '}
-          <span className="input">
+          with Motaro, Kitana form's <em>Fan Lift</em> <strong>FK</strong>{' '}
+          bridges <strong>21 BF4</strong> into a new combo. And to give you some
+          idea of corner damage you can do{' '}
+          <strong>
             F32 4 4 K [Kitana, hold to switch] [jump] 12 xDB2 3 [land] BF1 F32
             FK [Mileena] 4 BF2
-          </span>{' '}
+          </strong>{' '}
           <strong>458 DMG</strong> <em>1 BAR</em>, 2 Kameo uses. She expands
           routes in too many ways to list here.
         </p>
@@ -569,20 +530,15 @@ export default async function Page() {
           <em>Janet's</em> key positive is great combos with exceptional
           resource efficiency. But similar to Khameleon she's more difficult.
           This time it's not managing stances as much as tight timings -{' '}
-          <span className="input">
-            F32 F32 [jump] 12 DB2 FK [3 times] 4 BF1 33 DB2
-          </span>{' '}
+          <strong>F32 F32 [jump] 12 DB2 FK [3 times] 4 BF1 33 DB2</strong>{' '}
           <em>386 DMG</em> meterless.
         </p>
 
         <p>
           <em>Jax</em> gives corner and armor routes -{' '}
-          <span className="input">
-            xBF2 [switch sides] FK BF1 F32 F32 F34 BF2
-          </span>{' '}
-          <em>252 DMG, 1 BAR</em>. His <em>Ground Pound</em>{' '}
-          <span className="input">K</span> provides some oki. Otherwise, he's a
-          bit awkward.
+          <strong>xBF2 [switch sides] FK BF1 F32 F32 F34 BF2</strong>{' '}
+          <em>252 DMG, 1 BAR</em>. His <em>Ground Pound</em> <strong>K</strong>{' '}
+          provides some oki. Otherwise, he's a bit awkward.
         </p>
       </section>
     </>

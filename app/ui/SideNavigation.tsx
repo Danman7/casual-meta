@@ -17,7 +17,7 @@ export const SideNavigation: React.FC<{ isMobile?: boolean }> = ({
     <nav
       className={`book-sidebar ${
         isMobile
-          ? 'edge-padding blurred-surface h-dvh w-80 max-w-[85vw] overflow-y-auto pt-20'
+          ? 'edge-padding h-dvh w-full overflow-y-auto bg-background pt-20'
           : 'sticky-aside max-h-[calc(100dvh-6rem)] w-full overflow-y-auto pr-3'
       }`}
     >

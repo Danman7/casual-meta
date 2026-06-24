@@ -1,12 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { GiKnightBanner, GiMagnifyingGlass, GiOpenBook } from 'react-icons/gi'
+import { GiKnightBanner } from 'react-icons/gi'
 
 import banners from '@/app/assets/wh40k/chapter_banners.webp'
 import marine from '@/app/assets/wh40k/space-marine.webp'
 import marines from '@/app/assets/wh40k/Ultramarines.webp'
 import { wh40kHref, wh40kMetadata, wh40kPage } from '@/app/siteMap'
-import { Paper } from '@/app/ui/Paper'
 
 const page = wh40kPage('spaceMarines')
 
@@ -65,38 +64,36 @@ export default async function Page() {
           good insight into the Space Marines playstyle.
         </p>
 
-        <Paper icon={GiOpenBook}>
-          <p className="font-bold">Oath of Moment (Oath)</p>
+        <p className="font-bold">Oath of Moment (Oath)</p>
 
-          <p>
-            At the start of your{' '}
-            <Link href={wh40kHref('battleRound', 'command-phase')}>
-              command phase
-            </Link>
-            , select one enemy unit. Until your next command phase:
-          </p>
+        <p>
+          At the start of your{' '}
+          <Link href={wh40kHref('battleRound', 'command-phase')}>
+            command phase
+          </Link>
+          , select one enemy unit. Until your next command phase:
+        </p>
 
-          <ul>
-            <li>
-              All your models{' '}
-              <Link href={wh40kHref('datasheets', 're-rolls')}>re-roll</Link>{' '}
-              <Link href={wh40kHref('attackSequence', 'hit-roll')}>
-                hit rolls
-              </Link>{' '}
-              against that target.
-            </li>
+        <ul>
+          <li>
+            All your models{' '}
+            <Link href={wh40kHref('datasheets', 're-rolls')}>re-roll</Link>{' '}
+            <Link href={wh40kHref('attackSequence', 'hit-roll')}>
+              hit rolls
+            </Link>{' '}
+            against that target.
+          </li>
 
-            <li>
-              If using a codex-compliant detachment (excluding divergent
-              chapters like Black Templars, Blood Angels, etc.; explained
-              below), you also gain +1 to{' '}
-              <Link href={wh40kHref('attackSequence', 'wound-roll')}>
-                wound rolls
-              </Link>{' '}
-              against that target.
-            </li>
-          </ul>
-        </Paper>
+          <li>
+            If using a codex-compliant detachment (excluding divergent chapters
+            like Black Templars, Blood Angels, etc.; explained below), you also
+            gain +1 to{' '}
+            <Link href={wh40kHref('attackSequence', 'wound-roll')}>
+              wound rolls
+            </Link>{' '}
+            against that target.
+          </li>
+        </ul>
 
         <p>
           This shapes Space Marines into a <strong>combined-arms force</strong>{' '}
@@ -135,10 +132,9 @@ export default async function Page() {
         <p>
           Space Marines have <strong>good baseline durability</strong>. Almost
           all models are{' '}
-          <Link href={wh40kHref('profileArchetypes', 'meq')}>MEQ</Link>{' '}
-          <span className="badge">T4, Sv3+</span> or better, which bestows a
-          more forgiving experience. About 70% of the arsenal is ranged, mostly
-          D1-D2 weapons within 24" range, with{' '}
+          <Link href={wh40kHref('profileArchetypes', 'meq')}>MEQ</Link> T4 Sv3+
+          or better, which bestows a more forgiving experience. About 70% of the
+          arsenal is ranged, mostly D1-D2 weapons within 24" range, with{' '}
           <strong>
             strong{' '}
             <Link href={wh40kHref('keywords', 'weapon-keywords')}>keyword</Link>{' '}
@@ -175,50 +171,44 @@ export default async function Page() {
           <em>core units</em>. Datasheets that have a second faction keyword are{' '}
           <em>chapter units</em>.
         </p>
-        <Paper icon={GiMagnifyingGlass}>
-          <p className="text-sm">
-            For example, Marneus Calgar has both{' '}
-            <strong>Adeptus Astartes</strong> and <strong>Ultramarines</strong>,
-            so he is part of the Ultramarines. Intercessors only have the
-            Adeptus Astartes keyword, so they can be part of any force.
-          </p>
-        </Paper>
+        <p>
+          For example, Marneus Calgar has both <strong>Adeptus Astartes</strong>{' '}
+          and <strong>Ultramarines</strong>, so he is part of the Ultramarines.
+          Intercessors only have the Adeptus Astartes keyword, so they can be
+          part of any force.
+        </p>
 
         <p>
           A chapter says who the given Space Marines are. A detachment specifies
           how the army fights.
         </p>
 
-        <Paper icon={GiOpenBook}>
-          <p className="font-bold">Chapter roster rules</p>
+        <p className="font-bold">Chapter roster rules</p>
 
-          <ul>
-            <li>
-              An army list can include core units and units from one chapter.
-            </li>
+        <ul>
+          <li>
+            An army list can include core units and units from one chapter.
+          </li>
 
-            <li>
-              <strong>
-                Units from different chapters cannot mix together.
-              </strong>
-            </li>
+          <li>
+            <strong>Units from different chapters cannot mix together.</strong>
+          </li>
 
-            <li>
-              Including a datasheet with a second faction keyword locks your
-              army into that chapter.
-            </li>
+          <li>
+            Including a datasheet with a second faction keyword locks your army
+            into that chapter.
+          </li>
 
-            <li>
-              Some detachments are locked into a specific chapter, but don't
-              force you to include chapter units.
-            </li>
+          <li>
+            Some detachments are locked into a specific chapter, but don't force
+            you to include chapter units.
+          </li>
 
-            <li>
-              Black Templars, Space Wolves and Deathwatch have additional
-              limitations on what core units they can field.
-            </li>
-          </ul>
-        </Paper>
+          <li>
+            Black Templars, Space Wolves and Deathwatch have additional
+            limitations on what core units they can field.
+          </li>
+        </ul>
 
         <p>
           The most visible trait of a chapter is its color scheme, but what

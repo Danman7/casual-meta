@@ -242,26 +242,23 @@ export default async function Page() {
         <p>
           Let's take a look at the Cadian Shock Troops datasheet. It says Move
           6" | Toghness 3 | Save 5+ | Wounds 1 | Leadership 7+ | Objective
-          Control 2. That's too long. Instead, we can have it{' '}
-          <span className="badge">M6" T3 Sv5+ W1 Ld7+ OC2</span>. If we agree
-          that the first number is always the Move as it's the only one in
-          inches we can shorten it a bit more to{' '}
-          <span className="badge">6" T3 Sv5+ W1 Ld7+ OC2</span>.
+          Control 2. That's too long. Instead, we can have it M6" T3 Sv5+ W1
+          Ld7+ OC2. If we agree that the first number is always the Move as it's
+          the only one in inches we can shorten it a bit more to 6" T3 Sv5+ W1
+          Ld7+ OC2.
         </p>
 
         <p>
           If you understand the above, I can describe a Terminator for you with{' '}
-          <span className="badge">5" T5 Sv2+/4++ W3 Ld6+ OC1</span>. But what's
-          all that next to it's Sv? Well, we know Terminators have a 4+
-          Invulnerable save. So <span className="badge">SvX+/Y++</span> is X
+          5" T5 Sv2+/4++ W3 Ld6+ OC1. But what's all that next to it's Sv? Well,
+          we know Terminators have a 4+ Invulnerable save. So SvX+/Y++ is X
           armor save and Y Inv save.
         </p>
 
         <p>
           Most of the time, not all of the stats are important for context. So
-          if we only discuss the durability of Terminators we can say{' '}
-          <span className="badge">T5 Sv2+/4++ W3</span>. This can be shortened
-          even further once we get to{' '}
+          if we only discuss the durability of Terminators we can say T5
+          Sv2+/4++ W3. This can be shortened even further once we get to{' '}
           <Link href={wh40kHref('profileArchetypes')}>archetypes</Link>.
         </p>
       </section>
@@ -423,22 +420,19 @@ export default async function Page() {
           Because of keywords, writing weapon profiles without a shortform is
           even longer than unit profiles. The Bolt rifle would be Assault Heavy
           Range 24" Attacks 2 Ballistic Skill 3+ Strength 4 Armor Penetration -1
-          Damage 1, compared to{' '}
-          <span className="badge">24" A2 BS3+ S4 AP-1 D1 Assault Heavy </span>.
+          Damage 1, compared to 24" A2 BS3+ S4 AP-1 D1 Assault Heavy.
         </p>
 
         <p>
-          The Meltagun's profile is{' '}
-          <span className="badge">12" A1 BS3+ S9 AP-4 DD6 Melta 2</span> meaning
-          it has the Melta keyword with 2 as a modifier, and roll a D6 to
-          determine Damage.
+          The Meltagun's profile is 12" A1 BS3+ S9 AP-4 DD6 Melta 2 meaning it
+          has the Melta keyword with 2 as a modifier, and roll a D6 to determine
+          Damage.
         </p>
 
         <p>
-          The Flamer is{' '}
-          <span className="badge">12" AD6 S4 AP0 D1 Ignore Cover Torrent</span>,
-          which means throw a D6 for number of attacks. It also lacks Ballistic
-          Skill as the Torrent keyword means it hits autoimatically.
+          The Flamer is 12" AD6 S4 AP0 D1 Ignore Cover Torrent, which means
+          throw a D6 for number of attacks. It also lacks Ballistic Skill as the
+          Torrent keyword means it hits autoimatically.
         </p>
       </section>
     </>

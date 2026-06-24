@@ -70,12 +70,11 @@ export default async function Page() {
 
         <ul role="list">
           <li>
-            <span className="input">F3</span> means press toward the opponent,
-            then press 3.
+            <strong>F3</strong> means press toward the opponent, then press 3.
           </li>
           <li>
-            <span className="input">B2</span> means press away from the
-            opponent, then press 2.
+            <strong>B2</strong> means press away from the opponent, then press
+            2.
           </li>
         </ul>
 
@@ -131,11 +130,10 @@ export default async function Page() {
         </p>
 
         <p>
-          Inputs without directions (e.g. <span className="input">1</span>,{' '}
-          <span className="input">21</span>) are performed standing. Some
-          sources add <em>Standing</em> in front of the input for clarity (
-          <span className="input">Standing 1</span> ={' '}
-          <span className="input">1</span>).
+          Inputs without directions (e.g. <strong>1</strong>,{' '}
+          <strong>21</strong>) are performed standing. Some sources add{' '}
+          <em>Standing</em> in front of the input for clarity (
+          <strong>Standing 1</strong> = <strong>1</strong>).
         </p>
 
         <h3 id="crouching">Crouching / Ducking</h3>
@@ -146,8 +144,7 @@ export default async function Page() {
           <Link href={mkHref('anatomyOfAttacks', 'high')}>high attacks</Link>{' '}
           miss, but <strong>prevents movement</strong>. Blocking and attacking
           work as expected. Crouching attacks are described with D for Down in
-          front (e.g., <span className="input">D2</span>,
-          <span className="input">D4</span>).
+          front (e.g., <strong>D2</strong>,<strong>D4</strong>).
         </p>
 
         <h3 id="jumping">Jumping</h3>

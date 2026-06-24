@@ -182,15 +182,15 @@ export default async function Page() {
         <ul className="example">
           <li>
             The <strong>Flamer</strong> (
-            <Link href={wh40kHref('keywords', 'torrent')}>Torrent</Link>, A D6,
-            S4, D1) auto-hits, has a 2/3 chance to wound, and instantly removes
-            as many GEQ models as its attacks roll shows.
+            <Link href={wh40kHref('keywords', 'torrent')}>Torrent</Link> A D6 S4
+            D1) auto-hits, has a 2/3 chance to wound, and instantly removes as
+            many GEQ models as its attacks roll shows.
           </li>
 
           <li>
             The <strong>Storm Bolter</strong> (
             <Link href={wh40kHref('keywords', 'rapid-fire')}>Rapid Fire 2</Link>
-            {', A2, S4, D1) makes 4 attacks at half range.'}
+            {' A2 S4 D1) makes 4 attacks at half range.'}
           </li>
 
           <li>
@@ -252,70 +252,57 @@ export default async function Page() {
 
         <ul>
           <li>
-            <strong>Chip Rifle</strong> (e.g. Lasgun, Splinter rifle){' '}
-            <span className="badge">A1-2 S2-3 AP0 D1</span> - "bottom-of-the
-            barrel", carried by many GEQ squads.
+            <strong>Chip Rifle</strong> (e.g. Lasgun, Splinter rifle) A1-2 S2-3
+            AP0 D1 - "bottom-of-the barrel", carried by many GEQ squads.
           </li>
 
           <li>
             <strong>Basic Bolter</strong> (e.g. Boltgun, shoota, pulse carbine
-            variants) <span className="badge">A2, S4, AP0, D1</span> - S4
-            anti-GEQ.
+            variants) A2 S4 AP0 D1 - S4 anti-GEQ.
           </li>
 
           <li>
             <strong>Improved rifle</strong> (e.g. Bolt rifle, ion blaster,
-            shuriken/craftworld guns){' '}
-            <span className="badge">18–30", A1–2, S4–5, AP-1/-2, D1</span> -
-            some AP, better anti-GEQ, not quite anti-MEQ.
+            shuriken/craftworld guns) 18–30" A1–2 S4–5 AP-1/-2 D1 - some AP,
+            better anti-GEQ, not quite anti-MEQ.
           </li>
 
           <li>
-            <strong>Flamers</strong>{' '}
-            <span className="badge">12", D6, S3–6, AP0/-1, D1, Torrent</span> -
-            short-range annihilation for GEQs; if S5 AP-1, also viable against
-            MEQs.
+            <strong>Flamers</strong> 12" D6 S3–6 AP0/-1 D1 Torrent - short-range
+            annihilation for GEQs; if S5 AP-1, also viable against MEQs.
           </li>
 
           <li>
             <strong>Gatling</strong> (e.g. storm bolters, splinter cannons,
-            salvo guns){' '}
-            <span className="badge">24–36", A4–6+, S4–6, AP0/-1, D1</span> -
-            high-volume anti-horde.
+            salvo guns) 24–36" A4–6+ S4–6 AP0/-1 D1 - high-volume anti-horde.
           </li>
 
           <li>
             <strong>Anti-MEQ</strong> (e.g. Heavy bolter, heavy bolt rifle,
-            disintegrator-style guns){' '}
-            <span className="badge">24–36", A2–4, S5–6, AP-1/-2, D2</span> - the
+            disintegrator-style guns) 24–36" A2–4 S5–6 AP-1/-2 D2 - the
             definitive D2 weapons.
           </li>
 
           <li>
             <strong>Plasma</strong> (e.g. Plasma gun, ion/plasma equivalents,
-            elite rifles){' '}
-            <span className="badge">A1–2, S7–8, AP-2/-3, D1–2</span> - anti-MEQ,
-            not quite anti-TEQ.
+            elite rifles) A1–2 S7–8 AP-2/-3 D1–2 - anti-MEQ, not quite anti-TEQ.
           </li>
 
           <li>
-            <strong>Autocannon</strong>{' '}
-            <span className="badge">36–48", A2–4, S7–10, AP-1/-2, D2–3</span> -
+            <strong>Autocannon</strong> 36–48" A2–4 S7–10 AP-1/-2 D2–3 -
             long-range, decent volume and S, anti-TEQ and light vehicles without
             excellent saves.
           </li>
 
           <li>
             <strong>Melta</strong> (e.g. Meltagun, multi-melta, fusion gun){' '}
-            <span className="badge">12–18", A1–2, S9–10, AP-4, D6 Melta</span> -
-            short-range against elite infantry and medium vehicles, not quite
-            anti-heavy.
+            12–18" A1–2 S9–10 AP-4 D6 Melta - short-range against elite infantry
+            and medium vehicles, not quite anti-heavy.
           </li>
 
           <li>
-            <strong>Las</strong> (e.g. Lascannon, lances, rail weapons){' '}
-            <span className="badge">36–48", A1–2, S12+, AP-3/-4, D6+1/+2</span>{' '}
-            - long-range anti-tank and monsters.
+            <strong>Las</strong> (e.g. Lascannon, lances, rail weapons) 36–48"
+            A1–2 S12+ AP-3/-4 D6+1/+2 - long-range anti-tank and monsters.
           </li>
 
           <li>
@@ -337,26 +324,24 @@ export default async function Page() {
 
         <ul>
           <li>
-            <strong>Trash melee</strong> (e.g. close combat weapon){' '}
-            <span className="badge">A1–3, S3–4, AP0, D1</span> - last resort.
+            <strong>Trash melee</strong> (e.g. close combat weapon) A1–3 S3–4
+            AP0 D1 - last resort.
           </li>
           <li>
             <strong>Horde melee</strong> (e.g. claws, knives, basic choppas){' '}
-            <span className="badge">many attacks, S3–5, AP0/-1, D1</span> -
-            anti-GEQ.
+            many attacks S3–5 AP0/-1 D1 - anti-GEQ.
           </li>
           <li>
-            <strong>Chainsword</strong>{' '}
-            <span className="badge">many attacks, S4, AP-1, D1</span> - more
+            <strong>Chainsword</strong> many attacks S4 AP-1 D1 - more
             consistent anti-GEQ, not quite anti-MEQ.
           </li>
           <li>
             <strong>Anti-MEQ</strong> (e.g. power fist, accursed weapon, heavy
-            melee weapons) <span className="badge">S5–8, AP-2, D2</span>
+            melee weapons) S5–8 AP-2 D2
           </li>
           <li>
             <strong>Anti-TEQ</strong> (e.g. thunder hammer, chainfist-ish, heavy
-            relic weapons) <span className="badge">S6–10, AP-2/-3, D3</span>
+            relic weapons) S6–10 AP-2/-3 D3
           </li>
           <li>
             <strong>Heavy melee</strong> (e.g. dreadnought fist, knight melee,
