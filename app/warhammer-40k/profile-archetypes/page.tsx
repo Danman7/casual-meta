@@ -28,7 +28,7 @@ export default async function Page() {
 
       <section>
         <h2 id="target-profiles">
-          Target archetypes are durability breakpoints
+          Target archetypes say what needs to be removed
         </h2>
 
         <p>
@@ -94,8 +94,8 @@ export default async function Page() {
         <p>
           TEQ, or simply Terminators, represents <strong>heavy infantry</strong>
           . These units have higher Toughness and more Wounds than Marines, but
-          they are defined by their superb Saves. This archetype leans more
-          towards looser examples.
+          they are defined by their superb Saves. Strong examples here are rarer
+          than looser ones.
         </p>
 
         <p className="example">
@@ -113,7 +113,8 @@ export default async function Page() {
           </strong>
           . Once the Sv2+ is degraded to 4+, the Invulnerable Save takes over,
           so AP beyond -2 stops being useful. This promotes weapons with more
-          Strength, enough Damage, and critical-related keywords, especially{' '}
+          <Link href={wh40kHref('datasheets', 'strength')}>Strength</Link>,
+          enough Damage, and critical-related keywords, especially{' '}
           <Link href={wh40kHref('keywords', 'devastating-wounds')}>
             Devastating Wounds
           </Link>
@@ -136,20 +137,20 @@ export default async function Page() {
           className="picture profile-img object-[0%_28%]"
         />
 
-        <p className="lead text-center">Toughness 3 | Save 5+ | Wounds 1</p>
+        <p className="lead text-center">T3 Sv5+ W1</p>
 
         <p>
-          GEQ, or Guard Equivalent, describes fragile{' '}
-          <strong>light infantry</strong> that usually comes in{' '}
-          <strong>large numbers</strong>. The name comes from the humble{' '}
-          <em>Imperial Guard</em>, though players often call the same role{' '}
-          <em>horde</em> infantry.
+          GEQ, describes fragile <strong>light infantry</strong>. The name comes
+          from the humble <em>Imperial Guardsman</em>, but because they usually
+          come in <strong>large numbers</strong> (squads of 20) they are
+          habitually called <em>hordes</em>. This archetype leans heavily into
+          loose examples. So much so, that there are several sub-categories of
+          them.
         </p>
 
         <p className="example">
-          For example, Astra Militarum battleline units, Tyranid Termagants, and
-          Hormagaunts are strong GEQ. Strong examples are fewer than loose ones,
-          and the loose examples are useful enough to name:
+          For example, the Astra Militarum battleline, and Tyranid Termagants
+          and Hormagaunts, are pure GEQ. Looser examples can be grouped like so:
         </p>
 
         <ul className="example">
@@ -175,24 +176,24 @@ export default async function Page() {
         </ul>
 
         <p>
-          This is the opposite problem from TEQ. GEQ shows why{' '}
-          <strong>squad size matters</strong>. Individual models fall to almost
-          anything, but a single Lascannon or Plasma cannon shot barely changes
-          a 20-model squad. Against GEQ, volume does the work.
+          Light infantry shows why <strong>squad size matters</strong>.
+          Individual models fall quickly, yet a 20-man squad needs attack
+          volume. High-end single-shot weapons won't make a difference against a
+          horde.
         </p>
 
         <ul className="example">
           <li>
-            The <strong>Flamer</strong> (
-            <Link href={wh40kHref('keywords', 'torrent')}>Torrent</Link> A D6 S4
-            D1) auto-hits, wounds GEQ on 3+, and can remove as many models as
-            its attacks roll allows.
+            The <strong>Flamer</strong> (Ad6 S4 D1{' '}
+            <Link href={wh40kHref('keywords', 'torrent')}>Torrent</Link>)
+            auto-hits, wounds GEQ on 3+, and can remove as many models as its
+            attacks roll allows.
           </li>
 
           <li>
-            The <strong>Storm Bolter</strong> (
+            The <strong>Storm Bolter</strong> (A2 S4 D1{' '}
             <Link href={wh40kHref('keywords', 'rapid-fire')}>Rapid Fire 2</Link>
-            {' A2 S4 D1) reaches 4 attacks at half range.'}
+            ) does 4 attacks at half range.
           </li>
 
           <li>
@@ -211,9 +212,10 @@ export default async function Page() {
         />
 
         <p>
-          Vehicles and monsters vary more than infantry. Instead of one neat
-          archetype, it is better to think in breakpoints. Two useful ones are
-          the <strong>Meltagun (S9)</strong> and the{' '}
+          Vehicle and monster profiles vary much more than infantry ones.
+          Instead of neat archetypes, it's better to think in terms of Strength
+          breakpoints. The two useful ones are the{' '}
+          <strong>Meltagun (S9)</strong> and the{' '}
           <strong>Lascannon (S12)</strong>.
         </p>
 
@@ -224,7 +226,7 @@ export default async function Page() {
           </li>
           <li>
             <strong>Medium vehicles at T10-11</strong> (e.g. Redemptor, Armiger)
-            give even Meltas trouble and require proper anti-tank gear.
+            give Meltas trouble and require proper anti-tank gear.
           </li>
           <li>
             <strong>Heavy vehicles at T12+</strong> (e.g. Land Raider) make even
@@ -234,72 +236,70 @@ export default async function Page() {
       </section>
 
       <section>
-        <h2 id="weapon-profiles">Weapon Profiles</h2>
+        <h2 id="weapon-profiles">
+          Weapon archetypes say how we are trying to dispatch
+        </h2>
 
         <p>
-          <strong>
-            Target profiles tell us what has to die. Weapon profiles tell us how
-            we are trying to do it.
-          </strong>{' '}
-          Range, accuracy, keywords, and critical rolls all change what a weapon
-          is good at. That is why two weapons can both be anti-MEQ and still
-          feel very different on the table.
+          Weapons have more variables than targets: range, accuracy, keywords,
+          critical rolls etc. That is why they can't be closly tied to target
+          archetypes. Two anti-MEQ arms can play very differently on the board.
         </p>
 
         <h3 id="ranged">Ranged Weapons</h3>
 
         <p>
-          When a range is not mentioned, assume 24", the standard for most
-          rifles. With that in mind, a rough ranged ladder looks like this:
+          If Range is not mentioned, assume 24": the standard for most rifles.
         </p>
 
         <ul>
           <li>
             <strong>Chip Rifle</strong> (e.g. Lasgun, Splinter rifle) A1-2 S2-3
-            AP0 D1 - bottom-of-the-barrel firepower. This is common on GEQ
-            squads and relies on numbers.
+            AP0 D1 - low strength, no AP, bottom-of-the-barrel firepower. This
+            is common on GEQ squads and relies on numbers.
           </li>
 
           <li>
-            <strong>Basic Bolter</strong> (e.g. Boltgun, shoota, pulse carbine
-            variants) A2 S4 AP0 D1 - standard S4 anti-GEQ fire. Better than a
-            chip rifle, but still mainly a volume tool.
+            <strong>Basic Bolter</strong> (e.g. Boltgun, Shoota, Pulse carbine
+            variants) A2 S4 AP0 D1 - better at anti-GEQ, mainly because S4
+            wounds on 3+.
           </li>
 
           <li>
-            <strong>Improved rifle</strong> (e.g. Bolt rifle, ion blaster,
-            shuriken/craftworld guns) 18–30" A1–2 S4–5 AP-1/-2 D1 - better
-            anti-GEQ fire with some AP, but not quite reliable anti-MEQ.
+            <strong>Improved rifle</strong> (e.g. Bolt rifle, Ion blaster,
+            shuriken/craftworld guns) 18–30" A1–2 S4–5 AP-1/-2 D1 - superior
+            anti-GEQ gear with some AP (for armoured GEQ), but not quite enough
+            damage for anti-MEQ.
           </li>
 
           <li>
-            <strong>Flamers</strong> 12" D6 S3–6 AP0/-1 D1 Torrent - short-range
-            GEQ clearing; S5 AP-1 versions can also threaten MEQ.
+            <strong>Flamers</strong> 12" D6 S3–6 AP0/-1 D1 Torrent - anihilates
+            light infantry at short-range. Variants with better S and AP are
+            also OK into MEQ.
           </li>
 
           <li>
-            <strong>Gatling</strong> (e.g. storm bolters, splinter cannons,
-            salvo guns) 24–36" A4–6+ S4–6 AP0/-1 D1 - high-volume anti-horde
-            shooting.
+            <strong>Gatling</strong> (e.g. Storm bolters, Splinter cannons,
+            Salvo guns) 24–36" A4–6+ S4–6 AP0/-1 D1 - high-volume longer-ranged
+            anti-horde guns.
           </li>
 
           <li>
-            <strong>Anti-MEQ</strong> (e.g. Heavy bolter, heavy bolt rifle,
-            disintegrator-style guns) 24–36" A2–4 S5–6 AP-1/-2 D2 - the
-            definitive D2 profile. The important part is removing one Marine per
-            failed save.
+            <strong>Anti-MEQ</strong> (e.g. Heavy bolter, Heavy bolt rifle,
+            Disintegrator-style guns) 24–36" A2–4 S5–6 AP-1/-2 D2 - the
+            definitive D2 profile, removing one Marine per failed save.
           </li>
 
           <li>
             <strong>Plasma</strong> (e.g. Plasma gun, ion/plasma equivalents,
-            elite rifles) A1–2 S7–8 AP-2/-3 D1–2 - strong into MEQ, but not
-            quite enough to solve TEQ.
+            elite rifles) A1–2 S7–8 AP-2/-3 D1–2 - decent strength and AP,
+            strong into MEQ, but not quite enough to solve TEQ.
           </li>
 
           <li>
             <strong>Autocannon</strong> 36–48" A2–4 S7–10 AP-1/-2 D2–3 -
-            long-range shots with decent volume and Strength, good into TEQ and
-            light vehicles that lack excellent saves.
+            long-range shots with excellent volumen and Strength, good into TEQ
+            and light vehicles that lack fair saves.
           </li>
 
           <li>
@@ -323,12 +323,15 @@ export default async function Page() {
 
         <p>
           You might be wondering where pistols are. The{' '}
-          <strong>Pistol keyword tells you when and how it shoots</strong>, not
-          what it kills. Pistols are usually paired with a melee weapon and used
-          before charging, and{' '}
-          <strong>they can be fired within engagement range</strong>. Their
-          actual target profile still depends on the weapon stats: one pistol
-          can be anti-GEQ while another can be anti-MEQ.
+          <strong>
+            <Link href={wh40kHref('keywords', 'pistol')}>Pistol</Link> keyword
+            tells you when and how it shoots
+          </strong>
+          , not what it kills. Pistols are usually paired with a melee weapon
+          and used before charging, and{' '}
+          <strong>can be fired within engagement range</strong>. Their actual
+          target profile still depends on the weapon stats: one pistol can be
+          anti-GEQ while another can be anti-MEQ.
         </p>
 
         <h3 id="melee">Melee Weapons</h3>
@@ -342,25 +345,30 @@ export default async function Page() {
         <ul>
           <li>
             <strong>Trash melee</strong> (e.g. close combat weapon) A1–3 S3–4
-            AP0 D1 - a last resort profile.
+            AP0 D1 - only a last resort.
           </li>
+
           <li>
-            <strong>Horde melee</strong> (e.g. claws, knives, basic choppas){' '}
-            many attacks S3–5 AP0/-1 D1 - anti-GEQ through volume.
+            <strong>Chainsword</strong> A3-4 S4 AP-1 D1 - a consistent anti-GEQ
+            weapon, lacks strength and damage to be formidable at anti-MEQ.
           </li>
+
           <li>
-            <strong>Chainsword</strong> many attacks S4 AP-1 D1 - more
-            consistent anti-GEQ, but still not quite anti-MEQ.
+            <strong>Horde melee</strong> (e.g. claws, knives, basic choppas)
+            A2-8 S3–7 AP0/-1 D1 - very fluid profile, many attacks, definitive
+            into light infantry, but it may or may not have enough S and AP to
+            go beyound that.
           </li>
+
           <li>
             <strong>Anti-MEQ</strong> (e.g. power fist, accursed weapon, heavy
-            melee weapons) S5–8 AP-2 D2 - melee profiles that can remove a
-            Marine with each failed save.
+            melee weapons) S5–8 AP-2 D2 - can remove a marine with a failed
+            save.
           </li>
           <li>
             <strong>Anti-TEQ</strong> (e.g. thunder hammer, chainfist-ish, heavy
-            relic weapons) S6–10 AP-2/-3 D3 - heavier melee built to push
-            through Terminator-style bodies.
+            relic weapons) S6–10 AP-2/-3 D3 - good enought S, AP, and D to
+            pierce Terminator-style armor.
           </li>
           <li>
             <strong>Heavy melee</strong> (e.g. dreadnought fist, knight melee,
