@@ -20,29 +20,32 @@ export default async function Page() {
         <p>
           WH40k has hundreds of{' '}
           <Link href={wh40kHref('datasheets')}>datasheets</Link>, all of which
-          may take more than one loadout. Instead of comparing every weapon
-          against every possible target, players use archetypes: familiar
-          profiles that make those matchups easier to discuss.
+          may take several loadouts. It would be difficult to compare any weapon
+          against every possible target, so players manage this via archetypes.
+          They are familiar benchmarks of effectiveness.
         </p>
       </section>
 
       <section>
-        <h2 id="target-profiles">Target Profiles</h2>
+        <h2 id="target-profiles">
+          Target archetypes are durability breakpoints
+        </h2>
 
         <p>
-          Target archetypes are built around common{' '}
+          There exist combinations of{' '}
           <strong>
             <Link href={wh40kHref('datasheets', 'toughness')}>Toughness</Link>,{' '}
             <Link href={wh40kHref('datasheets', 'save')}>Save</Link> and{' '}
-            <Link href={wh40kHref('datasheets', 'wounds')}>Wounds</Link>{' '}
-            combinations.
-          </strong>{' '}
-          A unit is a <em>strong example</em> when it matches the archetype
-          closely, and a <em>loose example</em> when it behaves similarly while
-          trading one stat up or down.
+            <Link href={wh40kHref('datasheets', 'wounds')}>Wounds</Link>
+          </strong>
+          , so common among units, that they have become benchmarks for how
+          durable a model is. A profile can be a <em>strong example</em> when it
+          matches an archetype closely, or a <em>loose example</em> if it comes
+          close enough.
         </p>
 
-        <h3 id="meq">MEQ (Marine Equivalent)</h3>
+        <h3 id="meq">MEQ (Marine equivalent)</h3>
+
         <Image
           src={intercessors}
           alt="A squad of Space Marine Intercessors."
@@ -50,13 +53,13 @@ export default async function Page() {
           loading="eager"
         />
 
-        <p className="lead text-center">Toughness 4 | Save 3+ | Wounds 2</p>
+        <p className="lead text-center">T4 Sv3+ W2</p>
 
         <p>
-          MEQ, or Marine Equivalent, means a unit with the resilience of a{' '}
-          <strong>regular Space Marine</strong>. It is the{' '}
-          <strong>baseline infantry</strong> profile, and many armies have units
-          that fit it closely.
+          MEQ, often just called <em>Marines</em>, refers to any unit with the{' '}
+          <strong>resilience of a regular Space Marine</strong>. This is your
+          anchor in the sea of profiles - the <strong>baseline infantry</strong>
+          . It's an archetype with many strong examples.
         </p>
 
         <p className="example">
@@ -66,21 +69,19 @@ export default async function Page() {
         </p>
 
         <p>
-          Because MEQ is common, it turns{' '}
-          <strong>
-            <Link href={wh40kHref('datasheets', 'damage')}>Damage</Link> 2
-            weapons into a benchmark.
-          </strong>{' '}
-          One failed save from a D2 weapon removes a Marine. D1 needs two failed
-          saves, while D3+ often pays for damage the target cannot use.
+          If you understand how a weapon performs into MEQ, you understand a
+          large part of the infantry game. This is why MEQ make{' '}
+          <strong>D2 weapons a standard.</strong> A D1 wepon needs two failed
+          saves to dispatch a Marine equivalent, while D3+ pays for damage the
+          target cannot use.
         </p>
 
         <p className="example">
           For example, the <strong>Heavy Bolter</strong> (S5 AP-1 D2) is the
-          classic anti-MEQ weapon: it wounds on 3+ and degrades the Save to 4+.
+          ideal anti-MEQ weapon: it wounds on 3+ and degrades the Save to 4+.
         </p>
 
-        <h3 id="teq">TEQ (Terminator Equivalent)</h3>
+        <h3 id="teq">TEQ (Terminator equivalent)</h3>
 
         <Image
           src={terminators}
@@ -88,19 +89,13 @@ export default async function Page() {
           className="picture profile-img object-[0%_57%]"
         />
 
-        <p className="lead text-center">
-          Toughness 5 | Save 2+ / 4++ | Wounds 3
-        </p>
+        <p className="lead text-center">T5 Sv2+/4++ W3</p>
 
         <p>
-          TEQ, or Terminator Equivalent, represents{' '}
-          <strong>heavy infantry</strong>. These units have higher{' '}
-          <Link href={wh40kHref('datasheets', 'toughness')}>Toughness</Link> and
-          more <Link href={wh40kHref('datasheets', 'wounds')}>Wounds</Link> than
-          MEQ, but the defining feature is their superb{' '}
-          <Link href={wh40kHref('datasheets', 'save')}>Saves</Link>: usually a
-          2+ Armor Save backed by a 4++ Invulnerable Save. Strong TEQ examples
-          are rarer than loose ones.
+          TEQ, or simply Terminators, represents <strong>heavy infantry</strong>
+          . These units have higher Toughness and more Wounds than Marines, but
+          they are defined by their superb Saves. This archetype leans more
+          towards looser examples.
         </p>
 
         <p className="example">
@@ -110,11 +105,15 @@ export default async function Page() {
         </p>
 
         <p>
-          TEQ teaches <strong>the limits of AP</strong>. Once the 2+ Save is
-          pushed to 4+, the Invulnerable Save takes over, so AP beyond -2 stops
-          improving the save roll. That pushes you toward weapons with high{' '}
-          <Link href={wh40kHref('datasheets', 'strength')}>Strength</Link>,
-          enough Damage, and sometimes critical-related keywords, especially{' '}
+          Terminators <strong>require attention from heavier arms</strong>, but
+          at the same time{' '}
+          <strong>
+            show the limitations of{' '}
+            <Link href={wh40kHref('datasheets', 'armor-penetration')}>AP</Link>
+          </strong>
+          . Once the Sv2+ is degraded to 4+, the Invulnerable Save takes over,
+          so AP beyond -2 stops being useful. This promotes weapons with more
+          Strength, enough Damage, and critical-related keywords, especially{' '}
           <Link href={wh40kHref('keywords', 'devastating-wounds')}>
             Devastating Wounds
           </Link>
@@ -122,10 +121,11 @@ export default async function Page() {
         </p>
 
         <p className="example">
-          For example, the <strong>Autocannon</strong> (A2 S9 AP-1 D3) wounds on
-          3+ and degrades the Save to 3+. The <strong>Combi-weapon</strong>{' '}
-          (Anti-Infantry 4+ Devastating Wounds) turns every 4+ wound roll into
-          guaranteed damage.
+          For example, the <strong>Autocannon</strong> (A2 S9 AP-1 D3) is
+          effective as it wounds on 3+ and degrades the Save to 3+. The{' '}
+          <strong>Combi-weapon</strong> (D1 Anti-Infantry 4+ Devastating Wounds)
+          deals only 1 damage, but it guarantees the target will eat that damage
+          on every 4+ wound roll.
         </p>
 
         <h3 id="geq">GEQ (Guard Equivalent)</h3>
@@ -143,14 +143,13 @@ export default async function Page() {
           <strong>light infantry</strong> that usually comes in{' '}
           <strong>large numbers</strong>. The name comes from the humble{' '}
           <em>Imperial Guard</em>, though players often call the same role{' '}
-          <em>horde</em> infantry. Strong GEQ examples are fewer than loose
-          ones, and the loose examples are useful enough to name as
-          subcategories.
+          <em>horde</em> infantry.
         </p>
 
         <p className="example">
           For example, Astra Militarum battleline units, Tyranid Termagants, and
-          Hormagaunts are strong GEQ. Around them sit several common variations:
+          Hormagaunts are strong GEQ. Strong examples are fewer than loose ones,
+          and the loose examples are useful enough to name:
         </p>
 
         <ul className="example">
@@ -176,10 +175,10 @@ export default async function Page() {
         </ul>
 
         <p>
-          GEQ matters because it shows why <strong>squad size matters</strong>.
-          Individual models fall to almost anything, but a single Lascannon or
-          Plasma cannon shot barely changes a 20-model squad. Against GEQ, the
-          lesson is simple: volume does the work.
+          This is the opposite problem from TEQ. GEQ shows why{' '}
+          <strong>squad size matters</strong>. Individual models fall to almost
+          anything, but a single Lascannon or Plasma cannon shot barely changes
+          a 20-model squad. Against GEQ, volume does the work.
         </p>
 
         <ul className="example">
@@ -212,8 +211,8 @@ export default async function Page() {
         />
 
         <p>
-          Vehicles and monsters vary more than infantry, so they are harder to
-          compress into one neat archetype. Even so, two useful breakpoints are
+          Vehicles and monsters vary more than infantry. Instead of one neat
+          archetype, it is better to think in breakpoints. Two useful ones are
           the <strong>Meltagun (S9)</strong> and the{' '}
           <strong>Lascannon (S12)</strong>.
         </p>
@@ -239,8 +238,8 @@ export default async function Page() {
 
         <p>
           <strong>
-            Targets are mostly durability profiles, but weapons are active tools
-            with more variables.
+            Target profiles tell us what has to die. Weapon profiles tell us how
+            we are trying to do it.
           </strong>{' '}
           Range, accuracy, keywords, and critical rolls all change what a weapon
           is good at. That is why two weapons can both be anti-MEQ and still
@@ -251,18 +250,20 @@ export default async function Page() {
 
         <p>
           When a range is not mentioned, assume 24", the standard for most
-          rifles.
+          rifles. With that in mind, a rough ranged ladder looks like this:
         </p>
 
         <ul>
           <li>
             <strong>Chip Rifle</strong> (e.g. Lasgun, Splinter rifle) A1-2 S2-3
-            AP0 D1 - bottom-of-the-barrel firepower carried by many GEQ squads.
+            AP0 D1 - bottom-of-the-barrel firepower. This is common on GEQ
+            squads and relies on numbers.
           </li>
 
           <li>
             <strong>Basic Bolter</strong> (e.g. Boltgun, shoota, pulse carbine
-            variants) A2 S4 AP0 D1 - standard S4 anti-GEQ fire.
+            variants) A2 S4 AP0 D1 - standard S4 anti-GEQ fire. Better than a
+            chip rifle, but still mainly a volume tool.
           </li>
 
           <li>
@@ -285,7 +286,8 @@ export default async function Page() {
           <li>
             <strong>Anti-MEQ</strong> (e.g. Heavy bolter, heavy bolt rifle,
             disintegrator-style guns) 24–36" A2–4 S5–6 AP-1/-2 D2 - the
-            definitive D2 profile.
+            definitive D2 profile. The important part is removing one Marine per
+            failed save.
           </li>
 
           <li>
@@ -320,7 +322,7 @@ export default async function Page() {
         </ul>
 
         <p>
-          Where are pistols? The{' '}
+          You might be wondering where pistols are. The{' '}
           <strong>Pistol keyword tells you when and how it shoots</strong>, not
           what it kills. Pistols are usually paired with a melee weapon and used
           before charging, and{' '}
@@ -330,6 +332,12 @@ export default async function Page() {
         </p>
 
         <h3 id="melee">Melee Weapons</h3>
+
+        <p>
+          Melee profiles follow the same idea. The main difference is that range
+          is replaced by delivery: the unit has to survive long enough to reach
+          combat.
+        </p>
 
         <ul>
           <li>

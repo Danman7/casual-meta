@@ -28,11 +28,11 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev)
 
   return (
-    <div className="min-h-full overflow-x-hidden [--mobile-sidebar-width:min(20rem,85vw)]">
+    <div className="min-h-full overflow-x-clip [--mobile-sidebar-width:min(20rem,85vw)]">
       <div
-        className={`flex min-h-full flex-col transition-transform duration-300 ease-out lg:translate-x-0 ${
+        className={`flex min-h-full flex-col transition-transform duration-300 ease-out lg:translate-x-0 lg:translate-none ${
           isMobileMenuOpen
-            ? 'translate-x-[var(--mobile-sidebar-width)]'
+            ? 'translate-x-(--mobile-sidebar-width)'
             : 'translate-x-0'
         }`}
       >

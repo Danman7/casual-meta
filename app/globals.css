@@ -130,7 +130,7 @@
 }
 
 @utility picture {
-  @apply rounded shadow-sm;
+  @apply rounded shadow-md;
 }
 
 @utility profile-img {
@@ -138,7 +138,7 @@
 }
 
 @utility lead {
-  @apply font-bold uppercase;
+  @apply font-bold;
   font-family: var(--font-ui);
   letter-spacing: 0.03em;
 }
