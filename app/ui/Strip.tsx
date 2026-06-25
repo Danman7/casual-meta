@@ -6,9 +6,9 @@ export interface StripItem {
 }
 
 export const Strip: React.FC<{ items: StripItem[] }> = ({ items }) => (
-  <dl className="flex-list my-5">
+  <dl className="flex-list">
     {items.map((item, index) => (
-      <div key={index} className="min-w-0 border-l-4 border-foreground/10 pl-4">
+      <div key={index} className="border-l-4 border-foreground/10 pl-4">
         <dt className="lead">{item.label}</dt>
         <dd>{item.value}</dd>
       </div>

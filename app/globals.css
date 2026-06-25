@@ -195,6 +195,14 @@
     @apply border-foreground/30 w-full;
   }
 
+  p svg,
+  li svg,
+  h2 svg,
+  h3 svg,
+  .lead svg {
+    @apply inline;
+  }
+
   main {
     text-wrap: pretty;
 
@@ -212,7 +220,7 @@
 
     ul,
     ol {
-      @apply pl-5 space-y-2;
+      @apply pl-6 space-y-2;
     }
 
     ul {
